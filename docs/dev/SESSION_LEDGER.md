@@ -223,3 +223,33 @@
   - Assumed QA matrix seed can start as unchecked planned cases and be executed in a subsequent QA-focused session.
 - **Recommended next session starting point**:
   - Execute Phase 6 QA matrix checks against a running backend, mark pass/fail evidence, and produce role-based + UAT runbook artifacts.
+
+## Session 2026-04-05T09:45:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Execute Phase 6 seeded QA matrix endpoint-by-endpoint against a running backend.
+  - Record role-based test outcomes and UAT script artifacts.
+  - Update persistent progress docs for handoff.
+- **Files changed**:
+  - `docs/dev/QA_MATRIX.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Treated missing runtime dependencies (`vendor/autoload.php`) as a hard blocker and documented endpoint outcomes as failed/blocked with explicit request-route-result evidence.
+  - Preserved endpoint contract and UI/backend behavior (no API or UI contract changes) because runtime QA could not be truthfully completed in this environment.
+  - Added a role-based matrix and UAT script directly in `QA_MATRIX.md` so next session can resume immediately once backend boot is unblocked.
+- **Tests/checks run and outcomes**:
+  - `composer install --no-interaction --prefer-dist` ❌ failed (`curl error 56 ... CONNECT tunnel failed, response 403`)
+  - `timeout 5 php -S 127.0.0.1:8081 -t public` ✅ server starts
+  - `curl -i http://127.0.0.1:8081/` ❌ `500` due `Failed opening required '/workspace/cre8w/public/../vendor/autoload.php'`
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Runtime dependency installation is blocked by network policy/proxy restriction, so backend cannot boot successfully for endpoint QA.
+  - Full Phase 6 endpoint pass/fail closure remains blocked until dependencies are installable.
+- **Assumptions recorded**:
+  - Assumed it is better to mark endpoint checks explicitly failed/blocked (with concrete boot evidence) rather than leave seeded checks ambiguous.
+- **Recommended next session starting point**:
+  - Unblock dependency installation (`composer install` with network/proxy access), boot backend, then rerun every QA matrix endpoint and replace blocked/fail entries with true pass/fail evidence.
