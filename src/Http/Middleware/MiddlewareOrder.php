@@ -13,9 +13,9 @@ final class MiddlewareOrder
         'SecurityHeaders',
         'CORS',
         'RateLimit',
+        'Validation',
         'JsonBodyParsing',
         'Routing',
-        'Validation',
         'CSRF',
     ];
 
@@ -26,9 +26,9 @@ final class MiddlewareOrder
         'SecurityHeaders' => SecurityHeadersMiddleware::class,
         'CORS' => CorsMiddleware::class,
         'RateLimit' => RateLimitMiddleware::class,
+        'Validation' => ValidationMiddleware::class,
         'JsonBodyParsing' => JsonBodyMiddleware::class,
         'Routing' => RoutingMarkerMiddleware::class,
-        'Validation' => ValidationMiddleware::class,
         'CSRF' => CsrfMiddleware::class,
     ];
 
