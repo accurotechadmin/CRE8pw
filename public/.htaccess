@@ -1,0 +1,10 @@
+Options -Indexes
+RewriteEngine On
+
+# Canonicalize /public to /
+RewriteRule ^public/?$ / [R=301,L]
+
+# Front controller routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
