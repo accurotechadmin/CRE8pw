@@ -18,7 +18,7 @@ final class AppFactory
         $app = SlimAppFactory::create();
 
         $middleware = new MiddlewareRegistry($container);
-        foreach ($middleware->global() as $mw) {
+        foreach (array_reverse($middleware->global()) as $mw) {
             $app->add($mw);
         }
 
