@@ -65,3 +65,34 @@
   - Assumed single persistent generated device id per browser profile is acceptable for integration/operator workflow.
 - **Recommended next session starting point**:
   - Implement remaining Phase 2 write flows (`POST /api/posts`, `PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`, `POST /api/posts/{postId}/comments`) with permission- and state-aware CTA guards.
+
+## Session 2026-04-05T02:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Complete remaining Phase 2 gateway write workflows end-to-end in the `/ui` SPA.
+  - Cover `POST /api/posts`, `PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`, and `POST /api/posts/{postId}/comments` with routes, forms, and envelope-aware error handling.
+  - Add permission-aware/state-aware CTA and route guards based on key claims and fetched post state.
+- **Files changed**:
+  - `public/ui/app.js`
+  - `public/ui/styles.css`
+  - `FRONTEND_BACKEND_INTEGRATION_PLAYBOOK.md`
+  - `UI_IMPLEMENTATION_PLAN.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Introduced pre-submit write guards in the SPA for clearer UX and fewer avoidable forbidden submissions.
+  - Reused centralized `gatewayRequest()` wrapper for all new write routes to enforce bearer + `X-Device-Id` consistently.
+  - Added gateway-specific error reason mapping for known `403` reasons to align messaging with backend policy behavior.
+- **Tests/checks run and outcomes**:
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Browser-based integration testing and screenshots were not executed because no browser container tooling is available in this environment.
+- **Assumptions recorded**:
+  - Assumed `posts:create` should remain blocked for `key_class=use` at both CTA and route levels to reflect backend enforcement.
+  - Assumed comment creation should be pre-blocked when post state is `locked|archived|hidden|deleted`, matching route-level backend policy.
+- **Recommended next session starting point**:
+  - Start Phase 3 console content/moderation flows (`GET /console/api/posts`, `POST /console/api/posts`, moderation endpoints) by reusing current form/error/inspector primitives.

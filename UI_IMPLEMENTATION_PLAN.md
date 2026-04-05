@@ -2,14 +2,18 @@
 
 Date: 2026-04-05 (UTC)
 
-## Current Delivery Snapshot (Session 2)
+## Current Delivery Snapshot (Session 3)
 
 - Phases 0–1 are functionally implemented in the current static SPA (`public/ui`).
-- Phase 2 has started with gateway read flows complete:
+- Phase 2 is now complete for gateway read/write flows:
   - `/feed` → `GET /api/feed` with cursor pagination.
+  - `/posts/new` → `POST /api/posts`.
   - `/posts/{postId}` → `GET /api/posts/{postId}`.
+  - `/posts/{postId}/edit` → `PATCH /api/posts/{postId}`.
+  - `/posts/{postId}/flag` → `POST /api/posts/{postId}/flags`.
   - `/posts/{postId}/comments` → `GET /api/posts/{postId}/comments`.
-- Feed-to-post-to-comments navigation is wired and uses shared envelope/error/request-id handling.
+  - `/posts/{postId}/comments/new` → `POST /api/posts/{postId}/comments`.
+- Feed-to-post-to-comments navigation now includes guarded write entry points based on key claims and known post state constraints.
 - Remaining phase work continues per the checklist below.
 
 ## 1) Objective

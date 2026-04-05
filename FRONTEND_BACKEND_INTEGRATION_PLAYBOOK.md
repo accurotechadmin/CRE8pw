@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Implementation Progress Snapshot (Session 2)
+## Implementation Progress Snapshot (Session 3)
 
 - ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
 - ✅ Gateway read slice implemented end-to-end for:
@@ -10,7 +10,11 @@ Date: 2026-04-05 (UTC)
   - `GET /api/posts/{postId}`,
   - `GET /api/posts/{postId}/comments`.
 - ✅ API client now injects bearer auth and `X-Device-Id` for gateway calls and preserves request-id inspection.
-- 🔄 Remaining Phase 2 write flows (`POST /api/posts`, `PATCH /api/posts/{postId}`, flags/comments create) still pending.
+- ✅ Remaining Phase 2 write flows are now implemented in SPA routes:
+  - `/posts/new` → `POST /api/posts`,
+  - `/posts/{postId}/edit` → `PATCH /api/posts/{postId}`,
+  - `/posts/{postId}/flag` → `POST /api/posts/{postId}/flags`,
+  - `/posts/{postId}/comments/new` → `POST /api/posts/{postId}/comments`.
 
 ## 1) Purpose
 
