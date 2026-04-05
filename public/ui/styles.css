@@ -60,6 +60,12 @@ body {
   padding: 0.45rem;
 }
 
+.field select,
+.row-controls input,
+.row-controls select {
+  padding: 0.45rem;
+}
+
 .error-text {
   color: #8a1820;
   font-size: 0.85rem;
@@ -91,4 +97,28 @@ body {
 pre {
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.row-controls,
+.row-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.list {
+  padding-left: 1rem;
+}
+
+.list li {
+  margin-bottom: 0.9rem;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 0.8rem;
+  margin-bottom: 1rem;
 }

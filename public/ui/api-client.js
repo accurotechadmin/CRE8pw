@@ -1,3 +1,5 @@
+import { readDeviceId, readSession } from '/ui/state.js';
+
 function normalizeError(status, payload) {
   if (payload?.error) {
     return {
@@ -21,10 +23,18 @@ function normalizeError(status, payload) {
 }
 
 export async function apiRequest(path, options = {}) {
+  const session = readSession();
+  const authSurface = options.authSurface ?? null;
+  const resolvedSurface = authSurface === 'active' ? session.activeSurface : authSurface;
+  const authToken = resolvedSurface && session[resolvedSurface]?.accessToken ? session[resolvedSurface].accessToken : null;
+  const shouldAttachDeviceId = options.requireDeviceId === true;
+
   const response = await fetch(path, {
     method: options.method ?? 'GET',
     headers: {
-      'Content-Type': 'application/json',
+      ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+      ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
+      ...(shouldAttachDeviceId ? { 'X-Device-Id': readDeviceId() } : {}),
       ...(options.headers ?? {}),
     },
     body: options.body ? JSON.stringify(options.body) : undefined,

@@ -1,4 +1,5 @@
 const SESSION_KEY = 'cre8_ui_session_v1';
+const DEVICE_KEY = 'cre8_ui_device_id_v1';
 
 const defaultSession = {
   activeSurface: null,
@@ -31,4 +32,19 @@ export function writeSession(nextSession) {
 
 export function clearSession() {
   localStorage.removeItem(SESSION_KEY);
+}
+
+export function readDeviceId() {
+  const existing = localStorage.getItem(DEVICE_KEY);
+  if (existing && existing.trim() !== '') {
+    return existing;
+  }
+
+  const generated = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+    ? `web-${crypto.randomUUID()}`
+    : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  localStorage.setItem(DEVICE_KEY, generated);
+
+  return generated;
 }
