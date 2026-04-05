@@ -25,7 +25,14 @@ final class CsrfMiddleware implements MiddlewareInterface
     {
         $path = $request->getUri()->getPath();
         $method = strtoupper($request->getMethod());
-        if (!str_starts_with($path, '/console/') || str_starts_with($path, '/console/api/') || !in_array($method, ['POST', 'PATCH', 'DELETE'], true)) {
+        $isOwnerBootstrapRoute = $path === '/console/owners' || $path === '/console/owners/';
+
+        if (
+            !str_starts_with($path, '/console/')
+            || str_starts_with($path, '/console/api/')
+            || $isOwnerBootstrapRoute
+            || !in_array($method, ['POST', 'PATCH', 'DELETE'], true)
+        ) {
             return $handler->handle($request);
         }
 
