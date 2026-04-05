@@ -1,6 +1,19 @@
-# CRE8 Documentation Set
+# CRE8.pw Documentation Set
 
-This folder is the canonical documentation home for the CRE8 platform.
+This directory is the canonical, long-lived documentation home for the CRE8.pw system.
+
+> Intent: keep docs useful both for **day-1 onboarding** and **deep operational/debug reference**.
+
+_Last updated (UTC): 2026-04-05_
+
+## Documentation architecture
+
+The docs set is organized into four layers:
+
+1. **Orientation** — quick understanding of system shape and vocabulary.
+2. **Reference** — precise source-of-truth behavior, contracts, and policies.
+3. **Operations** — deployment, runbooks, incident handling, and QA.
+4. **Evolution** — roadmap, extensibility guidelines, and contribution standards.
 
 ## Reading order (recommended)
 
@@ -19,18 +32,38 @@ This folder is the canonical documentation home for the CRE8 platform.
 13. [`glossary.md`](./glossary.md)
 14. [`roadmap_backlog.md`](./roadmap_backlog.md)
 
-## Existing internal session docs
+## Subfolders
 
-Operational/session history remains in `docs/dev/`:
+- [`docs/dev/`](./dev/README.md): session-by-session execution artifacts, ADR history, QA logs, and implementation tracking.
 
-- `docs/dev/IMPLEMENTATION_STATUS.md`
-- `docs/dev/QA_MATRIX.md`
-- `docs/dev/SESSION_LEDGER.md`
-- `docs/dev/DECISIONS.md`
+## Authoring standards
 
-## Documentation standards
+### Required for final (non-stub) docs
 
-- Keep endpoint and policy facts synchronized with code and tests.
-- Prefer linking to source files instead of duplicating code blocks.
-- Add a “Last updated (UTC)” line whenever a document is substantively edited.
-- For new subsystems, add a stub page first, then fill details incrementally.
+- Include a `Last updated (UTC)` marker.
+- Include explicit “Source of truth” links to implementation files and/or tests.
+- Distinguish clearly between:
+  - **Contracted behavior** (proven in tests),
+  - **Current implementation details** (may change),
+  - **Future intent** (roadmap or proposal).
+- For security/operations claims, include a validation or evidence reference.
+
+### Stub completion rubric
+
+Each scaffolded doc should graduate from `Scaffold` to `Reference` by adding:
+
+1. **Scope statement**: what this doc covers and does not cover.
+2. **Canonical data tables**: endpoint matrices, config maps, event dictionaries, etc.
+3. **Worked examples**: happy path + failure path.
+4. **Extensibility notes**: how to add new features without violating existing contracts.
+5. **Verification procedure**: concrete commands/tests to validate the document’s claims.
+
+## Extensibility principle for this docs set
+
+When adding major capability areas (e.g., webhooks, multi-tenant controls, new identity providers),
+create a dedicated document and link it from:
+
+- this index,
+- `architecture_overview.md` (boundary impact),
+- `security_model.md` (threat/control impact), and
+- `roadmap_backlog.md` (delivery tracking).

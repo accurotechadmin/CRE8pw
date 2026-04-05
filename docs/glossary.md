@@ -1,12 +1,23 @@
 # Glossary (Scaffold)
 
 _Last updated (UTC): 2026-04-05_
+_Status: Scaffold++_
 
 ## Purpose
 
-Central definitions for domain and platform terminology.
+Centralize shared vocabulary for domain, security, and operations.
 
-## Terms to define
+## Term template
+
+Use this template when adding each term:
+
+- **Term:**
+- **Definition:**
+- **Where used in code:**
+- **Related terms:**
+- **Common confusion:**
+
+## Initial term backlog
 
 - [ ] Principal
 - [ ] Owner
@@ -17,3 +28,6 @@ Central definitions for domain and platform terminology.
 - [ ] Token family
 - [ ] Request envelope
 - [ ] Audit event
+- [ ] Keychain
+- [ ] Invite
+- [ ] Moderation action
