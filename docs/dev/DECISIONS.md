@@ -56,3 +56,18 @@
   - Users receive earlier, clearer feedback about unavailable write actions.
   - Fewer avoidable failing submissions and tighter alignment with backend policy behavior.
   - Additional coupling to claim names/reason codes, documented here for future maintenance.
+
+## ADR-2026-04-05-05: Reuse centralized owner-auth request handling and confirmation UX for console moderation
+
+- **Date / Session**: 2026-04-05 (UTC), Session 4
+- **Context**:
+  - Phase 3 introduces four console endpoints that all require owner bearer auth and envelope-consistent error handling.
+  - Moderation workflows need explicit confirmation and action/result summaries for safer operator behavior.
+- **Decision**:
+  - Added `ownerRequest()` helper that wraps `apiRequest()` with `authSurface: 'owner'` and unified 401 session-expiry handling.
+  - Implemented post/comment moderation forms with a mandatory confirmation checkbox and live action summary panel before submit.
+  - Kept moderation options aligned to the endpoint contract (`hide|lock|archive|delete` for posts, `hide|lock|delete` for comments).
+- **Consequences**:
+  - Console list/create/moderation flows share consistent auth behavior and fail predictably on expired sessions.
+  - Moderation operations become more auditable and less error-prone due to explicit preview + confirm UX.
+  - Adds lightweight reusable moderation form logic that can be extended to future lifecycle/dangerous actions in Phase 4.
