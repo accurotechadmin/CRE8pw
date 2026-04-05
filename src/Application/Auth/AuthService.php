@@ -98,7 +98,7 @@ final class AuthService
             'reason_code' => 'password_verified',
         ]);
 
-        return $this->issueTokenPair($owner->ownerId, $refresh);
+        return $this->issueTokenPair($owner->ownerId, (string) $refresh['refresh_token']);
     }
 
     /** @return array{access_token:string,refresh_token:string,expires_in:int} */
