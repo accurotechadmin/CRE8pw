@@ -34,7 +34,7 @@ Surface middleware is selected from `MiddlewareOrder::PER_SURFACE_CLASS_MAP` and
 
 - Runtime dependencies are declared in `composer.json` (Slim, PHP-DI, Firebase JWT, Respect Validation, Monolog, Symfony rate limiter/cache, Guzzle, Dotenv).
 - Container bindings centralize infrastructure and service registrations in `ContainerFactory`.
-- Storage is via PDO; services auto-create SQLite tables in local/in-memory scenarios.
+- Storage is via PDO; core auth/content services attempt `CREATE TABLE IF NOT EXISTS` bootstrap on startup/runtime so missing tables are provisioned across supported PDO drivers.
 
 ## Extension seams
 

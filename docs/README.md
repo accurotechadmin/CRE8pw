@@ -2,7 +2,7 @@
 
 _Last updated (UTC): 2026-04-05_
 
-This directory is the canonical documentation for the current repository state. The backend is a Slim 4 + PHP-DI API with a static SPA under `public/ui`, backed by policy-driven middleware, JWT auth, key lifecycle controls, and SQLite-compatible storage bootstrap inside services.
+This directory is the canonical documentation for the current repository state. The backend is a Slim 4 + PHP-DI API with a static SPA under `public/ui`, backed by policy-driven middleware, JWT auth, key lifecycle controls, and PDO-backed table bootstrap inside services.
 
 ## Recommended reading order
 
