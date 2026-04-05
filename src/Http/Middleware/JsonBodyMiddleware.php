@@ -27,6 +27,10 @@ final class JsonBodyMiddleware implements MiddlewareInterface
             return $handler->handle($request);
         }
 
+        if (is_array($request->getParsedBody())) {
+            return $handler->handle($request);
+        }
+
         $contentType = strtolower($request->getHeaderLine('Content-Type'));
         if ($contentType !== '' && !str_contains($contentType, 'application/json')) {
             $this->auditEmitter?->emit('json_body.rejected', [
