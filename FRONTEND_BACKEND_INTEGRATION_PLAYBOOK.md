@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Implementation Progress Snapshot (Session 6)
+## Implementation Progress Snapshot (Session 7)
 
 - ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
 - ✅ Gateway read slice implemented end-to-end for:
@@ -30,6 +30,12 @@ Date: 2026-04-05 (UTC)
   - normalized read/list route status rendering (`loading`, `success`, `validation_error`, `forbidden`, `not_found`, `server_error`),
   - queue-based focus management for submit success/error and route transitions,
   - shared dangerous-action confirmation binder used by moderation, key lifecycle, and invite actions.
+- ✅ Phase 5 hardening is now completed in SPA behavior:
+  - every route now surfaces explicit route-state semantics (`idle/loading/submitting/success/validation_error/forbidden/not_found/server_error`) via shared state legend/panels,
+  - loading/forbidden/not-found/server-error rendering is normalized for read and pre-submit form routes,
+  - keyboard access improved with skip-link and consistent focus targets after success/error transitions.
+- ✅ Phase 6 has started with a persistent QA artifact:
+  - seeded endpoint-by-endpoint QA matrix with happy/negative checks for all 18 endpoints in `docs/dev/QA_MATRIX.md`.
 
 ## 1) Purpose
 
