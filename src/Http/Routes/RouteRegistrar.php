@@ -42,6 +42,20 @@ final class RouteRegistrar
             return $responder->json(200, ['data' => $health]);
         });
 
+
+        $app->get('/ui[/{route:.*}]', function ($request, $response) {
+            $indexPath = dirname(__DIR__, 3).'/public/ui/index.html';
+            if (!is_file($indexPath)) {
+                $response->getBody()->write('UI not found');
+
+                return $response->withStatus(404)->withHeader('Content-Type', 'text/plain; charset=utf-8');
+            }
+
+            $response->getBody()->write((string) file_get_contents($indexPath));
+
+            return $response->withHeader('Content-Type', 'text/html; charset=utf-8');
+        });
+
         $app->get('/.well-known/jwks.json', function ($request, $response) use ($container, $responder) {
             $jwks = $container->get(JwksService::class)->current();
 
