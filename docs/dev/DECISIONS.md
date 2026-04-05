@@ -40,3 +40,19 @@
   - Feed/post/comments screens share one consistent auth/header behavior.
   - Future gateway write flows can reuse the same call pattern without custom header code.
   - Device id persistence behavior is explicit and testable from a single state utility.
+
+
+## ADR-2026-04-05-04: Enforce write-entry gating in UI before gateway write submissions
+
+- **Date / Session**: 2026-04-05 (UTC), Session 3
+- **Context**:
+  - Phase 2 adds write endpoints that can fail with `403` depending on key permissions, key class, comment toggle, and post state.
+  - Existing UI had no pre-submit affordance to explain why a write action might be unavailable.
+- **Decision**:
+  - Add route-level and CTA-level guards for `posts:create`, `posts:edit`, and `comments:create` + `comments_enabled`.
+  - For comment creation, prefetch post detail and block form rendering when post state is one of `locked|archived|hidden|deleted`.
+  - Keep backend as source-of-truth and still handle envelope `403` reasons centrally for robustness.
+- **Consequences**:
+  - Users receive earlier, clearer feedback about unavailable write actions.
+  - Fewer avoidable failing submissions and tighter alignment with backend policy behavior.
+  - Additional coupling to claim names/reason codes, documented here for future maintenance.
