@@ -341,6 +341,7 @@ function renderLoadingPanel(title, message) {
 function mapGatewayError(error, fallback = 'Request failed.') {
   if (error.status === 403) {
     const reason = error.raw?.error?.details?.reason;
+    const detailCode = error.raw?.error?.details?.detail_code;
     if (reason === 'use_key_post_create_forbidden') {
       return 'Use-class keys cannot create posts.';
     }
@@ -355,6 +356,9 @@ function mapGatewayError(error, fallback = 'Request failed.') {
     }
     if (reason === 'post_state_blocks_comment_create') {
       return 'This post state does not allow new comments.';
+    }
+    if (typeof detailCode === 'string' && detailCode.startsWith('csrf_')) {
+      return 'Security validation failed for this form. Refresh and try again.';
     }
 
     return 'This action is forbidden for the current key/session.';
