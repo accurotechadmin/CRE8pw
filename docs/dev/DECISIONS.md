@@ -159,3 +159,18 @@
 - **Consequences**:
   - `/ui/app.js`, `/ui/styles.css`, and nested asset paths resolve reliably across more rewrite/proxy variants.
   - SPA deep links without extensions continue to return `index.html`.
+
+
+## ADR-2026-04-05-12: Use path-aware CSP so `/ui` can execute same-origin assets while API remains locked down
+
+- **Date / Session**: 2026-04-05 (UTC), Session 12
+- **Context**:
+  - Production browser console showed CSP violations on `/ui/styles.css` and `/ui/app.js` due global `default-src "none"`.
+  - UI shell rendered but scripts/styles were blocked, causing non-interactive page state.
+- **Decision**:
+  - Keep strict API/default CSP (`default-src "none"; frame-ancestors "none"`) for non-UI paths.
+  - Apply UI-specific CSP for `/ui*` requests allowing same-origin script/style/connect/img/font with restrictive frame/base/form controls.
+  - Preserve non-overriding behavior when downstream handler already sets CSP.
+- **Consequences**:
+  - SPA frontend assets load and execute on `/ui/*` while API endpoints keep hardened CSP defaults.
+  - Security policy remains explicit and route-surface aware without endpoint contract changes.

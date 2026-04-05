@@ -327,3 +327,32 @@
   - Assumed the remaining shell-only symptom is due to route arg variance under production rewrite/proxy handling.
 - **Recommended next session starting point**:
   - Validate `/ui/app.js` returns JavaScript and `/ui/signup-owner` renders form, then continue QA matrix endpoint execution.
+
+
+## Session 2026-04-05T11:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Investigate persistent shell-only UI caused by browser-side CSP violations on `/ui` script/style loads.
+  - Implement minimal, production-safe CSP adjustment that preserves API hardening.
+- **Files changed**:
+  - `src/Http/Middleware/SecurityHeadersMiddleware.php`
+  - `tests/Contract/MiddlewareProductionDepthContractTest.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Split CSP by request path so `/ui*` can load same-origin JS/CSS while non-UI routes keep strict `default-src "none"` baseline.
+  - Added contract coverage for `/ui` CSP to prevent regressions.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Middleware/SecurityHeadersMiddleware.php` ✅ pass
+  - `php -l tests/Contract/MiddlewareProductionDepthContractTest.php` ✅ pass
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Requires deployment and browser verification in target environment to confirm CSP violations are resolved.
+- **Assumptions recorded**:
+  - Assumed current `/ui` frontend only requires same-origin script/style/connect/img/font sources.
+- **Recommended next session starting point**:
+  - Verify CSP header on `/ui/signup-owner` and confirm interactive SPA render, then resume endpoint workflow QA matrix execution.

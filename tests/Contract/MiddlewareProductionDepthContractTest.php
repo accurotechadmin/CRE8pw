@@ -104,6 +104,23 @@ final class MiddlewareProductionDepthContractTest extends TestCase
         self::assertSame('accelerometer=(), camera=(), geolocation=(), microphone=()', $response->getHeaderLine('Permissions-Policy'));
     }
 
+    public function testSecurityHeadersMiddlewareUsesUiCspForUiRoutes(): void
+    {
+        $middleware = new SecurityHeadersMiddleware();
+
+        $response = $middleware->process(
+            (new ServerRequestFactory())->createServerRequest('GET', '/ui/signup-owner'),
+            new CallableHandler(static function (): ResponseInterface {
+                return (new ResponseFactory())->createResponse(200);
+            }),
+        );
+
+        self::assertSame(
+            "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+            $response->getHeaderLine('Content-Security-Policy')
+        );
+    }
+
     public function testErrorHandlerMiddlewareReturnsMappedErrorCodesAndDetailCodes(): void
     {
         $responder = new EnvelopeResponder(new ResponseFactory());

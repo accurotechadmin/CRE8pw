@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 11
+Updated: 2026-04-05 (UTC) — Session 12
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -43,6 +43,7 @@ Status legend: **not started** / **in progress** / **done**
 
 - App shell (header/nav/flash/content): **done** (`public/ui/index.html`, `public/ui/app.js`)
 - UI route asset serving under `/ui` (serves JS/CSS assets directly, SPA fallback for route paths): **done** (`src/Http/Routes/RouteRegistrar.php`)
+- Security headers policy split (strict API CSP + UI-safe CSP for `/ui`): **done** (`src/Http/Middleware/SecurityHeadersMiddleware.php`)
 - API client wrapper (JSON + envelope + errors): **done** (`public/ui/api-client.js`)
 - API auth + `X-Device-Id` support for gateway flows: **done** (`public/ui/api-client.js`, `public/ui/state.js`)
 - State model (session by owner/key surface): **done** (`public/ui/state.js`)
@@ -72,3 +73,5 @@ Status legend: **not started** / **in progress** / **done**
 - Session 10 implementation commit: `work@HEAD`
 
 - Session 11 implementation commit: `work@HEAD`
+
+- Session 12 implementation commit: `work@HEAD`
