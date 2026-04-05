@@ -59,6 +59,22 @@ final class HealthService
             $failures[] = 'key_material_unavailable';
         }
 
+        $httpDependency = ['status' => 'down'];
+        try {
+            $response = $this->httpClient->request('HEAD', $this->config->jwtIssuer, ['timeout' => 2.0]);
+            $statusCode = $response->getStatusCode();
+            $httpDependency = [
+                'status' => $statusCode >= 200 && $statusCode < 500 ? 'ok' : 'degraded',
+                'status_code' => $statusCode,
+            ];
+            if ($statusCode >= 500) {
+                $failures[] = 'http_dependency_5xx';
+            }
+        } catch (\Throwable $e) {
+            $httpDependency = ['status' => 'down', 'error' => $e::class];
+            $failures[] = 'http_dependency_exception';
+        }
+
         $status = $failures === [] ? 'ok' : 'degraded';
 
         return [
@@ -70,7 +86,8 @@ final class HealthService
                 'db' => $db,
                 'rate_limiter' => $limiter,
                 'key_material' => $keyMaterial,
-                'http_client' => $this->httpClient::class,
+                'http_dependency' => $httpDependency,
+                'http_client_class' => $this->httpClient::class,
             ],
         ];
     }

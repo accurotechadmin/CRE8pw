@@ -9,9 +9,7 @@
 ## High-priority findings
 - **Critical:** private key material is committed (`secrets/jwt/private.pem`).
 - **High:** environment template includes live-looking DB credentials (`dot.env`).
-- **High:** default owner auto-seed with static password in `AuthService` if account absent.
-- **Medium:** some console endpoints are placeholders (`/keychains`, `/invites`).
-- **Medium:** health check does not actively validate external HTTP dependencies.
+- **Note:** `composer test` still depends on a missing `phpunit` binary in this environment.
 
 ## Per-file assessment
 | File | Completion/readiness | Notes |
@@ -37,10 +35,10 @@
 | `scripts/migrate_smoke.php` | Good | Utility script with explicit non-zero exits for smoke-check failures. |
 | `secrets/jwt/private.pem` | Critical risk | Private RSA key committed to repo; must rotate/remove. |
 | `secrets/jwt/public.pem` | Info | Public key committed; acceptable only if intentionally public and paired private key removed. |
-| `src/Application/Auth/AuthService.php` | Partial | Auto-seeds default owner owner@cre8.local with static password owner-pass; unsafe outside local/dev. |
-| `src/Application/Auth/KeyLifecycleService.php` | Good | No obvious unfinished markers; compiles via php -l. |
+| `src/Application/Auth/AuthService.php` | Good | Default owner seeding now restricted to local profile and gated by `DEFAULT_OWNER_PASSWORD`. |
+| `src/Application/Auth/KeyLifecycleService.php` | Good | Added concrete keychain listing and invite receipt persistence support. |
 | `src/Application/Feed/FeedService.php` | Good | No obvious unfinished markers; compiles via php -l. |
-| `src/Application/Health/HealthService.php` | Partial | Reports http_client class name only; no outbound probe despite dependency injection. |
+| `src/Application/Health/HealthService.php` | Good | Performs outbound HTTP dependency probe and reports result/status code. |
 | `src/Application/Posts/CommentsService.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Application/Posts/ModerationService.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Application/Posts/PostsService.php` | Good | No obvious unfinished markers; compiles via php -l. |
@@ -51,7 +49,7 @@
 | `src/Config/EnvValidator.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Config/JwtPolicy.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Config/RateLimitPolicy.php` | Good | No obvious unfinished markers; compiles via php -l. |
-| `src/Config/RuntimeConfig.php` | Partial | `CorsPolicy.allowWildcard` is set using `!in_array('*', origins)` in constructor, which appears logically inverted from field name intent. |
+| `src/Config/RuntimeConfig.php` | Good | Corrected `CorsPolicy.allowWildcard` initialization to match wildcard presence. |
 | `src/Core/Http/EnvelopeResponder.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Core/Request/RequestId.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Http/Middleware/CorsMiddleware.php` | Good | No obvious unfinished markers; compiles via php -l. |
@@ -69,7 +67,7 @@
 | `src/Http/Middleware/SecurityHeadersMiddleware.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Http/Middleware/UseKeyLimitMiddleware.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Http/Middleware/ValidationMiddleware.php` | Good | No obvious unfinished markers; compiles via php -l. |
-| `src/Http/Routes/RouteRegistrar.php` | Partial | /console/api/keychains returns empty list and /console/api/invites is ephemeral random response; appears stubbed. |
+| `src/Http/Routes/RouteRegistrar.php` | Good | /console/api/keychains and /console/api/invites now call `KeyLifecycleService` with validation/persistence paths. |
 | `src/Observability/AuditEmitter.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Observability/MonologAuditEmitter.php` | Good | No obvious unfinished markers; compiles via php -l. |
 | `src/Security/ApiKeyHasher.php` | Good | No obvious unfinished markers; compiles via php -l. |

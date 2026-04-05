@@ -24,7 +24,7 @@ final class RuntimeConfig
         public readonly ?JwtPolicy $jwtPolicy = null,
     ) {
         $this->rateLimitPolicy ??= new RateLimitPolicy();
-        $this->corsPolicy ??= new CorsPolicy($this->corsAllowedOrigins, !in_array('*', $this->corsAllowedOrigins, true));
+        $this->corsPolicy ??= new CorsPolicy($this->corsAllowedOrigins, in_array('*', $this->corsAllowedOrigins, true));
         $this->jwtPolicy ??= new JwtPolicy();
     }
 
