@@ -46,7 +46,11 @@ final class RouteRegistrar
 
         $uiRouteRenderer = \Closure::fromCallable([$this, 'renderUiRoute']);
         $app->get('/ui[/{route:.*}]', function ($request, $response, array $args) use ($uiRouteRenderer) {
-            return $uiRouteRenderer($response, (string) ($args['route'] ?? ''));
+            return $uiRouteRenderer(
+                $response,
+                (string) ($args['route'] ?? ''),
+                (string) $request->getUri()->getPath()
+            );
         });
 
         $app->get('/.well-known/jwks.json', function ($request, $response) use ($container, $responder) {
@@ -152,7 +156,7 @@ final class RouteRegistrar
         $this->registerGatewayRoutes($app, $container, $responder, $perSurfaceMiddleware['gateway'] ?? []);
     }
 
-    private function renderUiRoute(ResponseInterface $response, string $route): ResponseInterface
+    private function renderUiRoute(ResponseInterface $response, string $route, string $requestPath = ''): ResponseInterface
     {
         $uiRoot = realpath(dirname(__DIR__, 3).'/public/ui');
         if ($uiRoot === false) {
@@ -162,7 +166,15 @@ final class RouteRegistrar
         }
 
         $requestedRoute = ltrim($route, '/');
-        if ($requestedRoute !== '' && str_contains($requestedRoute, '.')) {
+        if ($requestedRoute === '' && str_starts_with($requestPath, '/ui/')) {
+            $requestedRoute = ltrim(substr($requestPath, 4), '/');
+        }
+
+        if (str_starts_with($requestedRoute, 'ui/')) {
+            $requestedRoute = substr($requestedRoute, 3);
+        }
+
+        if (pathinfo($requestedRoute, PATHINFO_EXTENSION) !== '') {
             $assetPath = realpath($uiRoot.'/'.$requestedRoute);
             if ($assetPath === false || !is_file($assetPath) || !str_starts_with($assetPath, $uiRoot.DIRECTORY_SEPARATOR)) {
                 $response->getBody()->write('UI asset not found');

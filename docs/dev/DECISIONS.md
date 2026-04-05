@@ -145,3 +145,17 @@
 - **Consequences**:
   - `/ui/*` route handling is stable regardless of Slim closure binding behavior.
   - Eliminates runtime `internal_error` caused by context-dependent `$this` resolution.
+
+
+## ADR-2026-04-05-11: Derive `/ui` asset targets from both route args and request URI path
+
+- **Date / Session**: 2026-04-05 (UTC), Session 11
+- **Context**:
+  - After fixing closure rebinding, some deployments still rendered only static shell text, indicating module assets were not resolving through `/ui/*` routing consistently.
+  - Different server/rewrite setups may populate Slim route args differently for optional wildcard segments.
+- **Decision**:
+  - Update UI route rendering helper to normalize asset target from both captured `{route}` and the raw request URI path.
+  - Normalize optional `ui/` prefixes and detect assets via file extension (`pathinfo`) before SPA fallback.
+- **Consequences**:
+  - `/ui/app.js`, `/ui/styles.css`, and nested asset paths resolve reliably across more rewrite/proxy variants.
+  - SPA deep links without extensions continue to return `index.html`.

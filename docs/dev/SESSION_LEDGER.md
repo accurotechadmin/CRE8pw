@@ -303,3 +303,27 @@
   - Assumed reported `internal_error` was caused by closure context rebinding based on symptom pattern (`boot.startup_ready` + unhandled exception only on `/ui/*`).
 - **Recommended next session starting point**:
   - Deploy this patch, verify `/ui/login`, `/ui/key-login`, and `/ui/signup-owner` load nav+forms, then resume endpoint-by-endpoint QA matrix execution.
+
+
+## Session 2026-04-05T10:40:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Follow-up hardening of `/ui` route resolution after continued production symptom (shell-only render).
+  - Make asset path detection resilient to route-arg and URI-path variance in deployed rewrite stacks.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Added URI-path-based fallback asset resolution to avoid relying solely on wildcard route argument behavior.
+  - Switched asset detection to extension-based check (`pathinfo`) for predictable routing semantics.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+- **Open issues/blockers**:
+  - Requires deploy + browser hard refresh validation in target environment.
+- **Assumptions recorded**:
+  - Assumed the remaining shell-only symptom is due to route arg variance under production rewrite/proxy handling.
+- **Recommended next session starting point**:
+  - Validate `/ui/app.js` returns JavaScript and `/ui/signup-owner` renders form, then continue QA matrix endpoint execution.

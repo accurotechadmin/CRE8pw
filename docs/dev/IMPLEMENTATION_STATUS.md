@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 10
+Updated: 2026-04-05 (UTC) — Session 11
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -70,3 +70,5 @@ Status legend: **not started** / **in progress** / **done**
 - Session 9 implementation commit: `work@HEAD`
 
 - Session 10 implementation commit: `work@HEAD`
+
+- Session 11 implementation commit: `work@HEAD`
