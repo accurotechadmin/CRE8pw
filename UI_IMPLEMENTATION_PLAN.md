@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Current Delivery Snapshot (Session 5)
+## Current Delivery Snapshot (Session 6)
 
 - Phases 0–1 are functionally implemented in the current static SPA (`public/ui`).
 - Phase 2 is now complete for gateway read/write flows:
@@ -27,6 +27,11 @@ Date: 2026-04-05 (UTC)
   - `/console/keychains` → `GET /console/api/keychains`.
   - `/console/invites/new` → `POST /console/api/invites`.
 - Remaining phase work continues with Phase 5 cross-flow quality and accessibility hardening.
+- Phase 5 hardening is now in progress with first cross-flow slice delivered:
+  - shared route-state rendering semantics for `validation_error|forbidden|not_found|server_error` on read/list routes,
+  - focus management after route changes and submit success/error outcomes,
+  - shared dangerous-action confirmation primitive reused by moderation, lifecycle, and invite flows.
+- Remaining phase work continues with full accessibility sweep and QA matrix in Phase 6.
 
 ## 1) Objective
 

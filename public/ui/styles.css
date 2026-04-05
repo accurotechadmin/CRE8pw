@@ -38,6 +38,15 @@ body {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
 .app-main {
   padding: 1rem;
   max-width: 860px;
@@ -76,6 +85,10 @@ body {
   margin-bottom: 1rem;
   padding: 0.6rem;
   border-radius: 6px;
+}
+
+#flash-region:focus {
+  outline: none;
 }
 
 .flash-success {

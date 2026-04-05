@@ -158,3 +158,35 @@
   - Assumed “disable repeat action after success” for lifecycle can be session-local UI behavior without backend lookup support.
 - **Recommended next session starting point**:
   - Begin Phase 5 hardening: accessibility pass, consistency of error-state semantics (`idle/loading/submitting/success/validation_error/...`), and shared dangerous-action confirmation component extraction.
+
+## Session 2026-04-05T05:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Start Phase 5 cross-flow quality hardening with a focused vertical slice on state semantics + accessibility + shared dangerous-action confirmations.
+  - Normalize route state rendering for read/list pages across `idle/loading/success/validation_error/forbidden/not_found/server_error`.
+  - Improve keyboard/focus behavior after submit success/error and after route transitions.
+  - Extract and reuse a shared dangerous-action form binder for moderation, key lifecycle, and invite creation confirmations.
+- **Files changed**:
+  - `public/ui/index.html`
+  - `public/ui/styles.css`
+  - `public/ui/app.js`
+  - `docs/dev/SESSION_LEDGER.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `FRONTEND_BACKEND_INTEGRATION_PLAYBOOK.md`
+  - `UI_IMPLEMENTATION_PLAN.md`
+- **Decisions made (rationale)**:
+  - Introduced a lightweight `renderStatePanel()` + `statusFromError()` model instead of broad refactors so endpoint behavior/envelope mapping remains unchanged while UI semantics become consistent.
+  - Replaced separate moderation/lifecycle/invite confirmation handlers with one `bindDangerousActionForm()` primitive to reduce divergence and guarantee keyboard-safe confirmation checks.
+  - Added queue-based focus placement to move focus to flash/errors/forms after key actions without introducing third-party accessibility tooling.
+- **Tests/checks run and outcomes**:
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Browser-container screenshot tooling remains unavailable in this environment, so visual verification screenshots could not be captured.
+- **Assumptions recorded**:
+  - Assumed hidden input `action=create_invite` is acceptable as a keyboard-safe way to include invite flow in shared dangerous-action primitive.
+  - Assumed per-form state marker via `data-form-state` is sufficient for Phase 5 hardening without introducing a separate state store.
+- **Recommended next session starting point**:
+  - Complete remaining Phase 5 pass: full form-state messaging consistency on every route, extended a11y audit (heading structure/tab order), and begin Phase 6 QA matrix artifact with endpoint-by-endpoint negative cases.

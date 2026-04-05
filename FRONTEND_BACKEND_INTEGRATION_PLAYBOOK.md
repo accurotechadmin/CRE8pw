@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Implementation Progress Snapshot (Session 5)
+## Implementation Progress Snapshot (Session 6)
 
 - ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
 - ✅ Gateway read slice implemented end-to-end for:
@@ -26,6 +26,10 @@ Date: 2026-04-05 (UTC)
   - `/console/keychains` → `GET /console/api/keychains`,
   - `/console/invites/new` → `POST /console/api/invites`.
 - ✅ All `/console/api/*` routes now consistently use centralized owner bearer auth handling (`ownerRequest`) in the SPA.
+- ✅ Phase 5 hardening has started with reusable UI semantics and safety primitives:
+  - normalized read/list route status rendering (`loading`, `success`, `validation_error`, `forbidden`, `not_found`, `server_error`),
+  - queue-based focus management for submit success/error and route transitions,
+  - shared dangerous-action confirmation binder used by moderation, key lifecycle, and invite actions.
 
 ## 1) Purpose
 

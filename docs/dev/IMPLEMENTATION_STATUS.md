@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 5
+Updated: 2026-04-05 (UTC) — Session 6
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -10,12 +10,12 @@ Status legend: **not started** / **in progress** / **done**
   - App shell + nav + flash + inspector: **done** (`public/ui/index.html`, `public/ui/app.js`)
   - API client envelope/error normalization + request-id capture: **done** (`public/ui/api-client.js`)
   - Session store + clear session: **done** (`public/ui/state.js`, `public/ui/app.js`)
-  - Global state primitives (full matrix idle/loading/submitting/success/etc.): **in progress** (`public/ui/app.js`)
+  - Global state primitives (full matrix idle/loading/submitting/success/validation_error/forbidden/not_found/server_error): **done** (`public/ui/app.js`)
 - Phase 1 — Authentication & Session UX: **done**
 - Phase 2 — Gateway Content Flows: **done**
 - Phase 3 — Console Content & Moderation: **done**
 - Phase 4 — Console Key Management: **done**
-- Phase 5 — Cross-Flow Quality & A11y: **not started**
+- Phase 5 — Cross-Flow Quality & A11y: **in progress**
 - Phase 6 — QA Matrix & Release Readiness: **not started**
 
 ## Endpoint Coverage (18 endpoints)
@@ -46,7 +46,8 @@ Status legend: **not started** / **in progress** / **done**
 - API auth + `X-Device-Id` support for gateway flows: **done** (`public/ui/api-client.js`, `public/ui/state.js`)
 - State model (session by owner/key surface): **done** (`public/ui/state.js`)
 - Error mapping (401/403/404/409/422 explicit, fallback generic): **done** (`public/ui/app.js`)
-- Accessibility baseline (labels, aria-live for flash/inspector): **in progress** (`public/ui/index.html`)
+- Dangerous-action confirmation primitive (moderation + lifecycle + invite): **done** (`public/ui/app.js`)
+- Accessibility baseline (labels, aria-live, focus-management pass): **in progress** (`public/ui/index.html`, `public/ui/app.js`, `public/ui/styles.css`)
 - QA matrix tracking artifact: **not started**
 
 ## Session References
@@ -57,3 +58,5 @@ Status legend: **not started** / **in progress** / **done**
 - Session 3 implementation commit: `work@HEAD`
 - Session 4 implementation commit: `work@HEAD`
 - Session 5 implementation commit: `work@HEAD`
+
+- Session 6 implementation commit: `work@HEAD`

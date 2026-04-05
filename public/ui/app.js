@@ -40,6 +40,7 @@ const navItems = [
 
 let flashMessage = null;
 let lastResponse = null;
+let pendingFocus = null;
 
 const feedState = {
   status: 'idle',
@@ -101,6 +102,7 @@ document.getElementById('clear-session').addEventListener('click', () => {
 
 function navigate(path) {
   history.pushState({}, '', `/ui${path}`);
+  queueFocus('#view-root');
   render();
 }
 
@@ -201,7 +203,7 @@ function renderFlash() {
     return;
   }
 
-  flashRegion.innerHTML = `<div class="flash flash-${flashMessage.type}">${flashMessage.text}</div>`;
+  flashRegion.innerHTML = `<div class="flash flash-${flashMessage.type}" role="${flashMessage.type === 'error' ? 'alert' : 'status'}">${flashMessage.text}</div>`;
 }
 
 function renderInspector() {
@@ -222,6 +224,25 @@ function render() {
   renderFlash();
   route.view(route.params);
   renderInspector();
+  applyPendingFocus();
+}
+
+function queueFocus(selector, fallbackSelector = null) {
+  pendingFocus = { selector, fallbackSelector };
+}
+
+function applyPendingFocus() {
+  if (!pendingFocus) {
+    return;
+  }
+
+  const primary = pendingFocus.selector ? document.querySelector(pendingFocus.selector) : null;
+  const fallback = pendingFocus.fallbackSelector ? document.querySelector(pendingFocus.fallbackSelector) : null;
+  const target = primary ?? fallback;
+  if (target && typeof target.focus === 'function') {
+    target.focus();
+  }
+  pendingFocus = null;
 }
 
 function bindInternalLinks(scope = document) {
@@ -241,6 +262,38 @@ function fieldErrorMap(details) {
 
     return acc;
   }, {});
+}
+
+function statusFromError(error) {
+  if (error.status === 422) {
+    return 'validation_error';
+  }
+  if (error.status === 403) {
+    return 'forbidden';
+  }
+  if (error.status === 404) {
+    return 'not_found';
+  }
+
+  return 'server_error';
+}
+
+function renderStatePanel({ title, status, messages = {}, retryId = null, retryLabel = 'Retry', actionPath = '/feed', actionLabel = 'Return to feed' }) {
+  const defaultMessages = {
+    idle: 'Ready.',
+    loading: 'Loading…',
+    validation_error: 'Please correct the highlighted fields and retry.',
+    forbidden: 'You do not have permission to perform this action.',
+    not_found: 'The requested resource was not found.',
+    server_error: 'A server error occurred. Please retry.',
+  };
+  const message = messages[status] ?? defaultMessages[status] ?? 'Unknown state.';
+  return `<article class="panel" data-view-state="${status}">
+    <h2>${escapeHtml(title)}</h2>
+    <p class="${status.includes('error') || status === 'forbidden' || status === 'not_found' ? 'error-text' : ''}">${escapeHtml(message)}</p>
+    ${retryId ? `<button id="${retryId}" type="button">${escapeHtml(retryLabel)}</button>` : ''}
+    ${actionPath ? `<p><a href="/ui${actionPath}" data-path="${actionPath}">${escapeHtml(actionLabel)}</a></p>` : ''}
+  </article>`;
 }
 
 function mapGatewayError(error, fallback = 'Request failed.') {
@@ -295,12 +348,12 @@ function formTemplate({ title, fields, buttonText, helper = '' }) {
             } = field;
 
             const control = multiline
-              ? `<textarea id="${name}" name="${name}" ${required ? 'required' : ''} placeholder="${escapeHtml(placeholder)}">${escapeHtml(value)}</textarea>`
+              ? `<textarea id="${name}" name="${name}" aria-describedby="${name}-error" ${required ? 'required' : ''} placeholder="${escapeHtml(placeholder)}">${escapeHtml(value)}</textarea>`
               : options
-                ? `<select id="${name}" name="${name}" ${required ? 'required' : ''}>${options.map((option) => `<option value="${escapeHtml(option.value)}" ${option.value === value ? 'selected' : ''}>${escapeHtml(option.label)}</option>`).join('')}</select>`
-                : `<input id="${name}" name="${name}" type="${type}" ${required ? 'required' : ''} value="${escapeHtml(value)}" placeholder="${escapeHtml(placeholder)}" />`;
+                ? `<select id="${name}" name="${name}" aria-describedby="${name}-error" ${required ? 'required' : ''}>${options.map((option) => `<option value="${escapeHtml(option.value)}" ${option.value === value ? 'selected' : ''}>${escapeHtml(option.label)}</option>`).join('')}</select>`
+                : `<input id="${name}" name="${name}" type="${type}" aria-describedby="${name}-error" ${required ? 'required' : ''} value="${escapeHtml(value)}" placeholder="${escapeHtml(placeholder)}" />`;
 
-            return `<div class="field"><label for="${name}">${label}</label>${control}<div class="error-text" data-error-for="${name}"></div></div>`;
+            return `<div class="field"><label for="${name}">${label}</label>${control}<div class="error-text" id="${name}-error" data-error-for="${name}" aria-live="polite"></div></div>`;
           })
           .join('')}
         <button id="submit-btn" type="submit">${buttonText}</button>
@@ -311,6 +364,7 @@ function formTemplate({ title, fields, buttonText, helper = '' }) {
 function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(error, 'Request failed.') }) {
   const form = document.getElementById('active-form');
   const button = document.getElementById('submit-btn');
+  form.setAttribute('data-form-state', 'idle');
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -322,16 +376,20 @@ function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(e
     const body = Object.fromEntries(new FormData(form).entries());
 
     button.disabled = true;
+    form.setAttribute('data-form-state', 'submitting');
 
     try {
       const response = await onSubmit(body);
       lastResponse = response;
       flashMessage = { type: 'success', text: 'Request completed successfully.' };
+      form.setAttribute('data-form-state', 'success');
+      queueFocus('#flash-region');
       if (typeof onSuccess === 'function') {
         onSuccess(response);
       }
     } catch (error) {
       lastResponse = error;
+      form.setAttribute('data-form-state', statusFromError(error));
       if (error.status === 422) {
         const fieldErrors = fieldErrorMap(error.details);
         Object.entries(fieldErrors).forEach(([field, message]) => {
@@ -340,6 +398,10 @@ function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(e
             slot.textContent = message;
           }
         });
+        const firstErroredField = Object.keys(fieldErrors)[0];
+        if (firstErroredField) {
+          queueFocus(`#${CSS.escape(firstErroredField)}`, '#flash-region');
+        }
       }
 
       if (error.status === 401) {
@@ -348,6 +410,9 @@ function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(e
         flashMessage = { type: 'error', text: 'Owner already exists for this email.' };
       } else {
         flashMessage = { type: 'error', text: mapError(error) };
+      }
+      if (error.status !== 422) {
+        queueFocus('#flash-region');
       }
     } finally {
       button.disabled = false;
@@ -364,6 +429,7 @@ function requireGatewaySession() {
 
   viewRoot.innerHTML = `<article class="panel"><h2>Gateway key login required</h2><p>Use Key Login to access gateway flows.</p><p><a href="/ui/key-login" data-path="/key-login">Go to key login</a></p></article>`;
   bindInternalLinks(viewRoot);
+  queueFocus('#view-root');
 
   return false;
 }
@@ -377,6 +443,7 @@ function requireOwnerSession() {
 
   viewRoot.innerHTML = `<article class="panel"><h2>Owner login required</h2><p>Use Owner Login to access console flows.</p><p><a href="/ui/login" data-path="/login">Go to owner login</a></p></article>`;
   bindInternalLinks(viewRoot);
+  queueFocus('#view-root');
 
   return false;
 }
@@ -384,6 +451,7 @@ function requireOwnerSession() {
 function renderForbiddenGuard(title, body) {
   viewRoot.innerHTML = `<article class="panel"><h2>${title}</h2><p class="error-text">${body}</p><p><a href="/ui/feed" data-path="/feed">Return to feed</a></p></article>`;
   bindInternalLinks(viewRoot);
+  queueFocus('#view-root');
 }
 
 async function gatewayRequest(path, options = {}) {
@@ -426,8 +494,20 @@ function feedView() {
     return;
   }
 
-  if (feedState.status === 'error') {
-    viewRoot.innerHTML = `<article class="panel"><h2>Feed</h2><p class="error-text">${feedState.error?.message ?? 'Failed to load feed.'}</p><button type="button" id="retry-feed">Retry</button></article>`;
+  if (['forbidden', 'not_found', 'server_error', 'validation_error'].includes(feedState.status)) {
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Feed',
+      status: feedState.status,
+      messages: {
+        forbidden: 'Feed is forbidden for the current key session.',
+        not_found: 'Feed endpoint not found.',
+        server_error: feedState.error?.message ?? 'Failed to load feed.',
+      },
+      retryId: 'retry-feed',
+      actionPath: '/key-login',
+      actionLabel: 'Go to key login',
+    });
+    bindInternalLinks(viewRoot);
     document.getElementById('retry-feed').addEventListener('click', () => fetchFeed({ reset: true }));
     return;
   }
@@ -495,7 +575,7 @@ async function fetchFeed({ reset }) {
   } catch (error) {
     lastResponse = error;
     feedState.error = error;
-    feedState.status = 'error';
+    feedState.status = statusFromError(error);
   }
 
   render();
@@ -515,9 +595,17 @@ function postDetailView({ postId }) {
     return;
   }
 
-  if (postState.status === 'error') {
-    const notFound = postState.error?.status === 404;
-    viewRoot.innerHTML = `<article class="panel"><h2>Post detail</h2><p class="error-text">${notFound ? 'Post not found or not visible for this key.' : postState.error?.message ?? 'Unable to load post.'}</p><button id="retry-post" type="button">Retry</button></article>`;
+  if (['forbidden', 'not_found', 'server_error', 'validation_error'].includes(postState.status)) {
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Post detail',
+      status: postState.status,
+      messages: {
+        not_found: 'Post not found or not visible for this key.',
+        server_error: postState.error?.message ?? 'Unable to load post.',
+      },
+      retryId: 'retry-post',
+    });
+    bindInternalLinks(viewRoot);
     document.getElementById('retry-post').addEventListener('click', () => fetchPost(postId));
     return;
   }
@@ -568,7 +656,7 @@ async function fetchPost(postId) {
   } catch (error) {
     lastResponse = error;
     postState.error = error;
-    postState.status = 'error';
+    postState.status = statusFromError(error);
   }
 
   render();
@@ -588,9 +676,17 @@ function commentsView({ postId }) {
     return;
   }
 
-  if (commentsState.status === 'error') {
-    const notFound = commentsState.error?.status === 404;
-    viewRoot.innerHTML = `<article class="panel"><h2>Comments</h2><p class="error-text">${notFound ? 'Comments unavailable because post is missing or hidden.' : commentsState.error?.message ?? 'Failed to load comments.'}</p><button id="retry-comments" type="button">Retry</button></article>`;
+  if (['forbidden', 'not_found', 'server_error', 'validation_error'].includes(commentsState.status)) {
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Comments',
+      status: commentsState.status,
+      messages: {
+        not_found: 'Comments unavailable because post is missing or hidden.',
+        server_error: commentsState.error?.message ?? 'Failed to load comments.',
+      },
+      retryId: 'retry-comments',
+    });
+    bindInternalLinks(viewRoot);
     document.getElementById('retry-comments').addEventListener('click', () => fetchComments(postId));
     return;
   }
@@ -625,7 +721,7 @@ async function fetchComments(postId) {
   } catch (error) {
     lastResponse = error;
     commentsState.error = error;
-    commentsState.status = 'error';
+    commentsState.status = statusFromError(error);
   }
 
   render();
@@ -797,8 +893,18 @@ function consolePostsView() {
     return;
   }
 
-  if (consolePostsState.status === 'error') {
-    viewRoot.innerHTML = `<article class="panel"><h2>Console posts</h2><p class="error-text">${consolePostsState.error?.message ?? 'Failed to load console posts.'}</p><button id="retry-console-posts" type="button">Retry</button></article>`;
+  if (['forbidden', 'not_found', 'server_error', 'validation_error'].includes(consolePostsState.status)) {
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Console posts',
+      status: consolePostsState.status,
+      messages: {
+        server_error: consolePostsState.error?.message ?? 'Failed to load console posts.',
+      },
+      retryId: 'retry-console-posts',
+      actionPath: '/login',
+      actionLabel: 'Go to owner login',
+    });
+    bindInternalLinks(viewRoot);
     document.getElementById('retry-console-posts').addEventListener('click', () => fetchConsolePosts());
     return;
   }
@@ -864,7 +970,7 @@ async function fetchConsolePosts() {
   } catch (error) {
     lastResponse = error;
     consolePostsState.error = error;
-    consolePostsState.status = 'error';
+    consolePostsState.status = statusFromError(error);
   }
 
   render();
@@ -927,58 +1033,86 @@ function moderationSummary({ subject, action, reasonCode }) {
   </div>`;
 }
 
-function bindModerationConfirmation({ formId, actionFieldName, reasonFieldName, onConfirm }) {
+function bindDangerousActionForm({
+  formId,
+  actionFieldName,
+  reasonFieldName = null,
+  summarySubject,
+  confirmCheckboxMessage,
+  requiredConfirmText = null,
+  requiredConfirmTextField = null,
+  onPayload = null,
+  onConfirm,
+  successMessage,
+  validationMessage,
+  mapErrorMessage,
+}) {
   const form = document.getElementById(formId);
   const confirmToggle = form.querySelector('[name="confirm_action"]');
   const actionControl = form.querySelector(`[name="${actionFieldName}"]`);
-  const reasonControl = form.querySelector(`[name="${reasonFieldName}"]`);
+  const reasonControl = reasonFieldName ? form.querySelector(`[name="${reasonFieldName}"]`) : null;
+  const confirmTextControl = requiredConfirmTextField ? form.querySelector(`[name="${requiredConfirmTextField}"]`) : null;
   const summarySlot = form.querySelector('[data-summary-slot]');
   const submitButton = form.querySelector('button[type="submit"]');
 
   const syncSummary = () => {
     summarySlot.innerHTML = moderationSummary({
-      subject: form.dataset.subjectLabel ?? 'resource',
+      subject: summarySubject ?? form.dataset.subjectLabel ?? 'resource',
       action: actionControl.value,
-      reasonCode: reasonControl.value.trim(),
+      reasonCode: reasonControl ? reasonControl.value.trim() : '',
     });
   };
 
   syncSummary();
   actionControl.addEventListener('change', syncSummary);
-  reasonControl.addEventListener('input', syncSummary);
+  if (reasonControl) {
+    reasonControl.addEventListener('input', syncSummary);
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     flashMessage = null;
     if (!confirmToggle.checked) {
-      flashMessage = { type: 'error', text: 'Please confirm the moderation action before submitting.' };
+      flashMessage = { type: 'error', text: confirmCheckboxMessage };
+      queueFocus('#flash-region');
+      render();
+      return;
+    }
+    const expectedConfirmText = typeof requiredConfirmText === 'function'
+      ? requiredConfirmText({ actionControl, reasonControl, confirmTextControl })
+      : requiredConfirmText;
+    if (expectedConfirmText && confirmTextControl && confirmTextControl.value.trim() !== expectedConfirmText) {
+      flashMessage = { type: 'error', text: `Type ${expectedConfirmText} exactly before submitting.` };
+      queueFocus(`[name="${requiredConfirmTextField}"]`, '#flash-region');
       render();
       return;
     }
 
     submitButton.disabled = true;
-    const payload = {
+    let payload = {
       action: actionControl.value,
-      reason_code: reasonControl.value.trim() || undefined,
+      reason_code: reasonControl ? (reasonControl.value.trim() || undefined) : undefined,
     };
+    if (typeof onPayload === 'function') {
+      payload = onPayload(payload, { actionControl, reasonControl, confirmTextControl });
+    }
 
     try {
       const response = await onConfirm(payload);
       lastResponse = response;
-      const resultState = response.data?.state ?? response.data?.status ?? 'updated';
       flashMessage = {
         type: 'success',
-        text: `Moderation completed: ${payload.action} applied (${resultState}).`,
+        text: successMessage(response, payload),
       };
+      queueFocus('#flash-region');
     } catch (error) {
       lastResponse = error;
       if (error.status === 422) {
-        flashMessage = { type: 'error', text: 'Moderation request is invalid. Check action/reason and retry.' };
-      } else if (error.status === 404) {
-        flashMessage = { type: 'error', text: 'Target resource not found for moderation.' };
+        flashMessage = { type: 'error', text: validationMessage };
       } else {
-        flashMessage = { type: 'error', text: error.message ?? 'Moderation request failed.' };
+        flashMessage = { type: 'error', text: mapErrorMessage(error) };
       }
+      queueFocus('#flash-region');
     } finally {
       submitButton.disabled = false;
       render();
@@ -1193,10 +1327,8 @@ function consoleKeyLifecycleView({ keyId }) {
   const form = document.getElementById('key-lifecycle-form');
   const stateControl = form.querySelector('[name="state"]');
   const confirmText = form.querySelector('[name="confirm_text"]');
-  const confirmToggle = form.querySelector('[name="confirm_action"]');
   const summarySlot = form.querySelector('[data-summary-slot]');
   const riskSlot = document.getElementById('lifecycle-risk');
-  const submitButton = form.querySelector('button[type="submit"]');
 
   const syncSummary = () => {
     riskSlot.textContent = lifecycleRiskLabel(stateControl.value);
@@ -1208,39 +1340,35 @@ function consoleKeyLifecycleView({ keyId }) {
   };
   syncSummary();
   stateControl.addEventListener('change', syncSummary);
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    flashMessage = null;
-
-    if (!confirmToggle.checked) {
-      flashMessage = { type: 'error', text: 'Please acknowledge the lifecycle confirmation checkbox.' };
-      render();
-      return;
-    }
-    if (stateControl.value === 'revoke' && confirmText.value.trim() !== 'CONFIRM') {
-      flashMessage = { type: 'error', text: 'Revoke requires typing CONFIRM exactly.' };
-      render();
-      return;
-    }
-
-    submitButton.disabled = true;
-    try {
+  bindDangerousActionForm({
+    formId: 'key-lifecycle-form',
+    actionFieldName: 'state',
+    summarySubject: `key ${keyId}`,
+    confirmCheckboxMessage: 'Please acknowledge the lifecycle confirmation checkbox.',
+    requiredConfirmText: ({ actionControl }) => (actionControl.value === 'revoke' ? 'CONFIRM' : null),
+    requiredConfirmTextField: 'confirm_text',
+    onPayload: (payload, controls) => ({ state: controls.actionControl.value }),
+    onConfirm: async (payload) => {
+      if (stateControl.value !== 'revoke') {
+        confirmText.value = '';
+      }
       const response = await ownerRequest(`/console/api/keys/${encodeURIComponent(keyId)}/lifecycle`, {
         method: 'POST',
-        body: { state: stateControl.value },
+        body: payload,
       });
-      lastResponse = response;
       keyLifecycleState.keyId = keyId;
       keyLifecycleState.status = 'success';
-      keyLifecycleState.lastAction = stateControl.value;
-      flashMessage = { type: 'success', text: `Lifecycle action applied: ${stateControl.value}.` };
-    } catch (error) {
-      lastResponse = error;
-      flashMessage = { type: 'error', text: mapConsoleError(error, 'Lifecycle request failed.') };
-    } finally {
-      submitButton.disabled = false;
-      render();
+      keyLifecycleState.lastAction = payload.state;
+
+      return response;
+    },
+    successMessage: (_response, payload) => `Lifecycle action applied: ${payload.state}.`,
+    validationMessage: 'Lifecycle request is invalid. Review the selected state and retry.',
+    mapErrorMessage: (error) => mapConsoleError(error, 'Lifecycle request failed.'),
+  });
+  stateControl.addEventListener('change', () => {
+    if (stateControl.value !== 'revoke') {
+      confirmText.value = '';
     }
   });
 }
@@ -1259,8 +1387,20 @@ function consoleKeychainsView() {
     return;
   }
 
-  if (consoleKeychainsState.status === 'error') {
-    viewRoot.innerHTML = `<article class="panel"><h2>Keychains</h2><p class="error-text">${mapConsoleError(consoleKeychainsState.error, 'Failed to load keychains.')}</p><button id="retry-keychains" type="button">Retry</button></article>`;
+  if (['forbidden', 'not_found', 'server_error', 'validation_error'].includes(consoleKeychainsState.status)) {
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Keychains',
+      status: consoleKeychainsState.status,
+      messages: {
+        forbidden: 'Current owner session is not allowed to read keychains.',
+        not_found: 'Keychains endpoint unavailable.',
+        server_error: mapConsoleError(consoleKeychainsState.error, 'Failed to load keychains.'),
+      },
+      retryId: 'retry-keychains',
+      actionPath: '/console/posts',
+      actionLabel: 'Return to console posts',
+    });
+    bindInternalLinks(viewRoot);
     document.getElementById('retry-keychains').addEventListener('click', () => fetchConsoleKeychains());
     return;
   }
@@ -1294,7 +1434,7 @@ async function fetchConsoleKeychains() {
   } catch (error) {
     lastResponse = error;
     consoleKeychainsState.error = error;
-    consoleKeychainsState.status = 'error';
+    consoleKeychainsState.status = statusFromError(error);
   }
 
   render();
@@ -1308,48 +1448,41 @@ function consoleInviteCreateView() {
   viewRoot.innerHTML = `<article class="panel">
     <h2>Create invite</h2>
     <p class="muted-text">Create an owner invite receipt. Current backend accepts an empty body and returns generated identifiers.</p>
-    <form id="invite-form" novalidate>
+    <form id="invite-form" data-subject-label="owner invite" novalidate>
+      <input type="hidden" name="action" value="create_invite" />
+      <div data-summary-slot></div>
       <label class="confirm-check"><input type="checkbox" name="confirm_action" /> I confirm I want to create a new invite receipt.</label>
       <div class="row-actions"><button id="invite-submit" type="submit">Create invite</button></div>
     </form>
     <div id="invite-result"></div>
   </article>`;
 
-  const form = document.getElementById('invite-form');
   const result = document.getElementById('invite-result');
-  const submit = document.getElementById('invite-submit');
-
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    flashMessage = null;
-    const confirmed = form.querySelector('[name="confirm_action"]').checked;
-    if (!confirmed) {
-      flashMessage = { type: 'error', text: 'Confirm invite creation before submitting.' };
-      render();
-      return;
-    }
-
-    submit.disabled = true;
+  bindDangerousActionForm({
+    formId: 'invite-form',
+    actionFieldName: 'action',
+    summarySubject: 'owner invite receipt',
+    confirmCheckboxMessage: 'Confirm invite creation before submitting.',
+    onPayload: () => ({}),
+    onConfirm: async () => {
     result.innerHTML = '<p>Creating invite…</p>';
-    try {
       const response = await ownerRequest('/console/api/invites', { method: 'POST', body: {} });
-      lastResponse = response;
       const invite = response.data ?? {};
-      flashMessage = { type: 'success', text: `Invite created (${invite.invite_id ?? 'unknown id'}).` };
       result.innerHTML = `<section class="summary-box">
         <strong>Invite receipt</strong>
         <p>Invite ID: <code>${escapeHtml(invite.invite_id ?? 'n/a')}</code></p>
         <p>Status: ${escapeHtml(invite.status ?? 'n/a')}</p>
         <p>Created: ${escapeHtml(invite.created_at_utc ?? 'n/a')}</p>
       </section>`;
-    } catch (error) {
-      lastResponse = error;
+
+      return response;
+    },
+    successMessage: (response) => `Invite created (${response.data?.invite_id ?? 'unknown id'}).`,
+    validationMessage: 'Invite request is invalid for the current owner session.',
+    mapErrorMessage: (error) => {
       result.innerHTML = '';
-      flashMessage = { type: 'error', text: mapConsoleError(error, 'Invite creation failed.') };
-    } finally {
-      submit.disabled = false;
-      render();
-    }
+      return mapConsoleError(error, 'Invite creation failed.');
+    },
   });
 }
 
@@ -1382,11 +1515,18 @@ function consolePostModerationView({ postId }) {
   </article>`;
 
   bindInternalLinks(viewRoot);
-  bindModerationConfirmation({
+  bindDangerousActionForm({
     formId: 'post-moderation-form',
     actionFieldName: 'action',
     reasonFieldName: 'reason_code',
+    confirmCheckboxMessage: 'Please confirm the moderation action before submitting.',
     onConfirm: (payload) => ownerRequest(`/console/api/posts/${encodeURIComponent(postId)}/moderation`, { method: 'POST', body: payload }),
+    successMessage: (response, payload) => {
+      const resultState = response.data?.state ?? response.data?.status ?? 'updated';
+      return `Moderation completed: ${payload.action} applied (${resultState}).`;
+    },
+    validationMessage: 'Moderation request is invalid. Check action/reason and retry.',
+    mapErrorMessage: (error) => (error.status === 404 ? 'Target resource not found for moderation.' : error.message ?? 'Moderation request failed.'),
   });
 }
 
@@ -1419,11 +1559,18 @@ function consoleCommentModerationView({ postId, commentId }) {
   </article>`;
 
   bindInternalLinks(viewRoot);
-  bindModerationConfirmation({
+  bindDangerousActionForm({
     formId: 'comment-moderation-form',
     actionFieldName: 'action',
     reasonFieldName: 'reason_code',
+    confirmCheckboxMessage: 'Please confirm the moderation action before submitting.',
     onConfirm: (payload) => ownerRequest(`/console/api/posts/${encodeURIComponent(postId)}/comments/${encodeURIComponent(commentId)}/moderation`, { method: 'POST', body: payload }),
+    successMessage: (response, payload) => {
+      const resultState = response.data?.state ?? response.data?.status ?? 'updated';
+      return `Moderation completed: ${payload.action} applied (${resultState}).`;
+    },
+    validationMessage: 'Moderation request is invalid. Check action/reason and retry.',
+    mapErrorMessage: (error) => (error.status === 404 ? 'Target resource not found for moderation.' : error.message ?? 'Moderation request failed.'),
   });
 }
 
