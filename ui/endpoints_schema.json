@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.pw/schemas/page-spec-entry.schema.json",
+  "title": "PageSpecEntry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "page_id",
+    "sprint",
+    "url",
+    "method",
+    "persona",
+    "purpose",
+    "required_fields",
+    "api_calls",
+    "success_ux",
+    "error_ux",
+    "figma_data"
+  ],
+  "properties": {
+    "page_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+_v[0-9]+$"
+    },
+    "sprint": {
+      "type": "string",
+      "pattern": "^S[0-9]+$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^/.*"
+    },
+    "method": {
+      "type": "string",
+      "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    },
+    "persona": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 5
+    },
+    "required_fields": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/requiredField" }
+    },
+    "api_calls": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/apiCall" }
+    },
+    "success_ux": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "error_ux": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "figma_data": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "requiredField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "type", "required"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": [
+            "string",
+            "integer",
+            "number",
+            "boolean",
+            "enum",
+            "array[string]",
+            "array[number]",
+            "array[object]",
+            "object"
+          ]
+        },
+        "required": { "type": "boolean" },
+        "format": { "type": "string" },
+        "values": {
+          "type": "array",
+          "items": { "type": ["string", "number", "boolean"] },
+          "minItems": 1
+        },
+        "default": {},
+        "min_length": { "type": "integer", "minimum": 0 },
+        "max_length": { "type": "integer", "minimum": 0 },
+        "conditional_required_when": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "const": "enum" } },
+            "required": ["type"]
+          },
+          "then": {
+            "required": ["values"]
+          }
+        }
+      ]
+    },
+    "apiCall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "method",
+        "endpoint",
+        "success_statuses"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "method": {
+          "type": "string",
+          "enum": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+        },
+        "endpoint": { "type": "string", "pattern": "^/.*" },
+        "query_params": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "request_body": {
+          "oneOf": [
+            { "type": "object", "additionalProperties": true },
+            {
+              "type": "array",
+              "items": { "type": "string" },
+              "uniqueItems": true
+            }
+          ]
+        },
+        "success_statuses": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "integer", "minimum": 100, "maximum": 599 },
+          "uniqueItems": true
+        },
+        "error_statuses": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 100, "maximum": 599 },
+          "uniqueItems": true
+        },
+        "success_payload_keys": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "current_backend_status": { "type": "string" },
+        "sensitive_response_fields": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

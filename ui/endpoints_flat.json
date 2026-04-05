@@ -1,0 +1,428 @@
+[
+  {
+    "page_id": "auth_login_v1",
+    "sprint": "S1",
+    "url": "/login",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Email/password login",
+    "required_fields": [
+      { "name": "email", "type": "string", "required": true, "format": "email" },
+      { "name": "password", "type": "string", "required": true }
+    ],
+    "api_calls": [
+      {
+        "name": "owner_login",
+        "method": "POST",
+        "endpoint": "/api/auth/login",
+        "request_body": { "email": "string", "password": "string" },
+        "success_statuses": [200],
+        "error_statuses": [401, 422]
+      }
+    ],
+    "success_ux": ["Store session", "Redirect to /feed"],
+    "error_ux": ["401 invalid credentials", "422 field-level validation"],
+    "figma_data": { "surface": "public_auth", "primary_cta": "Sign in" }
+  },
+  {
+    "page_id": "auth_key_login_v1",
+    "sprint": "S1",
+    "url": "/key-login",
+    "method": "GET",
+    "persona": ["key_operator"],
+    "purpose": "Key ID + API key login",
+    "required_fields": [
+      { "name": "key_id", "type": "string", "required": true },
+      { "name": "api_key", "type": "string", "required": true }
+    ],
+    "api_calls": [
+      {
+        "name": "key_login",
+        "method": "POST",
+        "endpoint": "/api/auth/key-login",
+        "request_body": { "key_id": "string", "api_key": "string" },
+        "success_statuses": [200],
+        "error_statuses": [401, 422]
+      }
+    ],
+    "success_ux": ["Redirect to /feed"],
+    "error_ux": ["401 invalid key credentials", "422 required fields"],
+    "figma_data": { "surface": "public_auth", "primary_cta": "Sign in with key" }
+  },
+  {
+    "page_id": "auth_owner_signup_v1",
+    "sprint": "S1",
+    "url": "/signup-owner",
+    "method": "GET",
+    "persona": ["first_owner"],
+    "purpose": "Owner registration",
+    "required_fields": [
+      { "name": "email", "type": "string", "required": true, "format": "email" },
+      { "name": "password", "type": "string", "required": true, "min_length": 12 }
+    ],
+    "api_calls": [
+      {
+        "name": "register_owner",
+        "method": "POST",
+        "endpoint": "/console/owners",
+        "request_body": { "email": "string", "password": "string" },
+        "success_statuses": [201],
+        "error_statuses": [409, 422]
+      }
+    ],
+    "success_ux": ["Show owner_id", "CTA to /login"],
+    "error_ux": ["409 owner conflict", "422 validation"],
+    "figma_data": { "surface": "public_auth", "primary_cta": "Create owner" }
+  },
+  {
+    "page_id": "feed_index_v1",
+    "sprint": "S1",
+    "url": "/feed",
+    "method": "GET",
+    "persona": ["reader", "owner_admin", "key_operator"],
+    "purpose": "Feed browsing",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "list_feed",
+        "method": "GET",
+        "endpoint": "/api/feed",
+        "query_params": ["scope", "limit", "cursor"],
+        "success_statuses": [200],
+        "error_statuses": [401, 403, 500]
+      }
+    ],
+    "success_ux": ["Render cards", "Load more via cursor"],
+    "error_ux": ["Retry block", "Empty state"],
+    "figma_data": { "surface": "gateway", "list_component": "post_cards" }
+  },
+  {
+    "page_id": "post_create_gateway_v1",
+    "sprint": "S2",
+    "url": "/posts/new",
+    "method": "GET",
+    "persona": ["key_operator_with_posts_create"],
+    "purpose": "Create post",
+    "required_fields": [
+      { "name": "title", "type": "string", "required": true },
+      { "name": "body", "type": "string", "required": true },
+      { "name": "visibility_scope", "type": "enum", "required": true, "values": ["public", "private", "delegated"] },
+      { "name": "state", "type": "enum", "required": false, "values": ["draft", "published"] }
+    ],
+    "api_calls": [
+      {
+        "name": "create_post_gateway",
+        "method": "POST",
+        "endpoint": "/api/posts",
+        "request_body": { "title": "string", "body": "string", "visibility_scope": "enum", "state": "enum?" },
+        "success_statuses": [201],
+        "error_statuses": [403, 422]
+      }
+    ],
+    "success_ux": ["Redirect to /posts/{id}"],
+    "error_ux": ["403 forbidden", "422 field errors"],
+    "figma_data": { "surface": "gateway", "primary_cta": "Publish post" }
+  },
+  {
+    "page_id": "post_detail_v1",
+    "sprint": "S2",
+    "url": "/posts/{postId}",
+    "method": "GET",
+    "persona": ["reader", "owner_admin", "key_operator"],
+    "purpose": "View post detail",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "get_post",
+        "method": "GET",
+        "endpoint": "/api/posts/{postId}",
+        "success_statuses": [200],
+        "error_statuses": [403, 404]
+      }
+    ],
+    "success_ux": ["Render full post"],
+    "error_ux": ["404 not found", "403 access denied"],
+    "figma_data": { "surface": "gateway", "detail_layout": "article_with_actions" }
+  },
+  {
+    "page_id": "post_edit_v1",
+    "sprint": "S2",
+    "url": "/posts/{postId}/edit",
+    "method": "GET",
+    "persona": ["key_operator_with_posts_edit"],
+    "purpose": "Edit post content",
+    "required_fields": [
+      { "name": "title", "type": "string", "required": true },
+      { "name": "body", "type": "string", "required": true },
+      { "name": "change_reason_code", "type": "string", "required": false, "default": "manual_edit" }
+    ],
+    "api_calls": [
+      {
+        "name": "edit_post",
+        "method": "PATCH",
+        "endpoint": "/api/posts/{postId}",
+        "request_body": { "title": "string", "body": "string", "change_reason_code": "string?" },
+        "success_statuses": [200],
+        "error_statuses": [403, 404, 422]
+      }
+    ],
+    "success_ux": ["Saved confirmation"],
+    "error_ux": ["Validation + permissions handling"],
+    "figma_data": { "surface": "gateway", "form_layout": "post_editor" }
+  },
+  {
+    "page_id": "post_flag_v1",
+    "sprint": "S2",
+    "url": "/posts/{postId}/flag",
+    "method": "GET",
+    "persona": ["reader", "operator"],
+    "purpose": "Flag/report post",
+    "required_fields": [
+      { "name": "reason_code", "type": "string", "required": true }
+    ],
+    "api_calls": [
+      {
+        "name": "flag_post",
+        "method": "POST",
+        "endpoint": "/api/posts/{postId}/flags",
+        "request_body": { "reason_code": "string" },
+        "success_statuses": [201],
+        "error_statuses": [404, 422]
+      }
+    ],
+    "success_ux": ["Submission confirmation"],
+    "error_ux": ["Validation/not-found messaging"],
+    "figma_data": { "surface": "gateway", "modal_pattern": "confirm_submit" }
+  },
+  {
+    "page_id": "comment_thread_v1",
+    "sprint": "S2",
+    "url": "/posts/{postId}/comments",
+    "method": "GET",
+    "persona": ["reader", "operator"],
+    "purpose": "View comments",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "list_comments",
+        "method": "GET",
+        "endpoint": "/api/posts/{postId}/comments",
+        "success_statuses": [200],
+        "error_statuses": [404]
+      }
+    ],
+    "success_ux": ["Render thread chronologically"],
+    "error_ux": ["Unavailable thread state"],
+    "figma_data": { "surface": "gateway", "list_component": "comment_thread" }
+  },
+  {
+    "page_id": "comment_create_v1",
+    "sprint": "S2",
+    "url": "/posts/{postId}/comments/new",
+    "method": "GET",
+    "persona": ["operator_with_comments_create"],
+    "purpose": "Create comment",
+    "required_fields": [
+      { "name": "body", "type": "string", "required": true }
+    ],
+    "api_calls": [
+      {
+        "name": "create_comment",
+        "method": "POST",
+        "endpoint": "/api/posts/{postId}/comments",
+        "request_body": { "body": "string" },
+        "success_statuses": [201],
+        "error_statuses": [403, 404, 422]
+      }
+    ],
+    "success_ux": ["Redirect to comments thread"],
+    "error_ux": ["Blocked states + validation"],
+    "figma_data": { "surface": "gateway", "editor_component": "comment_input" }
+  },
+  {
+    "page_id": "console_post_index_v1",
+    "sprint": "S3",
+    "url": "/console/posts",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Console post management list",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "console_list_posts",
+        "method": "GET",
+        "endpoint": "/console/api/posts",
+        "success_statuses": [200],
+        "error_statuses": [401, 403]
+      }
+    ],
+    "success_ux": ["Management table with actions"],
+    "error_ux": ["Auth/session error treatment"],
+    "figma_data": { "surface": "console", "table_component": "posts_admin_table" }
+  },
+  {
+    "page_id": "console_post_create_v1",
+    "sprint": "S3",
+    "url": "/console/posts/new",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Create post in console",
+    "required_fields": [
+      { "name": "title", "type": "string", "required": true },
+      { "name": "body", "type": "string", "required": true },
+      { "name": "visibility_scope", "type": "enum", "required": true, "values": ["public", "private", "delegated"] },
+      { "name": "state", "type": "enum", "required": false, "values": ["draft", "published"] }
+    ],
+    "api_calls": [
+      {
+        "name": "console_create_post",
+        "method": "POST",
+        "endpoint": "/console/api/posts",
+        "success_statuses": [201],
+        "error_statuses": [422]
+      }
+    ],
+    "success_ux": ["Created confirmation + navigation"],
+    "error_ux": ["Validation detail mapping"],
+    "figma_data": { "surface": "console", "primary_cta": "Create post" }
+  },
+  {
+    "page_id": "console_post_moderation_v1",
+    "sprint": "S3",
+    "url": "/console/posts/{postId}/moderation",
+    "method": "GET",
+    "persona": ["owner_admin_moderator"],
+    "purpose": "Moderate post",
+    "required_fields": [
+      { "name": "action", "type": "enum", "required": true, "values": ["hide", "lock", "archive", "delete"] },
+      { "name": "reason_code", "type": "string", "required": false }
+    ],
+    "api_calls": [
+      {
+        "name": "moderate_post",
+        "method": "POST",
+        "endpoint": "/console/api/posts/{postId}/moderation",
+        "success_statuses": [200],
+        "error_statuses": [404, 422]
+      }
+    ],
+    "success_ux": ["Show updated moderation state"],
+    "error_ux": ["Invalid action/not found handling"],
+    "figma_data": { "surface": "console", "action_panel": "post_moderation_actions" }
+  },
+  {
+    "page_id": "console_comment_moderation_v1",
+    "sprint": "S3",
+    "url": "/console/posts/{postId}/comments/{commentId}/moderation",
+    "method": "GET",
+    "persona": ["owner_admin_moderator"],
+    "purpose": "Moderate comment",
+    "required_fields": [
+      { "name": "action", "type": "enum", "required": true, "values": ["hide", "lock", "delete"] },
+      { "name": "reason_code", "type": "string", "required": false }
+    ],
+    "api_calls": [
+      {
+        "name": "moderate_comment",
+        "method": "POST",
+        "endpoint": "/console/api/posts/{postId}/comments/{commentId}/moderation",
+        "success_statuses": [200],
+        "error_statuses": [404, 422]
+      }
+    ],
+    "success_ux": ["Show updated comment state"],
+    "error_ux": ["Invalid action/not found handling"],
+    "figma_data": { "surface": "console", "action_panel": "comment_moderation_actions" }
+  },
+  {
+    "page_id": "console_key_issue_v1",
+    "sprint": "S4",
+    "url": "/console/keys/new",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Issue delegated keys",
+    "required_fields": [
+      { "name": "key_class", "type": "enum", "required": true, "values": ["primary_author", "secondary_author", "use"] },
+      { "name": "permissions", "type": "array[string]", "required": true },
+      { "name": "scope", "type": "array[string]", "required": true },
+      { "name": "parent_envelope_id", "type": "string", "required": false, "conditional_required_when": "key_class=use" },
+      { "name": "ttl_seconds", "type": "integer", "required": false },
+      { "name": "comments_enabled", "type": "boolean", "required": false }
+    ],
+    "api_calls": [
+      {
+        "name": "issue_key",
+        "method": "POST",
+        "endpoint": "/console/api/keys",
+        "success_statuses": [201],
+        "error_statuses": [403, 422]
+      }
+    ],
+    "success_ux": ["One-time secret reveal for api_key"],
+    "error_ux": ["Policy violation messaging"],
+    "figma_data": { "surface": "console", "security_pattern": "secret_reveal_once" }
+  },
+  {
+    "page_id": "console_key_lifecycle_v1",
+    "sprint": "S4",
+    "url": "/console/keys/{keyId}/lifecycle",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Suspend/cancel/revoke key",
+    "required_fields": [
+      { "name": "state", "type": "enum", "required": true, "values": ["suspend", "cancel", "revoke"] }
+    ],
+    "api_calls": [
+      {
+        "name": "transition_key_state",
+        "method": "POST",
+        "endpoint": "/console/api/keys/{keyId}/lifecycle",
+        "success_statuses": [204],
+        "error_statuses": [404, 422]
+      }
+    ],
+    "success_ux": ["Transition confirmation"],
+    "error_ux": ["Invalid state/not found"],
+    "figma_data": { "surface": "console", "danger_action": "revoke" }
+  },
+  {
+    "page_id": "console_keychain_index_v1",
+    "sprint": "S4",
+    "url": "/console/keychains",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Keychain management shell (backend placeholder)",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "list_keychains",
+        "method": "GET",
+        "endpoint": "/console/api/keychains",
+        "success_statuses": [200]
+      }
+    ],
+    "success_ux": ["Empty/placeholder state supported"],
+    "error_ux": ["Generic retry state"],
+    "figma_data": { "surface": "console", "backend_status": "placeholder" }
+  },
+  {
+    "page_id": "console_invite_create_v1",
+    "sprint": "S4",
+    "url": "/console/invites/new",
+    "method": "GET",
+    "persona": ["owner_admin"],
+    "purpose": "Create invite receipt flow (light backend)",
+    "required_fields": [],
+    "api_calls": [
+      {
+        "name": "create_invite",
+        "method": "POST",
+        "endpoint": "/console/api/invites",
+        "success_statuses": [201]
+      }
+    ],
+    "success_ux": ["Display invite_id receipt"],
+    "error_ux": ["Fallback error panel"],
+    "figma_data": { "surface": "console", "backend_status": "lightweight_generated_receipt" }
+  }
+]

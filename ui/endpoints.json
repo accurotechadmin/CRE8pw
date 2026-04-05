@@ -1,0 +1,937 @@
+{
+  "spec_version": "1.0.0",
+  "project": "cre8-platform-html-parity",
+  "generated_at_utc": "2026-04-05T00:00:00Z",
+  "source_of_truth": {
+    "api_routes_file": "src/Http/Routes/RouteRegistrar.php",
+    "validation_file": "src/Http/Middleware/ValidationMiddleware.php",
+    "envelope_file": "src/Core/Http/EnvelopeResponder.php"
+  },
+  "global_contracts": {
+    "response_envelope": {
+      "success_shape": {
+        "data": "object|array",
+        "meta": {
+          "envelope_version": "string",
+          "timestamp_utc": "ISO-8601"
+        }
+      },
+      "error_shape": {
+        "error": {
+          "code": "string",
+          "message": "string",
+          "details": "array|object",
+          "request_id": "string"
+        },
+        "meta": {
+          "envelope_version": "string",
+          "timestamp_utc": "ISO-8601"
+        }
+      }
+    },
+    "http_error_patterns": [
+      { "status": 401, "meaning": "invalid credentials/auth invalid" },
+      { "status": 403, "meaning": "forbidden/permission/CSRF/policy guard" },
+      { "status": 404, "meaning": "resource not found or not visible" },
+      { "status": 409, "meaning": "conflict (e.g., existing owner)" },
+      { "status": 422, "meaning": "validation failed" }
+    ],
+    "ui_state_model": [
+      "idle",
+      "loading",
+      "validating",
+      "submitting",
+      "success",
+      "empty",
+      "forbidden",
+      "not_found",
+      "validation_error",
+      "server_error"
+    ]
+  },
+  "sprints": [
+    {
+      "sprint_id": "S1",
+      "name": "Auth + Discovery",
+      "goal": "Enable entry, authentication, and read-only feed navigation",
+      "pages": [
+        {
+          "page_id": "auth_login_v1",
+          "url": "/login",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Email/password login for owner sessions",
+          "required_fields": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": true,
+              "format": "email",
+              "ui_component": "text_input",
+              "placeholder": "you@company.com",
+              "validation_messages": {
+                "required": "Email is required",
+                "invalid_format": "Enter a valid email address"
+              }
+            },
+            {
+              "name": "password",
+              "type": "string",
+              "required": true,
+              "ui_component": "password_input",
+              "placeholder": "••••••••••••",
+              "validation_messages": {
+                "required": "Password is required"
+              }
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "owner_login",
+              "method": "POST",
+              "endpoint": "/api/auth/login",
+              "request_body": {
+                "email": "string",
+                "password": "string"
+              },
+              "success_statuses": [200],
+              "error_statuses": [401, 422],
+              "success_payload_keys": ["data.access_token", "data.refresh_token", "data.expires_in"]
+            }
+          ],
+          "success_ux": [
+            "Show success toast: 'Signed in'",
+            "Persist session tokens per auth strategy",
+            "Redirect to /feed"
+          ],
+          "error_ux": [
+            "Map 422 details to field-level helper text",
+            "Show 401 banner: 'Invalid credentials'",
+            "Keep email populated; clear password"
+          ],
+          "figma_data_attributes": {
+            "surface": "public_auth",
+            "primary_cta": "Sign in",
+            "secondary_cta": "Use API key",
+            "tracking_events": ["login_submit", "login_success", "login_failure"],
+            "layout_tokens": ["form_single_column", "max_width_sm"]
+          },
+          "acceptance_criteria": [
+            "Submit disabled until required fields are non-empty",
+            "API errors display without page crash",
+            "Keyboard Enter submits form"
+          ]
+        },
+        {
+          "page_id": "auth_key_login_v1",
+          "url": "/key-login",
+          "method": "GET",
+          "persona": ["key_operator"],
+          "purpose": "Authenticate with key_id + api_key",
+          "required_fields": [
+            {
+              "name": "key_id",
+              "type": "string",
+              "required": true,
+              "ui_component": "text_input",
+              "placeholder": "32-char key id"
+            },
+            {
+              "name": "api_key",
+              "type": "string",
+              "required": true,
+              "ui_component": "secret_input",
+              "placeholder": "cre8k_...",
+              "security_hints": ["masked_by_default", "copy_protection_optional"]
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "key_login",
+              "method": "POST",
+              "endpoint": "/api/auth/key-login",
+              "request_body": {
+                "key_id": "string",
+                "api_key": "string"
+              },
+              "success_statuses": [200],
+              "error_statuses": [401, 422]
+            }
+          ],
+          "success_ux": [
+            "Route to /feed with gateway auth context",
+            "Display active scope/permissions summary chip row"
+          ],
+          "error_ux": [
+            "401 generic auth failure message",
+            "422 required-field highlights"
+          ],
+          "figma_data_attributes": {
+            "surface": "public_auth",
+            "primary_cta": "Sign in with key",
+            "tracking_events": ["key_login_submit", "key_login_success", "key_login_failure"],
+            "component_variants": ["secret_input_reveal_toggle", "inline_security_tip"]
+          },
+          "acceptance_criteria": [
+            "No plaintext api_key shown after submit",
+            "Error states are non-destructive to user input"
+          ]
+        },
+        {
+          "page_id": "auth_owner_signup_v1",
+          "url": "/signup-owner",
+          "method": "GET",
+          "persona": ["first_owner"],
+          "purpose": "Create owner account",
+          "required_fields": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": true,
+              "format": "email",
+              "ui_component": "text_input"
+            },
+            {
+              "name": "password",
+              "type": "string",
+              "required": true,
+              "min_length": 12,
+              "ui_component": "password_input"
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "register_owner",
+              "method": "POST",
+              "endpoint": "/console/owners",
+              "request_body": {
+                "email": "string",
+                "password": "string"
+              },
+              "success_statuses": [201],
+              "error_statuses": [409, 422]
+            }
+          ],
+          "success_ux": [
+            "Show owner created confirmation with owner_id",
+            "CTA: Continue to /login"
+          ],
+          "error_ux": [
+            "409 owner conflict banner",
+            "422 per-field validation details"
+          ],
+          "figma_data_attributes": {
+            "surface": "public_auth",
+            "primary_cta": "Create owner",
+            "helper_blocks": ["password_policy", "security_notice"],
+            "tracking_events": ["owner_signup_submit", "owner_signup_success", "owner_signup_conflict"]
+          },
+          "acceptance_criteria": [
+            "Password policy hint visible before typing",
+            "Conflict error uses dedicated design state"
+          ]
+        },
+        {
+          "page_id": "feed_index_v1",
+          "url": "/feed",
+          "method": "GET",
+          "persona": ["owner_admin", "key_operator", "reader"],
+          "purpose": "Browse visible posts with cursor pagination",
+          "required_fields": [],
+          "query_controls": [
+            {
+              "name": "scope",
+              "type": "enum",
+              "values": ["public", "delegated"],
+              "default": "delegated",
+              "ui_component": "segmented_control"
+            },
+            {
+              "name": "limit",
+              "type": "number",
+              "default": 50,
+              "constraints": { "min": 1, "max": 200 },
+              "ui_component": "hidden_or_advanced"
+            },
+            {
+              "name": "cursor",
+              "type": "string",
+              "required": false,
+              "ui_component": "pagination_state"
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "list_feed",
+              "method": "GET",
+              "endpoint": "/api/feed",
+              "query_params": ["scope", "limit", "cursor"],
+              "success_statuses": [200]
+            }
+          ],
+          "success_ux": [
+            "Render post cards",
+            "Show Load more when paging.has_more = true",
+            "Persist selected scope in URL"
+          ],
+          "error_ux": [
+            "Retry inline block on network/server error",
+            "Empty illustration + CTA to create post if no data"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "list_item_schema": [
+              "id",
+              "title",
+              "body",
+              "visibility_scope",
+              "state",
+              "author_id",
+              "created_at_utc"
+            ],
+            "tracking_events": ["feed_loaded", "feed_scope_changed", "feed_load_more_clicked"]
+          },
+          "acceptance_criteria": [
+            "Cursor pagination does not duplicate cards",
+            "Scope change resets cursor"
+          ]
+        }
+      ]
+    },
+    {
+      "sprint_id": "S2",
+      "name": "Posts + Comments",
+      "goal": "Enable content creation, detail, editing, and commenting",
+      "pages": [
+        {
+          "page_id": "post_create_gateway_v1",
+          "url": "/posts/new",
+          "method": "GET",
+          "persona": ["key_operator_with_posts_create"],
+          "purpose": "Create post from gateway surface",
+          "required_fields": [
+            { "name": "title", "type": "string", "required": true, "ui_component": "text_input" },
+            { "name": "body", "type": "string", "required": true, "ui_component": "textarea" },
+            {
+              "name": "visibility_scope",
+              "type": "enum",
+              "required": true,
+              "values": ["public", "private", "delegated"],
+              "ui_component": "select"
+            },
+            {
+              "name": "state",
+              "type": "enum",
+              "required": false,
+              "values": ["draft", "published"],
+              "default": "published",
+              "ui_component": "radio_group"
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "create_post_gateway",
+              "method": "POST",
+              "endpoint": "/api/posts",
+              "request_body": ["title", "body", "visibility_scope", "state?"],
+              "success_statuses": [201],
+              "error_statuses": [403, 422]
+            }
+          ],
+          "success_ux": [
+            "Redirect to /posts/{id}",
+            "Toast confirmation and state badge"
+          ],
+          "error_ux": [
+            "403 permission/policy banner",
+            "422 field-level errors"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "primary_cta": "Publish post",
+            "secondary_cta": "Save draft",
+            "tracking_events": ["post_create_submit", "post_create_success", "post_create_forbidden"]
+          },
+          "acceptance_criteria": [
+            "Visibility options exactly match API allowed values",
+            "Use-key restriction handled with explicit copy"
+          ]
+        },
+        {
+          "page_id": "post_detail_v1",
+          "url": "/posts/{postId}",
+          "method": "GET",
+          "persona": ["reader", "owner_admin", "key_operator"],
+          "purpose": "View full post",
+          "required_fields": [],
+          "path_params": [{ "name": "postId", "type": "hex32" }],
+          "api_calls": [
+            {
+              "name": "get_post",
+              "method": "GET",
+              "endpoint": "/api/posts/{postId}",
+              "success_statuses": [200],
+              "error_statuses": [403, 404]
+            }
+          ],
+          "success_ux": [
+            "Show full post content + metadata",
+            "Show action bar: Edit, Flag, Comments"
+          ],
+          "error_ux": [
+            "404: dedicated not-found layout",
+            "403: access denied with support CTA"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "header_fields": ["title", "created_at_utc", "author_id", "visibility_scope", "state"],
+            "tracking_events": ["post_detail_loaded", "post_detail_not_found"]
+          },
+          "acceptance_criteria": [
+            "Handles deleted/hidden resources gracefully",
+            "Skeleton state while fetching"
+          ]
+        },
+        {
+          "page_id": "post_edit_v1",
+          "url": "/posts/{postId}/edit",
+          "method": "GET",
+          "persona": ["key_operator_with_posts_edit"],
+          "purpose": "Revise post content",
+          "required_fields": [
+            { "name": "title", "type": "string", "required": true },
+            { "name": "body", "type": "string", "required": true },
+            { "name": "change_reason_code", "type": "string", "required": false, "default": "manual_edit" }
+          ],
+          "api_calls": [
+            {
+              "name": "edit_post",
+              "method": "PATCH",
+              "endpoint": "/api/posts/{postId}",
+              "request_body": ["title", "body", "change_reason_code?"],
+              "success_statuses": [200],
+              "error_statuses": [403, 404, 422]
+            }
+          ],
+          "success_ux": [
+            "Confirm save and return to detail page",
+            "Optional summary of changes"
+          ],
+          "error_ux": [
+            "422 inline field messages",
+            "403/404 full-width alert component"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "editing_mode": "single_page_form",
+            "tracking_events": ["post_edit_submit", "post_edit_success", "post_edit_error"]
+          },
+          "acceptance_criteria": [
+            "Unsaved changes guard modal",
+            "Server-side validation messages render under fields"
+          ]
+        },
+        {
+          "page_id": "post_flag_v1",
+          "url": "/posts/{postId}/flag",
+          "method": "GET",
+          "persona": ["reader", "operator"],
+          "purpose": "Submit policy flag for a post",
+          "required_fields": [
+            {
+              "name": "reason_code",
+              "type": "string",
+              "required": true,
+              "ui_component": "select_or_text"
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "flag_post",
+              "method": "POST",
+              "endpoint": "/api/posts/{postId}/flags",
+              "request_body": ["reason_code"],
+              "success_statuses": [201],
+              "error_statuses": [404, 422]
+            }
+          ],
+          "success_ux": [
+            "Success dialog and redirect back to post"
+          ],
+          "error_ux": [
+            "Validation message for missing reason_code",
+            "Not-found fallback state"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "primary_cta": "Submit flag",
+            "tracking_events": ["post_flag_submit", "post_flag_success"]
+          },
+          "acceptance_criteria": [
+            "Form cannot submit empty reason code"
+          ]
+        },
+        {
+          "page_id": "comment_thread_v1",
+          "url": "/posts/{postId}/comments",
+          "method": "GET",
+          "persona": ["reader", "operator"],
+          "purpose": "Read comments for a post",
+          "required_fields": [],
+          "api_calls": [
+            {
+              "name": "list_comments",
+              "method": "GET",
+              "endpoint": "/api/posts/{postId}/comments",
+              "success_statuses": [200],
+              "error_statuses": [404]
+            }
+          ],
+          "success_ux": [
+            "Chronological comment list",
+            "CTA to add comment"
+          ],
+          "error_ux": [
+            "Thread unavailable state"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "comment_item_schema": ["id", "author_id", "body", "state", "created_at_utc"],
+            "tracking_events": ["comments_loaded", "comments_empty"]
+          },
+          "acceptance_criteria": [
+            "Long threads remain performant",
+            "Empty thread state has clear primary CTA"
+          ]
+        },
+        {
+          "page_id": "comment_create_v1",
+          "url": "/posts/{postId}/comments/new",
+          "method": "GET",
+          "persona": ["operator_with_comments_create"],
+          "purpose": "Create comment on post",
+          "required_fields": [
+            { "name": "body", "type": "string", "required": true, "ui_component": "textarea" }
+          ],
+          "api_calls": [
+            {
+              "name": "create_comment",
+              "method": "POST",
+              "endpoint": "/api/posts/{postId}/comments",
+              "request_body": ["body"],
+              "success_statuses": [201],
+              "error_statuses": [403, 404, 422]
+            }
+          ],
+          "success_ux": [
+            "Return to thread with new comment highlighted"
+          ],
+          "error_ux": [
+            "403-specific messages for post state, permission, or comments toggle",
+            "422 body-required inline error",
+            "404 if post unavailable"
+          ],
+          "figma_data_attributes": {
+            "surface": "gateway",
+            "guard_states": ["post_locked", "permissions_missing", "comments_toggle_off"],
+            "tracking_events": ["comment_submit", "comment_success", "comment_blocked"]
+          },
+          "acceptance_criteria": [
+            "All forbidden reasons map to human-readable copy"
+          ]
+        }
+      ]
+    },
+    {
+      "sprint_id": "S3",
+      "name": "Console Content + Moderation",
+      "goal": "Enable owner workflow for managing posts and moderation actions",
+      "pages": [
+        {
+          "page_id": "console_post_index_v1",
+          "url": "/console/posts",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Manage owner-authored posts",
+          "required_fields": [],
+          "api_calls": [
+            {
+              "name": "console_list_posts",
+              "method": "GET",
+              "endpoint": "/console/api/posts",
+              "success_statuses": [200]
+            }
+          ],
+          "success_ux": [
+            "Table/grid of posts with quick actions"
+          ],
+          "error_ux": [
+            "Unauthorized/session-expired handling"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "table_columns": ["title", "visibility_scope", "state", "created_at_utc", "actions"],
+            "tracking_events": ["console_posts_loaded"]
+          },
+          "acceptance_criteria": [
+            "Supports empty state and sortable columns"
+          ]
+        },
+        {
+          "page_id": "console_post_create_v1",
+          "url": "/console/posts/new",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Create console-surface post",
+          "required_fields": [
+            { "name": "title", "type": "string", "required": true },
+            { "name": "body", "type": "string", "required": true },
+            {
+              "name": "visibility_scope",
+              "type": "enum",
+              "required": true,
+              "values": ["public", "private", "delegated"]
+            },
+            {
+              "name": "state",
+              "type": "enum",
+              "required": false,
+              "values": ["draft", "published"]
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "console_create_post",
+              "method": "POST",
+              "endpoint": "/console/api/posts",
+              "request_body": ["title", "body", "visibility_scope", "state?"],
+              "success_statuses": [201],
+              "error_statuses": [422]
+            }
+          ],
+          "success_ux": [
+            "Redirect to console post list/detail with confirmation"
+          ],
+          "error_ux": [
+            "Validation details rendered inline"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "primary_cta": "Create post",
+            "tracking_events": ["console_post_create_submit", "console_post_create_success"]
+          },
+          "acceptance_criteria": [
+            "Field constraints match server validation exactly"
+          ]
+        },
+        {
+          "page_id": "console_post_moderation_v1",
+          "url": "/console/posts/{postId}/moderation",
+          "method": "GET",
+          "persona": ["owner_admin_moderator"],
+          "purpose": "Moderate a post",
+          "required_fields": [
+            {
+              "name": "action",
+              "type": "enum",
+              "required": true,
+              "values": ["hide", "lock", "archive", "delete"]
+            },
+            {
+              "name": "reason_code",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "moderate_post",
+              "method": "POST",
+              "endpoint": "/console/api/posts/{postId}/moderation",
+              "request_body": ["action", "reason_code?"],
+              "success_statuses": [200],
+              "error_statuses": [404, 422]
+            }
+          ],
+          "success_ux": [
+            "Show resulting post state and moderation timestamp"
+          ],
+          "error_ux": [
+            "Invalid action helper",
+            "Not-found post fallback"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "action_set": ["hide", "lock", "archive", "delete"],
+            "danger_actions": ["delete"],
+            "tracking_events": ["post_moderation_submit", "post_moderation_success"]
+          },
+          "acceptance_criteria": [
+            "Dangerous action requires confirmation modal"
+          ]
+        },
+        {
+          "page_id": "console_comment_moderation_v1",
+          "url": "/console/posts/{postId}/comments/{commentId}/moderation",
+          "method": "GET",
+          "persona": ["owner_admin_moderator"],
+          "purpose": "Moderate a comment",
+          "required_fields": [
+            {
+              "name": "action",
+              "type": "enum",
+              "required": true,
+              "values": ["hide", "lock", "delete"]
+            },
+            {
+              "name": "reason_code",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "moderate_comment",
+              "method": "POST",
+              "endpoint": "/console/api/posts/{postId}/comments/{commentId}/moderation",
+              "request_body": ["action", "reason_code?"],
+              "success_statuses": [200],
+              "error_statuses": [404, 422]
+            }
+          ],
+          "success_ux": [
+            "Confirmation with resulting comment state"
+          ],
+          "error_ux": [
+            "Invalid action guidance",
+            "Comment-not-found state"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "action_set": ["hide", "lock", "delete"],
+            "tracking_events": ["comment_moderation_submit", "comment_moderation_success"]
+          },
+          "acceptance_criteria": [
+            "Action options match API exactly"
+          ]
+        }
+      ]
+    },
+    {
+      "sprint_id": "S4",
+      "name": "Keys + Invites + Placeholder Completion",
+      "goal": "Operational tooling for delegation and lifecycle controls",
+      "pages": [
+        {
+          "page_id": "console_key_issue_v1",
+          "url": "/console/keys/new",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Issue author/use keys with policy constraints",
+          "required_fields": [
+            {
+              "name": "key_class",
+              "type": "enum",
+              "required": true,
+              "values": ["primary_author", "secondary_author", "use"]
+            },
+            {
+              "name": "permissions",
+              "type": "array[string]",
+              "required": true
+            },
+            {
+              "name": "scope",
+              "type": "array[string]",
+              "required": true
+            },
+            {
+              "name": "parent_envelope_id",
+              "type": "string",
+              "required": false,
+              "conditional_required_when": "key_class == 'use'"
+            },
+            {
+              "name": "ttl_seconds",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "name": "comments_enabled",
+              "type": "boolean",
+              "required": false
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "issue_key",
+              "method": "POST",
+              "endpoint": "/console/api/keys",
+              "request_body": [
+                "key_class",
+                "parent_envelope_id?",
+                "permissions",
+                "scope",
+                "ttl_seconds?",
+                "comments_enabled?"
+              ],
+              "success_statuses": [201],
+              "error_statuses": [403, 422],
+              "sensitive_response_fields": ["data.api_key"]
+            }
+          ],
+          "success_ux": [
+            "One-time reveal of api_key with copy/download pattern",
+            "Display delegation metadata (depth, envelope id, expires_at_utc)"
+          ],
+          "error_ux": [
+            "Policy violation messages for ttl, subset, hierarchy, owner mismatch"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "security_patterns": ["secret_reveal_once", "copy_with_warning", "acknowledgement_checkbox"],
+            "tracking_events": ["key_issue_submit", "key_issue_success", "key_issue_policy_error"]
+          },
+          "acceptance_criteria": [
+            "Secrets are not re-rendered after navigation",
+            "Conditional required UI for use keys is enforced"
+          ]
+        },
+        {
+          "page_id": "console_key_lifecycle_v1",
+          "url": "/console/keys/{keyId}/lifecycle",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Suspend/cancel/revoke key lifecycle",
+          "required_fields": [
+            {
+              "name": "state",
+              "type": "enum",
+              "required": true,
+              "values": ["suspend", "cancel", "revoke"]
+            }
+          ],
+          "api_calls": [
+            {
+              "name": "transition_key_state",
+              "method": "POST",
+              "endpoint": "/console/api/keys/{keyId}/lifecycle",
+              "request_body": ["state"],
+              "success_statuses": [204],
+              "error_statuses": [404, 422]
+            }
+          ],
+          "success_ux": [
+            "Display lifecycle transition success state and disable repeat action"
+          ],
+          "error_ux": [
+            "Invalid state or missing key message"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "risk_map": {
+              "suspend": "low",
+              "cancel": "medium",
+              "revoke": "high"
+            },
+            "tracking_events": ["key_lifecycle_submit", "key_lifecycle_success"]
+          },
+          "acceptance_criteria": [
+            "Revoke action requires explicit confirmation text"
+          ]
+        },
+        {
+          "page_id": "console_keychain_index_v1",
+          "url": "/console/keychains",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Keychain management shell (backend currently placeholder)",
+          "required_fields": [],
+          "api_calls": [
+            {
+              "name": "list_keychains",
+              "method": "GET",
+              "endpoint": "/console/api/keychains",
+              "success_statuses": [200],
+              "current_backend_status": "placeholder_returns_empty_list"
+            }
+          ],
+          "success_ux": [
+            "Show empty state with roadmap copy",
+            "Prepare table layout for future keychain records"
+          ],
+          "error_ux": [
+            "Generic retrieval error + retry"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "placeholder_tag": "backend_pending",
+            "tracking_events": ["keychain_view_loaded"]
+          },
+          "acceptance_criteria": [
+            "Can gracefully handle empty list as default"
+          ]
+        },
+        {
+          "page_id": "console_invite_create_v1",
+          "url": "/console/invites/new",
+          "method": "GET",
+          "persona": ["owner_admin"],
+          "purpose": "Create invite (current API emits generated invite receipt)",
+          "required_fields": [],
+          "api_calls": [
+            {
+              "name": "create_invite",
+              "method": "POST",
+              "endpoint": "/console/api/invites",
+              "request_body": {},
+              "success_statuses": [201],
+              "current_backend_status": "lightweight_generated_receipt"
+            }
+          ],
+          "success_ux": [
+            "Receipt view with invite_id and created timestamp",
+            "Copy invite identifier action"
+          ],
+          "error_ux": [
+            "Fallback error panel if create fails"
+          ],
+          "figma_data_attributes": {
+            "surface": "console",
+            "placeholder_tag": "backend_extension_likely",
+            "tracking_events": ["invite_create_submit", "invite_create_success"]
+          },
+          "acceptance_criteria": [
+            "Supports future extension for invite metadata fields"
+          ]
+        }
+      ]
+    }
+  ],
+  "implementation_backlog_dependencies": [
+    {
+      "id": "DEP-001",
+      "name": "Session/token storage strategy",
+      "impacts_pages": ["auth_login_v1", "auth_key_login_v1", "feed_index_v1"]
+    },
+    {
+      "id": "DEP-002",
+      "name": "Console HTML route layer",
+      "impacts_pages": [
+        "console_post_index_v1",
+        "console_post_create_v1",
+        "console_post_moderation_v1",
+        "console_comment_moderation_v1",
+        "console_key_issue_v1",
+        "console_key_lifecycle_v1",
+        "console_keychain_index_v1",
+        "console_invite_create_v1"
+      ]
+    },
+    {
+      "id": "DEP-003",
+      "name": "Placeholder API expansion (keychains/invites)",
+      "impacts_pages": ["console_keychain_index_v1", "console_invite_create_v1"]
+    }
+  ]
+}
