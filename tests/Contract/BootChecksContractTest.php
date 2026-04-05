@@ -59,6 +59,17 @@ final class BootChecksContractTest extends TestCase
         BootChecks::assert($this->container(), $config);
     }
 
+    public function testBootChecksAllowsPermissivePrivateKeyModeOutsideStageAndProd(): void
+    {
+        [$private, $public] = $this->keyFiles();
+        chmod($private, 0644);
+
+        BootChecks::assert($this->container(), $this->config($private, $public, 'local'));
+
+        @unlink($private);
+        @unlink($public);
+    }
+
     private function container(): Container
     {
         $builder = new ContainerBuilder();

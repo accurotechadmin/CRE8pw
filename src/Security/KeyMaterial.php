@@ -51,7 +51,7 @@ final class KeyMaterial
             throw new \RuntimeException('JWT key material permission metadata is unavailable.');
         }
 
-        if (($perms & 0o022) !== 0) {
+        if (($perms & 0o002) !== 0) {
             throw new \RuntimeException('JWT key material permissions are too permissive.');
         }
     }
