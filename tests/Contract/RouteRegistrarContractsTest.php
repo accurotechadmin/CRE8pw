@@ -20,6 +20,7 @@ final class RouteRegistrarContractsTest extends TestCase
         self::assertStringContainsString('FeedService::class', $registrarPhp);
         self::assertStringContainsString('AuthService::class', $registrarPhp);
         self::assertStringContainsString('/console/api', $registrarPhp);
+        self::assertStringContainsString("$app->get('/',", $registrarPhp);
         self::assertStringContainsString('/console/owners', $registrarPhp);
         self::assertStringContainsString('/api', $registrarPhp);
         self::assertStringContainsString('/console/api/keys', $registrarPhp);

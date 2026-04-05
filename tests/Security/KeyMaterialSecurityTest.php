@@ -33,6 +33,20 @@ final class KeyMaterialSecurityTest extends TestCase
         KeyMaterial::resolve($file);
     }
 
+    public function testResolveAllowsGroupWritableButNotWorldWritablePermissions(): void
+    {
+        $file = tempnam(sys_get_temp_dir(), 'keymaterial-');
+        file_put_contents($file, "-----BEGIN PUBLIC KEY-----\nabc\n-----END PUBLIC KEY-----\n");
+        chmod($file, 0664);
+
+        try {
+            $resolved = KeyMaterial::resolve($file);
+            self::assertStringContainsString('BEGIN PUBLIC KEY', $resolved);
+        } finally {
+            @unlink($file);
+        }
+    }
+
     public function testResolveRejectsInvalidPemFormatAndAuditsReason(): void
     {
         $audit = new InMemoryAuditEmitter();

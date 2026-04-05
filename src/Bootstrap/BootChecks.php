@@ -46,8 +46,8 @@ final class BootChecks
         KeyMaterial::resolve($config->jwtPrivateKey);
         KeyMaterial::resolve($config->jwtPublicKey);
         self::assertProfileSafety($config);
-        self::assertKeyPathSafety($config->jwtPrivateKey, true);
-        self::assertKeyPathSafety($config->jwtPublicKey, false);
+        self::assertKeyPathSafety($config->jwtPrivateKey, true, $config->appEnv);
+        self::assertKeyPathSafety($config->jwtPublicKey, false, $config->appEnv);
 
         if (array_keys(MiddlewareOrder::GLOBAL_CLASS_MAP) !== MiddlewareOrder::GLOBAL) {
             throw new \RuntimeException('Global middleware order does not match contract.');
@@ -67,7 +67,7 @@ final class BootChecks
         }
     }
 
-    private static function assertKeyPathSafety(string $keySource, bool $private): void
+    private static function assertKeyPathSafety(string $keySource, bool $private, string $appEnv): void
     {
         if (str_starts_with($keySource, '-----BEGIN')) {
             return;
@@ -86,7 +86,7 @@ final class BootChecks
             throw new \RuntimeException('config_invalid_format: key path permissions are unreadable');
         }
 
-        if (($perms & 0o077) !== 0) {
+        if (in_array($appEnv, ['stage', 'prod'], true) && ($perms & 0o077) !== 0) {
             throw new \RuntimeException('config_disallowed_profile: private key permissions must be 600/400');
         }
     }

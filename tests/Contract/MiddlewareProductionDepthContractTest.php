@@ -28,6 +28,9 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Slim\Exception\HttpMethodNotAllowedException;
+use Slim\Exception\HttpNotFoundException;
+use Slim\Exception\HttpUnauthorizedException;
 use Slim\Psr7\Factory\ResponseFactory;
 use Slim\Psr7\Factory\ServerRequestFactory;
 use Symfony\Component\RateLimiter\RateLimiterFactory;
@@ -105,6 +108,42 @@ final class MiddlewareProductionDepthContractTest extends TestCase
     {
         $responder = new EnvelopeResponder(new ResponseFactory());
         $middleware = new ErrorHandlerMiddleware($responder);
+
+        $notFound = $middleware->process(
+            (new ServerRequestFactory())->createServerRequest('GET', '/')->withAttribute('request_id', '11111111-1111-4111-8111-111111111111'),
+            new CallableHandler(static function (ServerRequestInterface $request): ResponseInterface {
+                throw new HttpNotFoundException($request);
+            }),
+        );
+
+        self::assertSame(404, $notFound->getStatusCode());
+        $notFoundPayload = (array) json_decode((string) $notFound->getBody(), true, 512, JSON_THROW_ON_ERROR);
+        self::assertSame('not_found', $notFoundPayload['error']['code']);
+        self::assertSame('route_not_found', $notFoundPayload['error']['details']['detail_code']);
+
+        $methodNotAllowed = $middleware->process(
+            (new ServerRequestFactory())->createServerRequest('POST', '/health')->withAttribute('request_id', '11111111-1111-4111-8111-111111111111'),
+            new CallableHandler(static function (ServerRequestInterface $request): ResponseInterface {
+                throw new HttpMethodNotAllowedException($request);
+            }),
+        );
+
+        self::assertSame(405, $methodNotAllowed->getStatusCode());
+        $methodNotAllowedPayload = (array) json_decode((string) $methodNotAllowed->getBody(), true, 512, JSON_THROW_ON_ERROR);
+        self::assertSame('method_not_allowed', $methodNotAllowedPayload['error']['code']);
+        self::assertSame('route_method_not_allowed', $methodNotAllowedPayload['error']['details']['detail_code']);
+
+        $unauthorized = $middleware->process(
+            (new ServerRequestFactory())->createServerRequest('GET', '/api/feed')->withAttribute('request_id', '11111111-1111-4111-8111-111111111111'),
+            new CallableHandler(static function (ServerRequestInterface $request): ResponseInterface {
+                throw new HttpUnauthorizedException($request);
+            }),
+        );
+
+        self::assertSame(401, $unauthorized->getStatusCode());
+        $unauthorizedPayload = (array) json_decode((string) $unauthorized->getBody(), true, 512, JSON_THROW_ON_ERROR);
+        self::assertSame('unauthorized', $unauthorizedPayload['error']['code']);
+        self::assertSame('http_unauthorized', $unauthorizedPayload['error']['details']['detail_code']);
 
         $badRequest = $middleware->process(
             (new ServerRequestFactory())->createServerRequest('POST', '/api/posts')->withAttribute('request_id', '11111111-1111-4111-8111-111111111111'),

@@ -29,6 +29,13 @@ final class RouteRegistrar
 
         $responder = $container->get(EnvelopeResponder::class);
 
+        $app->get('/', function ($request, $response) use ($responder) {
+            return $responder->success([
+                'service' => 'cre8-platform',
+                'status' => 'ok',
+            ]);
+        });
+
         $app->get('/health', function ($request, $response) use ($container, $responder) {
             $health = $container->get(HealthService::class)->check();
 

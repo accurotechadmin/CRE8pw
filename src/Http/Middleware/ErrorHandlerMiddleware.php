@@ -12,6 +12,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Slim\Exception\HttpMethodNotAllowedException;
+use Slim\Exception\HttpNotFoundException;
+use Slim\Exception\HttpUnauthorizedException;
 
 final class ErrorHandlerMiddleware implements MiddlewareInterface
 {
@@ -47,6 +50,18 @@ final class ErrorHandlerMiddleware implements MiddlewareInterface
     /** @return array{0:string,1:string,2:int,3:string} */
     private function mapException(\Throwable $exception): array
     {
+        if ($exception instanceof HttpNotFoundException) {
+            return ['not_found', 'not found', 404, 'route_not_found'];
+        }
+
+        if ($exception instanceof HttpMethodNotAllowedException) {
+            return ['method_not_allowed', 'method not allowed', 405, 'route_method_not_allowed'];
+        }
+
+        if ($exception instanceof HttpUnauthorizedException) {
+            return ['unauthorized', 'unauthorized', 401, 'http_unauthorized'];
+        }
+
         if ($exception instanceof InvalidArgumentException) {
             return ['bad_request', 'invalid request payload', 400, 'invalid_argument'];
         }
