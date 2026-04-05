@@ -1,39 +1,26 @@
-# Testing Strategy (Scaffold)
+# Testing Strategy
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Automated test suites
 
-Define quality gates from unit-level behavior up to operational smoke checks.
+- `tests/Contract/*`: API envelope, middleware behavior, boot checks, route wiring, config policy mapping, container/script contracts.
+- `tests/Security/*`: key-material safety checks, API key hasher behavior, JWT signer/verifier policy checks.
 
-## 1) Test taxonomy
+## Composer commands
 
-| Test class | Location | Goal | Trigger | Owner |
-|---|---|---|---|---|
-| Contract | `tests/Contract/*` | lock API/middleware/config behavior | PR + CI | backend |
-| Security | `tests/Security/*` | enforce auth/crypto/security assumptions | PR + CI | backend/security |
-| Ops smoke | `scripts/*` | quick deployment sanity checks | deploy gate | ops |
+- `composer test`
+- `composer test:contract`
+- `composer test:security`
+- `composer qa`
+- `composer ops:health-smoke`
+- `composer ops:migrate-smoke`
 
-## 2) Command matrix template
+## Operational smoke scripts
 
-| Command | Expected outcome | Typical failures | Triage notes |
-|---|---|---|---|
-| `composer test` | all suites pass | missing deps/env mismatch | validate vendor + env |
-| `php scripts/health_smoke.php` | `health_smoke_ok:*` | service unavailable | verify startup |
-| `php scripts/migrate_smoke.php` | `migration_smoke_ok` | SQL incompatibility | inspect migration normalize |
+- `scripts/health_smoke.php`: boots app and validates `/health` response shape.
+- `scripts/migrate_smoke.php`: in-memory SQLite schema sanity for principal/post/delegation/invite tables.
 
-## 3) Coverage expectations
+## Coverage emphasis
 
-- Required negative-path coverage for auth, validation, and moderation actions.
-- Contract tests for envelope consistency and middleware ordering.
-- Security tests for signer/verifier/key material/hasher behavior.
-
-## 4) Extensibility checklist
-
-When adding a new feature:
-
-- [ ] Add/extend contract tests.
-- [ ] Add security tests if auth/policy touched.
-- [ ] Add/update smoke checks if deployment assumptions changed.
-- [ ] Update QA matrix and docs references.
+The suite is behavior-contract heavy: it focuses on middleware detail codes, envelope stability, startup guarantees, auth/token policy, and security-sensitive primitives.

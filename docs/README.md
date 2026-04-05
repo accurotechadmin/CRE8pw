@@ -1,23 +1,12 @@
 # CRE8.pw Documentation Set
 
-This directory is the canonical, long-lived documentation home for the CRE8.pw system.
-
-> Intent: keep docs useful both for **day-1 onboarding** and **deep operational/debug reference**.
-
 _Last updated (UTC): 2026-04-05_
 
-## Documentation architecture
+This directory is the canonical documentation for the current repository state. The backend is a Slim 4 + PHP-DI API with a static SPA under `public/ui`, backed by policy-driven middleware, JWT auth, key lifecycle controls, and SQLite-compatible storage bootstrap inside services.
 
-The docs set is organized into four layers:
+## Recommended reading order
 
-1. **Orientation** — quick understanding of system shape and vocabulary.
-2. **Reference** — precise source-of-truth behavior, contracts, and policies.
-3. **Operations** — deployment, runbooks, incident handling, and QA.
-4. **Evolution** — roadmap, extensibility guidelines, and contribution standards.
-
-## Reading order (recommended)
-
-1. [`inventory_anatomy.md`](./inventory_anatomy.md) ← **first document**
+1. [`inventory_anatomy.md`](./inventory_anatomy.md)
 2. [`architecture_overview.md`](./architecture_overview.md)
 3. [`request_lifecycle.md`](./request_lifecycle.md)
 4. [`api_reference_stub.md`](./api_reference_stub.md)
@@ -32,38 +21,9 @@ The docs set is organized into four layers:
 13. [`glossary.md`](./glossary.md)
 14. [`roadmap_backlog.md`](./roadmap_backlog.md)
 
-## Subfolders
+## Documentation conventions
 
-- [`docs/dev/`](./dev/README.md): session-by-session execution artifacts, ADR history, QA logs, and implementation tracking.
-
-## Authoring standards
-
-### Required for final (non-stub) docs
-
-- Include a `Last updated (UTC)` marker.
-- Include explicit “Source of truth” links to implementation files and/or tests.
-- Distinguish clearly between:
-  - **Contracted behavior** (proven in tests),
-  - **Current implementation details** (may change),
-  - **Future intent** (roadmap or proposal).
-- For security/operations claims, include a validation or evidence reference.
-
-### Stub completion rubric
-
-Each scaffolded doc should graduate from `Scaffold` to `Reference` by adding:
-
-1. **Scope statement**: what this doc covers and does not cover.
-2. **Canonical data tables**: endpoint matrices, config maps, event dictionaries, etc.
-3. **Worked examples**: happy path + failure path.
-4. **Extensibility notes**: how to add new features without violating existing contracts.
-5. **Verification procedure**: concrete commands/tests to validate the document’s claims.
-
-## Extensibility principle for this docs set
-
-When adding major capability areas (e.g., webhooks, multi-tenant controls, new identity providers),
-create a dedicated document and link it from:
-
-- this index,
-- `architecture_overview.md` (boundary impact),
-- `security_model.md` (threat/control impact), and
-- `roadmap_backlog.md` (delivery tracking).
+- All endpoint behavior is described against `src/Http/Routes/RouteRegistrar.php` and middleware in `src/Http/Middleware/*`.
+- All security claims are tied to `src/Security/*`, auth services, and security tests in `tests/Security/*`.
+- All operational checks map to composer scripts and `scripts/*.php`.
+- `docs/dev/*` contains session history and execution artifacts; top-level docs are the durable reference layer.

@@ -1,40 +1,41 @@
-# Configuration Reference (Scaffold)
+# Configuration Reference
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Required environment variables
 
-Define runtime environment variables and validation semantics.
+- `APP_ENV` (`local|stage|prod`)
+- `DB_DSN`, `DB_USER`, `DB_PASS`
+- `JWT_ISSUER`, `JWT_AUDIENCE_CONSOLE`, `JWT_AUDIENCE_GATEWAY`
+- `JWT_PRIVATE_KEY`, `JWT_PUBLIC_KEY` (inline PEM or path)
+- `CORS_ALLOWED_ORIGINS`
+- `CSRF_SECRET` (>= 32 chars)
 
-## 1) Variable catalog template
+## Optional policy variables
 
-| Variable | Required | Type | Example | Validation rule | Applies to env(s) | Notes |
-|---|---|---|---|---|---|---|
-| APP_ENV | yes | enum/string | `local` | must be present | all | runtime profile selector |
-| JWT_ISSUER | yes | URL | `https://...` | strict in stage/prod | all | issuer claim source |
-| _(expand all vars)_ | | | | | | |
+- `RATE_LIMIT_GLOBAL_ID` (default `global`)
+- `RATE_LIMIT_GLOBAL_POLICY` (default `fixed_window`)
+- `RATE_LIMIT_GLOBAL_INTERVAL` (default `1 minute`)
+- `RATE_LIMIT_GLOBAL_LIMIT` (default `180`)
+- `JWT_OWNER_TTL_SECONDS` (default `900`)
+- `JWT_KEY_TTL_SECONDS` (default `600`)
+- `JWT_DELEGATION_TTL_SECONDS` (default `300`)
 
-## 2) Typed policy mapping
+## Validation/hardening rules
 
-- Map env vars to:
-  - `RuntimeConfig`
-  - `JwtPolicy`
-  - `CorsPolicy`
-  - `RateLimitPolicy`
+- Wildcard CORS (`*`) is only allowed in `local`.
+- Stage/prod JWT issuer must be HTTPS URL.
+- DSN must start with `sqlite:`, `mysql:`, or `pgsql:`.
+- Prod cannot use SQLite DSN.
+- Optional numeric policy values must be positive integers.
 
-## 3) Safety constraints checklist
+## Runtime mapping
 
-- [ ] Stage/prod issuer/cors hardening constraints documented.
-- [ ] Private/public key sourcing behavior documented.
-- [ ] TTL and rate-limit tuning guardrails documented.
-- [ ] Failure mode examples documented (`boot_failed`, validation exceptions).
+`RuntimeConfig::fromEnv()` maps raw env into:
 
-## 4) Extensibility notes
+- `RuntimeConfig`
+- `RateLimitPolicy`
+- `CorsPolicy`
+- `JwtPolicy`
 
-When adding new env vars:
-
-- add to validator,
-- map into typed config,
-- add tests,
-- update this reference and ops docs.
+Startup then revalidates profile safety in `BootChecks` and resolves key material readiness.

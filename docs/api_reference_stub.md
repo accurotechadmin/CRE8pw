@@ -1,49 +1,50 @@
-# API Reference (Scaffold)
+# API Reference
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Envelope contract
 
-Provide endpoint-level canonical behavior for CRE8.pw APIs.
+- Success responses: `{ data, meta }` with optional `paging` for list endpoints.
+- Error responses: `{ error: { code, message, details, request_id }, meta }`.
+- `X-Envelope-Version` header is emitted on all responder-generated payloads.
 
-## 1) Reference authoring rules
+## Endpoint catalog
 
-- One endpoint section per route.
-- Include: auth surface, required headers, request shape, response envelope, error matrix, and examples.
-- Link every endpoint to at least one validating test.
+### Public/auth/bootstrap
 
-## 2) Endpoint catalog template
+- `GET /` → health banner payload.
+- `GET /health` → deep subsystem checks.
+- `GET /.well-known/jwks.json` → active RSA JWKS.
+- `GET /ui[/{route:.*}]` → UI asset/file fallback serving.
+- `POST /console/owners` → owner registration.
+- `POST /api/auth/login` → owner access+refresh issue.
+- `POST /api/auth/key-login` → key access+refresh issue.
+- `POST /api/auth/refresh` → owner refresh, with fallback to key refresh on surface mismatch.
 
-| Method | Path | Surface | Auth required | Required headers | Handler/service | Status |
-|---|---|---|---|---|---|---|
-| POST | `/api/auth/login` | auth | none | `Content-Type: application/json` | `AuthService::login` | scaffold |
-| GET | `/api/feed` | gateway | key JWT | `Authorization`, `X-Device-Id` | `FeedService::list` | scaffold |
-| _(expand all endpoints)_ | | | | | | |
+### Gateway (`/api/*`)
 
-## 3) Per-endpoint section template
+- `GET /api/feed`
+- `POST /api/posts`
+- `PATCH /api/posts/{postId}`
+- `POST /api/posts/{postId}/flags`
+- `GET /api/posts/{postId}`
+- `GET /api/posts/{postId}/comments`
+- `POST /api/posts/{postId}/comments`
 
-### `METHOD /path`
+### Console (`/console/api/*`)
 
-- **Intent:**
-- **Auth model:**
-- **Request headers:**
-- **Request body schema:**
-- **Success envelope example:**
-- **Error matrix:**
+- `GET /console/api/posts`
+- `POST /console/api/posts`
+- `GET /console/api/keychains`
+- `POST /console/api/invites`
+- `POST /console/api/keys`
+- `POST /console/api/keys/{keyId}/lifecycle`
+- `POST /console/api/posts/{postId}/moderation`
+- `POST /console/api/posts/{postId}/comments/{commentId}/moderation`
 
-| HTTP | `error.code` | Detail codes | Trigger |
-|---|---|---|---|
-| 4xx/5xx | _(fill)_ | _(fill)_ | _(fill)_ |
+## Notable policy behaviors
 
-- **Side effects / idempotency:**
-- **Rate limit notes:**
-- **Validation references:**
-
-## 4) Extensibility policy for new endpoints
-
-- [ ] Add route registration entry.
-- [ ] Add validation schema branch.
-- [ ] Add middleware policy review notes.
-- [ ] Add contract tests.
-- [ ] Add UI integration notes (if user-facing).
+- Gateway write flows require permissions in key claims (`posts:create`, `posts:edit`, `comments:create`).
+- `use` keys cannot create posts or mutate keys.
+- Comments create is additionally gated by post state and `comments_enabled` claim.
+- Console moderation actions are allowlisted per route and emit moderation audit events.
