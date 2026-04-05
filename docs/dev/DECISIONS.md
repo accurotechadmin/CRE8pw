@@ -26,3 +26,17 @@
 - **Consequences**:
   - Subsequent phases can introduce route and permission guards without redesigning session format.
   - Sensitive token persistence remains a known tradeoff and should be reevaluated during hardening (Phase 5).
+
+## ADR-2026-04-05-03: Centralize gateway header policy in API client for all `/api` content workflows
+
+- **Date / Session**: 2026-04-05 (UTC), Session 2
+- **Context**:
+  - Phase 2 gateway endpoints require both bearer auth and `X-Device-Id`.
+  - Duplicating header logic per page risks drift and inconsistent error behavior.
+- **Decision**:
+  - Extend `apiRequest()` with `authSurface` and `requireDeviceId` options.
+  - Generate/persist a stable browser device id in `localStorage` (`cre8_ui_device_id_v1`) and automatically attach it on gateway calls.
+- **Consequences**:
+  - Feed/post/comments screens share one consistent auth/header behavior.
+  - Future gateway write flows can reuse the same call pattern without custom header code.
+  - Device id persistence behavior is explicit and testable from a single state utility.

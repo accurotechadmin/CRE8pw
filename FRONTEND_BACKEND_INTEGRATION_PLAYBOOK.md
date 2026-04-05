@@ -2,6 +2,16 @@
 
 Date: 2026-04-05 (UTC)
 
+## Implementation Progress Snapshot (Session 2)
+
+- ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
+- ✅ Gateway read slice implemented end-to-end for:
+  - `GET /api/feed` (scope + limit + cursor pagination),
+  - `GET /api/posts/{postId}`,
+  - `GET /api/posts/{postId}/comments`.
+- ✅ API client now injects bearer auth and `X-Device-Id` for gateway calls and preserves request-id inspection.
+- 🔄 Remaining Phase 2 write flows (`POST /api/posts`, `PATCH /api/posts/{postId}`, flags/comments create) still pending.
+
 ## 1) Purpose
 
 This document is the implementation-ready frontend integration guide for CRE8 backend APIs.
@@ -779,4 +789,3 @@ async function loadFeed() {
 - [ ] Inline rendering for `error.details[]` on `422`.
 - [ ] Session clear + reauth prompt on refresh failure.
 - [ ] Keychains page handles empty list gracefully.
-

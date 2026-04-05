@@ -2,6 +2,16 @@
 
 Date: 2026-04-05 (UTC)
 
+## Current Delivery Snapshot (Session 2)
+
+- Phases 0–1 are functionally implemented in the current static SPA (`public/ui`).
+- Phase 2 has started with gateway read flows complete:
+  - `/feed` → `GET /api/feed` with cursor pagination.
+  - `/posts/{postId}` → `GET /api/posts/{postId}`.
+  - `/posts/{postId}/comments` → `GET /api/posts/{postId}/comments`.
+- Feed-to-post-to-comments navigation is wired and uses shared envelope/error/request-id handling.
+- Remaining phase work continues per the checklist below.
+
 ## 1) Objective
 
 Implement a browser-based HTML interface that allows users to view and interact with every UI-specified API endpoint in `ui/endpoints_unified.json`.
