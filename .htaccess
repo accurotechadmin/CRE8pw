@@ -1,0 +1,13 @@
+Options -Indexes
+DirectoryIndex public/index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Canonicalize /public[...] to /[...]
+RewriteRule ^public(?:/(.*))?$ /$1 [R=301,L,NE]
+
+# Serve the app from /public when DocumentRoot points at repository root.
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
