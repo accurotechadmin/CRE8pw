@@ -277,10 +277,6 @@ final class AuthService
 
     private function ensureStorageReady(): void
     {
-        if ($this->pdo->getAttribute(PDO::ATTR_DRIVER_NAME) !== 'sqlite') {
-            return;
-        }
-
         $this->pdo->exec('CREATE TABLE IF NOT EXISTS principals (
             id CHAR(32) PRIMARY KEY,
             principal_type TEXT NOT NULL,

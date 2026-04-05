@@ -148,10 +148,6 @@ final class ModerationService
 
     private function ensureStorageReady(): void
     {
-        if ($this->pdo->getAttribute(PDO::ATTR_DRIVER_NAME) !== 'sqlite') {
-            return;
-        }
-
         $this->pdo->exec('CREATE TABLE IF NOT EXISTS moderation_actions (
             id CHAR(32) PRIMARY KEY,
             post_id CHAR(32) NULL,

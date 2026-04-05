@@ -4,7 +4,7 @@ _Last updated (UTC): 2026-04-05_
 
 ## Storage model
 
-Persistence uses PDO with runtime SQL operations. For SQLite drivers, service constructors create required tables automatically.
+Persistence uses PDO with runtime SQL operations. Service constructors run `CREATE TABLE IF NOT EXISTS` for required auth/key/content tables to reduce first-run migration failures.
 
 ## Tables created/used by services
 

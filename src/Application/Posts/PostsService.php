@@ -179,10 +179,6 @@ final class PostsService
 
     private function ensureStorageReady(): void
     {
-        if ($this->pdo->getAttribute(PDO::ATTR_DRIVER_NAME) !== 'sqlite') {
-            return;
-        }
-
         $this->pdo->exec('CREATE TABLE IF NOT EXISTS posts (
             id CHAR(32) PRIMARY KEY,
             author_principal_id CHAR(32) NOT NULL,
