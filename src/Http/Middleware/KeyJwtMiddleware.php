@@ -63,6 +63,10 @@ final class KeyJwtMiddleware implements MiddlewareInterface
                 'path' => $request->getUri()->getPath(),
                 'detail_code' => 'token_verification_failed',
             ]);
+
+            return $this->responder->error('auth_invalid', 'invalid token', $requestId, 401, [
+                'detail_code' => 'token_verification_failed',
+            ]);
         } catch (\Throwable) {
             $requestId = (string) $request->getAttribute('request_id', 'unknown');
             $this->auditEmitter?->emit('auth.key_jwt.unavailable', [
