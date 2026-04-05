@@ -116,3 +116,19 @@
   - Operator and QA users can verify state transitions consistently on any route without inspecting DOM attributes.
   - Accessibility improved through predictable live-updated state blocks and explicit state labels.
   - Slightly more verbose UI, but with lower ambiguity during endpoint validation workflows.
+
+
+## ADR-2026-04-05-09: Serve real UI assets under `/ui/*` while keeping SPA fallback for deep links
+
+- **Date / Session**: 2026-04-05 (UTC), Session 9
+- **Context**:
+  - Users reported loading `/ui/*` only showed static header text and no interactive routes.
+  - Root cause: `/ui[/{route:.*}]` always returned `index.html`, including `/ui/app.js` and `/ui/styles.css`, which prevents module/style loading behind rewrite-all setups.
+- **Decision**:
+  - Update UI route handler to serve actual files from `public/ui` when the path looks like an asset (`.js`, `.css`, etc.) and exists inside the UI directory.
+  - Keep SPA fallback behavior for non-asset paths so deep links like `/ui/posts/{id}` still render via `index.html`.
+  - Add basic extension-to-content-type mapping for common static asset types.
+- **Consequences**:
+  - UI now initializes correctly in environments where all `/ui/*` requests route through `public/index.php`.
+  - Deep-link behavior remains unchanged for client-side routes.
+  - Static file path traversal is constrained to `public/ui` realpath checks.

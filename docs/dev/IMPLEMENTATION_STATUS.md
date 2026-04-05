@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 8
+Updated: 2026-04-05 (UTC) — Session 9
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -42,6 +42,7 @@ Status legend: **not started** / **in progress** / **done**
 ## Shared Infrastructure
 
 - App shell (header/nav/flash/content): **done** (`public/ui/index.html`, `public/ui/app.js`)
+- UI route asset serving under `/ui` (serves JS/CSS assets directly, SPA fallback for route paths): **done** (`src/Http/Routes/RouteRegistrar.php`)
 - API client wrapper (JSON + envelope + errors): **done** (`public/ui/api-client.js`)
 - API auth + `X-Device-Id` support for gateway flows: **done** (`public/ui/api-client.js`, `public/ui/state.js`)
 - State model (session by owner/key surface): **done** (`public/ui/state.js`)
@@ -65,3 +66,5 @@ Status legend: **not started** / **in progress** / **done**
 - Session 7 implementation commit: `work@HEAD`
 
 - Session 8 implementation commit: `work@HEAD`
+
+- Session 9 implementation commit: `work@HEAD`

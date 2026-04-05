@@ -253,3 +253,30 @@
   - Assumed it is better to mark endpoint checks explicitly failed/blocked (with concrete boot evidence) rather than leave seeded checks ambiguous.
 - **Recommended next session starting point**:
   - Unblock dependency installation (`composer install` with network/proxy access), boot backend, then rerun every QA matrix endpoint and replace blocked/fail entries with true pass/fail evidence.
+
+
+## Session 2026-04-05T10:10:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Investigate and fix UI bootstrap issue where `/ui/*` displayed shell text but no interactive routes/content.
+  - Deliver a minimal production-quality routing fix without changing endpoint contracts.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Treated `/ui` asset routing as highest-priority blocker because it prevented any practical frontend/backend interaction path regardless of endpoint readiness.
+  - Implemented asset-serving + SPA fallback in one handler to preserve deep-link behavior and avoid web-server-specific configuration assumptions.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Full runtime endpoint QA still depends on dependency installation (`vendor`) and backend boot in the active environment.
+- **Assumptions recorded**:
+  - Assumed requests with file extensions under `/ui/*` should be served as static assets rather than SPA routes.
+- **Recommended next session starting point**:
+  - Re-run end-to-end QA matrix from `/ui/login` after dependency/boot unblock, now that asset loading path is fixed.

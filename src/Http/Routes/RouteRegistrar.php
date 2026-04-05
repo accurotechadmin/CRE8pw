@@ -15,6 +15,7 @@ use Cre8\Application\Posts\PostsService;
 use Cre8\Core\Http\EnvelopeResponder;
 use Cre8\Security\JwksService;
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ResponseInterface;
 use Slim\App;
 
 final class RouteRegistrar
@@ -43,17 +44,8 @@ final class RouteRegistrar
         });
 
 
-        $app->get('/ui[/{route:.*}]', function ($request, $response) {
-            $indexPath = dirname(__DIR__, 3).'/public/ui/index.html';
-            if (!is_file($indexPath)) {
-                $response->getBody()->write('UI not found');
-
-                return $response->withStatus(404)->withHeader('Content-Type', 'text/plain; charset=utf-8');
-            }
-
-            $response->getBody()->write((string) file_get_contents($indexPath));
-
-            return $response->withHeader('Content-Type', 'text/html; charset=utf-8');
+        $app->get('/ui[/{route:.*}]', function ($request, $response, array $args) {
+            return $this->renderUiRoute($response, (string) ($args['route'] ?? ''));
         });
 
         $app->get('/.well-known/jwks.json', function ($request, $response) use ($container, $responder) {
@@ -157,6 +149,56 @@ final class RouteRegistrar
 
         $this->registerConsoleRoutes($app, $container, $responder, $perSurfaceMiddleware['console'] ?? []);
         $this->registerGatewayRoutes($app, $container, $responder, $perSurfaceMiddleware['gateway'] ?? []);
+    }
+
+    private function renderUiRoute(ResponseInterface $response, string $route): ResponseInterface
+    {
+        $uiRoot = realpath(dirname(__DIR__, 3).'/public/ui');
+        if ($uiRoot === false) {
+            $response->getBody()->write('UI not found');
+
+            return $response->withStatus(404)->withHeader('Content-Type', 'text/plain; charset=utf-8');
+        }
+
+        $requestedRoute = ltrim($route, '/');
+        if ($requestedRoute !== '' && str_contains($requestedRoute, '.')) {
+            $assetPath = realpath($uiRoot.'/'.$requestedRoute);
+            if ($assetPath === false || !is_file($assetPath) || !str_starts_with($assetPath, $uiRoot.DIRECTORY_SEPARATOR)) {
+                $response->getBody()->write('UI asset not found');
+
+                return $response->withStatus(404)->withHeader('Content-Type', 'text/plain; charset=utf-8');
+            }
+
+            $response->getBody()->write((string) file_get_contents($assetPath));
+
+            return $response->withHeader('Content-Type', $this->uiAssetContentType($assetPath));
+        }
+
+        $indexPath = $uiRoot.'/index.html';
+        if (!is_file($indexPath)) {
+            $response->getBody()->write('UI not found');
+
+            return $response->withStatus(404)->withHeader('Content-Type', 'text/plain; charset=utf-8');
+        }
+
+        $response->getBody()->write((string) file_get_contents($indexPath));
+
+        return $response->withHeader('Content-Type', 'text/html; charset=utf-8');
+    }
+
+    private function uiAssetContentType(string $assetPath): string
+    {
+        return match (strtolower(pathinfo($assetPath, PATHINFO_EXTENSION))) {
+            'css' => 'text/css; charset=utf-8',
+            'js' => 'application/javascript; charset=utf-8',
+            'json' => 'application/json; charset=utf-8',
+            'svg' => 'image/svg+xml',
+            'png' => 'image/png',
+            'jpg', 'jpeg' => 'image/jpeg',
+            'gif' => 'image/gif',
+            'webp' => 'image/webp',
+            default => 'application/octet-stream',
+        };
     }
 
     /** @param list<object> $surfaceMiddleware */
