@@ -86,3 +86,18 @@
   - Console key workflows are safer and aligned with backend constraints without introducing new shared infrastructure abstractions.
   - Operator behavior is guided by clear action summaries before submission.
   - Future enhancement may extract a generalized “dangerous action confirmation” primitive used by moderation and lifecycle views.
+
+## ADR-2026-04-05-07: Unify dangerous confirmations and state semantics with lightweight SPA primitives
+
+- **Date / Session**: 2026-04-05 (UTC), Session 6
+- **Context**:
+  - Moderation, lifecycle, and invite flows had separate confirmation handlers with slightly different UX/focus behavior.
+  - Read/list routes represented failures with ad-hoc `error` rendering, making Phase 5 status semantics inconsistent.
+- **Decision**:
+  - Add shared `statusFromError()` + `renderStatePanel()` helpers for consistent `validation_error|forbidden|not_found|server_error` route states.
+  - Add a shared `bindDangerousActionForm()` primitive that handles confirmation checkbox gating, optional typed confirmation, summaries, payload hooks, and success/error focus handling.
+  - Keep API envelope mapping and endpoint payload contracts unchanged.
+- **Consequences**:
+  - Cross-flow behavior is more consistent and easier to maintain without introducing a framework-level refactor.
+  - Accessibility and keyboard confirmation behavior become uniform across sensitive actions.
+  - Remaining Phase 5 work can iterate on these primitives instead of patching route-specific logic.

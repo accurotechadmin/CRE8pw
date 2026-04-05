@@ -13,12 +13,12 @@
         <span id="session-chip" class="chip">No active session</span>
         <button id="clear-session" type="button">Clear session</button>
       </div>
-      <nav id="main-nav" class="nav-links"></nav>
+      <nav id="main-nav" class="nav-links" aria-label="Primary navigation"></nav>
     </header>
 
-    <main class="app-main">
-      <section id="flash-region" aria-live="polite"></section>
-      <section id="view-root"></section>
+    <main class="app-main" id="main-content">
+      <section id="flash-region" aria-live="polite" aria-atomic="true" tabindex="-1"></section>
+      <section id="view-root" tabindex="-1"></section>
       <section id="response-inspector" class="inspector" aria-live="polite"></section>
     </main>
 
