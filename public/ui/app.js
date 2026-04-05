@@ -9,6 +9,9 @@ const staticRoutes = {
   '/posts/new': postCreateView,
   '/console/posts': consolePostsView,
   '/console/posts/new': consolePostCreateView,
+  '/console/keys/new': consoleKeyCreateView,
+  '/console/keychains': consoleKeychainsView,
+  '/console/invites/new': consoleInviteCreateView,
 };
 
 const dynamicRoutes = [
@@ -19,6 +22,7 @@ const dynamicRoutes = [
   { pattern: /^\/posts\/([^/]+)\/comments\/new$/, view: commentCreateView, paramNames: ['postId'] },
   { pattern: /^\/console\/posts\/([^/]+)\/moderation$/, view: consolePostModerationView, paramNames: ['postId'] },
   { pattern: /^\/console\/posts\/([^/]+)\/comments\/([^/]+)\/moderation$/, view: consoleCommentModerationView, paramNames: ['postId', 'commentId'] },
+  { pattern: /^\/console\/keys\/([^/]+)\/lifecycle$/, view: consoleKeyLifecycleView, paramNames: ['keyId'] },
 ];
 
 const navItems = [
@@ -29,6 +33,9 @@ const navItems = [
   { path: '/posts/new', label: 'Create Post' },
   { path: '/console/posts', label: 'Console Posts' },
   { path: '/console/posts/new', label: 'Console New Post' },
+  { path: '/console/keys/new', label: 'Issue Key' },
+  { path: '/console/keychains', label: 'Keychains' },
+  { path: '/console/invites/new', label: 'Create Invite' },
 ];
 
 let flashMessage = null;
@@ -61,6 +68,23 @@ const consolePostsState = {
   status: 'idle',
   items: [],
   error: null,
+};
+
+const consoleKeychainsState = {
+  status: 'idle',
+  items: [],
+  error: null,
+};
+
+const keyIssueState = {
+  status: 'idle',
+  receipt: null,
+};
+
+const keyLifecycleState = {
+  keyId: null,
+  status: 'idle',
+  lastAction: null,
 };
 
 const navRoot = document.getElementById('main-nav');
@@ -284,7 +308,7 @@ function formTemplate({ title, fields, buttonText, helper = '' }) {
     </article>`;
 }
 
-function bindForm({ onSubmit, onSuccess }) {
+function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(error, 'Request failed.') }) {
   const form = document.getElementById('active-form');
   const button = document.getElementById('submit-btn');
 
@@ -323,7 +347,7 @@ function bindForm({ onSubmit, onSuccess }) {
       } else if (error.status === 409) {
         flashMessage = { type: 'error', text: 'Owner already exists for this email.' };
       } else {
-        flashMessage = { type: 'error', text: mapGatewayError(error, 'Request failed.') };
+        flashMessage = { type: 'error', text: mapError(error) };
       }
     } finally {
       button.disabled = false;
@@ -783,7 +807,11 @@ function consolePostsView() {
   viewRoot.innerHTML = `<article class="panel">
       <h2>Console posts</h2>
       <p class="muted-text">Owner-scoped content with direct links to post and comment moderation.</p>
-      <p><a href="/ui/console/posts/new" data-path="/console/posts/new">Create console post</a></p>
+      <div class="row-actions">
+        <a href="/ui/console/posts/new" data-path="/console/posts/new">Create console post</a>
+        <a href="/ui/console/keys/new" data-path="/console/keys/new">Issue key</a>
+        <a href="/ui/console/keychains" data-path="/console/keychains">View keychains</a>
+      </div>
       ${hasItems
         ? `<ul class="list">${consolePostsState.items.map((post) => {
           const safePostId = encodeURIComponent(post.id ?? '');
@@ -953,6 +981,373 @@ function bindModerationConfirmation({ formId, actionFieldName, reasonFieldName, 
       }
     } finally {
       submitButton.disabled = false;
+      render();
+    }
+  });
+}
+
+function parseStringList(input) {
+  return input
+    .split(/[\n,]/)
+    .map((entry) => entry.trim())
+    .filter((entry) => entry !== '');
+}
+
+function mapConsoleError(error, fallback = 'Console request failed.') {
+  if (error.status === 403) {
+    const detailCode = error.details?.[0]?.code ?? error.raw?.error?.details?.[0]?.code ?? null;
+    if (detailCode === 'delegation_owner_mismatch') {
+      return 'Parent envelope belongs to another owner.';
+    }
+    if (detailCode === 'delegation_issue_forbidden') {
+      return 'Selected parent key cannot issue child keys.';
+    }
+
+    return 'This console action is forbidden for the current owner session.';
+  }
+
+  if (error.status === 404) {
+    return 'The target console resource was not found.';
+  }
+
+  if (error.status === 422) {
+    return 'Please correct the highlighted fields and retry.';
+  }
+
+  return error.message ?? fallback;
+}
+
+function keyIssueSummary(receipt) {
+  return `<div class="summary-box">
+    <strong>Issued key summary</strong>
+    <p>Key ID: <code>${escapeHtml(receipt.id ?? 'n/a')}</code></p>
+    <p>Class: <strong>${escapeHtml(receipt.key_class ?? 'n/a')}</strong> · Depth: <strong>${escapeHtml(String(receipt.depth ?? 'n/a'))}</strong></p>
+    <p>Permissions: ${escapeHtml(Array.isArray(receipt.permissions) ? receipt.permissions.join(', ') : 'n/a')}</p>
+    <p>Scope: ${escapeHtml(Array.isArray(receipt.scope) ? receipt.scope.join(', ') : 'n/a')}</p>
+    <p>Expires: ${escapeHtml(receipt.expires_at_utc ?? 'n/a')}</p>
+  </div>`;
+}
+
+function consoleKeyCreateView() {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  const hasReceipt = keyIssueState.status === 'success' && keyIssueState.receipt;
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Issue console key</h2>
+    <p class="muted-text">Create delegated author/use keys with permissions, scope, TTL, and optional parent envelope.</p>
+    ${hasReceipt ? `<section class="receipt-panel">
+      <h3>One-time API key reveal</h3>
+      <p class="error-text">Copy this API key now. It will not be retrievable again from backend APIs.</p>
+      <pre class="secret-box">${escapeHtml(keyIssueState.receipt.api_key ?? '')}</pre>
+      ${keyIssueSummary(keyIssueState.receipt)}
+      <div class="row-actions">
+        <button type="button" id="copy-issued-key">Copy API key</button>
+        <a href="/ui/console/keys/${encodeURIComponent(keyIssueState.receipt.id ?? '')}/lifecycle" data-path="/console/keys/${encodeURIComponent(keyIssueState.receipt.id ?? '')}/lifecycle">Manage lifecycle</a>
+      </div>
+    </section>` : ''}
+    ${formTemplate({
+      title: 'Key issuance form',
+      buttonText: 'Issue key',
+      fields: [
+        {
+          name: 'key_class',
+          label: 'Key class',
+          options: [
+            { value: 'secondary_author', label: 'secondary_author' },
+            { value: 'primary_author', label: 'primary_author' },
+            { value: 'use', label: 'use' },
+          ],
+          value: 'secondary_author',
+        },
+        { name: 'parent_envelope_id', label: 'Parent envelope ID (required for use)', required: false },
+        { name: 'permissions', label: 'Permissions (comma/newline separated)', multiline: true, value: 'posts:read' },
+        { name: 'scope', label: 'Scope (comma/newline separated)', multiline: true, value: 'posts:all' },
+        { name: 'ttl_seconds', label: 'TTL seconds', type: 'number', required: false, value: '900' },
+        {
+          name: 'comments_enabled',
+          label: 'Comments enabled',
+          options: [
+            { value: 'false', label: 'false' },
+            { value: 'true', label: 'true' },
+          ],
+          value: 'false',
+          required: false,
+        },
+      ],
+    })}
+  </article>`;
+
+  const mainForm = document.querySelector('#active-form');
+  const classControl = mainForm.querySelector('#key_class');
+  const parentControl = mainForm.querySelector('#parent_envelope_id');
+  const parentError = mainForm.querySelector('[data-error-for="parent_envelope_id"]');
+  const syncParentRequired = () => {
+    const isUseKey = classControl.value === 'use';
+    parentControl.required = isUseKey;
+    if (!isUseKey) {
+      parentError.textContent = '';
+    }
+  };
+  syncParentRequired();
+  classControl.addEventListener('change', syncParentRequired);
+
+  bindForm({
+    onSubmit: async (body) => {
+      const permissions = parseStringList(body.permissions ?? '');
+      const scope = parseStringList(body.scope ?? '');
+      const ttlSeconds = Number.parseInt(String(body.ttl_seconds ?? '').trim(), 10);
+      const payload = {
+        key_class: body.key_class,
+        permissions,
+        scope,
+        comments_enabled: body.comments_enabled === 'true',
+      };
+
+      if (String(body.parent_envelope_id ?? '').trim() !== '') {
+        payload.parent_envelope_id = String(body.parent_envelope_id).trim();
+      }
+      if (!Number.isNaN(ttlSeconds)) {
+        payload.ttl_seconds = ttlSeconds;
+      }
+
+      const response = await ownerRequest('/console/api/keys', { method: 'POST', body: payload });
+      keyIssueState.status = 'success';
+      keyIssueState.receipt = response.data ?? null;
+
+      return response;
+    },
+    onSuccess: () => {
+      flashMessage = { type: 'success', text: 'Key issued. Copy the API key now and save it securely.' };
+      render();
+    },
+    mapError: (error) => mapConsoleError(error, 'Key issuance failed.'),
+  });
+
+  if (hasReceipt) {
+    const copyButton = document.getElementById('copy-issued-key');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const rawKey = keyIssueState.receipt?.api_key ?? '';
+        if (!rawKey) {
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(rawKey);
+          flashMessage = { type: 'success', text: 'API key copied to clipboard.' };
+        } catch (_error) {
+          flashMessage = { type: 'error', text: 'Clipboard copy failed. Copy manually from the secret box.' };
+        }
+        render();
+      });
+    }
+  }
+
+  bindInternalLinks(viewRoot);
+}
+
+function lifecycleRiskLabel(action) {
+  if (action === 'suspend') {
+    return 'Low risk: temporary disable.';
+  }
+  if (action === 'cancel') {
+    return 'Medium risk: disables key and may require reissue.';
+  }
+
+  return 'High risk: revoke also revokes current credentials.';
+}
+
+function consoleKeyLifecycleView({ keyId }) {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  const repeatLocked = keyLifecycleState.keyId === keyId && keyLifecycleState.status === 'success';
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Key lifecycle transition</h2>
+    <p class="muted-text">Target key: <code>${escapeHtml(keyId)}</code></p>
+    <p><a href="/ui/console/keys/new" data-path="/console/keys/new">Issue another key</a> · <a href="/ui/console/keychains" data-path="/console/keychains">View keychains</a></p>
+    ${repeatLocked ? '<p class="muted-text">A lifecycle action was already submitted for this key in this session. Repeat submission is disabled for safety.</p>' : ''}
+    <form id="key-lifecycle-form" data-subject-label="key ${escapeHtml(keyId)}" novalidate>
+      <div class="field">
+        <label for="lifecycle-state">Lifecycle state</label>
+        <select id="lifecycle-state" name="state" required ${repeatLocked ? 'disabled' : ''}>
+          ${['suspend', 'cancel', 'revoke'].map((value) => `<option value="${value}">${value}</option>`).join('')}
+        </select>
+      </div>
+      <p class="muted-text" id="lifecycle-risk"></p>
+      <div data-summary-slot></div>
+      <div class="field">
+        <label for="confirm-text">Type <code>CONFIRM</code> for revoke actions</label>
+        <input id="confirm-text" name="confirm_text" type="text" placeholder="CONFIRM" ${repeatLocked ? 'disabled' : ''}/>
+      </div>
+      <label class="confirm-check"><input type="checkbox" name="confirm_action" ${repeatLocked ? 'disabled' : ''}/> I understand this lifecycle transition can disrupt active API usage.</label>
+      <div class="row-actions">
+        <button type="submit" ${repeatLocked ? 'disabled' : ''}>Submit lifecycle action</button>
+      </div>
+    </form>
+  </article>`;
+
+  bindInternalLinks(viewRoot);
+  const form = document.getElementById('key-lifecycle-form');
+  const stateControl = form.querySelector('[name="state"]');
+  const confirmText = form.querySelector('[name="confirm_text"]');
+  const confirmToggle = form.querySelector('[name="confirm_action"]');
+  const summarySlot = form.querySelector('[data-summary-slot]');
+  const riskSlot = document.getElementById('lifecycle-risk');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  const syncSummary = () => {
+    riskSlot.textContent = lifecycleRiskLabel(stateControl.value);
+    summarySlot.innerHTML = moderationSummary({
+      subject: `key ${keyId}`,
+      action: stateControl.value,
+      reasonCode: stateControl.value === 'revoke' ? 'credential_revocation' : 'lifecycle_transition',
+    });
+  };
+  syncSummary();
+  stateControl.addEventListener('change', syncSummary);
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    flashMessage = null;
+
+    if (!confirmToggle.checked) {
+      flashMessage = { type: 'error', text: 'Please acknowledge the lifecycle confirmation checkbox.' };
+      render();
+      return;
+    }
+    if (stateControl.value === 'revoke' && confirmText.value.trim() !== 'CONFIRM') {
+      flashMessage = { type: 'error', text: 'Revoke requires typing CONFIRM exactly.' };
+      render();
+      return;
+    }
+
+    submitButton.disabled = true;
+    try {
+      const response = await ownerRequest(`/console/api/keys/${encodeURIComponent(keyId)}/lifecycle`, {
+        method: 'POST',
+        body: { state: stateControl.value },
+      });
+      lastResponse = response;
+      keyLifecycleState.keyId = keyId;
+      keyLifecycleState.status = 'success';
+      keyLifecycleState.lastAction = stateControl.value;
+      flashMessage = { type: 'success', text: `Lifecycle action applied: ${stateControl.value}.` };
+    } catch (error) {
+      lastResponse = error;
+      flashMessage = { type: 'error', text: mapConsoleError(error, 'Lifecycle request failed.') };
+    } finally {
+      submitButton.disabled = false;
+      render();
+    }
+  });
+}
+
+function consoleKeychainsView() {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  if (consoleKeychainsState.status === 'idle') {
+    fetchConsoleKeychains();
+  }
+
+  if (consoleKeychainsState.status === 'loading') {
+    viewRoot.innerHTML = '<article class="panel"><h2>Keychains</h2><p>Loading keychains…</p></article>';
+    return;
+  }
+
+  if (consoleKeychainsState.status === 'error') {
+    viewRoot.innerHTML = `<article class="panel"><h2>Keychains</h2><p class="error-text">${mapConsoleError(consoleKeychainsState.error, 'Failed to load keychains.')}</p><button id="retry-keychains" type="button">Retry</button></article>`;
+    document.getElementById('retry-keychains').addEventListener('click', () => fetchConsoleKeychains());
+    return;
+  }
+
+  const rows = consoleKeychainsState.items;
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Keychains</h2>
+    <p class="muted-text">Backend currently returns placeholder data; this view is ready for richer keychain records.</p>
+    ${rows.length < 1
+      ? '<p>No keychains returned yet. This is expected while backend keychain support is minimal.</p>'
+      : `<table class="simple-table"><thead><tr><th>ID</th><th>Status</th><th>Scope</th><th>Permissions</th></tr></thead><tbody>${rows.map((row) => `<tr><td>${escapeHtml(row.id ?? 'n/a')}</td><td>${escapeHtml(row.status ?? 'n/a')}</td><td>${escapeHtml(Array.isArray(row.scope) ? row.scope.join(', ') : 'n/a')}</td><td>${escapeHtml(Array.isArray(row.permissions) ? row.permissions.join(', ') : 'n/a')}</td></tr>`).join('')}</tbody></table>`}
+    <div class="row-actions">
+      <a href="/ui/console/keys/new" data-path="/console/keys/new">Issue key</a>
+      <a href="/ui/console/invites/new" data-path="/console/invites/new">Create invite</a>
+    </div>
+  </article>`;
+
+  bindInternalLinks(viewRoot);
+}
+
+async function fetchConsoleKeychains() {
+  consoleKeychainsState.status = 'loading';
+  consoleKeychainsState.error = null;
+  render();
+
+  try {
+    const response = await ownerRequest('/console/api/keychains');
+    lastResponse = response;
+    consoleKeychainsState.items = Array.isArray(response.data) ? response.data : [];
+    consoleKeychainsState.status = 'success';
+  } catch (error) {
+    lastResponse = error;
+    consoleKeychainsState.error = error;
+    consoleKeychainsState.status = 'error';
+  }
+
+  render();
+}
+
+function consoleInviteCreateView() {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Create invite</h2>
+    <p class="muted-text">Create an owner invite receipt. Current backend accepts an empty body and returns generated identifiers.</p>
+    <form id="invite-form" novalidate>
+      <label class="confirm-check"><input type="checkbox" name="confirm_action" /> I confirm I want to create a new invite receipt.</label>
+      <div class="row-actions"><button id="invite-submit" type="submit">Create invite</button></div>
+    </form>
+    <div id="invite-result"></div>
+  </article>`;
+
+  const form = document.getElementById('invite-form');
+  const result = document.getElementById('invite-result');
+  const submit = document.getElementById('invite-submit');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    flashMessage = null;
+    const confirmed = form.querySelector('[name="confirm_action"]').checked;
+    if (!confirmed) {
+      flashMessage = { type: 'error', text: 'Confirm invite creation before submitting.' };
+      render();
+      return;
+    }
+
+    submit.disabled = true;
+    result.innerHTML = '<p>Creating invite…</p>';
+    try {
+      const response = await ownerRequest('/console/api/invites', { method: 'POST', body: {} });
+      lastResponse = response;
+      const invite = response.data ?? {};
+      flashMessage = { type: 'success', text: `Invite created (${invite.invite_id ?? 'unknown id'}).` };
+      result.innerHTML = `<section class="summary-box">
+        <strong>Invite receipt</strong>
+        <p>Invite ID: <code>${escapeHtml(invite.invite_id ?? 'n/a')}</code></p>
+        <p>Status: ${escapeHtml(invite.status ?? 'n/a')}</p>
+        <p>Created: ${escapeHtml(invite.created_at_utc ?? 'n/a')}</p>
+      </section>`;
+    } catch (error) {
+      lastResponse = error;
+      result.innerHTML = '';
+      flashMessage = { type: 'error', text: mapConsoleError(error, 'Invite creation failed.') };
+    } finally {
+      submit.disabled = false;
       render();
     }
   });

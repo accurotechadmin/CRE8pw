@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 4
+Updated: 2026-04-05 (UTC) — Session 5
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -14,7 +14,7 @@ Status legend: **not started** / **in progress** / **done**
 - Phase 1 — Authentication & Session UX: **done**
 - Phase 2 — Gateway Content Flows: **done**
 - Phase 3 — Console Content & Moderation: **done**
-- Phase 4 — Console Key Management: **not started**
+- Phase 4 — Console Key Management: **done**
 - Phase 5 — Cross-Flow Quality & A11y: **not started**
 - Phase 6 — QA Matrix & Release Readiness: **not started**
 
@@ -34,10 +34,10 @@ Status legend: **not started** / **in progress** / **done**
 12. `POST /console/api/posts` — **done** (console post create form in `public/ui/app.js`)
 13. `POST /console/api/posts/{postId}/moderation` — **done** (post moderation route + confirmation UX in `public/ui/app.js`)
 14. `POST /console/api/posts/{postId}/comments/{commentId}/moderation` — **done** (comment moderation route + confirmation UX in `public/ui/app.js`)
-15. `POST /console/api/keys` — **not started**
-16. `POST /console/api/keys/{keyId}/lifecycle` — **not started**
-17. `GET /console/api/keychains` — **not started**
-18. `POST /console/api/invites` — **not started**
+15. `POST /console/api/keys` — **done** (key issue form + one-time secret reveal in `public/ui/app.js`)
+16. `POST /console/api/keys/{keyId}/lifecycle` — **done** (lifecycle form + dangerous confirmation in `public/ui/app.js`)
+17. `GET /console/api/keychains` — **done** (keychain list/empty state route in `public/ui/app.js`)
+18. `POST /console/api/invites` — **done** (invite create + receipt panel in `public/ui/app.js`)
 
 ## Shared Infrastructure
 
@@ -56,3 +56,4 @@ Status legend: **not started** / **in progress** / **done**
 
 - Session 3 implementation commit: `work@HEAD`
 - Session 4 implementation commit: `work@HEAD`
+- Session 5 implementation commit: `work@HEAD`

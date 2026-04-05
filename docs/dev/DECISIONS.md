@@ -71,3 +71,18 @@
   - Console list/create/moderation flows share consistent auth behavior and fail predictably on expired sessions.
   - Moderation operations become more auditable and less error-prone due to explicit preview + confirm UX.
   - Adds lightweight reusable moderation form logic that can be extended to future lifecycle/dangerous actions in Phase 4.
+
+## ADR-2026-04-05-06: Model key lifecycle and key issuance as safety-first console flows
+
+- **Date / Session**: 2026-04-05 (UTC), Session 5
+- **Context**:
+  - Phase 4 introduces sensitive operations (`/console/api/keys` and lifecycle transitions) with one-time secrets and disruptive state changes.
+  - UI needed to remain consistent with existing moderation confirmation patterns while adding key-specific policy affordances.
+- **Decision**:
+  - Reused `ownerRequest()` for all new `/console/api/*` key-management calls, with dedicated `mapConsoleError()` handling for known policy/detail code patterns.
+  - Added one-time secret reveal UX for issued API keys and avoided storing/re-rendering secrets outside the current route session.
+  - Added lifecycle risk copy + mandatory confirmation checkbox, and enforced typed `CONFIRM` for revoke transitions.
+- **Consequences**:
+  - Console key workflows are safer and aligned with backend constraints without introducing new shared infrastructure abstractions.
+  - Operator behavior is guided by clear action summaries before submission.
+  - Future enhancement may extract a generalized “dangerous action confirmation” primitive used by moderation and lifecycle views.

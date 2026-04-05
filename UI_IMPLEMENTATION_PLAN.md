@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Current Delivery Snapshot (Session 4)
+## Current Delivery Snapshot (Session 5)
 
 - Phases 0–1 are functionally implemented in the current static SPA (`public/ui`).
 - Phase 2 is now complete for gateway read/write flows:
@@ -21,6 +21,12 @@ Date: 2026-04-05 (UTC)
   - `/console/posts/{postId}/moderation` → `POST /console/api/posts/{postId}/moderation`.
   - `/console/posts/{postId}/comments/{commentId}/moderation` → `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
 - Remaining phase work continues with Phase 4 key management workflows.
+- Phase 4 is now complete for console key-management flows:
+  - `/console/keys/new` → `POST /console/api/keys`.
+  - `/console/keys/{keyId}/lifecycle` → `POST /console/api/keys/{keyId}/lifecycle`.
+  - `/console/keychains` → `GET /console/api/keychains`.
+  - `/console/invites/new` → `POST /console/api/invites`.
+- Remaining phase work continues with Phase 5 cross-flow quality and accessibility hardening.
 
 ## 1) Objective
 
