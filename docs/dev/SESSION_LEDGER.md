@@ -127,3 +127,34 @@
   - Assumed moderation pages can be action-first (ID-driven) without a prerequisite comment lookup endpoint in this phase.
 - **Recommended next session starting point**:
   - Start Phase 4 console key management flows (`POST /console/api/keys`, lifecycle, keychains, invites`) using the new owner-auth request and confirmation primitives.
+
+## Session 2026-04-05T04:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Complete Phase 4 console key-management workflows in `/ui` end-to-end.
+  - Implement `/console/keys/new`, `/console/keys/{keyId}/lifecycle`, `/console/keychains`, and `/console/invites/new` with owner-authenticated `/console/api/*` wiring.
+  - Add dangerous lifecycle confirmation UX and key issuance one-time secret handling.
+- **Files changed**:
+  - `public/ui/app.js`
+  - `public/ui/styles.css`
+  - `FRONTEND_BACKEND_INTEGRATION_PLAYBOOK.md`
+  - `UI_IMPLEMENTATION_PLAN.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Reused `ownerRequest()` for all Phase 4 endpoints to maintain one auth/error policy for console surface calls.
+  - Enforced typed `CONFIRM` for revoke lifecycle transitions in addition to checkbox confirmation to reduce accidental destructive actions.
+  - Kept keychains page resilient to backend placeholder behavior (empty-list first UX with retry path).
+- **Tests/checks run and outcomes**:
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Browser-container screenshot tooling is unavailable in this environment, so visual validation screenshots could not be captured.
+- **Assumptions recorded**:
+  - Assumed key issuance `permissions` and `scope` are easiest to operate as comma/newline list inputs and should serialize to string arrays.
+  - Assumed “disable repeat action after success” for lifecycle can be session-local UI behavior without backend lookup support.
+- **Recommended next session starting point**:
+  - Begin Phase 5 hardening: accessibility pass, consistency of error-state semantics (`idle/loading/submitting/success/validation_error/...`), and shared dangerous-action confirmation component extraction.

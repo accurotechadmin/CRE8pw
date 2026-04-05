@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Implementation Progress Snapshot (Session 4)
+## Implementation Progress Snapshot (Session 5)
 
 - ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
 - ✅ Gateway read slice implemented end-to-end for:
@@ -20,6 +20,12 @@ Date: 2026-04-05 (UTC)
   - `/console/posts/new` → `POST /console/api/posts`,
   - `/console/posts/{postId}/moderation` → `POST /console/api/posts/{postId}/moderation`,
   - `/console/posts/{postId}/comments/{commentId}/moderation` → `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
+- ✅ Phase 4 console key-management slice is now implemented end-to-end for:
+  - `/console/keys/new` → `POST /console/api/keys`,
+  - `/console/keys/{keyId}/lifecycle` → `POST /console/api/keys/{keyId}/lifecycle`,
+  - `/console/keychains` → `GET /console/api/keychains`,
+  - `/console/invites/new` → `POST /console/api/invites`.
+- ✅ All `/console/api/*` routes now consistently use centralized owner bearer auth handling (`ownerRequest`) in the SPA.
 
 ## 1) Purpose
 

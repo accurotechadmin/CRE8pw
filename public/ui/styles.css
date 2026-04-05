@@ -158,3 +158,23 @@ pre {
   align-items: center;
   font-size: 0.95rem;
 }
+
+.secret-box {
+  padding: 0.7rem;
+  border: 1px solid #f0c9a8;
+  background: #fff8f2;
+  border-radius: 6px;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.simple-table th,
+.simple-table td {
+  border: 1px solid #dde3ed;
+  padding: 0.45rem;
+  text-align: left;
+}
