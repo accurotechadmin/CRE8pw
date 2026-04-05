@@ -43,7 +43,23 @@ final class ValidationMiddleware implements MiddlewareInterface
 
         $body = $request->getParsedBody();
         if (!is_array($body)) {
-            $raw = (string) $request->getBody();
+            $raw = '';
+            try {
+                $stream = $request->getBody();
+                $offset = null;
+                if ($stream->isSeekable()) {
+                    $offset = $stream->tell();
+                }
+
+                $raw = (string) $stream;
+
+                if ($offset !== null && $stream->isSeekable()) {
+                    $stream->seek($offset);
+                }
+            } catch (\Throwable) {
+                $raw = '';
+            }
+
             if ($raw !== '') {
                 try {
                     $decoded = json_decode($raw, true, 512, JSON_THROW_ON_ERROR);
@@ -51,7 +67,7 @@ final class ValidationMiddleware implements MiddlewareInterface
                         $body = $decoded;
                         $request = $request->withParsedBody($decoded);
                     }
-                } catch (\JsonException) {
+                } catch (\Throwable) {
                     // JsonBodyMiddleware will return the canonical malformed JSON response.
                 }
             }
