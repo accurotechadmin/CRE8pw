@@ -1,54 +1,36 @@
-# Security Model (Scaffold)
+# Security Model
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Authentication
 
-Capture threats, controls, validation points, and safe extension patterns.
+- **Owner auth:** password login (`AuthService::login`) and refresh (`AuthService::refresh`) issuing `typ=owner` console-audience JWTs.
+- **Key auth:** API key verification (`KeyLifecycleService::keyLogin`) and refresh (`KeyLifecycleService::refresh`) issuing `typ=key` gateway-audience JWTs containing permissions/scope/key_class/comments flags.
 
-## 1) Threat model worksheet
+## JWT controls
 
-| Threat category | Example attack | Existing control(s) | Residual risk | Owner |
-|---|---|---|---|---|
-| Token forgery | invalid signature token reuse | JWT verifier + claim checks | _(fill)_ | security |
-| Privilege misuse | over-scoped key mutation | permissions + middleware + service policy | _(fill)_ | platform |
-| _(expand)_ | | | | |
+- RSA signing via `JwtTokenSigner` with `kid` derived from public key hash.
+- Verification via `JwtTokenVerifier` with strict claim requirements and 60s leeway.
+- Audience/type consistency enforced both in verifier and auth middlewares.
+- Delegation tokens require lineage claims (`delegation_envelope_id`, `initial_author_key_id`).
 
-## 2) Authentication and session controls
+## Key material controls
 
-- Owner login and refresh flow
-- Key login and refresh flow
-- Token family rotation behavior
-- Session expiry handling expectations (API + UI)
+- Keys can be inline PEM or filesystem paths.
+- World-writable key files are rejected.
+- PEM format sanity checks enforced.
+- Boot checks enforce stricter private key permissions in stage/prod.
 
-## 3) Authorization model
+## HTTP/runtime controls
 
-- Route surface constraints
-- Permission checks
-- Delegation scope semantics
-- Comments-enabled/write restrictions
+- CORS allowlist from runtime config.
+- CSRF HMAC validation for non-API console writes.
+- Global rate limiting via Symfony limiter.
+- Device header validation for gateway requests.
+- Use-key guard middleware blocks restricted mutation patterns.
+- Security headers + CSP applied globally.
 
-## 4) Cryptographic material handling
+## Sensitive-data handling
 
-- PEM source rules (inline/path)
-- file-permission safety checks
-- rotation strategy template
-- JWKS publication expectations
-
-## 5) HTTP and middleware controls
-
-- CORS profile policy
-- CSRF policy scope
-- Rate-limit policy
-- device-id policy
-- input validation policy
-
-## 6) Secure extensibility guardrails
-
-When adding new features:
-
-- [ ] Define new threat scenarios.
-- [ ] Identify required middleware/policy updates.
-- [ ] Add negative security tests first.
-- [ ] Update glossary and incident runbook.
+- Audit emitter recursively redacts sensitive keys (e.g., token/password/secret/private_key/refresh_token).
+- Error envelopes include request correlation but do not expose stack traces.

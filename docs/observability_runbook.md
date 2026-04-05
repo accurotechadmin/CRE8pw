@@ -1,43 +1,26 @@
-# Observability & Audit Runbook (Scaffold)
+# Observability & Audit Runbook
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Log and event producers
 
-Provide logging/audit diagnostics and incident response steps.
+- `public/index.php`: startup readiness/failure JSON events (`boot.startup_ready`, `boot.startup_failed`).
+- Middleware and services: structured audit events via `AuditEmitter`.
+- `MonologAuditEmitter`: context normalization, required field backfill, sensitive-field redaction, optional security/failure logger routing.
 
-## 1) Signal inventory template
+## Event naming patterns in code
 
-| Signal type | Producer | Schema/location | Retention | Consumer |
-|---|---|---|---|---|
-| startup logs | `public/index.php` | JSON `boot.startup_*` | _(fill)_ | ops |
-| audit events | `AuditEmitter` impl | structured event payload | _(fill)_ | security/ops |
-| _(expand)_ | | | | |
+- Auth: `auth.*`, `auth.owner_jwt.*`, `auth.key_jwt.*`
+- Security/runtime guards: `security.*`, `csrf.*`, `rate_limit.*`, `device_limit.*`, `request_id.*`
+- Content/key operations: `keys.*`, `comments.*`, `moderation.*`, `invites.*`, `validation.*`, `routing.*`
 
-## 2) Audit event dictionary template
+## Incident triage
 
-| Event name | Category | Required fields | Redaction policy | Triggering code path |
-|---|---|---|---|---|
-| _(fill)_ | | | | |
+1. Start from `X-Request-Id` in response envelope.
+2. Find corresponding middleware/service audit events.
+3. Confirm detail/reason code and surface (`route_surface`, `route_family`).
+4. Correlate with startup/health probes when widespread failures occur.
 
-## 3) Incident playbooks
+## Delivery-failure handling
 
-### 3.1 Authentication failure spike
-
-- Detection triggers
-- Immediate checks
-- Containment actions
-- Follow-up evidence collection
-
-### 3.2 Moderation misuse or abuse
-
-- Correlate request-id + principal + action summary
-- Verify authorization path and tokens
-- Escalation and postmortem requirements
-
-## 4) Extensibility guidance
-
-- [ ] New feature adds auditable events where policy decisions occur.
-- [ ] Sensitive fields reviewed for redaction.
-- [ ] Runbook and glossary updated with new event terms.
+If primary logger throws during event emission, emitter records `audit.delivery_failed` either to configured failure logger or PHP error log fallback.

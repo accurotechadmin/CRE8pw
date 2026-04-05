@@ -1,130 +1,89 @@
 # Inventory & Anatomy of the CRE8.pw Codebase
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++ (high-detail inventory, pending final source-cited deep sections)_
 
-## 1) System shape at a glance
+## 1. Runtime and entrypoint inventory
 
-CRE8.pw is a Slim/PHP service with a static browser SPA under `public/ui`, centered on:
+- `public/index.php`: process bootstrap, env loading/normalization, startup success/failure logging, startup-failure envelope fallback.
+- `composer.json`: dependency graph, autoload config, QA/test/smoke composer scripts.
+- `secrets/jwt/private.pem`, `secrets/jwt/public.pem`: development key material.
 
-- typed runtime policies,
-- layered middleware enforcement,
-- JWT + API key lifecycle controls,
-- uniform API envelopes,
-- structured audit logging,
-- and strong contract/security test coverage.
+## 2. Backend source inventory (`src/`)
 
-## 2) Repository inventory by layer (high-level)
+### Bootstrap
+- `src/Bootstrap/AppFactory.php`: builds Slim app, adds global middleware, registers routes.
+- `src/Bootstrap/BootChecks.php`: startup dependency/config/safety assertions and optional evidence emission.
+- `src/Bootstrap/ContainerFactory.php`: DI bindings for core/security/http/application services.
 
-### A. Runtime and bootstrap
+### Configuration
+- `src/Config/RuntimeConfig.php`: typed runtime config from env with policy objects.
+- `src/Config/EnvValidator.php`: required env and profile safety validation.
+- `src/Config/RateLimitPolicy.php`, `JwtPolicy.php`, `CorsPolicy.php`: typed policy DTOs.
 
-- `public/index.php` — startup orchestration, environment normalization, container build, boot checks, and startup-failure envelope behavior.
-- `src/Bootstrap/*` — app factory, DI registration, startup safety assertions.
+### Core
+- `src/Core/Http/EnvelopeResponder.php`: canonical JSON envelope responses.
+- `src/Core/Request/RequestId.php`: UUIDv4 validation/generation helpers.
 
-### B. Configuration + policy model
+### Application services
+- `src/Application/Auth/AuthService.php`: owner registration/login/refresh, owner seed, token-family storage.
+- `src/Application/Auth/KeyLifecycleService.php`: key issuance/login/refresh, delegation policy, key lifecycle transitions, invites, keychain listing.
+- `src/Application/Feed/FeedService.php`: cursor-based feed slice over post visibility query.
+- `src/Application/Posts/PostsService.php`: posts CRUD-like operations, revisions, flags, SQLite schema bootstrap.
+- `src/Application/Posts/CommentsService.php`: comment list/create + audit emission.
+- `src/Application/Posts/ModerationService.php`: post/comment moderation state transitions + moderation action rows.
+- `src/Application/Health/HealthService.php`: DB/rate-limiter/key-material/http dependency probes.
 
-- `src/Config/*` — env validation and typed policy objects (`JwtPolicy`, `CorsPolicy`, `RateLimitPolicy`, `RuntimeConfig`).
+### HTTP routes
+- `src/Http/Routes/RouteRegistrar.php`: all public/auth/gateway/console route wiring, UI file-serving logic, inline validation branches.
 
-### C. Core HTTP primitives
+### Middleware
+- `src/Http/Middleware/MiddlewareOrder.php`: global and per-surface middleware catalogs.
+- `src/Http/Middleware/MiddlewareRegistry.php`: resolves middleware instances from DI container.
+- `src/Http/Middleware/ErrorHandlerMiddleware.php`: exception-to-envelope mapping.
+- `src/Http/Middleware/RequestIdMiddleware.php`: request ID normalization and response header injection.
+- `src/Http/Middleware/SecurityHeadersMiddleware.php`: security headers and CSP policy.
+- `src/Http/Middleware/CorsMiddleware.php`: CORS preflight/policy enforcement.
+- `src/Http/Middleware/RateLimitMiddleware.php`: IP-based global rate limiting.
+- `src/Http/Middleware/ValidationMiddleware.php`: route-keyed payload schema validation.
+- `src/Http/Middleware/JsonBodyMiddleware.php`: mutating-route JSON parsing and content-type enforcement.
+- `src/Http/Middleware/RoutingMarkerMiddleware.php`: surface/family attribute tagging.
+- `src/Http/Middleware/CsrfMiddleware.php`: non-API console CSRF enforcement.
+- `src/Http/Middleware/OwnerJwtMiddleware.php`: owner bearer verification and claim checks.
+- `src/Http/Middleware/KeyJwtMiddleware.php`: key bearer verification and claim checks.
+- `src/Http/Middleware/DeviceLimitMiddleware.php`: gateway device-id format requirement.
+- `src/Http/Middleware/UseKeyLimitMiddleware.php`: `use` key mutation restrictions.
 
-- `src/Core/Http/EnvelopeResponder.php` — success/list/error envelope response shape.
-- `src/Core/Request/RequestId.php` — request correlation id generation/validation.
+### Security
+- `src/Security/TokenSigner.php`, `TokenVerifier.php`: signing/verification interfaces.
+- `src/Security/JwtTokenSigner.php`: JWT signing + claim policy + kid generation.
+- `src/Security/JwtTokenVerifier.php`: JWT verification + claim policy enforcement.
+- `src/Security/TokenVerificationResult.php`, `VerifiedPrincipal.php`, `TokenValidationException.php`: verification result/value objects.
+- `src/Security/KeyMaterial.php`: PEM/path key resolution and permission checks.
+- `src/Security/ApiKeyHasher.php`: argon2id hashing and malformed-hash timing-safe fallback verify path.
+- `src/Security/JwksService.php`: RSA JWKS document generation.
 
-### D. Domain services
+### Observability
+- `src/Observability/AuditEmitter.php`: audit interface and schema/redaction constants.
+- `src/Observability/MonologAuditEmitter.php`: logger routing, redaction, required field normalization, failure fallback.
 
-- `src/Application/Auth/*` — owner auth + key lifecycle + refresh/token family handling.
-- `src/Application/Posts/*` — posts/comments/moderation.
-- `src/Application/Feed/*` and `src/Application/Health/*` — feed pagination and health diagnostics.
+## 3. Frontend inventory (`public/ui/`)
 
-### E. Transport boundary
+- `index.html`: app shell with nav/flash/view/inspector and skip-link accessibility hook.
+- `styles.css`: component styling, focus-visible rules, state chips, forms/tables.
+- `state.js`: session and device-id persistence.
+- `api-client.js`: shared HTTP client and envelope/error normalization.
+- `app.js`: route matching, view rendering, auth/session guard logic, endpoint form flows, confirmations, response inspector integration.
 
-- `src/Http/Routes/RouteRegistrar.php` — surface-aware route registration.
-- `src/Http/Middleware/*` — auth, validation, CORS, CSRF, rate limiting, request-id, route marker, JSON parser, security headers, and scope restrictions.
+## 4. Ops and contract artifacts
 
-### F. Security + identity primitives
+- `scripts/health_smoke.php`: runtime health endpoint smoke check.
+- `scripts/migrate_smoke.php`: SQLite schema sanity smoke for principal/content/delegation/invite tables.
+- `tests/Contract/*`: API/runtime/middleware/boot/route/container contract lock suite.
+- `tests/Security/*`: signer/verifier/hash/key-material security suite.
+- `ui/endpoints_unified.json`: UI contract and endpoint/state model source data.
+- `UI_IMPLEMENTATION_PLAN.md`: endpoint-coverage and phase implementation planning history.
 
-- `src/Security/*` — signing/verifying, claim-policy checks, key-material safety checks, hasher, JWKS.
+## 5. Documentation inventory
 
-### G. Observability
-
-- `src/Observability/*` — audit emission interface and Monolog implementation.
-
-### H. Frontend integration layer
-
-- `public/ui/*` — static SPA shell, routing, state, API client, and route views.
-
-### I. Test and validation artifacts
-
-- `tests/Contract/*` and `tests/Security/*` — behavioral contracts and security expectations.
-- `scripts/*` — operational smoke checks.
-
-### J. Planning and history
-
-- `UI_IMPLEMENTATION_PLAN.md` + `docs/dev/*` — implementation, decisions, and QA execution history.
-
-## 3) Inventory table template (to complete)
-
-| Path | Layer | Responsibility | Key contracts/tests | Extensibility touchpoints |
-|---|---|---|---|---|
-| `src/Http/Routes/RouteRegistrar.php` | Transport | Route wiring by surface | `tests/Contract/RouteRegistrarContractsTest.php` | Add route families + policy guards |
-| `src/Application/Auth/KeyLifecycleService.php` | Domain | Key issue/refresh/transition | security + contract suites | Add key classes, invite semantics |
-| `public/ui/app.js` | Frontend | SPA router/views + UX guards | QA matrix + integration checks | Add endpoint pages + route policies |
-| _(expand for all major files)_ | | | | |
-
-## 4) Internal anatomy to capture in final version
-
-### 4.1 Runtime composition chain
-
-`index.php` → `RuntimeConfig::fromEnv` → `ContainerFactory::build` → `BootChecks::assert` → `AppFactory::create` → middleware pipeline → routes.
-
-### 4.2 Middleware pipeline anatomy
-
-Capture for each middleware:
-
-- prerequisites,
-- side effects (headers/context),
-- rejection behavior (codes + detail codes),
-- audit emission behavior,
-- ordering dependencies.
-
-### 4.3 Domain responsibility boundaries
-
-Document ownership map:
-
-- what logic lives in `AuthService` vs `KeyLifecycleService`,
-- where moderation policy decisions occur,
-- where persistence assumptions leak into service code.
-
-### 4.4 Frontend/backed contract boundary
-
-Define:
-
-- envelope schema assumptions by UI,
-- auth/session state assumptions,
-- error reason-code mappings,
-- route-level permission guards mirrored in UI.
-
-## 5) Extensibility map (to complete)
-
-### Extension seam catalog
-
-- **New endpoint family:** add route + middleware policy + service + contract test + UI route.
-- **New token type:** signer/verifier policy updates + middleware usage + tests.
-- **New key policy dimension:** key lifecycle service + UI guard updates + docs glossary updates.
-- **New observability sink:** implement `AuditEmitter` and wire via container.
-
-### Compatibility checklist template
-
-- [ ] Backward compatibility impact assessed.
-- [ ] Envelope/error schema compatibility checked.
-- [ ] Security model updated.
-- [ ] Test contracts expanded.
-- [ ] Docs index and glossary updated.
-
-## 6) Gaps to close for final “authoritative” inventory
-
-- [ ] Fill file-by-file ownership and dependency graph.
-- [ ] Add package-level call graph diagrams.
-- [ ] Add ADR links from each major subsystem.
-- [ ] Add “common failure modes” references for operators.
-- [ ] Add versioned change log for architecture movement.
+- `docs/*.md`: canonical product, architecture, policy, and operations references.
+- `docs/dev/*.md`: session-ledger execution history, decision logs, QA matrix, implementation status.

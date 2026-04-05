@@ -1,40 +1,23 @@
-# Contributing Guide (Scaffold)
+# Contributing Guide
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Working model for this repository
 
-Define expected engineering workflow for code + docs + tests.
+1. Implement behavior changes in source (`src/*`, `public/ui/*`).
+2. Add/adjust tests in `tests/Contract` and/or `tests/Security`.
+3. Update docs in `/docs` to match shipped behavior.
+4. Run applicable checks (`composer test`, targeted phpunit, lint/syntax checks).
 
-## 1) Contribution workflow template
+## Code organization expectations
 
-1. Select scope aligned with roadmap/backlog.
-2. Confirm contracts/security implications.
-3. Implement with tests.
-4. Update docs references.
-5. Submit PR with evidence.
+- Backend business behavior belongs in `src/Application/*` services.
+- Cross-cutting transport/security behavior belongs in middleware.
+- Route handlers should orchestrate, validate quick input constraints, and delegate service logic.
+- Envelope and request-id behavior must remain consistent across endpoints.
 
-## 2) Pull request quality checklist
+## Documentation expectations
 
-- [ ] Summary clearly states behavior changes.
-- [ ] Contract/security tests added or updated.
-- [ ] Docs updated where behavior/policy changed.
-- [ ] Migration/ops impact called out (if applicable).
-- [ ] Security/privacy implications explicitly reviewed.
-
-## 3) Coding/documentation standards
-
-- Keep behavior contracts explicit and test-backed.
-- Prefer small, composable service/middleware changes.
-- Use consistent envelope/error vocabulary.
-- Keep docs source-linked and date-stamped.
-
-## 4) Extensibility contribution pattern
-
-For major new capability areas:
-
-- open with design note/ADR,
-- land minimal vertical slice,
-- add tests and operational hooks,
-- expand docs from scaffold to authoritative reference.
+- Keep docs authoritative and aligned with current code.
+- Avoid speculative wording for current behavior.
+- Record future work only in roadmap or dev artifacts.

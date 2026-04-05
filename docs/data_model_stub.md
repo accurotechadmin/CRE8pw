@@ -1,46 +1,40 @@
-# Data Model & Persistence (Scaffold)
+# Data Model & Persistence
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Storage model
 
-Document persistence entities, lifecycle transitions, and schema compatibility strategy.
+Persistence uses PDO with runtime SQL operations. For SQLite drivers, service constructors create required tables automatically.
 
-## 1) Entity inventory template
+## Tables created/used by services
 
-| Entity | Purpose | Key fields | Relationships | Created by | Updated by |
-|---|---|---|---|---|---|
-| principals | identity root | _(fill)_ | principal_emails, credentials, token_families | auth services | auth/key lifecycle |
-| posts | content object | _(fill)_ | comments, moderation actions | post services | moderation/posts |
-| _(expand)_ | | | | | |
+### Auth / principals
 
-## 2) State machine templates
+- `principals` (owner/key identity records, disable marker)
+- `principal_emails` (owner email mapping)
+- `credentials` (password/api_key hashes, revocation)
+- `token_families` (refresh family state, nonce rotation, expiry)
 
-### 2.1 Post lifecycle
+### Key lifecycle
 
-- States: draft/published/hidden/locked/archived/deleted (verify exact set).
-- Allowed transitions matrix.
-- Transition authority (owner/key/system).
+- `delegation_envelopes` (parent linkage, depth, scope_json, permissions_json, expiry)
+- `invite_receipts` (invite issuance receipts with hashed invite code)
 
-### 2.2 Key lifecycle
+### Content
 
-- States: active/suspended/revoked/expired (verify exact set).
-- Transition policy and required confirmations.
+- `posts` (author, visibility, state, title/body, delete metadata)
+- `post_revisions` (editor and reasoned edits)
+- `post_flags` (flag actions)
+- `comments` (comment body/state/delete metadata)
+- `moderation_actions` (post/comment moderation audit rows)
 
-## 3) Read/write path mapping
+## Lifecycle rules implemented in code
 
-Map each service method to SQL tables and write side effects.
+- Post states used: `draft`, `published`, `hidden`, `locked`, `archived`, `deleted`.
+- Comment states used: `active`, `hidden`, `locked`, `deleted`.
+- Key classes: `primary_author`, `secondary_author`, `use`.
+- Delegation depth hard cap: `MAX_DEPTH = 3`.
 
-## 4) Migration governance
+## Refresh-token family behavior
 
-- Backward compatibility expectations.
-- Roll-forward / rollback strategy.
-- Smoke validation procedure (`scripts/migrate_smoke.php`).
-
-## 5) Extensibility checklist
-
-- [ ] New table includes ownership/security considerations.
-- [ ] New index impact measured.
-- [ ] Migration safe for stage/prod promotion.
-- [ ] Tests updated for schema assumptions.
+Both owner and key flows hash refresh tokens, rotate on refresh, track previous nonce, and revoke on replay/expiry.

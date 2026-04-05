@@ -1,44 +1,31 @@
-# Deployment & Operations (Scaffold)
+# Deployment & Operations
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## Runtime prerequisites
 
-Capture environment promotion workflow, runtime checks, and operational procedures.
+- PHP 8.2 runtime.
+- Composer dependencies installed (`vendor/autoload.php` required at startup).
+- PDO + sodium + openssl compatible environment.
+- JWT key material available (inline or readable file paths).
+- Required env variables set (see configuration reference).
 
-## 1) Environment profile template
+## Boot sequence checks
 
-| Environment | Purpose | Config profile | Key constraints | Promotion source |
-|---|---|---|---|---|
-| local | developer loop | permissive | dev-only shortcuts | n/a |
-| stage | pre-prod verification | strict | production-like policies | local/CI |
-| prod | customer-facing | strictest | no wildcard/security exceptions | stage |
+`BootChecks::assert` validates:
 
-## 2) Release checklist template
+- DI resolve for core services (token verifier/signer, audit emitter, PDO).
+- Required dependency classes are present.
+- key material resolves and meets safety constraints.
+- profile hardening (issuer/CORS rules) is respected.
+- middleware order contract stays synchronized.
+- optional boot evidence file write if `BOOT_EVIDENCE_PATH` is set.
 
-- [ ] dependency install and lockfile integrity verified.
-- [ ] boot checks pass with target env vars.
-- [ ] health smoke passes post-deploy.
-- [ ] migration smoke/DB checks pass.
-- [ ] rollback package and runbook prepared.
+## Health verification
 
-## 3) Operational runbooks
+- `GET /health` probes DB, rate limiter, key material, and issuer HTTP dependency.
+- `scripts/health_smoke.php` provides CLI smoke validation.
 
-### 3.1 Startup failure (`boot_failed`)
+## Failure handling
 
-- inspect logs + request-id
-- validate env + key paths
-- validate dependency availability
-
-### 3.2 Secret/key rotation
-
-- rotate key material
-- validate JWKS and token verification compatibility
-- monitor auth error rates
-
-### 3.3 Rollback procedure
-
-- trigger criteria
-- rollback command sequence
-- post-rollback validation steps
+Startup exceptions return deterministic `boot_failed` JSON with generated request ID and log structured `boot.startup_failed` event.

@@ -1,52 +1,30 @@
-# Request Lifecycle (Scaffold)
+# Request Lifecycle
 
 _Last updated (UTC): 2026-04-05_
-_Status: Scaffold++_
 
-## Purpose
+## End-to-end flow
 
-Trace the complete execution path for both successful and failing requests.
+1. `RequestIdMiddleware` accepts valid incoming UUIDv4 request IDs or generates one.
+2. `SecurityHeadersMiddleware` appends CSP/security headers (UI-specific CSP for `/ui*`, strict API CSP otherwise).
+3. `CorsMiddleware` handles preflight and CORS header injection.
+4. `RateLimitMiddleware` enforces global limiter keyed by remote IP.
+5. `ValidationMiddleware` validates known route payload schemas.
+6. `JsonBodyMiddleware` enforces JSON content-type/parsing for mutating methods.
+7. `RoutingMarkerMiddleware` attaches `route_surface` and `route_family` attributes.
+8. `CsrfMiddleware` enforces `X-CSRF-Token` for non-API console write routes.
+9. Surface middleware (console or gateway) performs JWT checks and gateway-specific controls.
+10. Route handler invokes domain services and returns envelope responses via `EnvelopeResponder`.
 
-## 1) Lifecycle narrative template
+## Global middleware order contract
 
-1. **Process bootstrap** — environment and container are prepared.
-2. **Inbound request normalization** — request-id and routing metadata attached.
-3. **Policy middleware** — CORS, CSRF, rate-limit, JSON parse, validation.
-4. **Authentication/authorization** — owner/key JWT and route policy checks.
-5. **Handler dispatch** — route calls service methods.
-6. **Domain and persistence work** — DB reads/writes + audit events.
-7. **Response shaping** — envelope responder emits normalized output.
-8. **Failure path mapping** — exceptions mapped to error envelope codes.
+Defined by `MiddlewareOrder::GLOBAL` and validated during boot (`BootChecks`).
 
-## 2) Per-middleware worksheet (repeat per middleware)
+## Common rejection outcomes
 
-| Middleware | Runs on | Inputs required | Mutations | Reject conditions | Error details code(s) | Audit events |
-|---|---|---|---|---|---|---|
-| RequestIdMiddleware | global | optional `X-Request-Id` | normalized request-id | invalid UUID input replacement | _(fill)_ | _(fill)_ |
-| _(expand)_ | | | | | | |
+- `401 auth_required/auth_invalid`: missing/invalid bearer or token mismatch.
+- `403 forbidden`: CSRF failure, permission failure, use-key mutation block, or comment/post policy blocks.
+- `422 validation_failed`: schema violations and required fields.
+- `429 rate_limited`: global limiter exceeded.
+- `400 bad_request`: malformed JSON or non-object JSON root.
 
-## 3) Route-family sequence templates
-
-### 3.1 Auth route (`/api/auth/*`)
-
-- Preconditions
-- Happy path sequence
-- Failure matrix
-- Postconditions
-
-### 3.2 Gateway route (`/api/*`)
-
-- Device id expectations
-- Key auth expectations
-- Permission failure behavior
-
-### 3.3 Console route (`/console/api/*`)
-
-- Owner auth expectations
-- Dangerous action confirmation implications (UI + backend)
-
-## 4) Debugging map (to complete)
-
-- [ ] “Where did this request fail?” decision tree.
-- [ ] Common HTTP status triage playbook.
-- [ ] Request-id tracing procedure across logs/audit events.
+All error responses include normalized `error` + `meta` envelope fields and `X-Request-Id`.
