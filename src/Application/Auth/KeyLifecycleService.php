@@ -324,6 +324,107 @@ final class KeyLifecycleService
         return true;
     }
 
+    /** @return list<array<string,mixed>> */
+    public function listKeychains(string $ownerId): array
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT p.id AS key_id,
+                    p.disabled_at,
+                    c.revoked_at,
+                    d.id AS delegation_envelope_id,
+                    d.parent_envelope_id,
+                    d.scope_json,
+                    d.permissions_json,
+                    d.depth,
+                    d.expires_at
+             FROM principals p
+             LEFT JOIN credentials c ON c.principal_id = p.id AND c.credential_type = :credential_type
+             LEFT JOIN delegation_envelopes d ON d.id = (
+                 SELECT d2.id FROM delegation_envelopes d2 WHERE d2.principal_id = p.id ORDER BY d2.created_at DESC LIMIT 1
+             )
+             WHERE p.owner_id = :owner_id AND p.principal_type = :principal_type
+             ORDER BY p.created_at DESC, p.id DESC'
+        );
+        $stmt->execute([
+            'owner_id' => $ownerId,
+            'principal_type' => 'key',
+            'credential_type' => 'api_key',
+        ]);
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
+
+        return array_map(function (array $row): array {
+            $scopeRaw = (array) json_decode((string) ($row['scope_json'] ?? '[]'), true);
+            $permissions = (array) json_decode((string) ($row['permissions_json'] ?? '[]'), true);
+            $keyClass = $this->extractScopedValue($scopeRaw, 'key_class', 'secondary_author');
+            $commentsEnabled = $this->extractScopedValue($scopeRaw, 'comments_enabled', 'false') === 'true';
+            $scope = array_values(array_filter($scopeRaw, static fn (string $entry): bool => !str_starts_with($entry, 'key_class:') && !str_starts_with($entry, 'comments_enabled:') && !str_starts_with($entry, 'initial_author_key_id:')));
+
+            return [
+                'key_id' => (string) $row['key_id'],
+                'status' => $row['disabled_at'] === null && $row['revoked_at'] === null ? 'active' : 'inactive',
+                'key_class' => $keyClass,
+                'permissions' => array_values(array_map('strval', $permissions)),
+                'scope' => array_values(array_map('strval', $scope)),
+                'comments_enabled' => $commentsEnabled,
+                'delegation_envelope_id' => isset($row['delegation_envelope_id']) ? (string) $row['delegation_envelope_id'] : null,
+                'parent_envelope_id' => isset($row['parent_envelope_id']) ? (string) $row['parent_envelope_id'] : null,
+                'depth' => isset($row['depth']) ? (int) $row['depth'] : 0,
+                'expires_at_utc' => isset($row['expires_at']) ? gmdate('c', strtotime((string) $row['expires_at']) ?: time()) : null,
+            ];
+        }, $rows);
+    }
+
+    /** @param array<string,mixed> $input
+     *  @return array<string,mixed>
+     */
+    public function createInvite(string $ownerId, array $input, string $requestId): array
+    {
+        $email = strtolower(trim((string) ($input['email'] ?? '')));
+        if ($email === '' || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            throw new AuthException('validation_failed', [['path' => 'email', 'code' => 'invalid_format', 'message' => 'must be a valid email']]);
+        }
+
+        $ttlSeconds = isset($input['ttl_seconds']) ? (int) $input['ttl_seconds'] : 86400;
+        if ($ttlSeconds < 300 || $ttlSeconds > 7 * 24 * 3600) {
+            throw new AuthException('validation_failed', [['path' => 'ttl_seconds', 'code' => 'ttl_out_of_range', 'message' => 'must be between 300 and 604800 seconds']]);
+        }
+
+        $inviteId = bin2hex(random_bytes(16));
+        $inviteCode = 'inv_' . bin2hex(random_bytes(24));
+        $createdAt = $this->dbTimestamp();
+        $expiresAt = $this->dbTimestamp(time() + $ttlSeconds);
+
+        $this->pdo->prepare('INSERT INTO invite_receipts (id, owner_id, invitee_email, invite_code_hash, created_at, expires_at, consumed_at) VALUES (:id, :owner_id, :invitee_email, :invite_code_hash, :created_at, :expires_at, :consumed_at)')
+            ->execute([
+                'id' => $inviteId,
+                'owner_id' => $ownerId,
+                'invitee_email' => $email,
+                'invite_code_hash' => hash('sha256', $inviteCode),
+                'created_at' => $createdAt,
+                'expires_at' => $expiresAt,
+                'consumed_at' => null,
+            ]);
+
+        $this->auditEmitter->emit('invites.created', [
+            'request_id' => $requestId,
+            'principal_id' => $ownerId,
+            'invite_id' => $inviteId,
+            'invitee_email' => $email,
+            'decision' => 'allow',
+            'decision_reason_code' => 'invite_created',
+        ]);
+
+        return [
+            'invite_id' => $inviteId,
+            'invitee_email' => $email,
+            'invite_code' => $inviteCode,
+            'status' => 'created',
+            'created_at_utc' => gmdate('c', strtotime($createdAt) ?: time()),
+            'expires_at_utc' => gmdate('c', strtotime($expiresAt) ?: time()),
+        ];
+    }
+
     /** @return array<string,mixed>|null */
     private function loadEnvelope(string $envelopeId): ?array
     {
@@ -406,6 +507,16 @@ final class KeyLifecycleService
             depth INTEGER NOT NULL,
             expires_at TEXT NOT NULL,
             created_at TEXT NOT NULL
+        )');
+
+        $this->pdo->exec('CREATE TABLE IF NOT EXISTS invite_receipts (
+            id CHAR(32) PRIMARY KEY,
+            owner_id CHAR(32) NOT NULL,
+            invitee_email TEXT NOT NULL,
+            invite_code_hash TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            expires_at TEXT NOT NULL,
+            consumed_at TEXT NULL
         )');
     }
 

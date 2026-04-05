@@ -251,16 +251,30 @@ final class RouteRegistrar
                 return $responder->success($post, 201);
             });
 
-            $group->get('/keychains', function ($request, $response) use ($responder) {
-                return $responder->list([], null, 50);
+            $group->get('/keychains', function ($request, $response) use ($container, $responder) {
+                $principal = (array) $request->getAttribute('principal', []);
+                $ownerId = (string) ($principal['sub'] ?? 'owner_console');
+                $keychains = $container->get(KeyLifecycleService::class)->listKeychains($ownerId);
+
+                return $responder->list($keychains, null, 50);
             });
 
-            $group->post('/invites', function ($request, $response) use ($responder) {
-                return $responder->success([
-                    'invite_id' => bin2hex(random_bytes(16)),
-                    'status' => 'created',
-                    'created_at_utc' => gmdate('c'),
-                ], 201);
+            $group->post('/invites', function ($request, $response) use ($container, $responder) {
+                $principal = (array) $request->getAttribute('principal', []);
+                $ownerId = (string) ($principal['sub'] ?? 'owner_console');
+                $body = (array) $request->getParsedBody();
+
+                try {
+                    $invite = $container->get(KeyLifecycleService::class)->createInvite(
+                        $ownerId,
+                        $body,
+                        (string) $request->getAttribute('request_id', 'unknown'),
+                    );
+                } catch (AuthException $e) {
+                    return $responder->error('validation_failed', 'validation failed', (string) $request->getAttribute('request_id', 'unknown'), 422, $e->details());
+                }
+
+                return $responder->success($invite, 201);
             });
 
             $group->post('/keys', function ($request, $response) use ($container, $responder) {

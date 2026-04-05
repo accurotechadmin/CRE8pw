@@ -316,6 +316,15 @@ final class AuthService
 
     private function ensureDefaultOwnerSeed(): void
     {
+        if ($this->config->appEnv !== 'local') {
+            return;
+        }
+
+        $seedPassword = getenv('DEFAULT_OWNER_PASSWORD');
+        if (!is_string($seedPassword) || mb_strlen(trim($seedPassword)) < 12) {
+            return;
+        }
+
         if ($this->ownerByEmail('owner@cre8.local') !== null) {
             return;
         }
@@ -327,7 +336,7 @@ final class AuthService
             bin2hex(random_bytes(16)),
             $ownerId,
             'password',
-            password_hash('owner-pass', defined('PASSWORD_ARGON2ID') ? PASSWORD_ARGON2ID : PASSWORD_BCRYPT)
+            password_hash($seedPassword, defined('PASSWORD_ARGON2ID') ? PASSWORD_ARGON2ID : PASSWORD_BCRYPT)
         );
     }
 
