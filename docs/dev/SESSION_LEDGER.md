@@ -223,3 +223,107 @@
   - Assumed QA matrix seed can start as unchecked planned cases and be executed in a subsequent QA-focused session.
 - **Recommended next session starting point**:
   - Execute Phase 6 QA matrix checks against a running backend, mark pass/fail evidence, and produce role-based + UAT runbook artifacts.
+
+## Session 2026-04-05T09:45:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Execute Phase 6 seeded QA matrix endpoint-by-endpoint against a running backend.
+  - Record role-based test outcomes and UAT script artifacts.
+  - Update persistent progress docs for handoff.
+- **Files changed**:
+  - `docs/dev/QA_MATRIX.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Treated missing runtime dependencies (`vendor/autoload.php`) as a hard blocker and documented endpoint outcomes as failed/blocked with explicit request-route-result evidence.
+  - Preserved endpoint contract and UI/backend behavior (no API or UI contract changes) because runtime QA could not be truthfully completed in this environment.
+  - Added a role-based matrix and UAT script directly in `QA_MATRIX.md` so next session can resume immediately once backend boot is unblocked.
+- **Tests/checks run and outcomes**:
+  - `composer install --no-interaction --prefer-dist` ❌ failed (`curl error 56 ... CONNECT tunnel failed, response 403`)
+  - `timeout 5 php -S 127.0.0.1:8081 -t public` ✅ server starts
+  - `curl -i http://127.0.0.1:8081/` ❌ `500` due `Failed opening required '/workspace/cre8w/public/../vendor/autoload.php'`
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Runtime dependency installation is blocked by network policy/proxy restriction, so backend cannot boot successfully for endpoint QA.
+  - Full Phase 6 endpoint pass/fail closure remains blocked until dependencies are installable.
+- **Assumptions recorded**:
+  - Assumed it is better to mark endpoint checks explicitly failed/blocked (with concrete boot evidence) rather than leave seeded checks ambiguous.
+- **Recommended next session starting point**:
+  - Unblock dependency installation (`composer install` with network/proxy access), boot backend, then rerun every QA matrix endpoint and replace blocked/fail entries with true pass/fail evidence.
+
+
+## Session 2026-04-05T10:10:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Investigate and fix UI bootstrap issue where `/ui/*` displayed shell text but no interactive routes/content.
+  - Deliver a minimal production-quality routing fix without changing endpoint contracts.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Treated `/ui` asset routing as highest-priority blocker because it prevented any practical frontend/backend interaction path regardless of endpoint readiness.
+  - Implemented asset-serving + SPA fallback in one handler to preserve deep-link behavior and avoid web-server-specific configuration assumptions.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Full runtime endpoint QA still depends on dependency installation (`vendor`) and backend boot in the active environment.
+- **Assumptions recorded**:
+  - Assumed requests with file extensions under `/ui/*` should be served as static assets rather than SPA routes.
+- **Recommended next session starting point**:
+  - Re-run end-to-end QA matrix from `/ui/login` after dependency/boot unblock, now that asset loading path is fixed.
+
+
+## Session 2026-04-05T10:25:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Investigate production `internal_error` on `/ui/signup-owner` after prior `/ui` routing fix.
+  - Apply minimal runtime-safe patch to make UI route helper invocation container-binding agnostic.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Replaced direct `$this` method call from route closure with captured callable to avoid Slim closure rebinding pitfalls in production runtime.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+- **Open issues/blockers**:
+  - Full endpoint QA matrix execution still pending live-system rerun after this hotfix deployment.
+- **Assumptions recorded**:
+  - Assumed reported `internal_error` was caused by closure context rebinding based on symptom pattern (`boot.startup_ready` + unhandled exception only on `/ui/*`).
+- **Recommended next session starting point**:
+  - Deploy this patch, verify `/ui/login`, `/ui/key-login`, and `/ui/signup-owner` load nav+forms, then resume endpoint-by-endpoint QA matrix execution.
+
+
+## Session 2026-04-05T10:40:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Follow-up hardening of `/ui` route resolution after continued production symptom (shell-only render).
+  - Make asset path detection resilient to route-arg and URI-path variance in deployed rewrite stacks.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Added URI-path-based fallback asset resolution to avoid relying solely on wildcard route argument behavior.
+  - Switched asset detection to extension-based check (`pathinfo`) for predictable routing semantics.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+- **Open issues/blockers**:
+  - Requires deploy + browser hard refresh validation in target environment.
+- **Assumptions recorded**:
+  - Assumed the remaining shell-only symptom is due to route arg variance under production rewrite/proxy handling.
+- **Recommended next session starting point**:
+  - Validate `/ui/app.js` returns JavaScript and `/ui/signup-owner` renders form, then continue QA matrix endpoint execution.

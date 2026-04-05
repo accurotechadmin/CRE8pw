@@ -116,3 +116,46 @@
   - Operator and QA users can verify state transitions consistently on any route without inspecting DOM attributes.
   - Accessibility improved through predictable live-updated state blocks and explicit state labels.
   - Slightly more verbose UI, but with lower ambiguity during endpoint validation workflows.
+
+
+## ADR-2026-04-05-09: Serve real UI assets under `/ui/*` while keeping SPA fallback for deep links
+
+- **Date / Session**: 2026-04-05 (UTC), Session 9
+- **Context**:
+  - Users reported loading `/ui/*` only showed static header text and no interactive routes.
+  - Root cause: `/ui[/{route:.*}]` always returned `index.html`, including `/ui/app.js` and `/ui/styles.css`, which prevents module/style loading behind rewrite-all setups.
+- **Decision**:
+  - Update UI route handler to serve actual files from `public/ui` when the path looks like an asset (`.js`, `.css`, etc.) and exists inside the UI directory.
+  - Keep SPA fallback behavior for non-asset paths so deep links like `/ui/posts/{id}` still render via `index.html`.
+  - Add basic extension-to-content-type mapping for common static asset types.
+- **Consequences**:
+  - UI now initializes correctly in environments where all `/ui/*` requests route through `public/index.php`.
+  - Deep-link behavior remains unchanged for client-side routes.
+  - Static file path traversal is constrained to `public/ui` realpath checks.
+
+
+## ADR-2026-04-05-10: Avoid relying on `$this` inside Slim route closures
+
+- **Date / Session**: 2026-04-05 (UTC), Session 10
+- **Context**:
+  - Production reported `/ui/signup-owner` returning `internal_error` despite successful boot.
+  - Root cause: Slim closure invocation can rebind `$this`, so `$this->renderUiRoute()` inside route closure may reference a non-registrar context and throw at runtime.
+- **Decision**:
+  - Bind route helper explicitly using `Closure::fromCallable([$this, "renderUiRoute"])` and call that captured closure inside the `/ui` route handler.
+- **Consequences**:
+  - `/ui/*` route handling is stable regardless of Slim closure binding behavior.
+  - Eliminates runtime `internal_error` caused by context-dependent `$this` resolution.
+
+
+## ADR-2026-04-05-11: Derive `/ui` asset targets from both route args and request URI path
+
+- **Date / Session**: 2026-04-05 (UTC), Session 11
+- **Context**:
+  - After fixing closure rebinding, some deployments still rendered only static shell text, indicating module assets were not resolving through `/ui/*` routing consistently.
+  - Different server/rewrite setups may populate Slim route args differently for optional wildcard segments.
+- **Decision**:
+  - Update UI route rendering helper to normalize asset target from both captured `{route}` and the raw request URI path.
+  - Normalize optional `ui/` prefixes and detect assets via file extension (`pathinfo`) before SPA fallback.
+- **Consequences**:
+  - `/ui/app.js`, `/ui/styles.css`, and nested asset paths resolve reliably across more rewrite/proxy variants.
+  - SPA deep links without extensions continue to return `index.html`.
