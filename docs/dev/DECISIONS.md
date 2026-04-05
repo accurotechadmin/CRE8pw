@@ -132,3 +132,16 @@
   - UI now initializes correctly in environments where all `/ui/*` requests route through `public/index.php`.
   - Deep-link behavior remains unchanged for client-side routes.
   - Static file path traversal is constrained to `public/ui` realpath checks.
+
+
+## ADR-2026-04-05-10: Avoid relying on `$this` inside Slim route closures
+
+- **Date / Session**: 2026-04-05 (UTC), Session 10
+- **Context**:
+  - Production reported `/ui/signup-owner` returning `internal_error` despite successful boot.
+  - Root cause: Slim closure invocation can rebind `$this`, so `$this->renderUiRoute()` inside route closure may reference a non-registrar context and throw at runtime.
+- **Decision**:
+  - Bind route helper explicitly using `Closure::fromCallable([$this, "renderUiRoute"])` and call that captured closure inside the `/ui` route handler.
+- **Consequences**:
+  - `/ui/*` route handling is stable regardless of Slim closure binding behavior.
+  - Eliminates runtime `internal_error` caused by context-dependent `$this` resolution.

@@ -44,8 +44,9 @@ final class RouteRegistrar
         });
 
 
-        $app->get('/ui[/{route:.*}]', function ($request, $response, array $args) {
-            return $this->renderUiRoute($response, (string) ($args['route'] ?? ''));
+        $uiRouteRenderer = \Closure::fromCallable([$this, 'renderUiRoute']);
+        $app->get('/ui[/{route:.*}]', function ($request, $response, array $args) use ($uiRouteRenderer) {
+            return $uiRouteRenderer($response, (string) ($args['route'] ?? ''));
         });
 
         $app->get('/.well-known/jwks.json', function ($request, $response) use ($container, $responder) {

@@ -280,3 +280,26 @@
   - Assumed requests with file extensions under `/ui/*` should be served as static assets rather than SPA routes.
 - **Recommended next session starting point**:
   - Re-run end-to-end QA matrix from `/ui/login` after dependency/boot unblock, now that asset loading path is fixed.
+
+
+## Session 2026-04-05T10:25:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Investigate production `internal_error` on `/ui/signup-owner` after prior `/ui` routing fix.
+  - Apply minimal runtime-safe patch to make UI route helper invocation container-binding agnostic.
+- **Files changed**:
+  - `src/Http/Routes/RouteRegistrar.php`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Replaced direct `$this` method call from route closure with captured callable to avoid Slim closure rebinding pitfalls in production runtime.
+- **Tests/checks run and outcomes**:
+  - `php -l src/Http/Routes/RouteRegistrar.php` ✅ pass
+- **Open issues/blockers**:
+  - Full endpoint QA matrix execution still pending live-system rerun after this hotfix deployment.
+- **Assumptions recorded**:
+  - Assumed reported `internal_error` was caused by closure context rebinding based on symptom pattern (`boot.startup_ready` + unhandled exception only on `/ui/*`).
+- **Recommended next session starting point**:
+  - Deploy this patch, verify `/ui/login`, `/ui/key-login`, and `/ui/signup-owner` load nav+forms, then resume endpoint-by-endpoint QA matrix execution.
