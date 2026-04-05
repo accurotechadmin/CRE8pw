@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 7
+Updated: 2026-04-05 (UTC) — Session 8
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -16,7 +16,7 @@ Status legend: **not started** / **in progress** / **done**
 - Phase 3 — Console Content & Moderation: **done**
 - Phase 4 — Console Key Management: **done**
 - Phase 5 — Cross-Flow Quality & A11y: **done**
-- Phase 6 — QA Matrix & Release Readiness: **in progress**
+- Phase 6 — QA Matrix & Release Readiness: **in progress** (execution attempted; blocked by missing dependencies/vendor autoload at runtime)
 
 ## Endpoint Coverage (18 endpoints)
 
@@ -48,7 +48,9 @@ Status legend: **not started** / **in progress** / **done**
 - Error mapping (401/403/404/409/422 explicit, fallback generic): **done** (`public/ui/app.js`)
 - Dangerous-action confirmation primitive (moderation + lifecycle + invite): **done** (`public/ui/app.js`)
 - Accessibility baseline (labels, aria-live, focus-management pass): **done** (`public/ui/index.html`, `public/ui/app.js`, `public/ui/styles.css`)
-- QA matrix tracking artifact: **in progress** (`docs/dev/QA_MATRIX.md`)
+- QA matrix tracking artifact + endpoint evidence notes: **in progress** (`docs/dev/QA_MATRIX.md`)
+- Role-based QA matrix + UAT script scaffold: **done** (`docs/dev/QA_MATRIX.md`)
+- End-to-end endpoint execution against running backend: **not started** (blocked: backend bootstrap fails without `vendor/autoload.php`)
 
 ## Session References
 
@@ -61,3 +63,5 @@ Status legend: **not started** / **in progress** / **done**
 
 - Session 6 implementation commit: `work@HEAD`
 - Session 7 implementation commit: `work@HEAD`
+
+- Session 8 implementation commit: `work@HEAD`
