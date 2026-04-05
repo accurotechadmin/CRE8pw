@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 3
+Updated: 2026-04-05 (UTC) — Session 4
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -13,7 +13,7 @@ Status legend: **not started** / **in progress** / **done**
   - Global state primitives (full matrix idle/loading/submitting/success/etc.): **in progress** (`public/ui/app.js`)
 - Phase 1 — Authentication & Session UX: **done**
 - Phase 2 — Gateway Content Flows: **done**
-- Phase 3 — Console Content & Moderation: **not started**
+- Phase 3 — Console Content & Moderation: **done**
 - Phase 4 — Console Key Management: **not started**
 - Phase 5 — Cross-Flow Quality & A11y: **not started**
 - Phase 6 — QA Matrix & Release Readiness: **not started**
@@ -30,10 +30,10 @@ Status legend: **not started** / **in progress** / **done**
 8. `POST /api/posts/{postId}/flags` — **done** (flag form + 422 mapping in `public/ui/app.js`)
 9. `GET /api/posts/{postId}/comments` — **done** (comments page in `public/ui/app.js`)
 10. `POST /api/posts/{postId}/comments` — **done** (comment create form + state/permission guard in `public/ui/app.js`)
-11. `GET /console/api/posts` — **not started**
-12. `POST /console/api/posts` — **not started**
-13. `POST /console/api/posts/{postId}/moderation` — **not started**
-14. `POST /console/api/posts/{postId}/comments/{commentId}/moderation` — **not started**
+11. `GET /console/api/posts` — **done** (console post list route in `public/ui/app.js`)
+12. `POST /console/api/posts` — **done** (console post create form in `public/ui/app.js`)
+13. `POST /console/api/posts/{postId}/moderation` — **done** (post moderation route + confirmation UX in `public/ui/app.js`)
+14. `POST /console/api/posts/{postId}/comments/{commentId}/moderation` — **done** (comment moderation route + confirmation UX in `public/ui/app.js`)
 15. `POST /console/api/keys` — **not started**
 16. `POST /console/api/keys/{keyId}/lifecycle` — **not started**
 17. `GET /console/api/keychains` — **not started**
@@ -55,3 +55,4 @@ Status legend: **not started** / **in progress** / **done**
 - Session 2 implementation commit: `21baa64`
 
 - Session 3 implementation commit: `work@HEAD`
+- Session 4 implementation commit: `work@HEAD`

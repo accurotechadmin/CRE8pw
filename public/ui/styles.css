@@ -135,3 +135,26 @@ pre {
   color: #5b6778;
   font-size: 0.9rem;
 }
+
+.inline-form {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.summary-box {
+  border: 1px solid #d3dbe8;
+  background: #f8fbff;
+  border-radius: 6px;
+  padding: 0.65rem;
+  margin: 0.75rem 0;
+}
+
+.confirm-check {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.95rem;
+}

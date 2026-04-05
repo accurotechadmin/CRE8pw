@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Implementation Progress Snapshot (Session 3)
+## Implementation Progress Snapshot (Session 4)
 
 - ✅ Auth/session baseline is live in `public/ui` (`/ui/login`, `/ui/key-login`, `/ui/signup-owner`).
 - ✅ Gateway read slice implemented end-to-end for:
@@ -15,6 +15,11 @@ Date: 2026-04-05 (UTC)
   - `/posts/{postId}/edit` → `PATCH /api/posts/{postId}`,
   - `/posts/{postId}/flag` → `POST /api/posts/{postId}/flags`,
   - `/posts/{postId}/comments/new` → `POST /api/posts/{postId}/comments`.
+- ✅ Phase 3 console content/moderation slice is implemented end-to-end for:
+  - `/console/posts` → `GET /console/api/posts`,
+  - `/console/posts/new` → `POST /console/api/posts`,
+  - `/console/posts/{postId}/moderation` → `POST /console/api/posts/{postId}/moderation`,
+  - `/console/posts/{postId}/comments/{commentId}/moderation` → `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
 
 ## 1) Purpose
 

@@ -2,7 +2,7 @@
 
 Date: 2026-04-05 (UTC)
 
-## Current Delivery Snapshot (Session 3)
+## Current Delivery Snapshot (Session 4)
 
 - Phases 0–1 are functionally implemented in the current static SPA (`public/ui`).
 - Phase 2 is now complete for gateway read/write flows:
@@ -15,6 +15,12 @@ Date: 2026-04-05 (UTC)
   - `/posts/{postId}/comments/new` → `POST /api/posts/{postId}/comments`.
 - Feed-to-post-to-comments navigation now includes guarded write entry points based on key claims and known post state constraints.
 - Remaining phase work continues per the checklist below.
+- Phase 3 is now complete for console content/moderation flows:
+  - `/console/posts` → `GET /console/api/posts`.
+  - `/console/posts/new` → `POST /console/api/posts`.
+  - `/console/posts/{postId}/moderation` → `POST /console/api/posts/{postId}/moderation`.
+  - `/console/posts/{postId}/comments/{commentId}/moderation` → `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
+- Remaining phase work continues with Phase 4 key management workflows.
 
 ## 1) Objective
 

@@ -96,3 +96,34 @@
   - Assumed comment creation should be pre-blocked when post state is `locked|archived|hidden|deleted`, matching route-level backend policy.
 - **Recommended next session starting point**:
   - Start Phase 3 console content/moderation flows (`GET /console/api/posts`, `POST /console/api/posts`, moderation endpoints) by reusing current form/error/inspector primitives.
+
+## Session 2026-04-05T03:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Complete Phase 3 console content/moderation workflows end-to-end in `/ui`.
+  - Implement list/create/moderation routes for posts and comment moderation with owner bearer auth.
+  - Add moderation confirmation UX and action/result summaries while keeping navigation coherent.
+- **Files changed**:
+  - `public/ui/app.js`
+  - `public/ui/styles.css`
+  - `FRONTEND_BACKEND_INTEGRATION_PLAYBOOK.md`
+  - `UI_IMPLEMENTATION_PLAN.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `docs/dev/SESSION_LEDGER.md`
+- **Decisions made (rationale)**:
+  - Added `ownerRequest()` helper to reuse centralized API envelope/error handling while enforcing owner bearer auth for all `/console/api/*` calls.
+  - Implemented moderation submit confirmation (checkbox + summary panel) to reduce accidental enforcement actions and match plan acceptance criteria.
+  - Included inline comment-ID jump on console posts list so operators can directly access comment moderation route without adding a separate search endpoint.
+- **Tests/checks run and outcomes**:
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Browser-container screenshot tooling is unavailable in this environment, so visual confirmation screenshots could not be captured.
+- **Assumptions recorded**:
+  - Assumed `GET /console/api/posts` returns an array envelope in `data` similar to feed/comments list handling.
+  - Assumed moderation pages can be action-first (ID-driven) without a prerequisite comment lookup endpoint in this phase.
+- **Recommended next session starting point**:
+  - Start Phase 4 console key management flows (`POST /console/api/keys`, lifecycle, keychains, invites`) using the new owner-auth request and confirmation primitives.

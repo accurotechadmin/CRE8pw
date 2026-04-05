@@ -7,6 +7,8 @@ const staticRoutes = {
   '/signup-owner': signupOwnerView,
   '/feed': feedView,
   '/posts/new': postCreateView,
+  '/console/posts': consolePostsView,
+  '/console/posts/new': consolePostCreateView,
 };
 
 const dynamicRoutes = [
@@ -15,6 +17,8 @@ const dynamicRoutes = [
   { pattern: /^\/posts\/([^/]+)\/flag$/, view: postFlagView, paramNames: ['postId'] },
   { pattern: /^\/posts\/([^/]+)\/comments$/, view: commentsView, paramNames: ['postId'] },
   { pattern: /^\/posts\/([^/]+)\/comments\/new$/, view: commentCreateView, paramNames: ['postId'] },
+  { pattern: /^\/console\/posts\/([^/]+)\/moderation$/, view: consolePostModerationView, paramNames: ['postId'] },
+  { pattern: /^\/console\/posts\/([^/]+)\/comments\/([^/]+)\/moderation$/, view: consoleCommentModerationView, paramNames: ['postId', 'commentId'] },
 ];
 
 const navItems = [
@@ -23,6 +27,8 @@ const navItems = [
   { path: '/signup-owner', label: 'Owner Signup' },
   { path: '/feed', label: 'Gateway Feed' },
   { path: '/posts/new', label: 'Create Post' },
+  { path: '/console/posts', label: 'Console Posts' },
+  { path: '/console/posts/new', label: 'Console New Post' },
 ];
 
 let flashMessage = null;
@@ -46,6 +52,12 @@ const postState = {
 
 const commentsState = {
   postId: null,
+  status: 'idle',
+  items: [],
+  error: null,
+};
+
+const consolePostsState = {
   status: 'idle',
   items: [],
   error: null,
@@ -332,6 +344,19 @@ function requireGatewaySession() {
   return false;
 }
 
+function requireOwnerSession() {
+  const session = readSession();
+  const hasOwnerSession = session.activeSurface === 'owner' && Boolean(session.owner?.accessToken);
+  if (hasOwnerSession) {
+    return true;
+  }
+
+  viewRoot.innerHTML = `<article class="panel"><h2>Owner login required</h2><p>Use Owner Login to access console flows.</p><p><a href="/ui/login" data-path="/login">Go to owner login</a></p></article>`;
+  bindInternalLinks(viewRoot);
+
+  return false;
+}
+
 function renderForbiddenGuard(title, body) {
   viewRoot.innerHTML = `<article class="panel"><h2>${title}</h2><p class="error-text">${body}</p><p><a href="/ui/feed" data-path="/feed">Return to feed</a></p></article>`;
   bindInternalLinks(viewRoot);
@@ -344,6 +369,19 @@ async function gatewayRequest(path, options = {}) {
     if (error.status === 401) {
       clearSession();
       flashMessage = { type: 'error', text: 'Session expired for gateway surface. Please sign in again.' };
+    }
+
+    throw error;
+  }
+}
+
+async function ownerRequest(path, options = {}) {
+  try {
+    return await apiRequest(path, { ...options, authSurface: 'owner' });
+  } catch (error) {
+    if (error.status === 401) {
+      clearSession();
+      flashMessage = { type: 'error', text: 'Session expired for console surface. Please sign in again.' };
     }
 
     throw error;
@@ -719,6 +757,279 @@ async function commentCreateView({ postId }) {
     viewRoot.innerHTML = `<article class="panel"><h2>Create comment</h2><p class="error-text">${mapGatewayError(error, 'Unable to prepare comment creation.')}</p><p><a href="/ui/posts/${encodeURIComponent(postId)}" data-path="/posts/${encodeURIComponent(postId)}">Back to post</a></p></article>`;
     bindInternalLinks(viewRoot);
   }
+}
+
+function consolePostsView() {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  if (consolePostsState.status === 'idle') {
+    fetchConsolePosts();
+  }
+
+  if (consolePostsState.status === 'loading') {
+    viewRoot.innerHTML = '<article class="panel"><h2>Console posts</h2><p>Loading posts…</p></article>';
+    return;
+  }
+
+  if (consolePostsState.status === 'error') {
+    viewRoot.innerHTML = `<article class="panel"><h2>Console posts</h2><p class="error-text">${consolePostsState.error?.message ?? 'Failed to load console posts.'}</p><button id="retry-console-posts" type="button">Retry</button></article>`;
+    document.getElementById('retry-console-posts').addEventListener('click', () => fetchConsolePosts());
+    return;
+  }
+
+  const hasItems = consolePostsState.items.length > 0;
+  viewRoot.innerHTML = `<article class="panel">
+      <h2>Console posts</h2>
+      <p class="muted-text">Owner-scoped content with direct links to post and comment moderation.</p>
+      <p><a href="/ui/console/posts/new" data-path="/console/posts/new">Create console post</a></p>
+      ${hasItems
+        ? `<ul class="list">${consolePostsState.items.map((post) => {
+          const safePostId = encodeURIComponent(post.id ?? '');
+
+          return `<li>
+              <strong>${escapeHtml(post.title ?? '(untitled)')}</strong><br />
+              <small>${escapeHtml(post.id ?? '')} · state: ${escapeHtml(post.state ?? 'n/a')} · visibility: ${escapeHtml(post.visibility_scope ?? 'n/a')}</small>
+              <div class="row-actions">
+                <a href="/ui/console/posts/${safePostId}/moderation" data-path="/console/posts/${safePostId}/moderation">Moderate post</a>
+                <a href="/ui/posts/${safePostId}" data-path="/posts/${safePostId}">Open gateway detail</a>
+              </div>
+              <form class="inline-form" data-comment-nav-for="${escapeHtml(post.id ?? '')}">
+                <label for="comment-id-${safePostId}">Moderate comment by ID</label>
+                <input id="comment-id-${safePostId}" name="comment_id" type="text" placeholder="comment-id" />
+                <button type="submit">Go</button>
+              </form>
+            </li>`;
+        }).join('')}</ul>`
+        : '<p>No console posts found yet.</p>'}
+    </article>`;
+
+  bindInternalLinks(viewRoot);
+  viewRoot.querySelectorAll('form[data-comment-nav-for]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const postId = form.getAttribute('data-comment-nav-for');
+      const data = new FormData(form);
+      const commentId = String(data.get('comment_id') ?? '').trim();
+      if (!commentId) {
+        flashMessage = { type: 'error', text: `Enter a comment ID for post ${postId}.` };
+        render();
+        return;
+      }
+
+      navigate(`/console/posts/${encodeURIComponent(postId)}/comments/${encodeURIComponent(commentId)}/moderation`);
+    });
+  });
+}
+
+async function fetchConsolePosts() {
+  consolePostsState.status = 'loading';
+  consolePostsState.error = null;
+  render();
+
+  try {
+    const response = await ownerRequest('/console/api/posts');
+    lastResponse = response;
+    consolePostsState.items = Array.isArray(response.data) ? response.data : [];
+    consolePostsState.status = 'success';
+  } catch (error) {
+    lastResponse = error;
+    consolePostsState.error = error;
+    consolePostsState.status = 'error';
+  }
+
+  render();
+}
+
+function consolePostCreateView() {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  viewRoot.innerHTML = formTemplate({
+    title: 'Create console post',
+    buttonText: 'Create post',
+    helper: 'Owner-authenticated post creation for internal moderation workflows.',
+    fields: [
+      { name: 'title', label: 'Title', required: true },
+      { name: 'body', label: 'Body', multiline: true, required: true },
+      {
+        name: 'visibility_scope',
+        label: 'Visibility scope',
+        options: [
+          { value: 'private', label: 'private' },
+          { value: 'delegated', label: 'delegated' },
+          { value: 'public', label: 'public' },
+        ],
+        value: 'private',
+      },
+      {
+        name: 'state',
+        label: 'State',
+        options: [
+          { value: 'published', label: 'published' },
+          { value: 'draft', label: 'draft' },
+        ],
+        value: 'published',
+        required: false,
+      },
+    ],
+  });
+
+  bindForm({
+    onSubmit: (body) => ownerRequest('/console/api/posts', { method: 'POST', body }),
+    onSuccess: (response) => {
+      const createdId = response.data?.id;
+      flashMessage = {
+        type: 'success',
+        text: createdId ? `Console post created (${createdId}).` : 'Console post created.',
+      };
+      consolePostsState.status = 'idle';
+      navigate('/console/posts');
+    },
+  });
+}
+
+function moderationSummary({ subject, action, reasonCode }) {
+  return `<div class="summary-box">
+    <strong>Action summary</strong>
+    <p>You are about to <strong>${escapeHtml(action || '(select action)')}</strong> ${escapeHtml(subject)}.</p>
+    <p>Reason code: <strong>${escapeHtml(reasonCode || 'none')}</strong></p>
+  </div>`;
+}
+
+function bindModerationConfirmation({ formId, actionFieldName, reasonFieldName, onConfirm }) {
+  const form = document.getElementById(formId);
+  const confirmToggle = form.querySelector('[name="confirm_action"]');
+  const actionControl = form.querySelector(`[name="${actionFieldName}"]`);
+  const reasonControl = form.querySelector(`[name="${reasonFieldName}"]`);
+  const summarySlot = form.querySelector('[data-summary-slot]');
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  const syncSummary = () => {
+    summarySlot.innerHTML = moderationSummary({
+      subject: form.dataset.subjectLabel ?? 'resource',
+      action: actionControl.value,
+      reasonCode: reasonControl.value.trim(),
+    });
+  };
+
+  syncSummary();
+  actionControl.addEventListener('change', syncSummary);
+  reasonControl.addEventListener('input', syncSummary);
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    flashMessage = null;
+    if (!confirmToggle.checked) {
+      flashMessage = { type: 'error', text: 'Please confirm the moderation action before submitting.' };
+      render();
+      return;
+    }
+
+    submitButton.disabled = true;
+    const payload = {
+      action: actionControl.value,
+      reason_code: reasonControl.value.trim() || undefined,
+    };
+
+    try {
+      const response = await onConfirm(payload);
+      lastResponse = response;
+      const resultState = response.data?.state ?? response.data?.status ?? 'updated';
+      flashMessage = {
+        type: 'success',
+        text: `Moderation completed: ${payload.action} applied (${resultState}).`,
+      };
+    } catch (error) {
+      lastResponse = error;
+      if (error.status === 422) {
+        flashMessage = { type: 'error', text: 'Moderation request is invalid. Check action/reason and retry.' };
+      } else if (error.status === 404) {
+        flashMessage = { type: 'error', text: 'Target resource not found for moderation.' };
+      } else {
+        flashMessage = { type: 'error', text: error.message ?? 'Moderation request failed.' };
+      }
+    } finally {
+      submitButton.disabled = false;
+      render();
+    }
+  });
+}
+
+function consolePostModerationView({ postId }) {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Moderate post</h2>
+    <p class="muted-text">Post ID: <code>${escapeHtml(postId)}</code></p>
+    <p><a href="/ui/console/posts" data-path="/console/posts">Back to console posts</a></p>
+    <form id="post-moderation-form" data-subject-label="post ${escapeHtml(postId)}" novalidate>
+      <div class="field">
+        <label for="post-action">Action</label>
+        <select id="post-action" name="action" required>
+          ${['hide', 'lock', 'archive', 'delete'].map((value) => `<option value="${value}">${value}</option>`).join('')}
+        </select>
+      </div>
+      <div class="field">
+        <label for="post-reason">Reason code (optional)</label>
+        <input id="post-reason" name="reason_code" type="text" placeholder="policy_violation" />
+      </div>
+      <div data-summary-slot></div>
+      <label class="confirm-check"><input type="checkbox" name="confirm_action" /> I confirm this moderation action.</label>
+      <div class="row-actions">
+        <button type="submit">Submit moderation</button>
+      </div>
+    </form>
+  </article>`;
+
+  bindInternalLinks(viewRoot);
+  bindModerationConfirmation({
+    formId: 'post-moderation-form',
+    actionFieldName: 'action',
+    reasonFieldName: 'reason_code',
+    onConfirm: (payload) => ownerRequest(`/console/api/posts/${encodeURIComponent(postId)}/moderation`, { method: 'POST', body: payload }),
+  });
+}
+
+function consoleCommentModerationView({ postId, commentId }) {
+  if (!requireOwnerSession()) {
+    return;
+  }
+
+  viewRoot.innerHTML = `<article class="panel">
+    <h2>Moderate comment</h2>
+    <p class="muted-text">Post: <code>${escapeHtml(postId)}</code> · Comment: <code>${escapeHtml(commentId)}</code></p>
+    <p><a href="/ui/console/posts/${encodeURIComponent(postId)}/moderation" data-path="/console/posts/${encodeURIComponent(postId)}/moderation">Back to post moderation</a> · <a href="/ui/console/posts" data-path="/console/posts">Console posts</a></p>
+    <form id="comment-moderation-form" data-subject-label="comment ${escapeHtml(commentId)} on post ${escapeHtml(postId)}" novalidate>
+      <div class="field">
+        <label for="comment-action">Action</label>
+        <select id="comment-action" name="action" required>
+          ${['hide', 'lock', 'delete'].map((value) => `<option value="${value}">${value}</option>`).join('')}
+        </select>
+      </div>
+      <div class="field">
+        <label for="comment-reason">Reason code (optional)</label>
+        <input id="comment-reason" name="reason_code" type="text" placeholder="abuse" />
+      </div>
+      <div data-summary-slot></div>
+      <label class="confirm-check"><input type="checkbox" name="confirm_action" /> I confirm this moderation action.</label>
+      <div class="row-actions">
+        <button type="submit">Submit comment moderation</button>
+      </div>
+    </form>
+  </article>`;
+
+  bindInternalLinks(viewRoot);
+  bindModerationConfirmation({
+    formId: 'comment-moderation-form',
+    actionFieldName: 'action',
+    reasonFieldName: 'reason_code',
+    onConfirm: (payload) => ownerRequest(`/console/api/posts/${encodeURIComponent(postId)}/comments/${encodeURIComponent(commentId)}/moderation`, { method: 'POST', body: payload }),
+  });
 }
 
 function ownerLoginView() {
