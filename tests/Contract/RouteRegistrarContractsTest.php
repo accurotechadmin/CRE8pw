@@ -53,6 +53,15 @@ final class RouteRegistrarContractsTest extends TestCase
         self::assertStringContainsString('AuthException', $registrarPhp);
     }
 
+    public function testRouteRegistrarEnforcesFlagReasonCodeAndPostScopedCommentModeration(): void
+    {
+        $registrarPhp = $this->read('src/Http/Routes/RouteRegistrar.php');
+
+        self::assertStringContainsString("$group->post('/posts/{postId}/flags'", $registrarPhp);
+        self::assertStringContainsString("['path' => 'reason_code', 'code' => 'required'", $registrarPhp);
+        self::assertStringContainsString("moderateComment(\n                    (string) \$args['postId'],\n                    (string) \$args['commentId']", $registrarPhp);
+    }
+
     private function read(string $path): string
     {
         return (string) file_get_contents(self::ROOT . $path);

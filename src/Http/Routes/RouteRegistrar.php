@@ -276,6 +276,7 @@ final class RouteRegistrar
 
                 $actorId = (string) ($principal['sub'] ?? 'owner_console');
                 $result = $container->get(ModerationService::class)->moderateComment(
+                    (string) $args['postId'],
                     (string) $args['commentId'],
                     $actorId,
                     $action,
@@ -375,7 +376,12 @@ final class RouteRegistrar
             $group->post('/posts/{postId}/flags', function ($request, $response, array $args) use ($container, $responder) {
                 $principal = (array) $request->getAttribute('principal', []);
                 $body = (array) $request->getParsedBody();
-                $reason = trim((string) ($body['reason_code'] ?? 'policy_review'));
+                $reason = trim((string) ($body['reason_code'] ?? ''));
+                if ($reason === '') {
+                    return $responder->error('validation_failed', 'validation failed', (string) $request->getAttribute('request_id', 'unknown'), 422, [
+                        ['path' => 'reason_code', 'code' => 'required', 'message' => 'is required'],
+                    ]);
+                }
                 $ok = $container->get(PostsService::class)->flag(
                     (string) $args['postId'],
                     (string) ($principal['sub'] ?? 'gateway_key'),

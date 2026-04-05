@@ -74,7 +74,7 @@ final class ModerationService
     }
 
     /** @return array{id:string,state:string,action:string,reason_code:?string,moderated_at_utc:string}|null */
-    public function moderateComment(string $commentId, string $actorId, string $action, ?string $reasonCode, string $requestId): ?array
+    public function moderateComment(string $postId, string $commentId, string $actorId, string $action, ?string $reasonCode, string $requestId): ?array
     {
         $nextState = match ($action) {
             'hide' => 'hidden',
@@ -91,7 +91,7 @@ final class ModerationService
         $stmt = $this->pdo->prepare('SELECT id, post_id FROM comments WHERE id = :id LIMIT 1');
         $stmt->execute(['id' => $commentId]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!is_array($row)) {
+        if (!is_array($row) || (string) $row['post_id'] !== $postId) {
             return null;
         }
 
