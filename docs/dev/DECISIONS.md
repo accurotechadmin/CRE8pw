@@ -101,3 +101,18 @@
   - Cross-flow behavior is more consistent and easier to maintain without introducing a framework-level refactor.
   - Accessibility and keyboard confirmation behavior become uniform across sensitive actions.
   - Remaining Phase 5 work can iterate on these primitives instead of patching route-specific logic.
+
+## ADR-2026-04-05-08: Surface the full route-state model directly in each route view
+
+- **Date / Session**: 2026-04-05 (UTC), Session 7
+- **Context**:
+  - Phase 5 hardening required all routes (including form-only routes) to explicitly surface `idle/loading/submitting/success/validation_error/forbidden/not_found/server_error`.
+  - Existing form flows tracked state internally (`data-form-state`) but did not present complete route-state visibility to operators.
+- **Decision**:
+  - Added shared route-state legend helpers (`routeStateLegend`, `updateRouteState`) and embedded them in state panels and form pages.
+  - Standardized loading and pre-submit failure displays via reusable `renderLoadingPanel` + `renderStatePanel`.
+  - Kept endpoint contracts unchanged and reused existing request/error helpers.
+- **Consequences**:
+  - Operator and QA users can verify state transitions consistently on any route without inspecting DOM attributes.
+  - Accessibility improved through predictable live-updated state blocks and explicit state labels.
+  - Slightly more verbose UI, but with lower ambiguity during endpoint validation workflows.

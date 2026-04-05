@@ -1,6 +1,6 @@
 # Implementation Status (Living)
 
-Updated: 2026-04-05 (UTC) — Session 6
+Updated: 2026-04-05 (UTC) — Session 7
 
 Status legend: **not started** / **in progress** / **done**
 
@@ -15,8 +15,8 @@ Status legend: **not started** / **in progress** / **done**
 - Phase 2 — Gateway Content Flows: **done**
 - Phase 3 — Console Content & Moderation: **done**
 - Phase 4 — Console Key Management: **done**
-- Phase 5 — Cross-Flow Quality & A11y: **in progress**
-- Phase 6 — QA Matrix & Release Readiness: **not started**
+- Phase 5 — Cross-Flow Quality & A11y: **done**
+- Phase 6 — QA Matrix & Release Readiness: **in progress**
 
 ## Endpoint Coverage (18 endpoints)
 
@@ -47,8 +47,8 @@ Status legend: **not started** / **in progress** / **done**
 - State model (session by owner/key surface): **done** (`public/ui/state.js`)
 - Error mapping (401/403/404/409/422 explicit, fallback generic): **done** (`public/ui/app.js`)
 - Dangerous-action confirmation primitive (moderation + lifecycle + invite): **done** (`public/ui/app.js`)
-- Accessibility baseline (labels, aria-live, focus-management pass): **in progress** (`public/ui/index.html`, `public/ui/app.js`, `public/ui/styles.css`)
-- QA matrix tracking artifact: **not started**
+- Accessibility baseline (labels, aria-live, focus-management pass): **done** (`public/ui/index.html`, `public/ui/app.js`, `public/ui/styles.css`)
+- QA matrix tracking artifact: **in progress** (`docs/dev/QA_MATRIX.md`)
 
 ## Session References
 
@@ -60,3 +60,4 @@ Status legend: **not started** / **in progress** / **done**
 - Session 5 implementation commit: `work@HEAD`
 
 - Session 6 implementation commit: `work@HEAD`
+- Session 7 implementation commit: `work@HEAD`

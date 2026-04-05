@@ -41,6 +41,7 @@ const navItems = [
 let flashMessage = null;
 let lastResponse = null;
 let pendingFocus = null;
+const ROUTE_STATES = ['idle', 'loading', 'submitting', 'success', 'validation_error', 'forbidden', 'not_found', 'server_error'];
 
 const feedState = {
   status: 'idle',
@@ -278,6 +279,38 @@ function statusFromError(error) {
   return 'server_error';
 }
 
+function routeStateLegend(currentStatus = 'idle', note = '') {
+  const safeStatus = ROUTE_STATES.includes(currentStatus) ? currentStatus : 'idle';
+
+  return `<section class="route-state" aria-live="polite" aria-atomic="true">
+    <p><strong>Route state:</strong> <span data-route-state-current>${escapeHtml(safeStatus)}</span></p>
+    <p class="muted-text" data-route-state-note>${escapeHtml(note)}</p>
+    <ul class="state-chip-list" aria-label="Route state model">
+      ${ROUTE_STATES.map((state) => `<li class="state-chip ${state === safeStatus ? 'is-active' : ''}">${escapeHtml(state)}</li>`).join('')}
+    </ul>
+  </section>`;
+}
+
+function updateRouteState(scope, status, note = '') {
+  const root = typeof scope === 'string' ? document.querySelector(scope) : scope;
+  if (!root) {
+    return;
+  }
+  const stateSlot = root.querySelector('[data-route-state-current]');
+  const noteSlot = root.querySelector('[data-route-state-note]');
+  const chips = root.querySelectorAll('.state-chip');
+  const safeStatus = ROUTE_STATES.includes(status) ? status : 'idle';
+  if (stateSlot) {
+    stateSlot.textContent = safeStatus;
+  }
+  if (noteSlot) {
+    noteSlot.textContent = note;
+  }
+  chips.forEach((chip) => {
+    chip.classList.toggle('is-active', chip.textContent === safeStatus);
+  });
+}
+
 function renderStatePanel({ title, status, messages = {}, retryId = null, retryLabel = 'Retry', actionPath = '/feed', actionLabel = 'Return to feed' }) {
   const defaultMessages = {
     idle: 'Ready.',
@@ -290,9 +323,18 @@ function renderStatePanel({ title, status, messages = {}, retryId = null, retryL
   const message = messages[status] ?? defaultMessages[status] ?? 'Unknown state.';
   return `<article class="panel" data-view-state="${status}">
     <h2>${escapeHtml(title)}</h2>
+    ${routeStateLegend(status, message)}
     <p class="${status.includes('error') || status === 'forbidden' || status === 'not_found' ? 'error-text' : ''}">${escapeHtml(message)}</p>
     ${retryId ? `<button id="${retryId}" type="button">${escapeHtml(retryLabel)}</button>` : ''}
     ${actionPath ? `<p><a href="/ui${actionPath}" data-path="${actionPath}">${escapeHtml(actionLabel)}</a></p>` : ''}
+  </article>`;
+}
+
+function renderLoadingPanel(title, message) {
+  return `<article class="panel">
+    <h2>${escapeHtml(title)}</h2>
+    ${routeStateLegend('loading', message)}
+    <p>${escapeHtml(message)}</p>
   </article>`;
 }
 
@@ -333,6 +375,7 @@ function formTemplate({ title, fields, buttonText, helper = '' }) {
   return `<article class="panel">
       <h2>${title}</h2>
       ${helper ? `<p>${helper}</p>` : ''}
+      ${routeStateLegend('idle', 'Ready to submit.')}
       <form id="active-form" novalidate>
         ${fields
           .map((field) => {
@@ -377,19 +420,23 @@ function bindForm({ onSubmit, onSuccess, mapError = (error) => mapGatewayError(e
 
     button.disabled = true;
     form.setAttribute('data-form-state', 'submitting');
+    updateRouteState(form.closest('.panel'), 'submitting', 'Submitting request…');
 
     try {
       const response = await onSubmit(body);
       lastResponse = response;
       flashMessage = { type: 'success', text: 'Request completed successfully.' };
       form.setAttribute('data-form-state', 'success');
+      updateRouteState(form.closest('.panel'), 'success', 'Request completed successfully.');
       queueFocus('#flash-region');
       if (typeof onSuccess === 'function') {
         onSuccess(response);
       }
     } catch (error) {
       lastResponse = error;
-      form.setAttribute('data-form-state', statusFromError(error));
+      const failureStatus = statusFromError(error);
+      form.setAttribute('data-form-state', failureStatus);
+      updateRouteState(form.closest('.panel'), failureStatus, mapError(error));
       if (error.status === 422) {
         const fieldErrors = fieldErrorMap(error.details);
         Object.entries(fieldErrors).forEach(([field, message]) => {
@@ -427,7 +474,13 @@ function requireGatewaySession() {
     return true;
   }
 
-  viewRoot.innerHTML = `<article class="panel"><h2>Gateway key login required</h2><p>Use Key Login to access gateway flows.</p><p><a href="/ui/key-login" data-path="/key-login">Go to key login</a></p></article>`;
+  viewRoot.innerHTML = renderStatePanel({
+    title: 'Gateway key login required',
+    status: 'forbidden',
+    messages: { forbidden: 'Use Key Login to access gateway flows.' },
+    actionPath: '/key-login',
+    actionLabel: 'Go to key login',
+  });
   bindInternalLinks(viewRoot);
   queueFocus('#view-root');
 
@@ -441,7 +494,13 @@ function requireOwnerSession() {
     return true;
   }
 
-  viewRoot.innerHTML = `<article class="panel"><h2>Owner login required</h2><p>Use Owner Login to access console flows.</p><p><a href="/ui/login" data-path="/login">Go to owner login</a></p></article>`;
+  viewRoot.innerHTML = renderStatePanel({
+    title: 'Owner login required',
+    status: 'forbidden',
+    messages: { forbidden: 'Use Owner Login to access console flows.' },
+    actionPath: '/login',
+    actionLabel: 'Go to owner login',
+  });
   bindInternalLinks(viewRoot);
   queueFocus('#view-root');
 
@@ -449,7 +508,13 @@ function requireOwnerSession() {
 }
 
 function renderForbiddenGuard(title, body) {
-  viewRoot.innerHTML = `<article class="panel"><h2>${title}</h2><p class="error-text">${body}</p><p><a href="/ui/feed" data-path="/feed">Return to feed</a></p></article>`;
+  viewRoot.innerHTML = renderStatePanel({
+    title,
+    status: 'forbidden',
+    messages: { forbidden: body },
+    actionPath: '/feed',
+    actionLabel: 'Return to feed',
+  });
   bindInternalLinks(viewRoot);
   queueFocus('#view-root');
 }
@@ -490,7 +555,7 @@ function feedView() {
   }
 
   if (feedState.status === 'loading') {
-    viewRoot.innerHTML = '<article class="panel"><h2>Feed</h2><p>Loading feed…</p></article>';
+    viewRoot.innerHTML = renderLoadingPanel('Feed', 'Loading feed…');
     return;
   }
 
@@ -591,7 +656,7 @@ function postDetailView({ postId }) {
   }
 
   if (postState.status === 'loading') {
-    viewRoot.innerHTML = '<article class="panel"><h2>Post detail</h2><p>Loading post…</p></article>';
+    viewRoot.innerHTML = renderLoadingPanel('Post detail', 'Loading post…');
     return;
   }
 
@@ -672,7 +737,7 @@ function commentsView({ postId }) {
   }
 
   if (commentsState.status === 'loading') {
-    viewRoot.innerHTML = '<article class="panel"><h2>Comments</h2><p>Loading comments…</p></article>';
+    viewRoot.innerHTML = renderLoadingPanel('Comments', 'Loading comments…');
     return;
   }
 
@@ -787,7 +852,7 @@ async function postEditView({ postId }) {
     return;
   }
 
-  viewRoot.innerHTML = '<article class="panel"><h2>Edit post</h2><p>Loading post editor…</p></article>';
+  viewRoot.innerHTML = renderLoadingPanel('Edit post', 'Loading post editor…');
 
   try {
     const response = await gatewayRequest(`/api/posts/${encodeURIComponent(postId)}`);
@@ -812,7 +877,18 @@ async function postEditView({ postId }) {
     });
   } catch (error) {
     lastResponse = error;
-    viewRoot.innerHTML = `<article class="panel"><h2>Edit post</h2><p class="error-text">${mapGatewayError(error, 'Unable to load post for editing.')}</p><p><a href="/ui/posts/${encodeURIComponent(postId)}" data-path="/posts/${encodeURIComponent(postId)}">Back to post</a></p></article>`;
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Edit post',
+      status: statusFromError(error),
+      messages: {
+        validation_error: 'Unable to load post for editing due to request validation.',
+        forbidden: mapGatewayError(error, 'Unable to load post for editing.'),
+        not_found: mapGatewayError(error, 'Unable to load post for editing.'),
+        server_error: mapGatewayError(error, 'Unable to load post for editing.'),
+      },
+      actionPath: `/posts/${encodeURIComponent(postId)}`,
+      actionLabel: 'Back to post',
+    });
     bindInternalLinks(viewRoot);
   }
 }
@@ -845,7 +921,7 @@ async function commentCreateView({ postId }) {
     return;
   }
 
-  viewRoot.innerHTML = '<article class="panel"><h2>Create comment</h2><p>Checking comment permissions…</p></article>';
+  viewRoot.innerHTML = renderLoadingPanel('Create comment', 'Checking comment permissions…');
 
   try {
     const postResponse = await gatewayRequest(`/api/posts/${encodeURIComponent(postId)}`);
@@ -874,7 +950,18 @@ async function commentCreateView({ postId }) {
     });
   } catch (error) {
     lastResponse = error;
-    viewRoot.innerHTML = `<article class="panel"><h2>Create comment</h2><p class="error-text">${mapGatewayError(error, 'Unable to prepare comment creation.')}</p><p><a href="/ui/posts/${encodeURIComponent(postId)}" data-path="/posts/${encodeURIComponent(postId)}">Back to post</a></p></article>`;
+    viewRoot.innerHTML = renderStatePanel({
+      title: 'Create comment',
+      status: statusFromError(error),
+      messages: {
+        validation_error: 'Unable to prepare comment creation due to request validation.',
+        forbidden: mapGatewayError(error, 'Unable to prepare comment creation.'),
+        not_found: mapGatewayError(error, 'Unable to prepare comment creation.'),
+        server_error: mapGatewayError(error, 'Unable to prepare comment creation.'),
+      },
+      actionPath: `/posts/${encodeURIComponent(postId)}`,
+      actionLabel: 'Back to post',
+    });
     bindInternalLinks(viewRoot);
   }
 }
@@ -889,7 +976,7 @@ function consolePostsView() {
   }
 
   if (consolePostsState.status === 'loading') {
-    viewRoot.innerHTML = '<article class="panel"><h2>Console posts</h2><p>Loading posts…</p></article>';
+    viewRoot.innerHTML = renderLoadingPanel('Console posts', 'Loading posts…');
     return;
   }
 
@@ -1089,6 +1176,7 @@ function bindDangerousActionForm({
     }
 
     submitButton.disabled = true;
+    updateRouteState(form.closest('.panel'), 'submitting', 'Submitting dangerous action request…');
     let payload = {
       action: actionControl.value,
       reason_code: reasonControl ? (reasonControl.value.trim() || undefined) : undefined,
@@ -1104,13 +1192,17 @@ function bindDangerousActionForm({
         type: 'success',
         text: successMessage(response, payload),
       };
+      updateRouteState(form.closest('.panel'), 'success', 'Dangerous action request completed successfully.');
       queueFocus('#flash-region');
     } catch (error) {
       lastResponse = error;
       if (error.status === 422) {
         flashMessage = { type: 'error', text: validationMessage };
+        updateRouteState(form.closest('.panel'), 'validation_error', validationMessage);
       } else {
-        flashMessage = { type: 'error', text: mapErrorMessage(error) };
+        const mappedError = mapErrorMessage(error);
+        flashMessage = { type: 'error', text: mappedError };
+        updateRouteState(form.closest('.panel'), statusFromError(error), mappedError);
       }
       queueFocus('#flash-region');
     } finally {
@@ -1302,6 +1394,7 @@ function consoleKeyLifecycleView({ keyId }) {
     <h2>Key lifecycle transition</h2>
     <p class="muted-text">Target key: <code>${escapeHtml(keyId)}</code></p>
     <p><a href="/ui/console/keys/new" data-path="/console/keys/new">Issue another key</a> · <a href="/ui/console/keychains" data-path="/console/keychains">View keychains</a></p>
+    ${routeStateLegend(repeatLocked ? 'success' : 'idle', repeatLocked ? 'Lifecycle action already submitted in this session.' : 'Ready to submit.')}
     ${repeatLocked ? '<p class="muted-text">A lifecycle action was already submitted for this key in this session. Repeat submission is disabled for safety.</p>' : ''}
     <form id="key-lifecycle-form" data-subject-label="key ${escapeHtml(keyId)}" novalidate>
       <div class="field">
@@ -1383,7 +1476,7 @@ function consoleKeychainsView() {
   }
 
   if (consoleKeychainsState.status === 'loading') {
-    viewRoot.innerHTML = '<article class="panel"><h2>Keychains</h2><p>Loading keychains…</p></article>';
+    viewRoot.innerHTML = renderLoadingPanel('Keychains', 'Loading keychains…');
     return;
   }
 
@@ -1448,6 +1541,7 @@ function consoleInviteCreateView() {
   viewRoot.innerHTML = `<article class="panel">
     <h2>Create invite</h2>
     <p class="muted-text">Create an owner invite receipt. Current backend accepts an empty body and returns generated identifiers.</p>
+    ${routeStateLegend('idle', 'Ready to submit.')}
     <form id="invite-form" data-subject-label="owner invite" novalidate>
       <input type="hidden" name="action" value="create_invite" />
       <div data-summary-slot></div>
@@ -1495,6 +1589,7 @@ function consolePostModerationView({ postId }) {
     <h2>Moderate post</h2>
     <p class="muted-text">Post ID: <code>${escapeHtml(postId)}</code></p>
     <p><a href="/ui/console/posts" data-path="/console/posts">Back to console posts</a></p>
+    ${routeStateLegend('idle', 'Ready to submit.')}
     <form id="post-moderation-form" data-subject-label="post ${escapeHtml(postId)}" novalidate>
       <div class="field">
         <label for="post-action">Action</label>
@@ -1539,6 +1634,7 @@ function consoleCommentModerationView({ postId, commentId }) {
     <h2>Moderate comment</h2>
     <p class="muted-text">Post: <code>${escapeHtml(postId)}</code> · Comment: <code>${escapeHtml(commentId)}</code></p>
     <p><a href="/ui/console/posts/${encodeURIComponent(postId)}/moderation" data-path="/console/posts/${encodeURIComponent(postId)}/moderation">Back to post moderation</a> · <a href="/ui/console/posts" data-path="/console/posts">Console posts</a></p>
+    ${routeStateLegend('idle', 'Ready to submit.')}
     <form id="comment-moderation-form" data-subject-label="comment ${escapeHtml(commentId)} on post ${escapeHtml(postId)}" novalidate>
       <div class="field">
         <label for="comment-action">Action</label>

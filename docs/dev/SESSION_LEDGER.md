@@ -190,3 +190,36 @@
   - Assumed per-form state marker via `data-form-state` is sufficient for Phase 5 hardening without introducing a separate state store.
 - **Recommended next session starting point**:
   - Complete remaining Phase 5 pass: full form-state messaging consistency on every route, extended a11y audit (heading structure/tab order), and begin Phase 6 QA matrix artifact with endpoint-by-endpoint negative cases.
+
+## Session 2026-04-05T06:00:00Z (UTC)
+
+- **Branch/commit**: `work` @ `work@HEAD`
+- **Scope chosen**:
+  - Complete remaining Phase 5 hardening with explicit route-state visibility and accessibility consistency across all routes, including form-only flows.
+  - Audit and retain shared dangerous-action primitive usage for all sensitive actions (moderation, key lifecycle, invite creation).
+  - Begin Phase 6 by seeding a persistent endpoint QA matrix artifact.
+- **Files changed**:
+  - `public/ui/app.js`
+  - `public/ui/index.html`
+  - `public/ui/styles.css`
+  - `docs/dev/QA_MATRIX.md`
+  - `docs/dev/SESSION_LEDGER.md`
+  - `docs/dev/IMPLEMENTATION_STATUS.md`
+  - `docs/dev/DECISIONS.md`
+  - `FRONTEND_BACKEND_INTEGRATION_PLAYBOOK.md`
+  - `UI_IMPLEMENTATION_PLAN.md`
+- **Decisions made (rationale)**:
+  - Added a shared route-state legend + updater so every route can explicitly display active status from the full hardening state model.
+  - Reused existing form and dangerous-action helpers (instead of endpoint-level rewrites) to keep production scope minimal and contract-safe.
+  - Added skip-link and consistent loading/state panels to improve keyboard-only navigation and focus predictability.
+- **Tests/checks run and outcomes**:
+  - `node --check public/ui/app.js` ✅ pass
+  - `node --check public/ui/api-client.js` ✅ pass
+  - `node --check public/ui/state.js` ✅ pass
+- **Open issues/blockers**:
+  - Browser-container screenshot tooling is unavailable in this environment, so visual screenshots and manual keyboard walkthroughs could not be captured automatically.
+- **Assumptions recorded**:
+  - Assumed explicit visible state legends satisfy “explicitly surfaces” requirements for all routes without backend/API contract changes.
+  - Assumed QA matrix seed can start as unchecked planned cases and be executed in a subsequent QA-focused session.
+- **Recommended next session starting point**:
+  - Execute Phase 6 QA matrix checks against a running backend, mark pass/fail evidence, and produce role-based + UAT runbook artifacts.
