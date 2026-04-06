@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Purpose
 This file is the contract entrypoint for CRE8 API behavior in the production SSOT set.
 

@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 This schema-level contract is implemented through `ext-pdo` prepared statements and transactional writes (see `Dependency_Reference.md`).
 
 ## Table contracts

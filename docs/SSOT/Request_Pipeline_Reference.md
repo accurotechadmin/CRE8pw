@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Global middleware order
 Middleware implementation baseline is defined in `Dependency_Reference.md`: `slim/slim` (ordering/composition), `slim/psr7` (request/response), `respect/validation` (validation stage), `neomerx/cors-psr7` (CORS stage), and `symfony/rate-limiter` + `symfony/cache` (rate-limit enforcement/state).
 

@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Pre-release
 - [ ] Dependencies resolved and lockfile validated
 - [ ] Config and secrets reviewed for target environment

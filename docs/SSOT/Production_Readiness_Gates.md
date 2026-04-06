@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Gate A: Build/runtime integrity
 - Dependencies installable in CI/CD from lockfile.
 - App boots with no startup exceptions.

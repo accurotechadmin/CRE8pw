@@ -3,6 +3,8 @@
 _Status: adopted_
 Date resolved: 2026-04-06 (UTC)
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 Decision framing used in this artifact:
 - **Primary answer** = definitive v1 decision to align implementation and docs.
 - **Prototype note** = where current code differs or only partially implements the decision.

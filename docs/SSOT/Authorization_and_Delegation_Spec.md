@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Scope
 Defines principals, key classes, delegation bounds, and route-surface authorization behavior for CRE8 v1.
 

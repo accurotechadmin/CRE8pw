@@ -3,6 +3,8 @@
 _Status: adopted_
 _Date authored (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## 1) System shape
 
 CRE8 is a single-runtime Slim 4 + PHP-DI application that boots from `public/index.php` and follows a policy-first startup sequence:

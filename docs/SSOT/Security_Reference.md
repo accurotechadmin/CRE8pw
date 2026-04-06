@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Auth model
 - Owner JWT (`typ=owner`, console audience)
 - Key JWT (`typ=key`, gateway audience)

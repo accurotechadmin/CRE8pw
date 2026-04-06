@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Storage strategy
 - Relational storage through `ext-pdo` prepared statements and transactions.
 - Migration-safe schema evolution with backward-compatible change sequencing.

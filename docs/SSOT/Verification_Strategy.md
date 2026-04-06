@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Automated suites
 - Test framework dependency: `phpunit/phpunit` (see `Dependency_Reference.md`).
 - Contract tests (`tests/Contract/*`)

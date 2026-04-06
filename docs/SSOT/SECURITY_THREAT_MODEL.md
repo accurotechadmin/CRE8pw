@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Threat scenarios
 1. Stolen bearer token replay.
 2. Refresh token replay in family.

@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## SLI definitions
 - API availability: successful non-5xx response ratio for `/api/*` and `/console/api/*`.
 - Auth success latency: p95 for `/api/auth/login` and `/api/auth/key-login`.

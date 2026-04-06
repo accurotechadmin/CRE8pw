@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Deploy procedure
 1. Validate environment profile and secrets.
 2. Install dependencies: `composer install --no-dev --prefer-dist --classmap-authoritative`.

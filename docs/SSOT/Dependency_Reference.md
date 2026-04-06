@@ -3,6 +3,8 @@
 _Status: adopted_  
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Purpose
 This document defines the production dependency baseline for CRE8. It is normative for framework/runtime package selection in the next production iteration.
 

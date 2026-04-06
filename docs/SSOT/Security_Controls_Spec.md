@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Control objectives
 1. Ensure credential authenticity and bounded token lifetime.
 2. Prevent unauthorized mutation/actions via layered claim/policy checks.

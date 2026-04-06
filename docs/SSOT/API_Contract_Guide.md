@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Canonical machine contract
 - OpenAPI source: `openapi/cre8.v1.yaml`
 - Envelope schemas: `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json`

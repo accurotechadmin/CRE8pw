@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 | Capability | Route(s) | Middleware/Policy | Service(s) | Tests | SSOT docs |
 |---|---|---|---|---|---|
 | Owner login | `POST /api/auth/login` | validation + json + owner auth | `AuthService` | contract auth tests | `API_Contract_Guide.md`, `Security_Reference.md` |

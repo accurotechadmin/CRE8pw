@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Canonical source
 - Contract source: `ui/endpoints_unified.json`
 - Contract decisions: `UI_Endpoint_Contract_Executive_Decisions.md`

@@ -4,6 +4,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## 1. Executive Summary
 
 **CRE8.pw** is a unique credentialing, authentication, and authorization platform that developers can use to build any application on top of, in PHP, HTML, CSS, JS, and MySQL/MariaDB.

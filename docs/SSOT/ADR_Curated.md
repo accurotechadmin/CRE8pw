@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Included ADRs (durable)
 1. Static no-build SPA under `/public/ui` for parity delivery.
 2. Per-surface session state model with explicit active surface.

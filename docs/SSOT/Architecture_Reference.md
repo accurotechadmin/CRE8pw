@@ -3,6 +3,8 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Runtime composition
 CRE8 runs as a single Slim 4 + PHP-DI process booted from `public/index.php`.
 

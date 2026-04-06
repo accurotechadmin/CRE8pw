@@ -3,6 +3,8 @@
 _Status: adopted_
 _Date authored (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## 1) Purpose of this document
 
 This document formalizes executive decisions for improving the UI endpoint contract and resolves ambiguity around `ui/endpoints_unified.json`.
