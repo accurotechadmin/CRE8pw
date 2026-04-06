@@ -8,12 +8,16 @@ Continue CRE8 SSOT-driven rebuild from current state.
   - `GET /health` vertical slice.
   - `POST /api/auth/login` vertical slice with thin handler + use-case + policy routing.
   - Login-focused contract/security tests authored.
-- Updated prompt asset:
-  - `docs/SSOT/REUSABLE_LLM_SESSION_PROMPT.md` now enforces state-aware backlog selection via `LATEST_STATUS.md` + latest session logs.
-- Blocker from prior execution remains: package installation is blocked by network policy in this environment.
+- Newly implemented SSOT automation:
+  - `code/scripts/ssot/lint.php`
+  - `code/scripts/ssot/sync_check.php`
+  - `code/scripts/ssot/report.php`
+  - `code/scripts/ssot/Support/ssot_lib.php`
+  - CI workflow: `.github/workflows/ssot-automation.yml`
+- Current blocker remains: dependency installation (`composer install`) cannot reach Packagist in this environment.
 
 ## Exact next objective
-Execute the highest unfinished priority item: **make `/code` tests executable (or capture unblock evidence), then implement SSOT drift automation scripts + CI wiring**.
+Execute the highest unfinished priority item: **unblock `/code` dependency installation and run tests, then triage/fix SSOT automation findings to reach passing lint/sync/report checks**.
 
 ## Relevant SSOT docs to re-open first
 1. `docs/SSOT/SSOT_INDEX.md`
@@ -28,10 +32,10 @@ Execute the highest unfinished priority item: **make `/code` tests executable (o
 10. `docs/SSOT/scaffold_stubs.json`
 
 ## Constraints/guardrails
-- Treat `/docs/SSOT` as immutable requirements unless human explicitly requests requirement edits.
+- Treat `/docs/SSOT` requirement semantics as immutable unless explicitly requested by a human.
 - Keep implementation work in `/code` unless explicitly directed otherwise.
-- Route/API behavior changes require same-PR sync across runtime routes + OpenAPI + route inventory + examples + tests.
-- Keep handlers thin; behavior in use-cases/policies; fail closed on startup/auth/security.
+- Route/API behavior changes require synchronized updates across runtime routes + OpenAPI + route inventory + endpoint examples + tests.
+- Keep handlers thin; behavior belongs in use-cases/policies; fail closed for startup/auth/security.
 
 ## Mandatory validation commands before commit
 - `git status --short --branch`
@@ -43,7 +47,6 @@ Execute the highest unfinished priority item: **make `/code` tests executable (o
 - `cd code && composer test` (or capture exact blocker output)
 
 ## Expected deliverables for the next session
-1. Clear dependency/test execution outcome (pass or documented blocker with smallest unblock step).
-2. Implemented SSOT lint/sync/report automation scripts with usable output.
-3. Initial composer/CI wiring for SSOT automation enforcement.
-4. Updated handoff trilogy (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_SESSION_PROMPT.md`) with command evidence and outcomes.
+1. Clear test execution outcome after dependency unblocking (or precise blocker evidence with smallest unblocking step).
+2. SSOT automation findings triaged/fixed or explicitly deferred with owner + deadline.
+3. Updated handoff trilogy (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_SESSION_PROMPT.md`) with command evidence.
