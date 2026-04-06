@@ -1,5 +1,6 @@
 # CRE8 High-Level Architecture Summary
 
+_Status: adopted_
 _Date authored (UTC): 2026-04-06_
 
 ## 1) System shape

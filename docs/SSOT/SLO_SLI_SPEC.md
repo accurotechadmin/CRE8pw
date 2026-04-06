@@ -1,5 +1,6 @@
 # SLO/SLI Spec
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## SLI definitions
@@ -18,3 +19,8 @@ _Last updated (UTC): 2026-04-06_
 - 1m realtime dashboards
 - 1h ops review rollups
 - 30d SLO compliance reports
+
+## Alerting guidance
+- Page on sustained 5xx spikes and `/health` degradation.
+- Ticket on rising 401/403/429 anomalies beyond baseline.
+- Link alert context with `request_id` traces and event catalog families.

@@ -1,5 +1,6 @@
 # Security Threat Model
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## Threat scenarios
@@ -15,12 +16,12 @@ _Last updated (UTC): 2026-04-06_
 - Subset-only delegation with depth/expiry constraints.
 - CSRF validation for applicable writes.
 - Boot-time key material safety checks.
-- Global rate limiter.
+- Global rate limiter with retry metadata.
 - Structured audit events with request IDs.
 
-## Out-of-scope for v1
-- Mandatory MFA.
-- Global JWT denylist on every revoke event.
-
-## Monitoring hooks
-- `auth.*`, `security.*`, `csrf.*`, `rate_limit.*`, `device_limit.*` event streams.
+## Dependency linkage
+- JWT controls: `firebase/php-jwt`
+- Crypto primitives: `ext-sodium`
+- CORS: `neomerx/cors-psr7`
+- Rate limiting: `symfony/rate-limiter` + `symfony/cache`
+- Logging/audit traces: `monolog/monolog`
