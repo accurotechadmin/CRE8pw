@@ -90,4 +90,4 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 - `REBUILD_STRATEGY_OPTIONS_FOR_CRE8.md` (rebuild option set and comparative strategy matrix)
 - `SSOT_CODEBASE_ALIGNMENT_ASSESSMENT_2026-04-06.md` (snapshot SSOT-to-codebase drift assessment)
 - `scaffold_stubs.json` (initial scaffold + stub structure source for rebuild execution)
-- `REUSABLE_LLM_SESSION_PROMPT.md` (copy/paste prompt for expert LLM session handoff continuity)
+- `NEXT_PROMPT.md` (consolidated copy/paste prompt for expert LLM session continuity and end-of-session handoff updates)
