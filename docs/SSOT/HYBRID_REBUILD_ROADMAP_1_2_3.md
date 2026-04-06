@@ -1,5 +1,8 @@
 # CRE8 Hybrid Rebuild Roadmap (1 + 2 + 3)
 
+_Status: draft_
+_Last updated (UTC): 2026-04-06_
+
 _Date: 2026-04-06_
 
 ## 0) Purpose and Scope

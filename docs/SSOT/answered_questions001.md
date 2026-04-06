@@ -1,5 +1,7 @@
 # CRE8 Open Questions 001 — Resolved Decisions (Prototype-Aware, SSOT-Aligned)
 
+_Last updated (UTC): 2026-04-06_
+
 _Status: adopted_
 Date resolved: 2026-04-06 (UTC)
 

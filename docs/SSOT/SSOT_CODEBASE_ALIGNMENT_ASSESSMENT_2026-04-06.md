@@ -1,5 +1,8 @@
 # SSOT ↔ Codebase Alignment Assessment (2026-04-06)
 
+_Status: draft_
+_Last updated (UTC): 2026-04-06_
+
 ## Scope
 - Compared implementation under `src/`, `public/`, and executable project configuration to **only** `docs/SSOT/` documentation.
 - Intentionally ignored non-SSOT docs per request.

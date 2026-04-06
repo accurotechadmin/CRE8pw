@@ -1,5 +1,8 @@
 # NEXT SESSION PROMPT (Copy-Ready)
 
+_Status: draft_
+_Last updated (UTC): 2026-04-06_
+
 Continue CRE8 SSOT-driven rebuild from current state.
 
 ## Project state snapshot
@@ -8,16 +11,16 @@ Continue CRE8 SSOT-driven rebuild from current state.
   - `GET /health` vertical slice.
   - `POST /api/auth/login` vertical slice with thin handler + use-case + policy routing.
   - Login-focused contract/security tests authored.
-- Newly implemented SSOT automation:
-  - `code/scripts/ssot/lint.php`
-  - `code/scripts/ssot/sync_check.php`
-  - `code/scripts/ssot/report.php`
-  - `code/scripts/ssot/Support/ssot_lib.php`
+- SSOT automation status:
+  - `code/scripts/ssot/lint.php` ✅ passing
+  - `code/scripts/ssot/sync_check.php` ✅ passing
+  - `code/scripts/ssot/report.php` ✅ passing
   - CI workflow: `.github/workflows/ssot-automation.yml`
-- Current blocker remains: dependency installation (`composer install`) cannot reach Packagist in this environment.
+- Remaining blocker:
+  - `composer install` in `/code` cannot reach Packagist in this environment (`CONNECT tunnel failed, response 403`).
 
 ## Exact next objective
-Execute the highest unfinished priority item: **unblock `/code` dependency installation and run tests, then triage/fix SSOT automation findings to reach passing lint/sync/report checks**.
+Execute the highest unfinished priority item: **unblock `/code` dependency installation, run `composer test`, and then continue with the next SSOT-priority runtime slice**.
 
 ## Relevant SSOT docs to re-open first
 1. `docs/SSOT/SSOT_INDEX.md`
@@ -47,6 +50,6 @@ Execute the highest unfinished priority item: **unblock `/code` dependency insta
 - `cd code && composer test` (or capture exact blocker output)
 
 ## Expected deliverables for the next session
-1. Clear test execution outcome after dependency unblocking (or precise blocker evidence with smallest unblocking step).
-2. SSOT automation findings triaged/fixed or explicitly deferred with owner + deadline.
+1. Clear dependency/test execution outcome (`composer install`, `composer test`) with exact evidence.
+2. Next SSOT-priority runtime vertical slice (if tests runnable) with full synchronization bundle.
 3. Updated handoff trilogy (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_SESSION_PROMPT.md`) with command evidence.
