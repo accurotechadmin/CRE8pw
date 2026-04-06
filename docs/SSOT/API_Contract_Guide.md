@@ -19,6 +19,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui*`, owner/signup/auth routes
 - Gateway: `/api/*`
 - Console: `/console/api/*`
+- Canonical human route index: `Route_Inventory_Reference.md`
 
 ## Endpoint examples
 See `Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.

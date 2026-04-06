@@ -12,10 +12,12 @@ Short, explicit register of unresolved SSOT-level gaps that could affect upcomin
 
 | Gap ID | Area | Gap statement | Impact if unresolved | Planned resolution target |
 |---|---|---|---|---|
-| GAP-001 | Keychain model | Keychain behavior is described conceptually but remains extension-scoped in core data/auth contracts. | Risk of premature schema and API assumptions during scaffolding. | Resolve in dedicated keychain v1/v2 decision ADR before keychain scaffolding. |
-| GAP-002 | Surface-specific route inventory | SSOT route grouping exists, but a single canonical, versioned route inventory index doc is not yet separated from examples/OpenAPI. | Risk of drift between examples, UI parity tables, and implementation planning docs. | Add `Route_Inventory_Reference.md` before route scaffolding begins. |
-| GAP-003 | SLO instrumentation ownership | SLO targets are defined, but metric-source ownership and alert authority are not mapped per signal. | Risk of monitoring blind spots and unclear operational accountability. | Extend `SLO_SLI_SPEC.md` + operations docs with owner mapping and runbook links. |
-| GAP-004 | SSOT automation | Governance requires synchronized updates, but there is no formal SSOT lint/validation automation document yet. | Risk of review-time misses for cross-doc update requirements. | Add SSOT validation workflow spec and CI check definitions. |
+| GAP-004 | SSOT automation | Governance requires synchronized updates, but there is no formal SSOT lint/validation automation document yet. | Risk of review-time misses for cross-doc update requirements. | Deferred by current directive; revisit after core keychain/route/SLO SSOT stabilization. |
+
+## Recently resolved in this SSOT cycle
+- GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Data_Model_Spec.md`, `ERD.md`, route inventory, and contract artifacts.
+- GAP-002 (Route inventory) resolved by adding canonical `Route_Inventory_Reference.md`.
+- GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.
 
 ## Triage rules
 - Keep entries short and actionable.

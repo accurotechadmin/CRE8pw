@@ -16,7 +16,7 @@ Defines the authoritative vocabulary used across SSOT documents. When wording di
 | **principal** | A security identity represented by a stable DB record and used for authorization decisions. | v1 principal types: `owner`, `key`. |
 | **owner principal** | A principal with governance authority for console operations. | Authenticated with owner JWT (`typ=owner`). |
 | **key principal** | A principal used for gateway operations. | Authenticated with key JWT (`typ=key`). |
-| **key class** | Behavioral subtype of key principal expressing delegation/usage semantics. | v1 active: `primary_author`, `secondary_author`, `use`; `keychain` is extension-scoped. |
+| **key class** | Behavioral subtype of key principal expressing delegation/usage semantics. | v1 active: `primary_author`, `secondary_author`, `use`, `keychain`. |
 | **delegation envelope** | The constrained permission/scope contract inherited from parent to child key. | Must be subset-only, depth-bounded, and expiry-bounded. |
 | **lineage** | Parent-child chain of delegated key issuance over time. | Used for audits, claim checks, and cascading lifecycle actions. |
 | **scope** | Resource boundary limiting where granted permissions apply. | May target post sets, audience slices, or policy-defined subsets. |

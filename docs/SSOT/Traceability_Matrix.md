@@ -15,5 +15,8 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 | Comment list/create | `/api/posts/{id}/comments*` | key jwt + post/comment policy | `CommentsService` | gateway contract tests | `UI_Parity_Contract.md`, `Error_Code_Catalog.md` |
 | Console post ops | `/console/api/posts*` | owner jwt + csrf where applicable | `PostsService`,`ModerationService` | console contract tests | `Operations_Reference.md`, `Security_Reference.md` |
 | Key issue/lifecycle | `/console/api/keys*` | owner jwt + validation | `KeyLifecycleService` | security/contract tests | `Authorization_and_Delegation_Spec.md`, `Data_Model_Spec.md` |
+| Keychain create/list | `/console/api/keychains` | owner jwt + validation | `KeychainService` | keychain contract tests | `Authorization_and_Delegation_Spec.md`, `Route_Inventory_Reference.md`, `Data_Model_Spec.md` |
+| Keychain membership mutate | `/console/api/keychains/{id}/members*` | owner jwt + invariants (`no nesting`, size cap, class checks) | `KeychainService` | keychain security + contract tests | `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Endpoint_Examples_All_Routes.md` |
+| Keychain effective resolve | `GET /console/api/keychains/{id}/resolve` | owner jwt + lineage projection policy | `KeychainService` | keychain contract tests | `Route_Inventory_Reference.md`, `Data_Model_Spec.md` |
 | Invite create | `POST /console/api/invites` | owner jwt + validation | `KeyLifecycleService` | console contract tests | `Operations_Runbook_Production.md`, `Security_Controls_Spec.md` |
 | Health/JWKS | `/health`, `/.well-known/jwks.json` | public middleware stack | `HealthService`,`JwksService` | health smoke tests | `Operations_Reference.md`, `Dependency_Reference.md` |

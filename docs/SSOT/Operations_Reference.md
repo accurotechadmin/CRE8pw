@@ -24,6 +24,12 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - `GET /health` validates DB (`ext-pdo`), limiter/cache dependencies (`symfony/rate-limiter`, `symfony/cache`), key material, and issuer dependency
 - smoke script support via `scripts/health_smoke.php`
 
+## SLO instrumentation ownership baseline
+- Signal ownership and alert authority are defined in `SLO_SLI_SPEC.md` and are operationally required.
+- Platform/SRE owner is default dashboard owner for availability, health, and error-budget signals.
+- Backend maintainer lead is dashboard owner for route-level latency signals (auth + feed).
+- Platform on-call is the primary page receiver unless `SLO_SLI_SPEC.md` defines route-family-specific override.
+
 ## Failure model
 - Deterministic `boot_failed` JSON with request ID
 - structured startup failure event emission

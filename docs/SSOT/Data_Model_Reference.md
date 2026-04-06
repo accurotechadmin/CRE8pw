@@ -14,21 +14,26 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Principals/auth: `principals`, `principal_emails`, `credentials`, `token_families`
 - Delegation/lifecycle: `delegation_envelopes`, `invite_receipts`
 - Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`
+- Keychain model: `keychain_memberships`, `keychain_effective_snapshots`
 
 ## Lifecycle invariants
 - Principal types: `owner|key`
-- Key classes (v1 active): `primary_author|secondary_author|use`
-- Keychain class: reserved extension class; governed by future SSOT addendum before production activation
+- Key classes (v1 active): `primary_author|secondary_author|use|keychain`
 - Delegation max depth: `3`
+- Keychain membership max size: `50`
+- Keychain member classes allowed: `primary_author|secondary_author|use`
+- Keychain nesting: forbidden
 - Post states: `draft|published|hidden|locked|archived|deleted`
 - Comment states: `active|hidden|locked|deleted`
 
 ## Transaction boundaries (required)
 - Auth issuance + audit event write occur in a single logical transaction scope.
 - Key lifecycle mutations + lineage update occur atomically.
+- Keychain membership mutation + effective-snapshot update + audit event write occur atomically.
 - Moderation decisions + revision metadata must commit together.
 
 ## Related SSOT docs
 - `Data_Model_Spec.md`
 - `ERD.md`
 - `Authorization_and_Delegation_Spec.md`
+- `Route_Inventory_Reference.md`

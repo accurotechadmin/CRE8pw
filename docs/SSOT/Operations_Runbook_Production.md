@@ -25,10 +25,18 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 4. Drain old token TTL window.
 5. Retire previous private key material securely.
 
+## SLO ownership and alerting playbook
+1. Verify current ownership matrix in `SLO_SLI_SPEC.md` before release.
+2. Confirm paging route targets the listed alert authority for each SLI.
+3. Confirm dashboards are writable by listed dashboard owners.
+4. During incidents, primary responder is listed alert authority; backup escalation follows matrix.
+5. Any temporary ownership override requires post-incident SSOT update PR.
+
 ## Operational checks
 - Confirm limiter/cache state backend health.
 - Confirm audit/security log channel emission.
 - Confirm request IDs are visible in envelope and logs.
+- Confirm availability/auth/feed/health dashboards are fresh and owned per `SLO_SLI_SPEC.md`.
 
 ## Dependency linkage
 Operational procedures assume the baseline in `Dependency_Reference.md` and controls from `Operations_Reference.md`.
