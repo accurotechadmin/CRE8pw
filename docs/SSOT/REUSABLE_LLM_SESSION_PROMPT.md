@@ -1,4 +1,4 @@
-# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (Post-Scaffold)
+# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (Post-Scaffold, Execution-Ready)
 
 Copy/paste everything below into a fresh expert coding LLM session.
 
@@ -24,6 +24,7 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
    - `docs/SSOT/Route_Inventory_Reference.md`,
    - route examples and relevant test contracts.
 4. Do not add fake business logic or speculative behavior.
+5. Prefer smallest vertical slices that fully close the loop: **route + use-case/policy + tests + docs sync**.
 
 ## Required initial reading order (always do first)
 1. `/docs/SSOT/SSOT_INDEX.md`
@@ -51,12 +52,14 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
    - Confirm scaffold integrity against `scaffold_stubs.json` (if relevant).
 2. **Drift check (lightweight first pass)**
    - Detect likely SSOT/code drift for any area you intend to modify.
+   - List exact SSOT artifacts that must be synchronized in this session.
 3. **Plan**
    - Produce a short execution plan with smallest reviewable increments.
    - Prefer vertical slices (route + use-case + policy + tests + docs sync).
 4. **Execute**
    - Make minimal, coherent changes.
    - Run targeted tests/checks after each increment.
+   - If blocked, stop early, record blocker, and propose smallest unblocking step.
 
 ## Priority queue (default unless human overrides)
 1. Vertical slice: `GET /health`
@@ -71,6 +74,7 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
 - New dependency additions must be justified against `Dependency_Reference.md`.
 - Do not leave partially wired routes without tests or documented follow-up.
 - Prefer failing-closed behavior for startup/auth/security paths.
+- Use deterministic timestamps/IDs in tests where possible.
 
 ## Required per-session records and handoff artifacts
 At the end of **every** coding session, produce/update the following under `/docs/SSOT/session_handoff/`:
@@ -125,3 +129,9 @@ If the folder does not exist, create it.
 Now begin by running the Session start protocol, then execute the highest-priority pending work item.
 
 ---
+
+## Optional strict execution addendum (recommended)
+- Always print `git status` at start and end.
+- Always run scaffold integrity check against `docs/SSOT/scaffold_stubs.json` before first code edit.
+- For each slice, attach a “sync matrix” listing runtime route file, OpenAPI section, route inventory row, example block, and test files.
+- If any mandatory sync artifact is intentionally deferred, record exact reason + owner + deadline in session log.
