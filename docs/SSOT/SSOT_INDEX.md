@@ -1,5 +1,6 @@
 # CRE8 SSOT Index
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## Purpose
@@ -55,3 +56,8 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 - Security docs: security owner
 - UI parity docs: frontend owner
 - Operations docs: platform/SRE owner
+
+## Appendix artifacts
+- `CRE8_Architecture_High_Level_Summary.md` (orientation summary)
+- `UI_Endpoint_Contract_Executive_Decisions.md` (decision log for UI contract expansion)
+- `answered_questions001.md`, `answered_questions001a.md` (resolved question archives)

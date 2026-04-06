@@ -1,16 +1,17 @@
 # Architecture Diagrams
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## 1) C4-style Context Diagram
 ```mermaid
 flowchart LR
   User[Owner / Key User] --> UI[/public/ui SPA/]
-  Integrator[External Client] --> API[(CRE8 Slim API)]
+  Integrator[External Client] --> API[(CRE8 Slim API + PSR-7)]
   UI --> API
   API --> DB[(PDO-backed DB)]
   API --> Keys[(JWT Key Material)]
-  API --> Logs[(Audit/Logs)]
+  API --> Logs[(Structured Audit/Logs)]
 ```
 
 ## 2) Component Diagram

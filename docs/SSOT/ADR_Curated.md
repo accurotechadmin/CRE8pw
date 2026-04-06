@@ -1,5 +1,6 @@
 # ADR Curated (Production-Relevant)
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## Included ADRs (durable)

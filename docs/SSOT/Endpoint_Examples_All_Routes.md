@@ -1,5 +1,6 @@
 # Endpoint Examples — All Routes
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 > Examples are normative for shape and semantics; IDs/timestamps are illustrative.

@@ -1,5 +1,6 @@
 # Verification Strategy (SSOT)
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
 ## Automated suites
