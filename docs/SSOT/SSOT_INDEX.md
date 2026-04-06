@@ -30,21 +30,28 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 13. `Data_Model_Reference.md`
 14. `Data_Model_Spec.md`
 15. `ERD.md`
-16. `Security_Reference.md`
-17. `Security_Controls_Spec.md`
-18. `SECURITY_THREAT_MODEL.md`
-19. `UI_Parity_and_Contract.md`
-20. `UI_Parity_Contract.md`
-21. `Operations_Reference.md`
-22. `Operations_Runbook_Production.md`
-23. `Observability_Event_Catalog.md`
-24. `Verification_Strategy.md`
-25. `Production_Readiness_Gates.md`
-26. `RELEASE_CHECKLIST.md`
-27. `SLO_SLI_SPEC.md`
-28. `Architecture_Diagrams.md`
-29. `Traceability_Matrix.md`
-30. `ADR_Curated.md`
+16. `Migration_Seed_Strategy.md`
+17. `Security_Reference.md`
+18. `Security_Controls_Spec.md`
+19. `SECURITY_THREAT_MODEL.md`
+20. `Security_Verification_Abuse_Cases.md`
+21. `UI_Parity_and_Contract.md`
+22. `UI_Parity_Contract.md`
+23. `UI_Contract_Artifacts_Reference.md`
+24. `Acceptance_Criteria_Matrix.md`
+25. `Authorization_Decision_Tables.md`
+26. `Operations_Reference.md`
+27. `Infrastructure_IaC_Reference.md`
+28. `Operations_Runbook_Production.md`
+29. `Observability_Event_Catalog.md`
+30. `Verification_Strategy.md`
+31. `Production_Readiness_Gates.md`
+32. `RELEASE_CHECKLIST.md`
+33. `SLO_SLI_SPEC.md`
+34. `SSOT_Automation_and_Linting.md`
+35. `Architecture_Diagrams.md`
+36. `Traceability_Matrix.md`
+37. `ADR_Curated.md`
 
 ## Supersedes map
 - `docs/architecture_overview.md` → `Architecture_Reference.md`
@@ -68,3 +75,4 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 - `UI_Endpoint_Contract_Executive_Decisions.md` (decision log for UI contract expansion)
 - `answered_questions001.md`, `answered_questions001a.md` (resolved question archives)
 - `Known_Gaps_Tracker.md` (short unresolved SSOT-level decision tracker)
+- `SSOT_Automation_and_Linting.md` (CI-grade SSOT drift prevention requirements)

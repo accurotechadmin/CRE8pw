@@ -13,6 +13,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 ## Gate B: Contract/security quality
 - Contract tests pass.
 - Security tests pass.
+- Abuse-case security regressions pass.
 - No undocumented API or envelope changes.
 - JWT claim, CSRF, CORS, and limiter behavior verified against SSOT.
 
@@ -24,6 +25,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 ## Gate D: Operational readiness
 - Rollback rehearsal completed.
 - Key rotation runbook validated.
+- Infrastructure/IaC evidence reviewed (plan/apply + backup/restore readiness).
 - Alerting/dashboard checks pass for SLO/SLI targets.
 
 ## Exit criteria

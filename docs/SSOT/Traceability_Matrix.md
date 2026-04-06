@@ -20,3 +20,6 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 | Keychain effective resolve | `GET /console/api/keychains/{id}/resolve` | owner jwt + lineage projection policy | `KeychainService` | keychain contract tests | `Route_Inventory_Reference.md`, `Data_Model_Spec.md` |
 | Invite create | `POST /console/api/invites` | owner jwt + validation | `KeyLifecycleService` | console contract tests | `Operations_Runbook_Production.md`, `Security_Controls_Spec.md` |
 | Health/JWKS | `/health`, `/.well-known/jwks.json` | public middleware stack | `HealthService`,`JwksService` | health smoke tests | `Operations_Reference.md`, `Dependency_Reference.md` |
+
+
+Acceptance criteria for all listed capabilities are defined in `Acceptance_Criteria_Matrix.md`; authorization edge decisions are defined in `Authorization_Decision_Tables.md`.

@@ -12,9 +12,10 @@ Short, explicit register of unresolved SSOT-level gaps that could affect upcomin
 
 | Gap ID | Area | Gap statement | Impact if unresolved | Planned resolution target |
 |---|---|---|---|---|
-| GAP-004 | SSOT automation | Governance requires synchronized updates, but there is no formal SSOT lint/validation automation document yet. | Risk of review-time misses for cross-doc update requirements. | Deferred by current directive; revisit after core keychain/route/SLO SSOT stabilization. |
+| NONE | n/a | No unresolved SSOT-level gaps currently tracked. | n/a | Add new row in same PR when a new unresolved decision appears. |
 
 ## Recently resolved in this SSOT cycle
+- GAP-004 (SSOT automation) resolved by introducing `SSOT_Automation_and_Linting.md` and linking enforcement expectations into release and change-impact artifacts.
 - GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Data_Model_Spec.md`, `ERD.md`, route inventory, and contract artifacts.
 - GAP-002 (Route inventory) resolved by adding canonical `Route_Inventory_Reference.md`.
 - GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.
