@@ -1,4 +1,4 @@
-# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff
+# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (Post-Scaffold)
 
 Copy/paste everything below into a fresh expert coding LLM session.
 
@@ -7,15 +7,25 @@ Copy/paste everything below into a fresh expert coding LLM session.
 You are continuing development of the CRE8 platform from a prior session.
 
 ## Mission
-Pick up where the last development session left off and execute the next highest-priority tasks to rebuild CRE8 from scratch toward production readiness, using the existing prototype codebase only as a reference.
+Pick up where the last session ended and execute the next highest-priority SSOT-aligned work to move CRE8 toward production readiness. Use existing implementation as reference, not authority.
 
-## Core Rule (Critical)
-Treat **all documents in `/docs/SSOT` as immutable Single Source Of Truth (SSOT)** for this session.
-- If code conflicts with SSOT, SSOT wins.
-- Do not rewrite SSOT requirements unless explicitly asked by the human.
-- The closer implementation matches SSOT contracts/policies/controls, the closer CRE8 is to production-ready.
+## Non-negotiable operating rules
+1. Treat **all docs in `/docs/SSOT` as immutable SSOT** for this session.
+   - If implementation conflicts with SSOT, SSOT wins.
+   - Do not modify SSOT requirements unless explicitly requested by the human.
+2. Keep stack and architecture constraints:
+   - PHP 8.2, Slim 4, PHP-DI, PDO (MySQL/MariaDB), JWT, PHPUnit.
+   - Modular monolith + contract-first + policy-first domain logic.
+   - Thin handlers; use-cases/policies hold behavior.
+   - Domain layer must remain framework-agnostic.
+3. Any route/API behavior change must update all affected artifacts in the same change set:
+   - runtime route registration,
+   - `docs/SSOT/openapi/cre8.v1.yaml`,
+   - `docs/SSOT/Route_Inventory_Reference.md`,
+   - route examples and relevant test contracts.
+4. Do not add fake business logic or speculative behavior.
 
-## Required initial reading order (do this first)
+## Required initial reading order (always do first)
 1. `/docs/SSOT/SSOT_INDEX.md`
 2. `/docs/SSOT/CRE8_Spec.md`
 3. `/docs/SSOT/Architecture_Reference.md`
@@ -30,53 +40,88 @@ Treat **all documents in `/docs/SSOT` as immutable Single Source Of Truth (SSOT)
 12. `/docs/SSOT/SSOT_CODEBASE_ALIGNMENT_ASSESSMENT_2026-04-06.md`
 13. `/docs/SSOT/scaffold_stubs.json`
 
-## Working constraints
-- Keep the existing stack: PHP 8.2, Slim 4, PHP-DI, PDO (MySQL/MariaDB), JWT, PHPUnit.
-- Follow the hybrid implementation model:
-  1) modular monolith,
-  2) contract-first,
-  3) policy-first domain logic.
-- Keep handlers thin; place logic in use-cases/policies.
-- Keep domain layer framework-agnostic.
-- Any route change must synchronize runtime route registration + OpenAPI + route inventory + examples.
+## Current baseline assumption
+- Initial scaffold/stubs are already instantiated under `/code` from `scaffold_stubs.json`.
+- Begin by validating current state, then continue from remaining highest-priority backlog.
 
-## First execution objective for this session
-Instantiate development by creating the initial **file/folder scaffold and stubs** exactly from:
-- `/docs/SSOT/scaffold_stubs.json`
+## Session start protocol (mandatory)
+1. **State scan**
+   - Inspect git status/log.
+   - Identify what was completed in previous session and what remains.
+   - Confirm scaffold integrity against `scaffold_stubs.json` (if relevant).
+2. **Drift check (lightweight first pass)**
+   - Detect likely SSOT/code drift for any area you intend to modify.
+3. **Plan**
+   - Produce a short execution plan with smallest reviewable increments.
+   - Prefer vertical slices (route + use-case + policy + tests + docs sync).
+4. **Execute**
+   - Make minimal, coherent changes.
+   - Run targeted tests/checks after each increment.
 
-### Execution steps
-1. Parse `scaffold_stubs.json`.
-2. Create all directories listed in `root_directories`.
-3. Create all files listed in `starter_files`.
-4. For non-implemented files, add minimal placeholder content:
-   - namespace/class stub (for PHP),
-   - clear TODO block with acceptance criteria,
-   - no fake business logic.
-5. Ensure composer scripts include:
-   - `docs:ssot:lint`
-   - `docs:ssot:sync-check`
-   - `docs:ssot:report`
-6. Generate a concise progress report with:
-   - files created,
-   - any deviations from JSON,
-   - blockers.
+## Priority queue (default unless human overrides)
+1. Vertical slice: `GET /health`
+2. Vertical slice: `POST /api/auth/login`
+3. Minimal contract + security tests for both slices
+4. SSOT drift automation script implementation + CI wiring
+5. Gap report vs SSOT priority artifacts
 
-## Priority queue after scaffolding
-After scaffolding is complete, proceed in this order:
-1. Implement first vertical slice: `GET /health`.
-2. Implement second vertical slice: `POST /api/auth/login`.
-3. Add minimal contract/security tests for both slices.
-4. Add SSOT drift automation script skeletons and CI wiring.
-5. Report remaining gaps against SSOT priority list.
+## Development guardrails
+- Keep interfaces explicit (contracts/value objects) and side effects isolated.
+- Avoid hidden coupling between modules.
+- New dependency additions must be justified against `Dependency_Reference.md`.
+- Do not leave partially wired routes without tests or documented follow-up.
+- Prefer failing-closed behavior for startup/auth/security paths.
 
-## Output expectations (for every turn)
+## Required per-session records and handoff artifacts
+At the end of **every** coding session, produce/update the following under `/docs/SSOT/session_handoff/`:
+1. `SESSION_LOG_<UTC_ISO>.md` (new file per session)
+2. `LATEST_STATUS.md` (overwrite with newest canonical snapshot)
+3. `NEXT_SESSION_PROMPT.md` (copy-ready prompt for immediate continuation)
+
+If the folder does not exist, create it.
+
+### Required structure for `SESSION_LOG_<UTC_ISO>.md`
+- Session metadata (UTC start/end, branch, commit range)
+- Objective(s)
+- SSOT artifacts consulted
+- Plan executed
+- Files changed (with rationale)
+- Commands run + outcomes
+- Tests/checks run + outcomes
+- SSOT sync updates made
+- Known issues / blockers
+- Next recommended tasks (ordered)
+
+### Required structure for `LATEST_STATUS.md`
+- Current milestone status
+- Completed slices/features
+- In-progress work
+- Pending priority queue (ordered)
+- Risks and blockers
+- Exact next 3 actions
+
+### Required structure for `NEXT_SESSION_PROMPT.md`
+- Project state snapshot
+- Exact next objective
+- Relevant SSOT docs to re-open first
+- Constraints/guardrails
+- Mandatory validation commands before commit
+- Expected deliverables for the next session
+
+## Output expectations (for every response)
 - Show a brief plan before edits.
 - Make small, reviewable commits.
 - Cite changed files with line references.
-- Include executed commands and test results.
-- If blocked, explain blocker and propose the smallest next step.
+- Include exact commands run and test results.
+- If blocked, explain blocker and propose the smallest unblocking step.
 
-Now begin by reading the required docs in order, then execute the scaffold creation from `scaffold_stubs.json`.
+## Completion checklist (must pass before ending session)
+- [ ] Code changes align with SSOT docs touched by scope.
+- [ ] Route/OpenAPI/inventory/examples/tests synchronized (if route behavior changed).
+- [ ] Relevant checks/tests executed and reported.
+- [ ] Session handoff artifacts written/updated.
+- [ ] Clean, descriptive commit(s) prepared.
+
+Now begin by running the Session start protocol, then execute the highest-priority pending work item.
 
 ---
-
