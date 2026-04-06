@@ -55,6 +55,7 @@ If any listed “next task” is already complete in code, do **not** redo it; p
 ## Current project state snapshot (seed context)
 - Branch: `work`
 - Implemented in `/code`:
+  - `GET /` vertical slice (service status envelope).
   - `GET /health` vertical slice.
   - `POST /api/auth/login` vertical slice with thin handler + use-case + policy routing.
   - Login-focused contract/security tests authored.
@@ -136,7 +137,7 @@ If the folder does not exist, create it.
 - Expected deliverables for the next session
 
 ## Exact next objective
-Execute the highest unfinished priority item: **unblock `/code` dependency installation, run `composer test`, and then continue with the next SSOT-priority runtime slice**.
+Execute the highest unfinished priority item: **unblock `/code` dependency installation, run `composer test`, then implement `POST /api/auth/key-login` as the next SSOT-priority runtime slice with full synchronization**.
 
 ## Relevant SSOT docs to re-open first
 1. `docs/SSOT/SSOT_INDEX.md`
@@ -167,7 +168,7 @@ Execute the highest unfinished priority item: **unblock `/code` dependency insta
 
 ## Expected deliverables for the next session
 1. Clear dependency/test execution outcome (`composer install`, `composer test`) with exact evidence.
-2. Next SSOT-priority runtime vertical slice (if tests runnable) with full synchronization bundle.
+2. Next SSOT-priority runtime vertical slice (`POST /api/auth/key-login`, if tests runnable) with full synchronization bundle.
 3. Updated handoff artifacts (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_PROMPT.md`) with command evidence.
 
 ## Output expectations (for every response)
