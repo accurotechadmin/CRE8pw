@@ -62,11 +62,14 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
    - If blocked, stop early, record blocker, and propose smallest unblocking step.
 
 ## Priority queue (default unless human overrides)
-1. Vertical slice: `GET /health`
-2. Vertical slice: `POST /api/auth/login`
-3. Minimal contract + security tests for both slices
-4. SSOT drift automation script implementation + CI wiring
-5. Gap report vs SSOT priority artifacts
+1. Vertical slice: `POST /api/auth/login`
+2. Minimal contract + security tests for both slices
+3. SSOT drift automation script implementation + CI wiring
+4. Gap report vs SSOT priority artifacts
+
+## Working tree focus
+- Implement rebuild slices under `/code` unless the human explicitly asks to change legacy runtime under `/src`.
+- Keep `/docs/SSOT` authoritative requirements immutable; update only synchronization artifacts or explicit handoff docs requested by the human.
 
 ## Development guardrails
 - Keep interfaces explicit (contracts/value objects) and side effects isolated.
@@ -118,6 +121,14 @@ If the folder does not exist, create it.
 - Cite changed files with line references.
 - Include exact commands run and test results.
 - If blocked, explain blocker and propose the smallest unblocking step.
+
+## Per-slice sync matrix (mandatory)
+For each route slice changed, include a matrix with:
+- runtime route file
+- OpenAPI path section
+- Route inventory row
+- Endpoint example block
+- Contract/security tests
 
 ## Completion checklist (must pass before ending session)
 - [ ] Code changes align with SSOT docs touched by scope.
