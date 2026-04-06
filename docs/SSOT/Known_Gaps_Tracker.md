@@ -14,6 +14,8 @@ Short, explicit register of unresolved SSOT-level gaps that could affect upcomin
 |---|---|---|---|---|
 | NONE | n/a | No unresolved SSOT-level gaps currently tracked. | n/a | Add new row in same PR when a new unresolved decision appears. |
 
+Prototype reconciliation notes are tracked in `Prototype_to_SSOT_Delta_Map.md` and should be converted into gap rows only when unresolved decisions (not implementation deltas) remain.
+
 ## Recently resolved in this SSOT cycle
 - GAP-004 (SSOT automation) resolved by introducing `SSOT_Automation_and_Linting.md` and linking enforcement expectations into release and change-impact artifacts.
 - GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Data_Model_Spec.md`, `ERD.md`, route inventory, and contract artifacts.

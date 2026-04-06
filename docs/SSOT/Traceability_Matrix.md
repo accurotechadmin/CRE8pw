@@ -23,3 +23,4 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 
 Acceptance criteria for all listed capabilities are defined in `Acceptance_Criteria_Matrix.md`; authorization edge decisions are defined in `Authorization_Decision_Tables.md`.
+Startup and environment traceability requirements are defined in `Configuration_Environment_Contract.md` and `Boot_and_Startup_Failure_Contract.md`.

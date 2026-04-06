@@ -24,7 +24,9 @@ Middleware implementation baseline is defined in `Dependency_Reference.md`: `sli
 - 401 `auth_required|auth_invalid`
 - 403 `forbidden`
 - 404 `not_found`
+- 405 `method_not_allowed`
 - 409 `conflict`
+- 415 `unsupported_media_type`
 - 422 `validation_failed`
 - 429 `rate_limited`
 - 500 `internal_error`

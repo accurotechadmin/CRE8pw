@@ -19,7 +19,7 @@ GET /
 
 ### GET /health
 ```json
-{"data":{"db":"ok","rate_limiter":"ok","jwt_keys":"ok","issuer_dependency":"ok"},"meta":{"envelope_version":"1"}}
+{"data":{"status":"ok","checked_at_utc":"2026-04-06T00:00:00Z","latency_ms":12,"failures":[],"services":{"db":{"status":"ok"},"rate_limiter":{"status":"ok"},"key_material":{"status":"ok"},"http_dependency":{"status":"ok","status_code":200}}},"meta":{"envelope_version":"1"}}
 ```
 
 ### GET /.well-known/jwks.json
