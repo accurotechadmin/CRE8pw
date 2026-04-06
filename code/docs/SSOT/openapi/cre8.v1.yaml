@@ -6,6 +6,17 @@ info:
 servers:
   - url: /
 paths:
+  /:
+    get:
+      summary: Service status
+      security: []
+      responses:
+        '200':
+          description: Service status envelope
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusSuccessEnvelope'
   /health:
     get:
       summary: Deep health check
@@ -64,6 +75,29 @@ components:
         password:
           type: string
           minLength: 1
+    StatusSuccessEnvelope:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: object
+          required: [service, status]
+          properties:
+            service:
+              type: string
+              const: cre8
+            status:
+              type: string
+              const: ok
+        meta:
+          allOf:
+            - $ref: '#/components/schemas/Meta'
+            - type: object
+              required: [timestamp_utc]
+              properties:
+                timestamp_utc:
+                  type: string
+                  format: date-time
     HealthSuccessEnvelope:
       type: object
       required: [data, meta]
