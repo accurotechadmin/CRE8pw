@@ -19,6 +19,8 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - `composer ops:health-smoke`
 - `composer ops:migrate-smoke`
 
+Smoke command semantics and evidence requirements are defined in `Operational_Smoke_Check_Contract.md`.
+
 ## Release verification scope
 - Envelope stability
 - Middleware decision/detail-code behavior (`slim/slim`, `respect/validation`, `neomerx/cors-psr7`, `symfony/rate-limiter`)
@@ -29,6 +31,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 ## Acceptance criteria enforcement
 - Route acceptance intent is defined in `Acceptance_Criteria_Matrix.md` and must be used during QA signoff.
 - Authorization truth-table behavior is validated against `Authorization_Decision_Tables.md`.
+- Middleware detail-code behavior is validated against `Error_Code_Catalog.md`.
 
 ## Stable QA script (manual)
 - owner login + console list/create/moderation

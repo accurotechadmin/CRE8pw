@@ -23,6 +23,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Endpoint examples
 See `Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.
+For deep health semantics use `Health_Endpoint_Contract.md`.
 
 ## Acceptance criteria linkage
 Use `Acceptance_Criteria_Matrix.md` for route-level Given/When/Then intent, including negative and edge behavior requirements.

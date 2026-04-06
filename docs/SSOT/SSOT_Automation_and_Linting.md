@@ -14,6 +14,7 @@ Define automation requirements that enforce SSOT synchronization rules and reduc
 3. **Error code sync checker**: verify error/detail codes used in examples/tests are registered in `Error_Code_Catalog.md`.
 4. **UI parity sync checker**: verify API route inventory changes have matching UI parity updates.
 5. **Timestamp/status checker**: ensure modified SSOT docs include updated metadata lines.
+6. **Startup/config sync checker**: verify environment variable contract and boot-failure contract remain synchronized with runtime configuration and startup behavior.
 
 ## PR policy integration
 - SSOT-impacting PRs must run the automation pack in CI.

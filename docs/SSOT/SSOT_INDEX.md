@@ -21,37 +21,45 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 4. `Dependency_Reference.md`
 5. `Change_Impact_Map_Templates.md`
 6. `Known_Gaps_Tracker.md`
-7. `Request_Pipeline_Reference.md`
-8. `Route_Inventory_Reference.md`
-9. `API_Contract_Guide.md`
-10. `openapi/cre8.v1.yaml`
-11. `Error_Code_Catalog.md`
-12. `Authorization_and_Delegation_Spec.md`
-13. `Data_Model_Reference.md`
-14. `Data_Model_Spec.md`
-15. `ERD.md`
-16. `Migration_Seed_Strategy.md`
-17. `Security_Reference.md`
-18. `Security_Controls_Spec.md`
-19. `SECURITY_THREAT_MODEL.md`
-20. `Security_Verification_Abuse_Cases.md`
-21. `UI_Parity_and_Contract.md`
-22. `UI_Parity_Contract.md`
-23. `UI_Contract_Artifacts_Reference.md`
-24. `Acceptance_Criteria_Matrix.md`
-25. `Authorization_Decision_Tables.md`
-26. `Operations_Reference.md`
-27. `Infrastructure_IaC_Reference.md`
-28. `Operations_Runbook_Production.md`
-29. `Observability_Event_Catalog.md`
-30. `Verification_Strategy.md`
-31. `Production_Readiness_Gates.md`
-32. `RELEASE_CHECKLIST.md`
-33. `SLO_SLI_SPEC.md`
-34. `SSOT_Automation_and_Linting.md`
-35. `Architecture_Diagrams.md`
-36. `Traceability_Matrix.md`
-37. `ADR_Curated.md`
+7. `Configuration_Environment_Contract.md`
+8. `Boot_and_Startup_Failure_Contract.md`
+9. `Request_Pipeline_Reference.md`
+10. `Route_Inventory_Reference.md`
+11. `API_Contract_Guide.md`
+12. `openapi/cre8.v1.yaml`
+13. `Health_Endpoint_Contract.md`
+14. `Error_Code_Catalog.md`
+15. `Authorization_and_Delegation_Spec.md`
+16. `Data_Model_Reference.md`
+17. `Data_Model_Spec.md`
+18. `ERD.md`
+19. `Migration_Seed_Strategy.md`
+20. `Local_Dev_Seed_and_Bootstrap_Policy.md`
+21. `Security_Reference.md`
+22. `Security_Controls_Spec.md`
+23. `Security_Headers_and_CSP_Policy.md`
+24. `SECURITY_THREAT_MODEL.md`
+25. `Security_Verification_Abuse_Cases.md`
+26. `UI_Parity_and_Contract.md`
+27. `UI_Parity_Contract.md`
+28. `UI_Contract_Artifacts_Reference.md`
+29. `UI_Runtime_Contract.md`
+30. `Acceptance_Criteria_Matrix.md`
+31. `Authorization_Decision_Tables.md`
+32. `Operations_Reference.md`
+33. `Infrastructure_IaC_Reference.md`
+34. `Operations_Runbook_Production.md`
+35. `Operational_Smoke_Check_Contract.md`
+36. `Observability_Event_Catalog.md`
+37. `Verification_Strategy.md`
+38. `Production_Readiness_Gates.md`
+39. `RELEASE_CHECKLIST.md`
+40. `SLO_SLI_SPEC.md`
+41. `SSOT_Automation_and_Linting.md`
+42. `Architecture_Diagrams.md`
+43. `Traceability_Matrix.md`
+44. `Prototype_to_SSOT_Delta_Map.md`
+45. `ADR_Curated.md`
 
 ## Supersedes map
 - `docs/architecture_overview.md` → `Architecture_Reference.md`
@@ -76,3 +84,5 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 - `answered_questions001.md`, `answered_questions001a.md` (resolved question archives)
 - `Known_Gaps_Tracker.md` (short unresolved SSOT-level decision tracker)
 - `SSOT_Automation_and_Linting.md` (CI-grade SSOT drift prevention requirements)
+- `UI_Runtime_Contract.md` (no-build SPA implementation contract)
+- `Prototype_to_SSOT_Delta_Map.md` (prototype reconciliation register)

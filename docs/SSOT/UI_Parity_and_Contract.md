@@ -10,6 +10,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Contract decisions: `UI_Endpoint_Contract_Executive_Decisions.md`
 - Behavior rules: `UI_Parity_Contract.md`
 - Artifact validation and design handoff rules: `UI_Contract_Artifacts_Reference.md`
+- Runtime implementation baseline: `UI_Runtime_Contract.md`
 
 ## Endpoint/UI parity summary
 - Backend routes are grouped by public, gateway, and console surfaces.

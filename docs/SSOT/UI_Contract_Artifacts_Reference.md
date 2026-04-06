@@ -14,6 +14,7 @@ Define exact UI contract artifacts, expected schema validation behavior, design 
 - `UI_Parity_and_Contract.md` (behavioral parity binding)
 - `UI_Parity_Contract.md` (route-family auth/error UX rules)
 - `UI_Endpoint_Contract_Executive_Decisions.md` (executive decisions + rollout intent)
+- `UI_Runtime_Contract.md` (SPA runtime behavior baseline for parity implementation)
 
 ## Contract object minimums per page
 Each `pages[]` entry must include:

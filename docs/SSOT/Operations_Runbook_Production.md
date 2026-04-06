@@ -6,10 +6,10 @@ _Last updated (UTC): 2026-04-06_
 Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Deploy procedure
-1. Validate environment profile and secrets.
+1. Validate environment profile and secrets (`Configuration_Environment_Contract.md`).
 2. Install dependencies: `composer install --no-dev --prefer-dist --classmap-authoritative`.
 3. Run verification pack: `composer test:contract && composer test:security`.
-4. Run operational smokes: `composer ops:health-smoke && composer ops:migrate-smoke`.
+4. Run operational smokes: `composer ops:health-smoke && composer ops:migrate-smoke` (per `Operational_Smoke_Check_Contract.md`).
 5. Start service and verify `/health` and `/.well-known/jwks.json`.
 
 ## Rollback procedure

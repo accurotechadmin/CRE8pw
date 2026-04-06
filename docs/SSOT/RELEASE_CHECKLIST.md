@@ -8,8 +8,10 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 ## Pre-release
 - [ ] Dependencies resolved and lockfile validated
 - [ ] Config and secrets reviewed for target environment
+- [ ] Environment policy validated against `Configuration_Environment_Contract.md`
 - [ ] `composer test:contract` and `composer test:security` pass
 - [ ] `composer ops:health-smoke` and `composer ops:migrate-smoke` pass
+- [ ] Smoke evidence captured per `Operational_Smoke_Check_Contract.md`
 - [ ] SSOT docs updated and cross-linked in same PR
 - [ ] Acceptance criteria matrix reviewed for affected routes
 - [ ] Migration/seed strategy checks completed (if schema/data changed)

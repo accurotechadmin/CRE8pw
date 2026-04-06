@@ -21,6 +21,14 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - `validation.*`
 - `routing.*`
 
+## Canonical event naming guidance
+- Use `<family>.<action>` and `<family>.<entity>.<action>` patterns.
+- Startup events:
+  - `boot.startup_ready`
+  - `boot.startup_failed`
+- Delivery fallback event:
+  - `audit.delivery_failed`
+
 ## Required event fields
 - `event_name`
 - `timestamp_utc`
@@ -34,6 +42,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Structured logs must be emitted through channelized application/security/audit streams.
 - Sensitive fields (`token`, `secret`, `private_key`) must be redacted before emission.
 - Security-significant route outcomes (401/403/429) require an event emission.
+- If primary audit delivery fails, fallback error-path emission must preserve `event_name`, `request_id` where available, and failure metadata.
 
 ## Correlation requirements
 - `request_id` must correlate between HTTP response envelope and emitted events.

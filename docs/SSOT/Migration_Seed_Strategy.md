@@ -46,6 +46,7 @@ Each migration must include:
 - **`seed:test`**: deterministic fixtures used by contract/security tests.
 - **`seed:staging`**: sanitized production-like fixture set for rehearsal only.
 - **`seed:prod`**: forbidden except explicit bootstrap rows (e.g., feature flags with reviewed defaults).
+- Local-only bootstrap convenience behavior must follow `Local_Dev_Seed_and_Bootstrap_Policy.md`.
 
 ## Determinism and safety rules
 - Seed fixtures must be deterministic and keyed to stable IDs.
