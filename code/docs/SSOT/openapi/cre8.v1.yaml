@@ -1,0 +1,6 @@
+openapi: 3.1.0
+info:
+  title: CRE8 API Contract (Scaffold Stub)
+  version: 0.0.0-stub
+  description: TODO(owner: platform-core): replace with SSOT-aligned contract.
+paths: {}
