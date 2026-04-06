@@ -1,28 +1,30 @@
 # LATEST STATUS (Canonical)
 
 ## Current milestone status
-- Scaffold session-start protocol executed (state scan + SSOT read + scaffold check).
-- Priority slice `POST /api/auth/login` is now implemented in `/code` with policy/use-case/handler route flow.
+- Session start protocol executed again (state scan + SSOT read + scaffold integrity pass).
+- Reusable session prompt upgraded to be state-aware, reducing duplicate work risk and improving next-session execution quality.
 
 ## Completed slices/features
-- ✅ `GET /health` vertical slice (scaffold project scope).
-- ✅ `POST /api/auth/login` vertical slice (scaffold project scope).
-- ✅ Minimal contract + security test files for login authored (`200`, `401`, `422` scenarios).
+- ✅ `GET /health` vertical slice in `/code`.
+- ✅ `POST /api/auth/login` vertical slice in `/code`.
+- ✅ Initial login contract/security tests authored (`200`, `401`, `422` scenarios).
+- ✅ `docs/SSOT/REUSABLE_LLM_SESSION_PROMPT.md` revised for stronger handoff-driven continuity.
 
 ## In-progress work
-- Test runtime execution blocked due to missing dependencies (`phpunit`) and Packagist network tunnel 403.
-- SSOT automation scripts under `code/scripts/ssot/*` remain placeholder TODOs.
+- Executing tests remains blocked by missing dependencies and package fetch restrictions.
+- SSOT automation scripts under `code/scripts/ssot/*` still placeholder/TODO and not CI-enforced yet.
 
 ## Pending priority queue (ordered)
-1. Run `composer install && composer test` successfully (dependency/network unblock).
-2. Implement SSOT drift automation script behavior + CI wiring.
-3. Produce explicit `/code` vs SSOT gap report on remaining route families.
+1. Resolve dependency installation path and run `/code` test suite.
+2. Implement SSOT automation scripts (`lint`, `sync-check`, `report`).
+3. Wire automation commands into composer scripts + CI and verify merge-block behavior on drift.
+4. Prepare focused gap report for remaining SSOT-priority routes/features.
 
 ## Risks and blockers
-- Current auth token issuance is scaffold-level opaque token generation, not JWT-backed yet.
-- Network policy currently blocks package installation from Packagist in this environment.
+- Network/proxy policy blocks package installation (`composer install` tunnel 403 in prior session).
+- Auth slice currently scaffold-level token behavior; JWT-hardening remains pending.
 
 ## Exact next 3 actions
-1. Unblock Composer dependency installation (mirror/proxy/cache) and run full `composer test` in `/code`.
-2. Implement real JWT issuance/verification scaffolding for auth slice per SSOT dependency/security constraints.
-3. Replace TODO SSOT lint/sync/report scripts with enforceable checks and CI fail gates.
+1. Attempt dependency install with available mirror/proxy strategy; capture exact output.
+2. Implement first usable version of `code/scripts/ssot/lint.php` and `sync_check.php` against route inventory/OpenAPI.
+3. Add composer script wiring and execute docs automation commands with artifacts.

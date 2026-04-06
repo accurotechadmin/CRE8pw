@@ -1,4 +1,4 @@
-# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (Post-Scaffold, Execution-Ready)
+# Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (State-Aware, Post-Scaffold)
 
 Copy/paste everything below into a fresh expert coding LLM session.
 
@@ -7,12 +7,12 @@ Copy/paste everything below into a fresh expert coding LLM session.
 You are continuing development of the CRE8 platform from a prior session.
 
 ## Mission
-Pick up where the last session ended and execute the next highest-priority SSOT-aligned work to move CRE8 toward production readiness. Use existing implementation as reference, not authority.
+Pick up where the last session ended and execute the next highest-priority **unfinished** SSOT-aligned work to move CRE8 toward production readiness. Use existing implementation as reference, not authority.
 
 ## Non-negotiable operating rules
-1. Treat **all docs in `/docs/SSOT` as immutable SSOT** for this session.
+1. Treat **all docs in `/docs/SSOT` as immutable SSOT requirements** for this session.
    - If implementation conflicts with SSOT, SSOT wins.
-   - Do not modify SSOT requirements unless explicitly requested by the human.
+   - Do not modify SSOT requirement semantics unless explicitly requested by the human.
 2. Keep stack and architecture constraints:
    - PHP 8.2, Slim 4, PHP-DI, PDO (MySQL/MariaDB), JWT, PHPUnit.
    - Modular monolith + contract-first + policy-first domain logic.
@@ -41,17 +41,25 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
 12. `/docs/SSOT/SSOT_CODEBASE_ALIGNMENT_ASSESSMENT_2026-04-06.md`
 13. `/docs/SSOT/scaffold_stubs.json`
 
+## Mandatory context bootstrap (state-aware)
+Before choosing work, read these handoff files and use them as the first source of truth for “what remains”:
+- `/docs/SSOT/session_handoff/LATEST_STATUS.md`
+- newest `/docs/SSOT/session_handoff/SESSION_LOG_*.md`
+- `/docs/SSOT/session_handoff/NEXT_SESSION_PROMPT.md`
+
+If any listed “next task” is already complete in code, do **not** redo it; pick the next unfinished item and record the correction in the new session log.
+
 ## Current baseline assumption
 - Initial scaffold/stubs are already instantiated under `/code` from `scaffold_stubs.json`.
 - Begin by validating current state, then continue from remaining highest-priority backlog.
 
 ## Session start protocol (mandatory)
 1. **State scan**
-   - Inspect git status/log.
+   - Print `git status` and recent `git log`.
    - Identify what was completed in previous session and what remains.
-   - Confirm scaffold integrity against `scaffold_stubs.json` (if relevant).
+   - Confirm scaffold integrity against `scaffold_stubs.json` before any edits.
 2. **Drift check (lightweight first pass)**
-   - Detect likely SSOT/code drift for any area you intend to modify.
+   - Detect likely SSOT/code drift for the area you intend to modify.
    - List exact SSOT artifacts that must be synchronized in this session.
 3. **Plan**
    - Produce a short execution plan with smallest reviewable increments.
@@ -61,15 +69,15 @@ Pick up where the last session ended and execute the next highest-priority SSOT-
    - Run targeted tests/checks after each increment.
    - If blocked, stop early, record blocker, and propose smallest unblocking step.
 
-## Priority queue (default unless human overrides)
-1. Vertical slice: `POST /api/auth/login`
-2. Minimal contract + security tests for both slices
-3. SSOT drift automation script implementation + CI wiring
-4. Gap report vs SSOT priority artifacts
+## Priority queue (apply in order, skipping completed items)
+1. Ensure scaffold tests are executable in `/code` and capture blocker/root cause if still failing.
+2. Implement SSOT drift automation scripts (`lint/sync-check/report`) + CI wiring.
+3. Deliver next missing SSOT-priority runtime slice with full synchronization.
+4. Produce/update explicit gap report vs SSOT priority artifacts.
 
 ## Working tree focus
 - Implement rebuild slices under `/code` unless the human explicitly asks to change legacy runtime under `/src`.
-- Keep `/docs/SSOT` authoritative requirements immutable; update only synchronization artifacts or explicit handoff docs requested by the human.
+- Keep `/docs/SSOT` requirement docs immutable; update only synchronization artifacts or explicit handoff docs requested by the human.
 
 ## Development guardrails
 - Keep interfaces explicit (contracts/value objects) and side effects isolated.
@@ -130,6 +138,8 @@ For each route slice changed, include a matrix with:
 - Endpoint example block
 - Contract/security tests
 
+If this session has no route changes, explicitly state: `No route behavior changed; sync matrix not applicable`.
+
 ## Completion checklist (must pass before ending session)
 - [ ] Code changes align with SSOT docs touched by scope.
 - [ ] Route/OpenAPI/inventory/examples/tests synchronized (if route behavior changed).
@@ -144,5 +154,5 @@ Now begin by running the Session start protocol, then execute the highest-priori
 ## Optional strict execution addendum (recommended)
 - Always print `git status` at start and end.
 - Always run scaffold integrity check against `docs/SSOT/scaffold_stubs.json` before first code edit.
-- For each slice, attach a “sync matrix” listing runtime route file, OpenAPI section, route inventory row, example block, and test files.
+- For each slice, attach a sync matrix listing runtime route file, OpenAPI section, route inventory row, example block, and test files.
 - If any mandatory sync artifact is intentionally deferred, record exact reason + owner + deadline in session log.
