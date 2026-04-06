@@ -1,6 +1,9 @@
 # ERD (Text + Mermaid)
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ```mermaid
 erDiagram
@@ -19,5 +22,6 @@ erDiagram
 ```
 
 ## Notes
-- `delegation_envelopes` links parent and child credentials for lineage.
-- Moderation actions capture governance transitions for both posts and comments.
+- Delegation lineage is represented by `DELEGATION_ENVELOPES.parent_key_id` and `initial_author_key_id`.
+- Refresh/replay protection is represented by `TOKEN_FAMILIES`.
+- Keychains are extension-scoped and not included in the required v1 ERD.

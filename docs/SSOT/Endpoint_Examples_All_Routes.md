@@ -1,6 +1,9 @@
 # Endpoint Examples — All Routes
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 > Examples are normative for shape and semantics; IDs/timestamps are illustrative.
 

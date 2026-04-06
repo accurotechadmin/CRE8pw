@@ -1,13 +1,16 @@
 # Operations Runbook (Production)
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Deploy procedure
-1. Validate env/profile + secrets.
-2. Run `composer install --no-dev --prefer-dist`.
-3. Run contract/security tests.
-4. Run health/migration smoke scripts.
-5. Start service and verify `/health`.
+1. Validate environment profile and secrets.
+2. Install dependencies: `composer install --no-dev --prefer-dist --classmap-authoritative`.
+3. Run verification pack: `composer test:contract && composer test:security`.
+4. Run operational smokes: `composer ops:health-smoke && composer ops:migrate-smoke`.
+5. Start service and verify `/health` and `/.well-known/jwks.json`.
 
 ## Rollback procedure
 1. Repoint traffic to prior release artifact.
@@ -19,20 +22,13 @@ _Last updated (UTC): 2026-04-06_
 1. Generate new RSA keypair.
 2. Publish overlapping JWKS entries.
 3. Rotate signer to new `kid`.
-4. Monitor verification success rates.
-5. Retire old key post grace window.
+4. Drain old token TTL window.
+5. Retire previous private key material securely.
 
-## Incident classes
-- Auth outage
-- Key-material failure
-- DB availability degradation
-- Rate limiter saturation
-- UI asset/CSP regression
+## Operational checks
+- Confirm limiter/cache state backend health.
+- Confirm audit/security log channel emission.
+- Confirm request IDs are visible in envelope and logs.
 
-## Postmortem checklist
-- timeline
-- blast radius
-- root cause
-- contributing factors
-- corrective actions
-- test/doc updates
+## Dependency linkage
+Operational procedures assume the baseline in `Dependency_Reference.md` and controls from `Operations_Reference.md`.

@@ -1,6 +1,9 @@
 # CRE8 Open Questions 001 — Resolved Decisions (Prototype-Aware, SSOT-Aligned)
 
+_Status: adopted_
 Date resolved: 2026-04-06 (UTC)
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 Decision framing used in this artifact:
 - **Primary answer** = definitive v1 decision to align implementation and docs.

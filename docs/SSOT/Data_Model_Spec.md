@@ -1,6 +1,11 @@
 # Data Model Spec (Production)
 
+_Status: adopted_
 _Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
+This schema-level contract is implemented through `ext-pdo` prepared statements and transactional writes (see `Dependency_Reference.md`).
 
 ## Table contracts
 
@@ -97,3 +102,7 @@ _Last updated (UTC): 2026-04-06_
 ## Retention
 - Soft-delete metadata retained by default.
 - Audit and moderation rows retained for compliance and incident analysis.
+
+## Consistency notes
+- Keychain behavior is extension-scoped and not part of the v1 required schema surface.
+- Any schema change requires synchronized updates to `Data_Model_Reference.md`, `ERD.md`, and `Traceability_Matrix.md`.

@@ -1,6 +1,9 @@
 # CRE8 Open Questions 001A — Executive Resolutions
 
+_Status: adopted_
 Date resolved: 2026-04-06 (UTC)
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 This file captures definitive answers for the 15 consolidated open questions.
 

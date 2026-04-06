@@ -3,9 +3,12 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
+
 ## Storage strategy
-- PDO-backed relational storage.
-- Services ensure baseline table existence for first-run resilience.
+- Relational storage through `ext-pdo` prepared statements and transactions.
+- Migration-safe schema evolution with backward-compatible change sequencing.
+- Services may perform first-run table assertion checks; production migrations remain source of truth.
 
 ## Core entity groups
 - Principals/auth: `principals`, `principal_emails`, `credentials`, `token_families`
@@ -13,7 +16,19 @@ _Last updated (UTC): 2026-04-06_
 - Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`
 
 ## Lifecycle invariants
-- Key classes: `primary_author|secondary_author|use`
-- Delegation max depth: 3
+- Principal types: `owner|key`
+- Key classes (v1 active): `primary_author|secondary_author|use`
+- Keychain class: reserved extension class; governed by future SSOT addendum before production activation
+- Delegation max depth: `3`
 - Post states: `draft|published|hidden|locked|archived|deleted`
 - Comment states: `active|hidden|locked|deleted`
+
+## Transaction boundaries (required)
+- Auth issuance + audit event write occur in a single logical transaction scope.
+- Key lifecycle mutations + lineage update occur atomically.
+- Moderation decisions + revision metadata must commit together.
+
+## Related SSOT docs
+- `Data_Model_Spec.md`
+- `ERD.md`
+- `Authorization_and_Delegation_Spec.md`
