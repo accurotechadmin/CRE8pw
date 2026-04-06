@@ -16,7 +16,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - `X-Envelope-Version` emitted on responder-managed responses.
 
 ## Route groups
-- Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui*`, owner/signup/auth routes
+- Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui/{route}`, owner/signup/auth routes
 - Gateway: `/api/*`
 - Console: `/console/api/*`
 - Canonical human route index: `Route_Inventory_Reference.md`
