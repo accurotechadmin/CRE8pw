@@ -66,7 +66,7 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
   participant O as Owner
-  participant API as /console/api/keys/{id}/lifecycle
+  participant API as /console/api/keys/{keyId}/lifecycle
   participant K as KeyLifecycleService
   participant D as principals/credentials/delegation
   O->>API: POST transition (suspend|cancel|revoke)

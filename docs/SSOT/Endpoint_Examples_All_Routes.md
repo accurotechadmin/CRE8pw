@@ -18,13 +18,28 @@ GET /
 ```
 
 ### GET /health
+```http
+GET /health
+```
 ```json
 {"data":{"status":"ok","checked_at_utc":"2026-04-06T00:00:00Z","latency_ms":12,"failures":[],"services":{"db":{"status":"ok"},"rate_limiter":{"status":"ok"},"key_material":{"status":"ok"},"http_dependency":{"status":"ok","status_code":200}}},"meta":{"envelope_version":"1"}}
 ```
 
 ### GET /.well-known/jwks.json
+```http
+GET /.well-known/jwks.json
+```
 ```json
 {"keys":[{"kty":"RSA","kid":"abc123","alg":"RS256","use":"sig","n":"...","e":"AQAB"}]}
+```
+
+### GET /ui/{route}
+```http
+GET /ui/console/keychains
+Accept: text/html
+```
+```html
+<!doctype html><html><head><meta charset="utf-8"><title>CRE8</title></head><body><div id="app"></div><script src="/ui/app.js"></script></body></html>
 ```
 
 ### POST /console/owners
@@ -76,15 +91,24 @@ X-Device-Id: dev_001
 ```json
 {"title":"Hello","body":"World","visibility_scope":"public"}
 ```
+```json
+{"data":{"id":"post_1","state":"published"},"meta":{"envelope_version":"1"}}
+```
 
 ### PATCH /api/posts/{postId}
 ```json
 {"title":"Updated title","reason_code":"typo_fix"}
 ```
+```json
+{"data":{"id":"post_1","title":"Updated title","revision":2},"meta":{"envelope_version":"1"}}
+```
 
 ### POST /api/posts/{postId}/flags
 ```json
 {"reason_code":"policy_violation","notes":"spam"}
+```
+```json
+{"data":{"flag_id":"flg_1","post_id":"post_1","status":"recorded"},"meta":{"envelope_version":"1"}}
 ```
 
 ### GET /api/posts/{postId}
@@ -101,6 +125,9 @@ X-Device-Id: dev_001
 ```json
 {"body":"Great post"}
 ```
+```json
+{"data":{"id":"c2","post_id":"post_1","state":"active"},"meta":{"envelope_version":"1"}}
+```
 
 ## Console routes
 ### GET /console/api/posts
@@ -112,12 +139,14 @@ X-Device-Id: dev_001
 ```json
 {"title":"Operator note","body":"...","visibility_scope":"private"}
 ```
+```json
+{"data":{"id":"post_2","state":"draft"},"meta":{"envelope_version":"1"}}
+```
 
 ### GET /console/api/keychains
 ```json
 {"data":[{"key_id":"kc_1","members":3}],"meta":{}}
 ```
-
 
 ### POST /console/api/keychains
 ```json
@@ -154,23 +183,38 @@ X-Device-Id: dev_001
 ```json
 {"email":"member@example.com","expires_at":"2026-04-07T00:00:00Z"}
 ```
+```json
+{"data":{"invite_id":"inv_1","status":"issued"},"meta":{"envelope_version":"1"}}
+```
 
 ### POST /console/api/keys
 ```json
 {"key_class":"secondary_author","permissions":["posts:read"],"scope":["posts:all"],"ttl_seconds":86400}
+```
+```json
+{"data":{"key_id":"key_222","key_class":"secondary_author"},"meta":{"envelope_version":"1"}}
 ```
 
 ### POST /console/api/keys/{keyId}/lifecycle
 ```json
 {"action":"suspend","cascade":"none","reason_code":"investigation"}
 ```
+```json
+{"data":{"key_id":"key_222","status":"suspended"},"meta":{"envelope_version":"1"}}
+```
 
 ### POST /console/api/posts/{postId}/moderation
 ```json
 {"action":"hide","reason_code":"abuse"}
 ```
+```json
+{"data":{"post_id":"post_1","state":"hidden"},"meta":{"envelope_version":"1"}}
+```
 
 ### POST /console/api/posts/{postId}/comments/{commentId}/moderation
 ```json
 {"action":"delete","reason_code":"harassment"}
+```
+```json
+{"data":{"comment_id":"c1","state":"deleted"},"meta":{"envelope_version":"1"}}
 ```
