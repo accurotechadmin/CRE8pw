@@ -14,29 +14,30 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 ## Reading order (production path)
 1. `CRE8_Spec.md`
 2. `Architecture_Reference.md`
-3. `Request_Pipeline_Reference.md`
-4. `API_Contract_Guide.md`
-5. `openapi/cre8.v1.yaml`
-6. `Error_Code_Catalog.md`
-7. `Authorization_and_Delegation_Spec.md`
-8. `Data_Model_Reference.md`
-9. `Data_Model_Spec.md`
-10. `ERD.md`
-11. `Security_Reference.md`
-12. `Security_Controls_Spec.md`
-13. `SECURITY_THREAT_MODEL.md`
-14. `UI_Parity_and_Contract.md`
-15. `UI_Parity_Contract.md`
-16. `Operations_Reference.md`
-17. `Operations_Runbook_Production.md`
-18. `Observability_Event_Catalog.md`
-19. `Verification_Strategy.md`
-20. `Production_Readiness_Gates.md`
-21. `RELEASE_CHECKLIST.md`
-22. `SLO_SLI_SPEC.md`
-23. `Architecture_Diagrams.md`
-24. `Traceability_Matrix.md`
-25. `ADR_Curated.md`
+3. `Dependency_Reference.md`
+4. `Request_Pipeline_Reference.md`
+5. `API_Contract_Guide.md`
+6. `openapi/cre8.v1.yaml`
+7. `Error_Code_Catalog.md`
+8. `Authorization_and_Delegation_Spec.md`
+9. `Data_Model_Reference.md`
+10. `Data_Model_Spec.md`
+11. `ERD.md`
+12. `Security_Reference.md`
+13. `Security_Controls_Spec.md`
+14. `SECURITY_THREAT_MODEL.md`
+15. `UI_Parity_and_Contract.md`
+16. `UI_Parity_Contract.md`
+17. `Operations_Reference.md`
+18. `Operations_Runbook_Production.md`
+19. `Observability_Event_Catalog.md`
+20. `Verification_Strategy.md`
+21. `Production_Readiness_Gates.md`
+22. `RELEASE_CHECKLIST.md`
+23. `SLO_SLI_SPEC.md`
+24. `Architecture_Diagrams.md`
+25. `Traceability_Matrix.md`
+26. `ADR_Curated.md`
 
 ## Supersedes map
 - `docs/architecture_overview.md` → `Architecture_Reference.md`
