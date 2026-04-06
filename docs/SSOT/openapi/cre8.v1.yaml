@@ -186,6 +186,48 @@ paths:
       summary: List keychains
       responses:
         '200': { $ref: '#/components/responses/Success' }
+    post:
+      summary: Create keychain
+      responses:
+        '201': { $ref: '#/components/responses/Success' }
+        '422': { $ref: '#/components/responses/Error' }
+  /console/api/keychains/{keychainId}/members:
+    get:
+      summary: List keychain members
+      parameters:
+        - $ref: '#/components/parameters/KeychainId'
+      responses:
+        '200': { $ref: '#/components/responses/Success' }
+    post:
+      summary: Add keychain member
+      parameters:
+        - $ref: '#/components/parameters/KeychainId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/KeychainMemberAddRequest' }
+      responses:
+        '201': { $ref: '#/components/responses/Success' }
+        '409': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /console/api/keychains/{keychainId}/members/{memberKeyId}:
+    delete:
+      summary: Remove keychain member
+      parameters:
+        - $ref: '#/components/parameters/KeychainId'
+        - $ref: '#/components/parameters/MemberKeyId'
+      responses:
+        '200': { $ref: '#/components/responses/Success' }
+        '404': { $ref: '#/components/responses/Error' }
+  /console/api/keychains/{keychainId}/resolve:
+    get:
+      summary: Resolve effective keychain permissions and scope
+      parameters:
+        - $ref: '#/components/parameters/KeychainId'
+      responses:
+        '200': { $ref: '#/components/responses/Success' }
+        '404': { $ref: '#/components/responses/Error' }
   /console/api/invites:
     post:
       summary: Create invite
@@ -238,6 +280,16 @@ components:
     CommentId:
       in: path
       name: commentId
+      required: true
+      schema: { type: string }
+    KeychainId:
+      in: path
+      name: keychainId
+      required: true
+      schema: { type: string }
+    MemberKeyId:
+      in: path
+      name: memberKeyId
       required: true
       schema: { type: string }
   responses:
@@ -299,3 +351,9 @@ components:
       required: [refresh_token]
       properties:
         refresh_token: { type: string }
+    KeychainMemberAddRequest:
+      type: object
+      required: [member_key_id]
+      properties:
+        member_key_id: { type: string }
+        role_hint: { type: string }

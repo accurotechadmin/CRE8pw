@@ -12,8 +12,9 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 ### principals
 - `id` PK
 - `principal_type` (`owner|key`)
+- `key_class` nullable (`primary_author|secondary_author|use|keychain` when `principal_type=key`)
 - `disabled_at` nullable timestamp
-- indexes: `(principal_type)`, `(disabled_at)`
+- indexes: `(principal_type)`, `(key_class)`, `(disabled_at)`
 
 ### principal_emails
 - `principal_id` FK principals(id)
@@ -46,6 +47,27 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 - `expires_at`
 - `status` (`active|suspended|cancelled|revoked`)
 - indexes: `(issued_key_id)`, `(parent_key_id)`, `(status)`, `(expires_at)`
+
+### keychain_memberships
+- `id` PK
+- `keychain_key_id` FK principals(id) where `key_class=keychain`
+- `member_key_id` FK principals(id) where `key_class in (primary_author,secondary_author,use)`
+- `added_by_owner_id` FK principals(id)
+- `added_at`
+- `removed_at` nullable
+- `status` (`active|removed`)
+- uniqueness: active `(keychain_key_id, member_key_id)`
+- indexes: `(keychain_key_id, status)`, `(member_key_id, status)`
+
+### keychain_effective_snapshots
+- `id` PK
+- `keychain_key_id` FK principals(id)
+- `effective_permissions_json`
+- `effective_scope_json`
+- `member_count`
+- `computed_at`
+- `computed_by` (`system|owner_action`)
+- indexes: `(keychain_key_id, computed_at DESC)`
 
 ### invite_receipts
 - `id` PK
@@ -102,7 +124,8 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 ## Retention
 - Soft-delete metadata retained by default.
 - Audit and moderation rows retained for compliance and incident analysis.
+- Keychain snapshots retained for lineage and incident reconstruction.
 
 ## Consistency notes
-- Keychain behavior is extension-scoped and not part of the v1 required schema surface.
-- Any schema change requires synchronized updates to `Data_Model_Reference.md`, `ERD.md`, and `Traceability_Matrix.md`.
+- Keychain behavior is part of the v1 required schema surface.
+- Any schema change requires synchronized updates to `Data_Model_Reference.md`, `ERD.md`, `Traceability_Matrix.md`, and `Route_Inventory_Reference.md`.

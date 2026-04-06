@@ -13,6 +13,8 @@ erDiagram
   PRINCIPALS ||--o{ POSTS : authors
   PRINCIPALS ||--o{ COMMENTS : writes
   PRINCIPALS ||--o{ DELEGATION_ENVELOPES : issued_or_parent
+  PRINCIPALS ||--o{ KEYCHAIN_MEMBERSHIPS : keychain_or_member
+  PRINCIPALS ||--o{ KEYCHAIN_EFFECTIVE_SNAPSHOTS : snapshots
   POSTS ||--o{ POST_REVISIONS : revisions
   POSTS ||--o{ POST_FLAGS : flags
   POSTS ||--o{ COMMENTS : has
@@ -24,4 +26,4 @@ erDiagram
 ## Notes
 - Delegation lineage is represented by `DELEGATION_ENVELOPES.parent_key_id` and `initial_author_key_id`.
 - Refresh/replay protection is represented by `TOKEN_FAMILIES`.
-- Keychains are extension-scoped and not included in the required v1 ERD.
+- Keychain composition and effective aggregation history are represented by `KEYCHAIN_MEMBERSHIPS` and `KEYCHAIN_EFFECTIVE_SNAPSHOTS`.

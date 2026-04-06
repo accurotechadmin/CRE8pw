@@ -13,6 +13,7 @@ This file is the contract entrypoint for CRE8 API behavior in the production SSO
 - Machine contract: `openapi/cre8.v1.yaml`
 - Envelope schemas: `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json`
 - Endpoint examples: `Endpoint_Examples_All_Routes.md`
+- Route inventory: `Route_Inventory_Reference.md`
 - Error mapping: `Error_Code_Catalog.md`
 
 ## Contract precedence

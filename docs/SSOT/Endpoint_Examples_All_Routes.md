@@ -118,6 +118,38 @@ X-Device-Id: dev_001
 {"data":[{"key_id":"kc_1","members":3}],"meta":{}}
 ```
 
+
+### POST /console/api/keychains
+```json
+{"name":"Research Team Aggregate","ttl_seconds":2592000}
+```
+```json
+{"data":{"keychain_id":"kc_101","key_class":"keychain"},"meta":{"envelope_version":"1"}}
+```
+
+### GET /console/api/keychains/{keychainId}/members
+```json
+{"data":[{"member_key_id":"key_a1","status":"active"}],"meta":{"envelope_version":"1"}}
+```
+
+### POST /console/api/keychains/{keychainId}/members
+```json
+{"member_key_id":"key_a1"}
+```
+```json
+{"data":{"keychain_id":"kc_101","member_key_id":"key_a1","status":"active"},"meta":{"envelope_version":"1"}}
+```
+
+### DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}
+```json
+{"data":{"keychain_id":"kc_101","member_key_id":"key_a1","status":"removed"},"meta":{"envelope_version":"1"}}
+```
+
+### GET /console/api/keychains/{keychainId}/resolve
+```json
+{"data":{"keychain_id":"kc_101","effective_permissions":["posts:read","comments:create"],"effective_scope":["posts:all"],"member_count":3},"meta":{"envelope_version":"1"}}
+```
+
 ### POST /console/api/invites
 ```json
 {"email":"member@example.com","expires_at":"2026-04-07T00:00:00Z"}
