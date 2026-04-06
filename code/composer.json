@@ -1,0 +1,18 @@
+{
+  "name": "cre8/rebuild",
+  "description": "CRE8 SSOT-driven rebuild scaffold",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cre8\\\\": "src/"
+    }
+  },
+  "scripts": {
+    "docs:ssot:lint": "php scripts/ssot/lint.php",
+    "docs:ssot:sync-check": "php scripts/ssot/sync_check.php",
+    "docs:ssot:report": "php scripts/ssot/report.php"
+  }
+}
