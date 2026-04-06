@@ -1,5 +1,7 @@
 # CRE8 High-Level Architecture Summary
 
+_Last updated (UTC): 2026-04-06_
+
 _Status: adopted_
 _Date authored (UTC): 2026-04-06_
 

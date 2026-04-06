@@ -197,7 +197,7 @@ function ssot_parse_openapi_paths(string $openApiFile): array
     $lines = preg_split('/\R/', $contents) ?: [];
 
     foreach ($lines as $line) {
-        if (preg_match('/^\s{2}(\/[^:]+):\s*$/', $line, $pathMatch) === 1) {
+        if (preg_match('/^\s{2}(\/[^:]*):\s*$/', $line, $pathMatch) === 1) {
             $currentPath = trim($pathMatch[1]);
             continue;
         }

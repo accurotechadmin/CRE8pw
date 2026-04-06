@@ -1,5 +1,8 @@
 # Reusable Prompt — CRE8 SSOT-Driven Development Session Handoff (State-Aware, Post-Scaffold)
 
+_Status: draft_
+_Last updated (UTC): 2026-04-06_
+
 Copy/paste everything below into a fresh expert coding LLM session.
 
 ---

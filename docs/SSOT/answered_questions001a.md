@@ -1,5 +1,7 @@
 # CRE8 Open Questions 001A — Executive Resolutions
 
+_Last updated (UTC): 2026-04-06_
+
 _Status: adopted_
 Date resolved: 2026-04-06 (UTC)
 

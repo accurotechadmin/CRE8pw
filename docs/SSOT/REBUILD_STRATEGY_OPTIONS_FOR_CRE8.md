@@ -1,5 +1,8 @@
 # CRE8 Rebuild Strategy Options (Same Tech Stack)
 
+_Status: draft_
+_Last updated (UTC): 2026-04-06_
+
 _Date: 2026-04-06_
 
 ## Context
