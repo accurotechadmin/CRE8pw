@@ -9,6 +9,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Test framework dependency: `phpunit/phpunit` (see `Dependency_Reference.md`).
 - Contract tests (`tests/Contract/*`)
 - Security tests (`tests/Security/*`)
+- Abuse-case regressions aligned with `Security_Verification_Abuse_Cases.md`
 
 ## Required commands
 - `composer test`
@@ -24,6 +25,10 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Boot assertions and profile hardening
 - JWT signing/verification and key safety (`firebase/php-jwt`, `ext-sodium`)
 - Health endpoint and migration smoke
+
+## Acceptance criteria enforcement
+- Route acceptance intent is defined in `Acceptance_Criteria_Matrix.md` and must be used during QA signoff.
+- Authorization truth-table behavior is validated against `Authorization_Decision_Tables.md`.
 
 ## Stable QA script (manual)
 - owner login + console list/create/moderation

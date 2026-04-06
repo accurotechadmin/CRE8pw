@@ -24,6 +24,9 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 ## Endpoint examples
 See `Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.
 
+## Acceptance criteria linkage
+Use `Acceptance_Criteria_Matrix.md` for route-level Given/When/Then intent, including negative and edge behavior requirements.
+
 ## Synchronization rule
 Any change to route paths, request schema, response schema, or error semantics must update OpenAPI and this guide in the same PR.
 

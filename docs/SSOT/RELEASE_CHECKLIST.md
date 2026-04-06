@@ -11,6 +11,9 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - [ ] `composer test:contract` and `composer test:security` pass
 - [ ] `composer ops:health-smoke` and `composer ops:migrate-smoke` pass
 - [ ] SSOT docs updated and cross-linked in same PR
+- [ ] Acceptance criteria matrix reviewed for affected routes
+- [ ] Migration/seed strategy checks completed (if schema/data changed)
+- [ ] SSOT automation/lint checks pass
 
 ## Go-live
 - [ ] Startup logs clean
@@ -18,6 +21,7 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - [ ] `/.well-known/jwks.json` present and valid
 - [ ] Auth flows (owner/key) smoke-tested
 - [ ] Core gateway and console routes smoke-tested
+- [ ] UI parity diagnostics verified (`request_id` visible on error states)
 - [ ] Observability events flowing with request IDs
 
 ## Post-release

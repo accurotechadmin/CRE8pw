@@ -30,6 +30,10 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Backend maintainer lead is dashboard owner for route-level latency signals (auth + feed).
 - Platform on-call is the primary page receiver unless `SLO_SLI_SPEC.md` defines route-family-specific override.
 
+## Infrastructure linkage
+- Canonical topology and IaC requirements are defined in `Infrastructure_IaC_Reference.md`.
+- Backup/restore and secret-isolation expectations from infrastructure SSOT are operationally required.
+
 ## Failure model
 - Deterministic `boot_failed` JSON with request ID
 - structured startup failure event emission
