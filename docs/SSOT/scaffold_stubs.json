@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0.0",
+  "generated_utc": "2026-04-06T00:00:00Z",
+  "status": "draft",
+  "purpose": "Initial scaffold and stub structure for CRE8 hybrid rebuild (Modular Monolith + Contract-First + Policy-First).",
+  "principles": [
+    "SSOT-first contracts",
+    "Domain purity with infrastructure adapters",
+    "Thin interface layer",
+    "Module isolation",
+    "CI-enforced drift prevention"
+  ],
+  "root_directories": [
+    "src/Kernel/Bootstrap",
+    "src/Kernel/Config",
+    "src/Kernel/Contracts",
+    "src/Kernel/Http",
+    "src/Kernel/Observability",
+    "src/Kernel/Support",
+    "src/Modules/Auth/Application/UseCases",
+    "src/Modules/Auth/Domain/Entities",
+    "src/Modules/Auth/Domain/Policies",
+    "src/Modules/Auth/Domain/Repositories",
+    "src/Modules/Auth/Infrastructure/Persistence",
+    "src/Modules/Auth/Interface/Http/Handlers",
+    "src/Modules/Auth/Interface/Http/Requests",
+    "src/Modules/Auth/Interface/Http/Responses",
+    "src/Modules/Auth/Interface/Routes",
+    "src/Modules/Delegation/Application/UseCases",
+    "src/Modules/Delegation/Domain/Entities",
+    "src/Modules/Delegation/Domain/Policies",
+    "src/Modules/Delegation/Domain/Repositories",
+    "src/Modules/Delegation/Infrastructure/Persistence",
+    "src/Modules/Delegation/Interface/Http/Handlers",
+    "src/Modules/Delegation/Interface/Http/Requests",
+    "src/Modules/Delegation/Interface/Http/Responses",
+    "src/Modules/Delegation/Interface/Routes",
+    "src/Modules/Content/Application/UseCases",
+    "src/Modules/Content/Domain/Entities",
+    "src/Modules/Content/Domain/Policies",
+    "src/Modules/Content/Domain/Repositories",
+    "src/Modules/Content/Infrastructure/Persistence",
+    "src/Modules/Content/Interface/Http/Handlers",
+    "src/Modules/Content/Interface/Http/Requests",
+    "src/Modules/Content/Interface/Http/Responses",
+    "src/Modules/Content/Interface/Routes",
+    "src/Modules/Moderation/Application/UseCases",
+    "src/Modules/Moderation/Domain/Entities",
+    "src/Modules/Moderation/Domain/Policies",
+    "src/Modules/Moderation/Domain/Repositories",
+    "src/Modules/Moderation/Infrastructure/Persistence",
+    "src/Modules/Moderation/Interface/Http/Handlers",
+    "src/Modules/Moderation/Interface/Http/Requests",
+    "src/Modules/Moderation/Interface/Http/Responses",
+    "src/Modules/Moderation/Interface/Routes",
+    "src/Modules/Health/Application/UseCases",
+    "src/Modules/Health/Domain/Entities",
+    "src/Modules/Health/Domain/Policies",
+    "src/Modules/Health/Domain/Repositories",
+    "src/Modules/Health/Infrastructure/Persistence",
+    "src/Modules/Health/Interface/Http/Handlers",
+    "src/Modules/Health/Interface/Http/Requests",
+    "src/Modules/Health/Interface/Http/Responses",
+    "src/Modules/Health/Interface/Routes",
+    "tests/Unit/Kernel",
+    "tests/Unit/Modules/Auth",
+    "tests/Unit/Modules/Delegation",
+    "tests/Unit/Modules/Content",
+    "tests/Unit/Modules/Moderation",
+    "tests/Unit/Modules/Health",
+    "tests/Contract/Api",
+    "tests/Contract/Console",
+    "tests/Contract/Public",
+    "tests/Security/Auth",
+    "tests/Security/Delegation",
+    "tests/Integration/Persistence",
+    "scripts/ssot",
+    "public/ui"
+  ],
+  "starter_files": [
+    {
+      "path": "src/Kernel/Bootstrap/AppFactory.php",
+      "kind": "php_class",
+      "purpose": "Create Slim app and register middleware/routes."
+    },
+    {
+      "path": "src/Kernel/Bootstrap/ContainerFactory.php",
+      "kind": "php_class",
+      "purpose": "Define DI bindings for all modules and kernel services."
+    },
+    {
+      "path": "src/Kernel/Bootstrap/BootChecks.php",
+      "kind": "php_class",
+      "purpose": "Execute fail-closed startup checks aligned to SSOT contracts."
+    },
+    {
+      "path": "src/Kernel/Config/RuntimeConfig.php",
+      "kind": "php_class",
+      "purpose": "Typed environment contract mapping."
+    },
+    {
+      "path": "src/Kernel/Http/EnvelopeResponder.php",
+      "kind": "php_class",
+      "purpose": "Canonical success/error/list envelope emitter."
+    },
+    {
+      "path": "src/Kernel/Contracts/DecisionResult.php",
+      "kind": "php_value_object",
+      "purpose": "Standard policy decision object: allow/deny + reason + violations."
+    },
+    {
+      "path": "src/Modules/Auth/Domain/Policies/TokenSurfacePolicy.php",
+      "kind": "php_class",
+      "purpose": "Validate token/audience/surface rules."
+    },
+    {
+      "path": "src/Modules/Delegation/Domain/Policies/DelegationPolicy.php",
+      "kind": "php_class",
+      "purpose": "Enforce subset/depth/expiry/lineage delegation constraints."
+    },
+    {
+      "path": "src/Modules/Delegation/Domain/Policies/KeyLifecyclePolicy.php",
+      "kind": "php_class",
+      "purpose": "Enforce lifecycle transitions and invariants."
+    },
+    {
+      "path": "src/Modules/Content/Domain/Policies/VisibilityPolicy.php",
+      "kind": "php_class",
+      "purpose": "Evaluate post/comment visibility and scope checks."
+    },
+    {
+      "path": "src/Modules/Moderation/Domain/Policies/ModerationPolicy.php",
+      "kind": "php_class",
+      "purpose": "Validate moderation action transitions and reason codes."
+    },
+    {
+      "path": "src/Modules/Health/Interface/Routes/HealthRouteProvider.php",
+      "kind": "php_class",
+      "purpose": "Expose GET /health route and bind handler."
+    },
+    {
+      "path": "src/Modules/Auth/Interface/Routes/AuthRouteProvider.php",
+      "kind": "php_class",
+      "purpose": "Expose owner/key login and refresh routes."
+    },
+    {
+      "path": "docs/SSOT/openapi/cre8.v1.yaml",
+      "kind": "ssot_contract",
+      "purpose": "Machine-readable canonical route contract."
+    },
+    {
+      "path": "docs/SSOT/schemas/success-envelope.schema.json",
+      "kind": "ssot_schema",
+      "purpose": "Success envelope validation schema."
+    },
+    {
+      "path": "docs/SSOT/schemas/error-envelope.schema.json",
+      "kind": "ssot_schema",
+      "purpose": "Error envelope validation schema."
+    },
+    {
+      "path": "scripts/ssot/lint.php",
+      "kind": "script",
+      "purpose": "Cross-reference and metadata linting for SSOT docs."
+    },
+    {
+      "path": "scripts/ssot/sync_check.php",
+      "kind": "script",
+      "purpose": "Diff OpenAPI/routes/inventory/runtime route maps."
+    },
+    {
+      "path": "scripts/ssot/report.php",
+      "kind": "script",
+      "purpose": "Emit machine and human-readable SSOT compliance report."
+    }
+  ],
+  "initial_vertical_slices": [
+    {
+      "name": "public_health",
+      "routes": ["GET /health"],
+      "required_components": [
+        "HealthRouteProvider",
+        "Health handler",
+        "Health use case",
+        "Health repository adapter",
+        "Contract test",
+        "Smoke check"
+      ]
+    },
+    {
+      "name": "auth_login",
+      "routes": ["POST /api/auth/login"],
+      "required_components": [
+        "AuthRouteProvider",
+        "Login handler",
+        "Login use case",
+        "TokenSurfacePolicy",
+        "Contract test",
+        "Security test"
+      ]
+    }
+  ],
+  "acceptance_requirements": [
+    "All scaffold paths created with placeholder files or .gitkeep where appropriate.",
+    "Composer scripts include docs:ssot:lint, docs:ssot:sync-check, docs:ssot:report.",
+    "Routes, OpenAPI, and route inventory remain sync-clean.",
+    "No module Domain namespace depends on framework/infrastructure classes.",
+    "All starter files include TODO owner tags and acceptance notes."
+  ]
+}

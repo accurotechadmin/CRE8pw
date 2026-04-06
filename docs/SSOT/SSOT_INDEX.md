@@ -86,3 +86,8 @@ This folder is the authoritative, production-oriented source of truth for CRE8 b
 - `SSOT_Automation_and_Linting.md` (CI-grade SSOT drift prevention requirements)
 - `UI_Runtime_Contract.md` (no-build SPA implementation contract)
 - `Prototype_to_SSOT_Delta_Map.md` (prototype reconciliation register)
+- `HYBRID_REBUILD_ROADMAP_1_2_3.md` (execution roadmap for hybrid rebuild staging)
+- `REBUILD_STRATEGY_OPTIONS_FOR_CRE8.md` (rebuild option set and comparative strategy matrix)
+- `SSOT_CODEBASE_ALIGNMENT_ASSESSMENT_2026-04-06.md` (snapshot SSOT-to-codebase drift assessment)
+- `scaffold_stubs.json` (initial scaffold + stub structure source for rebuild execution)
+- `REUSABLE_LLM_SESSION_PROMPT.md` (copy/paste prompt for expert LLM session handoff continuity)
