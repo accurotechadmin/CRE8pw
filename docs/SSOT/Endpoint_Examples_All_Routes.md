@@ -67,6 +67,9 @@ Response 201:
 ```json
 {"data":{"access_token":"...","refresh_token":"...","expires_in":600},"meta":{"envelope_version":"1"}}
 ```
+```json
+{"error":{"code":"auth_invalid","message":"Invalid key credentials.","request_id":"req_abc123"},"meta":{"envelope_version":"1"}}
+```
 
 ### POST /api/auth/refresh
 ```json
