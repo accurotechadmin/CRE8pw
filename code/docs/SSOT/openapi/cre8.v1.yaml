@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: CRE8 API Contract
   version: 1.0.0-scaffold
-  description: Scaffold contract implementing SSOT-aligned health and owner login slices.
+  description: Scaffold contract implementing SSOT-aligned status, health, and auth login slices.
 servers:
   - url: /
 paths:
@@ -57,6 +57,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
+  /api/auth/key-login:
+    post:
+      summary: Key login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KeyLoginRequest'
+      responses:
+        '200':
+          description: Key token pair issued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginSuccessEnvelope'
+        '401':
+          description: Invalid key credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '422':
+          description: Validation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
 components:
   schemas:
     Meta:
@@ -73,6 +102,16 @@ components:
           type: string
           format: email
         password:
+          type: string
+          minLength: 1
+    KeyLoginRequest:
+      type: object
+      required: [key_id, api_key]
+      properties:
+        key_id:
+          type: string
+          minLength: 1
+        api_key:
           type: string
           minLength: 1
     StatusSuccessEnvelope:

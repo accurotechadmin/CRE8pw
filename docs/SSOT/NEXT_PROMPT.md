@@ -58,7 +58,8 @@ If any listed “next task” is already complete in code, do **not** redo it; p
   - `GET /` vertical slice (service status envelope).
   - `GET /health` vertical slice.
   - `POST /api/auth/login` vertical slice with thin handler + use-case + policy routing.
-  - Login-focused contract/security tests authored.
+  - `POST /api/auth/key-login` vertical slice with thin handler + use-case + policy routing.
+  - Login and key-login contract/security tests authored.
 - SSOT automation status:
   - `code/scripts/ssot/lint.php` ✅ passing
   - `code/scripts/ssot/sync_check.php` ✅ passing
@@ -137,7 +138,7 @@ If the folder does not exist, create it.
 - Expected deliverables for the next session
 
 ## Exact next objective
-Execute the highest unfinished priority item: **unblock `/code` dependency installation, run `composer test`, then implement `POST /api/auth/key-login` as the next SSOT-priority runtime slice with full synchronization**.
+Execute the highest unfinished priority item: **unblock `/code` dependency installation and run `composer test`; then produce/update the explicit SSOT gap report with executable evidence and select the next missing SSOT-priority runtime slice**.
 
 ## Relevant SSOT docs to re-open first
 1. `docs/SSOT/SSOT_INDEX.md`
@@ -168,8 +169,8 @@ Execute the highest unfinished priority item: **unblock `/code` dependency insta
 
 ## Expected deliverables for the next session
 1. Clear dependency/test execution outcome (`composer install`, `composer test`) with exact evidence.
-2. Next SSOT-priority runtime vertical slice (`POST /api/auth/key-login`, if tests runnable) with full synchronization bundle.
-3. Updated handoff artifacts (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_PROMPT.md`) with command evidence.
+2. Executable PHPUnit evidence for all implemented slices (including key-login), with defects fixed if found.
+3. Updated handoff artifacts (`SESSION_LOG_*`, `LATEST_STATUS.md`, `NEXT_PROMPT.md`) plus refreshed SSOT gap report evidence.
 
 ## Output expectations (for every response)
 - Show a brief plan before edits.

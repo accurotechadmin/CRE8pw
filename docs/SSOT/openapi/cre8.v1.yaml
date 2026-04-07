@@ -344,8 +344,8 @@ components:
       type: object
       required: [key_id, api_key]
       properties:
-        key_id: { type: string }
-        api_key: { type: string }
+        key_id: { type: string, minLength: 1 }
+        api_key: { type: string, minLength: 1 }
     RefreshRequest:
       type: object
       required: [refresh_token]

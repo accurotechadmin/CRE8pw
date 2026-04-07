@@ -6,8 +6,11 @@ namespace Cre8\Kernel\Bootstrap;
 
 use Cre8\Kernel\Http\EnvelopeResponder;
 use Cre8\Modules\Auth\Application\UseCases\LoginOwner;
+use Cre8\Modules\Auth\Application\UseCases\LoginKey;
+use Cre8\Modules\Auth\Domain\Policies\KeyCredentialPolicy;
 use Cre8\Modules\Auth\Domain\Policies\OwnerCredentialPolicy;
 use Cre8\Modules\Auth\Domain\Policies\TokenSurfacePolicy;
+use Cre8\Modules\Auth\Interface\Http\Handlers\PostKeyLoginHandler;
 use Cre8\Modules\Auth\Interface\Http\Handlers\PostOwnerLoginHandler;
 use Cre8\Modules\Auth\Interface\Routes\AuthRouteProvider;
 use Cre8\Modules\Health\Application\UseCases\GetHealthStatus;
@@ -36,11 +39,20 @@ final class AppFactory
         $ownerCredentials = new OwnerCredentialPolicy([
             'owner@example.com' => 'StrongPassphrase123!',
         ]);
+        $keyCredentials = new KeyCredentialPolicy([
+            'key_123' => 'cre8k_secret',
+        ]);
+        $tokenPolicy = new TokenSurfacePolicy();
+
         $loginHandler = new PostOwnerLoginHandler(
-            new LoginOwner($ownerCredentials, new TokenSurfacePolicy()),
+            new LoginOwner($ownerCredentials, $tokenPolicy),
             $responder
         );
-        (new AuthRouteProvider($loginHandler))->register($app);
+        $keyLoginHandler = new PostKeyLoginHandler(
+            new LoginKey($keyCredentials, $tokenPolicy),
+            $responder
+        );
+        (new AuthRouteProvider($loginHandler, $keyLoginHandler))->register($app);
 
         return $app;
     }
