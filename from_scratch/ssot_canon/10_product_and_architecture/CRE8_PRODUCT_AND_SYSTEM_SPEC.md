@@ -35,3 +35,14 @@ Covers owner console and key gateway capabilities, excluding non-canonical narra
 
 ## Open questions / known gaps
 - UI parity depth is still draft; concrete user journeys need expansion.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Stabilized architecture/product skeleton and canonical terminology linkage.
+- Kept normative constraints explicit to minimize interpretation drift.
+- Aligned scope to current runtime surfaces and middleware-driven architecture.
+### Remaining to finish this document
+- [ ] Add authoritative capability boundaries and out-of-scope definitions.
+- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
+- [ ] Trace every normative statement to code modules and tests.
+

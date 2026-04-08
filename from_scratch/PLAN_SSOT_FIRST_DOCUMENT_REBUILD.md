@@ -103,3 +103,13 @@ Rule: recurring stable guidance is promoted upward into Layer C or SSOT.
 ## 5) Immediate next-step checkpoint
 
 This plan completes the requested kickoff stage by defining the full rebuild path and creating a dedicated root section for from-scratch work. The next stage is to gather and formalize deeper technical details into Layer A SSOT documents.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Reviewed document scope and retained scaffold sections needed for full authoring.
+- Kept this file aligned with SSOT-first canon structure.
+### Remaining to finish this document
+- [ ] Expand domain-specific canonical content beyond scaffold level.
+- [ ] Resolve open questions and convert to approved status.
+- [ ] Link normative statements to code/tests and verification evidence.
+

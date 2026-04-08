@@ -33,3 +33,14 @@ API versioning, schema migrations, and behavior toggles during transition from l
 
 ## Open questions / known gaps
 - Need explicit policy for deprecation window length by change severity.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Preserved guidance scaffolds for migration, ownership, deprecation, and fixtures.
+- Aligned guidance scope to modularization and compatibility outcomes.
+- Prepared these docs for stepwise implementation planning.
+### Remaining to finish this document
+- [ ] Define concrete module ownership and accountability map.
+- [ ] Add compatibility windows and deprecation schedules with enforcement rules.
+- [ ] Tie fixture/test-data strategy to existing test suites and CI pipelines.
+

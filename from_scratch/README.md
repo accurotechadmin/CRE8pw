@@ -26,3 +26,13 @@ This root section is the dedicated workspace for rebuilding the CRE8 documentati
 - **Policy-first:** security and authorization policy are treated as core product features.
 - **Traceability:** every claim should map to contracts, code, and tests.
 - **Layered docs:** foundational canon → technical references → workflow/ops guides.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Reviewed document scope and retained scaffold sections needed for full authoring.
+- Kept this file aligned with SSOT-first canon structure.
+### Remaining to finish this document
+- [ ] Expand domain-specific canonical content beyond scaffold level.
+- [ ] Resolve open questions and convert to approved status.
+- [ ] Link normative statements to code/tests and verification evidence.
+

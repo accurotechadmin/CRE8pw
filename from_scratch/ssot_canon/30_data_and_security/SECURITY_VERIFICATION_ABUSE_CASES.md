@@ -38,3 +38,14 @@ Auth failures, token misuse, replay, scope bypass, header/csrf bypass, and start
 
 ## Open questions / known gaps
 - Existing repo lacks dedicated abuse-case test file naming convention; mapping is manual for now.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Retained canonical data/security sections and security-centric verification hooks.
+- Maintained explicit references to threat model, controls, and abuse-case testing.
+- Ensured docs are ready for schema/entity and control-matrix expansion.
+### Remaining to finish this document
+- [ ] Complete entity invariants, lifecycle rules, and index/constraint matrices.
+- [ ] Add threat-to-control-to-test traceability tables.
+- [ ] Finalize header/CSP/security control values and validation procedures.
+

@@ -39,3 +39,14 @@ High-value v1 capabilities for auth, content, moderation, and operations.
 
 ## Open questions / known gaps
 - Service/module mapping for `code/src/Modules/*` rebuild path needs a second matrix column for target architecture.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Maintained templates and structure for SSOT drift prevention workflows.
+- Preserved linkage points among requirements, code references, and tests.
+- Prepared these docs for CI automation rule authoring.
+### Remaining to finish this document
+- [ ] Populate the traceability matrix with capability-level mappings.
+- [ ] Define CI lint checks and failure policies for SSOT-code drift.
+- [ ] Track open gaps with owners, target dates, and risk severity.
+

@@ -36,3 +36,14 @@ All unresolved drifts affecting correctness, security, or delivery confidence.
 
 ## Open questions / known gaps
 - Need agreement on severity rubric and SLA per severity level.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Maintained templates and structure for SSOT drift prevention workflows.
+- Preserved linkage points among requirements, code references, and tests.
+- Prepared these docs for CI automation rule authoring.
+### Remaining to finish this document
+- [ ] Populate the traceability matrix with capability-level mappings.
+- [ ] Define CI lint checks and failure policies for SSOT-code drift.
+- [ ] Track open gaps with owners, target dates, and risk severity.
+

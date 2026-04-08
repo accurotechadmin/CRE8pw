@@ -34,3 +34,14 @@ Column-level reference, index expectations, and nullability notes.
 
 ## Open questions / known gaps
 - No canonical migration manifest file is currently present for automated extraction.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Retained canonical data/security sections and security-centric verification hooks.
+- Maintained explicit references to threat model, controls, and abuse-case testing.
+- Ensured docs are ready for schema/entity and control-matrix expansion.
+### Remaining to finish this document
+- [ ] Complete entity invariants, lifecycle rules, and index/constraint matrices.
+- [ ] Add threat-to-control-to-test traceability tables.
+- [ ] Finalize header/CSP/security control values and validation procedures.
+

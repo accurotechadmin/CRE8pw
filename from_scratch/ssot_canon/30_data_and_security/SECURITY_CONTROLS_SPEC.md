@@ -34,3 +34,14 @@ Startup key safety, JWT claims, middleware protections, logging, and transport c
 
 ## Open questions / known gaps
 - Formal control-to-mitigation coverage matrix still to be added.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Retained canonical data/security sections and security-centric verification hooks.
+- Maintained explicit references to threat model, controls, and abuse-case testing.
+- Ensured docs are ready for schema/entity and control-matrix expansion.
+### Remaining to finish this document
+- [ ] Complete entity invariants, lifecycle rules, and index/constraint matrices.
+- [ ] Add threat-to-control-to-test traceability tables.
+- [ ] Finalize header/CSP/security control values and validation procedures.
+

@@ -33,3 +33,14 @@ Boot path from dotenv load through app creation and failure response handling.
 
 ## Open questions / known gaps
 - No scripted chaos boot-failure rehearsal is defined yet.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Kept operations/quality documents structured for executable release governance.
+- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
+- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
+### Remaining to finish this document
+- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
+- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
+- [ ] Complete Given/When/Then acceptance criteria per critical route family.
+

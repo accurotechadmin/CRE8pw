@@ -35,3 +35,14 @@ All public/auth/gateway/console HTTP APIs and response envelopes.
 
 ## Open questions / known gaps
 - OpenAPI contains only starter subset in this scaffold and needs full endpoint expansion.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Preserved contract-first structure for API, route inventory, error catalog, and authorization behavior.
+- Confirmed machine-contract references (OpenAPI/schemas) are linked in contract docs.
+- Standardized verification and traceability sections for contract-test alignment.
+### Remaining to finish this document
+- [ ] Populate full endpoint inventory and request/response examples.
+- [ ] Complete stable error code mappings and authorization decision matrices.
+- [ ] Synchronize final values with OpenAPI and contract tests.
+
