@@ -1,38 +1,34 @@
 # Change Impact Map Templates (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
-
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+_Last updated (UTC): 2026-04-08_
 
 ## Purpose
-Operational templates for determining mandatory companion updates when SSOT-controlled behavior changes.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
-## How to use
-1. Select a change type row below.
-2. Update every listed companion artifact in the same PR.
-3. Record evidence links in PR description and release checklist.
+## Scope
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Change impact matrix
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-| Change type | Primary trigger examples | Required companion SSOT updates | Required verification updates |
-|---|---|---|---|
-| **Auth claim change** | JWT claim added/removed/renamed; `typ/aud/iss` semantics changed; lineage claim behavior changed | `Security_Reference.md`, `Security_Controls_Spec.md`, `Authorization_and_Delegation_Spec.md`, `API_Contract_Guide.md`, `Endpoint_Examples_All_Routes.md`, `Error_Code_Catalog.md`, `Traceability_Matrix.md` | Security tests, auth contract tests, refresh/login regression paths, claim-validation negative tests |
-| **Middleware order or policy change** | Middleware reorder, insertion/removal, CORS/CSRF/rate-limit behavior adjustments | `Request_Pipeline_Reference.md`, `Security_Reference.md`, `Operations_Reference.md`, `Error_Code_Catalog.md`, `Observability_Event_Catalog.md`, `Traceability_Matrix.md` | Middleware behavior tests, contract tests for affected routes, 401/403/422/429 regression checks |
-| **Data schema/model change** | New table/column/index; enum change; retention change; lifecycle state change | `Data_Model_Spec.md`, `Data_Model_Reference.md`, `ERD.md`, `Authorization_and_Delegation_Spec.md` (if auth-related), `Traceability_Matrix.md` | Migration smoke tests, data integrity checks, lifecycle regression tests |
-| **Error code/detail code change** | Add/remove/rename `error.code` or detail codes; mapping semantics changed | `Error_Code_Catalog.md`, `API_Contract_Guide.md`, `Endpoint_Examples_All_Routes.md`, `UI_Parity_Contract.md`, `UI_Parity_and_Contract.md`, `Observability_Event_Catalog.md` | Contract tests for envelope shape, UI error mapping checks, observability emission assertions |
-| **Migration/seed strategy change** | New migration class, rollback posture change, seed policy updates | `Migration_Seed_Strategy.md`, `Data_Model_Spec.md`, `Operations_Runbook_Production.md`, `Verification_Strategy.md`, `RELEASE_CHECKLIST.md` | Migration dry-run/smoke, seed determinism checks, rollback rehearsal evidence |
-| **Authorization policy truth change** | Delegation/keychain/lifecycle decision logic change | `Authorization_Decision_Tables.md`, `Authorization_and_Delegation_Spec.md`, `Error_Code_Catalog.md`, `Acceptance_Criteria_Matrix.md`, `Traceability_Matrix.md` | Policy regression tests (allow/deny), keychain invariants tests, contract negative-path checks |
-| **Infrastructure/IaC posture change** | Environment topology, backup/restore, secret model updates | `Infrastructure_IaC_Reference.md`, `Operations_Reference.md`, `Operations_Runbook_Production.md`, `SLO_SLI_SPEC.md`, `Security_Controls_Spec.md` | IaC plan/apply validation, restore drill evidence, release gate operational checks |
-| **Configuration/startup contract change** | Env var add/remove/rename, profile hardening policy change, boot-failure behavior change | `Configuration_Environment_Contract.md`, `Boot_and_Startup_Failure_Contract.md`, `Operations_Reference.md`, `Security_Controls_Spec.md`, `Verification_Strategy.md` | Boot contract tests, startup failure envelope checks, environment policy tests |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## PR checklist template (copy/paste)
-- [ ] Change type selected and mapped in this document.
-- [ ] All listed companion SSOT docs updated.
-- [ ] OpenAPI/schemas updated where applicable.
-- [ ] Verification updates added and executed.
-- [ ] Traceability and release checklist updated.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Ownership
-- Document owner: architecture + QA leads.
-- Enforcement point: PR review and release gate validation.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
+
+## Change impact map format
+Each change record must include requirement id, affected code paths, affected tests, rollback plan, and release evidence link.

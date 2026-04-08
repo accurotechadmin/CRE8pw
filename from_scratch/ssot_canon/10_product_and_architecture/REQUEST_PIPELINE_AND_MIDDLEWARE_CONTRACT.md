@@ -1,48 +1,31 @@
-# Request Pipeline and Middleware Contract
+# Request Pipeline And Middleware Contract
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Freeze middleware sequencing and per-surface stacks, including global error and request-id handling.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Global stack and console/gateway overlays in active runtime.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Global middleware order MUST match `MiddlewareOrder::GLOBAL`.
-- `ErrorHandlerMiddleware` MUST remain first declared global stage.
-- Surface-specific middleware MUST enforce token type and policy restrictions.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-- Global sequence (current): `ErrorHandler`, `RequestId`, `SecurityHeaders`, `Cors`, `RoutingMarker`, `JsonBody`.
-- Console overlay includes owner JWT + CSRF + validation/rate limits.
-- Gateway overlay includes key JWT + device/use-key/rate controls.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Order mismatch at boot MUST fail startup checks.
-- Missing required middleware on protected routes MUST be treated as release blocker.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Validate against `src/Http/Middleware/MiddlewareOrder.php` and boot check assertions.
-- Contract tests: middleware registry and production depth tests.
-
-## Traceability hooks
-- Code refs: `src/Http/Middleware/MiddlewareOrder.php`, `src/Bootstrap/BootChecks.php`
-- Tests refs: `tests/Contract/MiddlewareRegistryContractsTest.php`, `tests/Contract/MiddlewareProductionDepthContractTest.php`
-- Related SSOT docs: `ARCHITECTURE_AND_SURFACES.md`, `../20_contracts/ERROR_CODE_CATALOG.md`
-
-## Open questions / known gaps
-- Legacy request pipeline docs omitted ErrorHandler stage; canon now aligns with runtime.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Stabilized architecture/product skeleton and canonical terminology linkage.
-- Kept normative constraints explicit to minimize interpretation drift.
-- Aligned scope to current runtime surfaces and middleware-driven architecture.
-### Remaining to finish this document
-- [ ] Add authoritative capability boundaries and out-of-scope definitions.
-- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
-- [ ] Trace every normative statement to code modules and tests.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

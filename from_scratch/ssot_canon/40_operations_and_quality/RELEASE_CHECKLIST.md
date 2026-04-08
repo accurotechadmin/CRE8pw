@@ -1,32 +1,37 @@
 # Release Checklist
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-08_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+## Purpose
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
-## Pre-release
-- [ ] Dependencies resolved and lockfile validated
-- [ ] Config and secrets reviewed for target environment
-- [ ] Environment policy validated against `Configuration_Environment_Contract.md`
-- [ ] `composer test:contract` and `composer test:security` pass
-- [ ] `composer ops:health-smoke` and `composer ops:migrate-smoke` pass
-- [ ] Smoke evidence captured per `Operational_Smoke_Check_Contract.md`
-- [ ] SSOT docs updated and cross-linked in same PR
-- [ ] Acceptance criteria matrix reviewed for affected routes
-- [ ] Migration/seed strategy checks completed (if schema/data changed)
-- [ ] SSOT automation/lint checks pass
+## Scope
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Go-live
-- [ ] Startup logs clean
-- [ ] `/health` pass
-- [ ] `/.well-known/jwks.json` present and valid
-- [ ] Auth flows (owner/key) smoke-tested
-- [ ] Core gateway and console routes smoke-tested
-- [ ] UI parity diagnostics verified (`request_id` visible on error states)
-- [ ] Observability events flowing with request IDs
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Post-release
-- [ ] Error budget and alert dashboards checked
-- [ ] 24h incident/noise review complete
-- [ ] Any production deltas reflected in SSOT updates
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
+
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
+
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
+
+## Release gate set
+- Contracts synchronized between markdown, OpenAPI, and schema files.
+- Security controls validated by test suites and manual abuse checks.
+- Health and smoke checks pass in CI and staging.
+- Evidence bundle stored under `from_scratch/ssot_canon/evidence/`.

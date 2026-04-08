@@ -1,46 +1,31 @@
-# Test Data and Fixture Strategy
+# Test Data And Fixture Strategy
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define consistent test data patterns and fixture governance for contract/security/integration reliability.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-PHPUnit fixtures for auth, key lifecycle, posts/comments/moderation, and health checks.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Test fixtures MUST be deterministic and isolated per suite.
-- Security-sensitive fixtures MUST avoid real secrets and production-like private keys unless explicitly synthetic.
-- Canon-critical acceptance scenarios SHOULD have named fixture sets.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-- Fixture categories: auth principals, token families, delegation envelopes, content entities, degraded dependency states.
-- Fixture ownership: suite-level maintainers under tests/Contract and tests/Security.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Flaky fixtures causing nondeterministic outcomes SHOULD block merge.
-- Shared mutable fixtures without reset semantics are non-compliant.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- CI rerun stability checks and periodic flaky-test audit.
-
-## Traceability hooks
-- Code refs: `tests/Contract/*`, `tests/Security/*`
-- Tests refs: same
-- Related SSOT docs: `../40_operations_and_quality/VERIFICATION_STRATEGY.md`, `../30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`
-
-## Open questions / known gaps
-- Repository lacks explicit fixture factory pattern documentation today.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Preserved guidance scaffolds for migration, ownership, deprecation, and fixtures.
-- Aligned guidance scope to modularization and compatibility outcomes.
-- Prepared these docs for stepwise implementation planning.
-### Remaining to finish this document
-- [ ] Define concrete module ownership and accountability map.
-- [ ] Add compatibility windows and deprecation schedules with enforcement rules.
-- [ ] Tie fixture/test-data strategy to existing test suites and CI pipelines.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

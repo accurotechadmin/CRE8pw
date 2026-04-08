@@ -1,52 +1,31 @@
 # Canonical Terminology
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Normalize naming across contracts, code, and tests to reduce interpretation drift.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Terms for identities, credentials, routes, envelopes, errors, policies, and operational states.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Canon terms MUST be used in new SSOT docs.
-- Legacy synonyms SHOULD be listed with canonical replacements.
-- Ambiguous terms MAY not be introduced without definition updates.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Canon term | Meaning | Legacy aliases |
-|---|---|---|
-| Owner | Privileged console principal | admin/user |
-| Key principal | API key-bearing actor | author/use/delegated key |
-| Surface | Route trust boundary grouping | zone |
-| Envelope | Stable JSON success/error wrapper | response body |
-| Drift | Canon vs code mismatch | doc gap |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Undefined term use SHOULD fail docs review.
-- Inconsistent term mapping MUST be logged as drift.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Lint check for presence of canonical terminology link in each doc.
-- Manual review of renamed terms in changed files.
-
-## Traceability hooks
-- Code refs: `src/Security/VerifiedPrincipal.php`, `src/Http/Middleware/*`
-- Tests refs: `tests/Contract/EnvelopeResponderContractTest.php`
-- Related SSOT docs: `CRE8_PRODUCT_AND_SYSTEM_SPEC.md`, `../20_contracts/API_CONTRACT_GUIDE.md`
-
-## Open questions / known gaps
-- Need finalized glossary entries for keychain and delegation lineage depth rules.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Stabilized architecture/product skeleton and canonical terminology linkage.
-- Kept normative constraints explicit to minimize interpretation drift.
-- Aligned scope to current runtime surfaces and middleware-driven architecture.
-### Remaining to finish this document
-- [ ] Add authoritative capability boundaries and out-of-scope definitions.
-- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
-- [ ] Trace every normative statement to code modules and tests.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

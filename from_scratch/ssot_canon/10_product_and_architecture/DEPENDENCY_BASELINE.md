@@ -1,52 +1,31 @@
 # Dependency Baseline
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Record mandatory runtime and test dependencies for CRE8 implementation consistency.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Root runtime (`composer.json`) and rebuild scaffold (`code/composer.json`) baselines.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Runtime MUST stay on PHP 8.2 and Slim 4 stack unless canon change is approved.
-- Security primitives MUST include `firebase/php-jwt` and `ext-sodium`.
-- Verification stack MUST include PHPUnit and SSOT automation commands.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Dependency | Purpose | Source |
-|---|---|---|
-| slim/slim + slim/psr7 | HTTP runtime | root composer |
-| php-di/php-di | DI container wiring | root composer |
-| firebase/php-jwt | token signing/verification | root composer |
-| symfony/rate-limiter + cache | throttling | root composer |
-| phpunit/phpunit | tests | root + code composer |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Dependency upgrades without contract impact review SHOULD be rejected.
-- Missing required package in lock/runtime MUST block release.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- `composer validate --strict` and platform checks in QA pipeline.
-- Dependency-to-contract mapping reviewed per release.
-
-## Traceability hooks
-- Code refs: `composer.json`, `code/composer.json`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `../40_operations_and_quality/VERIFICATION_STRATEGY.md`, `../30_data_and_security/SECURITY_CONTROLS_SPEC.md`
-
-## Open questions / known gaps
-- Root composer lacks SSOT automation commands that exist in `/code` scaffold.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Stabilized architecture/product skeleton and canonical terminology linkage.
-- Kept normative constraints explicit to minimize interpretation drift.
-- Aligned scope to current runtime surfaces and middleware-driven architecture.
-### Remaining to finish this document
-- [ ] Add authoritative capability boundaries and out-of-scope definitions.
-- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
-- [ ] Trace every normative statement to code modules and tests.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

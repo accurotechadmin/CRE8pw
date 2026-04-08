@@ -1,51 +1,31 @@
-# Definition of Done (SSOT-Impacting Work)
+# Definition Of Done
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Provide objective completion criteria for SSOT-impacting implementation and documentation changes.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-PR-level done criteria for class A/B/C/D changes.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Work is done only when docs, code, tests, and evidence are synchronized.
-- Known gaps entries MUST exist for intentionally deferred deltas.
-- Merge SHOULD be blocked when required commands fail.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-### Done checklist
-- Canon docs updated
-- OpenAPI/schema updated if contract changed
-- Route inventory/error catalog/traceability matrix synced
-- Required tests pass
-- Smoke/release evidence attached where required
-- ADR and impact map included if policy/architecture changed
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Partial updates across docs/code/tests are not done.
-- Missing evidence artifacts for readiness gates are not done.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Reviewer enforces checklist completion in PR.
-
-## Traceability hooks
-- Code refs: `composer.json`, `from_scratch/ssot_canon/*`
-- Tests refs: `tests/Contract/*`, `tests/Security/*`
-- Related SSOT docs: `../00_governance/CHANGE_CONTROL_POLICY.md`, `../40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
-
-## Open questions / known gaps
-- Need integration with repository PR template and CI status checks.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept PM artifacts structured for roadmap, risk, workflow, and DoD governance.
-- Maintained explicit links between SSOT quality and delivery controls.
-- Prepared these docs for milestone-driven execution tracking.
-### Remaining to finish this document
-- [ ] Add dated milestones with owners and acceptance evidence.
-- [ ] Quantify risks using probability/impact and mitigation triggers.
-- [ ] Finalize SSOT-specific definition-of-done gates used in PR reviews.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

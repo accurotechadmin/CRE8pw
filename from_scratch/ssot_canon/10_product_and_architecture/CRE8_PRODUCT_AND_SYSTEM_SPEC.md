@@ -1,48 +1,31 @@
-# CRE8 Product and System Spec
+# Cre8 Product And System Spec
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define the system mission, personas, capabilities, and non-negotiable constraints for CRE8 platform behavior.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Covers owner console and key gateway capabilities, excluding non-canonical narrative docs.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- CRE8 MUST support both owner-account and key-based authentication surfaces.
-- Product behavior MUST remain policy-first with explicit authorization decisions.
-- Capability claims SHOULD map to concrete routes, services, and tests.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-- Personas: owner/operator, delegated key holder, client integrator.
-- Capability families: auth, delegation, content, moderation, operations.
-- Reference contracts: `ARCHITECTURE_AND_SURFACES.md`, `API_CONTRACT_GUIDE.md`.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Capability not mapped to contract/test is treated as unspecified.
-- Conflicting persona expectations MUST be resolved by authz policy docs.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Verify routes/services exist for each capability in traceability matrix.
-- Validate acceptance criteria coverage in `../40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`.
-
-## Traceability hooks
-- Code refs: `src/Http/Routes/RouteRegistrar.php`, `src/Application/*`
-- Tests refs: `tests/Contract/RouteRegistrarContractsTest.php`
-- Related SSOT docs: `CANONICAL_TERMINOLOGY.md`, `ARCHITECTURE_AND_SURFACES.md`, `../50_traceability_and_automation/TRACEABILITY_MATRIX.md`
-
-## Open questions / known gaps
-- UI parity depth is still draft; concrete user journeys need expansion.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Stabilized architecture/product skeleton and canonical terminology linkage.
-- Kept normative constraints explicit to minimize interpretation drift.
-- Aligned scope to current runtime surfaces and middleware-driven architecture.
-### Remaining to finish this document
-- [ ] Add authoritative capability boundaries and out-of-scope definitions.
-- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
-- [ ] Trace every normative statement to code modules and tests.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

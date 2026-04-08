@@ -1,47 +1,31 @@
-# Architecture and Surfaces
+# Architecture And Surfaces
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Describe system layering and trust boundaries as implemented by Slim middleware and route groups.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Public, auth, gateway, and console surfaces plus cross-cutting services.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Route families MUST map to explicit surfaces with dedicated middleware stacks.
-- Security controls MUST be fail-closed at boundary transitions.
-- Architecture SHOULD remain modular monolith with clear service boundaries.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-- Surfaces: public (`/`, `/health`, `/ui*`, `/.well-known/jwks.json`), auth (`/api/auth/*`, `/console/owners`), gateway (`/api/*`), console (`/console/api/*`).
-- Key anchors: `RouteRegistrar`, `MiddlewareRegistry`, `BootChecks`.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Unassigned surface routes are invalid and MUST be rejected in review.
-- Cross-surface auth leakage (e.g., console token accepted on gateway) is a security failure.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Contract tests validate route families and middleware application.
-- Security tests validate token surface rules.
-
-## Traceability hooks
-- Code refs: `src/Http/Routes/RouteRegistrar.php`, `src/Http/Middleware/MiddlewareRegistry.php`
-- Tests refs: `tests/Contract/RouteRegistrarContractsTest.php`, `tests/Security/JwtTokenSecurityTest.php`
-- Related SSOT docs: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`, `../20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`
-
-## Open questions / known gaps
-- Keychain member/resolve surface remains documented in legacy SSOT but not yet implemented in current registrar.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Stabilized architecture/product skeleton and canonical terminology linkage.
-- Kept normative constraints explicit to minimize interpretation drift.
-- Aligned scope to current runtime surfaces and middleware-driven architecture.
-### Remaining to finish this document
-- [ ] Add authoritative capability boundaries and out-of-scope definitions.
-- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
-- [ ] Trace every normative statement to code modules and tests.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

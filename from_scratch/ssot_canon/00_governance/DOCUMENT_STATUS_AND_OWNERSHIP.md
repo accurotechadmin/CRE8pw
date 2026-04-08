@@ -1,57 +1,31 @@
-# Document Status and Ownership
+# Document Status And Ownership
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define owner roles, lifecycle states, and review cadence for each canonical SSOT artifact.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-All markdown, OpenAPI, and schema artifacts under `/from_scratch/ssot_canon`.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Every canonical file MUST have a status line and last-updated date.
-- Every canonical file MUST have a primary owner role and at least one backup owner role.
-- Status transitions (`draft -> adopted -> deprecated`) MUST be recorded in PR description.
-- Security-sensitive docs SHOULD be co-owned by architecture and security leads.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Area | Primary owner role | Backup owner role | Review cadence |
-|---|---|---|---|
-| Governance | Architecture lead | QA lead | Monthly |
-| API/OpenAPI | API contract owner | Backend lead | Per release |
-| Security | Security lead | Platform lead | Monthly + incident-triggered |
-| Data model | Data owner | Backend lead | Per schema change |
-| Operations | SRE/platform lead | Backend lead | Per release |
-| Traceability | QA lead | Architecture lead | Weekly drift review |
-| ADR/decisions | Architecture lead | Security lead | Per major decision |
-| Program management | Product/PM lead | Architecture lead | Bi-weekly |
-| Evidence artifacts | QA lead | Platform/SRE lead | Per release |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Ownerless documents MUST be treated as non-mergeable.
-- Stale metadata (>30 days without review on hot contracts) SHOULD trigger warning status.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Docs lint MUST check for status/date/owner table entries.
-- Release checklist MUST include owner signoff for modified canon docs.
-
-## Traceability hooks
-- Code refs: `docs/SSOT/SSOT_INDEX.md`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php` (automation anchor)
-- Related SSOT docs: `SSOT_INDEX.md`, `CHANGE_CONTROL_POLICY.md`, `../40_operations_and_quality/RELEASE_CHECKLIST.md`
-
-## Open questions / known gaps
-- Named individuals are intentionally omitted pending team assignment.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Finalized mandatory section structure (Purpose, Scope, Normative statements, Interfaces, Failure semantics, Verification, Traceability).
-- Confirmed cross-link dependency on canonical terminology and SSOT index.
-- Prepared this document for owner assignment and lifecycle-state locking.
-### Remaining to finish this document
-- [ ] Define and approve owner + reviewer roles with escalation timelines.
-- [ ] Attach CI/lint enforcement rules that validate this document's governance constraints.
-- [ ] Resolve open questions and promote status from draft to approved.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

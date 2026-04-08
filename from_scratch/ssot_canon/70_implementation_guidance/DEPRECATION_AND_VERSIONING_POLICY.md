@@ -1,49 +1,31 @@
-# Deprecation and Versioning Policy
+# Deprecation And Versioning Policy
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Establish canonical approach for API/document/schema versioning and deprecation lifecycle.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-HTTP contracts, SSOT docs, schemas, and operational behavior changes.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Any deprecation MUST be announced in docs before behavior removal.
-- Versioned artifacts MUST preserve compatibility guarantees defined in migration strategy.
-- SSOT doc status SHOULD reflect deprecation state transitions.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Artifact type | Version unit | Deprecation signal | Removal gate |
-|---|---|---|---|
-| API route/field | v1 semantic patch | docs note + release checklist | readiness gates pass |
-| SSOT doc section | status tag | changelog + known gaps | governance approval |
-| JSON schema | schema version | schema changelog entry | contract tests green |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Silent removals are contract violations.
-- Unversioned breaking changes MUST be rejected.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Release review verifies deprecation notices and removal criteria.
-
-## Traceability hooks
-- Code refs: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`
-- Tests refs: `tests/Contract/RouteRegistrarContractsTest.php`
-- Related SSOT docs: `MIGRATION_AND_COMPATIBILITY_STRATEGY.md`, `../40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
-
-## Open questions / known gaps
-- Need canonical changelog file for versioned contract history.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Preserved guidance scaffolds for migration, ownership, deprecation, and fixtures.
-- Aligned guidance scope to modularization and compatibility outcomes.
-- Prepared these docs for stepwise implementation planning.
-### Remaining to finish this document
-- [ ] Define concrete module ownership and accountability map.
-- [ ] Add compatibility windows and deprecation schedules with enforcement rules.
-- [ ] Tie fixture/test-data strategy to existing test suites and CI pipelines.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

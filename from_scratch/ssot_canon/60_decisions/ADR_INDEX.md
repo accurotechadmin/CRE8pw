@@ -1,49 +1,36 @@
-# ADR Index
+# Adr Index
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Maintain an authoritative index of architectural and policy decisions that materially shape the SSOT canon and implementation behavior.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-All accepted/proposed/superseded Architecture Decision Records (ADRs) for CRE8 canon and runtime.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Any material architectural policy change MUST have an ADR entry before adoption.
-- ADR status MUST be one of `proposed`, `accepted`, `superseded`, `deprecated`.
-- Superseded ADRs SHOULD link to the replacement ADR.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| ADR ID | Title | Status | Date | Supersedes | Related SSOT docs |
-|---|---|---|---|---|---|
-| ADR-000 | ADR process bootstrap | accepted | 2026-04-08 | - | `../00_governance/CHANGE_CONTROL_POLICY.md` |
-| ADR-001 | SSOT canon precedence activation gate | proposed | 2026-04-08 | - | `../00_governance/SSOT_INDEX.md` |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Missing ADR for major architecture/security direction change MUST block adoption.
-- ADR entries without traceable linked docs SHOULD fail governance review.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Governance review checks ADR linkage for class A/B changes.
-- PR checklist validates ADR ID when required.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
 
-## Traceability hooks
-- Code refs: `src/`, `code/src/Modules/*`
-- Tests refs: `tests/Contract/*`, `tests/Security/*`
-- Related SSOT docs: `../00_governance/CHANGE_CONTROL_POLICY.md`, `DECISION_RECORD_TEMPLATE.md`, `DECISIONS_LOG.md`
-
-## Open questions / known gaps
-- ADR markdown file storage convention (single file vs per-ADR files) is still open.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept ADR/decision docs consistently structured and cross-link ready.
-- Prepared decision workflow artifacts for chronological governance.
-- Standardized template usage for future architectural records.
-### Remaining to finish this document
-- [ ] Backfill historical key decisions and supersession chains.
-- [ ] Assign statuses and dates for accepted/proposed/superseded records.
-- [ ] Link each decision to affected SSOT and implementation artifacts.
-
+## Active ADR registry
+- ADR-001 Modular kernel and route provider pattern.
+- ADR-002 Envelope responder as canonical response strategy.
+- ADR-003 Token verification policy centered on key rotation safety.

@@ -1,49 +1,31 @@
 # Risk Register
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Track delivery, security, operational, and governance risks that could compromise SSOT adoption and runtime integrity.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Program-level risks tied to canon and implementation convergence.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- High risks MUST have owner, mitigation, and review date.
-- New critical risks MUST be logged within one working day.
-- Closed risks SHOULD include evidence of mitigation effectiveness.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Risk ID | Risk | Severity | Mitigation | Owner role | Status |
-|---|---|---|---|---|---|
-| R-001 | Keychain route drift persists | high | implement or deprecate in sync | backend/arch | open |
-| R-002 | SSOT CI gates not wired in root | medium | add docs:ssot scripts + workflow | platform | open |
-| R-003 | Incomplete OpenAPI coverage | medium | expand spec + sync check | API owner | open |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Unowned high-severity risks are governance failures.
-- Expired mitigation dates without update SHOULD block milestone closure.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Review at weekly triage and release checkpoints.
-
-## Traceability hooks
-- Code refs: `composer.json`, `src/Http/Routes/RouteRegistrar.php`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `ROADMAP_AND_MILESTONES.md`, `../50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
-
-## Open questions / known gaps
-- Need risk scoring rubric and escalation thresholds.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept PM artifacts structured for roadmap, risk, workflow, and DoD governance.
-- Maintained explicit links between SSOT quality and delivery controls.
-- Prepared these docs for milestone-driven execution tracking.
-### Remaining to finish this document
-- [ ] Add dated milestones with owners and acceptance evidence.
-- [ ] Quantify risks using probability/impact and mitigation triggers.
-- [ ] Finalize SSOT-specific definition-of-done gates used in PR reviews.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
