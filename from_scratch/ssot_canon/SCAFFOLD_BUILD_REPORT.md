@@ -23,6 +23,10 @@ Covers files created, assumptions made, unresolved conflicts, and immediate foll
 - Data/security: 7 files under `30_data_and_security/`
 - Operations/quality: 10 files under `40_operations_and_quality/`
 - Traceability/automation: 4 files under `50_traceability_and_automation/`
+- Decisions: 3 files under `60_decisions/`
+- Implementation guidance: 4 files under `70_implementation_guidance/`
+- Program management: 4 files under `80_program_management/`
+- Evidence docs/templates: 3 files under `evidence/`
 - Machine contracts: `openapi/cre8.v1.yaml`, `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json`
 - Report: `SCAFFOLD_BUILD_REPORT.md`
 
@@ -37,6 +41,7 @@ Covers files created, assumptions made, unresolved conflicts, and immediate foll
 3. OpenAPI draft is intentionally partial and not yet full-route complete.
 
 ### Next 10 highest-priority fill-in tasks
+> Updated after second-pass scaffold hardening to include governance and execution support layers.
 1. Expand `openapi/cre8.v1.yaml` to full route inventory.
 2. Complete `ROUTE_INVENTORY_REFERENCE.md` with all console/gateway routes.
 3. Add root `composer docs:ssot:*` commands and CI job wiring.

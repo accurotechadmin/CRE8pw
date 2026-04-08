@@ -26,8 +26,12 @@ Applies to all files under this canon tree. Legacy docs under `/docs` remain his
 6. `30_data_and_security/*`
 7. `40_operations_and_quality/*`
 8. `50_traceability_and_automation/*`
-9. `openapi/cre8.v1.yaml`
-10. `schemas/*.json`
+9. `60_decisions/*`
+10. `70_implementation_guidance/*`
+11. `80_program_management/*`
+12. `evidence/*`
+13. `openapi/cre8.v1.yaml`
+14. `schemas/*.json`
 
 ### Canon set inventory
 - Governance: `00_governance/*.md`
@@ -36,6 +40,10 @@ Applies to all files under this canon tree. Legacy docs under `/docs` remain his
 - Data/security: `30_data_and_security/*.md`
 - Operations/quality: `40_operations_and_quality/*.md`
 - Traceability/automation: `50_traceability_and_automation/*.md`
+- Decisions: `60_decisions/*.md`
+- Implementation guidance: `70_implementation_guidance/*.md`
+- Program management: `80_program_management/*.md`
+- Evidence templates: `evidence/**/*.md`
 
 ## Failure/rejection semantics
 - Missing SSOT updates for contract changes MUST block merge.

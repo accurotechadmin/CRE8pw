@@ -25,6 +25,9 @@ All markdown, OpenAPI, and schema artifacts under `/from_scratch/ssot_canon`.
 | Data model | Data owner | Backend lead | Per schema change |
 | Operations | SRE/platform lead | Backend lead | Per release |
 | Traceability | QA lead | Architecture lead | Weekly drift review |
+| ADR/decisions | Architecture lead | Security lead | Per major decision |
+| Program management | Product/PM lead | Architecture lead | Bi-weekly |
+| Evidence artifacts | QA lead | Platform/SRE lead | Per release |
 
 ## Failure/rejection semantics
 - Ownerless documents MUST be treated as non-mergeable.
