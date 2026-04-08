@@ -1,35 +1,42 @@
-# Security Headers and CSP Policy
+# Security Headers and CSP Policy (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Specify canonical response header and CSP behavior across UI and API paths.
+Define the mandatory HTTP security header baseline and path-aware Content Security Policy behavior for CRE8 surfaces.
 
-## Scope
-Global security headers and path-aware CSP differences.
+## Required default security headers
+- `X-Frame-Options: DENY`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: no-referrer`
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`
+- `Cross-Origin-Opener-Policy: same-origin`
+- `Cross-Origin-Resource-Policy: same-origin`
+- `Permissions-Policy: accelerometer=(), camera=(), geolocation=(), microphone=()`
 
-## Normative statements
-- Security headers MUST be applied to all responses unless explicitly exempted.
-- UI and API paths SHOULD use tailored CSP directives.
-- Existing explicit header values MAY be preserved to avoid unintended override.
+Middleware must set these defaults unless already present with stricter equivalent values.
 
-## Interfaces / contracts
-- Implementation anchor: `SecurityHeadersMiddleware`.
-- Policy includes CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, and similar headers.
+## Path-aware CSP contract
+- **API/public non-UI paths**: `default-src 'none'; frame-ancestors 'none'`
+- **UI paths (`/ui*`)**: `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'`
 
-## Failure/rejection semantics
-- Missing critical headers on protected responses SHOULD fail security verification.
-- Overly permissive CSP in production MUST be blocked.
+## Enforcement requirements
+- CSP policy is computed from request path.
+- API and UI CSP must not be merged into a permissive union.
+- Response generation path must avoid silently dropping CSP/security headers on error envelopes.
 
 ## Verification requirements
-- Header assertions in contract/security tests and manual browser inspection for `/ui`.
+At minimum:
+- contract test for default headers present,
+- contract test for UI-path CSP,
+- contract test ensuring pre-existing stricter CSP is not overwritten,
+- regression check for error-envelope responses preserving security headers.
 
-## Traceability hooks
-- Code refs: `src/Http/Middleware/SecurityHeadersMiddleware.php`
-- Tests refs: `tests/Contract/MiddlewareRegistryContractsTest.php`
-- Related SSOT docs: `SECURITY_CONTROLS_SPEC.md`, `../20_contracts/UI_RUNTIME_CONTRACT.md`
-
-## Open questions / known gaps
-- Detailed production CSP directive baseline requires final frontend asset inventory.
+## Related SSOT docs
+- `Security_Controls_Spec.md`
+- `Request_Pipeline_Reference.md`
+- `Verification_Strategy.md`
+- `Production_Readiness_Gates.md`

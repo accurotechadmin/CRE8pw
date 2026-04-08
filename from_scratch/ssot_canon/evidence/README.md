@@ -37,3 +37,14 @@ Templates are provided in `evidence/templates/`.
 
 ## Open questions / known gaps
 - Automated artifact upload path in CI is not yet configured.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Kept evidence folder policy and scope scaffold in place.
+- Maintained linkage with verification and release artifacts.
+- Prepared README for enforceable evidence governance details.
+### Remaining to finish this document
+- [ ] Define folder taxonomy with naming conventions and examples.
+- [ ] Specify retention, access control, and audit requirements.
+- [ ] Link evidence requirements to release checklist and DoD.
+

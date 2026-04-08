@@ -1,36 +1,35 @@
 # Security Controls Spec
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Define required preventive, detective, and corrective controls for CRE8 runtime.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Startup key safety, JWT claims, middleware protections, logging, and transport controls.
+## Control objectives
+1. Ensure credential authenticity and bounded token lifetime.
+2. Prevent unauthorized mutation/actions via layered claim/policy checks.
+3. Preserve operational traceability with redacted structured logs.
 
-## Normative statements
-- Security decisions MUST fail closed.
-- Signing/verification material MUST be validated at boot.
-- Request handling MUST include CORS, rate limiting, and security headers where applicable.
+## Trust boundaries
+- Browser/third-party clients ↔ API
+- API ↔ DB
+- API ↔ signing material
+- API ↔ logging/observability sinks
 
-## Interfaces / contracts
-- Controls anchored to `BootChecks`, `TokenVerifier`, security middleware, and Monolog audit output.
-- Dependencies: `firebase/php-jwt`, `ext-sodium`, `neomerx/cors-psr7`, `symfony/rate-limiter`, `monolog`.
+## Control baseline
+- Key material validation and file permission checks at boot.
+- JWT claim enforcement: issuer, audience, type, timing, lineage.
+- Refresh family replay protection.
+- Rate limiting + CSRF + CORS + device headers.
+- Immutable error envelope with request correlation IDs.
 
-## Failure/rejection semantics
-- Any bypass of claim/scope checks is critical severity.
-- Missing request correlation for security failures SHOULD be treated as observability defect.
+## Dependency mapping
+- JWT: `firebase/php-jwt`
+- Crypto primitives: `ext-sodium`
+- Policy middleware host: `slim/slim`
+- CORS: `neomerx/cors-psr7`
+- Rate limiting state/policy: `symfony/rate-limiter` + `symfony/cache`
+- Structured audit logs: `monolog/monolog`
 
-## Verification requirements
-- Execute `tests/Security/*` and relevant contract tests.
-- Review against threat model and abuse cases.
-
-## Traceability hooks
-- Code refs: `src/Bootstrap/BootChecks.php`, `src/Security/*`, `src/Http/Middleware/*`
-- Tests refs: `tests/Security/JwtTokenSecurityTest.php`, `tests/Security/KeyMaterialSecurityTest.php`
-- Related SSOT docs: `SECURITY_HEADERS_AND_CSP_POLICY.md`, `SECURITY_THREAT_MODEL.md`, `SECURITY_VERIFICATION_ABUSE_CASES.md`
-
-## Open questions / known gaps
-- Formal control-to-mitigation coverage matrix still to be added.
+## Verification linkage
+Security controls are verified by suites listed in `Verification_Strategy.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `Security_Verification_Abuse_Cases.md`, and include mandatory header/CSP checks defined in `Security_Headers_and_CSP_Policy.md`.

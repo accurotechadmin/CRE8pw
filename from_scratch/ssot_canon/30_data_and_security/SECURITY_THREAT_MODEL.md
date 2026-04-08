@@ -1,36 +1,29 @@
 # Security Threat Model
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Document principal threat scenarios, attack paths, and mitigations for CRE8 surfaces.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-STRIDE-style threats across auth, gateway, console, data, and operations.
+## Threat scenarios
+1. Stolen bearer token replay.
+2. Refresh token replay in family.
+3. Delegation escalation via over-scoped child key.
+4. CSRF on console write routes.
+5. Key file tampering/world-writable private keys.
+6. Abuse via request flooding.
 
-## Normative statements
-- Threat model MUST identify highest-risk abuse paths for each surface.
-- Mitigations MUST map to concrete controls/tests.
-- New high-risk feature work SHOULD include threat model deltas.
+## Mitigations
+- Short JWT TTL + refresh rotation/replay invalidation.
+- Subset-only delegation with depth/expiry constraints.
+- CSRF validation for applicable writes.
+- Boot-time key material safety checks.
+- Global rate limiter with retry metadata.
+- Structured audit events with request IDs.
 
-## Interfaces / contracts
-- Top draft threats: token replay, key misuse escalation, CSRF on console writes, route/middleware misconfiguration, key material leakage.
-- Mitigation references to security controls and abuse-case tests.
-
-## Failure/rejection semantics
-- Unmitigated critical threat with no accepted exception MUST block release.
-- Threat entries without verification mapping are incomplete.
-
-## Verification requirements
-- Review threat model per release and after incidents.
-- Ensure abuse-case suite includes each critical threat scenario.
-
-## Traceability hooks
-- Code refs: `src/Security/*`, `src/Http/Middleware/*`
-- Tests refs: `tests/Security/*`
-- Related SSOT docs: `SECURITY_CONTROLS_SPEC.md`, `SECURITY_VERIFICATION_ABUSE_CASES.md`
-
-## Open questions / known gaps
-- Needs explicit risk ratings and owner assignments per threat.
+## Dependency linkage
+- JWT controls: `firebase/php-jwt`
+- Crypto primitives: `ext-sodium`
+- CORS: `neomerx/cors-psr7`
+- Rate limiting: `symfony/rate-limiter` + `symfony/cache`
+- Logging/audit traces: `monolog/monolog`

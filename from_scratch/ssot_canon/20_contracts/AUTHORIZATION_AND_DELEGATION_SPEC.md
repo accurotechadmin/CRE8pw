@@ -1,36 +1,62 @@
 # Authorization and Delegation Spec
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Specify authorization model, delegation lineage rules, and token surface boundaries.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Scope
-Owner and key principals, key classes, permissions, scopes, and lifecycle transitions.
+Defines principals, key classes, delegation bounds, keychain aggregation behavior, and route-surface authorization behavior for CRE8 v1.
 
-## Normative statements
-- Authorization decisions MUST be deny-by-default.
-- Use-key principals MUST NOT perform restricted mutations outside delegated policy.
-- Delegation lineage depth SHOULD remain bounded and auditable.
+## Principals
+- **Owner principal:** governance and console authority.
+- **Key principal:** gateway content authority.
 
-## Interfaces / contracts
-- Policy anchors: `src/Application/Auth/KeyLifecycleService`, `code/src/Modules/Delegation/Domain/Policies/*`.
-- Claims contract includes subject, surface, token class, permissions, scope, and expiry.
+## Key classes
+- `primary_author`
+- `secondary_author`
+- `use`
+- `keychain` (v1 production-active)
 
-## Failure/rejection semantics
-- Missing lineage metadata for delegated actions is a security failure.
-- Token surface mismatch MUST reject with `401 auth_invalid`.
+## Permission model (v1 allow-list)
+Canonical permission vocabulary:
+- `posts:read`
+- `posts:create`
+- `posts:edit`
+- `comments:create`
+- `keys:issue`
+- `keys:revoke`
+- `keychains:manage`
 
-## Verification requirements
-- Security tests for claim enforcement and replay resistance.
-- Contract tests for forbidden and lifecycle transition handling.
+## Delegation invariants
+- Child envelope must be a strict subset of parent permissions/scope.
+- Delegation max depth is `3`.
+- Delegated credentials must carry explicit expiry.
+- Delegation lineage must be preserved for token claim checks.
 
-## Traceability hooks
-- Code refs: `src/Application/Auth/KeyLifecycleService.php`, `src/Security/TokenVerifier.php`
-- Tests refs: `tests/Security/JwtTokenSecurityTest.php`, `tests/Contract/AuthServiceLoginContractTest.php`
-- Related SSOT docs: `AUTHORIZATION_DECISION_TABLES.md`, `../30_data_and_security/SECURITY_CONTROLS_SPEC.md`
+## Keychain invariants (v1 production)
+- Keychains are key principals with `key_class=keychain` and credential material equivalent to other key principals.
+- Keychain members may include only `primary_author`, `secondary_author`, and `use` keys.
+- Keychain-in-keychain membership is forbidden.
+- Max keychain membership size is `50`.
+- Effective permissions are computed as set-union across active members, then constrained by explicit keychain policy envelope.
+- Scope merge is union for positive scope tokens; restrictive dimensions use intersection where policy families define restrictive semantics.
+- Any revoked/suspended/cancelled member contributes no effective permissions/scope.
+- Keychain actions must record both keychain actor and resolved source-key lineage references.
 
-## Open questions / known gaps
-- Keychain membership and resolve behavior remain unresolved implementation gap.
+## Surface enforcement model
+- **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).
+- **Gateway (`/api/*`)**: key JWT (`typ=key`, gateway audience) + device guard where required.
+- **Keychain management routes** are console-governed and require owner JWT plus `keychains:manage` policy authorization.
+
+## Lifecycle authority
+- Owners can issue/revoke/suspend/cancel keys under governance policy.
+- Key principals may mint descendants only within delegated envelope bounds.
+- Keychain creation and membership mutation are owner-governed operations in v1.
+- Revocation may be local or cascading according to lineage policy.
+
+## Related SSOT docs
+- `Security_Reference.md`
+- `Request_Pipeline_Reference.md`
+- `Data_Model_Reference.md`
+- `Route_Inventory_Reference.md`

@@ -49,3 +49,14 @@ All markdown files in this canon.
 
 ## Open questions / known gaps
 - Formal markdown lint config is not yet present; rules are policy-only in v1.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Finalized mandatory section structure (Purpose, Scope, Normative statements, Interfaces, Failure semantics, Verification, Traceability).
+- Confirmed cross-link dependency on canonical terminology and SSOT index.
+- Prepared this document for owner assignment and lifecycle-state locking.
+### Remaining to finish this document
+- [ ] Define and approve owner + reviewer roles with escalation timelines.
+- [ ] Attach CI/lint enforcement rules that validate this document's governance constraints.
+- [ ] Resolve open questions and promote status from draft to approved.
+

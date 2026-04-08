@@ -1,40 +1,46 @@
-# Security Verification Abuse Cases
+# Security Verification and Abuse Cases (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Enumerate negative-path security scenarios that must be regression tested.
+Expand security verification from high-level controls into explicit abuse-case test requirements and incident-ready verification evidence.
 
-## Scope
-Auth failures, token misuse, replay, scope bypass, header/csrf bypass, and startup hardening.
+## Abuse-case matrix (minimum required)
 
-## Normative statements
-- Every critical abuse case MUST have at least one automated test.
-- Abuse-case IDs MUST be traceable to threat model entries.
-- Regression failures MUST block release.
+| Abuse case | Attack intent | Required control behavior | Required verification evidence |
+|---|---|---|---|
+| Stolen access token replay | Reuse captured bearer token | Short access TTL + claim validation; access denied post-expiry/lifecycle disable | Security test for token replay timing and lifecycle state changes |
+| Refresh token replay | Reuse old refresh token in family | Family rotation and replay invalidation deny second use | Refresh replay test with explicit first/second request assertions |
+| Delegation escalation | Mint child with broader perms/scope | Subset-only envelope enforcement + max-depth enforcement | Delegation negative tests (over-scope, over-depth) |
+| CSRF on console write | Induce browser write without intent | CSRF middleware rejects invalid/missing token | Console write CSRF failure tests and logs |
+| Rate-limit exhaustion | Flood auth/gateway endpoints | Limiter returns `429` with retry metadata | Load-abuse simulation and limiter behavior capture |
+| Keychain nesting bypass | Insert keychain into keychain | Membership validation denies nested keychains | Keychain contract/security negative test |
+| Device-header bypass | Access gateway route without required device policy | Device policy denies missing/invalid header | Gateway authz tests for missing/invalid `X-Device-Id` |
+| Sensitive log leakage | Exfiltrate secrets via logs/errors | Redaction of token/secret/private key fields | Log redaction tests + sampling audit |
 
-## Interfaces / contracts
-| Abuse case ID | Scenario | Expected outcome |
-|---|---|---|
-| SEC-AC-001 | tampered JWT signature | `401 auth_invalid` |
-| SEC-AC-002 | refresh token replay | `401 auth_invalid` + family invalidation |
-| SEC-AC-003 | console write without CSRF | `403 forbidden` |
-| SEC-AC-004 | key uses disallowed mutation | `403 forbidden` |
+## Security test-pack requirements
+- Security suite must include both happy-path and abuse-path tests.
+- Every abuse-case row requires at least one automated regression test.
+- High-severity controls (authn/authz/token lifecycle) require two-sided tests: allow valid + deny invalid.
 
-## Failure/rejection semantics
-- Missing automated coverage for critical abuse case is a release blocker.
-- Ambiguous expected outcome MUST be resolved in error catalog.
+## Incident-response verification hooks
+For each security-significant failure path:
+- emitted event family is documented,
+- `request_id` is present in envelope + logs,
+- runbook triage step is linked.
 
-## Verification requirements
-- Execute security suite and report abuse-case coverage map.
-- Validate detail codes against error catalog.
+## Release gate linkage
+Production release is blocked if:
+- any required abuse-case test fails,
+- redaction verification fails,
+- replay-protection assertions are missing or stale.
 
-## Traceability hooks
-- Code refs: `src/Security/TokenVerifier.php`, `src/Http/Middleware/CsrfMiddleware.php`
-- Tests refs: `tests/Security/JwtTokenSecurityTest.php`, `tests/Security/ApiKeyHasherSecurityTest.php`
-- Related SSOT docs: `SECURITY_THREAT_MODEL.md`, `../20_contracts/ERROR_CODE_CATALOG.md`, `../40_operations_and_quality/VERIFICATION_STRATEGY.md`
-
-## Open questions / known gaps
-- Existing repo lacks dedicated abuse-case test file naming convention; mapping is manual for now.
+## Related SSOT docs
+- `SECURITY_THREAT_MODEL.md`
+- `Security_Controls_Spec.md`
+- `Verification_Strategy.md`
+- `Observability_Event_Catalog.md`
+- `Production_Readiness_Gates.md`

@@ -81,3 +81,13 @@ To preserve CRE8's strengths in a rebuilt documentation system:
 - then derive all non-SSOT explanatory docs from that canon.
 
 This document is intended as the narrative identity anchor for the new from-scratch documentation initiative.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Reviewed document scope and retained scaffold sections needed for full authoring.
+- Kept this file aligned with SSOT-first canon structure.
+### Remaining to finish this document
+- [ ] Expand domain-specific canonical content beyond scaffold level.
+- [ ] Resolve open questions and convert to approved status.
+- [ ] Link normative statements to code/tests and verification evidence.
+

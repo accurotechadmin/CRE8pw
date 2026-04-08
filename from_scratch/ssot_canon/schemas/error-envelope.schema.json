@@ -1,30 +1,30 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.local/schemas/error-envelope.schema.json",
-  "title": "ErrorEnvelope",
+  "$id": "https://cre8.pw/schemas/error-envelope.schema.json",
+  "title": "CRE8ErrorEnvelope",
   "type": "object",
   "required": ["error", "meta"],
+  "additionalProperties": false,
   "properties": {
     "error": {
       "type": "object",
       "required": ["code", "message", "request_id"],
+      "additionalProperties": true,
       "properties": {
-        "code": { "type": "string" },
-        "message": { "type": "string" },
-        "details": { "type": ["array", "object", "null"] },
-        "request_id": { "type": "string" }
-      },
-      "additionalProperties": true
+        "code": {"type": "string"},
+        "message": {"type": "string"},
+        "details": {},
+        "request_id": {"type": "string"}
+      }
     },
     "meta": {
       "type": "object",
-      "required": ["request_id", "timestamp_utc"],
+      "required": ["envelope_version"],
+      "additionalProperties": true,
       "properties": {
-        "request_id": { "type": "string" },
-        "timestamp_utc": { "type": "string", "format": "date-time" }
-      },
-      "additionalProperties": true
+        "envelope_version": {"type": "string"},
+        "timestamp_utc": {"type": "string", "format": "date-time"}
+      }
     }
-  },
-  "additionalProperties": false
+  }
 }

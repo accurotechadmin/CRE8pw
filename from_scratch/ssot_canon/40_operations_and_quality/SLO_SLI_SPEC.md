@@ -1,38 +1,44 @@
 # SLO/SLI Spec
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Define service-level indicators/objectives for reliability and security-sensitive operations.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-API availability, auth success rates, latency, and error budget policy.
+## SLI definitions
+- API availability: successful non-5xx response ratio for `/api/*` and `/console/api/*`.
+- Auth success latency: p95 for `/api/auth/login` and `/api/auth/key-login`.
+- Feed read latency: p95 for `GET /api/feed`.
+- Health reliability: `/health` pass ratio.
+- Error budget burn: 5xx rate and auth failure anomalies.
 
-## Normative statements
-- At least one availability and one latency SLO MUST be defined for core surfaces.
-- Security/error-rate indicators SHOULD track 401/403/429 anomalies.
-- Breach policy MAY trigger release freeze until remediation.
+## Initial SLO targets
+- Availability: 99.9% monthly
+- p95 auth latency: <= 350ms
+- p95 feed read latency: <= 300ms
+- Health pass ratio: 99.95%
 
-## Interfaces / contracts
-| SLI | Draft target | Measurement source |
-|---|---|---|
-| `/health` pass ratio | >=99.9% monthly | health probe logs |
-| Auth p95 latency | <=300ms | app metrics/logs |
-| 5xx rate | <0.5% | gateway logs |
+## Measurement windows
+- 1m realtime dashboards
+- 1h ops review rollups
+- 30d SLO compliance reports
 
-## Failure/rejection semantics
-- Missing SLI measurement pipeline means SLO is aspirational only.
-- Repeated breach without action plan SHOULD block non-critical feature releases.
+## Instrumentation ownership matrix
+| Signal / SLI | Source of truth | Dashboard owner | Alert authority | Escalation backup |
+|---|---|---|---|---|
+| API availability (`/api/*`, `/console/api/*`) | HTTP gateway metrics + envelope status counters | Platform/SRE owner | Platform on-call | Backend maintainer lead |
+| Auth latency (owner/key login) | Route-level latency histogram (`/api/auth/login`, `/api/auth/key-login`) | Backend maintainer lead | Platform on-call | Security owner |
+| Feed latency (`GET /api/feed`) | Route-level latency histogram + DB timing spans | Backend maintainer lead | Backend on-call rotation | Platform/SRE owner |
+| `/health` reliability | Health probe success ratio + dependency status dimensions | Platform/SRE owner | Platform on-call | Backend maintainer lead |
+| Error budget burn | 5xx ratio + anomaly detector on 401/403/429 families | Platform/SRE owner | Platform on-call | Security owner |
 
-## Verification requirements
-- Validate observability instrumentation and dashboard queries.
+## Alerting guidance
+- Page on sustained 5xx spikes and `/health` degradation.
+- Ticket on rising 401/403/429 anomalies beyond baseline.
+- Link alert context with `request_id` traces and event catalog families.
+- Alerts must include direct links to the corresponding runbook sections in `Operations_Runbook_Production.md`.
 
-## Traceability hooks
-- Code refs: `src/Application/Health/HealthService.php`, observability pipeline config (pending)
-- Tests refs: `tests/Contract/HealthServiceContractTest.php`
-- Related SSOT docs: `OBSERVABILITY_EVENT_CATALOG.md`, `PRODUCTION_READINESS_GATES.md`
-
-## Open questions / known gaps
-- Metrics backend and dashboard definitions are not yet committed in this repo.
+## Accountability rules
+- Every SLI has exactly one dashboard owner and one primary alert authority.
+- Ownership changes require updates to this file and `Operations_Reference.md` in the same PR.
+- Monthly operations review must confirm owner/authority assignments remain accurate.

@@ -1,38 +1,31 @@
-# Known Gaps Tracker
+# Known Gaps Tracker (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Maintain a canonical ledger of unresolved canon↔code or canon↔legacy conflicts.
+Short, explicit register of unresolved SSOT-level gaps that could affect upcoming scaffolding and implementation planning.
 
-## Scope
-All unresolved drifts affecting correctness, security, or delivery confidence.
+## Open gaps
 
-## Normative statements
-- Every known drift MUST include owner role, severity, target date, and mitigation.
-- Closed gaps MUST reference the resolving PR/change.
-- Critical security gaps MUST be escalated immediately.
+| Gap ID | Area | Gap statement | Impact if unresolved | Planned resolution target |
+|---|---|---|---|---|
+| NONE | n/a | No unresolved SSOT-level gaps currently tracked. | n/a | Add new row in same PR when a new unresolved decision appears. |
 
-## Interfaces / contracts
-| Gap ID | Summary | Severity | Owner role | Target date | Current status |
-|---|---|---|---|---|---|
-| GAP-001 | Keychain member/resolve routes in docs but not mounted | high | backend+architecture | 2026-04-30 | open |
-| GAP-002 | Root composer missing docs:ssot scripts | medium | platform | 2026-04-22 | open |
-| GAP-003 | Legacy pipeline doc omitted ErrorHandler stage | low | docs | 2026-04-15 | canon-fixed |
+Prototype reconciliation notes are tracked in `Prototype_to_SSOT_Delta_Map.md` and should be converted into gap rows only when unresolved decisions (not implementation deltas) remain.
 
-## Failure/rejection semantics
-- Untracked known gap discovered in review is process failure.
-- Expired target dates without update SHOULD be escalated in release review.
+## Recently resolved in this SSOT cycle
+- GAP-004 (SSOT automation) resolved by introducing `SSOT_Automation_and_Linting.md` and linking enforcement expectations into release and change-impact artifacts.
+- GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Data_Model_Spec.md`, `ERD.md`, route inventory, and contract artifacts.
+- GAP-002 (Route inventory) resolved by adding canonical `Route_Inventory_Reference.md`.
+- GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.
 
-## Verification requirements
-- Weekly gap review and monthly governance audit.
+## Triage rules
+- Keep entries short and actionable.
+- Close a gap only when the linked SSOT artifacts are updated and reviewed.
+- New unresolved architectural assumptions must be logged here in the same PR.
 
-## Traceability hooks
-- Code refs: `src/Http/Routes/RouteRegistrar.php`, `composer.json`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `TRACEABILITY_MATRIX.md`, `../00_governance/CHANGE_CONTROL_POLICY.md`
-
-## Open questions / known gaps
-- Need agreement on severity rubric and SLA per severity level.
+## Review cadence
+Review at least once per release planning cycle and before major scaffolding milestones.

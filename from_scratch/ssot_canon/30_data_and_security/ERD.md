@@ -1,41 +1,29 @@
-# Entity Relationship Diagram
+# ERD (Text + Mermaid)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Capture canonical entity relationships supporting auth, delegation, content, and moderation flows.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Logical ERD for core v1 entities.
-
-## Normative statements
-- ERD MUST remain consistent with data model spec and reference docs.
-- Cardinality and ownership edges MUST support authorization auditing needs.
-
-## Interfaces / contracts
 ```mermaid
 erDiagram
-  PRINCIPALS ||--o{{ CREDENTIALS : has
-  PRINCIPALS ||--o{{ TOKEN_FAMILIES : owns
-  PRINCIPALS ||--o{{ POSTS : authors
-  POSTS ||--o{{ COMMENTS : contains
-  PRINCIPALS ||--o{{ MODERATION_ACTIONS : executes
+  PRINCIPALS ||--o{ PRINCIPAL_EMAILS : has
+  PRINCIPALS ||--o{ CREDENTIALS : has
+  PRINCIPALS ||--o{ TOKEN_FAMILIES : owns
+  PRINCIPALS ||--o{ POSTS : authors
+  PRINCIPALS ||--o{ COMMENTS : writes
+  PRINCIPALS ||--o{ DELEGATION_ENVELOPES : issued_or_parent
+  PRINCIPALS ||--o{ KEYCHAIN_MEMBERSHIPS : keychain_or_member
+  PRINCIPALS ||--o{ KEYCHAIN_EFFECTIVE_SNAPSHOTS : snapshots
+  POSTS ||--o{ POST_REVISIONS : revisions
+  POSTS ||--o{ POST_FLAGS : flags
+  POSTS ||--o{ COMMENTS : has
+  POSTS ||--o{ MODERATION_ACTIONS : moderated
+  COMMENTS ||--o{ MODERATION_ACTIONS : moderated
+  PRINCIPALS ||--o{ INVITE_RECEIPTS : creates
 ```
 
-## Failure/rejection semantics
-- Missing edge for implemented foreign-key dependency is an ERD defect.
-- Contradictory cardinality definitions MUST be corrected before adoption.
-
-## Verification requirements
-- Validate diagram parse/render and cross-check with schema docs.
-- Review with auth/data owners each release.
-
-## Traceability hooks
-- Code refs: `src/Application/Auth/*`, `src/Application/Posts/*`
-- Tests refs: `tests/Contract/*`
-- Related SSOT docs: `DATA_MODEL_SPEC.md`, `DATA_MODEL_REFERENCE.md`
-
-## Open questions / known gaps
-- Delegation/keychain-specific relationships require fuller ERD expansion.
+## Notes
+- Delegation lineage is represented by `DELEGATION_ENVELOPES.parent_key_id` and `initial_author_key_id`.
+- Refresh/replay protection is represented by `TOKEN_FAMILIES`.
+- Keychain composition and effective aggregation history are represented by `KEYCHAIN_MEMBERSHIPS` and `KEYCHAIN_EFFECTIVE_SNAPSHOTS`.

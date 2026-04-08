@@ -127,3 +127,13 @@ Add initial content for:
 Begin now by creating `/from_scratch/ssot_canon` scaffold and governance docs first.
 
 ---
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Reviewed document scope and retained scaffold sections needed for full authoring.
+- Kept this file aligned with SSOT-first canon structure.
+### Remaining to finish this document
+- [ ] Expand domain-specific canonical content beyond scaffold level.
+- [ ] Resolve open questions and convert to approved status.
+- [ ] Link normative statements to code/tests and verification evidence.
+

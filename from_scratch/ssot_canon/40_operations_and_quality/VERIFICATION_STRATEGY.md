@@ -1,36 +1,40 @@
-# Verification Strategy
+# Verification Strategy (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Define mandatory automated and manual checks required before release.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Contract tests, security tests, QA checks, smoke commands, and SSOT sync checks.
+## Automated suites
+- Test framework dependency: `phpunit/phpunit` (see `Dependency_Reference.md`).
+- Contract tests (`tests/Contract/*`)
+- Security tests (`tests/Security/*`)
+- Abuse-case regressions aligned with `Security_Verification_Abuse_Cases.md`
 
-## Normative statements
-- CI MUST execute contract and security suites on SSOT-impacting changes.
-- Release candidates MUST include smoke evidence artifacts.
-- SSOT sync/lint/report checks SHOULD gate merge when available in root project.
+## Required commands
+- `composer test`
+- `composer test:contract`
+- `composer test:security`
+- `composer qa`
+- `composer ops:health-smoke`
+- `composer ops:migrate-smoke`
 
-## Interfaces / contracts
-- Required commands: `composer test`, `composer test:contract`, `composer test:security`, `composer qa`, `composer ops:health-smoke`, `composer ops:migrate-smoke`.
-- Future canon command set: docs:ssot:*.
+Smoke command semantics and evidence requirements are defined in `Operational_Smoke_Check_Contract.md`.
 
-## Failure/rejection semantics
-- Any failing required check MUST block release.
-- Missing evidence SHOULD require explicit waiver entry.
+## Release verification scope
+- Envelope stability
+- Middleware decision/detail-code behavior (`slim/slim`, `respect/validation`, `neomerx/cors-psr7`, `symfony/rate-limiter`)
+- Boot assertions and profile hardening
+- JWT signing/verification and key safety (`firebase/php-jwt`, `ext-sodium`)
+- Health endpoint and migration smoke
 
-## Verification requirements
-- Enforce command matrix in CI and release checklist.
-- Link route acceptance to matrix-driven QA review.
+## Acceptance criteria enforcement
+- Route acceptance intent is defined in `Acceptance_Criteria_Matrix.md` and must be used during QA signoff.
+- Authorization truth-table behavior is validated against `Authorization_Decision_Tables.md`.
+- Middleware detail-code behavior is validated against `Error_Code_Catalog.md`.
 
-## Traceability hooks
-- Code refs: `composer.json`, `code/composer.json`
-- Tests refs: `tests/Contract/*`, `tests/Security/*`
-- Related SSOT docs: `ACCEPTANCE_CRITERIA_MATRIX.md`, `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `RELEASE_CHECKLIST.md`
-
-## Open questions / known gaps
-- Root project does not yet expose docs:ssot commands required by canon automation policy.
+## Stable QA script (manual)
+- owner login + console list/create/moderation
+- key login + feed/post/comments
+- key lifecycle revoke confirmation path
+- invite issuance path

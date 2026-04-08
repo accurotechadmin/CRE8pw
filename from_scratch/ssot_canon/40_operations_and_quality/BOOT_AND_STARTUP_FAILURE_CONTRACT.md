@@ -1,35 +1,51 @@
-# Boot and Startup Failure Contract
+# Boot and Startup Failure Contract (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Specify deterministic startup sequence and failure envelope semantics.
+Define deterministic startup checks, startup evidence behavior, and failure-envelope semantics so CRE8 fails closed and remains operationally diagnosable.
 
-## Scope
-Boot path from dotenv load through app creation and failure response handling.
+## Startup sequence contract
+1. Load environment + resolve key source references.
+2. Build typed runtime config.
+3. Build container and resolve core services.
+4. Execute boot assertions.
+5. Start app and expose routes.
 
-## Normative statements
-- Startup MUST execute env load, config parse, container build, and boot assertions before run.
-- Startup failures MUST return `500` with `boot_failed` code and `X-Request-Id`.
-- Failures SHOULD emit structured log events with error class/message.
+## Mandatory boot assertions
+- Core dependency class presence for runtime baseline.
+- Container resolvability for token signer/verifier, observability emitter, and DB.
+- Key material resolvability and format safety.
+- Profile hardening checks (`APP_ENV`, issuer/cors profile restrictions).
+- Private key path safety checks in stage/prod.
+- Middleware order contract consistency check.
 
-## Interfaces / contracts
-- Entry point: `public/index.php`.
-- Boot checks: dependency presence, key safety, middleware-order validation.
+## Startup success behavior
+- Emit structured startup-ready event.
+- If `BOOT_EVIDENCE_PATH` is configured, write startup evidence JSON including:
+  - status,
+  - timestamp,
+  - environment profile,
+  - middleware order,
+  - startup latency,
+  - key source mode indicators.
 
-## Failure/rejection semantics
-- Partial startup with unresolved boot check failure MUST not serve requests.
-- Missing startup failure correlation ID is contract violation.
+## Startup failure behavior
+- Return deterministic JSON failure envelope:
+  - `error.code = boot_failed`
+  - generated `request_id`
+  - startup-safe message (no stack trace disclosure)
+- Emit structured startup-failed event with failure metadata.
+- Include `X-Request-Id` header in startup failure responses.
 
-## Verification requirements
-- Bootstrap contract tests + manual smoke of failing startup scenario.
+## Non-negotiable fail-closed rule
+If any mandatory boot assertion fails, startup must halt before serving user traffic.
 
-## Traceability hooks
-- Code refs: `public/index.php`, `src/Bootstrap/BootChecks.php`
-- Tests refs: `tests/Contract/PublicIndexBootstrapContractTest.php`, `tests/Contract/BootChecksContractTest.php`
-- Related SSOT docs: `CONFIGURATION_ENVIRONMENT_CONTRACT.md`, `HEALTH_ENDPOINT_CONTRACT.md`
-
-## Open questions / known gaps
-- No scripted chaos boot-failure rehearsal is defined yet.
+## Related SSOT docs
+- `Configuration_Environment_Contract.md`
+- `Operations_Reference.md`
+- `Security_Controls_Spec.md`
+- `Operational_Smoke_Check_Contract.md`
