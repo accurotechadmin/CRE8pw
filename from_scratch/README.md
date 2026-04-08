@@ -16,6 +16,8 @@ This root section is the dedicated workspace for rebuilding the CRE8 documentati
 - `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` — staged plan for rebuilding documentation from scratch.
 - `CORE_IDENTITY_AND_VALUE_PROPOSITION.md` — distilled ethos, concepts, utility, and differentiation of CRE8 based on existing repository documentation.
 - `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` — maturity analysis, current-state strengths/weaknesses, granular component mapping, and pristine technical build plan.
+- `MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` — execution-ready scaffold and stub blueprint for the new SSOT canon set.
+- `prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` — fresh-session prompt for building the new production-grade SSOT canon docset.
 
 ## Working principles
 
