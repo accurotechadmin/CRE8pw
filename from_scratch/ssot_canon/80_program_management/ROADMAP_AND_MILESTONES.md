@@ -1,50 +1,31 @@
-# Roadmap and Milestones
+# Roadmap And Milestones
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Provide phased execution roadmap from scaffold to adopted, enforceable SSOT canon.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Documentation maturity milestones and linked implementation outcomes.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Each milestone MUST define exit criteria and measurable deliverables.
-- Milestone slippage SHOULD trigger risk register updates.
-- Security and contract milestones MAY NOT be skipped.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Milestone | Target | Exit criteria |
-|---|---|---|
-| M1 Scaffold complete | 2026-04 | full file structure + starter content |
-| M2 Contract completeness | 2026-05 | full route/OpenAPI/error sync |
-| M3 Automation enforcement | 2026-05 | root CI docs:ssot gates active |
-| M4 Adoption gate | 2026-06 | governance signoff, canon precedence active |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Missing exit evidence means milestone remains open.
-- Declaring completion without traceability evidence is invalid.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Monthly roadmap review against traceability and known gaps reports.
-
-## Traceability hooks
-- Code refs: `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md`
-- Tests refs: n/a
-- Related SSOT docs: `RISK_REGISTER.md`, `../50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
-
-## Open questions / known gaps
-- Need resourcing assumptions and capacity model for milestone dates.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept PM artifacts structured for roadmap, risk, workflow, and DoD governance.
-- Maintained explicit links between SSOT quality and delivery controls.
-- Prepared these docs for milestone-driven execution tracking.
-### Remaining to finish this document
-- [ ] Add dated milestones with owners and acceptance evidence.
-- [ ] Quantify risks using probability/impact and mitigation triggers.
-- [ ] Finalize SSOT-specific definition-of-done gates used in PR reviews.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

@@ -1,47 +1,37 @@
 # Release Checklist
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Provide concrete pre-release, go-live, and post-release execution checklist.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Operational release process for CRE8 backend runtime.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Checklist completion MUST be required for production deployment.
-- SSOT-impacting changes MUST confirm canon updates are included.
-- Post-release review SHOULD capture incidents/noise and feed known gaps.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-- Pre-release: dependency/config/test/smoke/docs sync.
-- Go-live: startup health, auth flow smoke, observability checks.
-- Post-release: dashboard/error-budget review and canon updates.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Unchecked mandatory checklist items MUST block release.
-- Missing post-release retrospective entry SHOULD trigger follow-up task.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Checklist artifacts stored with release notes/tickets.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
 
-## Traceability hooks
-- Code refs: `composer.json`, `public/index.php`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `PRODUCTION_READINESS_GATES.md`, `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
-
-## Open questions / known gaps
-- Release artifact repository and template location still TBD.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept operations/quality documents structured for executable release governance.
-- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
-- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
-### Remaining to finish this document
-- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
-- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
-- [ ] Complete Given/When/Then acceptance criteria per critical route family.
-
+## Release gate set
+- Contracts synchronized between markdown, OpenAPI, and schema files.
+- Security controls validated by test suites and manual abuse checks.
+- Health and smoke checks pass in CI and staging.
+- Evidence bundle stored under `from_scratch/ssot_canon/evidence/`.

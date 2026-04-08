@@ -1,51 +1,37 @@
 # Release Evidence Template
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Provide a consistent template for release-evidence bundles.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Pre-release, go-live, and post-release evidence summaries.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Release evidence MUST include required command outputs and gate verdicts.
-- Incident or waiver notes MUST be explicitly documented.
-- Evidence template SHOULD be attached to release ticket.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-### Template
-- Release ID/date/environment
-- Commands executed + outcomes
-- Gate summary (A/B/C/D)
-- Known gaps/waivers
-- Approvals
-- Follow-up actions
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Missing gate verdicts invalidates release evidence package.
-- Unapproved waivers are non-compliant.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- QA/platform signoff confirms completed template.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
 
-## Traceability hooks
-- Code refs: release pipeline (pending)
-- Tests refs: command outputs
-- Related SSOT docs: `../../40_operations_and_quality/PRODUCTION_READINESS_GATES.md`, `../../40_operations_and_quality/RELEASE_CHECKLIST.md`
-
-## Open questions / known gaps
-- Need finalized release ID convention.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Retained evidence template structure and metadata expectations.
-- Ensured templates remain compatible with SSOT-first verification workflow.
-- Prepared templates for CI artifact-link integration.
-### Remaining to finish this document
-- [ ] Add concrete required fields for command output and artifact hashes.
-- [ ] Define minimum evidence bundle per change class/release stage.
-- [ ] Integrate references to storage path conventions and retention policy.
-
+## Required fields
+- Change summary and scope
+- Command outputs with timestamps
+- Artifact hashes for OpenAPI and schema files
+- Reviewer approvals

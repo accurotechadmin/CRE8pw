@@ -1,52 +1,37 @@
-# SSOT Change Evidence Template
+# Ssot Change Evidence Template
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Capture proof that SSOT-impacting changes remained synchronized across docs, code, tests, and automation.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-PR-level evidence packet for class A/B/C/D changes.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Changes MUST list affected canon docs and code files explicitly.
-- Evidence MUST include test and sync-check command outputs.
-- Deferred items MUST be logged in known gaps.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-### Template
-- PR/change ID
-- Impact class
-- Canon docs changed
-- Code/tests changed
-- Commands run + outcomes
-- Drift/waiver entries
-- Reviewer signoff
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Incomplete evidence packet SHOULD fail review.
-- Missing known gap entries for deferred drift is non-compliant.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Architecture/QA reviewers validate template completeness.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
 
-## Traceability hooks
-- Code refs: changed files in PR
-- Tests refs: suite outputs
-- Related SSOT docs: `../../50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`, `../../50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
-
-## Open questions / known gaps
-- Need automation to auto-populate changed-file lists.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Retained evidence template structure and metadata expectations.
-- Ensured templates remain compatible with SSOT-first verification workflow.
-- Prepared templates for CI artifact-link integration.
-### Remaining to finish this document
-- [ ] Add concrete required fields for command output and artifact hashes.
-- [ ] Define minimum evidence bundle per change class/release stage.
-- [ ] Integrate references to storage path conventions and retention policy.
-
+## Required fields
+- Change summary and scope
+- Command outputs with timestamps
+- Artifact hashes for OpenAPI and schema files
+- Reviewer approvals

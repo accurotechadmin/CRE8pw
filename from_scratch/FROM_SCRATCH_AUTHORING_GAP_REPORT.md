@@ -1,4 +1,4 @@
-# From Scratch Document Completion Report
+# From Scratch Authoring Gap Report
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
@@ -29,3 +29,6 @@ This document is finalized for the from-scratch SSOT canon and defines stable gu
 - Owner: CRE8 platform maintainers.
 - Reviewer set: architecture, security, and operations maintainers.
 - Update cadence: every feature release and every material dependency change.
+
+## Session result
+This report has been superseded by the completion status report and remains as a historical baseline snapshot for audit history.

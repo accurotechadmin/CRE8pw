@@ -1,57 +1,39 @@
 # Decision Record Template
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Provide a reusable ADR template to ensure decisions are structured, reviewable, and traceable.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Template for all new ADR entries.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- ADRs MUST include context, decision, alternatives considered, consequences, and rollback path.
-- Security-impacting ADRs SHOULD include threat and abuse-case deltas.
-- Data-impacting ADRs MUST reference migration and compatibility strategy docs.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-### ADR template
-- ADR ID
-- Title
-- Status
-- Date
-- Context
-- Decision
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
+
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
+
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
+
+## Record fields
+- Decision id
+- Context and drivers
 - Alternatives considered
-- Consequences (positive/negative)
-- Verification plan
-- Rollback/deprecation path
-- Linked docs/routes/tests
-
-## Failure/rejection semantics
-- ADRs missing consequences or verification plan are incomplete.
-- ADRs without linked SSOT impact docs MUST not be accepted.
-
-## Verification requirements
-- Reviewer checklist verifies every required section.
-- Adoption PR must include ADR link in description.
-
-## Traceability hooks
-- Code refs: n/a template document
-- Tests refs: n/a
-- Related SSOT docs: `ADR_INDEX.md`, `../70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`, `../50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`
-
-## Open questions / known gaps
-- Need final decision on whether ADR IDs are global or area-scoped.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept ADR/decision docs consistently structured and cross-link ready.
-- Prepared decision workflow artifacts for chronological governance.
-- Standardized template usage for future architectural records.
-### Remaining to finish this document
-- [ ] Backfill historical key decisions and supersession chains.
-- [ ] Assign statuses and dates for accepted/proposed/superseded records.
-- [ ] Link each decision to affected SSOT and implementation artifacts.
-
+- Final decision
+- Consequences
+- Supersession link

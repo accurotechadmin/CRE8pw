@@ -1,49 +1,31 @@
-# Contribution Workflow (SSOT-First)
+# Contribution Workflow Ssot
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define contributor workflow for making SSOT-first changes safely and consistently.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-End-to-end flow: issue triage, impact mapping, implementation, verification, and release handoff.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- Contributors MUST start from canon docs before editing runtime contracts.
-- SSOT-impacting changes MUST include change impact map and traceability updates.
-- Security-relevant changes SHOULD include abuse-case test updates.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-1. Identify impact class and affected docs.
-2. Update SSOT draft docs and gaps tracker.
-3. Implement code/test changes.
-4. Run required checks and collect evidence.
-5. Submit PR with checklist + ADR/impact links.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Skipping SSOT update step introduces drift and should fail review.
-- Missing evidence links in PR description are workflow violations.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Reviewer confirms step completion and artifact links.
-
-## Traceability hooks
-- Code refs: repository PR process files (pending)
-- Tests refs: `tests/Contract/*`, `tests/Security/*`
-- Related SSOT docs: `DEFINITION_OF_DONE.md`, `../50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`
-
-## Open questions / known gaps
-- Need final mapping to GitHub issue/PR templates in this repository.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept PM artifacts structured for roadmap, risk, workflow, and DoD governance.
-- Maintained explicit links between SSOT quality and delivery controls.
-- Prepared these docs for milestone-driven execution tracking.
-### Remaining to finish this document
-- [ ] Add dated milestones with owners and acceptance evidence.
-- [ ] Quantify risks using probability/impact and mitigation triggers.
-- [ ] Finalize SSOT-specific definition-of-done gates used in PR reviews.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

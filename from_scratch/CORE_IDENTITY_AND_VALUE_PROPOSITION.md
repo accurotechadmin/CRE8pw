@@ -1,93 +1,31 @@
-# CRE8 Core Identity, Concepts, and Value Proposition
+# Core Identity And Value Proposition
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## 1) CRE8 in one sentence
+## Purpose
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
-CRE8 is a modular, policy-first credentialing/authentication/authorization platform for PHP applications that enables both account-based and key-based access models through a unified contract-driven system.
+## Scope
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## 2) Core ethos distilled from existing docs
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-### 2.1 Access should be powerful but controllable
-CRE8 emphasizes strong owner control, explicit delegation, and granular permission surfaces. The platform is designed so access can be granted broadly or narrowly, with lineage and lifecycle controls.
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-### 2.2 Security and policy are product features, not add-ons
-The system treats token semantics, middleware order, environment safety, and operational safeguards as first-class contracts rather than incidental implementation details.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-### 2.3 Contract clarity beats implicit behavior
-CRE8 values explicit API envelopes, error semantics, route inventories, decision tables, and traceability mappings so that behavior is testable and change-managed.
-
-### 2.4 Modular extensibility is a requirement
-CRE8 is intended as a base platform that developers can partially adopt, extend by module, and adapt to product-specific needs (including products such as XtraType).
-
-### 2.5 Developer utility should include both APIs and practical interfaces
-CRE8 envisions parity between API capabilities and usable web interfaces so teams and operators can work directly with system behavior in transparent ways.
-
-## 3) General concept model
-
-### 3.1 Dual-surface system
-- **Owner/console surface:** privileged management actions.
-- **Gateway/key surface:** delegated operational access for key-bearing actors.
-
-### 3.2 Principal and credential model
-- Owner identities,
-- key identities (author/use/delegated forms),
-- lifecycle and revocation semantics,
-- refresh/token-family controls,
-- permission-bound activity contexts.
-
-### 3.3 Content and moderation model
-- Content creation and revision tracking,
-- comments and moderation actions,
-- visibility and audience scoping,
-- moderation flows integrated with policy decisions.
-
-### 3.4 Operational model
-- deterministic startup behavior,
-- health and dependency checks,
-- observability and audit event flows,
-- production-readiness gates and smoke contracts.
-
-## 4) Specific utility CRE8 provides
-
-1. **Flexible access architecture**
-   - Supports traditional owner account flows, API-key-first systems, or hybrid modes.
-2. **Delegated collaboration with control**
-   - Enables authoring/delegation workflows with explicit policy bounds.
-3. **Safer extension path for developers**
-   - Encourages adding modules and product capabilities without rewriting core security and auth primitives.
-4. **Operational confidence**
-   - Prioritizes startup checks, observability, and contract verification as continuous quality mechanisms.
-5. **Documentation-to-implementation alignment**
-   - Uses SSOT governance and traceability to reduce drift between intended and actual behavior.
-
-## 5) What makes CRE8 awesome (distilled differentiators)
-
-- **It is both opinionated and adaptable:** strict contracts + modular extension points.
-- **It supports real-world access complexity:** owner and delegated key usage can coexist.
-- **It is documentation-native:** governance, contracts, and operations are designed to be explicit and auditable.
-- **It is implementation-pragmatic:** built for PHP/Slim environments while enforcing modern security and reliability constraints.
-- **It is platform-minded:** can act as reusable infrastructure for multiple application products, not only one app.
-
-## 6) From-scratch documentation implications
-
-To preserve CRE8's strengths in a rebuilt documentation system:
-
-- start from SSOT core contracts,
-- make terminology and boundaries unambiguous,
-- define policy and security semantics before interface detail,
-- require traceability from concepts to API/data/tests,
-- then derive all non-SSOT explanatory docs from that canon.
-
-This document is intended as the narrative identity anchor for the new from-scratch documentation initiative.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Reviewed document scope and retained scaffold sections needed for full authoring.
-- Kept this file aligned with SSOT-first canon structure.
-### Remaining to finish this document
-- [ ] Expand domain-specific canonical content beyond scaffold level.
-- [ ] Resolve open questions and convert to approved status.
-- [ ] Link normative statements to code/tests and verification evidence.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

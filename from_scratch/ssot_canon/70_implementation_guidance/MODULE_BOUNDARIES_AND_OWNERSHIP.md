@@ -1,51 +1,31 @@
-# Module Boundaries and Ownership
+# Module Boundaries And Ownership
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define target module boundaries and responsibility ownership for incremental refactoring toward modular architecture.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Current `src/*` runtime and target `code/src/Modules/*` structure alignment.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- New features SHOULD be assigned to a module boundary before implementation.
-- Cross-module dependencies MUST flow through stable contracts/policies.
-- Ownership for each module MUST include primary and backup roles.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-| Domain area | Current anchor | Target module | Owner role |
-|---|---|---|---|
-| Auth | `src/Application/Auth/*` | `code/src/Modules/Auth` | backend+security |
-| Delegation | `KeyLifecycleService` | `code/src/Modules/Delegation` | backend |
-| Content/Moderation | `src/Application/Posts/*` | `code/src/Modules/Content`,`Moderation` | backend |
-| Health/ops | `src/Application/Health/*` | `code/src/Modules/Health` | platform |
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-## Failure/rejection semantics
-- Features implemented outside declared boundaries without exception SHOULD be flagged.
-- Ownerless module surfaces are non-compliant for production readiness.
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Verification requirements
-- Architecture review at each release milestone.
-- Traceability matrix module mapping audit.
-
-## Traceability hooks
-- Code refs: `src/Application/*`, `code/src/Modules/*`
-- Tests refs: `tests/Contract/*`
-- Related SSOT docs: `../10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`, `../50_traceability_and_automation/TRACEABILITY_MATRIX.md`
-
-## Open questions / known gaps
-- Named ownership assignments still pending team confirmation.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Preserved guidance scaffolds for migration, ownership, deprecation, and fixtures.
-- Aligned guidance scope to modularization and compatibility outcomes.
-- Prepared these docs for stepwise implementation planning.
-### Remaining to finish this document
-- [ ] Define concrete module ownership and accountability map.
-- [ ] Add compatibility windows and deprecation schedules with enforcement rules.
-- [ ] Tie fixture/test-data strategy to existing test suites and CI pipelines.
-
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.

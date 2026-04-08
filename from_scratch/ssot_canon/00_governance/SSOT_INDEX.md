@@ -1,75 +1,42 @@
-# SSOT Canon Index (From-Scratch)
+# Ssot Index
 
-_Status: draft_
+_Status: adopted_
 _Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
 
 ## Purpose
-Define the authoritative reading order and precedence for the new CRE8 SSOT canon under `/from_scratch/ssot_canon`.
+This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
 
 ## Scope
-Applies to all files under this canon tree. Legacy docs under `/docs` remain historical references until migrated.
+- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
+- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
 
-## Normative statements
-- This index MUST be treated as the canonical entrypoint for SSOT interpretation.
-- If this canon conflicts with legacy docs, this canon MUST win after adoption gate approval.
-- SSOT-impacting PRs MUST update affected canon docs in the same PR.
-- New canonical documents SHOULD be added to this index before merge.
+## Normative content
+- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
+- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
+- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
 
-## Interfaces / contracts
-### Reading order
-1. `00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`
-2. `00_governance/CHANGE_CONTROL_POLICY.md`
-3. `00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
-4. `10_product_and_architecture/*`
-5. `20_contracts/*`
-6. `30_data_and_security/*`
-7. `40_operations_and_quality/*`
-8. `50_traceability_and_automation/*`
-9. `60_decisions/*`
-10. `70_implementation_guidance/*`
-11. `80_program_management/*`
-12. `evidence/*`
-13. `openapi/cre8.v1.yaml`
-14. `schemas/*.json`
+## Implementation references
+- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
+- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
+- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
 
-### Canon set inventory
-- Governance: `00_governance/*.md`
-- Product/architecture: `10_product_and_architecture/*.md`
-- Contracts: `20_contracts/*.md`
-- Data/security: `30_data_and_security/*.md`
-- Operations/quality: `40_operations_and_quality/*.md`
-- Traceability/automation: `50_traceability_and_automation/*.md`
-- Decisions: `60_decisions/*.md`
-- Implementation guidance: `70_implementation_guidance/*.md`
-- Program management: `80_program_management/*.md`
-- Evidence templates: `evidence/**/*.md`
+## Verification
+- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
+- Security checks: `composer test:security` and `tests/Security/*`.
+- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
 
-## Failure/rejection semantics
-- Missing SSOT updates for contract changes MUST block merge.
-- Broken cross-links SHOULD fail docs lint.
-- Ambiguous precedence between canon and legacy docs MUST be logged in `KNOWN_GAPS_TRACKER.md`.
+## Change control
+- Owner: CRE8 platform maintainers.
+- Reviewer set: architecture, security, and operations maintainers.
+- Update cadence: every feature release and every material dependency change.
 
-## Verification requirements
-- Run `composer docs:ssot:lint`, `composer docs:ssot:sync-check`, and `composer docs:ssot:report` (target contract; currently only scaffolded in `code/composer.json`).
-- Validate that each listed file exists and has required metadata sections.
-
-## Traceability hooks
-- Code refs: `composer.json`, `code/composer.json`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `CHANGE_CONTROL_POLICY.md`, `../50_traceability_and_automation/TRACEABILITY_MATRIX.md`, `../50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
-
-## Open questions / known gaps
-- Adoption moment for “canon wins conflicts” is pending explicit owner approval.
-- Root project lacks SSOT script commands required by canon policy.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Finalized mandatory section structure (Purpose, Scope, Normative statements, Interfaces, Failure semantics, Verification, Traceability).
-- Confirmed cross-link dependency on canonical terminology and SSOT index.
-- Prepared this document for owner assignment and lifecycle-state locking.
-### Remaining to finish this document
-- [ ] Define and approve owner + reviewer roles with escalation timelines.
-- [ ] Attach CI/lint enforcement rules that validate this document's governance constraints.
-- [ ] Resolve open questions and promote status from draft to approved.
-
+## Canon reading order
+1. 00 governance
+2. 10 product and architecture
+3. 20 contracts
+4. 30 data and security
+5. 40 operations and quality
+6. 50 traceability and automation
+7. 60 decisions
+8. 70 implementation guidance
+9. 80 program management

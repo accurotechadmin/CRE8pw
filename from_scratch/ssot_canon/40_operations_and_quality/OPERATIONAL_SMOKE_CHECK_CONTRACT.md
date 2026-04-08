@@ -1,46 +1,48 @@
-# Operational Smoke Check Contract
+# Operational Smoke Check Contract (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Define minimum smoke checks and evidence formats for deploy validation.
+Define canonical operational smoke-check behaviors, expected outcomes, and failure evidence requirements for release readiness.
 
-## Scope
-Post-build and pre-release operational probes.
+## Canonical smoke commands
+- `composer ops:health-smoke`
+- `composer ops:migrate-smoke`
 
-## Normative statements
-- Smoke checks MUST run for health and migration paths before production release.
-- Smoke output MUST include timestamp, environment, and pass/fail verdict.
-- Failures MUST be attached to release decision record.
+## Health smoke contract
+`ops:health-smoke` must:
+- call `/health` against configured base URL,
+- require HTTP `200`,
+- parse JSON envelope,
+- validate `data.status` in `ok|degraded`,
+- fail with deterministic machine-readable failure codes when invalid.
 
-## Interfaces / contracts
-- Commands: `composer ops:health-smoke`, `composer ops:migrate-smoke`.
-- Evidence artifacts: command output logs and summarized verdict table.
+## Migration smoke contract
+`ops:migrate-smoke` must:
+- validate migration artifact presence according to current migration strategy,
+- execute migration sanity validation against ephemeral DB target,
+- verify required core table set for target release profile,
+- fail with deterministic machine-readable failure codes when artifacts/schema are missing.
 
-## Failure/rejection semantics
-- Missing smoke evidence is release blocker.
-- Partial execution without explicit waiver is non-compliant.
+## Evidence requirements
+Each smoke execution must produce:
+- command output,
+- pass/fail status,
+- failure reason code (if failed),
+- timestamp and environment profile.
 
-## Verification requirements
-- CI or release automation captures artifacts and stores with release notes.
+## Reconciliation rule
+If migration strategy or artifact paths change, smoke scripts and this contract must be updated in the same PR.
 
-## Traceability hooks
-- Code refs: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`
-- Tests refs: `tests/Contract/HealthServiceContractTest.php`
-- Related SSOT docs: `HEALTH_ENDPOINT_CONTRACT.md`, `RELEASE_CHECKLIST.md`
+## Release gate linkage
+- Gate A requires health smoke success.
+- Gate D requires migration smoke and rollback-readiness evidence.
 
-## Open questions / known gaps
-- Artifact storage location convention has not yet been standardized.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept operations/quality documents structured for executable release governance.
-- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
-- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
-### Remaining to finish this document
-- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
-- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
-- [ ] Complete Given/When/Then acceptance criteria per critical route family.
-
+## Related SSOT docs
+- `Operations_Runbook_Production.md`
+- `Verification_Strategy.md`
+- `Migration_Seed_Strategy.md`
+- `Production_Readiness_Gates.md`
