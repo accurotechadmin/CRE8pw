@@ -1,21 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.local/schemas/success-envelope.schema.json",
-  "title": "SuccessEnvelope",
+  "$id": "https://cre8.pw/schemas/success-envelope.schema.json",
+  "title": "CRE8SuccessEnvelope",
   "type": "object",
   "required": ["data", "meta"],
+  "additionalProperties": false,
   "properties": {
     "data": {},
     "meta": {
       "type": "object",
-      "required": ["envelope_version", "request_id", "timestamp_utc"],
+      "required": ["envelope_version"],
+      "additionalProperties": true,
       "properties": {
-        "envelope_version": { "type": "string" },
-        "request_id": { "type": "string" },
-        "timestamp_utc": { "type": "string", "format": "date-time" }
-      },
-      "additionalProperties": true
+        "envelope_version": {"type": "string"},
+        "timestamp_utc": {"type": "string", "format": "date-time"}
+      }
     }
-  },
-  "additionalProperties": false
+  }
 }

@@ -1,50 +1,49 @@
 # Observability Event Catalog
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Catalog key structured logs/audit events required for diagnosis and compliance.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Startup events, auth lifecycle events, moderation actions, and error events.
+## Event families
+- `auth.*`
+- `auth.owner_jwt.*`
+- `auth.key_jwt.*`
+- `security.*`
+- `csrf.*`
+- `rate_limit.*`
+- `device_limit.*`
+- `request_id.*`
+- `keys.*`
+- `comments.*`
+- `moderation.*`
+- `invites.*`
+- `validation.*`
+- `routing.*`
 
-## Normative statements
-- Critical lifecycle events MUST be logged with request correlation IDs where applicable.
-- Sensitive material MUST be redacted in logs.
-- Event names SHOULD remain stable for dashboard/alert continuity.
+## Canonical event naming guidance
+- Use `<family>.<action>` and `<family>.<entity>.<action>` patterns.
+- Startup events:
+  - `boot.startup_ready`
+  - `boot.startup_failed`
+- Delivery fallback event:
+  - `audit.delivery_failed`
 
-## Interfaces / contracts
-| Event | Trigger | Required fields |
-|---|---|---|
-| `boot.startup_ready` | successful startup | timestamp, app_env, outcome |
-| `boot.startup_failed` | startup exception | request_id, error_class, outcome |
-| `auth.login_failed` | invalid credentials | request_id, surface, reason |
-| `moderation.action_applied` | moderation mutation | actor, target, reason, request_id |
+## Required event fields
+- `event_name`
+- `timestamp_utc`
+- `request_id`
+- `surface` (`public|gateway|console`)
+- `actor_principal_id` (nullable where unauthenticated)
+- `result` (`success|failure`)
+- `detail_code` (when failure)
 
-## Failure/rejection semantics
-- Missing correlation ID on error/audit events SHOULD fail operational review.
-- Unredacted sensitive payloads are security incidents.
+## Logging requirements
+- Structured logs must be emitted through channelized application/security/audit streams.
+- Sensitive fields (`token`, `secret`, `private_key`) must be redacted before emission.
+- Security-significant route outcomes (401/403/429) require an event emission.
+- If primary audit delivery fails, fallback error-path emission must preserve `event_name`, `request_id` where available, and failure metadata.
 
-## Verification requirements
-- Audit emitter contract tests and log sampling during smoke checks.
-
-## Traceability hooks
-- Code refs: `public/index.php`, `src/Observability/*`
-- Tests refs: `tests/Contract/MonologAuditEmitterContractTest.php`
-- Related SSOT docs: `SLO_SLI_SPEC.md`, `RELEASE_CHECKLIST.md`
-
-## Open questions / known gaps
-- Full event inventory in source code is still evolving; catalog is high-value starter set only.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept operations/quality documents structured for executable release governance.
-- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
-- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
-### Remaining to finish this document
-- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
-- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
-- [ ] Complete Given/When/Then acceptance criteria per critical route family.
-
+## Correlation requirements
+- `request_id` must correlate between HTTP response envelope and emitted events.
+- Incident timelines should be reconstructable using only event stream + request IDs.

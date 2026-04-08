@@ -1,47 +1,32 @@
 # Release Checklist
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Provide concrete pre-release, go-live, and post-release execution checklist.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Operational release process for CRE8 backend runtime.
+## Pre-release
+- [ ] Dependencies resolved and lockfile validated
+- [ ] Config and secrets reviewed for target environment
+- [ ] Environment policy validated against `Configuration_Environment_Contract.md`
+- [ ] `composer test:contract` and `composer test:security` pass
+- [ ] `composer ops:health-smoke` and `composer ops:migrate-smoke` pass
+- [ ] Smoke evidence captured per `Operational_Smoke_Check_Contract.md`
+- [ ] SSOT docs updated and cross-linked in same PR
+- [ ] Acceptance criteria matrix reviewed for affected routes
+- [ ] Migration/seed strategy checks completed (if schema/data changed)
+- [ ] SSOT automation/lint checks pass
 
-## Normative statements
-- Checklist completion MUST be required for production deployment.
-- SSOT-impacting changes MUST confirm canon updates are included.
-- Post-release review SHOULD capture incidents/noise and feed known gaps.
+## Go-live
+- [ ] Startup logs clean
+- [ ] `/health` pass
+- [ ] `/.well-known/jwks.json` present and valid
+- [ ] Auth flows (owner/key) smoke-tested
+- [ ] Core gateway and console routes smoke-tested
+- [ ] UI parity diagnostics verified (`request_id` visible on error states)
+- [ ] Observability events flowing with request IDs
 
-## Interfaces / contracts
-- Pre-release: dependency/config/test/smoke/docs sync.
-- Go-live: startup health, auth flow smoke, observability checks.
-- Post-release: dashboard/error-budget review and canon updates.
-
-## Failure/rejection semantics
-- Unchecked mandatory checklist items MUST block release.
-- Missing post-release retrospective entry SHOULD trigger follow-up task.
-
-## Verification requirements
-- Checklist artifacts stored with release notes/tickets.
-
-## Traceability hooks
-- Code refs: `composer.json`, `public/index.php`
-- Tests refs: `tests/Contract/ComposerScriptsContractTest.php`
-- Related SSOT docs: `PRODUCTION_READINESS_GATES.md`, `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
-
-## Open questions / known gaps
-- Release artifact repository and template location still TBD.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept operations/quality documents structured for executable release governance.
-- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
-- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
-### Remaining to finish this document
-- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
-- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
-- [ ] Complete Given/When/Then acceptance criteria per critical route family.
-
+## Post-release
+- [ ] Error budget and alert dashboards checked
+- [ ] 24h incident/noise review complete
+- [ ] Any production deltas reflected in SSOT updates

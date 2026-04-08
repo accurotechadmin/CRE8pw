@@ -1,47 +1,39 @@
-# Data Model Reference
+# Data Model Reference (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
 
-## Purpose
-Provide implementation-facing field/index reference derived from canonical data model spec.
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
-## Scope
-Column-level reference, index expectations, and nullability notes.
+## Storage strategy
+- Relational storage through `ext-pdo` prepared statements and transactions.
+- Migration-safe schema evolution with backward-compatible change sequencing.
+- Services may perform first-run table assertion checks; production migrations remain source of truth.
 
-## Normative statements
-- Reference MUST not introduce semantics absent from `DATA_MODEL_SPEC.md`.
-- Field names MUST align with actual schema/migrations.
-- Performance-critical indexes SHOULD be listed with rationale.
+## Core entity groups
+- Principals/auth: `principals`, `principal_emails`, `credentials`, `token_families`
+- Delegation/lifecycle: `delegation_envelopes`, `invite_receipts`
+- Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`
+- Keychain model: `keychain_memberships`, `keychain_effective_snapshots`
 
-## Interfaces / contracts
-- Initial reference baseline imported from legacy SSOT tables (principals, credentials, token families, delegation, posts/comments).
-- Mapping to repo migrations is pending formal extraction.
+## Lifecycle invariants
+- Principal types: `owner|key`
+- Key classes (v1 active): `primary_author|secondary_author|use|keychain`
+- Delegation max depth: `3`
+- Keychain membership max size: `50`
+- Keychain member classes allowed: `primary_author|secondary_author|use`
+- Keychain nesting: forbidden
+- Post states: `draft|published|hidden|locked|archived|deleted`
+- Comment states: `active|hidden|locked|deleted`
 
-## Failure/rejection semantics
-- Column-name drift between reference and DB schema MUST be flagged as drift.
-- Missing index for documented query path SHOULD be a performance risk flag.
+## Transaction boundaries (required)
+- Auth issuance + audit event write occur in a single logical transaction scope.
+- Key lifecycle mutations + lineage update occur atomically.
+- Keychain membership mutation + effective-snapshot update + audit event write occur atomically.
+- Moderation decisions + revision metadata must commit together.
 
-## Verification requirements
-- Compare reference with migration scripts and DB introspection output.
-- Include migration smoke evidence.
-
-## Traceability hooks
-- Code refs: `scripts/migrate_smoke.php`
-- Tests refs: `tests/Contract/HealthServiceContractTest.php`
-- Related SSOT docs: `DATA_MODEL_SPEC.md`, `ERD.md`, `../50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
-
-## Open questions / known gaps
-- No canonical migration manifest file is currently present for automated extraction.
-
-## Session progress (2026-04-08)
-### Completed in this session
-- Retained canonical data/security sections and security-centric verification hooks.
-- Maintained explicit references to threat model, controls, and abuse-case testing.
-- Ensured docs are ready for schema/entity and control-matrix expansion.
-### Remaining to finish this document
-- [ ] Complete entity invariants, lifecycle rules, and index/constraint matrices.
-- [ ] Add threat-to-control-to-test traceability tables.
-- [ ] Finalize header/CSP/security control values and validation procedures.
-
+## Related SSOT docs
+- `Data_Model_Spec.md`
+- `ERD.md`
+- `Authorization_and_Delegation_Spec.md`
+- `Route_Inventory_Reference.md`
