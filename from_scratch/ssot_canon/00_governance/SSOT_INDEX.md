@@ -62,3 +62,14 @@ Applies to all files under this canon tree. Legacy docs under `/docs` remain his
 ## Open questions / known gaps
 - Adoption moment for “canon wins conflicts” is pending explicit owner approval.
 - Root project lacks SSOT script commands required by canon policy.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Finalized mandatory section structure (Purpose, Scope, Normative statements, Interfaces, Failure semantics, Verification, Traceability).
+- Confirmed cross-link dependency on canonical terminology and SSOT index.
+- Prepared this document for owner assignment and lifecycle-state locking.
+### Remaining to finish this document
+- [ ] Define and approve owner + reviewer roles with escalation timelines.
+- [ ] Attach CI/lint enforcement rules that validate this document's governance constraints.
+- [ ] Resolve open questions and promote status from draft to approved.
+

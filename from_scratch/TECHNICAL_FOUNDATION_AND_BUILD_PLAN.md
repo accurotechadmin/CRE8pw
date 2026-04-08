@@ -307,3 +307,13 @@ Adopt the hybrid path as the default implementation strategy:
 5. **Developer extension path clear** with documented stable extension points.
 
 This is the technical master plan for building the next CRE8 iteration as a streamlined, high-integrity, and extensible platform.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Reviewed document scope and retained scaffold sections needed for full authoring.
+- Kept this file aligned with SSOT-first canon structure.
+### Remaining to finish this document
+- [ ] Expand domain-specific canonical content beyond scaffold level.
+- [ ] Resolve open questions and convert to approved status.
+- [ ] Link normative statements to code/tests and verification evidence.
+

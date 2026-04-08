@@ -34,3 +34,14 @@ Cross-link linting, contract sync checks, metadata checks, and traceability repo
 
 ## Open questions / known gaps
 - Root CI workflow integration is not yet implemented; this doc sets enforcement intent.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Maintained templates and structure for SSOT drift prevention workflows.
+- Preserved linkage points among requirements, code references, and tests.
+- Prepared these docs for CI automation rule authoring.
+### Remaining to finish this document
+- [ ] Populate the traceability matrix with capability-level mappings.
+- [ ] Define CI lint checks and failure policies for SSOT-code drift.
+- [ ] Track open gaps with owners, target dates, and risk severity.
+

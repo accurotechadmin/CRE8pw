@@ -39,3 +39,14 @@ Terms for identities, credentials, routes, envelopes, errors, policies, and oper
 
 ## Open questions / known gaps
 - Need finalized glossary entries for keychain and delegation lineage depth rules.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Stabilized architecture/product skeleton and canonical terminology linkage.
+- Kept normative constraints explicit to minimize interpretation drift.
+- Aligned scope to current runtime surfaces and middleware-driven architecture.
+### Remaining to finish this document
+- [ ] Add authoritative capability boundaries and out-of-scope definitions.
+- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
+- [ ] Trace every normative statement to code modules and tests.
+

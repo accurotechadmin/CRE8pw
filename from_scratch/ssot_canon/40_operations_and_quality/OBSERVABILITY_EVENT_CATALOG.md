@@ -37,3 +37,14 @@ Startup events, auth lifecycle events, moderation actions, and error events.
 
 ## Open questions / known gaps
 - Full event inventory in source code is still evolving; catalog is high-value starter set only.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Kept operations/quality documents structured for executable release governance.
+- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
+- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
+### Remaining to finish this document
+- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
+- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
+- [ ] Complete Given/When/Then acceptance criteria per critical route family.
+

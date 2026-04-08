@@ -34,3 +34,14 @@ Public, auth, gateway, and console surfaces plus cross-cutting services.
 
 ## Open questions / known gaps
 - Keychain member/resolve surface remains documented in legacy SSOT but not yet implemented in current registrar.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Stabilized architecture/product skeleton and canonical terminology linkage.
+- Kept normative constraints explicit to minimize interpretation drift.
+- Aligned scope to current runtime surfaces and middleware-driven architecture.
+### Remaining to finish this document
+- [ ] Add authoritative capability boundaries and out-of-scope definitions.
+- [ ] Add concrete diagrams/tables for surfaces, trust boundaries, and request flow.
+- [ ] Trace every normative statement to code modules and tests.
+

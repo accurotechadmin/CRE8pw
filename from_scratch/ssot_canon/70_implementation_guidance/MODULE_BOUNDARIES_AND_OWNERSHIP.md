@@ -38,3 +38,14 @@ Current `src/*` runtime and target `code/src/Modules/*` structure alignment.
 
 ## Open questions / known gaps
 - Named ownership assignments still pending team confirmation.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Preserved guidance scaffolds for migration, ownership, deprecation, and fixtures.
+- Aligned guidance scope to modularization and compatibility outcomes.
+- Prepared these docs for stepwise implementation planning.
+### Remaining to finish this document
+- [ ] Define concrete module ownership and accountability map.
+- [ ] Add compatibility windows and deprecation schedules with enforcement rules.
+- [ ] Tie fixture/test-data strategy to existing test suites and CI pipelines.
+

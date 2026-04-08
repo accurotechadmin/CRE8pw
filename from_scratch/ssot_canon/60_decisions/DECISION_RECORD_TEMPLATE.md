@@ -44,3 +44,14 @@ Template for all new ADR entries.
 
 ## Open questions / known gaps
 - Need final decision on whether ADR IDs are global or area-scoped.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Kept ADR/decision docs consistently structured and cross-link ready.
+- Prepared decision workflow artifacts for chronological governance.
+- Standardized template usage for future architectural records.
+### Remaining to finish this document
+- [ ] Backfill historical key decisions and supersession chains.
+- [ ] Assign statuses and dates for accepted/proposed/superseded records.
+- [ ] Link each decision to affected SSOT and implementation artifacts.
+

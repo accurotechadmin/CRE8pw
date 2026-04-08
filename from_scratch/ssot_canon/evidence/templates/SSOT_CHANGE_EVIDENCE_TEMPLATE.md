@@ -39,3 +39,14 @@ PR-level evidence packet for class A/B/C/D changes.
 
 ## Open questions / known gaps
 - Need automation to auto-populate changed-file lists.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Retained evidence template structure and metadata expectations.
+- Ensured templates remain compatible with SSOT-first verification workflow.
+- Prepared templates for CI artifact-link integration.
+### Remaining to finish this document
+- [ ] Add concrete required fields for command output and artifact hashes.
+- [ ] Define minimum evidence bundle per change class/release stage.
+- [ ] Integrate references to storage path conventions and retention policy.
+

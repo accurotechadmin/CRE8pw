@@ -33,3 +33,14 @@ Global security headers and path-aware CSP differences.
 
 ## Open questions / known gaps
 - Detailed production CSP directive baseline requires final frontend asset inventory.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Retained canonical data/security sections and security-centric verification hooks.
+- Maintained explicit references to threat model, controls, and abuse-case testing.
+- Ensured docs are ready for schema/entity and control-matrix expansion.
+### Remaining to finish this document
+- [ ] Complete entity invariants, lifecycle rules, and index/constraint matrices.
+- [ ] Add threat-to-control-to-test traceability tables.
+- [ ] Finalize header/CSP/security control values and validation procedures.
+

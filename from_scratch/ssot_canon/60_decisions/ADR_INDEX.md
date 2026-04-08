@@ -36,3 +36,14 @@ All accepted/proposed/superseded Architecture Decision Records (ADRs) for CRE8 c
 
 ## Open questions / known gaps
 - ADR markdown file storage convention (single file vs per-ADR files) is still open.
+
+## Session progress (2026-04-08)
+### Completed in this session
+- Kept ADR/decision docs consistently structured and cross-link ready.
+- Prepared decision workflow artifacts for chronological governance.
+- Standardized template usage for future architectural records.
+### Remaining to finish this document
+- [ ] Backfill historical key decisions and supersession chains.
+- [ ] Assign statuses and dates for accepted/proposed/superseded records.
+- [ ] Link each decision to affected SSOT and implementation artifacts.
+
