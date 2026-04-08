@@ -1,47 +1,59 @@
-# UI Runtime Contract
+# UI Runtime Contract (SSOT Appendix)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Define no-build UI runtime behavior and parity expectations with API contracts.
+Capture implementation-grade SPA runtime conventions that are required to deliver consistent UI/API parity behavior in the no-build UI model.
 
-## Scope
-`/ui` route fallback, static asset serving, and error-state diagnostics in browser workflows.
+## Session and device persistence contract
+- Session storage key: `cre8_ui_session_v1`
+- Device ID storage key: `cre8_ui_device_id_v1`
+- Session model includes explicit `activeSurface` and per-surface tokens/context.
+- Gateway calls requiring device policy attach persisted device ID in `X-Device-Id`.
 
-## Normative statements
-- `/ui[/{route:.*}]` MUST return UI shell for client-side routes.
-- Missing UI static assets MUST return 404 without API-only side effects.
-- UI diagnostics SHOULD expose request ID for API failures.
+## API client behavior contract
+- Envelope-aware JSON parsing for all routes.
+- Normalized error object containing status/code/message/details/request_id.
+- Resolve `request_id` from response header and/or envelope.
+- Expose envelope version for diagnostics where available.
 
-## Interfaces / contracts
-- Runtime implementation: `RouteRegistrar::renderUiRoute`.
-- Security header behavior ties to UI path-aware policy in middleware.
+## Route-state runtime model
+Canonical required states:
+- `idle`
+- `loading`
+- `submitting`
+- `success`
+- `validation_error`
+- `forbidden`
+- `not_found`
+- `server_error`
 
-## Failure/rejection semantics
-- UI path traversal or unsafe asset resolution MUST be rejected (404).
-- Missing index shell MUST fail with explicit 404 response.
+Optional substates (implementation convenience):
+- `validating`
+- `empty`
 
-## Verification requirements
-- Contract tests for UI route and static asset behavior.
-- Manual browser parity smoke in release process.
+## Diagnostics UX minimums
+- Request inspector or equivalent diagnostics panel must expose:
+  - status code,
+  - request_id,
+  - parsed envelope payload.
+- Error-state screens must preserve request_id visibility for support triage.
 
-## Traceability hooks
-- Code refs: `src/Http/Routes/RouteRegistrar.php`, `src/Http/Middleware/SecurityHeadersMiddleware.php`
-- Tests refs: `tests/Contract/RouteRegistrarContractsTest.php`
-- Related SSOT docs: `API_CONTRACT_GUIDE.md`, `../30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`
+## Security/UX guardrails
+- Owner routes must bind to owner session context.
+- Gateway routes must bind to key session context + device header policy.
+- UI pre-checks may reduce avoidable forbidden submissions but backend remains source-of-truth.
 
-## Open questions / known gaps
-- Front-end interaction acceptance matrix entries are still minimal.
+## Accessibility/runtime baseline
+- Keyboard-navigable route transitions.
+- Focus management after major state transitions.
+- Explicit route-state visibility for async/error flows.
 
-## Session progress (2026-04-08)
-### Completed in this session
-- Preserved contract-first structure for API, route inventory, error catalog, and authorization behavior.
-- Confirmed machine-contract references (OpenAPI/schemas) are linked in contract docs.
-- Standardized verification and traceability sections for contract-test alignment.
-### Remaining to finish this document
-- [ ] Populate full endpoint inventory and request/response examples.
-- [ ] Complete stable error code mappings and authorization decision matrices.
-- [ ] Synchronize final values with OpenAPI and contract tests.
-
+## Related SSOT docs
+- `UI_Parity_and_Contract.md`
+- `UI_Parity_Contract.md`
+- `UI_Contract_Artifacts_Reference.md`
+- `Error_Code_Catalog.md`

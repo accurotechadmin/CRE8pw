@@ -1,47 +1,56 @@
-# Health Endpoint Contract
+# Health Endpoint Contract (SSOT)
 
-_Status: draft_
-_Last updated (UTC): 2026-04-08_
-Canonical terminology: ../10_product_and_architecture/CANONICAL_TERMINOLOGY.md
+_Status: adopted_
+_Last updated (UTC): 2026-04-06_
+
+Canonical terminology: `Canonical_Terminology_Dictionary.md`
 
 ## Purpose
-Define `/health` response semantics and subsystem expectations.
+Define canonical `/health` semantics for subsystem-level readiness and degraded-state triage.
 
-## Scope
-Runtime liveness/readiness style checks for DB, limiter, key material, and HTTP dependency.
+## Route and surface
+- Route: `GET /health`
+- Surface: public
+- Auth: none
 
-## Normative statements
-- `/health` MUST return structured status and subsystem details.
-- Health output SHOULD include timestamps and latency fields.
-- Subsystem failures MUST not suppress correlation metadata.
+## Response contract
+Success envelope shape:
+- `data.status` (`ok|degraded`)
+- `data.checked_at_utc` (ISO-8601)
+- `data.latency_ms` (integer)
+- `data.failures` (array of failure reason strings)
+- `data.services` object containing:
+  - `db` status
+  - `rate_limiter` status
+  - `key_material` status
+  - `http_dependency` status
 
-## Interfaces / contracts
-- Route: `GET /health`.
-- Service anchor: `HealthService::check()` with subsystems (`db`, `rate_limiter`, `key_material`, `http_dependency`).
+Response `meta` must include canonical envelope metadata.
 
-## Failure/rejection semantics
-- Missing subsystem status entry SHOULD be treated as degraded health reporting.
-- Hard failure of required dependency MUST produce non-pass status.
+## Service-state semantics
+- `ok`: subsystem healthy for current probe.
+- `degraded`: subsystem reachable but policy threshold failed.
+- `down`: subsystem unavailable or probe exception.
 
-## Verification requirements
-- Contract test for shape and subsystem keys.
-- `composer ops:health-smoke` evidence in release checklist.
+## HTTP status guidance
+- `200`: endpoint reachable and contract response emitted (including degraded cases).
+- `500`: unrecoverable handler/runtime error.
 
-## Traceability hooks
-- Code refs: `src/Application/Health/HealthService.php`, `src/Http/Routes/RouteRegistrar.php`
-- Tests refs: `tests/Contract/HealthServiceContractTest.php`
-- Related SSOT docs: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `PRODUCTION_READINESS_GATES.md`
+## Failure reason examples
+- `db_probe_exception`
+- `rate_limiter_rejected`
+- `key_material_unavailable`
+- `http_dependency_exception`
 
-## Open questions / known gaps
-- Exact degraded/fail status semantics need tighter codification in OpenAPI response examples.
+## Smoke-check expectations
+`ops:health-smoke` must validate:
+- route reachable,
+- JSON envelope shape,
+- `data.status` is valid (`ok|degraded`),
+- subsystem object presence.
 
-## Session progress (2026-04-08)
-### Completed in this session
-- Kept operations/quality documents structured for executable release governance.
-- Preserved sections for verification evidence, startup behavior, health semantics, and release controls.
-- Prepared docs for measurable SLO/SLI and acceptance-criteria expansion.
-### Remaining to finish this document
-- [ ] Set numeric thresholds for SLO/SLI and go/no-go gates.
-- [ ] Add concrete smoke commands, expected outputs, and evidence artifact paths.
-- [ ] Complete Given/When/Then acceptance criteria per critical route family.
-
+## Related SSOT docs
+- `API_Contract_Guide.md`
+- `Endpoint_Examples_All_Routes.md`
+- `Operations_Reference.md`
+- `Operational_Smoke_Check_Contract.md`
