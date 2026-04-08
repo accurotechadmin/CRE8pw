@@ -1,4 +1,4 @@
-# Change Impact Map Templates
+# Change Impact Map Templates (SSOT)
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
