@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: CRE8 API v1 (SSOT Canon Draft)
+  version: 0.1.0-draft
+  description: >-
+    Draft canonical API contract for CRE8. This file is intentionally partial in scaffold phase and
+    MUST be expanded alongside route inventory adoption.
+servers:
+  - url: https://api.cre8.local
+paths:
+  /:
+    get:
+      summary: Service status
+      responses:
+        '200':
+          description: Service reachable
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/success-envelope.schema.json'
+  /health:
+    get:
+      summary: Health status
+      responses:
+        '200':
+          description: Health payload
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/success-envelope.schema.json'
+  /api/auth/login:
+    post:
+      summary: Owner login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 8 }
+      responses:
+        '200':
+          description: Tokens issued
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/success-envelope.schema.json'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '../schemas/error-envelope.schema.json'
