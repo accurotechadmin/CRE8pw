@@ -1,7 +1,7 @@
 # Roadmap and Milestones
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
 
 ## Milestones
 - **M1 Foundation**: governance, index, contracts baseline complete.

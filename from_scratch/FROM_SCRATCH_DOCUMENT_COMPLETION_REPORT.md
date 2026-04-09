@@ -1,7 +1,7 @@
 # From-Scratch Document Completion Report
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
 
 ## Completion criteria
 A document is “complete” only if it is:

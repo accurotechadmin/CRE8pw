@@ -1,7 +1,7 @@
 # Known Gaps Tracker (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-09_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 

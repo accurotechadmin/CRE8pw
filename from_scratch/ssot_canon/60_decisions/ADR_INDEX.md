@@ -1,7 +1,7 @@
 # ADR Index
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
 
 ## Purpose
 Provide discoverable index of architectural and policy decisions that materially affect implementation behavior.

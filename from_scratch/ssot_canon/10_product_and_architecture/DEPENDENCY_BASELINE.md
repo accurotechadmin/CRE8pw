@@ -1,7 +1,7 @@
 # Dependency Baseline
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
 
 ## Baseline dependency families
 - HTTP/runtime: PSR-7 compatible stack.
