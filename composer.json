@@ -49,6 +49,9 @@
       "@composer test"
     ],
     "ops:health-smoke": "@php scripts/health_smoke.php",
-    "ops:migrate-smoke": "@php scripts/migrate_smoke.php"
+    "ops:migrate-smoke": "@php scripts/migrate_smoke.php",
+    "docs:ssot:lint": "@php scripts/docs_ssot_lint.php",
+    "docs:ssot:sync-check": "@php scripts/docs_ssot_sync_check.php",
+    "docs:ssot:report": "@php scripts/docs_ssot_report.php"
   }
 }

@@ -1,7 +1,7 @@
 # SSOT Automation and Linting (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-09_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -30,7 +30,8 @@ Define automation requirements that enforce SSOT synchronization rules and reduc
 Automation run must emit:
 - machine-readable report (JSON),
 - human-readable summary,
-- failing artifact list with remediation hints.
+- failing artifact list with remediation hints,
+- canonical artifact at `evidence/automation/ssot_report.json` (or equivalent CI artifact path).
 
 ## Ownership
 - Document/tooling owners: architecture + QA leads.
@@ -39,4 +40,4 @@ Automation run must emit:
 ## Related SSOT docs
 - `SSOT_INDEX.md`
 - `CHANGE_IMPACT_MAP_TEMPLATES.md`
-- `Known_Gaps_Tracker.md`
+- `KNOWN_GAPS_TRACKER.md`

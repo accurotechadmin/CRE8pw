@@ -1,7 +1,7 @@
 # Health Endpoint Contract (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-09_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -50,7 +50,7 @@ Response `meta` must include canonical envelope metadata.
 - subsystem object presence.
 
 ## Related SSOT docs
-- `API_Contract_Guide.md`
+- `API_CONTRACT_GUIDE.md`
 - `Endpoint_Examples_All_Routes.md`
 - `RELEASE_CHECKLIST.md`
 - `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`

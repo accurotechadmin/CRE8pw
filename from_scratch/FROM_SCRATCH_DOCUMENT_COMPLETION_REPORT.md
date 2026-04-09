@@ -1,7 +1,7 @@
 # From-Scratch Document Completion Report
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
 
 ## Completion criteria
 A document is “complete” only if it is:
@@ -12,7 +12,7 @@ A document is “complete” only if it is:
 
 ## Current state summary
 - Structural coverage: complete across governance, architecture, contracts, security, operations, traceability, decisions, implementation guidance, and program management.
-- Substantive maturity: mixed; strongest in contracts/data/security/verification, weaker where previous scaffold text persisted.
+- Substantive maturity: high and implementation-oriented across contracts/data/security/verification; remaining work is ongoing calibration and release-cycle evidence quality.
 
 ## Mandatory follow-up cadence
 - Weekly during active rebuild phase.
