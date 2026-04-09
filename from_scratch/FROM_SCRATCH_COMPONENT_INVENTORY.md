@@ -1,1472 +1,3632 @@
 # From Scratch Document Component Inventory
 
-Scope: all documents under `/from_scratch` and its subfolders.
+Scope: all files under `/from_scratch` and subfolders (including generated inventory/index documents).
+Method: Markdown headings and list items, plus structured keys for JSON/YAML documents.
 
 ## File: `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
 - **Location:** `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
 - **Components identified:** 5
 
-- **C0001** `Core Identity And Value Proposition`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0002** `Product identity`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0003** `Primary value propositions`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0004** `Intended user/actor model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0005** `Product promises encoded as engineering constraints`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0001** `Core Identity And Value Proposition` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0002** `Product identity` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0003** `Primary value propositions` (source line: 9)
+  - **C0003.S0001** `List item: **Deterministic governance:** owner console controls moderation, keys, and lifecycle transitions.` (source line: 10)
+  - **C0003.S0002** `List item: **Safe delegation:** strict subset/depth/expiry rules prevent privilege escalation.` (source line: 11)
+  - **C0003.S0003** `List item: **Operational confidence:** measurable SLOs, release gates, and abuse-case verification.` (source line: 12)
+  - **C0003.S0004** `List item: **Contract stability:** OpenAPI/envelope standards reduce client drift and integration risk.` (source line: 13)
+- **C0004** `Intended user/actor model` (source line: 15)
+  - **C0004.S0005** `List item: Owners: governance administrators.` (source line: 16)
+  - **C0004.S0006** `List item: Keys (primary/secondary/use): delegated execution actors.` (source line: 17)
+  - **C0004.S0007** `List item: Keychains: aggregation principals for controlled group authority.` (source line: 18)
+- **C0005** `Product promises encoded as engineering constraints` (source line: 20)
+  - **C0005.S0008** `List item: Never execute out-of-envelope authorization.` (source line: 21)
+  - **C0005.S0009** `List item: Never ship unverifiable contract changes.` (source line: 22)
+  - **C0005.S0010** `List item: Never hide failing-path context (request_id + stable error codes).` (source line: 23)
 
 ## File: `FROM_SCRATCH_AUTHORING_GAP_REPORT.md`
 - **Location:** `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`
 - **Components identified:** 5
 
-- **C0006** `From-Scratch Authoring Gap Report`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0008** `Gap taxonomy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0009** `Current priority gaps`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0010** `Resolution policy`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0006** `From-Scratch Authoring Gap Report` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0008** `Gap taxonomy` (source line: 9)
+  - **C0008.S0011** `List item: **G1 Genericity:** text is too abstract to implement directly.` (source line: 10)
+  - **C0008.S0012** `List item: **G2 Verifiability:** lacks test/evidence hooks.` (source line: 11)
+  - **C0008.S0013** `List item: **G3 Traceability:** behavior cannot be mapped to code/tests.` (source line: 12)
+  - **C0008.S0014** `List item: **G4 Reference drift:** links/names inconsistent across docs.` (source line: 13)
+- **C0009** `Current priority gaps` (source line: 15)
+  - **C0009.S0015** `List item: Template-heavy governance/program docs needing concrete procedures.` (source line: 16)
+  - **C0009.S0016** `List item: Cross-reference normalization across contract and operations docs.` (source line: 17)
+  - **C0009.S0017** `List item: Decisions index expansion to include policy rationale and consequences.` (source line: 18)
+- **C0010** `Resolution policy` (source line: 20)
+  - *(No explicit sub-components detected.)*
+
+## File: `FROM_SCRATCH_COMPONENT_INDEX.md`
+- **Location:** `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md`
+- **Components identified:** 3
+
+- **C0011** `From Scratch Centralized Component Index` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0012** `Components` (source line: 5)
+  - **C0012.S0018** `List item: **C0001** `Core Identity And Value Proposition`` (source line: 7)
+  - **C0012.S0019** `List item: Documents: `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`` (source line: 8)
+  - **C0012.S0020** `List item: **C0002** `Product identity`` (source line: 9)
+  - **C0012.S0021** `List item: **C0003** `Primary value propositions`` (source line: 11)
+  - **C0012.S0022** `List item: **C0004** `Intended user/actor model`` (source line: 13)
+  - **C0012.S0023** `List item: **C0005** `Product promises encoded as engineering constraints`` (source line: 15)
+  - **C0012.S0024** `List item: **C0006** `From-Scratch Authoring Gap Report`` (source line: 17)
+  - **C0012.S0025** `List item: Documents: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`` (source line: 18)
+  - **C0012.S0026** `List item: **C0007** `Purpose`` (source line: 19)
+  - **C0012.S0027** `List item: Documents: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`, `from_scratch/README.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`, `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`, `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`, `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`, `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`, `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`, `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`, `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`, `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`, `from_scratch/ssot_canon/evidence/README.md`` (source line: 20)
+  - **C0012.S0028** `List item: **C0008** `Gap taxonomy`` (source line: 21)
+  - **C0012.S0029** `List item: **C0009** `Current priority gaps`` (source line: 23)
+  - **C0012.S0030** `List item: **C0010** `Resolution policy`` (source line: 25)
+  - **C0012.S0031** `List item: **C0011** `From-Scratch Document Completion Report`` (source line: 27)
+  - **C0012.S0032** `List item: Documents: `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`` (source line: 28)
+  - **C0012.S0033** `List item: **C0012** `Completion criteria`` (source line: 29)
+  - **C0012.S0034** `List item: **C0013** `Current state summary`` (source line: 31)
+  - **C0012.S0035** `List item: **C0014** `Mandatory follow-up cadence`` (source line: 33)
+  - **C0012.S0036** `List item: **C0015** `Required artifacts per completion review`` (source line: 35)
+  - **C0012.S0037** `List item: **C0016** `Master Plan: SSOT Canon Scaffold and Stub Replacement`` (source line: 37)
+  - **C0012.S0038** `List item: Documents: `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`` (source line: 38)
+  - **C0012.S0039** `List item: **C0017** `Objective`` (source line: 39)
+  - **C0012.S0040** `List item: **C0018** `Replacement priorities`` (source line: 41)
+  - **C0012.S0041** `List item: **C0019** `Anti-regression controls`` (source line: 43)
+  - **C0012.S0042** `List item: **C0020** `Completion target`` (source line: 45)
+  - **C0012.S0043** `List item: **C0021** `Plan: SSOT-First Document Rebuild`` (source line: 47)
+  - **C0012.S0044** `List item: Documents: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`` (source line: 48)
+  - **C0012.S0045** `List item: **C0022** `Goal`` (source line: 49)
+  - **C0012.S0046** `List item: **C0023** `Phases`` (source line: 51)
+  - **C0012.S0047** `List item: **C0024** `Work breakdown`` (source line: 53)
+  - **C0012.S0048** `List item: **C0025** `Exit criteria`` (source line: 55)
+  - **C0012.S0049** `List item: Documents: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`, `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`` (source line: 56)
+  - **C0012.S0050** `List item: **C0026** `CRE8 From-Scratch SSOT Canon`` (source line: 57)
+  - **C0012.S0051** `List item: Documents: `from_scratch/README.md`` (source line: 58)
+  - **C0012.S0052** `List item: **C0027** `What this canon governs`` (source line: 59)
+  - **C0012.S0053** `List item: **C0028** `Required reading path`` (source line: 61)
+  - **C0012.S0054** `List item: **C0029** `Non-negotiable rules`` (source line: 63)
+  - **C0012.S0055** `List item: **C0030** `Definition of quality for this canon`` (source line: 65)
+  - **C0012.S0056** `List item: **C0031** `From-Scratch Authoring Completion Status (Session Report)`` (source line: 67)
+  - **C0012.S0057** `List item: Documents: `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md`` (source line: 68)
+  - **C0012.S0058** `List item: **C0032** `What was done in this session`` (source line: 69)
+  - **C0012.S0059** `List item: **C0033** `Finished (62 files)`` (source line: 71)
+  - **C0012.S0060** `List item: **C0034** `Unfinished (0 files)`` (source line: 73)
+  - **C0012.S0061** `List item: **C0035** `Definition used for this report`` (source line: 75)
+  - **C0012.S0062** `List item: **C0036** `Technical Foundation And Build Plan`` (source line: 77)
+  - **C0012.S0063** `List item: Documents: `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`` (source line: 78)
+  - **C0012.S0064** `List item: **C0037** `Runtime and stack assumptions`` (source line: 79)
+  - **C0012.S0065** `List item: **C0038** `Build principles`` (source line: 81)
+  - **C0012.S0066** `List item: **C0039** `Implementation milestones`` (source line: 83)
+  - **C0012.S0067** `List item: **C0040** `Engineering quality bars`` (source line: 85)
+  - **C0012.S0068** `List item: **C0041** `LLM Prompt: Build SSOT Canon`` (source line: 87)
+  - **C0012.S0069** `List item: Documents: `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md`` (source line: 88)
+  - **C0012.S0070** `List item: **C0042** `Prompt purpose`` (source line: 89)
+  - **C0012.S0071** `List item: **C0043** `Required agent behavior`` (source line: 91)
+  - **C0012.S0072** `List item: **C0044** `Prompt checklist`` (source line: 93)
+  - **C0012.S0073** `List item: **C0045** `Change Control Policy`` (source line: 95)
+  - **C0012.S0074** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`` (source line: 96)
+  - **C0012.S0075** `List item: **C0046** `Scope`` (source line: 97)
+  - **C0012.S0076** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 98)
+  - **C0012.S0077** `List item: **C0047** `Change classes`` (source line: 99)
+  - **C0012.S0078** `List item: **C0048** `Approval requirements`` (source line: 101)
+  - **C0012.S0079** `List item: **C0049** `Required PR payload`` (source line: 103)
+  - **C0012.S0080** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`, `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`` (source line: 104)
+  - **C0012.S0081** `List item: **C0050** `Document Status and Ownership`` (source line: 105)
+  - **C0012.S0082** `List item: Documents: `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`` (source line: 106)
+  - **C0012.S0083** `List item: **C0051** `Status model`` (source line: 107)
+  - **C0012.S0084** `List item: **C0052** `Ownership matrix`` (source line: 109)
+  - **C0012.S0085** `List item: **C0053** `Ownership obligations`` (source line: 111)
+  - **C0012.S0086** `List item: **C0054** `Review SLA`` (source line: 113)
+  - **C0012.S0087** `List item: **C0055** `Document Template and Style Guide`` (source line: 115)
+  - **C0012.S0088** `List item: Documents: `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`` (source line: 116)
+  - **C0012.S0089** `List item: **C0056** `Required sections for adopted docs`` (source line: 117)
+  - **C0012.S0090** `List item: **C0057** `Writing standards`` (source line: 119)
+  - **C0012.S0091** `List item: **C0058** `Traceability conventions`` (source line: 121)
+  - **C0012.S0092** `List item: **C0059** `SSOT Index`` (source line: 123)
+  - **C0012.S0093** `List item: Documents: `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md`` (source line: 124)
+  - **C0012.S0094** `List item: **C0060** `Canon navigation`` (source line: 125)
+  - **C0012.S0095** `List item: **C0061** `Machine artifacts`` (source line: 127)
+  - **C0012.S0096** `List item: **C0062** `Usage rule`` (source line: 129)
+  - **C0012.S0097** `List item: **C0063** `Architecture and Surfaces`` (source line: 131)
+  - **C0012.S0098** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`` (source line: 132)
+  - **C0012.S0099** `List item: **C0064** `Architectural model`` (source line: 133)
+  - **C0012.S0100** `List item: **C0065** `Layering`` (source line: 135)
+  - **C0012.S0101** `List item: **C0066** `Boundary rules`` (source line: 137)
+  - **C0012.S0102** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`, `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`` (source line: 138)
+  - **C0012.S0103** `List item: **C0067** `Canonical Terminology`` (source line: 139)
+  - **C0012.S0104** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`` (source line: 140)
+  - **C0012.S0105** `List item: **C0068** `Principal terms`` (source line: 141)
+  - **C0012.S0106** `List item: **C0069** `Security terms`` (source line: 143)
+  - **C0012.S0107** `List item: **C0070** `Contract terms`` (source line: 145)
+  - **C0012.S0108** `List item: **C0071** `CRE8 Product and System Spec`` (source line: 147)
+  - **C0012.S0109** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`` (source line: 148)
+  - **C0012.S0110** `List item: **C0072** `Product scope`` (source line: 149)
+  - **C0012.S0111** `List item: **C0073** `System capabilities (v1)`` (source line: 151)
+  - **C0012.S0112** `List item: **C0074** `Core system constraints`` (source line: 153)
+  - **C0012.S0113** `List item: **C0075** `Out-of-scope (v1)`` (source line: 155)
+  - **C0012.S0114** `List item: **C0076** `Dependency Baseline`` (source line: 157)
+  - **C0012.S0115** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md`` (source line: 158)
+  - **C0012.S0116** `List item: **C0077** `Baseline dependency families`` (source line: 159)
+  - **C0012.S0117** `List item: **C0078** `Dependency governance rules`` (source line: 161)
+  - **C0012.S0118** `List item: **C0079** `Runtime expectations`` (source line: 163)
+  - **C0012.S0119** `List item: **C0080** `Canonical package baseline (root composer.json)`` (source line: 165)
+  - **C0012.S0120** `List item: **C0081** `Script contract baseline`` (source line: 167)
+  - **C0012.S0121** `List item: **C0082** `Request Pipeline and Middleware Contract`` (source line: 169)
+  - **C0012.S0122** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 170)
+  - **C0012.S0123** `List item: **C0083** `Authoritative middleware order`` (source line: 171)
+  - **C0012.S0124** `List item: **C0084** `Contract rules`` (source line: 173)
+  - **C0012.S0125** `List item: **C0085** `Failure mapping baseline`` (source line: 175)
+  - **C0012.S0126** `List item: **C0086** `API Contract Guide (SSOT)`` (source line: 177)
+  - **C0012.S0127** `List item: Documents: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`` (source line: 178)
+  - **C0012.S0128** `List item: **C0087** `Canonical machine contract`` (source line: 179)
+  - **C0012.S0129** `List item: **C0088** `Envelope contract`` (source line: 181)
+  - **C0012.S0130** `List item: **C0089** `Route groups`` (source line: 183)
+  - **C0012.S0131** `List item: **C0090** `Endpoint examples`` (source line: 185)
+  - **C0012.S0132** `List item: **C0091** `Acceptance criteria linkage`` (source line: 187)
+  - **C0012.S0133** `List item: **C0092** `Synchronization rule`` (source line: 189)
+  - **C0012.S0134** `List item: Documents: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`, `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`` (source line: 190)
+  - **C0012.S0135** `List item: **C0093** `Backward compatibility`` (source line: 191)
+  - **C0012.S0136** `List item: **C0094** `Authorization and Delegation Spec`` (source line: 193)
+  - **C0012.S0137** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 194)
+  - **C0012.S0138** `List item: **C0095** `Principals`` (source line: 195)
+  - **C0012.S0139** `List item: **C0096** `Key classes`` (source line: 197)
+  - **C0012.S0140** `List item: **C0097** `Permission model (v1 allow-list)`` (source line: 199)
+  - **C0012.S0141** `List item: **C0098** `Delegation invariants`` (source line: 201)
+  - **C0012.S0142** `List item: **C0099** `Keychain invariants (v1 production)`` (source line: 203)
+  - **C0012.S0143** `List item: **C0100** `Surface enforcement model`` (source line: 205)
+  - **C0012.S0144** `List item: **C0101** `Lifecycle authority`` (source line: 207)
+  - **C0012.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 209)
+  - **C0012.S0146** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`, `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`, `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`, `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`` (source line: 210)
+  - **C0012.S0147** `List item: **C0103** `Authorization Decision Tables (SSOT)`` (source line: 211)
+  - **C0012.S0148** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`` (source line: 212)
+  - **C0012.S0149** `List item: **C0104** `Delegation issuance decision table`` (source line: 213)
+  - **C0012.S0150** `List item: **C0105** `Key class mint authority table (v1)`` (source line: 215)
+  - **C0012.S0151** `List item: **C0106** `Keychain membership admission table`` (source line: 217)
+  - **C0012.S0152** `List item: **C0107** `Keychain effective permission/scope resolution`` (source line: 219)
+  - **C0012.S0153** `List item: **C0108** `Lifecycle action authority table`` (source line: 221)
+  - **C0012.S0154** `List item: **C0109** `Runtime decision order (authoritative)`` (source line: 223)
+  - **C0012.S0155** `List item: **C0110** `Error mapping expectations`` (source line: 225)
+  - **C0012.S0156** `List item: **C0111** `Error Code Catalog (SSOT)`` (source line: 227)
+  - **C0012.S0157** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`` (source line: 228)
+  - **C0012.S0158** `List item: **C0112** `Envelope-level canonical codes`` (source line: 229)
+  - **C0012.S0159** `List item: **C0113** `Canonical middleware/handler detail-code registry (v1 baseline)`` (source line: 231)
+  - **C0012.S0160** `List item: **C0114** `Mapping requirements`` (source line: 233)
+  - **C0012.S0161** `List item: **C0115** `Endpoint Examples (All Routes)`` (source line: 235)
+  - **C0012.S0162** `List item: Documents: `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`` (source line: 236)
+  - **C0012.S0163** `List item: **C0116** `Envelope conventions used in examples`` (source line: 237)
+  - **C0012.S0164** `List item: **C0117** `Public + auth surfaces`` (source line: 239)
+  - **C0012.S0165** `List item: **C0118** `Gateway surface`` (source line: 241)
+  - **C0012.S0166** `List item: **C0119** `Console surface`` (source line: 243)
+  - **C0012.S0167** `List item: **C0120** `Canonical negative-path example`` (source line: 245)
+  - **C0012.S0168** `List item: **C0121** `Route Inventory Reference (SSOT)`` (source line: 247)
+  - **C0012.S0169** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`` (source line: 248)
+  - **C0012.S0170** `List item: **C0122** `Inventory governance`` (source line: 249)
+  - **C0012.S0171** `List item: **C0123** `Route inventory (v1)`` (source line: 251)
+  - **C0012.S0172** `List item: **C0124** `Notes`` (source line: 253)
+  - **C0012.S0173** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`, `from_scratch/ssot_canon/30_data_and_security/ERD.md`` (source line: 254)
+  - **C0012.S0174** `List item: **C0125** `UI Runtime Contract (SSOT Appendix)`` (source line: 255)
+  - **C0012.S0175** `List item: Documents: `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`` (source line: 256)
+  - **C0012.S0176** `List item: **C0126** `Session and device persistence contract`` (source line: 257)
+  - **C0012.S0177** `List item: **C0127** `API client behavior contract`` (source line: 259)
+  - **C0012.S0178** `List item: **C0128** `Route-state runtime model`` (source line: 261)
+  - **C0012.S0179** `List item: **C0129** `Diagnostics UX minimums`` (source line: 263)
+  - **C0012.S0180** `List item: **C0130** `Security/UX guardrails`` (source line: 265)
+  - **C0012.S0181** `List item: **C0131** `Accessibility/runtime baseline`` (source line: 267)
+  - **C0012.S0182** `List item: **C0132** `Data Model Reference (SSOT)`` (source line: 269)
+  - **C0012.S0183** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`` (source line: 270)
+  - **C0012.S0184** `List item: **C0133** `Storage strategy`` (source line: 271)
+  - **C0012.S0185** `List item: **C0134** `Core entity groups`` (source line: 273)
+  - **C0012.S0186** `List item: **C0135** `Lifecycle invariants`` (source line: 275)
+  - **C0012.S0187** `List item: **C0136** `Transaction boundaries (required)`` (source line: 277)
+  - **C0012.S0188** `List item: **C0137** `Data Model Spec (Production)`` (source line: 279)
+  - **C0012.S0189** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`` (source line: 280)
+  - **C0012.S0190** `List item: **C0138** `Table contracts`` (source line: 281)
+  - **C0012.S0191** `List item: **C0139** `Retention`` (source line: 283)
+  - **C0012.S0192** `List item: **C0140** `Consistency notes`` (source line: 285)
+  - **C0012.S0193** `List item: **C0141** `ERD (Text + Mermaid)`` (source line: 287)
+  - **C0012.S0194** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/ERD.md`` (source line: 288)
+  - **C0012.S0195** `List item: **C0142** `Security Controls Spec`` (source line: 289)
+  - **C0012.S0196** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`` (source line: 290)
+  - **C0012.S0197** `List item: **C0143** `Control objectives`` (source line: 291)
+  - **C0012.S0198** `List item: **C0144** `Trust boundaries`` (source line: 293)
+  - **C0012.S0199** `List item: **C0145** `Control baseline`` (source line: 295)
+  - **C0012.S0200** `List item: **C0146** `Dependency mapping`` (source line: 297)
+  - **C0012.S0201** `List item: **C0147** `Verification linkage`` (source line: 299)
+  - **C0012.S0202** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`, `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`` (source line: 300)
+  - **C0012.S0203** `List item: **C0148** `Security Headers and CSP Policy (SSOT)`` (source line: 301)
+  - **C0012.S0204** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`` (source line: 302)
+  - **C0012.S0205** `List item: **C0149** `Required default security headers`` (source line: 303)
+  - **C0012.S0206** `List item: **C0150** `Path-aware CSP contract`` (source line: 305)
+  - **C0012.S0207** `List item: **C0151** `Enforcement requirements`` (source line: 307)
+  - **C0012.S0208** `List item: **C0152** `Verification requirements`` (source line: 309)
+  - **C0012.S0209** `List item: **C0153** `Security Threat Model`` (source line: 311)
+  - **C0012.S0210** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`` (source line: 312)
+  - **C0012.S0211** `List item: **C0154** `Threat scenarios`` (source line: 313)
+  - **C0012.S0212** `List item: **C0155** `Mitigations`` (source line: 315)
+  - **C0012.S0213** `List item: **C0156** `Dependency linkage`` (source line: 317)
+  - **C0012.S0214** `List item: **C0157** `Security Verification and Abuse Cases (SSOT)`` (source line: 319)
+  - **C0012.S0215** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`` (source line: 320)
+  - **C0012.S0216** `List item: **C0158** `Abuse-case matrix (minimum required)`` (source line: 321)
+  - **C0012.S0217** `List item: **C0159** `Security test-pack requirements`` (source line: 323)
+  - **C0012.S0218** `List item: **C0160** `Incident-response verification hooks`` (source line: 325)
+  - **C0012.S0219** `List item: **C0161** `Release gate linkage`` (source line: 327)
+  - **C0012.S0220** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 328)
+  - **C0012.S0221** `List item: **C0162** `Acceptance Criteria Matrix (SSOT)`` (source line: 329)
+  - **C0012.S0222** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`` (source line: 330)
+  - **C0012.S0223** `List item: **C0163** `Usage contract`` (source line: 331)
+  - **C0012.S0224** `List item: **C0164** `Route acceptance matrix`` (source line: 333)
+  - **C0012.S0225** `List item: **C0165** `Required negative-path baseline per route`` (source line: 335)
+  - **C0012.S0226** `List item: **C0166** `Manual UAT checklist linkage`` (source line: 337)
+  - **C0012.S0227** `List item: **C0167** `Boot and Startup Failure Contract (SSOT)`` (source line: 339)
+  - **C0012.S0228** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`` (source line: 340)
+  - **C0012.S0229** `List item: **C0168** `Startup sequence contract`` (source line: 341)
+  - **C0012.S0230** `List item: **C0169** `Mandatory boot assertions`` (source line: 343)
+  - **C0012.S0231** `List item: **C0170** `Startup success behavior`` (source line: 345)
+  - **C0012.S0232** `List item: **C0171** `Startup failure behavior`` (source line: 347)
+  - **C0012.S0233** `List item: **C0172** `Non-negotiable fail-closed rule`` (source line: 349)
+  - **C0012.S0234** `List item: **C0173** `Configuration and Environment Contract (SSOT)`` (source line: 351)
+  - **C0012.S0235** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`` (source line: 352)
+  - **C0012.S0236** `List item: **C0174** `Required environment variables`` (source line: 353)
+  - **C0012.S0237** `List item: **C0175** `Optional policy variables (with defaults)`` (source line: 355)
+  - **C0012.S0238** `List item: **C0176** `Profile hardening constraints`` (source line: 357)
+  - **C0012.S0239** `List item: **C0177** `Key material source rules`` (source line: 359)
+  - **C0012.S0240** `List item: **C0178** `Runtime mapping contract`` (source line: 361)
+  - **C0012.S0241** `List item: **C0179** `Health Endpoint Contract (SSOT)`` (source line: 363)
+  - **C0012.S0242** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`` (source line: 364)
+  - **C0012.S0243** `List item: **C0180** `Route and surface`` (source line: 365)
+  - **C0012.S0244** `List item: **C0181** `Response contract`` (source line: 367)
+  - **C0012.S0245** `List item: **C0182** `Service-state semantics`` (source line: 369)
+  - **C0012.S0246** `List item: **C0183** `HTTP status guidance`` (source line: 371)
+  - **C0012.S0247** `List item: **C0184** `Failure reason examples`` (source line: 373)
+  - **C0012.S0248** `List item: **C0185** `Smoke-check expectations`` (source line: 375)
+  - **C0012.S0249** `List item: **C0186** `Migration Seed Strategy (SSOT)`` (source line: 377)
+  - **C0012.S0250** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`` (source line: 378)
+  - **C0012.S0251** `List item: **C0187** `Strategy`` (source line: 379)
+  - **C0012.S0252** `List item: **C0188** `Required migration artifacts`` (source line: 381)
+  - **C0012.S0253** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`, `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`` (source line: 382)
+  - **C0012.S0254** `List item: **C0189** `Required seed artifacts`` (source line: 383)
+  - **C0012.S0255** `List item: **C0190** `Safety rules`` (source line: 385)
+  - **C0012.S0256** `List item: **C0191** `Command contract`` (source line: 387)
+  - **C0012.S0257** `List item: **C0192** `Observability Event Catalog`` (source line: 389)
+  - **C0012.S0258** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`` (source line: 390)
+  - **C0012.S0259** `List item: **C0193** `Event families`` (source line: 391)
+  - **C0012.S0260** `List item: **C0194** `Canonical event naming guidance`` (source line: 393)
+  - **C0012.S0261** `List item: **C0195** `Required event fields`` (source line: 395)
+  - **C0012.S0262** `List item: **C0196** `Logging requirements`` (source line: 397)
+  - **C0012.S0263** `List item: **C0197** `Correlation requirements`` (source line: 399)
+  - **C0012.S0264** `List item: **C0198** `Operational Smoke Check Contract (SSOT)`` (source line: 401)
+  - **C0012.S0265** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 402)
+  - **C0012.S0266** `List item: **C0199** `Canonical smoke commands`` (source line: 403)
+  - **C0012.S0267** `List item: **C0200** `Health smoke contract`` (source line: 405)
+  - **C0012.S0268** `List item: **C0201** `Migration smoke contract`` (source line: 407)
+  - **C0012.S0269** `List item: **C0202** `Evidence requirements`` (source line: 409)
+  - **C0012.S0270** `List item: **C0203** `Reconciliation rule`` (source line: 411)
+  - **C0012.S0271** `List item: **C0204** `Production Readiness Gates`` (source line: 413)
+  - **C0012.S0272** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`` (source line: 414)
+  - **C0012.S0273** `List item: **C0205** `Gate A: Build/runtime integrity`` (source line: 415)
+  - **C0012.S0274** `List item: **C0206** `Gate B: Contract/security quality`` (source line: 417)
+  - **C0012.S0275** `List item: **C0207** `Gate C: UX parity`` (source line: 419)
+  - **C0012.S0276** `List item: **C0208** `Gate D: Operational readiness`` (source line: 421)
+  - **C0012.S0277** `List item: **C0209** `Release Checklist`` (source line: 423)
+  - **C0012.S0278** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`` (source line: 424)
+  - **C0012.S0279** `List item: **C0210** `Pre-release requirements`` (source line: 425)
+  - **C0012.S0280** `List item: **C0211** `Security and operations gates`` (source line: 427)
+  - **C0012.S0281** `List item: **C0212** `Evidence package`` (source line: 429)
+  - **C0012.S0282** `List item: **C0213** `SLO/SLI Spec`` (source line: 431)
+  - **C0012.S0283** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md`` (source line: 432)
+  - **C0012.S0284** `List item: **C0214** `SLI definitions`` (source line: 433)
+  - **C0012.S0285** `List item: **C0215** `Initial SLO targets`` (source line: 435)
+  - **C0012.S0286** `List item: **C0216** `Measurement windows`` (source line: 437)
+  - **C0012.S0287** `List item: **C0217** `Instrumentation ownership matrix`` (source line: 439)
+  - **C0012.S0288** `List item: **C0218** `Alerting guidance`` (source line: 441)
+  - **C0012.S0289** `List item: **C0219** `Accountability rules`` (source line: 443)
+  - **C0012.S0290** `List item: **C0220** `Verification Strategy (SSOT)`` (source line: 445)
+  - **C0012.S0291** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`` (source line: 446)
+  - **C0012.S0292** `List item: **C0221** `Automated suites`` (source line: 447)
+  - **C0012.S0293** `List item: **C0222** `Required commands`` (source line: 449)
+  - **C0012.S0294** `List item: **C0223** `Release verification scope`` (source line: 451)
+  - **C0012.S0295** `List item: **C0224** `Acceptance criteria enforcement`` (source line: 453)
+  - **C0012.S0296** `List item: **C0225** `Stable QA script (manual)`` (source line: 455)
+  - **C0012.S0297** `List item: **C0226** `Change Impact Map Templates (SSOT)`` (source line: 457)
+  - **C0012.S0298** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`` (source line: 458)
+  - **C0012.S0299** `List item: **C0227** `Minimal template`` (source line: 459)
+  - **C0012.S0300** `List item: **C0228** `Rule`` (source line: 461)
+  - **C0012.S0301** `List item: **C0229** `Known Gaps Tracker (SSOT)`` (source line: 463)
+  - **C0012.S0302** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`` (source line: 464)
+  - **C0012.S0303** `List item: **C0230** `Open gaps`` (source line: 465)
+  - **C0012.S0304** `List item: **C0231** `Recently resolved in this SSOT cycle`` (source line: 467)
+  - **C0012.S0305** `List item: **C0232** `Triage rules`` (source line: 469)
+  - **C0012.S0306** `List item: **C0233** `Review cadence`` (source line: 471)
+  - **C0012.S0307** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`, `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md`` (source line: 472)
+  - **C0012.S0308** `List item: **C0234** `Prototype to SSOT Delta Map (SSOT)`` (source line: 473)
+  - **C0012.S0309** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`` (source line: 474)
+  - **C0012.S0310** `List item: **C0235** `Delta map`` (source line: 475)
+  - **C0012.S0311** `List item: **C0236** `Promotion rule`` (source line: 477)
+  - **C0012.S0312** `List item: **C0237** `SSOT Automation and Linting (SSOT)`` (source line: 479)
+  - **C0012.S0313** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`` (source line: 480)
+  - **C0012.S0314** `List item: **C0238** `Required automation checks`` (source line: 481)
+  - **C0012.S0315** `List item: **C0239** `PR policy integration`` (source line: 483)
+  - **C0012.S0316** `List item: **C0240** `Minimal command contract`` (source line: 485)
+  - **C0012.S0317** `List item: **C0241** `Evidence output requirements`` (source line: 487)
+  - **C0012.S0318** `List item: **C0242** `Ownership`` (source line: 489)
+  - **C0012.S0319** `List item: **C0243** `Traceability Matrix (Docs-to-Code)`` (source line: 491)
+  - **C0012.S0320** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`` (source line: 492)
+  - **C0012.S0321** `List item: **C0244** `ADR Index`` (source line: 493)
+  - **C0012.S0322** `List item: Documents: `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`` (source line: 494)
+  - **C0012.S0323** `List item: **C0245** `Current indexed records`` (source line: 495)
+  - **C0012.S0324** `List item: **C0246** `Index contract`` (source line: 497)
+  - **C0012.S0325** `List item: **C0247** `Decisions Log`` (source line: 499)
+  - **C0012.S0326** `List item: Documents: `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md`` (source line: 500)
+  - **C0012.S0327** `List item: **C0248** `Chronological entries`` (source line: 501)
+  - **C0012.S0328** `List item: **C0249** `Update rule`` (source line: 503)
+  - **C0012.S0329** `List item: **C0250** `Decision Record Template`` (source line: 505)
+  - **C0012.S0330** `List item: Documents: `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md`` (source line: 506)
+  - **C0012.S0331** `List item: **C0251** `Required fields`` (source line: 507)
+  - **C0012.S0332** `List item: **C0252** `Quality bar`` (source line: 509)
+  - **C0012.S0333** `List item: **C0253** `ADR-001: SSOT-first contract governance model`` (source line: 511)
+  - **C0012.S0334** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`` (source line: 512)
+  - **C0012.S0335** `List item: **C0254** `Context`` (source line: 513)
+  - **C0012.S0336** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md`` (source line: 514)
+  - **C0012.S0337** `List item: **C0255** `Decision`` (source line: 515)
+  - **C0012.S0338** `List item: **C0256** `Consequences`` (source line: 517)
+  - **C0012.S0339** `List item: **C0257** `Verification implications`` (source line: 519)
+  - **C0012.S0340** `List item: **C0258** `ADR-002: Delegation envelope bounds (subset/depth/expiry)`` (source line: 521)
+  - **C0012.S0341** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`` (source line: 522)
+  - **C0012.S0342** `List item: **C0259** `ADR-003: Keychain as production-active v1 principal class`` (source line: 523)
+  - **C0012.S0343** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`` (source line: 524)
+  - **C0012.S0344** `List item: **C0260** `ADR-004: Envelope-first API response standard`` (source line: 525)
+  - **C0012.S0345** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`` (source line: 526)
+  - **C0012.S0346** `List item: **C0261** `ADR-005: Release gating via verification + smoke + readiness controls`` (source line: 527)
+  - **C0012.S0347** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md`` (source line: 528)
+  - **C0012.S0348** `List item: **C0262** `Deprecation and Versioning Policy`` (source line: 529)
+  - **C0012.S0349** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md`` (source line: 530)
+  - **C0012.S0350** `List item: **C0263** `Versioning model`` (source line: 531)
+  - **C0012.S0351** `List item: **C0264** `Deprecation process`` (source line: 533)
+  - **C0012.S0352** `List item: **C0265** `Guardrails`` (source line: 535)
+  - **C0012.S0353** `List item: **C0266** `Migration and Compatibility Strategy`` (source line: 537)
+  - **C0012.S0354** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`` (source line: 538)
+  - **C0012.S0355** `List item: **C0267** `Migration principles`` (source line: 539)
+  - **C0012.S0356** `List item: **C0268** `Compatibility checklist`` (source line: 541)
+  - **C0012.S0357** `List item: **C0269** `Module Boundaries and Ownership`` (source line: 543)
+  - **C0012.S0358** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`` (source line: 544)
+  - **C0012.S0359** `List item: **C0270** `Core modules`` (source line: 545)
+  - **C0012.S0360** `List item: **C0271** `Ownership model`` (source line: 547)
+  - **C0012.S0361** `List item: **C0272** `Test Data and Fixture Strategy`` (source line: 549)
+  - **C0012.S0362** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md`` (source line: 550)
+  - **C0012.S0363** `List item: **C0273** `Fixture principles`` (source line: 551)
+  - **C0012.S0364** `List item: **C0274** `Required fixture packs`` (source line: 553)
+  - **C0012.S0365** `List item: **C0275** `Maintenance policy`` (source line: 555)
+  - **C0012.S0366** `List item: **C0276** `Contribution Workflow (SSOT)`` (source line: 557)
+  - **C0012.S0367** `List item: Documents: `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`` (source line: 558)
+  - **C0012.S0368** `List item: **C0277** `Workflow`` (source line: 559)
+  - **C0012.S0369** `List item: **C0278** `Review policy`` (source line: 561)
+  - **C0012.S0370** `List item: **C0279** `SLA and escalation`` (source line: 563)
+  - **C0012.S0371** `List item: **C0280** `Definition of Done`` (source line: 565)
+  - **C0012.S0372** `List item: Documents: `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`` (source line: 566)
+  - **C0012.S0373** `List item: **C0281** `Done means all are true`` (source line: 567)
+  - **C0012.S0374** `List item: **C0282** `Required evidence checklist`` (source line: 569)
+  - **C0012.S0375** `List item: **C0283** `Not-done examples`` (source line: 571)
+  - **C0012.S0376** `List item: **C0284** `Risk Register`` (source line: 573)
+  - **C0012.S0377** `List item: Documents: `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md`` (source line: 574)
+  - **C0012.S0378** `List item: **C0285** `Active risks`` (source line: 575)
+  - **C0012.S0379** `List item: **C0286** `Roadmap and Milestones`` (source line: 577)
+  - **C0012.S0380** `List item: Documents: `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`` (source line: 578)
+  - **C0012.S0381** `List item: **C0287** `Milestones`` (source line: 579)
+  - **C0012.S0382** `List item: **C0288** `Exit criteria by milestone`` (source line: 581)
+  - **C0012.S0383** `List item: **C0289** `Milestone deliverables (minimum)`` (source line: 583)
+  - **C0012.S0384** `List item: **C0290** `Tracking rule`` (source line: 585)
+  - **C0012.S0385** `List item: **C0291** `Scaffold Build Report`` (source line: 587)
+  - **C0012.S0386** `List item: Documents: `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md`` (source line: 588)
+  - **C0012.S0387** `List item: **C0292** `Report summary`` (source line: 589)
+  - **C0012.S0388** `List item: **C0293** `Verification completed`` (source line: 591)
+  - **C0012.S0389** `List item: **C0294** `Remaining maintenance tasks`` (source line: 593)
+  - **C0012.S0390** `List item: **C0295** `Evidence Package Guide`` (source line: 595)
+  - **C0012.S0391** `List item: Documents: `from_scratch/ssot_canon/evidence/README.md`` (source line: 596)
+  - **C0012.S0392** `List item: **C0296** `Required evidence types`` (source line: 597)
+  - **C0012.S0393** `List item: **C0297** `Storage convention`` (source line: 599)
+  - **C0012.S0394** `List item: **C0298** `generated_at_utc`` (source line: 601)
+  - **C0012.S0395** `List item: Documents: `from_scratch/ssot_canon/evidence/automation/ssot_report.json`` (source line: 602)
+  - **C0012.S0396** `List item: **C0299** `status`` (source line: 603)
+  - **C0012.S0397** `List item: **C0300** `checks`` (source line: 605)
+  - **C0012.S0398** `List item: **C0301** `Release Evidence Template`` (source line: 607)
+  - **C0012.S0399** `List item: Documents: `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`` (source line: 608)
+  - **C0012.S0400** `List item: **C0302** `Release metadata`` (source line: 609)
+  - **C0012.S0401** `List item: **C0303** `Verification command results`` (source line: 611)
+  - **C0012.S0402** `List item: **C0304** `Contract and behavior deltas`` (source line: 613)
+  - **C0012.S0403** `List item: **C0305** `Operational signoff`` (source line: 615)
+  - **C0012.S0404** `List item: **C0306** `SSOT Change Evidence Template`` (source line: 617)
+  - **C0012.S0405** `List item: Documents: `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`` (source line: 618)
+  - **C0012.S0406** `List item: **C0307** `Change metadata`` (source line: 619)
+  - **C0012.S0407** `List item: **C0308** `Documents/artifacts changed`` (source line: 621)
+  - **C0012.S0408** `List item: **C0309** `Verification evidence`` (source line: 623)
+  - **C0012.S0409** `List item: **C0310** `Traceability`` (source line: 625)
+  - **C0012.S0410** `List item: **C0311** `Reviewer signoff`` (source line: 627)
+  - **C0012.S0411** `List item: **C0312** `openapi`` (source line: 629)
+  - **C0012.S0412** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`` (source line: 630)
+  - **C0012.S0413** `List item: **C0313** `info`` (source line: 631)
+  - **C0012.S0414** `List item: **C0314** `servers`` (source line: 633)
+  - **C0012.S0415** `List item: **C0315** `security`` (source line: 635)
+  - **C0012.S0416** `List item: **C0316** `paths`` (source line: 637)
+  - **C0012.S0417** `List item: **C0317** `components`` (source line: 639)
+  - **C0012.S0418** `List item: **C0318** `$schema`` (source line: 641)
+  - **C0012.S0419** `List item: Documents: `from_scratch/ssot_canon/schemas/error-envelope.schema.json`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json`` (source line: 642)
+  - **C0012.S0420** `List item: **C0319** `$id`` (source line: 643)
+  - **C0012.S0421** `List item: **C0320** `title`` (source line: 645)
+  - **C0012.S0422** `List item: **C0321** `type`` (source line: 647)
+  - **C0012.S0423** `List item: **C0322** `required`` (source line: 649)
+  - **C0012.S0424** `List item: **C0323** `additionalProperties`` (source line: 651)
+  - **C0012.S0425** `List item: **C0324** `properties`` (source line: 653)
+- **C0013** `Sub-components` (source line: 656)
+  - **C0013.S0426** `List item: **S0001** `GET /`` (source line: 658)
+  - **C0013.S0162** `List item: Documents: `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`` (source line: 659)
+  - **C0013.S0427** `List item: **S0002** `GET /health`` (source line: 660)
+  - **C0013.S0428** `List item: **S0003** `GET /.well-known/jwks.json`` (source line: 662)
+  - **C0013.S0429** `List item: **S0004** `POST /console/owners`` (source line: 664)
+  - **C0013.S0430** `List item: **S0005** `POST /api/auth/login`` (source line: 666)
+  - **C0013.S0431** `List item: **S0006** `POST /api/auth/key-login`` (source line: 668)
+  - **C0013.S0432** `List item: **S0007** `POST /api/auth/refresh`` (source line: 670)
+  - **C0013.S0433** `List item: **S0008** `GET /api/feed`` (source line: 672)
+  - **C0013.S0434** `List item: **S0009** `POST /api/posts`` (source line: 674)
+  - **C0013.S0435** `List item: **S0010** `GET /api/posts/{postId}`` (source line: 676)
+  - **C0013.S0436** `List item: **S0011** `PATCH /api/posts/{postId}`` (source line: 678)
+  - **C0013.S0437** `List item: **S0012** `POST /api/posts/{postId}/flags`` (source line: 680)
+  - **C0013.S0438** `List item: **S0013** `GET /api/posts/{postId}/comments`` (source line: 682)
+  - **C0013.S0439** `List item: **S0014** `POST /api/posts/{postId}/comments`` (source line: 684)
+  - **C0013.S0440** `List item: **S0015** `GET /console/api/posts`` (source line: 686)
+  - **C0013.S0441** `List item: **S0016** `POST /console/api/posts`` (source line: 688)
+  - **C0013.S0442** `List item: **S0017** `GET /console/api/keychains`` (source line: 690)
+  - **C0013.S0443** `List item: **S0018** `POST /console/api/keychains`` (source line: 692)
+  - **C0013.S0444** `List item: **S0019** `GET /console/api/keychains/{keychainId}/members`` (source line: 694)
+  - **C0013.S0445** `List item: **S0020** `POST /console/api/keychains/{keychainId}/members`` (source line: 696)
+  - **C0013.S0446** `List item: **S0021** `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`` (source line: 698)
+  - **C0013.S0447** `List item: **S0022** `GET /console/api/keychains/{keychainId}/resolve`` (source line: 700)
+  - **C0013.S0448** `List item: **S0023** `POST /console/api/invites`` (source line: 702)
+  - **C0013.S0449** `List item: **S0024** `POST /console/api/keys`` (source line: 704)
+  - **C0013.S0450** `List item: **S0025** `POST /console/api/keys/{keyId}/lifecycle`` (source line: 706)
+  - **C0013.S0451** `List item: **S0026** `POST /console/api/posts/{postId}/moderation`` (source line: 708)
+  - **C0013.S0452** `List item: **S0027** `POST /console/api/posts/{postId}/comments/{commentId}/moderation`` (source line: 710)
+  - **C0013.S0453** `List item: **S0028** `Any protected route with missing token`` (source line: 712)
+  - **C0013.S0454** `List item: **S0029** `principals`` (source line: 714)
+  - **C0013.S0189** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`` (source line: 715)
+  - **C0013.S0455** `List item: **S0030** `principal_emails`` (source line: 716)
+  - **C0013.S0456** `List item: **S0031** `credentials`` (source line: 718)
+  - **C0013.S0457** `List item: **S0032** `token_families`` (source line: 720)
+  - **C0013.S0458** `List item: **S0033** `delegation_envelopes`` (source line: 722)
+  - **C0013.S0459** `List item: **S0034** `keychain_memberships`` (source line: 724)
+  - **C0013.S0460** `List item: **S0035** `keychain_effective_snapshots`` (source line: 726)
+  - **C0013.S0461** `List item: **S0036** `invite_receipts`` (source line: 728)
+  - **C0013.S0462** `List item: **S0037** `posts`` (source line: 730)
+  - **C0013.S0463** `List item: **S0038** `post_revisions`` (source line: 732)
+  - **C0013.S0464** `List item: **S0039** `post_flags`` (source line: 734)
+  - **C0013.S0465** `List item: **S0040** `comments`` (source line: 736)
+  - **C0013.S0466** `List item: **S0041** `moderation_actions`` (source line: 738)
+  - **C0013.S0467** `List item: **S0042** `lint`` (source line: 740)
+  - **C0013.S0395** `List item: Documents: `from_scratch/ssot_canon/evidence/automation/ssot_report.json`` (source line: 741)
+  - **C0013.S0468** `List item: **S0043** `sync_check`` (source line: 742)
+  - **C0013.S0469** `List item: **S0044** `title`` (source line: 744)
+  - **C0013.S0412** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`` (source line: 745)
+  - **C0013.S0470** `List item: **S0045** `version`` (source line: 746)
+  - **C0013.S0471** `List item: **S0046** `description`` (source line: 748)
+  - **C0013.S0472** `List item: **S0047** `get`` (source line: 750)
+  - **C0013.S0473** `List item: **S0048** `summary`` (source line: 752)
+  - **C0013.S0474** `List item: **S0049** `security`` (source line: 754)
+  - **C0013.S0475** `List item: **S0050** `responses`` (source line: 756)
+  - **C0013.S0476** `List item: **S0051** `200`` (source line: 758)
+  - **C0013.S0477** `List item: **S0052** `content`` (source line: 760)
+  - **C0013.S0478** `List item: **S0053** `schema`` (source line: 762)
+  - **C0013.S0479** `List item: **S0054** `type`` (source line: 764)
+  - **C0013.S0480** `List item: **S0055** `properties`` (source line: 766)
+  - **C0013.S0481** `List item: **S0056** `keys`` (source line: 768)
+  - **C0013.S0482** `List item: **S0057** `items`` (source line: 770)
+  - **C0013.S0483** `List item: **S0058** `parameters`` (source line: 772)
+  - **C0013.S0484** `List item: **S0059** `name`` (source line: 774)
+  - **C0013.S0485** `List item: **S0060** `required`` (source line: 776)
+  - **C0013.S0486** `List item: **S0061** `post`` (source line: 778)
+  - **C0013.S0487** `List item: **S0062** `requestBody`` (source line: 780)
+  - **C0013.S0488** `List item: **S0063** `201`` (source line: 782)
+  - **C0013.S0489** `List item: **S0064** `409`` (source line: 784)
+  - **C0013.S0490** `List item: **S0065** `422`` (source line: 786)
+  - **C0013.S0491** `List item: **S0066** `401`` (source line: 788)
+  - **C0013.S0492** `List item: **S0067** `403`` (source line: 790)
+  - **C0013.S0493** `List item: **S0068** `404`` (source line: 792)
+  - **C0013.S0494** `List item: **S0069** `patch`` (source line: 794)
+  - **C0013.S0495** `List item: **S0070** `delete`` (source line: 796)
+  - **C0013.S0496** `List item: **S0071** `securitySchemes`` (source line: 798)
+  - **C0013.S0497** `List item: **S0072** `bearerAuth`` (source line: 800)
+  - **C0013.S0498** `List item: **S0073** `scheme`` (source line: 802)
+  - **C0013.S0499** `List item: **S0074** `bearerFormat`` (source line: 804)
+  - **C0013.S0500** `List item: **S0075** `PostId`` (source line: 806)
+  - **C0013.S0501** `List item: **S0076** `in`` (source line: 808)
+  - **C0013.S0502** `List item: **S0077** `KeyId`` (source line: 810)
+  - **C0013.S0503** `List item: **S0078** `CommentId`` (source line: 812)
+  - **C0013.S0504** `List item: **S0079** `KeychainId`` (source line: 814)
+  - **C0013.S0505** `List item: **S0080** `MemberKeyId`` (source line: 816)
+  - **C0013.S0506** `List item: **S0081** `Success`` (source line: 818)
+  - **C0013.S0507** `List item: **S0082** `Error`` (source line: 820)
+  - **C0013.S0508** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/error-envelope.schema.json`` (source line: 821)
+  - **C0013.S0509** `List item: **S0083** `schemas`` (source line: 822)
+  - **C0013.S0510** `List item: **S0084** `Meta`` (source line: 824)
+  - **C0013.S0511** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/error-envelope.schema.json`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json`` (source line: 825)
+  - **C0013.S0512** `List item: **S0085** `envelope_version`` (source line: 826)
+  - **C0013.S0513** `List item: **S0086** `timestamp_utc`` (source line: 828)
+  - **C0013.S0514** `List item: **S0087** `SuccessEnvelope`` (source line: 830)
+  - **C0013.S0515** `List item: **S0088** `data`` (source line: 832)
+  - **C0013.S0516** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json`` (source line: 833)
+  - **C0013.S0517** `List item: **S0089** `ErrorEnvelope`` (source line: 834)
+  - **C0013.S0518** `List item: **S0090** `code`` (source line: 836)
+  - **C0013.S0519** `List item: **S0091** `message`` (source line: 838)
+  - **C0013.S0520** `List item: **S0092** `details`` (source line: 840)
+  - **C0013.S0521** `List item: **S0093** `request_id`` (source line: 842)
+  - **C0013.S0522** `List item: **S0094** `OwnerSignupRequest`` (source line: 844)
+  - **C0013.S0523** `List item: **S0095** `email`` (source line: 846)
+  - **C0013.S0524** `List item: **S0096** `password`` (source line: 848)
+  - **C0013.S0525** `List item: **S0097** `OwnerLoginRequest`` (source line: 850)
+  - **C0013.S0526** `List item: **S0098** `KeyLoginRequest`` (source line: 852)
+  - **C0013.S0527** `List item: **S0099** `key_id`` (source line: 854)
+  - **C0013.S0528** `List item: **S0100** `api_key`` (source line: 856)
+  - **C0013.S0529** `List item: **S0101** `RefreshRequest`` (source line: 858)
+  - **C0013.S0530** `List item: **S0102** `refresh_token`` (source line: 860)
+  - **C0013.S0531** `List item: **S0103** `KeychainMemberAddRequest`` (source line: 862)
+  - **C0013.S0532** `List item: **S0104** `member_key_id`` (source line: 864)
+  - **C0013.S0533** `List item: **S0105** `role_hint`` (source line: 866)
+
+## File: `FROM_SCRATCH_COMPONENT_INVENTORY.md`
+- **Location:** `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md`
+- **Components identified:** 73
+
+- **C0014** `From Scratch Document Component Inventory` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0015** `File: `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`` (source line: 5)
+  - **C0015.S0534** `List item: **Location:** `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`` (source line: 6)
+  - **C0015.S0535** `List item: **Components identified:** 5` (source line: 7)
+  - **C0015.S0018** `List item: **C0001** `Core Identity And Value Proposition`` (source line: 9)
+  - **C0015.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 10)
+  - **C0015.S0020** `List item: **C0002** `Product identity`` (source line: 11)
+  - **C0015.S0021** `List item: **C0003** `Primary value propositions`` (source line: 13)
+  - **C0015.S0022** `List item: **C0004** `Intended user/actor model`` (source line: 15)
+  - **C0015.S0023** `List item: **C0005** `Product promises encoded as engineering constraints`` (source line: 17)
+- **C0016** `File: `FROM_SCRATCH_AUTHORING_GAP_REPORT.md`` (source line: 20)
+  - **C0016.S0537** `List item: **Location:** `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`` (source line: 21)
+  - **C0016.S0535** `List item: **Components identified:** 5` (source line: 22)
+  - **C0016.S0024** `List item: **C0006** `From-Scratch Authoring Gap Report`` (source line: 24)
+  - **C0016.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 25)
+  - **C0016.S0026** `List item: **C0007** `Purpose`` (source line: 26)
+  - **C0016.S0028** `List item: **C0008** `Gap taxonomy`` (source line: 28)
+  - **C0016.S0029** `List item: **C0009** `Current priority gaps`` (source line: 30)
+  - **C0016.S0030** `List item: **C0010** `Resolution policy`` (source line: 32)
+- **C0017** `File: `FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`` (source line: 35)
+  - **C0017.S0538** `List item: **Location:** `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`` (source line: 36)
+  - **C0017.S0535** `List item: **Components identified:** 5` (source line: 37)
+  - **C0017.S0031** `List item: **C0011** `From-Scratch Document Completion Report`` (source line: 39)
+  - **C0017.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 40)
+  - **C0017.S0033** `List item: **C0012** `Completion criteria`` (source line: 41)
+  - **C0017.S0034** `List item: **C0013** `Current state summary`` (source line: 43)
+  - **C0017.S0035** `List item: **C0014** `Mandatory follow-up cadence`` (source line: 45)
+  - **C0017.S0036** `List item: **C0015** `Required artifacts per completion review`` (source line: 47)
+- **C0018** `File: `MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`` (source line: 50)
+  - **C0018.S0539** `List item: **Location:** `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`` (source line: 51)
+  - **C0018.S0535** `List item: **Components identified:** 5` (source line: 52)
+  - **C0018.S0037** `List item: **C0016** `Master Plan: SSOT Canon Scaffold and Stub Replacement`` (source line: 54)
+  - **C0018.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 55)
+  - **C0018.S0039** `List item: **C0017** `Objective`` (source line: 56)
+  - **C0018.S0040** `List item: **C0018** `Replacement priorities`` (source line: 58)
+  - **C0018.S0041** `List item: **C0019** `Anti-regression controls`` (source line: 60)
+  - **C0018.S0042** `List item: **C0020** `Completion target`` (source line: 62)
+- **C0019** `File: `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`` (source line: 65)
+  - **C0019.S0540** `List item: **Location:** `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`` (source line: 66)
+  - **C0019.S0535** `List item: **Components identified:** 5` (source line: 67)
+  - **C0019.S0043** `List item: **C0021** `Plan: SSOT-First Document Rebuild`` (source line: 69)
+  - **C0019.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 70)
+  - **C0019.S0045** `List item: **C0022** `Goal`` (source line: 71)
+  - **C0019.S0046** `List item: **C0023** `Phases`` (source line: 73)
+  - **C0019.S0047** `List item: **C0024** `Work breakdown`` (source line: 75)
+  - **C0019.S0048** `List item: **C0025** `Exit criteria`` (source line: 77)
+- **C0020** `File: `README.md`` (source line: 80)
+  - **C0020.S0541** `List item: **Location:** `from_scratch/README.md`` (source line: 81)
+  - **C0020.S0542** `List item: **Components identified:** 6` (source line: 82)
+  - **C0020.S0050** `List item: **C0026** `CRE8 From-Scratch SSOT Canon`` (source line: 84)
+  - **C0020.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 85)
+  - **C0020.S0026** `List item: **C0007** `Purpose`` (source line: 86)
+  - **C0020.S0052** `List item: **C0027** `What this canon governs`` (source line: 88)
+  - **C0020.S0053** `List item: **C0028** `Required reading path`` (source line: 90)
+  - **C0020.S0054** `List item: **C0029** `Non-negotiable rules`` (source line: 92)
+  - **C0020.S0055** `List item: **C0030** `Definition of quality for this canon`` (source line: 94)
+- **C0021** `File: `SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md`` (source line: 97)
+  - **C0021.S0543** `List item: **Location:** `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md`` (source line: 98)
+  - **C0021.S0535** `List item: **Components identified:** 5` (source line: 99)
+  - **C0021.S0056** `List item: **C0031** `From-Scratch Authoring Completion Status (Session Report)`` (source line: 101)
+  - **C0021.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 102)
+  - **C0021.S0058** `List item: **C0032** `What was done in this session`` (source line: 103)
+  - **C0021.S0059** `List item: **C0033** `Finished (62 files)`` (source line: 105)
+  - **C0021.S0060** `List item: **C0034** `Unfinished (0 files)`` (source line: 107)
+  - **C0021.S0061** `List item: **C0035** `Definition used for this report`` (source line: 109)
+- **C0022** `File: `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`` (source line: 112)
+  - **C0022.S0544** `List item: **Location:** `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`` (source line: 113)
+  - **C0022.S0535** `List item: **Components identified:** 5` (source line: 114)
+  - **C0022.S0062** `List item: **C0036** `Technical Foundation And Build Plan`` (source line: 116)
+  - **C0022.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 117)
+  - **C0022.S0064** `List item: **C0037** `Runtime and stack assumptions`` (source line: 118)
+  - **C0022.S0065** `List item: **C0038** `Build principles`` (source line: 120)
+  - **C0022.S0066** `List item: **C0039** `Implementation milestones`` (source line: 122)
+  - **C0022.S0067** `List item: **C0040** `Engineering quality bars`` (source line: 124)
+- **C0023** `File: `LLM_PROMPT_BUILD_SSOT_CANON.md`` (source line: 127)
+  - **C0023.S0545** `List item: **Location:** `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md`` (source line: 128)
+  - **C0023.S0546** `List item: **Components identified:** 4` (source line: 129)
+  - **C0023.S0068** `List item: **C0041** `LLM Prompt: Build SSOT Canon`` (source line: 131)
+  - **C0023.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 132)
+  - **C0023.S0070** `List item: **C0042** `Prompt purpose`` (source line: 133)
+  - **C0023.S0071** `List item: **C0043** `Required agent behavior`` (source line: 135)
+  - **C0023.S0072** `List item: **C0044** `Prompt checklist`` (source line: 137)
+- **C0024** `File: `CHANGE_CONTROL_POLICY.md`` (source line: 140)
+  - **C0024.S0547** `List item: **Location:** `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`` (source line: 141)
+  - **C0024.S0535** `List item: **Components identified:** 5` (source line: 142)
+  - **C0024.S0073** `List item: **C0045** `Change Control Policy`` (source line: 144)
+  - **C0024.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 145)
+  - **C0024.S0075** `List item: **C0046** `Scope`` (source line: 146)
+  - **C0024.S0077** `List item: **C0047** `Change classes`` (source line: 148)
+  - **C0024.S0078** `List item: **C0048** `Approval requirements`` (source line: 150)
+  - **C0024.S0079** `List item: **C0049** `Required PR payload`` (source line: 152)
+- **C0025** `File: `DOCUMENT_STATUS_AND_OWNERSHIP.md`` (source line: 155)
+  - **C0025.S0548** `List item: **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`` (source line: 156)
+  - **C0025.S0535** `List item: **Components identified:** 5` (source line: 157)
+  - **C0025.S0081** `List item: **C0050** `Document Status and Ownership`` (source line: 159)
+  - **C0025.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 160)
+  - **C0025.S0083** `List item: **C0051** `Status model`` (source line: 161)
+  - **C0025.S0084** `List item: **C0052** `Ownership matrix`` (source line: 163)
+  - **C0025.S0085** `List item: **C0053** `Ownership obligations`` (source line: 165)
+  - **C0025.S0086** `List item: **C0054** `Review SLA`` (source line: 167)
+- **C0026** `File: `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`` (source line: 170)
+  - **C0026.S0549** `List item: **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`` (source line: 171)
+  - **C0026.S0546** `List item: **Components identified:** 4` (source line: 172)
+  - **C0026.S0087** `List item: **C0055** `Document Template and Style Guide`` (source line: 174)
+  - **C0026.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 175)
+  - **C0026.S0089** `List item: **C0056** `Required sections for adopted docs`` (source line: 176)
+  - **C0026.S0090** `List item: **C0057** `Writing standards`` (source line: 178)
+  - **C0026.S0091** `List item: **C0058** `Traceability conventions`` (source line: 180)
+- **C0027** `File: `SSOT_INDEX.md`` (source line: 183)
+  - **C0027.S0550** `List item: **Location:** `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md`` (source line: 184)
+  - **C0027.S0546** `List item: **Components identified:** 4` (source line: 185)
+  - **C0027.S0092** `List item: **C0059** `SSOT Index`` (source line: 187)
+  - **C0027.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 188)
+  - **C0027.S0094** `List item: **C0060** `Canon navigation`` (source line: 189)
+  - **C0027.S0095** `List item: **C0061** `Machine artifacts`` (source line: 191)
+  - **C0027.S0096** `List item: **C0062** `Usage rule`` (source line: 193)
+- **C0028** `File: `ARCHITECTURE_AND_SURFACES.md`` (source line: 196)
+  - **C0028.S0551** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`` (source line: 197)
+  - **C0028.S0546** `List item: **Components identified:** 4` (source line: 198)
+  - **C0028.S0097** `List item: **C0063** `Architecture and Surfaces`` (source line: 200)
+  - **C0028.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 201)
+  - **C0028.S0099** `List item: **C0064** `Architectural model`` (source line: 202)
+  - **C0028.S0100** `List item: **C0065** `Layering`` (source line: 204)
+  - **C0028.S0101** `List item: **C0066** `Boundary rules`` (source line: 206)
+- **C0029** `File: `CANONICAL_TERMINOLOGY.md`` (source line: 209)
+  - **C0029.S0552** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`` (source line: 210)
+  - **C0029.S0546** `List item: **Components identified:** 4` (source line: 211)
+  - **C0029.S0103** `List item: **C0067** `Canonical Terminology`` (source line: 213)
+  - **C0029.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 214)
+  - **C0029.S0105** `List item: **C0068** `Principal terms`` (source line: 215)
+  - **C0029.S0106** `List item: **C0069** `Security terms`` (source line: 217)
+  - **C0029.S0107** `List item: **C0070** `Contract terms`` (source line: 219)
+- **C0030** `File: `CRE8_PRODUCT_AND_SYSTEM_SPEC.md`` (source line: 222)
+  - **C0030.S0553** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`` (source line: 223)
+  - **C0030.S0535** `List item: **Components identified:** 5` (source line: 224)
+  - **C0030.S0108** `List item: **C0071** `CRE8 Product and System Spec`` (source line: 226)
+  - **C0030.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 227)
+  - **C0030.S0110** `List item: **C0072** `Product scope`` (source line: 228)
+  - **C0030.S0111** `List item: **C0073** `System capabilities (v1)`` (source line: 230)
+  - **C0030.S0112** `List item: **C0074** `Core system constraints`` (source line: 232)
+  - **C0030.S0113** `List item: **C0075** `Out-of-scope (v1)`` (source line: 234)
+- **C0031** `File: `DEPENDENCY_BASELINE.md`` (source line: 237)
+  - **C0031.S0554** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md`` (source line: 238)
+  - **C0031.S0542** `List item: **Components identified:** 6` (source line: 239)
+  - **C0031.S0114** `List item: **C0076** `Dependency Baseline`` (source line: 241)
+  - **C0031.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 242)
+  - **C0031.S0116** `List item: **C0077** `Baseline dependency families`` (source line: 243)
+  - **C0031.S0117** `List item: **C0078** `Dependency governance rules`` (source line: 245)
+  - **C0031.S0118** `List item: **C0079** `Runtime expectations`` (source line: 247)
+  - **C0031.S0119** `List item: **C0080** `Canonical package baseline (root composer.json)`` (source line: 249)
+  - **C0031.S0120** `List item: **C0081** `Script contract baseline`` (source line: 251)
+- **C0032** `File: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 254)
+  - **C0032.S0555** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 255)
+  - **C0032.S0546** `List item: **Components identified:** 4` (source line: 256)
+  - **C0032.S0121** `List item: **C0082** `Request Pipeline and Middleware Contract`` (source line: 258)
+  - **C0032.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 259)
+  - **C0032.S0123** `List item: **C0083** `Authoritative middleware order`` (source line: 260)
+  - **C0032.S0124** `List item: **C0084** `Contract rules`` (source line: 262)
+  - **C0032.S0125** `List item: **C0085** `Failure mapping baseline`` (source line: 264)
+- **C0033** `File: `API_CONTRACT_GUIDE.md`` (source line: 267)
+  - **C0033.S0556** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`` (source line: 268)
+  - **C0033.S0557** `List item: **Components identified:** 8` (source line: 269)
+  - **C0033.S0126** `List item: **C0086** `API Contract Guide (SSOT)`` (source line: 271)
+  - **C0033.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 272)
+  - **C0033.S0128** `List item: **C0087** `Canonical machine contract`` (source line: 273)
+  - **C0033.S0129** `List item: **C0088** `Envelope contract`` (source line: 275)
+  - **C0033.S0130** `List item: **C0089** `Route groups`` (source line: 277)
+  - **C0033.S0131** `List item: **C0090** `Endpoint examples`` (source line: 279)
+  - **C0033.S0132** `List item: **C0091** `Acceptance criteria linkage`` (source line: 281)
+  - **C0033.S0133** `List item: **C0092** `Synchronization rule`` (source line: 283)
+  - **C0033.S0135** `List item: **C0093** `Backward compatibility`` (source line: 285)
+- **C0034** `File: `AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 288)
+  - **C0034.S0558** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 289)
+  - **C0034.S0559** `List item: **Components identified:** 10` (source line: 290)
+  - **C0034.S0136** `List item: **C0094** `Authorization and Delegation Spec`` (source line: 292)
+  - **C0034.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 293)
+  - **C0034.S0075** `List item: **C0046** `Scope`` (source line: 294)
+  - **C0034.S0138** `List item: **C0095** `Principals`` (source line: 296)
+  - **C0034.S0139** `List item: **C0096** `Key classes`` (source line: 298)
+  - **C0034.S0140** `List item: **C0097** `Permission model (v1 allow-list)`` (source line: 300)
+  - **C0034.S0141** `List item: **C0098** `Delegation invariants`` (source line: 302)
+  - **C0034.S0142** `List item: **C0099** `Keychain invariants (v1 production)`` (source line: 304)
+  - **C0034.S0143** `List item: **C0100** `Surface enforcement model`` (source line: 306)
+  - **C0034.S0144** `List item: **C0101** `Lifecycle authority`` (source line: 308)
+  - **C0034.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 310)
+- **C0035** `File: `AUTHORIZATION_DECISION_TABLES.md`` (source line: 313)
+  - **C0035.S0560** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`` (source line: 314)
+  - **C0035.S0559** `List item: **Components identified:** 10` (source line: 315)
+  - **C0035.S0147** `List item: **C0103** `Authorization Decision Tables (SSOT)`` (source line: 317)
+  - **C0035.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 318)
+  - **C0035.S0026** `List item: **C0007** `Purpose`` (source line: 319)
+  - **C0035.S0149** `List item: **C0104** `Delegation issuance decision table`` (source line: 321)
+  - **C0035.S0150** `List item: **C0105** `Key class mint authority table (v1)`` (source line: 323)
+  - **C0035.S0151** `List item: **C0106** `Keychain membership admission table`` (source line: 325)
+  - **C0035.S0152** `List item: **C0107** `Keychain effective permission/scope resolution`` (source line: 327)
+  - **C0035.S0153** `List item: **C0108** `Lifecycle action authority table`` (source line: 329)
+  - **C0035.S0154** `List item: **C0109** `Runtime decision order (authoritative)`` (source line: 331)
+  - **C0035.S0155** `List item: **C0110** `Error mapping expectations`` (source line: 333)
+  - **C0035.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 335)
+- **C0036** `File: `ERROR_CODE_CATALOG.md`` (source line: 338)
+  - **C0036.S0561** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`` (source line: 339)
+  - **C0036.S0546** `List item: **Components identified:** 4` (source line: 340)
+  - **C0036.S0156** `List item: **C0111** `Error Code Catalog (SSOT)`` (source line: 342)
+  - **C0036.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 343)
+  - **C0036.S0158** `List item: **C0112** `Envelope-level canonical codes`` (source line: 344)
+  - **C0036.S0159** `List item: **C0113** `Canonical middleware/handler detail-code registry (v1 baseline)`` (source line: 346)
+  - **C0036.S0160** `List item: **C0114** `Mapping requirements`` (source line: 348)
+- **C0037** `File: `Endpoint_Examples_All_Routes.md`` (source line: 351)
+  - **C0037.S0562** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`` (source line: 352)
+  - **C0037.S0557** `List item: **Components identified:** 8` (source line: 353)
+  - **C0037.S0161** `List item: **C0115** `Endpoint Examples (All Routes)`` (source line: 355)
+  - **C0037.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 356)
+  - **C0037.S0026** `List item: **C0007** `Purpose`` (source line: 357)
+  - **C0037.S0163** `List item: **C0116** `Envelope conventions used in examples`` (source line: 359)
+  - **C0037.S0164** `List item: **C0117** `Public + auth surfaces`` (source line: 361)
+  - **C0037.S0563** `List item: **C0117.S0001** `GET /`` (source line: 362)
+  - **C0037.S0564** `List item: **C0117.S0002** `GET /health`` (source line: 363)
+  - **C0037.S0565** `List item: **C0117.S0003** `GET /.well-known/jwks.json`` (source line: 364)
+  - **C0037.S0566** `List item: **C0117.S0004** `POST /console/owners`` (source line: 365)
+  - **C0037.S0567** `List item: **C0117.S0005** `POST /api/auth/login`` (source line: 366)
+  - **C0037.S0568** `List item: **C0117.S0006** `POST /api/auth/key-login`` (source line: 367)
+  - **C0037.S0569** `List item: **C0117.S0007** `POST /api/auth/refresh`` (source line: 368)
+  - **C0037.S0165** `List item: **C0118** `Gateway surface`` (source line: 369)
+  - **C0037.S0570** `List item: **C0118.S0008** `GET /api/feed`` (source line: 370)
+  - **C0037.S0571** `List item: **C0118.S0009** `POST /api/posts`` (source line: 371)
+  - **C0037.S0572** `List item: **C0118.S0010** `GET /api/posts/{postId}`` (source line: 372)
+  - **C0037.S0573** `List item: **C0118.S0011** `PATCH /api/posts/{postId}`` (source line: 373)
+  - **C0037.S0574** `List item: **C0118.S0012** `POST /api/posts/{postId}/flags`` (source line: 374)
+  - **C0037.S0575** `List item: **C0118.S0013** `GET /api/posts/{postId}/comments`` (source line: 375)
+  - **C0037.S0576** `List item: **C0118.S0014** `POST /api/posts/{postId}/comments`` (source line: 376)
+  - **C0037.S0166** `List item: **C0119** `Console surface`` (source line: 377)
+  - **C0037.S0577** `List item: **C0119.S0015** `GET /console/api/posts`` (source line: 378)
+  - **C0037.S0578** `List item: **C0119.S0016** `POST /console/api/posts`` (source line: 379)
+  - **C0037.S0579** `List item: **C0119.S0017** `GET /console/api/keychains`` (source line: 380)
+  - **C0037.S0580** `List item: **C0119.S0018** `POST /console/api/keychains`` (source line: 381)
+  - **C0037.S0581** `List item: **C0119.S0019** `GET /console/api/keychains/{keychainId}/members`` (source line: 382)
+  - **C0037.S0582** `List item: **C0119.S0020** `POST /console/api/keychains/{keychainId}/members`` (source line: 383)
+  - **C0037.S0583** `List item: **C0119.S0021** `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`` (source line: 384)
+  - **C0037.S0584** `List item: **C0119.S0022** `GET /console/api/keychains/{keychainId}/resolve`` (source line: 385)
+  - **C0037.S0585** `List item: **C0119.S0023** `POST /console/api/invites`` (source line: 386)
+  - **C0037.S0586** `List item: **C0119.S0024** `POST /console/api/keys`` (source line: 387)
+  - **C0037.S0587** `List item: **C0119.S0025** `POST /console/api/keys/{keyId}/lifecycle`` (source line: 388)
+  - **C0037.S0588** `List item: **C0119.S0026** `POST /console/api/posts/{postId}/moderation`` (source line: 389)
+  - **C0037.S0589** `List item: **C0119.S0027** `POST /console/api/posts/{postId}/comments/{commentId}/moderation`` (source line: 390)
+  - **C0037.S0167** `List item: **C0120** `Canonical negative-path example`` (source line: 391)
+  - **C0037.S0590** `List item: **C0120.S0028** `Any protected route with missing token`` (source line: 392)
+  - **C0037.S0133** `List item: **C0092** `Synchronization rule`` (source line: 393)
+- **C0038** `File: `ROUTE_INVENTORY_REFERENCE.md`` (source line: 396)
+  - **C0038.S0591** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`` (source line: 397)
+  - **C0038.S0535** `List item: **Components identified:** 5` (source line: 398)
+  - **C0038.S0168** `List item: **C0121** `Route Inventory Reference (SSOT)`` (source line: 400)
+  - **C0038.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 401)
+  - **C0038.S0026** `List item: **C0007** `Purpose`` (source line: 402)
+  - **C0038.S0170** `List item: **C0122** `Inventory governance`` (source line: 404)
+  - **C0038.S0171** `List item: **C0123** `Route inventory (v1)`` (source line: 406)
+  - **C0038.S0172** `List item: **C0124** `Notes`` (source line: 408)
+- **C0039** `File: `UI_RUNTIME_CONTRACT.md`` (source line: 411)
+  - **C0039.S0592** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`` (source line: 412)
+  - **C0039.S0593** `List item: **Components identified:** 9` (source line: 413)
+  - **C0039.S0174** `List item: **C0125** `UI Runtime Contract (SSOT Appendix)`` (source line: 415)
+  - **C0039.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 416)
+  - **C0039.S0026** `List item: **C0007** `Purpose`` (source line: 417)
+  - **C0039.S0176** `List item: **C0126** `Session and device persistence contract`` (source line: 419)
+  - **C0039.S0177** `List item: **C0127** `API client behavior contract`` (source line: 421)
+  - **C0039.S0178** `List item: **C0128** `Route-state runtime model`` (source line: 423)
+  - **C0039.S0179** `List item: **C0129** `Diagnostics UX minimums`` (source line: 425)
+  - **C0039.S0180** `List item: **C0130** `Security/UX guardrails`` (source line: 427)
+  - **C0039.S0181** `List item: **C0131** `Accessibility/runtime baseline`` (source line: 429)
+  - **C0039.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 431)
+- **C0040** `File: `DATA_MODEL_REFERENCE.md`` (source line: 434)
+  - **C0040.S0594** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`` (source line: 435)
+  - **C0040.S0542** `List item: **Components identified:** 6` (source line: 436)
+  - **C0040.S0182** `List item: **C0132** `Data Model Reference (SSOT)`` (source line: 438)
+  - **C0040.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 439)
+  - **C0040.S0184** `List item: **C0133** `Storage strategy`` (source line: 440)
+  - **C0040.S0185** `List item: **C0134** `Core entity groups`` (source line: 442)
+  - **C0040.S0186** `List item: **C0135** `Lifecycle invariants`` (source line: 444)
+  - **C0040.S0187** `List item: **C0136** `Transaction boundaries (required)`` (source line: 446)
+  - **C0040.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 448)
+- **C0041** `File: `DATA_MODEL_SPEC.md`` (source line: 451)
+  - **C0041.S0595** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`` (source line: 452)
+  - **C0041.S0546** `List item: **Components identified:** 4` (source line: 453)
+  - **C0041.S0188** `List item: **C0137** `Data Model Spec (Production)`` (source line: 455)
+  - **C0041.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 456)
+  - **C0041.S0190** `List item: **C0138** `Table contracts`` (source line: 457)
+  - **C0041.S0596** `List item: **C0138.S0029** `principals`` (source line: 458)
+  - **C0041.S0597** `List item: **C0138.S0030** `principal_emails`` (source line: 459)
+  - **C0041.S0598** `List item: **C0138.S0031** `credentials`` (source line: 460)
+  - **C0041.S0599** `List item: **C0138.S0032** `token_families`` (source line: 461)
+  - **C0041.S0600** `List item: **C0138.S0033** `delegation_envelopes`` (source line: 462)
+  - **C0041.S0601** `List item: **C0138.S0034** `keychain_memberships`` (source line: 463)
+  - **C0041.S0602** `List item: **C0138.S0035** `keychain_effective_snapshots`` (source line: 464)
+  - **C0041.S0603** `List item: **C0138.S0036** `invite_receipts`` (source line: 465)
+  - **C0041.S0604** `List item: **C0138.S0037** `posts`` (source line: 466)
+  - **C0041.S0605** `List item: **C0138.S0038** `post_revisions`` (source line: 467)
+  - **C0041.S0606** `List item: **C0138.S0039** `post_flags`` (source line: 468)
+  - **C0041.S0607** `List item: **C0138.S0040** `comments`` (source line: 469)
+  - **C0041.S0608** `List item: **C0138.S0041** `moderation_actions`` (source line: 470)
+  - **C0041.S0191** `List item: **C0139** `Retention`` (source line: 471)
+  - **C0041.S0192** `List item: **C0140** `Consistency notes`` (source line: 473)
+- **C0042** `File: `ERD.md`` (source line: 476)
+  - **C0042.S0609** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/ERD.md`` (source line: 477)
+  - **C0042.S0610** `List item: **Components identified:** 2` (source line: 478)
+  - **C0042.S0193** `List item: **C0141** `ERD (Text + Mermaid)`` (source line: 480)
+  - **C0042.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 481)
+  - **C0042.S0172** `List item: **C0124** `Notes`` (source line: 482)
+- **C0043** `File: `SECURITY_CONTROLS_SPEC.md`` (source line: 485)
+  - **C0043.S0611** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`` (source line: 486)
+  - **C0043.S0542** `List item: **Components identified:** 6` (source line: 487)
+  - **C0043.S0195** `List item: **C0142** `Security Controls Spec`` (source line: 489)
+  - **C0043.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 490)
+  - **C0043.S0197** `List item: **C0143** `Control objectives`` (source line: 491)
+  - **C0043.S0198** `List item: **C0144** `Trust boundaries`` (source line: 493)
+  - **C0043.S0199** `List item: **C0145** `Control baseline`` (source line: 495)
+  - **C0043.S0200** `List item: **C0146** `Dependency mapping`` (source line: 497)
+  - **C0043.S0201** `List item: **C0147** `Verification linkage`` (source line: 499)
+- **C0044** `File: `SECURITY_HEADERS_AND_CSP_POLICY.md`` (source line: 502)
+  - **C0044.S0612** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`` (source line: 503)
+  - **C0044.S0613** `List item: **Components identified:** 7` (source line: 504)
+  - **C0044.S0203** `List item: **C0148** `Security Headers and CSP Policy (SSOT)`` (source line: 506)
+  - **C0044.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 507)
+  - **C0044.S0026** `List item: **C0007** `Purpose`` (source line: 508)
+  - **C0044.S0205** `List item: **C0149** `Required default security headers`` (source line: 510)
+  - **C0044.S0206** `List item: **C0150** `Path-aware CSP contract`` (source line: 512)
+  - **C0044.S0207** `List item: **C0151** `Enforcement requirements`` (source line: 514)
+  - **C0044.S0208** `List item: **C0152** `Verification requirements`` (source line: 516)
+  - **C0044.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 518)
+- **C0045** `File: `SECURITY_THREAT_MODEL.md`` (source line: 521)
+  - **C0045.S0614** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`` (source line: 522)
+  - **C0045.S0546** `List item: **Components identified:** 4` (source line: 523)
+  - **C0045.S0209** `List item: **C0153** `Security Threat Model`` (source line: 525)
+  - **C0045.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 526)
+  - **C0045.S0211** `List item: **C0154** `Threat scenarios`` (source line: 527)
+  - **C0045.S0212** `List item: **C0155** `Mitigations`` (source line: 529)
+  - **C0045.S0213** `List item: **C0156** `Dependency linkage`` (source line: 531)
+- **C0046** `File: `SECURITY_VERIFICATION_ABUSE_CASES.md`` (source line: 534)
+  - **C0046.S0615** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`` (source line: 535)
+  - **C0046.S0613** `List item: **Components identified:** 7` (source line: 536)
+  - **C0046.S0214** `List item: **C0157** `Security Verification and Abuse Cases (SSOT)`` (source line: 538)
+  - **C0046.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 539)
+  - **C0046.S0026** `List item: **C0007** `Purpose`` (source line: 540)
+  - **C0046.S0216** `List item: **C0158** `Abuse-case matrix (minimum required)`` (source line: 542)
+  - **C0046.S0217** `List item: **C0159** `Security test-pack requirements`` (source line: 544)
+  - **C0046.S0218** `List item: **C0160** `Incident-response verification hooks`` (source line: 546)
+  - **C0046.S0219** `List item: **C0161** `Release gate linkage`` (source line: 548)
+  - **C0046.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 550)
+- **C0047** `File: `ACCEPTANCE_CRITERIA_MATRIX.md`` (source line: 553)
+  - **C0047.S0616** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`` (source line: 554)
+  - **C0047.S0613** `List item: **Components identified:** 7` (source line: 555)
+  - **C0047.S0221** `List item: **C0162** `Acceptance Criteria Matrix (SSOT)`` (source line: 557)
+  - **C0047.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 558)
+  - **C0047.S0026** `List item: **C0007** `Purpose`` (source line: 559)
+  - **C0047.S0223** `List item: **C0163** `Usage contract`` (source line: 561)
+  - **C0047.S0224** `List item: **C0164** `Route acceptance matrix`` (source line: 563)
+  - **C0047.S0225** `List item: **C0165** `Required negative-path baseline per route`` (source line: 565)
+  - **C0047.S0226** `List item: **C0166** `Manual UAT checklist linkage`` (source line: 567)
+  - **C0047.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 569)
+- **C0048** `File: `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`` (source line: 572)
+  - **C0048.S0617** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`` (source line: 573)
+  - **C0048.S0557** `List item: **Components identified:** 8` (source line: 574)
+  - **C0048.S0227** `List item: **C0167** `Boot and Startup Failure Contract (SSOT)`` (source line: 576)
+  - **C0048.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 577)
+  - **C0048.S0026** `List item: **C0007** `Purpose`` (source line: 578)
+  - **C0048.S0229** `List item: **C0168** `Startup sequence contract`` (source line: 580)
+  - **C0048.S0230** `List item: **C0169** `Mandatory boot assertions`` (source line: 582)
+  - **C0048.S0231** `List item: **C0170** `Startup success behavior`` (source line: 584)
+  - **C0048.S0232** `List item: **C0171** `Startup failure behavior`` (source line: 586)
+  - **C0048.S0233** `List item: **C0172** `Non-negotiable fail-closed rule`` (source line: 588)
+  - **C0048.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 590)
+- **C0049** `File: `CONFIGURATION_ENVIRONMENT_CONTRACT.md`` (source line: 593)
+  - **C0049.S0618** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`` (source line: 594)
+  - **C0049.S0557** `List item: **Components identified:** 8` (source line: 595)
+  - **C0049.S0234** `List item: **C0173** `Configuration and Environment Contract (SSOT)`` (source line: 597)
+  - **C0049.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 598)
+  - **C0049.S0026** `List item: **C0007** `Purpose`` (source line: 599)
+  - **C0049.S0236** `List item: **C0174** `Required environment variables`` (source line: 601)
+  - **C0049.S0237** `List item: **C0175** `Optional policy variables (with defaults)`` (source line: 603)
+  - **C0049.S0238** `List item: **C0176** `Profile hardening constraints`` (source line: 605)
+  - **C0049.S0239** `List item: **C0177** `Key material source rules`` (source line: 607)
+  - **C0049.S0240** `List item: **C0178** `Runtime mapping contract`` (source line: 609)
+  - **C0049.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 611)
+- **C0050** `File: `HEALTH_ENDPOINT_CONTRACT.md`` (source line: 614)
+  - **C0050.S0619** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`` (source line: 615)
+  - **C0050.S0593** `List item: **Components identified:** 9` (source line: 616)
+  - **C0050.S0241** `List item: **C0179** `Health Endpoint Contract (SSOT)`` (source line: 618)
+  - **C0050.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 619)
+  - **C0050.S0026** `List item: **C0007** `Purpose`` (source line: 620)
+  - **C0050.S0243** `List item: **C0180** `Route and surface`` (source line: 622)
+  - **C0050.S0244** `List item: **C0181** `Response contract`` (source line: 624)
+  - **C0050.S0245** `List item: **C0182** `Service-state semantics`` (source line: 626)
+  - **C0050.S0246** `List item: **C0183** `HTTP status guidance`` (source line: 628)
+  - **C0050.S0247** `List item: **C0184** `Failure reason examples`` (source line: 630)
+  - **C0050.S0248** `List item: **C0185** `Smoke-check expectations`` (source line: 632)
+  - **C0050.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 634)
+- **C0051** `File: `Migration_Seed_Strategy.md`` (source line: 637)
+  - **C0051.S0620** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`` (source line: 638)
+  - **C0051.S0557** `List item: **Components identified:** 8` (source line: 639)
+  - **C0051.S0249** `List item: **C0186** `Migration Seed Strategy (SSOT)`` (source line: 641)
+  - **C0051.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 642)
+  - **C0051.S0026** `List item: **C0007** `Purpose`` (source line: 643)
+  - **C0051.S0251** `List item: **C0187** `Strategy`` (source line: 645)
+  - **C0051.S0252** `List item: **C0188** `Required migration artifacts`` (source line: 647)
+  - **C0051.S0254** `List item: **C0189** `Required seed artifacts`` (source line: 649)
+  - **C0051.S0255** `List item: **C0190** `Safety rules`` (source line: 651)
+  - **C0051.S0256** `List item: **C0191** `Command contract`` (source line: 653)
+  - **C0051.S0201** `List item: **C0147** `Verification linkage`` (source line: 655)
+- **C0052** `File: `OBSERVABILITY_EVENT_CATALOG.md`` (source line: 658)
+  - **C0052.S0621** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`` (source line: 659)
+  - **C0052.S0542** `List item: **Components identified:** 6` (source line: 660)
+  - **C0052.S0257** `List item: **C0192** `Observability Event Catalog`` (source line: 662)
+  - **C0052.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 663)
+  - **C0052.S0259** `List item: **C0193** `Event families`` (source line: 664)
+  - **C0052.S0260** `List item: **C0194** `Canonical event naming guidance`` (source line: 666)
+  - **C0052.S0261** `List item: **C0195** `Required event fields`` (source line: 668)
+  - **C0052.S0262** `List item: **C0196** `Logging requirements`` (source line: 670)
+  - **C0052.S0263** `List item: **C0197** `Correlation requirements`` (source line: 672)
+- **C0053** `File: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 675)
+  - **C0053.S0622** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 676)
+  - **C0053.S0593** `List item: **Components identified:** 9` (source line: 677)
+  - **C0053.S0264** `List item: **C0198** `Operational Smoke Check Contract (SSOT)`` (source line: 679)
+  - **C0053.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 680)
+  - **C0053.S0026** `List item: **C0007** `Purpose`` (source line: 681)
+  - **C0053.S0266** `List item: **C0199** `Canonical smoke commands`` (source line: 683)
+  - **C0053.S0267** `List item: **C0200** `Health smoke contract`` (source line: 685)
+  - **C0053.S0268** `List item: **C0201** `Migration smoke contract`` (source line: 687)
+  - **C0053.S0269** `List item: **C0202** `Evidence requirements`` (source line: 689)
+  - **C0053.S0270** `List item: **C0203** `Reconciliation rule`` (source line: 691)
+  - **C0053.S0219** `List item: **C0161** `Release gate linkage`` (source line: 693)
+  - **C0053.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 695)
+- **C0054** `File: `PRODUCTION_READINESS_GATES.md`` (source line: 698)
+  - **C0054.S0623** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`` (source line: 699)
+  - **C0054.S0542** `List item: **Components identified:** 6` (source line: 700)
+  - **C0054.S0271** `List item: **C0204** `Production Readiness Gates`` (source line: 702)
+  - **C0054.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 703)
+  - **C0054.S0273** `List item: **C0205** `Gate A: Build/runtime integrity`` (source line: 704)
+  - **C0054.S0274** `List item: **C0206** `Gate B: Contract/security quality`` (source line: 706)
+  - **C0054.S0275** `List item: **C0207** `Gate C: UX parity`` (source line: 708)
+  - **C0054.S0276** `List item: **C0208** `Gate D: Operational readiness`` (source line: 710)
+  - **C0054.S0048** `List item: **C0025** `Exit criteria`` (source line: 712)
+- **C0055** `File: `RELEASE_CHECKLIST.md`` (source line: 715)
+  - **C0055.S0624** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`` (source line: 716)
+  - **C0055.S0546** `List item: **Components identified:** 4` (source line: 717)
+  - **C0055.S0277** `List item: **C0209** `Release Checklist`` (source line: 719)
+  - **C0055.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 720)
+  - **C0055.S0279** `List item: **C0210** `Pre-release requirements`` (source line: 721)
+  - **C0055.S0280** `List item: **C0211** `Security and operations gates`` (source line: 723)
+  - **C0055.S0281** `List item: **C0212** `Evidence package`` (source line: 725)
+- **C0056** `File: `SLO_SLI_SPEC.md`` (source line: 728)
+  - **C0056.S0625** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md`` (source line: 729)
+  - **C0056.S0613** `List item: **Components identified:** 7` (source line: 730)
+  - **C0056.S0282** `List item: **C0213** `SLO/SLI Spec`` (source line: 732)
+  - **C0056.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 733)
+  - **C0056.S0284** `List item: **C0214** `SLI definitions`` (source line: 734)
+  - **C0056.S0285** `List item: **C0215** `Initial SLO targets`` (source line: 736)
+  - **C0056.S0286** `List item: **C0216** `Measurement windows`` (source line: 738)
+  - **C0056.S0287** `List item: **C0217** `Instrumentation ownership matrix`` (source line: 740)
+  - **C0056.S0288** `List item: **C0218** `Alerting guidance`` (source line: 742)
+  - **C0056.S0289** `List item: **C0219** `Accountability rules`` (source line: 744)
+- **C0057** `File: `VERIFICATION_STRATEGY.md`` (source line: 747)
+  - **C0057.S0626** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`` (source line: 748)
+  - **C0057.S0542** `List item: **Components identified:** 6` (source line: 749)
+  - **C0057.S0290** `List item: **C0220** `Verification Strategy (SSOT)`` (source line: 751)
+  - **C0057.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 752)
+  - **C0057.S0292** `List item: **C0221** `Automated suites`` (source line: 753)
+  - **C0057.S0293** `List item: **C0222** `Required commands`` (source line: 755)
+  - **C0057.S0294** `List item: **C0223** `Release verification scope`` (source line: 757)
+  - **C0057.S0295** `List item: **C0224** `Acceptance criteria enforcement`` (source line: 759)
+  - **C0057.S0296** `List item: **C0225** `Stable QA script (manual)`` (source line: 761)
+- **C0058** `File: `CHANGE_IMPACT_MAP_TEMPLATES.md`` (source line: 764)
+  - **C0058.S0627** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`` (source line: 765)
+  - **C0058.S0546** `List item: **Components identified:** 4` (source line: 766)
+  - **C0058.S0297** `List item: **C0226** `Change Impact Map Templates (SSOT)`` (source line: 768)
+  - **C0058.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 769)
+  - **C0058.S0026** `List item: **C0007** `Purpose`` (source line: 770)
+  - **C0058.S0299** `List item: **C0227** `Minimal template`` (source line: 772)
+  - **C0058.S0300** `List item: **C0228** `Rule`` (source line: 774)
+- **C0059** `File: `KNOWN_GAPS_TRACKER.md`` (source line: 777)
+  - **C0059.S0628** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`` (source line: 778)
+  - **C0059.S0542** `List item: **Components identified:** 6` (source line: 779)
+  - **C0059.S0301** `List item: **C0229** `Known Gaps Tracker (SSOT)`` (source line: 781)
+  - **C0059.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 782)
+  - **C0059.S0026** `List item: **C0007** `Purpose`` (source line: 783)
+  - **C0059.S0303** `List item: **C0230** `Open gaps`` (source line: 785)
+  - **C0059.S0304** `List item: **C0231** `Recently resolved in this SSOT cycle`` (source line: 787)
+  - **C0059.S0305** `List item: **C0232** `Triage rules`` (source line: 789)
+  - **C0059.S0306** `List item: **C0233** `Review cadence`` (source line: 791)
+- **C0060** `File: `Prototype_to_SSOT_Delta_Map.md`` (source line: 794)
+  - **C0060.S0629** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`` (source line: 795)
+  - **C0060.S0546** `List item: **Components identified:** 4` (source line: 796)
+  - **C0060.S0308** `List item: **C0234** `Prototype to SSOT Delta Map (SSOT)`` (source line: 798)
+  - **C0060.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 799)
+  - **C0060.S0026** `List item: **C0007** `Purpose`` (source line: 800)
+  - **C0060.S0310** `List item: **C0235** `Delta map`` (source line: 802)
+  - **C0060.S0311** `List item: **C0236** `Promotion rule`` (source line: 804)
+- **C0061** `File: `SSOT_AUTOMATION_AND_LINTING.md`` (source line: 807)
+  - **C0061.S0630** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`` (source line: 808)
+  - **C0061.S0557** `List item: **Components identified:** 8` (source line: 809)
+  - **C0061.S0312** `List item: **C0237** `SSOT Automation and Linting (SSOT)`` (source line: 811)
+  - **C0061.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 812)
+  - **C0061.S0026** `List item: **C0007** `Purpose`` (source line: 813)
+  - **C0061.S0314** `List item: **C0238** `Required automation checks`` (source line: 815)
+  - **C0061.S0315** `List item: **C0239** `PR policy integration`` (source line: 817)
+  - **C0061.S0316** `List item: **C0240** `Minimal command contract`` (source line: 819)
+  - **C0061.S0317** `List item: **C0241** `Evidence output requirements`` (source line: 821)
+  - **C0061.S0318** `List item: **C0242** `Ownership`` (source line: 823)
+  - **C0061.S0145** `List item: **C0102** `Related SSOT docs`` (source line: 825)
+- **C0062** `File: `TRACEABILITY_MATRIX.md`` (source line: 828)
+  - **C0062.S0631** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`` (source line: 829)
+  - **C0062.S0632** `List item: **Components identified:** 1` (source line: 830)
+  - **C0062.S0319** `List item: **C0243** `Traceability Matrix (Docs-to-Code)`` (source line: 832)
+  - **C0062.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 833)
+- **C0063** `File: `ADR_INDEX.md`` (source line: 835)
+  - **C0063.S0633** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`` (source line: 836)
+  - **C0063.S0546** `List item: **Components identified:** 4` (source line: 837)
+  - **C0063.S0321** `List item: **C0244** `ADR Index`` (source line: 839)
+  - **C0063.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 840)
+  - **C0063.S0026** `List item: **C0007** `Purpose`` (source line: 841)
+  - **C0063.S0323** `List item: **C0245** `Current indexed records`` (source line: 843)
+  - **C0063.S0324** `List item: **C0246** `Index contract`` (source line: 845)
+- **C0064** `File: `DECISIONS_LOG.md`` (source line: 848)
+  - **C0064.S0634** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md`` (source line: 849)
+  - **C0064.S0635** `List item: **Components identified:** 3` (source line: 850)
+  - **C0064.S0325** `List item: **C0247** `Decisions Log`` (source line: 852)
+  - **C0064.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 853)
+  - **C0064.S0327** `List item: **C0248** `Chronological entries`` (source line: 854)
+  - **C0064.S0328** `List item: **C0249** `Update rule`` (source line: 856)
+- **C0065** `File: `DECISION_RECORD_TEMPLATE.md`` (source line: 859)
+  - **C0065.S0636** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md`` (source line: 860)
+  - **C0065.S0635** `List item: **Components identified:** 3` (source line: 861)
+  - **C0065.S0329** `List item: **C0250** `Decision Record Template`` (source line: 863)
+  - **C0065.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 864)
+  - **C0065.S0331** `List item: **C0251** `Required fields`` (source line: 865)
+  - **C0065.S0332** `List item: **C0252** `Quality bar`` (source line: 867)
+- **C0066** `File: `ADR-001-ssot-first-governance.md`` (source line: 870)
+  - **C0066.S0637** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`` (source line: 871)
+  - **C0066.S0535** `List item: **Components identified:** 5` (source line: 872)
+  - **C0066.S0333** `List item: **C0253** `ADR-001: SSOT-first contract governance model`` (source line: 874)
+  - **C0066.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 875)
+  - **C0066.S0335** `List item: **C0254** `Context`` (source line: 876)
+  - **C0066.S0337** `List item: **C0255** `Decision`` (source line: 878)
+  - **C0066.S0338** `List item: **C0256** `Consequences`` (source line: 880)
+  - **C0066.S0339** `List item: **C0257** `Verification implications`` (source line: 882)
+- **C0067** `File: `ADR-002-delegation-envelope-bounds.md`` (source line: 885)
+  - **C0067.S0638** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`` (source line: 886)
+  - **C0067.S0535** `List item: **Components identified:** 5` (source line: 887)
+  - **C0067.S0340** `List item: **C0258** `ADR-002: Delegation envelope bounds (subset/depth/expiry)`` (source line: 889)
+  - **C0067.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 890)
+  - **C0067.S0335** `List item: **C0254** `Context`` (source line: 891)
+  - **C0067.S0337** `List item: **C0255** `Decision`` (source line: 893)
+  - **C0067.S0338** `List item: **C0256** `Consequences`` (source line: 895)
+  - **C0067.S0339** `List item: **C0257** `Verification implications`` (source line: 897)
+- **C0068** `File: `ADR-003-keychain-production-principal.md`` (source line: 900)
+  - **C0068.S0639** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`` (source line: 901)
+  - **C0068.S0535** `List item: **Components identified:** 5` (source line: 902)
+  - **C0068.S0342** `List item: **C0259** `ADR-003: Keychain as production-active v1 principal class`` (source line: 904)
+  - **C0068.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 905)
+  - **C0068.S0335** `List item: **C0254** `Context`` (source line: 906)
+  - **C0068.S0337** `List item: **C0255** `Decision`` (source line: 908)
+  - **C0068.S0338** `List item: **C0256** `Consequences`` (source line: 910)
+  - **C0068.S0339** `List item: **C0257** `Verification implications`` (source line: 912)
+- **C0069** `File: `ADR-004-envelope-first-api-standard.md`` (source line: 915)
+  - **C0069.S0640** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`` (source line: 916)
+  - **C0069.S0535** `List item: **Components identified:** 5` (source line: 917)
+  - **C0069.S0344** `List item: **C0260** `ADR-004: Envelope-first API response standard`` (source line: 919)
+  - **C0069.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 920)
+  - **C0069.S0335** `List item: **C0254** `Context`` (source line: 921)
+  - **C0069.S0337** `List item: **C0255** `Decision`` (source line: 923)
+  - **C0069.S0338** `List item: **C0256** `Consequences`` (source line: 925)
+  - **C0069.S0339** `List item: **C0257** `Verification implications`` (source line: 927)
+- **C0070** `File: `ADR-005-release-gating-controls.md`` (source line: 930)
+  - **C0070.S0641** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md`` (source line: 931)
+  - **C0070.S0535** `List item: **Components identified:** 5` (source line: 932)
+  - **C0070.S0346** `List item: **C0261** `ADR-005: Release gating via verification + smoke + readiness controls`` (source line: 934)
+  - **C0070.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 935)
+  - **C0070.S0335** `List item: **C0254** `Context`` (source line: 936)
+  - **C0070.S0337** `List item: **C0255** `Decision`` (source line: 938)
+  - **C0070.S0338** `List item: **C0256** `Consequences`` (source line: 940)
+  - **C0070.S0339** `List item: **C0257** `Verification implications`` (source line: 942)
+- **C0071** `File: `DEPRECATION_AND_VERSIONING_POLICY.md`` (source line: 945)
+  - **C0071.S0642** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md`` (source line: 946)
+  - **C0071.S0546** `List item: **Components identified:** 4` (source line: 947)
+  - **C0071.S0348** `List item: **C0262** `Deprecation and Versioning Policy`` (source line: 949)
+  - **C0071.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 950)
+  - **C0071.S0350** `List item: **C0263** `Versioning model`` (source line: 951)
+  - **C0071.S0351** `List item: **C0264** `Deprecation process`` (source line: 953)
+  - **C0071.S0352** `List item: **C0265** `Guardrails`` (source line: 955)
+- **C0072** `File: `MIGRATION_AND_COMPATIBILITY_STRATEGY.md`` (source line: 958)
+  - **C0072.S0643** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`` (source line: 959)
+  - **C0072.S0546** `List item: **Components identified:** 4` (source line: 960)
+  - **C0072.S0353** `List item: **C0266** `Migration and Compatibility Strategy`` (source line: 962)
+  - **C0072.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 963)
+  - **C0072.S0355** `List item: **C0267** `Migration principles`` (source line: 964)
+  - **C0072.S0252** `List item: **C0188** `Required migration artifacts`` (source line: 966)
+  - **C0072.S0356** `List item: **C0268** `Compatibility checklist`` (source line: 968)
+- **C0073** `File: `MODULE_BOUNDARIES_AND_OWNERSHIP.md`` (source line: 971)
+  - **C0073.S0644** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`` (source line: 972)
+  - **C0073.S0546** `List item: **Components identified:** 4` (source line: 973)
+  - **C0073.S0357** `List item: **C0269** `Module Boundaries and Ownership`` (source line: 975)
+  - **C0073.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 976)
+  - **C0073.S0359** `List item: **C0270** `Core modules`` (source line: 977)
+  - **C0073.S0360** `List item: **C0271** `Ownership model`` (source line: 979)
+  - **C0073.S0101** `List item: **C0066** `Boundary rules`` (source line: 981)
+- **C0074** `File: `TEST_DATA_AND_FIXTURE_STRATEGY.md`` (source line: 984)
+  - **C0074.S0645** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md`` (source line: 985)
+  - **C0074.S0546** `List item: **Components identified:** 4` (source line: 986)
+  - **C0074.S0361** `List item: **C0272** `Test Data and Fixture Strategy`` (source line: 988)
+  - **C0074.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 989)
+  - **C0074.S0363** `List item: **C0273** `Fixture principles`` (source line: 990)
+  - **C0074.S0364** `List item: **C0274** `Required fixture packs`` (source line: 992)
+  - **C0074.S0365** `List item: **C0275** `Maintenance policy`` (source line: 994)
+- **C0075** `File: `CONTRIBUTION_WORKFLOW_SSOT.md`` (source line: 997)
+  - **C0075.S0646** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`` (source line: 998)
+  - **C0075.S0535** `List item: **Components identified:** 5` (source line: 999)
+  - **C0075.S0366** `List item: **C0276** `Contribution Workflow (SSOT)`` (source line: 1001)
+  - **C0075.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1002)
+  - **C0075.S0368** `List item: **C0277** `Workflow`` (source line: 1003)
+  - **C0075.S0079** `List item: **C0049** `Required PR payload`` (source line: 1005)
+  - **C0075.S0369** `List item: **C0278** `Review policy`` (source line: 1007)
+  - **C0075.S0370** `List item: **C0279** `SLA and escalation`` (source line: 1009)
+- **C0076** `File: `DEFINITION_OF_DONE.md`` (source line: 1012)
+  - **C0076.S0647** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`` (source line: 1013)
+  - **C0076.S0546** `List item: **Components identified:** 4` (source line: 1014)
+  - **C0076.S0371** `List item: **C0280** `Definition of Done`` (source line: 1016)
+  - **C0076.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1017)
+  - **C0076.S0373** `List item: **C0281** `Done means all are true`` (source line: 1018)
+  - **C0076.S0374** `List item: **C0282** `Required evidence checklist`` (source line: 1020)
+  - **C0076.S0375** `List item: **C0283** `Not-done examples`` (source line: 1022)
+- **C0077** `File: `RISK_REGISTER.md`` (source line: 1025)
+  - **C0077.S0648** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md`` (source line: 1026)
+  - **C0077.S0635** `List item: **Components identified:** 3` (source line: 1027)
+  - **C0077.S0376** `List item: **C0284** `Risk Register`` (source line: 1029)
+  - **C0077.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1030)
+  - **C0077.S0378** `List item: **C0285** `Active risks`` (source line: 1031)
+  - **C0077.S0306** `List item: **C0233** `Review cadence`` (source line: 1033)
+- **C0078** `File: `ROADMAP_AND_MILESTONES.md`` (source line: 1036)
+  - **C0078.S0649** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`` (source line: 1037)
+  - **C0078.S0535** `List item: **Components identified:** 5` (source line: 1038)
+  - **C0078.S0379** `List item: **C0286** `Roadmap and Milestones`` (source line: 1040)
+  - **C0078.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1041)
+  - **C0078.S0381** `List item: **C0287** `Milestones`` (source line: 1042)
+  - **C0078.S0382** `List item: **C0288** `Exit criteria by milestone`` (source line: 1044)
+  - **C0078.S0383** `List item: **C0289** `Milestone deliverables (minimum)`` (source line: 1046)
+  - **C0078.S0384** `List item: **C0290** `Tracking rule`` (source line: 1048)
+- **C0079** `File: `SCAFFOLD_BUILD_REPORT.md`` (source line: 1051)
+  - **C0079.S0650** `List item: **Location:** `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md`` (source line: 1052)
+  - **C0079.S0546** `List item: **Components identified:** 4` (source line: 1053)
+  - **C0079.S0385** `List item: **C0291** `Scaffold Build Report`` (source line: 1055)
+  - **C0079.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1056)
+  - **C0079.S0387** `List item: **C0292** `Report summary`` (source line: 1057)
+  - **C0079.S0388** `List item: **C0293** `Verification completed`` (source line: 1059)
+  - **C0079.S0389** `List item: **C0294** `Remaining maintenance tasks`` (source line: 1061)
+- **C0020** `File: `README.md`` (source line: 1064)
+  - **C0020.S0651** `List item: **Location:** `from_scratch/ssot_canon/evidence/README.md`` (source line: 1065)
+  - **C0020.S0546** `List item: **Components identified:** 4` (source line: 1066)
+  - **C0020.S0390** `List item: **C0295** `Evidence Package Guide`` (source line: 1068)
+  - **C0020.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1069)
+  - **C0020.S0026** `List item: **C0007** `Purpose`` (source line: 1070)
+  - **C0020.S0392** `List item: **C0296** `Required evidence types`` (source line: 1072)
+  - **C0020.S0393** `List item: **C0297** `Storage convention`` (source line: 1074)
+- **C0080** `File: `ssot_report.json`` (source line: 1077)
+  - **C0080.S0652** `List item: **Location:** `from_scratch/ssot_canon/evidence/automation/ssot_report.json`` (source line: 1078)
+  - **C0080.S0635** `List item: **Components identified:** 3` (source line: 1079)
+  - **C0080.S0394** `List item: **C0298** `generated_at_utc`` (source line: 1081)
+  - **C0080.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1082)
+  - **C0080.S0396** `List item: **C0299** `status`` (source line: 1083)
+  - **C0080.S0397** `List item: **C0300** `checks`` (source line: 1085)
+  - **C0080.S0653** `List item: **C0300.S0042** `lint`` (source line: 1086)
+  - **C0080.S0654** `List item: **C0300.S0043** `sync_check`` (source line: 1087)
+- **C0081** `File: `RELEASE_EVIDENCE_TEMPLATE.md`` (source line: 1089)
+  - **C0081.S0655** `List item: **Location:** `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`` (source line: 1090)
+  - **C0081.S0535** `List item: **Components identified:** 5` (source line: 1091)
+  - **C0081.S0398** `List item: **C0301** `Release Evidence Template`` (source line: 1093)
+  - **C0081.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1094)
+  - **C0081.S0400** `List item: **C0302** `Release metadata`` (source line: 1095)
+  - **C0081.S0401** `List item: **C0303** `Verification command results`` (source line: 1097)
+  - **C0081.S0402** `List item: **C0304** `Contract and behavior deltas`` (source line: 1099)
+  - **C0081.S0403** `List item: **C0305** `Operational signoff`` (source line: 1101)
+- **C0082** `File: `SSOT_CHANGE_EVIDENCE_TEMPLATE.md`` (source line: 1104)
+  - **C0082.S0656** `List item: **Location:** `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`` (source line: 1105)
+  - **C0082.S0542** `List item: **Components identified:** 6` (source line: 1106)
+  - **C0082.S0404** `List item: **C0306** `SSOT Change Evidence Template`` (source line: 1108)
+  - **C0082.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1109)
+  - **C0082.S0406** `List item: **C0307** `Change metadata`` (source line: 1110)
+  - **C0082.S0407** `List item: **C0308** `Documents/artifacts changed`` (source line: 1112)
+  - **C0082.S0408** `List item: **C0309** `Verification evidence`` (source line: 1114)
+  - **C0082.S0409** `List item: **C0310** `Traceability`` (source line: 1116)
+  - **C0082.S0410** `List item: **C0311** `Reviewer signoff`` (source line: 1118)
+- **C0083** `File: `cre8.v1.yaml`` (source line: 1121)
+  - **C0083.S0657** `List item: **Location:** `from_scratch/ssot_canon/openapi/cre8.v1.yaml`` (source line: 1122)
+  - **C0083.S0542** `List item: **Components identified:** 6` (source line: 1123)
+  - **C0083.S0411** `List item: **C0312** `openapi`` (source line: 1125)
+  - **C0083.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1126)
+  - **C0083.S0413** `List item: **C0313** `info`` (source line: 1127)
+  - **C0083.S0658** `List item: **C0313.S0044** `title`` (source line: 1128)
+  - **C0083.S0659** `List item: **C0313.S0045** `version`` (source line: 1129)
+  - **C0083.S0660** `List item: **C0313.S0046** `description`` (source line: 1130)
+  - **C0083.S0414** `List item: **C0314** `servers`` (source line: 1131)
+  - **C0083.S0415** `List item: **C0315** `security`` (source line: 1133)
+  - **C0083.S0416** `List item: **C0316** `paths`` (source line: 1135)
+  - **C0083.S0661** `List item: **C0316.S0047** `get`` (source line: 1136)
+  - **C0083.S0662** `List item: **C0316.S0048** `summary`` (source line: 1137)
+  - **C0083.S0663** `List item: **C0316.S0049** `security`` (source line: 1138)
+  - **C0083.S0664** `List item: **C0316.S0050** `responses`` (source line: 1139)
+  - **C0083.S0665** `List item: **C0316.S0051** `200`` (source line: 1140)
+  - **C0083.S0666** `List item: **C0316.S0046** `description`` (source line: 1141)
+  - **C0083.S0667** `List item: **C0316.S0052** `content`` (source line: 1142)
+  - **C0083.S0668** `List item: **C0316.S0053** `schema`` (source line: 1143)
+  - **C0083.S0669** `List item: **C0316.S0054** `type`` (source line: 1160)
+  - **C0083.S0670** `List item: **C0316.S0055** `properties`` (source line: 1161)
+  - **C0083.S0671** `List item: **C0316.S0056** `keys`` (source line: 1162)
+  - **C0083.S0672** `List item: **C0316.S0057** `items`` (source line: 1164)
+  - **C0083.S0673** `List item: **C0316.S0058** `parameters`` (source line: 1169)
+  - **C0083.S0674** `List item: **C0316.S0059** `name`` (source line: 1170)
+  - **C0083.S0675** `List item: **C0316.S0060** `required`` (source line: 1171)
+  - **C0083.S0676** `List item: **C0316.S0061** `post`` (source line: 1175)
+  - **C0083.S0677** `List item: **C0316.S0062** `requestBody`` (source line: 1178)
+  - **C0083.S0678** `List item: **C0316.S0063** `201`` (source line: 1183)
+  - **C0083.S0679** `List item: **C0316.S0064** `409`` (source line: 1184)
+  - **C0083.S0680** `List item: **C0316.S0065** `422`` (source line: 1185)
+  - **C0083.S0681** `List item: **C0316.S0066** `401`` (source line: 1195)
+  - **C0083.S0682** `List item: **C0316.S0067** `403`` (source line: 1230)
+  - **C0083.S0683** `List item: **C0316.S0068** `404`` (source line: 1243)
+  - **C0083.S0684** `List item: **C0316.S0069** `patch`` (source line: 1244)
+  - **C0083.S0685** `List item: **C0316.S0070** `delete`` (source line: 1302)
+  - **C0083.S0417** `List item: **C0317** `components`` (source line: 1337)
+  - **C0083.S0686** `List item: **C0317.S0071** `securitySchemes`` (source line: 1338)
+  - **C0083.S0687** `List item: **C0317.S0072** `bearerAuth`` (source line: 1339)
+  - **C0083.S0688** `List item: **C0317.S0054** `type`` (source line: 1340)
+  - **C0083.S0689** `List item: **C0317.S0073** `scheme`` (source line: 1341)
+  - **C0083.S0690** `List item: **C0317.S0074** `bearerFormat`` (source line: 1342)
+  - **C0083.S0691** `List item: **C0317.S0058** `parameters`` (source line: 1343)
+  - **C0083.S0692** `List item: **C0317.S0075** `PostId`` (source line: 1344)
+  - **C0083.S0693** `List item: **C0317.S0076** `in`` (source line: 1345)
+  - **C0083.S0694** `List item: **C0317.S0059** `name`` (source line: 1346)
+  - **C0083.S0695** `List item: **C0317.S0060** `required`` (source line: 1347)
+  - **C0083.S0696** `List item: **C0317.S0053** `schema`` (source line: 1348)
+  - **C0083.S0697** `List item: **C0317.S0077** `KeyId`` (source line: 1349)
+  - **C0083.S0698** `List item: **C0317.S0078** `CommentId`` (source line: 1354)
+  - **C0083.S0699** `List item: **C0317.S0079** `KeychainId`` (source line: 1359)
+  - **C0083.S0700** `List item: **C0317.S0080** `MemberKeyId`` (source line: 1364)
+  - **C0083.S0701** `List item: **C0317.S0050** `responses`` (source line: 1369)
+  - **C0083.S0702** `List item: **C0317.S0081** `Success`` (source line: 1370)
+  - **C0083.S0703** `List item: **C0317.S0046** `description`` (source line: 1371)
+  - **C0083.S0704** `List item: **C0317.S0052** `content`` (source line: 1372)
+  - **C0083.S0705** `List item: **C0317.S0082** `Error`` (source line: 1374)
+  - **C0083.S0706** `List item: **C0317.S0083** `schemas`` (source line: 1378)
+  - **C0083.S0707** `List item: **C0317.S0084** `Meta`` (source line: 1379)
+  - **C0083.S0708** `List item: **C0317.S0055** `properties`` (source line: 1381)
+  - **C0083.S0709** `List item: **C0317.S0085** `envelope_version`` (source line: 1382)
+  - **C0083.S0710** `List item: **C0317.S0086** `timestamp_utc`` (source line: 1383)
+  - **C0083.S0711** `List item: **C0317.S0087** `SuccessEnvelope`` (source line: 1384)
+  - **C0083.S0712** `List item: **C0317.S0088** `data`` (source line: 1388)
+  - **C0083.S0707** `List item: **C0317.S0084** `meta`` (source line: 1389)
+  - **C0083.S0713** `List item: **C0317.S0089** `ErrorEnvelope`` (source line: 1390)
+  - **C0083.S0705** `List item: **C0317.S0082** `error`` (source line: 1394)
+  - **C0083.S0714** `List item: **C0317.S0090** `code`` (source line: 1398)
+  - **C0083.S0715** `List item: **C0317.S0091** `message`` (source line: 1399)
+  - **C0083.S0716** `List item: **C0317.S0092** `details`` (source line: 1400)
+  - **C0083.S0717** `List item: **C0317.S0093** `request_id`` (source line: 1401)
+  - **C0083.S0718** `List item: **C0317.S0094** `OwnerSignupRequest`` (source line: 1403)
+  - **C0083.S0719** `List item: **C0317.S0095** `email`` (source line: 1407)
+  - **C0083.S0720** `List item: **C0317.S0096** `password`` (source line: 1408)
+  - **C0083.S0721** `List item: **C0317.S0097** `OwnerLoginRequest`` (source line: 1409)
+  - **C0083.S0722** `List item: **C0317.S0098** `KeyLoginRequest`` (source line: 1415)
+  - **C0083.S0723** `List item: **C0317.S0099** `key_id`` (source line: 1419)
+  - **C0083.S0724** `List item: **C0317.S0100** `api_key`` (source line: 1420)
+  - **C0083.S0725** `List item: **C0317.S0101** `RefreshRequest`` (source line: 1421)
+  - **C0083.S0726** `List item: **C0317.S0102** `refresh_token`` (source line: 1425)
+  - **C0083.S0727** `List item: **C0317.S0103** `KeychainMemberAddRequest`` (source line: 1426)
+  - **C0083.S0728** `List item: **C0317.S0104** `member_key_id`` (source line: 1430)
+  - **C0083.S0729** `List item: **C0317.S0105** `role_hint`` (source line: 1431)
+- **C0084** `File: `error-envelope.schema.json`` (source line: 1433)
+  - **C0084.S0730** `List item: **Location:** `from_scratch/ssot_canon/schemas/error-envelope.schema.json`` (source line: 1434)
+  - **C0084.S0613** `List item: **Components identified:** 7` (source line: 1435)
+  - **C0084.S0418** `List item: **C0318** `$schema`` (source line: 1437)
+  - **C0084.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1438)
+  - **C0084.S0420** `List item: **C0319** `$id`` (source line: 1439)
+  - **C0084.S0421** `List item: **C0320** `title`` (source line: 1441)
+  - **C0084.S0422** `List item: **C0321** `type`` (source line: 1443)
+  - **C0084.S0423** `List item: **C0322** `required`` (source line: 1445)
+  - **C0084.S0424** `List item: **C0323** `additionalProperties`` (source line: 1447)
+  - **C0084.S0425** `List item: **C0324** `properties`` (source line: 1449)
+  - **C0084.S0731** `List item: **C0324.S0082** `error`` (source line: 1450)
+  - **C0084.S0732** `List item: **C0324.S0084** `meta`` (source line: 1451)
+- **C0085** `File: `success-envelope.schema.json`` (source line: 1453)
+  - **C0085.S0733** `List item: **Location:** `from_scratch/ssot_canon/schemas/success-envelope.schema.json`` (source line: 1454)
+  - **C0085.S0613** `List item: **Components identified:** 7` (source line: 1455)
+  - **C0085.S0418** `List item: **C0318** `$schema`` (source line: 1457)
+  - **C0085.S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*` (source line: 1458)
+  - **C0085.S0420** `List item: **C0319** `$id`` (source line: 1459)
+  - **C0085.S0421** `List item: **C0320** `title`` (source line: 1461)
+  - **C0085.S0422** `List item: **C0321** `type`` (source line: 1463)
+  - **C0085.S0423** `List item: **C0322** `required`` (source line: 1465)
+  - **C0085.S0424** `List item: **C0323** `additionalProperties`` (source line: 1467)
+  - **C0085.S0425** `List item: **C0324** `properties`` (source line: 1469)
+  - **C0085.S0734** `List item: **C0324.S0088** `data`` (source line: 1470)
+  - **C0085.S0732** `List item: **C0324.S0084** `meta`` (source line: 1471)
 
 ## File: `FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`
 - **Location:** `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`
 - **Components identified:** 5
 
-- **C0011** `From-Scratch Document Completion Report`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0012** `Completion criteria`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0013** `Current state summary`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0014** `Mandatory follow-up cadence`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0015** `Required artifacts per completion review`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0086** `From-Scratch Document Completion Report` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0087** `Completion criteria` (source line: 6)
+  - **C0087.S0735** `List item: implemented with concrete normative instructions,` (source line: 8)
+  - **C0087.S0736** `List item: linked to at least one verification/evidence path,` (source line: 9)
+  - **C0087.S0737** `List item: consistent with related contracts,` (source line: 10)
+  - **C0087.S0738** `List item: free of unresolved placeholders.` (source line: 11)
+- **C0088** `Current state summary` (source line: 13)
+  - **C0088.S0739** `List item: Structural coverage: complete across governance, architecture, contracts, security, operations, traceability, decisions, implementation guidance, and program management.` (source line: 14)
+  - **C0088.S0740** `List item: Substantive maturity: high and implementation-oriented across contracts/data/security/verification; remaining work is ongoing calibration and release-cycle evidence quality.` (source line: 15)
+- **C0089** `Mandatory follow-up cadence` (source line: 17)
+  - **C0089.S0741** `List item: Weekly during active rebuild phase.` (source line: 18)
+  - **C0089.S0742** `List item: Per-release thereafter.` (source line: 19)
+- **C0090** `Required artifacts per completion review` (source line: 21)
+  - **C0090.S0743** `List item: Updated `KNOWN_GAPS_TRACKER.md` entries.` (source line: 22)
+  - **C0090.S0744** `List item: Updated `TRACEABILITY_MATRIX.md` rows when behavior changes.` (source line: 23)
+  - **C0090.S0745** `List item: Evidence attachment using templates under `ssot_canon/evidence/templates/`.` (source line: 24)
 
 ## File: `MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`
 - **Location:** `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`
 - **Components identified:** 5
 
-- **C0016** `Master Plan: SSOT Canon Scaffold and Stub Replacement`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0017** `Objective`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0018** `Replacement priorities`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0019** `Anti-regression controls`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0020** `Completion target`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0091** `Master Plan: SSOT Canon Scaffold and Stub Replacement` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0092** `Objective` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0093** `Replacement priorities` (source line: 9)
+  - **C0093.S0746** `List item: Governance/index and ownership metadata.` (source line: 10)
+  - **C0093.S0747** `List item: Product/architecture/system contracts.` (source line: 11)
+  - **C0093.S0748** `List item: Route, authz, and data model contract surfaces.` (source line: 12)
+  - **C0093.S0749** `List item: Operations/readiness/verification controls.` (source line: 13)
+  - **C0093.S0750** `List item: Program and evidence governance.` (source line: 14)
+- **C0094** `Anti-regression controls` (source line: 16)
+  - **C0094.S0751** `List item: Lint rule: reject placeholder language in adopted docs.` (source line: 17)
+  - **C0094.S0752** `List item: Link check: reject unresolved cross-document references.` (source line: 18)
+  - **C0094.S0753** `List item: Evidence check: PRs touching SSOT must include change-impact map.` (source line: 19)
+- **C0095** `Completion target` (source line: 21)
+  - **C0095.S0754** `List item: clear ownership,` (source line: 23)
+  - **C0095.S0755** `List item: actionable normative section,` (source line: 24)
+  - **C0095.S0756** `List item: explicit verification mechanism,` (source line: 25)
+  - **C0095.S0757** `List item: cross-reference integrity.` (source line: 26)
 
 ## File: `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`
 - **Location:** `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`
 - **Components identified:** 5
 
-- **C0021** `Plan: SSOT-First Document Rebuild`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0022** `Goal`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0023** `Phases`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0024** `Work breakdown`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0025** `Exit criteria`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0096** `Plan: SSOT-First Document Rebuild` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0097** `Goal` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0098** `Phases` (source line: 9)
+  - **C0098.S0758** `List item: **Canon scaffold**: establish governance/index and machine contracts.` (source line: 10)
+  - **C0098.S0759** `List item: **Core contract set**: product/system spec, API/route/auth/data/security docs.` (source line: 11)
+  - **C0098.S0760** `List item: **Operational hardening**: verification, readiness gates, smoke contracts, SLOs.` (source line: 12)
+  - **C0098.S0761** `List item: **Traceability and governance**: matrices, decision logs, change control, evidence templates.` (source line: 13)
+- **C0099** `Work breakdown` (source line: 15)
+  - **C0099.S0762** `List item: Baseline interfaces: `openapi/cre8.v1.yaml`, envelope schemas.` (source line: 16)
+  - **C0099.S0763** `List item: Canonical route behavior: `ROUTE_INVENTORY_REFERENCE.md` + `ACCEPTANCE_CRITERIA_MATRIX.md`.` (source line: 17)
+  - **C0099.S0764** `List item: Security and authorization baseline: delegation/keychain/lifecycle controls.` (source line: 18)
+  - **C0099.S0765** `List item: Data model baseline: entity contracts and invariants.` (source line: 19)
+  - **C0099.S0766** `List item: Program controls: DoD, risk register, roadmap, contribution workflow.` (source line: 20)
+- **C0100** `Exit criteria` (source line: 22)
+  - **C0100.S0767** `List item: No generic placeholders in normative sections.` (source line: 23)
+  - **C0100.S0768** `List item: Every route family has positive + negative acceptance criteria.` (source line: 24)
+  - **C0100.S0769** `List item: Every policy-critical decision appears in decision tables and traceability matrix.` (source line: 25)
+  - **C0100.S0770** `List item: Release checklist and evidence templates are executable by on-call teams.` (source line: 26)
 
 ## File: `README.md`
 - **Location:** `from_scratch/README.md`
 - **Components identified:** 6
 
-- **C0026** `CRE8 From-Scratch SSOT Canon`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0027** `What this canon governs`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0028** `Required reading path`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0029** `Non-negotiable rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0030** `Definition of quality for this canon`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0101** `CRE8 From-Scratch SSOT Canon` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0102** `What this canon governs` (source line: 9)
+  - **C0102.S0771** `List item: Product behavior and architecture boundaries.` (source line: 10)
+  - **C0102.S0772** `List item: API/UI/runtime contracts and data/security invariants.` (source line: 11)
+  - **C0102.S0773** `List item: Delivery controls: verification, release gates, traceability, and program governance.` (source line: 12)
+- **C0103** `Required reading path` (source line: 14)
+  - **C0103.S0774** `List item: `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`` (source line: 15)
+  - **C0103.S0775** `List item: `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`` (source line: 16)
+  - **C0103.S0776** `List item: `ssot_canon/00_governance/SSOT_INDEX.md`` (source line: 17)
+  - **C0103.S0777** `List item: `ssot_canon/10_product_and_architecture/*`` (source line: 18)
+  - **C0103.S0778** `List item: `ssot_canon/20_contracts/*`` (source line: 19)
+  - **C0103.S0779** `List item: `ssot_canon/30_data_and_security/*`` (source line: 20)
+  - **C0103.S0780** `List item: `ssot_canon/40_operations_and_quality/*`` (source line: 21)
+  - **C0103.S0781** `List item: `ssot_canon/50_traceability_and_automation/*`` (source line: 22)
+  - **C0103.S0782** `List item: `ssot_canon/60_decisions/*`` (source line: 23)
+  - **C0103.S0783** `List item: `ssot_canon/70_implementation_guidance/*`` (source line: 24)
+  - **C0103.S0784** `List item: `ssot_canon/80_program_management/*`` (source line: 25)
+- **C0104** `Non-negotiable rules` (source line: 27)
+  - **C0104.S0785** `List item: OpenAPI + envelope schemas are machine source-of-truth for interface shape.` (source line: 28)
+  - **C0104.S0786** `List item: Route inventory + acceptance criteria are source-of-truth for behavior.` (source line: 29)
+  - **C0104.S0787** `List item: Data model, authorization, and security controls must remain mutually consistent.` (source line: 30)
+  - **C0104.S0788** `List item: Any behavior change requires traceability update in the same PR.` (source line: 31)
+- **C0105** `Definition of quality for this canon` (source line: 33)
+  - **C0105.S0789** `List item: specific enough to implement without guessing,` (source line: 35)
+  - **C0105.S0790** `List item: testable with explicit commands/evidence,` (source line: 36)
+  - **C0105.S0791** `List item: traceable to code and operations controls,` (source line: 37)
+  - **C0105.S0792** `List item: internally link-consistent within this folder.` (source line: 38)
 
 ## File: `SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md`
 - **Location:** `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md`
 - **Components identified:** 5
 
-- **C0031** `From-Scratch Authoring Completion Status (Session Report)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0032** `What was done in this session`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0033** `Finished (62 files)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0034** `Unfinished (0 files)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0035** `Definition used for this report`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0106** `From-Scratch Authoring Completion Status (Session Report)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0107** `What was done in this session` (source line: 7)
+  - **C0107.S0793** `List item: Synchronized canonical SSOT files and machine artifacts for from-scratch canon paths.` (source line: 8)
+  - **C0107.S0794** `List item: Fully authored remaining governance, architecture, decisions, implementation guidance, and program-management documents.` (source line: 9)
+  - **C0107.S0795** `List item: Removed draft markers and unchecked worklist markers across the from-scratch document set.` (source line: 10)
+- **C0108** `Finished (62 files)` (source line: 12)
+  - **C0108.S0796** `List item: `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`` (source line: 13)
+  - **C0108.S0797** `List item: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`` (source line: 14)
+  - **C0108.S0798** `List item: `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md`` (source line: 15)
+  - **C0108.S0799** `List item: `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md`` (source line: 16)
+  - **C0108.S0800** `List item: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`` (source line: 17)
+  - **C0108.S0801** `List item: `from_scratch/README.md`` (source line: 18)
+  - **C0108.S0802** `List item: `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`` (source line: 19)
+  - **C0108.S0803** `List item: `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md`` (source line: 20)
+  - **C0108.S0804** `List item: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`` (source line: 21)
+  - **C0108.S0805** `List item: `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`` (source line: 22)
+  - **C0108.S0806** `List item: `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`` (source line: 23)
+  - **C0108.S0807** `List item: `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md`` (source line: 24)
+  - **C0108.S0808** `List item: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`` (source line: 25)
+  - **C0108.S0809** `List item: `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`` (source line: 26)
+  - **C0108.S0810** `List item: `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`` (source line: 27)
+  - **C0108.S0811** `List item: `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md`` (source line: 28)
+  - **C0108.S0812** `List item: `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 29)
+  - **C0108.S0813** `List item: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`` (source line: 30)
+  - **C0108.S0814** `List item: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 31)
+  - **C0108.S0815** `List item: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`` (source line: 32)
+  - **C0108.S0816** `List item: `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`` (source line: 33)
+  - **C0108.S0817** `List item: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`` (source line: 34)
+  - **C0108.S0818** `List item: `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`` (source line: 35)
+  - **C0108.S0819** `List item: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`` (source line: 36)
+  - **C0108.S0820** `List item: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`` (source line: 37)
+  - **C0108.S0821** `List item: `from_scratch/ssot_canon/30_data_and_security/ERD.md`` (source line: 38)
+  - **C0108.S0822** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`` (source line: 39)
+  - **C0108.S0823** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`` (source line: 40)
+  - **C0108.S0824** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`` (source line: 41)
+  - **C0108.S0825** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`` (source line: 42)
+  - **C0108.S0826** `List item: `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`` (source line: 43)
+  - **C0108.S0827** `List item: `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`` (source line: 44)
+  - **C0108.S0828** `List item: `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`` (source line: 45)
+  - **C0108.S0829** `List item: `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`` (source line: 46)
+  - **C0108.S0830** `List item: `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`` (source line: 47)
+  - **C0108.S0831** `List item: `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 48)
+  - **C0108.S0832** `List item: `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`` (source line: 49)
+  - **C0108.S0833** `List item: `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`` (source line: 50)
+  - **C0108.S0834** `List item: `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md`` (source line: 51)
+  - **C0108.S0835** `List item: `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`` (source line: 52)
+  - **C0108.S0836** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`` (source line: 53)
+  - **C0108.S0837** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`` (source line: 54)
+  - **C0108.S0838** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`` (source line: 55)
+  - **C0108.S0839** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`` (source line: 56)
+  - **C0108.S0840** `List item: `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`` (source line: 57)
+  - **C0108.S0841** `List item: `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md`` (source line: 58)
+  - **C0108.S0842** `List item: `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md`` (source line: 59)
+  - **C0108.S0843** `List item: `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md`` (source line: 60)
+  - **C0108.S0844** `List item: `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`` (source line: 61)
+  - **C0108.S0845** `List item: `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`` (source line: 62)
+  - **C0108.S0846** `List item: `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md`` (source line: 63)
+  - **C0108.S0847** `List item: `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`` (source line: 64)
+  - **C0108.S0848** `List item: `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`` (source line: 65)
+  - **C0108.S0849** `List item: `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md`` (source line: 66)
+  - **C0108.S0850** `List item: `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`` (source line: 67)
+  - **C0108.S0851** `List item: `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md`` (source line: 68)
+  - **C0108.S0852** `List item: `from_scratch/ssot_canon/evidence/README.md`` (source line: 69)
+  - **C0108.S0853** `List item: `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`` (source line: 70)
+  - **C0108.S0854** `List item: `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`` (source line: 71)
+  - **C0108.S0855** `List item: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`` (source line: 72)
+  - **C0108.S0856** `List item: `from_scratch/ssot_canon/schemas/error-envelope.schema.json`` (source line: 73)
+  - **C0108.S0857** `List item: `from_scratch/ssot_canon/schemas/success-envelope.schema.json`` (source line: 74)
+- **C0109** `Unfinished (0 files)` (source line: 76)
+  - **C0109.S0858** `List item: None` (source line: 77)
+- **C0110** `Definition used for this report` (source line: 79)
+  - **C0110.S0859** `List item: **Finished:** no draft marker and no placeholder/work-in-progress markers detected.` (source line: 80)
+  - **C0110.S0860** `List item: **Unfinished:** contains draft status and/or placeholder/work-in-progress markers.` (source line: 81)
 
 ## File: `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 - **Location:** `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 - **Components identified:** 5
 
-- **C0036** `Technical Foundation And Build Plan`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0037** `Runtime and stack assumptions`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0038** `Build principles`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0039** `Implementation milestones`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0040** `Engineering quality bars`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0111** `Technical Foundation And Build Plan` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0112** `Runtime and stack assumptions` (source line: 6)
+  - **C0112.S0861** `List item: PHP application stack with PSR-7 HTTP model and contract-first interfaces.` (source line: 7)
+  - **C0112.S0862** `List item: JSON envelope standard for every API response path.` (source line: 8)
+  - **C0112.S0863** `List item: JWT-based owner/key authentication with lifecycle controls.` (source line: 9)
+  - **C0112.S0864** `List item: Database schema supporting principals, delegations, keychains, content, moderation, and auditability.` (source line: 10)
+- **C0113** `Build principles` (source line: 12)
+  - **C0113.S0865** `List item: Contract-first: OpenAPI/schema changes happen before handler implementation.` (source line: 13)
+  - **C0113.S0866** `List item: Policy-first: authorization decisions must be table-driven and testable.` (source line: 14)
+  - **C0113.S0867** `List item: Deterministic operations: startup assertions + health + smoke commands are release-gated.` (source line: 15)
+  - **C0113.S0868** `List item: Observability-by-default: request_id propagation, event families, measurable SLOs.` (source line: 16)
+- **C0114** `Implementation milestones` (source line: 18)
+  - **C0114.S0869** `List item: Bootstrap/runtime wiring + middleware skeleton.` (source line: 19)
+  - **C0114.S0870** `List item: Public/auth surfaces and envelope responder.` (source line: 20)
+  - **C0114.S0871** `List item: Gateway content routes + permission/scope guards.` (source line: 21)
+  - **C0114.S0872** `List item: Console governance routes (keys/keychains/moderation/invites).` (source line: 22)
+  - **C0114.S0873** `List item: Security hardening + abuse-case tests.` (source line: 23)
+  - **C0114.S0874** `List item: Operationalization + release gates.` (source line: 24)
+- **C0115** `Engineering quality bars` (source line: 26)
+  - **C0115.S0875** `List item: Zero undocumented route behavior.` (source line: 27)
+  - **C0115.S0876** `List item: Explicit failure mapping for authz/validation/internal errors.` (source line: 28)
+  - **C0115.S0877** `List item: Backward-compatibility policy enforced during contract updates.` (source line: 29)
 
 ## File: `LLM_PROMPT_BUILD_SSOT_CANON.md`
 - **Location:** `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md`
 - **Components identified:** 4
 
-- **C0041** `LLM Prompt: Build SSOT Canon`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0042** `Prompt purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0043** `Required agent behavior`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0044** `Prompt checklist`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0116** `LLM Prompt: Build SSOT Canon` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0117** `Prompt purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0118** `Required agent behavior` (source line: 9)
+  - **C0118.S0878** `List item: Prefer from-scratch canon files as primary targets.` (source line: 10)
+  - **C0118.S0879** `List item: Use legacy SSOT/docs only as source material; normalize into this canon’s naming and structure.` (source line: 11)
+  - **C0118.S0880** `List item: Do not leave scaffold language in adopted docs.` (source line: 12)
+  - **C0118.S0881** `List item: Enforce intra-folder reference integrity.` (source line: 13)
+  - **C0118.S0882** `List item: Always produce developer-actionable outputs (contracts, tables, commands, failure behavior).` (source line: 14)
+- **C0119** `Prompt checklist` (source line: 16)
+  - **C0119.S0883** `List item: Identify impacted docs by capability.` (source line: 17)
+  - **C0119.S0884** `List item: Update machine artifacts if interface changes.` (source line: 18)
+  - **C0119.S0885** `List item: Update acceptance/verification/traceability artifacts.` (source line: 19)
+  - **C0119.S0886** `List item: Add or update decision log entry.` (source line: 20)
+  - **C0119.S0887** `List item: Update gaps/evidence docs as needed.` (source line: 21)
 
 ## File: `CHANGE_CONTROL_POLICY.md`
 - **Location:** `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`
 - **Components identified:** 5
 
-- **C0045** `Change Control Policy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0046** `Scope`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0047** `Change classes`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0048** `Approval requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0049** `Required PR payload`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0120** `Change Control Policy` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0121** `Scope` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0122** `Change classes` (source line: 9)
+  - **C0122.S0888** `List item: **Class A (breaking contract):** route/schema/auth/data invariant changes.` (source line: 10)
+  - **C0122.S0889** `List item: **Class B (behavioral):** acceptance criteria, policy decision, readiness gate changes.` (source line: 11)
+  - **C0122.S0890** `List item: **Class C (editorial):** wording/formatting without normative impact.` (source line: 12)
+- **C0123** `Approval requirements` (source line: 14)
+  - **C0123.S0891** `List item: Class A: architecture + security + operations approvers required.` (source line: 15)
+  - **C0123.S0892** `List item: Class B: relevant domain owner + QA reviewer.` (source line: 16)
+  - **C0123.S0893** `List item: Class C: single maintainer review.` (source line: 17)
+- **C0124** `Required PR payload` (source line: 19)
+  - **C0124.S0894** `List item: Change-impact map (template in traceability folder).` (source line: 20)
+  - **C0124.S0895** `List item: Updated traceability rows.` (source line: 21)
+  - **C0124.S0896** `List item: Verification evidence for changed behavior.` (source line: 22)
+  - **C0124.S0897** `List item: Decision log update when rationale changes policy/architecture.` (source line: 23)
 
 ## File: `DOCUMENT_STATUS_AND_OWNERSHIP.md`
 - **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`
 - **Components identified:** 5
 
-- **C0050** `Document Status and Ownership`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0051** `Status model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0052** `Ownership matrix`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0053** `Ownership obligations`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0054** `Review SLA`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0125** `Document Status and Ownership` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0126** `Status model` (source line: 6)
+  - **C0126.S0898** `List item: `draft`: exploratory, non-binding.` (source line: 7)
+  - **C0126.S0899** `List item: `adopted`: normative and release-governing.` (source line: 8)
+  - **C0126.S0900** `List item: `deprecated`: retained for history; not authoritative.` (source line: 9)
+- **C0127** `Ownership matrix` (source line: 11)
+  - *(No explicit sub-components detected.)*
+- **C0128** `Ownership obligations` (source line: 20)
+  - **C0128.S0901** `List item: Keep references current and lint-clean.` (source line: 21)
+  - **C0128.S0902** `List item: Ensure verification commands remain executable and evidence-producing.` (source line: 22)
+  - **C0128.S0903** `List item: Reject ambiguous normative language.` (source line: 23)
+  - **C0128.S0904** `List item: Review metadata (`Status`, `Last updated`) on every modified adopted file.` (source line: 24)
+  - **C0128.S0905** `List item: Escalate unresolved cross-domain conflicts to architecture owner before merge.` (source line: 25)
+- **C0129** `Review SLA` (source line: 27)
+  - **C0129.S0906** `List item: Standard SSOT change: owner response within 2 business days.` (source line: 28)
+  - **C0129.S0907** `List item: Security-impacting change: security owner triage within 1 business day.` (source line: 29)
+  - **C0129.S0908** `List item: Release-blocking change: same-day owner acknowledgment.` (source line: 30)
 
 ## File: `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
 - **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
 - **Components identified:** 4
 
-- **C0055** `Document Template and Style Guide`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0056** `Required sections for adopted docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0057** `Writing standards`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0058** `Traceability conventions`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0130** `Document Template and Style Guide` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0131** `Required sections for adopted docs` (source line: 6)
+  - **C0131.S0909** `List item: Purpose` (source line: 7)
+  - **C0131.S0910** `List item: Scope` (source line: 8)
+  - **C0131.S0911** `List item: Normative rules (MUST/SHOULD language)` (source line: 9)
+  - **C0131.S0912** `List item: Failure behavior / edge cases` (source line: 10)
+  - **C0131.S0913** `List item: Verification (automated + manual evidence)` (source line: 11)
+  - **C0131.S0914** `List item: Related docs` (source line: 12)
+- **C0132** `Writing standards` (source line: 14)
+  - **C0132.S0915** `List item: Prefer tables for policy and decision logic.` (source line: 15)
+  - **C0132.S0916** `List item: Use stable naming (all-caps filenames in this canon).` (source line: 16)
+  - **C0132.S0917** `List item: Avoid vague verbs (e.g., “handle appropriately”); specify expected outcomes.` (source line: 17)
+  - **C0132.S0918** `List item: Include explicit error/status mapping when behavior can fail.` (source line: 18)
+- **C0133** `Traceability conventions` (source line: 20)
+  - **C0133.S0919** `List item: Every capability entry should map route -> policy -> service -> tests.` (source line: 21)
+  - **C0133.S0920** `List item: Every new invariant should appear in both contract and verification documents.` (source line: 22)
 
 ## File: `SSOT_INDEX.md`
 - **Location:** `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md`
 - **Components identified:** 4
 
-- **C0059** `SSOT Index`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0060** `Canon navigation`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0061** `Machine artifacts`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0062** `Usage rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0134** `SSOT Index` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0135** `Canon navigation` (source line: 6)
+  - **C0135.S0921** `List item: `00_governance/` — ownership, policy, standards.` (source line: 7)
+  - **C0135.S0922** `List item: `10_product_and_architecture/` — system intent and boundaries.` (source line: 8)
+  - **C0135.S0923** `List item: `20_contracts/` — API, authorization, error, UI runtime contracts.` (source line: 9)
+  - **C0135.S0924** `List item: `30_data_and_security/` — schema, controls, threat and abuse model.` (source line: 10)
+  - **C0135.S0925** `List item: `40_operations_and_quality/` — acceptance, verification, readiness.` (source line: 11)
+  - **C0135.S0926** `List item: `50_traceability_and_automation/` — change impact and lint/traceability controls.` (source line: 12)
+  - **C0135.S0927** `List item: `60_decisions/` — ADR workflow + decision history.` (source line: 13)
+  - **C0135.S0928** `List item: `70_implementation_guidance/` — module/version/migration/test-data guidance.` (source line: 14)
+  - **C0135.S0929** `List item: `80_program_management/` — workflow, DoD, risk, roadmap.` (source line: 15)
+- **C0136** `Machine artifacts` (source line: 17)
+  - **C0136.S0930** `List item: `openapi/cre8.v1.yaml`` (source line: 18)
+  - **C0136.S0931** `List item: `schemas/success-envelope.schema.json`` (source line: 19)
+  - **C0136.S0932** `List item: `schemas/error-envelope.schema.json`` (source line: 20)
+- **C0137** `Usage rule` (source line: 22)
+  - **C0137.S0933** `List item: machine artifacts, 2) contracts/security docs, 3) operations docs, 4) program docs.` (source line: 24)
 
 ## File: `ARCHITECTURE_AND_SURFACES.md`
 - **Location:** `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
 - **Components identified:** 4
 
-- **C0063** `Architecture and Surfaces`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0064** `Architectural model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0065** `Layering`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0066** `Boundary rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0138** `Architecture and Surfaces` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0139** `Architectural model` (source line: 6)
+  - **C0139.S0934** `List item: **Public/bootstrap** (`/`, `/health`, `/ui/*`, owner signup/auth)` (source line: 8)
+  - **C0139.S0935** `List item: **Gateway** (`/api/*`) for delegated-key content actions` (source line: 9)
+  - **C0139.S0936** `List item: **Console** (`/console/api/*`) for owner governance actions` (source line: 10)
+- **C0140** `Layering` (source line: 12)
+  - **C0140.S0937** `List item: HTTP ingress + middleware pipeline` (source line: 13)
+  - **C0140.S0938** `List item: Route handlers (surface-scoped)` (source line: 14)
+  - **C0140.S0939** `List item: Domain services (auth, keys, keychains, content, moderation)` (source line: 15)
+  - **C0140.S0940** `List item: Persistence layer (transactional data model)` (source line: 16)
+  - **C0140.S0941** `List item: Observability + audit emissions` (source line: 17)
+- **C0141** `Boundary rules` (source line: 19)
+  - **C0141.S0942** `List item: Console and gateway auth contexts are never interchangeable.` (source line: 20)
+  - **C0141.S0943** `List item: Authorization decision logic is centralized and table-driven.` (source line: 21)
+  - **C0141.S0944** `List item: Data invariants are enforced both in service layer and schema constraints.` (source line: 22)
 
 ## File: `CANONICAL_TERMINOLOGY.md`
 - **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 - **Components identified:** 4
 
-- **C0067** `Canonical Terminology`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0068** `Principal terms`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0069** `Security terms`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0070** `Contract terms`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0142** `Canonical Terminology` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0143** `Principal terms` (source line: 6)
+  - **C0143.S0945** `List item: **Owner principal**: governance authority for console operations.` (source line: 7)
+  - **C0143.S0946** `List item: **Key principal**: delegated actor for gateway operations.` (source line: 8)
+  - **C0143.S0947** `List item: **Key class**: `primary_author`, `secondary_author`, `use`, `keychain`.` (source line: 9)
+  - **C0143.S0948** `List item: **Delegation envelope**: permission/scope/expiry bounds of delegated authority.` (source line: 10)
+- **C0144** `Security terms` (source line: 12)
+  - **C0144.S0949** `List item: **Lifecycle status**: active/suspended/cancelled/revoked state affecting authz.` (source line: 13)
+  - **C0144.S0950** `List item: **Token family**: refresh lineage used for replay protection and rotation.` (source line: 14)
+  - **C0144.S0951** `List item: **Request ID**: correlation identifier required in error and operational flows.` (source line: 15)
+- **C0145** `Contract terms` (source line: 17)
+  - **C0145.S0952** `List item: **Success envelope**: JSON object with `data` and `meta`.` (source line: 18)
+  - **C0145.S0953** `List item: **Error envelope**: JSON object with `error` and `meta`.` (source line: 19)
+  - **C0145.S0954** `List item: **Normative requirement**: MUST-level behavior required for conformance.` (source line: 20)
 
 ## File: `CRE8_PRODUCT_AND_SYSTEM_SPEC.md`
 - **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`
 - **Components identified:** 5
 
-- **C0071** `CRE8 Product and System Spec`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0072** `Product scope`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0073** `System capabilities (v1)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0074** `Core system constraints`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0075** `Out-of-scope (v1)`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0146** `CRE8 Product and System Spec` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0147** `Product scope` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0148** `System capabilities (v1)` (source line: 9)
+  - **C0148.S0955** `List item: Owner bootstrap and authentication.` (source line: 10)
+  - **C0148.S0956** `List item: Key authentication and refresh rotation.` (source line: 11)
+  - **C0148.S0957** `List item: Feed, posts, comments, flags.` (source line: 12)
+  - **C0148.S0958** `List item: Owner console operations: posts, moderation, key issuance/lifecycle, keychain management, invites.` (source line: 13)
+- **C0149** `Core system constraints` (source line: 15)
+  - **C0149.S0959** `List item: Envelope response shape is mandatory for API responses.` (source line: 16)
+  - **C0149.S0960** `List item: Authorization cannot exceed delegation envelope bounds.` (source line: 17)
+  - **C0149.S0961** `List item: Keychain behavior (membership rules/effective resolution) is production-active in v1.` (source line: 18)
+  - **C0149.S0962** `List item: Health and smoke contracts are release-gating requirements.` (source line: 19)
+- **C0150** `Out-of-scope (v1)` (source line: 21)
+  - **C0150.S0963** `List item: Multi-tenant sharding.` (source line: 22)
+  - **C0150.S0964** `List item: External plugin execution.` (source line: 23)
+  - **C0150.S0965** `List item: Non-HTTP runtime protocols.` (source line: 24)
 
 ## File: `DEPENDENCY_BASELINE.md`
 - **Location:** `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md`
 - **Components identified:** 6
 
-- **C0076** `Dependency Baseline`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0077** `Baseline dependency families`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0078** `Dependency governance rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0079** `Runtime expectations`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0080** `Canonical package baseline (root composer.json)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0081** `Script contract baseline`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0151** `Dependency Baseline` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0152** `Baseline dependency families` (source line: 6)
+  - **C0152.S0966** `List item: HTTP/runtime: PSR-7 compatible stack.` (source line: 7)
+  - **C0152.S0967** `List item: Auth/security: JWT signing/verification + sodium-grade crypto.` (source line: 8)
+  - **C0152.S0968** `List item: Validation/routing/middleware: deterministic request pipeline components.` (source line: 9)
+  - **C0152.S0969** `List item: Testing: unit/contract/security suites and QA tooling.` (source line: 10)
+- **C0153** `Dependency governance rules` (source line: 12)
+  - **C0153.S0970** `List item: Security-sensitive dependency upgrades require threat/control review.` (source line: 13)
+  - **C0153.S0971** `List item: Major-version upgrades require compatibility assessment and migration note.` (source line: 14)
+  - **C0153.S0972** `List item: Dependency removal/addition must update verification strategy and readiness gates when behavior changes.` (source line: 15)
+- **C0154** `Runtime expectations` (source line: 17)
+  - **C0154.S0973** `List item: Dependencies must support stable envelope serialization.` (source line: 18)
+  - **C0154.S0974** `List item: Middleware dependencies must expose predictable ordering and failure behavior.` (source line: 19)
+- **C0155** `Canonical package baseline (root `composer.json`)` (source line: 22)
+  - **C0155.S0975** `List item: Runtime: `php:^8.2`, `slim/slim:^4.14`, `slim/psr7:^1.7`, `php-di/php-di:^7.0`` (source line: 23)
+  - **C0155.S0976** `List item: Security/auth: `firebase/php-jwt:^6.11`, `ext-sodium:*`` (source line: 24)
+  - **C0155.S0977** `List item: Data/runtime: `ext-pdo:*`, `vlucas/phpdotenv:^5.6`` (source line: 25)
+  - **C0155.S0978** `List item: HTTP/dependencies: `guzzlehttp/guzzle:^7.10`, `neomerx/cors-psr7:^3.0`` (source line: 26)
+  - **C0155.S0979** `List item: Observability/rate limit: `monolog/monolog:^3.9`, `symfony/rate-limiter:^7.3`, `symfony/cache:^7.3`` (source line: 27)
+  - **C0155.S0980** `List item: QA: `phpunit/phpunit:^11.5`` (source line: 28)
+- **C0156** `Script contract baseline` (source line: 30)
+  - **C0156.S0981** `List item: `composer test`` (source line: 31)
+  - **C0156.S0982** `List item: `composer test:contract`` (source line: 32)
+  - **C0156.S0983** `List item: `composer test:security`` (source line: 33)
+  - **C0156.S0984** `List item: `composer qa`` (source line: 34)
+  - **C0156.S0985** `List item: `composer ops:health-smoke`` (source line: 35)
+  - **C0156.S0986** `List item: `composer ops:migrate-smoke`` (source line: 36)
 
 ## File: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - **Components identified:** 4
 
-- **C0082** `Request Pipeline and Middleware Contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0083** `Authoritative middleware order`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0084** `Contract rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0085** `Failure mapping baseline`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0157** `Request Pipeline and Middleware Contract` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0158** `Authoritative middleware order` (source line: 6)
+  - **C0158.S0987** `List item: Request ID/correlation injection` (source line: 7)
+  - **C0158.S0988** `List item: Security headers / CSP policy` (source line: 8)
+  - **C0158.S0989** `List item: CORS / content-type normalization` (source line: 9)
+  - **C0158.S0990** `List item: Surface-specific authn/authz guards` (source line: 10)
+  - **C0158.S0991** `List item: Validation guards` (source line: 11)
+  - **C0158.S0992** `List item: Rate limiting / abuse controls` (source line: 12)
+  - **C0158.S0993** `List item: Route handler execution` (source line: 13)
+  - **C0158.S0994** `List item: Envelope responder + error mapper` (source line: 14)
+- **C0159** `Contract rules` (source line: 16)
+  - **C0159.S0995** `List item: Middleware order is normative; reordering requires security + QA review.` (source line: 17)
+  - **C0159.S0996** `List item: Unauthorized/forbidden/validation failures must return canonical error envelopes.` (source line: 18)
+  - **C0159.S0997** `List item: Gateway routes requiring device policy must enforce `X-Device-Id` validation before handler execution.` (source line: 19)
+- **C0160** `Failure mapping baseline` (source line: 21)
+  - **C0160.S0998** `List item: Missing/invalid auth -> `401`` (source line: 22)
+  - **C0160.S0999** `List item: Policy denial -> `403`` (source line: 23)
+  - **C0160.S1000** `List item: Validation failure -> `422`` (source line: 24)
+  - **C0160.S1001** `List item: Unhandled internal error -> `500`` (source line: 25)
 
 ## File: `API_CONTRACT_GUIDE.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`
 - **Components identified:** 8
 
-- **C0086** `API Contract Guide (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0087** `Canonical machine contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0088** `Envelope contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0089** `Route groups`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0090** `Endpoint examples`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0091** `Acceptance criteria linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0092** `Synchronization rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0093** `Backward compatibility`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0161** `API Contract Guide (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0162** `Canonical machine contract` (source line: 8)
+  - **C0162.S1002** `List item: OpenAPI source: `openapi/cre8.v1.yaml`` (source line: 9)
+  - **C0162.S1003** `List item: Envelope schemas: `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json`` (source line: 10)
+  - **C0162.S1004** `List item: PSR-7 runtime primitives: `slim/psr7` (see `DEPENDENCY_BASELINE.md`)` (source line: 11)
+- **C0163** `Envelope contract` (source line: 13)
+  - **C0163.S1005** `List item: Success: `{ data, meta }`` (source line: 14)
+  - **C0163.S1006** `List item: Error: `{ error: { code, message, details, request_id }, meta }`` (source line: 15)
+  - **C0163.S1007** `List item: `X-Envelope-Version` emitted on responder-managed responses.` (source line: 16)
+- **C0164** `Route groups` (source line: 18)
+  - **C0164.S1008** `List item: Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui/{route}`, owner/signup/auth routes` (source line: 19)
+  - **C0164.S1009** `List item: Gateway: `/api/*`` (source line: 20)
+  - **C0164.S1010** `List item: Console: `/console/api/*`` (source line: 21)
+  - **C0164.S1011** `List item: Canonical human route index: `ROUTE_INVENTORY_REFERENCE.md`` (source line: 22)
+- **C0165** `Endpoint examples` (source line: 24)
+  - *(No explicit sub-components detected.)*
+- **C0166** `Acceptance criteria linkage` (source line: 28)
+  - *(No explicit sub-components detected.)*
+- **C0167** `Synchronization rule` (source line: 31)
+  - *(No explicit sub-components detected.)*
+- **C0168** `Backward compatibility` (source line: 34)
+  - **C0168.S1012** `List item: Breaking changes require a new major `openapi` version file.` (source line: 35)
+  - **C0168.S1013** `List item: Additive fields are non-breaking if envelope and required claims remain stable.` (source line: 36)
 
 ## File: `AUTHORIZATION_AND_DELEGATION_SPEC.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`
 - **Components identified:** 10
 
-- **C0094** `Authorization and Delegation Spec`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0046** `Scope`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0095** `Principals`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0096** `Key classes`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0097** `Permission model (v1 allow-list)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0098** `Delegation invariants`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0099** `Keychain invariants (v1 production)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0100** `Surface enforcement model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0101** `Lifecycle authority`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0169** `Authorization and Delegation Spec` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0121** `Scope` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0170** `Principals` (source line: 11)
+  - **C0170.S1014** `List item: **Owner principal:** governance and console authority.` (source line: 12)
+  - **C0170.S1015** `List item: **Key principal:** gateway content authority.` (source line: 13)
+- **C0171** `Key classes` (source line: 15)
+  - **C0171.S1016** `List item: `primary_author`` (source line: 16)
+  - **C0171.S1017** `List item: `secondary_author`` (source line: 17)
+  - **C0171.S1018** `List item: `use`` (source line: 18)
+  - **C0171.S1019** `List item: `keychain` (v1 production-active)` (source line: 19)
+- **C0172** `Permission model (v1 allow-list)` (source line: 21)
+  - **C0172.S1020** `List item: `posts:read`` (source line: 23)
+  - **C0172.S1021** `List item: `posts:create`` (source line: 24)
+  - **C0172.S1022** `List item: `posts:edit`` (source line: 25)
+  - **C0172.S1023** `List item: `comments:create`` (source line: 26)
+  - **C0172.S1024** `List item: `keys:issue`` (source line: 27)
+  - **C0172.S1025** `List item: `keys:revoke`` (source line: 28)
+  - **C0172.S1026** `List item: `keychains:manage`` (source line: 29)
+- **C0173** `Delegation invariants` (source line: 31)
+  - **C0173.S1027** `List item: Child envelope must be a strict subset of parent permissions/scope.` (source line: 32)
+  - **C0173.S1028** `List item: Delegation max depth is `3`.` (source line: 33)
+  - **C0173.S1029** `List item: Delegated credentials must carry explicit expiry.` (source line: 34)
+  - **C0173.S1030** `List item: Delegation lineage must be preserved for token claim checks.` (source line: 35)
+- **C0174** `Keychain invariants (v1 production)` (source line: 37)
+  - **C0174.S1031** `List item: Keychains are key principals with `key_class=keychain` and credential material equivalent to other key principals.` (source line: 38)
+  - **C0174.S1032** `List item: Keychain members may include only `primary_author`, `secondary_author`, and `use` keys.` (source line: 39)
+  - **C0174.S1033** `List item: Keychain-in-keychain membership is forbidden.` (source line: 40)
+  - **C0174.S1034** `List item: Max keychain membership size is `50`.` (source line: 41)
+  - **C0174.S1035** `List item: Effective permissions are computed as set-union across active members, then constrained by explicit keychain policy envelope.` (source line: 42)
+  - **C0174.S1036** `List item: Scope merge is union for positive scope tokens; restrictive dimensions use intersection where policy families define restrictive semantics.` (source line: 43)
+  - **C0174.S1037** `List item: Any revoked/suspended/cancelled member contributes no effective permissions/scope.` (source line: 44)
+  - **C0174.S1038** `List item: Keychain actions must record both keychain actor and resolved source-key lineage references.` (source line: 45)
+- **C0175** `Surface enforcement model` (source line: 47)
+  - **C0175.S1039** `List item: **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).` (source line: 48)
+  - **C0175.S1040** `List item: **Gateway (`/api/*`)**: key JWT (`typ=key`, gateway audience) + device guard where required.` (source line: 49)
+  - **C0175.S1041** `List item: **Keychain management routes** are console-governed and require owner JWT plus `keychains:manage` policy authorization.` (source line: 50)
+- **C0176** `Lifecycle authority` (source line: 52)
+  - **C0176.S1042** `List item: Owners can issue/revoke/suspend/cancel keys under governance policy.` (source line: 53)
+  - **C0176.S1043** `List item: Key principals may mint descendants only within delegated envelope bounds.` (source line: 54)
+  - **C0176.S1044** `List item: Keychain creation and membership mutation are owner-governed operations in v1.` (source line: 55)
+  - **C0176.S1045** `List item: Revocation may be local or cascading according to lineage policy.` (source line: 56)
+- **C0177** `Related SSOT docs` (source line: 58)
+  - **C0177.S1046** `List item: `SECURITY_CONTROLS_SPEC.md`` (source line: 59)
+  - **C0177.S1047** `List item: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 60)
+  - **C0177.S1048** `List item: `DATA_MODEL_REFERENCE.md`` (source line: 61)
+  - **C0177.S1049** `List item: `ROUTE_INVENTORY_REFERENCE.md`` (source line: 62)
 
 ## File: `AUTHORIZATION_DECISION_TABLES.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`
 - **Components identified:** 10
 
-- **C0103** `Authorization Decision Tables (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0104** `Delegation issuance decision table`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0105** `Key class mint authority table (v1)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0106** `Keychain membership admission table`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0107** `Keychain effective permission/scope resolution`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0108** `Lifecycle action authority table`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0109** `Runtime decision order (authoritative)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0110** `Error mapping expectations`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0178** `Authorization Decision Tables (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0179** `Delegation issuance decision table` (source line: 11)
+  - *(No explicit sub-components detected.)*
+- **C0180** `Key class mint authority table (v1)` (source line: 24)
+  - *(No explicit sub-components detected.)*
+- **C0181** `Keychain membership admission table` (source line: 34)
+  - *(No explicit sub-components detected.)*
+- **C0182** `Keychain effective permission/scope resolution` (source line: 44)
+  - *(No explicit sub-components detected.)*
+- **C0183** `Lifecycle action authority table` (source line: 54)
+  - *(No explicit sub-components detected.)*
+- **C0184** `Runtime decision order (authoritative)` (source line: 64)
+  - **C0184.S1050** `List item: Validate token type/audience/surface binding.` (source line: 65)
+  - **C0184.S1051** `List item: Validate lifecycle status (active vs suspended/cancelled/revoked).` (source line: 66)
+  - **C0184.S1052** `List item: Validate permission string allow-list.` (source line: 67)
+  - **C0184.S1053** `List item: Validate scope coverage.` (source line: 68)
+  - **C0184.S1054** `List item: Validate route-specific policy guards (device/CSRF/use-key constraints).` (source line: 69)
+  - **C0184.S1055** `List item: Execute operation and emit auditable policy decision event.` (source line: 70)
+- **C0185** `Error mapping expectations` (source line: 72)
+  - **C0185.S1056** `List item: Policy denials map to `403 forbidden` with stable detail codes.` (source line: 73)
+  - **C0185.S1057** `List item: Structural request violations map to `422 validation_failed`.` (source line: 74)
+  - **C0185.S1058** `List item: Missing/invalid auth maps to `401 auth_required|auth_invalid`.` (source line: 75)
+- **C0177** `Related SSOT docs` (source line: 77)
+  - **C0177.S1059** `List item: `AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 78)
+  - **C0177.S1060** `List item: `ERROR_CODE_CATALOG.md`` (source line: 79)
+  - **C0177.S1047** `List item: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 80)
+  - **C0177.S1048** `List item: `DATA_MODEL_REFERENCE.md`` (source line: 81)
 
 ## File: `ERROR_CODE_CATALOG.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`
 - **Components identified:** 4
 
-- **C0111** `Error Code Catalog (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0112** `Envelope-level canonical codes`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0113** `Canonical middleware/handler detail-code registry (v1 baseline)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0114** `Mapping requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0186** `Error Code Catalog (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0187** `Envelope-level canonical codes` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0188** `Canonical middleware/handler detail-code registry (v1 baseline)` (source line: 22)
+  - *(No explicit sub-components detected.)*
+- **C0189** `Mapping requirements` (source line: 45)
+  - **C0189.S1061** `List item: Every error response must include `error.request_id`.` (source line: 46)
+  - **C0189.S1062** `List item: UI must preserve correlation ID in inspector/panel.` (source line: 47)
+  - **C0189.S1063** `List item: New detail codes require this catalog update in same PR.` (source line: 48)
+  - **C0189.S1064** `List item: Detail-code behavior must remain consistent with `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `UI_RUNTIME_CONTRACT.md`.` (source line: 49)
 
 ## File: `Endpoint_Examples_All_Routes.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`
 - **Components identified:** 8
 
-- **C0115** `Endpoint Examples (All Routes)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0116** `Envelope conventions used in examples`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0117** `Public + auth surfaces`
-  - **C0117.S0001** `GET /`
-  - **C0117.S0002** `GET /health`
-  - **C0117.S0003** `GET /.well-known/jwks.json`
-  - **C0117.S0004** `POST /console/owners`
-  - **C0117.S0005** `POST /api/auth/login`
-  - **C0117.S0006** `POST /api/auth/key-login`
-  - **C0117.S0007** `POST /api/auth/refresh`
-- **C0118** `Gateway surface`
-  - **C0118.S0008** `GET /api/feed`
-  - **C0118.S0009** `POST /api/posts`
-  - **C0118.S0010** `GET /api/posts/{postId}`
-  - **C0118.S0011** `PATCH /api/posts/{postId}`
-  - **C0118.S0012** `POST /api/posts/{postId}/flags`
-  - **C0118.S0013** `GET /api/posts/{postId}/comments`
-  - **C0118.S0014** `POST /api/posts/{postId}/comments`
-- **C0119** `Console surface`
-  - **C0119.S0015** `GET /console/api/posts`
-  - **C0119.S0016** `POST /console/api/posts`
-  - **C0119.S0017** `GET /console/api/keychains`
-  - **C0119.S0018** `POST /console/api/keychains`
-  - **C0119.S0019** `GET /console/api/keychains/{keychainId}/members`
-  - **C0119.S0020** `POST /console/api/keychains/{keychainId}/members`
-  - **C0119.S0021** `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`
-  - **C0119.S0022** `GET /console/api/keychains/{keychainId}/resolve`
-  - **C0119.S0023** `POST /console/api/invites`
-  - **C0119.S0024** `POST /console/api/keys`
-  - **C0119.S0025** `POST /console/api/keys/{keyId}/lifecycle`
-  - **C0119.S0026** `POST /console/api/posts/{postId}/moderation`
-  - **C0119.S0027** `POST /console/api/posts/{postId}/comments/{commentId}/moderation`
-- **C0120** `Canonical negative-path example`
-  - **C0120.S0028** `Any protected route with missing token`
-- **C0092** `Synchronization rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0190** `Endpoint Examples (All Routes)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0191** `Envelope conventions used in examples` (source line: 11)
+  - **C0191.S1065** `List item: Success envelope shape: `{ data, meta }`.` (source line: 12)
+  - **C0191.S1066** `List item: Error envelope shape: `{ error: { code, message, details, request_id }, meta }`.` (source line: 13)
+  - **C0191.S1067** `List item: `meta.envelope_version` is always present.` (source line: 14)
+- **C0192** `Public + auth surfaces` (source line: 16)
+  - **C0192.S1068** ``GET /`` (source line: 17)
+  - **C0192.S1069** ``GET /health`` (source line: 26)
+  - **C0192.S1070** ``GET /.well-known/jwks.json`` (source line: 46)
+  - **C0192.S1071** ``POST /console/owners`` (source line: 52)
+  - **C0192.S1072** ``POST /api/auth/login`` (source line: 65)
+  - **C0192.S1073** ``POST /api/auth/key-login`` (source line: 78)
+  - **C0192.S1074** ``POST /api/auth/refresh`` (source line: 91)
+- **C0193** `Gateway surface` (source line: 104)
+  - **C0193.S1075** ``GET /api/feed`` (source line: 105)
+  - **C0193.S1076** ``POST /api/posts`` (source line: 114)
+  - **C0193.S1077** ``GET /api/posts/{postId}`` (source line: 127)
+  - **C0193.S1078** ``PATCH /api/posts/{postId}`` (source line: 136)
+  - **C0193.S1079** ``POST /api/posts/{postId}/flags`` (source line: 146)
+  - **C0193.S1080** ``GET /api/posts/{postId}/comments`` (source line: 156)
+  - **C0193.S1081** ``POST /api/posts/{postId}/comments`` (source line: 162)
+- **C0194** `Console surface` (source line: 172)
+  - **C0194.S1082** ``GET /console/api/posts`` (source line: 173)
+  - **C0194.S1083** ``POST /console/api/posts`` (source line: 179)
+  - **C0194.S1084** ``GET /console/api/keychains`` (source line: 189)
+  - **C0194.S1085** ``POST /console/api/keychains`` (source line: 195)
+  - **C0194.S1086** ``GET /console/api/keychains/{keychainId}/members`` (source line: 205)
+  - **C0194.S1087** ``POST /console/api/keychains/{keychainId}/members`` (source line: 211)
+  - **C0194.S1088** ``DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`` (source line: 221)
+  - **C0194.S1089** ``GET /console/api/keychains/{keychainId}/resolve`` (source line: 227)
+  - **C0194.S1090** ``POST /console/api/invites`` (source line: 240)
+  - **C0194.S1091** ``POST /console/api/keys`` (source line: 250)
+  - **C0194.S1092** ``POST /console/api/keys/{keyId}/lifecycle`` (source line: 265)
+  - **C0194.S1093** ``POST /console/api/posts/{postId}/moderation`` (source line: 275)
+  - **C0194.S1094** ``POST /console/api/posts/{postId}/comments/{commentId}/moderation`` (source line: 285)
+- **C0195** `Canonical negative-path example` (source line: 295)
+  - **C0195.S1095** `Any protected route with missing token` (source line: 296)
+- **C0167** `Synchronization rule` (source line: 310)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ROUTE_INVENTORY_REFERENCE.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
 - **Components identified:** 5
 
-- **C0121** `Route Inventory Reference (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0122** `Inventory governance`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0123** `Route inventory (v1)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0124** `Notes`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0196** `Route Inventory Reference (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0197** `Inventory governance` (source line: 11)
+  - **C0197.S1096** `List item: This file is the canonical human-readable route index.` (source line: 12)
+  - **C0197.S1097** `List item: `openapi/cre8.v1.yaml` remains canonical machine contract.` (source line: 13)
+  - **C0197.S1098** `List item: Route additions/removals must update this file, OpenAPI, endpoint examples, and UI parity artifacts in the same PR.` (source line: 14)
+- **C0198** `Route inventory (v1)` (source line: 16)
+  - *(No explicit sub-components detected.)*
+- **C0199** `Notes` (source line: 49)
+  - **C0199.S1099** `List item: Surface behavior and middleware sequencing are defined in `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.` (source line: 50)
+  - **C0199.S1100** `List item: Error behavior is canonical in `ERROR_CODE_CATALOG.md`.` (source line: 51)
+  - **C0199.S1101** `List item: Route examples are canonical in `Endpoint_Examples_All_Routes.md`.` (source line: 52)
 
 ## File: `UI_RUNTIME_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`
 - **Components identified:** 9
 
-- **C0125** `UI Runtime Contract (SSOT Appendix)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0126** `Session and device persistence contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0127** `API client behavior contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0128** `Route-state runtime model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0129** `Diagnostics UX minimums`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0130** `Security/UX guardrails`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0131** `Accessibility/runtime baseline`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0200** `UI Runtime Contract (SSOT Appendix)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0201** `Session and device persistence contract` (source line: 11)
+  - **C0201.S1102** `List item: Session storage key: `cre8_ui_session_v1`` (source line: 12)
+  - **C0201.S1103** `List item: Device ID storage key: `cre8_ui_device_id_v1`` (source line: 13)
+  - **C0201.S1104** `List item: Session model includes explicit `activeSurface` and per-surface tokens/context.` (source line: 14)
+  - **C0201.S1105** `List item: Gateway calls requiring device policy attach persisted device ID in `X-Device-Id`.` (source line: 15)
+- **C0202** `API client behavior contract` (source line: 17)
+  - **C0202.S1106** `List item: Envelope-aware JSON parsing for all routes.` (source line: 18)
+  - **C0202.S1107** `List item: Normalized error object containing status/code/message/details/request_id.` (source line: 19)
+  - **C0202.S1108** `List item: Resolve `request_id` from response header and/or envelope.` (source line: 20)
+  - **C0202.S1109** `List item: Expose envelope version for diagnostics where available.` (source line: 21)
+- **C0203** `Route-state runtime model` (source line: 23)
+  - **C0203.S1110** `List item: `idle`` (source line: 25)
+  - **C0203.S1111** `List item: `loading`` (source line: 26)
+  - **C0203.S1112** `List item: `submitting`` (source line: 27)
+  - **C0203.S1113** `List item: `success`` (source line: 28)
+  - **C0203.S1114** `List item: `validation_error`` (source line: 29)
+  - **C0203.S1115** `List item: `forbidden`` (source line: 30)
+  - **C0203.S1116** `List item: `not_found`` (source line: 31)
+  - **C0203.S1117** `List item: `server_error`` (source line: 32)
+  - **C0203.S1118** `List item: `validating`` (source line: 35)
+  - **C0203.S1119** `List item: `empty`` (source line: 36)
+- **C0204** `Diagnostics UX minimums` (source line: 38)
+  - **C0204.S1120** `List item: Request inspector or equivalent diagnostics panel must expose:` (source line: 39)
+  - **C0204.S1121** `List item: status code,` (source line: 40)
+  - **C0204.S1122** `List item: request_id,` (source line: 41)
+  - **C0204.S1123** `List item: parsed envelope payload.` (source line: 42)
+  - **C0204.S1124** `List item: Error-state screens must preserve request_id visibility for support triage.` (source line: 43)
+- **C0205** `Security/UX guardrails` (source line: 45)
+  - **C0205.S1125** `List item: Owner routes must bind to owner session context.` (source line: 46)
+  - **C0205.S1126** `List item: Gateway routes must bind to key session context + device header policy.` (source line: 47)
+  - **C0205.S1127** `List item: UI pre-checks may reduce avoidable forbidden submissions but backend remains source-of-truth.` (source line: 48)
+- **C0206** `Accessibility/runtime baseline` (source line: 50)
+  - **C0206.S1128** `List item: Keyboard-navigable route transitions.` (source line: 51)
+  - **C0206.S1129** `List item: Focus management after major state transitions.` (source line: 52)
+  - **C0206.S1130** `List item: Explicit route-state visibility for async/error flows.` (source line: 53)
+- **C0177** `Related SSOT docs` (source line: 55)
+  - **C0177.S1131** `List item: `UI_RUNTIME_CONTRACT.md`` (source line: 56)
+  - **C0177.S1060** `List item: `ERROR_CODE_CATALOG.md`` (source line: 59)
 
 ## File: `DATA_MODEL_REFERENCE.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`
 - **Components identified:** 6
 
-- **C0132** `Data Model Reference (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0133** `Storage strategy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0134** `Core entity groups`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0135** `Lifecycle invariants`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0136** `Transaction boundaries (required)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0207** `Data Model Reference (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0208** `Storage strategy` (source line: 8)
+  - **C0208.S1132** `List item: Relational storage through `ext-pdo` prepared statements and transactions.` (source line: 9)
+  - **C0208.S1133** `List item: Migration-safe schema evolution with backward-compatible change sequencing.` (source line: 10)
+  - **C0208.S1134** `List item: Services may perform first-run table assertion checks; production migrations remain source of truth.` (source line: 11)
+- **C0209** `Core entity groups` (source line: 13)
+  - **C0209.S1135** `List item: Principals/auth: `principals`, `principal_emails`, `credentials`, `token_families`` (source line: 14)
+  - **C0209.S1136** `List item: Delegation/lifecycle: `delegation_envelopes`, `invite_receipts`` (source line: 15)
+  - **C0209.S1137** `List item: Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`` (source line: 16)
+  - **C0209.S1138** `List item: Keychain model: `keychain_memberships`, `keychain_effective_snapshots`` (source line: 17)
+- **C0210** `Lifecycle invariants` (source line: 19)
+  - **C0210.S1139** `List item: Principal types: `owner|key`` (source line: 20)
+  - **C0210.S1140** `List item: Key classes (v1 active): `primary_author|secondary_author|use|keychain`` (source line: 21)
+  - **C0210.S1141** `List item: Delegation max depth: `3`` (source line: 22)
+  - **C0210.S1142** `List item: Keychain membership max size: `50`` (source line: 23)
+  - **C0210.S1143** `List item: Keychain member classes allowed: `primary_author|secondary_author|use`` (source line: 24)
+  - **C0210.S1144** `List item: Keychain nesting: forbidden` (source line: 25)
+  - **C0210.S1145** `List item: Post states: `draft|published|hidden|locked|archived|deleted`` (source line: 26)
+  - **C0210.S1146** `List item: Comment states: `active|hidden|locked|deleted`` (source line: 27)
+- **C0211** `Transaction boundaries (required)` (source line: 29)
+  - **C0211.S1147** `List item: Auth issuance + audit event write occur in a single logical transaction scope.` (source line: 30)
+  - **C0211.S1148** `List item: Key lifecycle mutations + lineage update occur atomically.` (source line: 31)
+  - **C0211.S1149** `List item: Keychain membership mutation + effective-snapshot update + audit event write occur atomically.` (source line: 32)
+  - **C0211.S1150** `List item: Moderation decisions + revision metadata must commit together.` (source line: 33)
+- **C0177** `Related SSOT docs` (source line: 35)
+  - **C0177.S1151** `List item: `DATA_MODEL_SPEC.md`` (source line: 36)
+  - **C0177.S1152** `List item: `ERD.md`` (source line: 37)
+  - **C0177.S1059** `List item: `AUTHORIZATION_AND_DELEGATION_SPEC.md`` (source line: 38)
+  - **C0177.S1049** `List item: `ROUTE_INVENTORY_REFERENCE.md`` (source line: 39)
 
 ## File: `DATA_MODEL_SPEC.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
 - **Components identified:** 4
 
-- **C0137** `Data Model Spec (Production)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0138** `Table contracts`
-  - **C0138.S0029** `principals`
-  - **C0138.S0030** `principal_emails`
-  - **C0138.S0031** `credentials`
-  - **C0138.S0032** `token_families`
-  - **C0138.S0033** `delegation_envelopes`
-  - **C0138.S0034** `keychain_memberships`
-  - **C0138.S0035** `keychain_effective_snapshots`
-  - **C0138.S0036** `invite_receipts`
-  - **C0138.S0037** `posts`
-  - **C0138.S0038** `post_revisions`
-  - **C0138.S0039** `post_flags`
-  - **C0138.S0040** `comments`
-  - **C0138.S0041** `moderation_actions`
-- **C0139** `Retention`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0140** `Consistency notes`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0212** `Data Model Spec (Production)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0213** `Table contracts` (source line: 10)
+  - **C0213.S1153** `principals` (source line: 12)
+  - **C0213.S1154** `principal_emails` (source line: 19)
+  - **C0213.S1155** `credentials` (source line: 23)
+  - **C0213.S1156** `token_families` (source line: 30)
+  - **C0213.S1157** `delegation_envelopes` (source line: 39)
+  - **C0213.S1158** `keychain_memberships` (source line: 51)
+  - **C0213.S1159** `keychain_effective_snapshots` (source line: 62)
+  - **C0213.S1160** `invite_receipts` (source line: 72)
+  - **C0213.S1161** `posts` (source line: 80)
+  - **C0213.S1162** `post_revisions` (source line: 90)
+  - **C0213.S1163** `post_flags` (source line: 98)
+  - **C0213.S1164** `comments` (source line: 106)
+  - **C0213.S1165** `moderation_actions` (source line: 115)
+  - **C0213.S1166** `List item: `id` PK` (source line: 13)
+  - **C0213.S1167** `List item: `principal_type` (`owner|key`)` (source line: 14)
+  - **C0213.S1168** `List item: `key_class` nullable (`primary_author|secondary_author|use|keychain` when `principal_type=key`)` (source line: 15)
+  - **C0213.S1169** `List item: `disabled_at` nullable timestamp` (source line: 16)
+  - **C0213.S1170** `List item: indexes: `(principal_type)`, `(key_class)`, `(disabled_at)`` (source line: 17)
+  - **C0213.S1171** `List item: `principal_id` FK principals(id)` (source line: 20)
+  - **C0213.S1172** `List item: `email_normalized` unique` (source line: 21)
+  - **C0213.S1173** `List item: `credential_type` (`password|api_key`)` (source line: 25)
+  - **C0213.S1174** `List item: `secret_hash`` (source line: 26)
+  - **C0213.S1175** `List item: `revoked_at` nullable timestamp` (source line: 27)
+  - **C0213.S1176** `List item: index: `(principal_id, credential_type)`` (source line: 28)
+  - **C0213.S1177** `List item: `family_id` PK` (source line: 31)
+  - **C0213.S1178** `List item: `current_token_hash`` (source line: 33)
+  - **C0213.S1179** `List item: `previous_nonce_hash`` (source line: 34)
+  - **C0213.S1180** `List item: `expires_at`` (source line: 35)
+  - **C0213.S1181** `List item: `revoked_at`` (source line: 36)
+  - **C0213.S1182** `List item: indexes: `(principal_id)`, `(expires_at)`, `(revoked_at)`` (source line: 37)
+  - **C0213.S1183** `List item: `parent_key_id` nullable FK principals(id)` (source line: 41)
+  - **C0213.S1184** `List item: `issued_key_id` FK principals(id)` (source line: 42)
+  - **C0213.S1185** `List item: `initial_author_key_id` FK principals(id)` (source line: 43)
+  - **C0213.S1186** `List item: `depth` int (<=3)` (source line: 44)
+  - **C0213.S1187** `List item: `permissions_json`` (source line: 45)
+  - **C0213.S1188** `List item: `scope_json`` (source line: 46)
+  - **C0213.S1189** `List item: `status` (`active|suspended|cancelled|revoked`)` (source line: 48)
+  - **C0213.S1190** `List item: indexes: `(issued_key_id)`, `(parent_key_id)`, `(status)`, `(expires_at)`` (source line: 49)
+  - **C0213.S1191** `List item: `keychain_key_id` FK principals(id) where `key_class=keychain`` (source line: 53)
+  - **C0213.S1192** `List item: `member_key_id` FK principals(id) where `key_class in (primary_author,secondary_author,use)`` (source line: 54)
+  - **C0213.S1193** `List item: `added_by_owner_id` FK principals(id)` (source line: 55)
+  - **C0213.S1194** `List item: `added_at`` (source line: 56)
+  - **C0213.S1195** `List item: `removed_at` nullable` (source line: 57)
+  - **C0213.S1196** `List item: `status` (`active|removed`)` (source line: 58)
+  - **C0213.S1197** `List item: uniqueness: active `(keychain_key_id, member_key_id)`` (source line: 59)
+  - **C0213.S1198** `List item: indexes: `(keychain_key_id, status)`, `(member_key_id, status)`` (source line: 60)
+  - **C0213.S1199** `List item: `keychain_key_id` FK principals(id)` (source line: 64)
+  - **C0213.S1200** `List item: `effective_permissions_json`` (source line: 65)
+  - **C0213.S1201** `List item: `effective_scope_json`` (source line: 66)
+  - **C0213.S1202** `List item: `member_count`` (source line: 67)
+  - **C0213.S1203** `List item: `computed_at`` (source line: 68)
+  - **C0213.S1204** `List item: `computed_by` (`system|owner_action`)` (source line: 69)
+  - **C0213.S1205** `List item: indexes: `(keychain_key_id, computed_at DESC)`` (source line: 70)
+  - **C0213.S1206** `List item: `owner_id` FK principals(id)` (source line: 74)
+  - **C0213.S1207** `List item: `invite_code_hash`` (source line: 75)
+  - **C0213.S1208** `List item: `email_target`` (source line: 76)
+  - **C0213.S1209** `List item: `used_at` nullable` (source line: 78)
+  - **C0213.S1210** `List item: `author_id` FK principals(id)` (source line: 82)
+  - **C0213.S1211** `List item: `visibility_scope`` (source line: 83)
+  - **C0213.S1212** `List item: `state`` (source line: 84)
+  - **C0213.S1213** `List item: `title`` (source line: 85)
+  - **C0213.S1214** `List item: `body`` (source line: 86)
+  - **C0213.S1215** `List item: `created_at`, `updated_at`, `deleted_at`` (source line: 87)
+  - **C0213.S1216** `List item: indexes: `(author_id, created_at DESC)`, `(state)`, `(visibility_scope)`` (source line: 88)
+  - **C0213.S1217** `List item: `post_id` FK posts(id)` (source line: 92)
+  - **C0213.S1218** `List item: `editor_id` FK principals(id)` (source line: 93)
+  - **C0213.S1219** `List item: `reason_code`` (source line: 94)
+  - **C0213.S1220** `List item: `title`, `body`` (source line: 95)
+  - **C0213.S1221** `List item: `created_at`` (source line: 96)
+  - **C0213.S1222** `List item: `actor_key_id` FK principals(id)` (source line: 101)
+  - **C0213.S1223** `List item: `notes`` (source line: 103)
+  - **C0213.S1224** `List item: `created_at`, `deleted_at`` (source line: 112)
+  - **C0213.S1225** `List item: indexes: `(post_id, created_at ASC)`, `(state)`` (source line: 113)
+  - **C0213.S1226** `List item: `target_type` (`post|comment`)` (source line: 117)
+  - **C0213.S1227** `List item: `target_id`` (source line: 118)
+  - **C0213.S1228** `List item: `action`` (source line: 119)
+  - **C0213.S1229** `List item: `actor_owner_id` FK principals(id)` (source line: 121)
+- **C0214** `Retention` (source line: 124)
+  - **C0214.S1230** `List item: Soft-delete metadata retained by default.` (source line: 125)
+  - **C0214.S1231** `List item: Audit and moderation rows retained for compliance and incident analysis.` (source line: 126)
+  - **C0214.S1232** `List item: Keychain snapshots retained for lineage and incident reconstruction.` (source line: 127)
+- **C0215** `Consistency notes` (source line: 129)
+  - **C0215.S1233** `List item: Keychain behavior is part of the v1 required schema surface.` (source line: 130)
+  - **C0215.S1234** `List item: Any schema change requires synchronized updates to `DATA_MODEL_REFERENCE.md`, `ERD.md`, `TRACEABILITY_MATRIX.md`, and `ROUTE_INVENTORY_REFERENCE.md`.` (source line: 131)
 
 ## File: `ERD.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/ERD.md`
 - **Components identified:** 2
 
-- **C0141** `ERD (Text + Mermaid)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0124** `Notes`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0216** `ERD (Text + Mermaid)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0199** `Notes` (source line: 26)
+  - **C0199.S1235** `List item: Delegation lineage is represented by `DELEGATION_ENVELOPES.parent_key_id` and `initial_author_key_id`.` (source line: 27)
+  - **C0199.S1236** `List item: Refresh/replay protection is represented by `TOKEN_FAMILIES`.` (source line: 28)
+  - **C0199.S1237** `List item: Keychain composition and effective aggregation history are represented by `KEYCHAIN_MEMBERSHIPS` and `KEYCHAIN_EFFECTIVE_SNAPSHOTS`.` (source line: 29)
 
 ## File: `SECURITY_CONTROLS_SPEC.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`
 - **Components identified:** 6
 
-- **C0142** `Security Controls Spec`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0143** `Control objectives`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0144** `Trust boundaries`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0145** `Control baseline`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0146** `Dependency mapping`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0147** `Verification linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0217** `Security Controls Spec` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0218** `Control objectives` (source line: 8)
+  - **C0218.S1238** `List item: Ensure credential authenticity and bounded token lifetime.` (source line: 9)
+  - **C0218.S1239** `List item: Prevent unauthorized mutation/actions via layered claim/policy checks.` (source line: 10)
+  - **C0218.S1240** `List item: Preserve operational traceability with redacted structured logs.` (source line: 11)
+- **C0219** `Trust boundaries` (source line: 13)
+  - **C0219.S1241** `List item: Browser/third-party clients ↔ API` (source line: 14)
+  - **C0219.S1242** `List item: API ↔ DB` (source line: 15)
+  - **C0219.S1243** `List item: API ↔ signing material` (source line: 16)
+  - **C0219.S1244** `List item: API ↔ logging/observability sinks` (source line: 17)
+- **C0220** `Control baseline` (source line: 19)
+  - **C0220.S1245** `List item: Key material validation and file permission checks at boot.` (source line: 20)
+  - **C0220.S1246** `List item: JWT claim enforcement: issuer, audience, type, timing, lineage.` (source line: 21)
+  - **C0220.S1247** `List item: Refresh family replay protection.` (source line: 22)
+  - **C0220.S1248** `List item: Rate limiting + CSRF + CORS + device headers.` (source line: 23)
+  - **C0220.S1249** `List item: Immutable error envelope with request correlation IDs.` (source line: 24)
+- **C0221** `Dependency mapping` (source line: 26)
+  - **C0221.S1250** `List item: JWT: `firebase/php-jwt`` (source line: 27)
+  - **C0221.S1251** `List item: Crypto primitives: `ext-sodium`` (source line: 28)
+  - **C0221.S1252** `List item: Policy middleware host: `slim/slim`` (source line: 29)
+  - **C0221.S1253** `List item: CORS: `neomerx/cors-psr7`` (source line: 30)
+  - **C0221.S1254** `List item: Rate limiting state/policy: `symfony/rate-limiter` + `symfony/cache`` (source line: 31)
+  - **C0221.S1255** `List item: Structured audit logs: `monolog/monolog`` (source line: 32)
+- **C0222** `Verification linkage` (source line: 34)
+  - *(No explicit sub-components detected.)*
 
 ## File: `SECURITY_HEADERS_AND_CSP_POLICY.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`
 - **Components identified:** 7
 
-- **C0148** `Security Headers and CSP Policy (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0149** `Required default security headers`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0150** `Path-aware CSP contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0151** `Enforcement requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0152** `Verification requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0223** `Security Headers and CSP Policy (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0224** `Required default security headers` (source line: 11)
+  - **C0224.S1256** `List item: `X-Frame-Options: DENY`` (source line: 12)
+  - **C0224.S1257** `List item: `X-Content-Type-Options: nosniff`` (source line: 13)
+  - **C0224.S1258** `List item: `Referrer-Policy: no-referrer`` (source line: 14)
+  - **C0224.S1259** `List item: `Strict-Transport-Security: max-age=31536000; includeSubDomains`` (source line: 15)
+  - **C0224.S1260** `List item: `Cross-Origin-Opener-Policy: same-origin`` (source line: 16)
+  - **C0224.S1261** `List item: `Cross-Origin-Resource-Policy: same-origin`` (source line: 17)
+  - **C0224.S1262** `List item: `Permissions-Policy: accelerometer=(), camera=(), geolocation=(), microphone=()`` (source line: 18)
+- **C0225** `Path-aware CSP contract` (source line: 22)
+  - **C0225.S1263** `List item: **API/public non-UI paths**: `default-src 'none'; frame-ancestors 'none'`` (source line: 23)
+  - **C0225.S1264** `List item: **UI paths (`/ui*`)**: `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'`` (source line: 24)
+- **C0226** `Enforcement requirements` (source line: 26)
+  - **C0226.S1265** `List item: CSP policy is computed from request path.` (source line: 27)
+  - **C0226.S1266** `List item: API and UI CSP must not be merged into a permissive union.` (source line: 28)
+  - **C0226.S1267** `List item: Response generation path must avoid silently dropping CSP/security headers on error envelopes.` (source line: 29)
+- **C0227** `Verification requirements` (source line: 31)
+  - **C0227.S1268** `List item: contract test for default headers present,` (source line: 33)
+  - **C0227.S1269** `List item: contract test for UI-path CSP,` (source line: 34)
+  - **C0227.S1270** `List item: contract test ensuring pre-existing stricter CSP is not overwritten,` (source line: 35)
+  - **C0227.S1271** `List item: regression check for error-envelope responses preserving security headers.` (source line: 36)
+- **C0177** `Related SSOT docs` (source line: 38)
+  - **C0177.S1046** `List item: `SECURITY_CONTROLS_SPEC.md`` (source line: 39)
+  - **C0177.S1047** `List item: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`` (source line: 40)
+  - **C0177.S1272** `List item: `VERIFICATION_STRATEGY.md`` (source line: 41)
+  - **C0177.S1273** `List item: `PRODUCTION_READINESS_GATES.md`` (source line: 42)
 
 ## File: `SECURITY_THREAT_MODEL.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`
 - **Components identified:** 4
 
-- **C0153** `Security Threat Model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0154** `Threat scenarios`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0155** `Mitigations`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0156** `Dependency linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0228** `Security Threat Model` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0229** `Threat scenarios` (source line: 8)
+  - **C0229.S1274** `List item: Stolen bearer token replay.` (source line: 9)
+  - **C0229.S1275** `List item: Refresh token replay in family.` (source line: 10)
+  - **C0229.S1276** `List item: Delegation escalation via over-scoped child key.` (source line: 11)
+  - **C0229.S1277** `List item: CSRF on console write routes.` (source line: 12)
+  - **C0229.S1278** `List item: Key file tampering/world-writable private keys.` (source line: 13)
+  - **C0229.S1279** `List item: Abuse via request flooding.` (source line: 14)
+- **C0230** `Mitigations` (source line: 16)
+  - **C0230.S1280** `List item: Short JWT TTL + refresh rotation/replay invalidation.` (source line: 17)
+  - **C0230.S1281** `List item: Subset-only delegation with depth/expiry constraints.` (source line: 18)
+  - **C0230.S1282** `List item: CSRF validation for applicable writes.` (source line: 19)
+  - **C0230.S1283** `List item: Boot-time key material safety checks.` (source line: 20)
+  - **C0230.S1284** `List item: Global rate limiter with retry metadata.` (source line: 21)
+  - **C0230.S1285** `List item: Structured audit events with request IDs.` (source line: 22)
+- **C0231** `Dependency linkage` (source line: 24)
+  - **C0231.S1286** `List item: JWT controls: `firebase/php-jwt`` (source line: 25)
+  - **C0231.S1251** `List item: Crypto primitives: `ext-sodium`` (source line: 26)
+  - **C0231.S1253** `List item: CORS: `neomerx/cors-psr7`` (source line: 27)
+  - **C0231.S1287** `List item: Rate limiting: `symfony/rate-limiter` + `symfony/cache`` (source line: 28)
+  - **C0231.S1288** `List item: Logging/audit traces: `monolog/monolog`` (source line: 29)
 
 ## File: `SECURITY_VERIFICATION_ABUSE_CASES.md`
 - **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`
 - **Components identified:** 7
 
-- **C0157** `Security Verification and Abuse Cases (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0158** `Abuse-case matrix (minimum required)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0159** `Security test-pack requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0160** `Incident-response verification hooks`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0161** `Release gate linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0232** `Security Verification and Abuse Cases (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0233** `Abuse-case matrix (minimum required)` (source line: 11)
+  - *(No explicit sub-components detected.)*
+- **C0234** `Security test-pack requirements` (source line: 24)
+  - **C0234.S1289** `List item: Security suite must include both happy-path and abuse-path tests.` (source line: 25)
+  - **C0234.S1290** `List item: Every abuse-case row requires at least one automated regression test.` (source line: 26)
+  - **C0234.S1291** `List item: High-severity controls (authn/authz/token lifecycle) require two-sided tests: allow valid + deny invalid.` (source line: 27)
+- **C0235** `Incident-response verification hooks` (source line: 29)
+  - **C0235.S1292** `List item: emitted event family is documented,` (source line: 31)
+  - **C0235.S1293** `List item: `request_id` is present in envelope + logs,` (source line: 32)
+  - **C0235.S1294** `List item: runbook triage step is linked.` (source line: 33)
+- **C0236** `Release gate linkage` (source line: 35)
+  - **C0236.S1295** `List item: any required abuse-case test fails,` (source line: 37)
+  - **C0236.S1296** `List item: redaction verification fails,` (source line: 38)
+  - **C0236.S1297** `List item: replay-protection assertions are missing or stale.` (source line: 39)
+- **C0177** `Related SSOT docs` (source line: 41)
+  - **C0177.S1298** `List item: `SECURITY_THREAT_MODEL.md`` (source line: 42)
+  - **C0177.S1046** `List item: `SECURITY_CONTROLS_SPEC.md`` (source line: 43)
+  - **C0177.S1272** `List item: `VERIFICATION_STRATEGY.md`` (source line: 44)
+  - **C0177.S1299** `List item: `OBSERVABILITY_EVENT_CATALOG.md`` (source line: 45)
+  - **C0177.S1273** `List item: `PRODUCTION_READINESS_GATES.md`` (source line: 46)
 
 ## File: `ACCEPTANCE_CRITERIA_MATRIX.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`
 - **Components identified:** 7
 
-- **C0162** `Acceptance Criteria Matrix (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0163** `Usage contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0164** `Route acceptance matrix`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0165** `Required negative-path baseline per route`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0166** `Manual UAT checklist linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0237** `Acceptance Criteria Matrix (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0238** `Usage contract` (source line: 11)
+  - **C0238.S1300** `List item: This matrix is normative for QA acceptance and release signoff.` (source line: 12)
+  - **C0238.S1301** `List item: OpenAPI remains normative for request/response shape; this matrix is normative for behavioral intent.` (source line: 13)
+  - **C0238.S1302** `List item: For conflicts, update both this matrix and OpenAPI-related artifacts in the same PR.` (source line: 14)
+- **C0239** `Route acceptance matrix` (source line: 16)
+  - *(No explicit sub-components detected.)*
+- **C0240** `Required negative-path baseline per route` (source line: 41)
+  - *(No explicit sub-components detected.)*
+- **C0241** `Manual UAT checklist linkage` (source line: 44)
+  - *(No explicit sub-components detected.)*
+- **C0177** `Related SSOT docs` (source line: 47)
+  - **C0177.S0930** `List item: `openapi/cre8.v1.yaml`` (source line: 48)
+  - **C0177.S1060** `List item: `ERROR_CODE_CATALOG.md`` (source line: 49)
+  - **C0177.S1272** `List item: `VERIFICATION_STRATEGY.md`` (source line: 50)
+  - **C0177.S1303** `List item: `TRACEABILITY_MATRIX.md`` (source line: 51)
 
 ## File: `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`
 - **Components identified:** 8
 
-- **C0167** `Boot and Startup Failure Contract (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0168** `Startup sequence contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0169** `Mandatory boot assertions`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0170** `Startup success behavior`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0171** `Startup failure behavior`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0172** `Non-negotiable fail-closed rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0242** `Boot and Startup Failure Contract (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0243** `Startup sequence contract` (source line: 11)
+  - **C0243.S1304** `List item: Load environment + resolve key source references.` (source line: 12)
+  - **C0243.S1305** `List item: Build typed runtime config.` (source line: 13)
+  - **C0243.S1306** `List item: Build container and resolve core services.` (source line: 14)
+  - **C0243.S1307** `List item: Execute boot assertions.` (source line: 15)
+  - **C0243.S1308** `List item: Start app and expose routes.` (source line: 16)
+- **C0244** `Mandatory boot assertions` (source line: 18)
+  - **C0244.S1309** `List item: Core dependency class presence for runtime baseline.` (source line: 19)
+  - **C0244.S1310** `List item: Container resolvability for token signer/verifier, observability emitter, and DB.` (source line: 20)
+  - **C0244.S1311** `List item: Key material resolvability and format safety.` (source line: 21)
+  - **C0244.S1312** `List item: Profile hardening checks (`APP_ENV`, issuer/cors profile restrictions).` (source line: 22)
+  - **C0244.S1313** `List item: Private key path safety checks in stage/prod.` (source line: 23)
+  - **C0244.S1314** `List item: Middleware order contract consistency check.` (source line: 24)
+- **C0245** `Startup success behavior` (source line: 26)
+  - **C0245.S1315** `List item: Emit structured startup-ready event.` (source line: 27)
+  - **C0245.S1316** `List item: If `BOOT_EVIDENCE_PATH` is configured, write startup evidence JSON including:` (source line: 28)
+  - **C0245.S1317** `List item: status,` (source line: 29)
+  - **C0245.S1318** `List item: timestamp,` (source line: 30)
+  - **C0245.S1319** `List item: environment profile,` (source line: 31)
+  - **C0245.S1320** `List item: middleware order,` (source line: 32)
+  - **C0245.S1321** `List item: startup latency,` (source line: 33)
+  - **C0245.S1322** `List item: key source mode indicators.` (source line: 34)
+- **C0246** `Startup failure behavior` (source line: 36)
+  - **C0246.S1323** `List item: Return deterministic JSON failure envelope:` (source line: 37)
+  - **C0246.S1324** `List item: `error.code = boot_failed`` (source line: 38)
+  - **C0246.S1325** `List item: generated `request_id`` (source line: 39)
+  - **C0246.S1326** `List item: startup-safe message (no stack trace disclosure)` (source line: 40)
+  - **C0246.S1327** `List item: Emit structured startup-failed event with failure metadata.` (source line: 41)
+  - **C0246.S1328** `List item: Include `X-Request-Id` header in startup failure responses.` (source line: 42)
+- **C0247** `Non-negotiable fail-closed rule` (source line: 44)
+  - *(No explicit sub-components detected.)*
+- **C0177** `Related SSOT docs` (source line: 47)
+  - **C0177.S1329** `List item: `CONFIGURATION_ENVIRONMENT_CONTRACT.md`` (source line: 48)
+  - **C0177.S1330** `List item: `RELEASE_CHECKLIST.md`` (source line: 49)
+  - **C0177.S1046** `List item: `SECURITY_CONTROLS_SPEC.md`` (source line: 50)
+  - **C0177.S1331** `List item: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 51)
 
 ## File: `CONFIGURATION_ENVIRONMENT_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`
 - **Components identified:** 8
 
-- **C0173** `Configuration and Environment Contract (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0174** `Required environment variables`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0175** `Optional policy variables (with defaults)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0176** `Profile hardening constraints`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0177** `Key material source rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0178** `Runtime mapping contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0248** `Configuration and Environment Contract (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0249** `Required environment variables` (source line: 11)
+  - **C0249.S1332** `List item: `APP_ENV` (`local|stage|prod`)` (source line: 12)
+  - **C0249.S1333** `List item: `DB_DSN`` (source line: 13)
+  - **C0249.S1334** `List item: `DB_USER`` (source line: 14)
+  - **C0249.S1335** `List item: `DB_PASS`` (source line: 15)
+  - **C0249.S1336** `List item: `JWT_ISSUER`` (source line: 16)
+  - **C0249.S1337** `List item: `JWT_AUDIENCE_CONSOLE`` (source line: 17)
+  - **C0249.S1338** `List item: `JWT_AUDIENCE_GATEWAY`` (source line: 18)
+  - **C0249.S1339** `List item: `JWT_PRIVATE_KEY` (inline PEM or path)` (source line: 19)
+  - **C0249.S1340** `List item: `JWT_PUBLIC_KEY` (inline PEM or path)` (source line: 20)
+  - **C0249.S1341** `List item: `CORS_ALLOWED_ORIGINS` (comma-separated)` (source line: 21)
+  - **C0249.S1342** `List item: `CSRF_SECRET` (minimum length 32)` (source line: 22)
+- **C0250** `Optional policy variables (with defaults)` (source line: 24)
+  - **C0250.S1343** `List item: `RATE_LIMIT_GLOBAL_ID` (default: `global`)` (source line: 25)
+  - **C0250.S1344** `List item: `RATE_LIMIT_GLOBAL_POLICY` (default: `fixed_window`)` (source line: 26)
+  - **C0250.S1345** `List item: `RATE_LIMIT_GLOBAL_INTERVAL` (default: `1 minute`)` (source line: 27)
+  - **C0250.S1346** `List item: `RATE_LIMIT_GLOBAL_LIMIT` (default: `180`)` (source line: 28)
+  - **C0250.S1347** `List item: `JWT_OWNER_TTL_SECONDS` (default: `900`)` (source line: 29)
+  - **C0250.S1348** `List item: `JWT_KEY_TTL_SECONDS` (default: `600`)` (source line: 30)
+  - **C0250.S1349** `List item: `JWT_DELEGATION_TTL_SECONDS` (default: `300`)` (source line: 31)
+  - **C0250.S1350** `List item: `BOOT_EVIDENCE_PATH` (optional path for startup evidence JSON)` (source line: 32)
+- **C0251** `Profile hardening constraints` (source line: 34)
+  - **C0251.S1351** `List item: `APP_ENV` must be one of `local|stage|prod`.` (source line: 35)
+  - **C0251.S1352** `List item: Wildcard CORS (`*`) is allowed only in `local`.` (source line: 36)
+  - **C0251.S1353** `List item: `JWT_ISSUER` must be a valid URL.` (source line: 37)
+  - **C0251.S1354** `List item: `JWT_ISSUER` must be `https://` in `stage|prod`.` (source line: 38)
+  - **C0251.S1355** `List item: `DB_DSN` must use `sqlite:`, `mysql:`, or `pgsql:` prefixes.` (source line: 39)
+  - **C0251.S1356** `List item: `prod` must not use SQLite DSN.` (source line: 40)
+  - **C0251.S1357** `List item: Optional numeric policy variables must be positive integers.` (source line: 41)
+  - **C0251.S1358** `List item: In `stage|prod`, private-key file paths must satisfy strict permission checks.` (source line: 42)
+- **C0252** `Key material source rules` (source line: 44)
+  - **C0252.S1359** `List item: `JWT_PRIVATE_KEY` and `JWT_PUBLIC_KEY` may be:` (source line: 45)
+  - **C0252.S1360** `List item: inline PEM, or` (source line: 46)
+  - **C0252.S1361** `List item: filesystem paths.` (source line: 47)
+  - **C0252.S1362** `List item: Relative key paths are resolved against repository root at startup.` (source line: 48)
+  - **C0252.S1363** `List item: PEM strings must include end markers; key paths must be readable.` (source line: 49)
+- **C0253** `Runtime mapping contract` (source line: 51)
+  - **C0253.S1364** `List item: `RuntimeConfig`` (source line: 53)
+  - **C0253.S1365** `List item: `RateLimitPolicy`` (source line: 54)
+  - **C0253.S1366** `List item: `CorsPolicy`` (source line: 55)
+  - **C0253.S1367** `List item: `JwtPolicy`` (source line: 56)
+  - **C0253.S1368** `List item: profile safety checks,` (source line: 59)
+  - **C0253.S1369** `List item: key source resolvability,` (source line: 60)
+  - **C0253.S1370** `List item: key path safety checks,` (source line: 61)
+  - **C0253.S1371** `List item: middleware-order alignment checks.` (source line: 62)
+- **C0177** `Related SSOT docs` (source line: 64)
+  - **C0177.S1372** `List item: `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`` (source line: 65)
+  - **C0177.S1330** `List item: `RELEASE_CHECKLIST.md`` (source line: 66)
+  - **C0177.S1046** `List item: `SECURITY_CONTROLS_SPEC.md`` (source line: 67)
+  - **C0177.S1373** `List item: `DEPENDENCY_BASELINE.md`` (source line: 68)
 
 ## File: `HEALTH_ENDPOINT_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`
 - **Components identified:** 9
 
-- **C0179** `Health Endpoint Contract (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0180** `Route and surface`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0181** `Response contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0182** `Service-state semantics`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0183** `HTTP status guidance`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0184** `Failure reason examples`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0185** `Smoke-check expectations`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0254** `Health Endpoint Contract (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0255** `Route and surface` (source line: 11)
+  - **C0255.S1374** `List item: Route: `GET /health`` (source line: 12)
+  - **C0255.S1375** `List item: Surface: public` (source line: 13)
+  - **C0255.S1376** `List item: Auth: none` (source line: 14)
+- **C0256** `Response contract` (source line: 16)
+  - **C0256.S1377** `List item: `data.status` (`ok|degraded`)` (source line: 18)
+  - **C0256.S1378** `List item: `data.checked_at_utc` (ISO-8601)` (source line: 19)
+  - **C0256.S1379** `List item: `data.latency_ms` (integer)` (source line: 20)
+  - **C0256.S1380** `List item: `data.failures` (array of failure reason strings)` (source line: 21)
+  - **C0256.S1381** `List item: `data.services` object containing:` (source line: 22)
+  - **C0256.S1382** `List item: `db` status` (source line: 23)
+  - **C0256.S1383** `List item: `rate_limiter` status` (source line: 24)
+  - **C0256.S1384** `List item: `key_material` status` (source line: 25)
+  - **C0256.S1385** `List item: `http_dependency` status` (source line: 26)
+- **C0257** `Service-state semantics` (source line: 30)
+  - **C0257.S1386** `List item: `ok`: subsystem healthy for current probe.` (source line: 31)
+  - **C0257.S1387** `List item: `degraded`: subsystem reachable but policy threshold failed.` (source line: 32)
+  - **C0257.S1388** `List item: `down`: subsystem unavailable or probe exception.` (source line: 33)
+- **C0258** `HTTP status guidance` (source line: 35)
+  - **C0258.S1389** `List item: `200`: endpoint reachable and contract response emitted (including degraded cases).` (source line: 36)
+  - **C0258.S1390** `List item: `500`: unrecoverable handler/runtime error.` (source line: 37)
+- **C0259** `Failure reason examples` (source line: 39)
+  - **C0259.S1391** `List item: `db_probe_exception`` (source line: 40)
+  - **C0259.S1392** `List item: `rate_limiter_rejected`` (source line: 41)
+  - **C0259.S1393** `List item: `key_material_unavailable`` (source line: 42)
+  - **C0259.S1394** `List item: `http_dependency_exception`` (source line: 43)
+- **C0260** `Smoke-check expectations` (source line: 45)
+  - **C0260.S1395** `List item: route reachable,` (source line: 47)
+  - **C0260.S1396** `List item: JSON envelope shape,` (source line: 48)
+  - **C0260.S1397** `List item: `data.status` is valid (`ok|degraded`),` (source line: 49)
+  - **C0260.S1398** `List item: subsystem object presence.` (source line: 50)
+- **C0177** `Related SSOT docs` (source line: 52)
+  - **C0177.S1399** `List item: `API_CONTRACT_GUIDE.md`` (source line: 53)
+  - **C0177.S1400** `List item: `Endpoint_Examples_All_Routes.md`` (source line: 54)
+  - **C0177.S1330** `List item: `RELEASE_CHECKLIST.md`` (source line: 55)
+  - **C0177.S1331** `List item: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`` (source line: 56)
 
 ## File: `Migration_Seed_Strategy.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`
 - **Components identified:** 8
 
-- **C0186** `Migration Seed Strategy (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0187** `Strategy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0188** `Required migration artifacts`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0189** `Required seed artifacts`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0190** `Safety rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0191** `Command contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0147** `Verification linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0261** `Migration Seed Strategy (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0262** `Strategy` (source line: 11)
+  - **C0262.S1401** `List item: Migrations are forward-only and versioned with monotonically increasing identifiers.` (source line: 12)
+  - **C0262.S1402** `List item: Production paths run migrations without demo seed data.` (source line: 13)
+  - **C0262.S1403** `List item: Non-production paths may run minimal deterministic seed fixtures for smoke and QA.` (source line: 14)
+  - **C0262.S1404** `List item: Migration execution must be idempotent at the version ledger level.` (source line: 15)
+- **C0263** `Required migration artifacts` (source line: 17)
+  - **C0263.S1405** `List item: Schema migration scripts for all table contracts in `DATA_MODEL_SPEC.md`.` (source line: 18)
+  - **C0263.S1406** `List item: Migration ledger table (or equivalent) that records applied versions and timestamps.` (source line: 19)
+  - **C0263.S1407** `List item: Validation command for schema presence and version state.` (source line: 20)
+- **C0264** `Required seed artifacts` (source line: 22)
+  - **C0264.S1408** `List item: `owner_seed` (non-production only): one owner account fixture.` (source line: 23)
+  - **C0264.S1409** `List item: `auth_seed` (non-production only): one keychain and one member key fixture.` (source line: 24)
+  - **C0264.S1410** `List item: `content_seed` (optional): minimal post/comment fixtures for contract smoke.` (source line: 25)
+- **C0265** `Safety rules` (source line: 27)
+  - **C0265.S1411** `List item: Seed execution is forbidden by default in `prod`.` (source line: 28)
+  - **C0265.S1412** `List item: Seed artifacts must never include plaintext secrets committed to VCS.` (source line: 29)
+  - **C0265.S1413** `List item: Migration + seed commands must emit machine-readable pass/fail output.` (source line: 30)
+- **C0266** `Command contract` (source line: 32)
+  - **C0266.S1414** `List item: `composer ops:migrate-smoke` validates migration artifact presence and schema baseline.` (source line: 33)
+  - **C0266.S1415** `List item: Optional seed smoke command must verify deterministic fixture counts where enabled.` (source line: 34)
+- **C0222** `Verification linkage` (source line: 36)
+  - **C0222.S1416** `List item: Related smoke semantics are defined in `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.` (source line: 37)
+  - **C0222.S1417** `List item: Release proof requirements are defined in `RELEASE_CHECKLIST.md`.` (source line: 38)
+  - **C0222.S1418** `List item: Traceability updates for schema behavior changes are required in `TRACEABILITY_MATRIX.md`.` (source line: 39)
 
 ## File: `OBSERVABILITY_EVENT_CATALOG.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`
 - **Components identified:** 6
 
-- **C0192** `Observability Event Catalog`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0193** `Event families`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0194** `Canonical event naming guidance`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0195** `Required event fields`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0196** `Logging requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0197** `Correlation requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0267** `Observability Event Catalog` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0268** `Event families` (source line: 8)
+  - **C0268.S1419** `List item: `auth.*`` (source line: 9)
+  - **C0268.S1420** `List item: `auth.owner_jwt.*`` (source line: 10)
+  - **C0268.S1421** `List item: `auth.key_jwt.*`` (source line: 11)
+  - **C0268.S1422** `List item: `security.*`` (source line: 12)
+  - **C0268.S1423** `List item: `csrf.*`` (source line: 13)
+  - **C0268.S1424** `List item: `rate_limit.*`` (source line: 14)
+  - **C0268.S1425** `List item: `device_limit.*`` (source line: 15)
+  - **C0268.S1426** `List item: `request_id.*`` (source line: 16)
+  - **C0268.S1427** `List item: `keys.*`` (source line: 17)
+  - **C0268.S1428** `List item: `comments.*`` (source line: 18)
+  - **C0268.S1429** `List item: `moderation.*`` (source line: 19)
+  - **C0268.S1430** `List item: `invites.*`` (source line: 20)
+  - **C0268.S1431** `List item: `validation.*`` (source line: 21)
+  - **C0268.S1432** `List item: `routing.*`` (source line: 22)
+- **C0269** `Canonical event naming guidance` (source line: 24)
+  - **C0269.S1433** `List item: Use `<family>.<action>` and `<family>.<entity>.<action>` patterns.` (source line: 25)
+  - **C0269.S1434** `List item: Startup events:` (source line: 26)
+  - **C0269.S1435** `List item: `boot.startup_ready`` (source line: 27)
+  - **C0269.S1436** `List item: `boot.startup_failed`` (source line: 28)
+  - **C0269.S1437** `List item: Delivery fallback event:` (source line: 29)
+  - **C0269.S1438** `List item: `audit.delivery_failed`` (source line: 30)
+- **C0270** `Required event fields` (source line: 32)
+  - **C0270.S1439** `List item: `event_name`` (source line: 33)
+  - **C0270.S1440** `List item: `timestamp_utc`` (source line: 34)
+  - **C0270.S1441** `List item: `request_id`` (source line: 35)
+  - **C0270.S1442** `List item: `surface` (`public|gateway|console`)` (source line: 36)
+  - **C0270.S1443** `List item: `actor_principal_id` (nullable where unauthenticated)` (source line: 37)
+  - **C0270.S1444** `List item: `result` (`success|failure`)` (source line: 38)
+  - **C0270.S1445** `List item: `detail_code` (when failure)` (source line: 39)
+- **C0271** `Logging requirements` (source line: 41)
+  - **C0271.S1446** `List item: Structured logs must be emitted through channelized application/security/audit streams.` (source line: 42)
+  - **C0271.S1447** `List item: Sensitive fields (`token`, `secret`, `private_key`) must be redacted before emission.` (source line: 43)
+  - **C0271.S1448** `List item: Security-significant route outcomes (401/403/429) require an event emission.` (source line: 44)
+  - **C0271.S1449** `List item: If primary audit delivery fails, fallback error-path emission must preserve `event_name`, `request_id` where available, and failure metadata.` (source line: 45)
+- **C0272** `Correlation requirements` (source line: 47)
+  - **C0272.S1450** `List item: `request_id` must correlate between HTTP response envelope and emitted events.` (source line: 48)
+  - **C0272.S1451** `List item: Incident timelines should be reconstructable using only event stream + request IDs.` (source line: 49)
 
 ## File: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
 - **Components identified:** 9
 
-- **C0198** `Operational Smoke Check Contract (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0199** `Canonical smoke commands`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0200** `Health smoke contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0201** `Migration smoke contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0202** `Evidence requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0203** `Reconciliation rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0161** `Release gate linkage`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0273** `Operational Smoke Check Contract (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0274** `Canonical smoke commands` (source line: 11)
+  - **C0274.S0985** `List item: `composer ops:health-smoke`` (source line: 12)
+  - **C0274.S0986** `List item: `composer ops:migrate-smoke`` (source line: 13)
+- **C0275** `Health smoke contract` (source line: 15)
+  - **C0275.S1452** `List item: call `/health` against configured base URL,` (source line: 17)
+  - **C0275.S1453** `List item: require HTTP `200`,` (source line: 18)
+  - **C0275.S1454** `List item: parse JSON envelope,` (source line: 19)
+  - **C0275.S1455** `List item: validate `data.status` in `ok|degraded`,` (source line: 20)
+  - **C0275.S1456** `List item: fail with deterministic machine-readable failure codes when invalid.` (source line: 21)
+- **C0276** `Migration smoke contract` (source line: 23)
+  - **C0276.S1457** `List item: validate migration artifact presence according to current migration strategy,` (source line: 25)
+  - **C0276.S1458** `List item: execute migration sanity validation against ephemeral DB target,` (source line: 26)
+  - **C0276.S1459** `List item: verify required core table set for target release profile,` (source line: 27)
+  - **C0276.S1460** `List item: fail with deterministic machine-readable failure codes when artifacts/schema are missing.` (source line: 28)
+- **C0277** `Evidence requirements` (source line: 30)
+  - **C0277.S1461** `List item: command output,` (source line: 32)
+  - **C0277.S1462** `List item: pass/fail status,` (source line: 33)
+  - **C0277.S1463** `List item: failure reason code (if failed),` (source line: 34)
+  - **C0277.S1464** `List item: timestamp and environment profile.` (source line: 35)
+- **C0278** `Reconciliation rule` (source line: 37)
+  - *(No explicit sub-components detected.)*
+- **C0236** `Release gate linkage` (source line: 40)
+  - **C0236.S1465** `List item: Gate A requires health smoke success.` (source line: 41)
+  - **C0236.S1466** `List item: Gate D requires migration smoke and rollback-readiness evidence.` (source line: 42)
+- **C0177** `Related SSOT docs` (source line: 44)
+  - **C0177.S1330** `List item: `RELEASE_CHECKLIST.md`` (source line: 45)
+  - **C0177.S1272** `List item: `VERIFICATION_STRATEGY.md`` (source line: 46)
+  - **C0177.S1467** `List item: `Migration_Seed_Strategy.md`` (source line: 47)
+  - **C0177.S1273** `List item: `PRODUCTION_READINESS_GATES.md`` (source line: 48)
 
 ## File: `PRODUCTION_READINESS_GATES.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
 - **Components identified:** 6
 
-- **C0204** `Production Readiness Gates`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0205** `Gate A: Build/runtime integrity`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0206** `Gate B: Contract/security quality`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0207** `Gate C: UX parity`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0208** `Gate D: Operational readiness`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0025** `Exit criteria`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0279** `Production Readiness Gates` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0280** `Gate A: Build/runtime integrity` (source line: 8)
+  - **C0280.S1468** `List item: Dependencies installable in CI/CD from lockfile.` (source line: 9)
+  - **C0280.S1469** `List item: App boots with no startup exceptions.` (source line: 10)
+  - **C0280.S1470** `List item: Startup behavior matches `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`.` (source line: 11)
+  - **C0280.S1471** `List item: `/health` returns subsystem pass (`db`, `rate_limiter`, `jwt_keys`, `issuer_dependency`).` (source line: 12)
+- **C0281** `Gate B: Contract/security quality` (source line: 14)
+  - **C0281.S1472** `List item: Contract tests pass.` (source line: 15)
+  - **C0281.S1473** `List item: Security tests pass.` (source line: 16)
+  - **C0281.S1474** `List item: Abuse-case security regressions pass.` (source line: 17)
+  - **C0281.S1475** `List item: No undocumented API or envelope changes.` (source line: 18)
+  - **C0281.S1476** `List item: JWT claim, CSRF, CORS, and limiter behavior verified against SSOT.` (source line: 19)
+- **C0282** `Gate C: UX parity` (source line: 21)
+  - **C0282.S1477** `List item: All declared endpoint/UI mappings implemented.` (source line: 22)
+  - **C0282.S1478** `List item: Error-state mappings validated for 401/403/404/422/429/5xx.` (source line: 23)
+  - **C0282.S1479** `List item: Correlation IDs surfaced in UI diagnostics.` (source line: 24)
+- **C0283** `Gate D: Operational readiness` (source line: 26)
+  - **C0283.S1480** `List item: Rollback rehearsal completed.` (source line: 27)
+  - **C0283.S1481** `List item: Key rotation runbook validated.` (source line: 28)
+  - **C0283.S1482** `List item: Infrastructure/IaC evidence reviewed (plan/apply + backup/restore readiness).` (source line: 29)
+  - **C0283.S1483** `List item: Alerting/dashboard checks pass for SLO/SLI targets.` (source line: 30)
+  - **C0283.S1484** `List item: Operational smoke checks pass per `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.` (source line: 31)
+- **C0100** `Exit criteria` (source line: 33)
+  - *(No explicit sub-components detected.)*
 
 ## File: `RELEASE_CHECKLIST.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`
 - **Components identified:** 4
 
-- **C0209** `Release Checklist`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0210** `Pre-release requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0211** `Security and operations gates`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0212** `Evidence package`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0284** `Release Checklist` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0285** `Pre-release requirements` (source line: 6)
+  - **C0285.S1485** `List item: All required test commands pass (`composer test`, contract, security, QA, smoke).` (source line: 7)
+  - **C0285.S1486** `List item: OpenAPI/schema diffs reviewed and compatibility classified.` (source line: 8)
+  - **C0285.S1487** `List item: Acceptance criteria for changed routes validated (positive + negative paths).` (source line: 9)
+  - **C0285.S1488** `List item: Traceability matrix rows updated for changed capabilities.` (source line: 10)
+- **C0286** `Security and operations gates` (source line: 12)
+  - **C0286.S1489** `List item: Abuse-case suite green.` (source line: 13)
+  - **C0286.S1490** `List item: Readiness gates A/B/C satisfied.` (source line: 14)
+  - **C0286.S1491** `List item: Observability coverage confirms request_id correlation and key event families.` (source line: 15)
+- **C0287** `Evidence package` (source line: 17)
+  - **C0287.S1492** `List item: Attach release evidence template with command outputs and timestamps.` (source line: 18)
+  - **C0287.S1493** `List item: Record known risks and mitigations in risk register.` (source line: 19)
+  - **C0287.S1494** `List item: Confirm rollback/runbook readiness.` (source line: 20)
 
 ## File: `SLO_SLI_SPEC.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md`
 - **Components identified:** 7
 
-- **C0213** `SLO/SLI Spec`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0214** `SLI definitions`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0215** `Initial SLO targets`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0216** `Measurement windows`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0217** `Instrumentation ownership matrix`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0218** `Alerting guidance`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0219** `Accountability rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0288** `SLO/SLI Spec` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0289** `SLI definitions` (source line: 8)
+  - **C0289.S1495** `List item: API availability: successful non-5xx response ratio for `/api/*` and `/console/api/*`.` (source line: 9)
+  - **C0289.S1496** `List item: Auth success latency: p95 for `/api/auth/login` and `/api/auth/key-login`.` (source line: 10)
+  - **C0289.S1497** `List item: Feed read latency: p95 for `GET /api/feed`.` (source line: 11)
+  - **C0289.S1498** `List item: Health reliability: `/health` pass ratio.` (source line: 12)
+  - **C0289.S1499** `List item: Error budget burn: 5xx rate and auth failure anomalies.` (source line: 13)
+- **C0290** `Initial SLO targets` (source line: 15)
+  - **C0290.S1500** `List item: Availability: 99.9% monthly` (source line: 16)
+  - **C0290.S1501** `List item: p95 auth latency: <= 350ms` (source line: 17)
+  - **C0290.S1502** `List item: p95 feed read latency: <= 300ms` (source line: 18)
+  - **C0290.S1503** `List item: Health pass ratio: 99.95%` (source line: 19)
+- **C0291** `Measurement windows` (source line: 21)
+  - **C0291.S1504** `List item: 1m realtime dashboards` (source line: 22)
+  - **C0291.S1505** `List item: 1h ops review rollups` (source line: 23)
+  - **C0291.S1506** `List item: 30d SLO compliance reports` (source line: 24)
+- **C0292** `Instrumentation ownership matrix` (source line: 26)
+  - *(No explicit sub-components detected.)*
+- **C0293** `Alerting guidance` (source line: 35)
+  - **C0293.S1507** `List item: Page on sustained 5xx spikes and `/health` degradation.` (source line: 36)
+  - **C0293.S1508** `List item: Ticket on rising 401/403/429 anomalies beyond baseline.` (source line: 37)
+  - **C0293.S1509** `List item: Link alert context with `request_id` traces and event catalog families.` (source line: 38)
+  - **C0293.S1510** `List item: Alerts must include direct links to the corresponding runbook sections in `RELEASE_CHECKLIST.md`.` (source line: 39)
+- **C0294** `Accountability rules` (source line: 41)
+  - **C0294.S1511** `List item: Every SLI has exactly one dashboard owner and one primary alert authority.` (source line: 42)
+  - **C0294.S1512** `List item: Ownership changes require updates to this file and `RELEASE_CHECKLIST.md` in the same PR.` (source line: 43)
+  - **C0294.S1513** `List item: Monthly operations review must confirm owner/authority assignments remain accurate.` (source line: 44)
 
 ## File: `VERIFICATION_STRATEGY.md`
 - **Location:** `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`
 - **Components identified:** 6
 
-- **C0220** `Verification Strategy (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0221** `Automated suites`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0222** `Required commands`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0223** `Release verification scope`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0224** `Acceptance criteria enforcement`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0225** `Stable QA script (manual)`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0295** `Verification Strategy (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0296** `Automated suites` (source line: 8)
+  - **C0296.S1514** `List item: Test framework dependency: `phpunit/phpunit` (see `DEPENDENCY_BASELINE.md`).` (source line: 9)
+  - **C0296.S1515** `List item: Contract tests (`tests/Contract/*`)` (source line: 10)
+  - **C0296.S1516** `List item: Security tests (`tests/Security/*`)` (source line: 11)
+  - **C0296.S1517** `List item: Abuse-case regressions aligned with `SECURITY_VERIFICATION_ABUSE_CASES.md`` (source line: 12)
+- **C0297** `Required commands` (source line: 14)
+  - **C0297.S0981** `List item: `composer test`` (source line: 15)
+  - **C0297.S0982** `List item: `composer test:contract`` (source line: 16)
+  - **C0297.S0983** `List item: `composer test:security`` (source line: 17)
+  - **C0297.S0984** `List item: `composer qa`` (source line: 18)
+  - **C0297.S0985** `List item: `composer ops:health-smoke`` (source line: 19)
+  - **C0297.S0986** `List item: `composer ops:migrate-smoke`` (source line: 20)
+- **C0298** `Release verification scope` (source line: 24)
+  - **C0298.S1518** `List item: Envelope stability` (source line: 25)
+  - **C0298.S1519** `List item: Middleware decision/detail-code behavior (`slim/slim`, `respect/validation`, `neomerx/cors-psr7`, `symfony/rate-limiter`)` (source line: 26)
+  - **C0298.S1520** `List item: Boot assertions and profile hardening` (source line: 27)
+  - **C0298.S1521** `List item: JWT signing/verification and key safety (`firebase/php-jwt`, `ext-sodium`)` (source line: 28)
+  - **C0298.S1522** `List item: Health endpoint and migration smoke` (source line: 29)
+- **C0299** `Acceptance criteria enforcement` (source line: 31)
+  - **C0299.S1523** `List item: Route acceptance intent is defined in `ACCEPTANCE_CRITERIA_MATRIX.md` and must be used during QA signoff.` (source line: 32)
+  - **C0299.S1524** `List item: Authorization truth-table behavior is validated against `AUTHORIZATION_DECISION_TABLES.md`.` (source line: 33)
+  - **C0299.S1525** `List item: Middleware detail-code behavior is validated against `ERROR_CODE_CATALOG.md`.` (source line: 34)
+- **C0300** `Stable QA script (manual)` (source line: 36)
+  - **C0300.S1526** `List item: owner login + console list/create/moderation` (source line: 37)
+  - **C0300.S1527** `List item: key login + feed/post/comments` (source line: 38)
+  - **C0300.S1528** `List item: key lifecycle revoke confirmation path` (source line: 39)
+  - **C0300.S1529** `List item: invite issuance path` (source line: 40)
 
 ## File: `CHANGE_IMPACT_MAP_TEMPLATES.md`
 - **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`
 - **Components identified:** 4
 
-- **C0226** `Change Impact Map Templates (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0227** `Minimal template`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0228** `Rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0301** `Change Impact Map Templates (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0302** `Minimal template` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0303** `Rule` (source line: 20)
+  - *(No explicit sub-components detected.)*
 
 ## File: `KNOWN_GAPS_TRACKER.md`
 - **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
 - **Components identified:** 6
 
-- **C0229** `Known Gaps Tracker (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0230** `Open gaps`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0231** `Recently resolved in this SSOT cycle`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0232** `Triage rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0233** `Review cadence`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0304** `Known Gaps Tracker (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0305** `Open gaps` (source line: 11)
+  - *(No explicit sub-components detected.)*
+- **C0306** `Recently resolved in this SSOT cycle` (source line: 19)
+  - **C0306.S1530** `List item: GAP-005 (Reference integrity) resolved by adding missing canonical artifacts (`Endpoint_Examples_All_Routes.md`, `Migration_Seed_Strategy.md`, `Prototype_to_SSOT_Delta_Map.md`) and normalizing filename references across SSOT docs.` (source line: 20)
+  - **C0306.S1531** `List item: GAP-004 (SSOT automation) resolved by introducing `SSOT_AUTOMATION_AND_LINTING.md` and linking enforcement expectations into release and change-impact artifacts.` (source line: 21)
+  - **C0306.S1532** `List item: GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `DATA_MODEL_REFERENCE.md`, `DATA_MODEL_SPEC.md`, `ERD.md`, route inventory, and contract artifacts.` (source line: 22)
+  - **C0306.S1533** `List item: GAP-002 (Route inventory) resolved by adding canonical `ROUTE_INVENTORY_REFERENCE.md`.` (source line: 23)
+  - **C0306.S1534** `List item: GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.` (source line: 24)
+- **C0307** `Triage rules` (source line: 26)
+  - **C0307.S1535** `List item: Keep entries short and actionable.` (source line: 27)
+  - **C0307.S1536** `List item: Close a gap only when the linked SSOT artifacts are updated and reviewed.` (source line: 28)
+  - **C0307.S1537** `List item: New unresolved architectural assumptions must be logged here in the same PR.` (source line: 29)
+- **C0308** `Review cadence` (source line: 31)
+  - *(No explicit sub-components detected.)*
 
 ## File: `Prototype_to_SSOT_Delta_Map.md`
 - **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`
 - **Components identified:** 4
 
-- **C0234** `Prototype to SSOT Delta Map (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0235** `Delta map`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0236** `Promotion rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0309** `Prototype to SSOT Delta Map (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0310** `Delta map` (source line: 11)
+  - *(No explicit sub-components detected.)*
+- **C0311** `Promotion rule` (source line: 18)
+  - *(No explicit sub-components detected.)*
 
 ## File: `SSOT_AUTOMATION_AND_LINTING.md`
 - **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`
 - **Components identified:** 8
 
-- **C0237** `SSOT Automation and Linting (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0238** `Required automation checks`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0239** `PR policy integration`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0240** `Minimal command contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0241** `Evidence output requirements`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0242** `Ownership`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0102** `Related SSOT docs`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0312** `SSOT Automation and Linting (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 8)
+  - *(No explicit sub-components detected.)*
+- **C0313** `Required automation checks` (source line: 11)
+  - **C0313.S1538** `List item: **Cross-reference linter**: detect broken links/references between SSOT artifacts.` (source line: 12)
+  - **C0313.S1539** `List item: **Contract sync checker**: detect route diffs between `ROUTE_INVENTORY_REFERENCE.md` and `openapi/cre8.v1.yaml`.` (source line: 13)
+  - **C0313.S1540** `List item: **Error code sync checker**: verify error/detail codes used in examples/tests are registered in `ERROR_CODE_CATALOG.md`.` (source line: 14)
+  - **C0313.S1541** `List item: **UI parity sync checker**: verify API route inventory changes have matching UI parity updates.` (source line: 15)
+  - **C0313.S1542** `List item: **Timestamp/status checker**: ensure modified SSOT docs include updated metadata lines.` (source line: 16)
+  - **C0313.S1543** `List item: **Startup/config sync checker**: verify environment variable contract and boot-failure contract remain synchronized with runtime configuration and startup behavior.` (source line: 17)
+- **C0314** `PR policy integration` (source line: 19)
+  - **C0314.S1544** `List item: SSOT-impacting PRs must run the automation pack in CI.` (source line: 20)
+  - **C0314.S1545** `List item: Any failed SSOT automation check blocks merge.` (source line: 21)
+  - **C0314.S1546** `List item: Overrides require explicit architecture/security owner approval and follow-up issue.` (source line: 22)
+- **C0315** `Minimal command contract` (source line: 24)
+  - **C0315.S1547** `List item: `composer docs:ssot:lint`` (source line: 25)
+  - **C0315.S1548** `List item: `composer docs:ssot:sync-check`` (source line: 26)
+  - **C0315.S1549** `List item: `composer docs:ssot:report`` (source line: 27)
+- **C0316** `Evidence output requirements` (source line: 29)
+  - **C0316.S1550** `List item: machine-readable report (JSON),` (source line: 31)
+  - **C0316.S1551** `List item: human-readable summary,` (source line: 32)
+  - **C0316.S1552** `List item: failing artifact list with remediation hints,` (source line: 33)
+  - **C0316.S1553** `List item: canonical artifact at `evidence/automation/ssot_report.json` (or equivalent CI artifact path).` (source line: 34)
+- **C0317** `Ownership` (source line: 36)
+  - **C0317.S1554** `List item: Document/tooling owners: architecture + QA leads.` (source line: 37)
+  - **C0317.S1555** `List item: CI enforcement owner: platform/SRE.` (source line: 38)
+- **C0177** `Related SSOT docs` (source line: 40)
+  - **C0177.S1556** `List item: `SSOT_INDEX.md`` (source line: 41)
+  - **C0177.S1557** `List item: `CHANGE_IMPACT_MAP_TEMPLATES.md`` (source line: 42)
+  - **C0177.S1558** `List item: `KNOWN_GAPS_TRACKER.md`` (source line: 43)
 
 ## File: `TRACEABILITY_MATRIX.md`
 - **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`
 - **Components identified:** 1
 
-- **C0243** `Traceability Matrix (Docs-to-Code)`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0318** `Traceability Matrix (Docs-to-Code)` (source line: 1)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR_INDEX.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`
 - **Components identified:** 4
 
-- **C0244** `ADR Index`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0245** `Current indexed records`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0246** `Index contract`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0319** `ADR Index` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0320** `Current indexed records` (source line: 9)
+  - **C0320.S1559** `List item: ADR-001: SSOT-first contract governance model (`records/ADR-001-ssot-first-governance.md`).` (source line: 10)
+  - **C0320.S1560** `List item: ADR-002: Delegation envelope subset/depth/expiry enforcement (`records/ADR-002-delegation-envelope-bounds.md`).` (source line: 11)
+  - **C0320.S1561** `List item: ADR-003: Keychain as production-active v1 principal class (`records/ADR-003-keychain-production-principal.md`).` (source line: 12)
+  - **C0320.S1562** `List item: ADR-004: Envelope-first API response standard (`records/ADR-004-envelope-first-api-standard.md`).` (source line: 13)
+  - **C0320.S1563** `List item: ADR-005: Release gating via verification + smoke + readiness controls (`records/ADR-005-release-gating-controls.md`).` (source line: 14)
+- **C0321** `Index contract` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `DECISIONS_LOG.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md`
 - **Components identified:** 3
 
-- **C0247** `Decisions Log`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0248** `Chronological entries`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0249** `Update rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0322** `Decisions Log` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0323** `Chronological entries` (source line: 6)
+  - **C0323.S1564** `List item: **2026-04-06**: Adopted SSOT-first canonical structure and machine contract precedence.` (source line: 7)
+  - **C0323.S1565** `List item: **2026-04-06**: Promoted keychain model to v1 production behavior.` (source line: 8)
+  - **C0323.S1566** `List item: **2026-04-06**: Locked route inventory and acceptance matrix as behavioral source-of-truth.` (source line: 9)
+  - **C0323.S1567** `List item: **2026-04-07**: Added abuse-case verification and readiness gate controls.` (source line: 10)
+  - **C0323.S1568** `List item: **2026-04-08**: Replaced scaffold stubs with implementation-grade norms in from-scratch canon.` (source line: 11)
+- **C0324** `Update rule` (source line: 13)
+  - *(No explicit sub-components detected.)*
 
 ## File: `DECISION_RECORD_TEMPLATE.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md`
 - **Components identified:** 3
 
-- **C0250** `Decision Record Template`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0251** `Required fields`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0252** `Quality bar`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0325** `Decision Record Template` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0326** `Required fields` (source line: 6)
+  - **C0326.S1569** `List item: Decision ID` (source line: 7)
+  - **C0326.S1570** `List item: Date` (source line: 8)
+  - **C0326.S1571** `List item: Status (`proposed|accepted|superseded`)` (source line: 9)
+  - **C0326.S1572** `List item: Context/problem statement` (source line: 10)
+  - **C0326.S1573** `List item: Decision` (source line: 11)
+  - **C0326.S1574** `List item: Alternatives considered` (source line: 12)
+  - **C0326.S1575** `List item: Consequences (positive/negative)` (source line: 13)
+  - **C0326.S1576** `List item: Verification and rollout impacts` (source line: 14)
+  - **C0326.S1577** `List item: Related SSOT docs` (source line: 15)
+- **C0327** `Quality bar` (source line: 17)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR-001-ssot-first-governance.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`
 - **Components identified:** 5
 
-- **C0253** `ADR-001: SSOT-first contract governance model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0254** `Context`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0255** `Decision`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0256** `Consequences`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0257** `Verification implications`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0328** `ADR-001: SSOT-first contract governance model` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0329** `Context` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0330** `Decision` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0331** `Consequences` (source line: 12)
+  - **C0331.S1578** `List item: Contract changes must be synchronized in one PR across machine + prose artifacts.` (source line: 13)
+  - **C0331.S1579** `List item: Drift checks become merge-blocking in CI.` (source line: 14)
+- **C0332** `Verification implications` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR-002-delegation-envelope-bounds.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`
 - **Components identified:** 5
 
-- **C0258** `ADR-002: Delegation envelope bounds (subset/depth/expiry)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0254** `Context`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0255** `Decision`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0256** `Consequences`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0257** `Verification implications`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0333** `ADR-002: Delegation envelope bounds (subset/depth/expiry)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0329** `Context` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0330** `Decision` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0331** `Consequences` (source line: 12)
+  - **C0331.S1580** `List item: Policy checks are deterministic and testable.` (source line: 13)
+  - **C0331.S1581** `List item: Over-scoped or depth-violating issuance fails with stable error behavior.` (source line: 14)
+- **C0332** `Verification implications` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR-003-keychain-production-principal.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`
 - **Components identified:** 5
 
-- **C0259** `ADR-003: Keychain as production-active v1 principal class`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0254** `Context`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0255** `Decision`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0256** `Consequences`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0257** `Verification implications`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0334** `ADR-003: Keychain as production-active v1 principal class` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0329** `Context` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0330** `Decision` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0331** `Consequences` (source line: 12)
+  - **C0331.S1582** `List item: Data model includes membership + effective snapshot tables.` (source line: 13)
+  - **C0331.S1583** `List item: Authorization and route contracts include keychain governance behavior.` (source line: 14)
+- **C0332** `Verification implications` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR-004-envelope-first-api-standard.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`
 - **Components identified:** 5
 
-- **C0260** `ADR-004: Envelope-first API response standard`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0254** `Context`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0255** `Decision`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0256** `Consequences`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0257** `Verification implications`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0335** `ADR-004: Envelope-first API response standard` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0329** `Context` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0330** `Decision` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0331** `Consequences` (source line: 12)
+  - **C0331.S1584** `List item: Clients can use uniform parsing/error handling.` (source line: 13)
+  - **C0331.S1585** `List item: Observability and support workflows rely on stable `request_id` and metadata fields.` (source line: 14)
+- **C0332** `Verification implications` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ADR-005-release-gating-controls.md`
 - **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md`
 - **Components identified:** 5
 
-- **C0261** `ADR-005: Release gating via verification + smoke + readiness controls`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0254** `Context`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0255** `Decision`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0256** `Consequences`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0257** `Verification implications`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0336** `ADR-005: Release gating via verification + smoke + readiness controls` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0329** `Context` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0330** `Decision` (source line: 9)
+  - *(No explicit sub-components detected.)*
+- **C0331** `Consequences` (source line: 12)
+  - **C0331.S1586** `List item: Releases become evidence-driven and auditable.` (source line: 13)
+  - **C0331.S1587** `List item: Gate failures block release until remediated.` (source line: 14)
+- **C0332** `Verification implications` (source line: 16)
+  - *(No explicit sub-components detected.)*
 
 ## File: `DEPRECATION_AND_VERSIONING_POLICY.md`
 - **Location:** `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md`
 - **Components identified:** 4
 
-- **C0262** `Deprecation and Versioning Policy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0263** `Versioning model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0264** `Deprecation process`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0265** `Guardrails`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0337** `Deprecation and Versioning Policy` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0338** `Versioning model` (source line: 6)
+  - **C0338.S1588** `List item: Contract artifacts follow semantic versioning intent.` (source line: 7)
+  - **C0338.S1589** `List item: Breaking changes require new major OpenAPI artifact and migration notes.` (source line: 8)
+  - **C0338.S1590** `List item: Additive fields/behaviors are minor changes if backward compatible.` (source line: 9)
+- **C0339** `Deprecation process` (source line: 11)
+  - **C0339.S1591** `List item: Mark deprecated behavior in relevant SSOT docs and route inventory.` (source line: 12)
+  - **C0339.S1592** `List item: Publish replacement behavior and migration path.` (source line: 13)
+  - **C0339.S1593** `List item: Maintain compatibility window with explicit end date.` (source line: 14)
+  - **C0339.S1594** `List item: Remove only after verification and adoption milestones are met.` (source line: 15)
+- **C0340** `Guardrails` (source line: 17)
+  - **C0340.S1595** `List item: No silent removals.` (source line: 18)
+  - **C0340.S1596** `List item: Deprecation notices must include operational and client impact.` (source line: 19)
 
 ## File: `MIGRATION_AND_COMPATIBILITY_STRATEGY.md`
 - **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`
 - **Components identified:** 4
 
-- **C0266** `Migration and Compatibility Strategy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0267** `Migration principles`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0188** `Required migration artifacts`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0268** `Compatibility checklist`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0341** `Migration and Compatibility Strategy` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0342** `Migration principles` (source line: 6)
+  - **C0342.S1597** `List item: Prefer additive rollout, then gated cutover, then cleanup.` (source line: 7)
+  - **C0342.S1598** `List item: Keep envelope format stable during migrations unless major version bump.` (source line: 8)
+  - **C0342.S1599** `List item: Pair schema changes with reversible migration paths when feasible.` (source line: 9)
+- **C0263** `Required migration artifacts` (source line: 11)
+  - **C0263.S1600** `List item: Compatibility assessment (breaking/non-breaking).` (source line: 12)
+  - **C0263.S1601** `List item: Data migration plan with backfill/rollback strategy.` (source line: 13)
+  - **C0263.S1602** `List item: Test coverage for pre/post migration behavior.` (source line: 14)
+  - **C0263.S1603** `List item: Operational smoke checks updated for new state assumptions.` (source line: 15)
+- **C0343** `Compatibility checklist` (source line: 17)
+  - **C0343.S1604** `List item: Route responses unchanged for legacy clients where promised.` (source line: 18)
+  - **C0343.S1605** `List item: Auth/token semantics remain valid across transition window.` (source line: 19)
+  - **C0343.S1606** `List item: Monitoring detects migration-induced regressions.` (source line: 20)
 
 ## File: `MODULE_BOUNDARIES_AND_OWNERSHIP.md`
 - **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`
 - **Components identified:** 4
 
-- **C0269** `Module Boundaries and Ownership`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0270** `Core modules`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0271** `Ownership model`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0066** `Boundary rules`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0344** `Module Boundaries and Ownership` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0345** `Core modules` (source line: 6)
+  - **C0345.S1607** `List item: Auth and token lifecycle` (source line: 7)
+  - **C0345.S1608** `List item: Authorization/policy evaluation` (source line: 8)
+  - **C0345.S1609** `List item: Keychain management` (source line: 9)
+  - **C0345.S1610** `List item: Content (feed/posts/comments/flags)` (source line: 10)
+  - **C0345.S1611** `List item: Moderation` (source line: 11)
+  - **C0345.S1612** `List item: Operational/health/diagnostics` (source line: 12)
+- **C0346** `Ownership model` (source line: 14)
+  - *(No explicit sub-components detected.)*
+- **C0141** `Boundary rules` (source line: 22)
+  - **C0141.S1613** `List item: Cross-module calls must occur through documented service contracts.` (source line: 23)
+  - **C0141.S1614** `List item: Policy decisions cannot be duplicated ad hoc across handlers.` (source line: 24)
+  - **C0141.S1615** `List item: Shared invariants belong in centralized policy/validation services.` (source line: 25)
 
 ## File: `TEST_DATA_AND_FIXTURE_STRATEGY.md`
 - **Location:** `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md`
 - **Components identified:** 4
 
-- **C0272** `Test Data and Fixture Strategy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0273** `Fixture principles`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0274** `Required fixture packs`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0275** `Maintenance policy`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0347** `Test Data and Fixture Strategy` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0348** `Fixture principles` (source line: 6)
+  - **C0348.S1616** `List item: Deterministic, minimal, and role-complete (owner + key classes + keychain members).` (source line: 7)
+  - **C0348.S1617** `List item: Include lifecycle variants: active/suspended/cancelled/revoked.` (source line: 8)
+  - **C0348.S1618** `List item: Include envelope edge cases and negative auth/validation inputs.` (source line: 9)
+- **C0349** `Required fixture packs` (source line: 11)
+  - **C0349.S1619** `List item: Auth and refresh family replay pack.` (source line: 12)
+  - **C0349.S1620** `List item: Delegation and keychain invariant pack.` (source line: 13)
+  - **C0349.S1621** `List item: Content visibility and moderation transitions pack.` (source line: 14)
+  - **C0349.S1622** `List item: Operational failure simulation pack for health/smoke.` (source line: 15)
+- **C0350** `Maintenance policy` (source line: 17)
+  - **C0350.S1623** `List item: Fixture schema must evolve in lockstep with data model changes.` (source line: 18)
+  - **C0350.S1624** `List item: Every bug fix adding behavior should add/adjust a fixture scenario.` (source line: 19)
 
 ## File: `CONTRIBUTION_WORKFLOW_SSOT.md`
 - **Location:** `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`
 - **Components identified:** 5
 
-- **C0276** `Contribution Workflow (SSOT)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0277** `Workflow`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0049** `Required PR payload`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0278** `Review policy`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0279** `SLA and escalation`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0351** `Contribution Workflow (SSOT)` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0352** `Workflow` (source line: 6)
+  - **C0352.S1625** `List item: Identify changed capability and enumerate impacted SSOT artifacts (contracts, machine artifacts, data/security, operations, traceability).` (source line: 7)
+  - **C0352.S1626** `List item: Update normative docs first (`20_`, `30_`, `40_` families) before implementation PR merge.` (source line: 8)
+  - **C0352.S1627** `List item: Update machine artifacts (`openapi`, envelope schemas) in the same PR where interface shape changes.` (source line: 9)
+  - **C0352.S1628** `List item: Update tests and verification docs (`VERIFICATION_STRATEGY.md`, acceptance matrix rows, smoke expectations).` (source line: 10)
+  - **C0352.S1629** `List item: Update traceability (`TRACEABILITY_MATRIX.md`) and impact map.` (source line: 11)
+  - **C0352.S1630** `List item: Attach evidence using templates under `evidence/templates/`.` (source line: 12)
+  - **C0352.S1631** `List item: Request required owner/co-reviewers per `DOCUMENT_STATUS_AND_OWNERSHIP.md`.` (source line: 13)
+- **C0124** `Required PR payload` (source line: 15)
+  - **C0124.S1632** `List item: Completed change-impact map.` (source line: 16)
+  - **C0124.S1633** `List item: Verification command output (or CI links) for changed behavior.` (source line: 17)
+  - **C0124.S1634** `List item: Explicit compatibility classification (breaking/non-breaking).` (source line: 18)
+  - **C0124.S1635** `List item: Updated known-gaps entry when unresolved assumptions remain.` (source line: 19)
+- **C0353** `Review policy` (source line: 21)
+  - **C0353.S1636** `List item: No SSOT PR merges without explicit verification evidence.` (source line: 22)
+  - **C0353.S1637** `List item: Breaking changes require architecture + security signoff.` (source line: 23)
+  - **C0353.S1638** `List item: Contract changes without machine-artifact synchronization are rejected.` (source line: 24)
+  - **C0353.S1639** `List item: Unresolved gaps must be documented in `KNOWN_GAPS_TRACKER.md`.` (source line: 25)
+- **C0354** `SLA and escalation` (source line: 27)
+  - **C0354.S1640** `List item: Owner review target: within 2 business days.` (source line: 28)
+  - **C0354.S1641** `List item: Security-impacting changes: same-day triage by security owner.` (source line: 29)
+  - **C0354.S1642** `List item: If reviewer SLA is missed, escalate through engineering manager/program owner.` (source line: 30)
 
 ## File: `DEFINITION_OF_DONE.md`
 - **Location:** `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`
 - **Components identified:** 4
 
-- **C0280** `Definition of Done`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0281** `Done means all are true`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0282** `Required evidence checklist`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0283** `Not-done examples`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0355** `Definition of Done` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0356** `Done means all are true` (source line: 6)
+  - **C0356.S1643** `List item: Normative docs updated and internally consistent.` (source line: 7)
+  - **C0356.S1644** `List item: Machine contracts updated for interface changes.` (source line: 8)
+  - **C0356.S1645** `List item: Tests for positive/negative paths pass.` (source line: 9)
+  - **C0356.S1646** `List item: Security controls and abuse-case expectations remain satisfied.` (source line: 10)
+  - **C0356.S1647** `List item: Traceability matrix updated for changed capabilities.` (source line: 11)
+  - **C0356.S1648** `List item: Release/readiness checks satisfied for impacted areas.` (source line: 12)
+  - **C0356.S1649** `List item: Decision log and risk register updated when policy/architecture/risk profile changes.` (source line: 13)
+  - **C0356.S1650** `List item: Evidence artifact attached using canonical templates.` (source line: 14)
+- **C0357** `Required evidence checklist` (source line: 16)
+  - **C0357.S1651** `List item: Verification commands and exit status.` (source line: 17)
+  - **C0357.S1652** `List item: Contract deltas and compatibility classification.` (source line: 18)
+  - **C0357.S1653** `List item: Startup/smoke evidence where operational behavior changed.` (source line: 19)
+  - **C0357.S1654** `List item: Request IDs or correlation IDs for failures discovered during QA.` (source line: 20)
+  - **C0357.S1655** `List item: Reviewer signoff notes.` (source line: 21)
+- **C0358** `Not-done examples` (source line: 23)
+  - **C0358.S1656** `List item: Doc-only claims without executable verification.` (source line: 24)
+  - **C0358.S1657** `List item: Behavior changes lacking acceptance criteria updates.` (source line: 25)
+  - **C0358.S1658** `List item: Policy changes without decision-table updates.` (source line: 26)
+  - **C0358.S1659** `List item: Updated docs with stale metadata timestamps.` (source line: 27)
 
 ## File: `RISK_REGISTER.md`
 - **Location:** `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md`
 - **Components identified:** 3
 
-- **C0284** `Risk Register`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0285** `Active risks`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0233** `Review cadence`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0359** `Risk Register` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0360** `Active risks` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0308** `Review cadence` (source line: 15)
+  - **C0308.S1660** `List item: Re-evaluate risk ratings each release cycle and after any incident.` (source line: 16)
+  - **C0308.S1661** `List item: Re-score risks when likelihood/impact assumptions change materially.` (source line: 17)
+  - **C0308.S1662** `List item: Add mitigations to release evidence for any risk currently High impact.` (source line: 18)
 
 ## File: `ROADMAP_AND_MILESTONES.md`
 - **Location:** `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`
 - **Components identified:** 5
 
-- **C0286** `Roadmap and Milestones`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0287** `Milestones`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0288** `Exit criteria by milestone`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0289** `Milestone deliverables (minimum)`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0290** `Tracking rule`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0361** `Roadmap and Milestones` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0362** `Milestones` (source line: 6)
+  - **C0362.S1663** `List item: **M1 Foundation**: governance, index, contracts baseline complete.` (source line: 7)
+  - **C0362.S1664** `List item: **M2 Core implementation**: auth/content/console route families implemented to contract.` (source line: 8)
+  - **C0362.S1665** `List item: **M3 Security hardening**: abuse-case suite + controls verification green.` (source line: 9)
+  - **C0362.S1666** `List item: **M4 Production readiness**: SLO, smoke, readiness gates, runbooks validated.` (source line: 10)
+- **C0363** `Exit criteria by milestone` (source line: 12)
+  - **C0363.S1667** `List item: M1: OpenAPI/schemas + route inventory/acceptance matrix aligned.` (source line: 13)
+  - **C0363.S1668** `List item: M2: Route behavior and error mapping pass contract tests.` (source line: 14)
+  - **C0363.S1669** `List item: M3: Security suite + decision-table conformance verified.` (source line: 15)
+  - **C0363.S1670** `List item: M4: Release checklist complete with evidence package.` (source line: 16)
+- **C0364** `Milestone deliverables (minimum)` (source line: 19)
+  - **C0364.S1671** `List item: **M1**: stable SSOT index, route inventory parity with OpenAPI, envelope schemas validated in CI.` (source line: 20)
+  - **C0364.S1672** `List item: **M2**: all public/gateway/console route families implemented with contract + negative-path tests.` (source line: 21)
+  - **C0364.S1673** `List item: **M3**: abuse-case matrix automated, lifecycle + delegation decision-table conformance verified.` (source line: 22)
+  - **C0364.S1674** `List item: **M4**: readiness gates A/B/C/D green, release evidence template completed, rollback dry-run documented.` (source line: 23)
+- **C0365** `Tracking rule` (source line: 25)
+  - *(No explicit sub-components detected.)*
 
 ## File: `SCAFFOLD_BUILD_REPORT.md`
 - **Location:** `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md`
 - **Components identified:** 4
 
-- **C0291** `Scaffold Build Report`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0292** `Report summary`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0293** `Verification completed`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0294** `Remaining maintenance tasks`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0366** `Scaffold Build Report` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0367** `Report summary` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0368** `Verification completed` (source line: 9)
+  - **C0368.S1675** `List item: Placeholder-heavy docs were rewritten with role-specific guidance.` (source line: 10)
+  - **C0368.S1676** `List item: Governance/program docs now include concrete policies, roles, and gates.` (source line: 11)
+  - **C0368.S1677** `List item: Cross-document cohesion reinforced through shared terminology and workflow expectations.` (source line: 12)
+- **C0369** `Remaining maintenance tasks` (source line: 14)
+  - **C0369.S1678** `List item: Periodic reference-integrity sweeps.` (source line: 15)
+  - **C0369.S1679** `List item: Continuous refinement as implementation reveals ambiguity.` (source line: 16)
 
 ## File: `README.md`
 - **Location:** `from_scratch/ssot_canon/evidence/README.md`
 - **Components identified:** 4
 
-- **C0295** `Evidence Package Guide`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0007** `Purpose`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0296** `Required evidence types`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0297** `Storage convention`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0370** `Evidence Package Guide` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0007** `Purpose` (source line: 6)
+  - *(No explicit sub-components detected.)*
+- **C0371** `Required evidence types` (source line: 9)
+  - **C0371.S1680** `List item: Command output (tests, smoke, QA checks).` (source line: 10)
+  - **C0371.S1681** `List item: Contract diff summary (OpenAPI/schema/route or policy tables).` (source line: 11)
+  - **C0371.S1682** `List item: Operational impact notes (alerts/SLO/readiness implications).` (source line: 12)
+  - **C0371.S1683** `List item: Risk and rollback considerations.` (source line: 13)
+- **C0372** `Storage convention` (source line: 15)
+  - *(No explicit sub-components detected.)*
 
 ## File: `ssot_report.json`
 - **Location:** `from_scratch/ssot_canon/evidence/automation/ssot_report.json`
 - **Components identified:** 3
 
-- **C0298** `generated_at_utc`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0299** `status`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0300** `checks`
-  - **C0300.S0042** `lint`
-  - **C0300.S0043** `sync_check`
+- **C0373** `generated_at_utc` (source line: 1)
+  - **C0373.S1684** `value: str` (source line: 1)
+- **C0374** `status` (source line: 1)
+  - **C0374.S1684** `value: str` (source line: 1)
+- **C0375** `checks` (source line: 1)
+  - **C0375.S1685** `lint` (source line: 1)
+  - **C0375.S1686** `sync_check` (source line: 1)
 
 ## File: `RELEASE_EVIDENCE_TEMPLATE.md`
 - **Location:** `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
 - **Components identified:** 5
 
-- **C0301** `Release Evidence Template`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0302** `Release metadata`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0303** `Verification command results`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0304** `Contract and behavior deltas`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0305** `Operational signoff`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0376** `Release Evidence Template` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0377** `Release metadata` (source line: 6)
+  - **C0377.S1687** `List item: Release ID:` (source line: 7)
+  - **C0377.S1688** `List item: Date/time (UTC):` (source line: 8)
+  - **C0377.S1689** `List item: Owner:` (source line: 9)
+- **C0378** `Verification command results` (source line: 11)
+  - **C0378.S1690** `List item: `composer test`:` (source line: 12)
+  - **C0378.S1691** `List item: `composer test:contract`:` (source line: 13)
+  - **C0378.S1692** `List item: `composer test:security`:` (source line: 14)
+  - **C0378.S1693** `List item: `composer qa`:` (source line: 15)
+  - **C0378.S1694** `List item: `composer ops:health-smoke`:` (source line: 16)
+  - **C0378.S1695** `List item: `composer ops:migrate-smoke`:` (source line: 17)
+- **C0379** `Contract and behavior deltas` (source line: 19)
+  - **C0379.S1696** `List item: Changed routes/contracts:` (source line: 20)
+  - **C0379.S1697** `List item: Acceptance criteria touched:` (source line: 21)
+  - **C0379.S1698** `List item: Decision table changes:` (source line: 22)
+- **C0380** `Operational signoff` (source line: 24)
+  - **C0380.S1699** `List item: Readiness gates status:` (source line: 25)
+  - **C0380.S1700** `List item: SLO/alert impact:` (source line: 26)
+  - **C0380.S1701** `List item: Rollback readiness:` (source line: 27)
 
 ## File: `SSOT_CHANGE_EVIDENCE_TEMPLATE.md`
 - **Location:** `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`
 - **Components identified:** 6
 
-- **C0306** `SSOT Change Evidence Template`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0307** `Change metadata`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0308** `Documents/artifacts changed`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0309** `Verification evidence`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0310** `Traceability`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0311** `Reviewer signoff`
-  - *(No explicit sub-components detected in heading/key structure.)*
+- **C0381** `SSOT Change Evidence Template` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0382** `Change metadata` (source line: 6)
+  - **C0382.S1702** `List item: PR/Change ID:` (source line: 7)
+  - **C0382.S1703** `List item: Capability:` (source line: 8)
+  - **C0382.S1704** `List item: Change class (A/B/C):` (source line: 9)
+- **C0383** `Documents/artifacts changed` (source line: 11)
+  - **C0383.S1705** `List item: Docs:` (source line: 12)
+  - **C0383.S1706** `List item: OpenAPI/schemas:` (source line: 13)
+  - **C0383.S1707** `List item: Tests:` (source line: 14)
+- **C0384** `Verification evidence` (source line: 16)
+  - **C0384.S1708** `List item: Automated checks passed:` (source line: 17)
+  - **C0384.S1709** `List item: Manual validation performed:` (source line: 18)
+  - **C0384.S1710** `List item: Negative-path checks:` (source line: 19)
+- **C0385** `Traceability` (source line: 21)
+  - **C0385.S1711** `List item: Updated matrix rows:` (source line: 22)
+  - **C0385.S1712** `List item: Impact map attached:` (source line: 23)
+  - **C0385.S1713** `List item: Decision log entry (if needed):` (source line: 24)
+- **C0386** `Reviewer signoff` (source line: 26)
+  - **C0386.S1714** `List item: Architecture:` (source line: 27)
+  - **C0386.S1715** `List item: Security:` (source line: 28)
+  - **C0386.S1716** `List item: Operations/QA:` (source line: 29)
 
 ## File: `cre8.v1.yaml`
 - **Location:** `from_scratch/ssot_canon/openapi/cre8.v1.yaml`
 - **Components identified:** 6
 
-- **C0312** `openapi`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0313** `info`
-  - **C0313.S0044** `title`
-  - **C0313.S0045** `version`
-  - **C0313.S0046** `description`
-- **C0314** `servers`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0315** `security`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0316** `paths`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0046** `description`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0046** `description`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0046** `description`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0054** `type`
-  - **C0316.S0055** `properties`
-  - **C0316.S0056** `keys`
-  - **C0316.S0054** `type`
-  - **C0316.S0057** `items`
-  - **C0316.S0054** `type`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0059** `name`
-  - **C0316.S0060** `required`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0062** `requestBody`
-  - **C0316.S0060** `required`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0064** `409`
-  - **C0316.S0065** `422`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0062** `requestBody`
-  - **C0316.S0060** `required`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0066** `401`
-  - **C0316.S0065** `422`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0062** `requestBody`
-  - **C0316.S0060** `required`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0066** `401`
-  - **C0316.S0065** `422`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0049** `security`
-  - **C0316.S0062** `requestBody`
-  - **C0316.S0060** `required`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0066** `401`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0059** `name`
-  - **C0316.S0053** `schema`
-  - **C0316.S0059** `name`
-  - **C0316.S0053** `schema`
-  - **C0316.S0059** `name`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0066** `401`
-  - **C0316.S0067** `403`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0066** `401`
-  - **C0316.S0067** `403`
-  - **C0316.S0065** `422`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0068** `404`
-  - **C0316.S0069** `patch`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0067** `403`
-  - **C0316.S0065** `422`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0065** `422`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0067** `403`
-  - **C0316.S0065** `422`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0065** `422`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0062** `requestBody`
-  - **C0316.S0060** `required`
-  - **C0316.S0052** `content`
-  - **C0316.S0053** `schema`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0064** `409`
-  - **C0316.S0065** `422`
-  - **C0316.S0070** `delete`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0068** `404`
-  - **C0316.S0047** `get`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0068** `404`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0050** `responses`
-  - **C0316.S0063** `201`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-  - **C0316.S0061** `post`
-  - **C0316.S0048** `summary`
-  - **C0316.S0058** `parameters`
-  - **C0316.S0050** `responses`
-  - **C0316.S0051** `200`
-- **C0317** `components`
-  - **C0317.S0071** `securitySchemes`
-  - **C0317.S0072** `bearerAuth`
-  - **C0317.S0054** `type`
-  - **C0317.S0073** `scheme`
-  - **C0317.S0074** `bearerFormat`
-  - **C0317.S0058** `parameters`
-  - **C0317.S0075** `PostId`
-  - **C0317.S0076** `in`
-  - **C0317.S0059** `name`
-  - **C0317.S0060** `required`
-  - **C0317.S0053** `schema`
-  - **C0317.S0077** `KeyId`
-  - **C0317.S0076** `in`
-  - **C0317.S0059** `name`
-  - **C0317.S0060** `required`
-  - **C0317.S0053** `schema`
-  - **C0317.S0078** `CommentId`
-  - **C0317.S0076** `in`
-  - **C0317.S0059** `name`
-  - **C0317.S0060** `required`
-  - **C0317.S0053** `schema`
-  - **C0317.S0079** `KeychainId`
-  - **C0317.S0076** `in`
-  - **C0317.S0059** `name`
-  - **C0317.S0060** `required`
-  - **C0317.S0053** `schema`
-  - **C0317.S0080** `MemberKeyId`
-  - **C0317.S0076** `in`
-  - **C0317.S0059** `name`
-  - **C0317.S0060** `required`
-  - **C0317.S0053** `schema`
-  - **C0317.S0050** `responses`
-  - **C0317.S0081** `Success`
-  - **C0317.S0046** `description`
-  - **C0317.S0052** `content`
-  - **C0317.S0053** `schema`
-  - **C0317.S0082** `Error`
-  - **C0317.S0046** `description`
-  - **C0317.S0052** `content`
-  - **C0317.S0053** `schema`
-  - **C0317.S0083** `schemas`
-  - **C0317.S0084** `Meta`
-  - **C0317.S0054** `type`
-  - **C0317.S0055** `properties`
-  - **C0317.S0085** `envelope_version`
-  - **C0317.S0086** `timestamp_utc`
-  - **C0317.S0087** `SuccessEnvelope`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0088** `data`
-  - **C0317.S0084** `meta`
-  - **C0317.S0089** `ErrorEnvelope`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0082** `error`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0090** `code`
-  - **C0317.S0091** `message`
-  - **C0317.S0092** `details`
-  - **C0317.S0093** `request_id`
-  - **C0317.S0084** `meta`
-  - **C0317.S0094** `OwnerSignupRequest`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0095** `email`
-  - **C0317.S0096** `password`
-  - **C0317.S0097** `OwnerLoginRequest`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0095** `email`
-  - **C0317.S0096** `password`
-  - **C0317.S0098** `KeyLoginRequest`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0099** `key_id`
-  - **C0317.S0100** `api_key`
-  - **C0317.S0101** `RefreshRequest`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0102** `refresh_token`
-  - **C0317.S0103** `KeychainMemberAddRequest`
-  - **C0317.S0054** `type`
-  - **C0317.S0060** `required`
-  - **C0317.S0055** `properties`
-  - **C0317.S0104** `member_key_id`
-  - **C0317.S0105** `role_hint`
+- **C0387** `openapi` (source line: 1)
+  - *(No explicit sub-components detected.)*
+- **C0388** `info` (source line: 2)
+  - **C0388.S1717** `title` (source line: 3)
+  - **C0388.S1718** `version` (source line: 4)
+  - **C0388.S1719** `description` (source line: 5)
+- **C0389** `servers` (source line: 6)
+  - **C0389.S1720** `- url` (source line: 7)
+- **C0390** `security` (source line: 8)
+  - **C0390.S1721** `- bearerAuth` (source line: 9)
+- **C0391** `paths` (source line: 10)
+  - **C0391.S1722** `/` (source line: 11)
+  - **C0391.S1723** `get` (source line: 12)
+  - **C0391.S1724** `summary` (source line: 13)
+  - **C0391.S1725** `security` (source line: 14)
+  - **C0391.S1726** `responses` (source line: 15)
+  - **C0391.S1727** `200` (source line: 16)
+  - **C0391.S1719** `description` (source line: 17)
+  - **C0391.S1728** `content` (source line: 18)
+  - **C0391.S1729** `application/json` (source line: 19)
+  - **C0391.S1730** `schema` (source line: 20)
+  - **C0391.S1731** `$ref` (source line: 21)
+  - **C0391.S1732** `/health` (source line: 22)
+  - **C0391.S1723** `get` (source line: 23)
+  - **C0391.S1724** `summary` (source line: 24)
+  - **C0391.S1725** `security` (source line: 25)
+  - **C0391.S1726** `responses` (source line: 26)
+  - **C0391.S1727** `200` (source line: 27)
+  - **C0391.S1719** `description` (source line: 28)
+  - **C0391.S1728** `content` (source line: 29)
+  - **C0391.S1729** `application/json` (source line: 30)
+  - **C0391.S1730** `schema` (source line: 31)
+  - **C0391.S1731** `$ref` (source line: 32)
+  - **C0391.S1733** `/.well-known/jwks.json` (source line: 33)
+  - **C0391.S1723** `get` (source line: 34)
+  - **C0391.S1724** `summary` (source line: 35)
+  - **C0391.S1725** `security` (source line: 36)
+  - **C0391.S1726** `responses` (source line: 37)
+  - **C0391.S1727** `200` (source line: 38)
+  - **C0391.S1719** `description` (source line: 39)
+  - **C0391.S1728** `content` (source line: 40)
+  - **C0391.S1729** `application/json` (source line: 41)
+  - **C0391.S1730** `schema` (source line: 42)
+  - **C0391.S1734** `type` (source line: 43)
+  - **C0391.S1735** `properties` (source line: 44)
+  - **C0391.S1736** `keys` (source line: 45)
+  - **C0391.S1734** `type` (source line: 46)
+  - **C0391.S1737** `items` (source line: 47)
+  - **C0391.S1734** `type` (source line: 48)
+  - **C0391.S1738** `/ui/{route}` (source line: 49)
+  - **C0391.S1723** `get` (source line: 50)
+  - **C0391.S1724** `summary` (source line: 51)
+  - **C0391.S1725** `security` (source line: 52)
+  - **C0391.S1739** `parameters` (source line: 53)
+  - **C0391.S1740** `- in` (source line: 54)
+  - **C0391.S1741** `name` (source line: 55)
+  - **C0391.S1742** `required` (source line: 56)
+  - **C0391.S1730** `schema` (source line: 57)
+  - **C0391.S1726** `responses` (source line: 58)
+  - **C0391.S1727** `200` (source line: 59)
+  - **C0391.S1743** `/console/owners` (source line: 60)
+  - **C0391.S1744** `post` (source line: 61)
+  - **C0391.S1724** `summary` (source line: 62)
+  - **C0391.S1725** `security` (source line: 63)
+  - **C0391.S1745** `requestBody` (source line: 64)
+  - **C0391.S1742** `required` (source line: 65)
+  - **C0391.S1728** `content` (source line: 66)
+  - **C0391.S1729** `application/json` (source line: 67)
+  - **C0391.S1730** `schema` (source line: 68)
+  - **C0391.S1726** `responses` (source line: 69)
+  - **C0391.S1746** `201` (source line: 70)
+  - **C0391.S1747** `409` (source line: 71)
+  - **C0391.S1748** `422` (source line: 72)
+  - **C0391.S1749** `/api/auth/login` (source line: 73)
+  - **C0391.S1744** `post` (source line: 74)
+  - **C0391.S1724** `summary` (source line: 75)
+  - **C0391.S1725** `security` (source line: 76)
+  - **C0391.S1745** `requestBody` (source line: 77)
+  - **C0391.S1742** `required` (source line: 78)
+  - **C0391.S1728** `content` (source line: 79)
+  - **C0391.S1729** `application/json` (source line: 80)
+  - **C0391.S1730** `schema` (source line: 81)
+  - **C0391.S1726** `responses` (source line: 82)
+  - **C0391.S1727** `200` (source line: 83)
+  - **C0391.S1750** `401` (source line: 84)
+  - **C0391.S1748** `422` (source line: 85)
+  - **C0391.S1751** `/api/auth/key-login` (source line: 86)
+  - **C0391.S1744** `post` (source line: 87)
+  - **C0391.S1724** `summary` (source line: 88)
+  - **C0391.S1725** `security` (source line: 89)
+  - **C0391.S1745** `requestBody` (source line: 90)
+  - **C0391.S1742** `required` (source line: 91)
+  - **C0391.S1728** `content` (source line: 92)
+  - **C0391.S1729** `application/json` (source line: 93)
+  - **C0391.S1730** `schema` (source line: 94)
+  - **C0391.S1726** `responses` (source line: 95)
+  - **C0391.S1727** `200` (source line: 96)
+  - **C0391.S1750** `401` (source line: 97)
+  - **C0391.S1748** `422` (source line: 98)
+  - **C0391.S1752** `/api/auth/refresh` (source line: 99)
+  - **C0391.S1744** `post` (source line: 100)
+  - **C0391.S1724** `summary` (source line: 101)
+  - **C0391.S1725** `security` (source line: 102)
+  - **C0391.S1745** `requestBody` (source line: 103)
+  - **C0391.S1742** `required` (source line: 104)
+  - **C0391.S1728** `content` (source line: 105)
+  - **C0391.S1729** `application/json` (source line: 106)
+  - **C0391.S1730** `schema` (source line: 107)
+  - **C0391.S1726** `responses` (source line: 108)
+  - **C0391.S1727** `200` (source line: 109)
+  - **C0391.S1750** `401` (source line: 110)
+  - **C0391.S1753** `/api/feed` (source line: 111)
+  - **C0391.S1723** `get` (source line: 112)
+  - **C0391.S1724** `summary` (source line: 113)
+  - **C0391.S1739** `parameters` (source line: 114)
+  - **C0391.S1740** `- in` (source line: 115)
+  - **C0391.S1741** `name` (source line: 116)
+  - **C0391.S1730** `schema` (source line: 117)
+  - **C0391.S1740** `- in` (source line: 118)
+  - **C0391.S1741** `name` (source line: 119)
+  - **C0391.S1730** `schema` (source line: 120)
+  - **C0391.S1740** `- in` (source line: 121)
+  - **C0391.S1741** `name` (source line: 122)
+  - **C0391.S1730** `schema` (source line: 123)
+  - **C0391.S1726** `responses` (source line: 124)
+  - **C0391.S1727** `200` (source line: 125)
+  - **C0391.S1750** `401` (source line: 126)
+  - **C0391.S1754** `403` (source line: 127)
+  - **C0391.S1755** `/api/posts` (source line: 128)
+  - **C0391.S1744** `post` (source line: 129)
+  - **C0391.S1724** `summary` (source line: 130)
+  - **C0391.S1726** `responses` (source line: 131)
+  - **C0391.S1746** `201` (source line: 132)
+  - **C0391.S1750** `401` (source line: 133)
+  - **C0391.S1754** `403` (source line: 134)
+  - **C0391.S1748** `422` (source line: 135)
+  - **C0391.S1756** `/api/posts/{postId}` (source line: 136)
+  - **C0391.S1723** `get` (source line: 137)
+  - **C0391.S1724** `summary` (source line: 138)
+  - **C0391.S1739** `parameters` (source line: 139)
+  - **C0391.S1757** `- $ref` (source line: 140)
+  - **C0391.S1726** `responses` (source line: 141)
+  - **C0391.S1727** `200` (source line: 142)
+  - **C0391.S1758** `404` (source line: 143)
+  - **C0391.S1759** `patch` (source line: 144)
+  - **C0391.S1724** `summary` (source line: 145)
+  - **C0391.S1739** `parameters` (source line: 146)
+  - **C0391.S1757** `- $ref` (source line: 147)
+  - **C0391.S1726** `responses` (source line: 148)
+  - **C0391.S1727** `200` (source line: 149)
+  - **C0391.S1754** `403` (source line: 150)
+  - **C0391.S1748** `422` (source line: 151)
+  - **C0391.S1760** `/api/posts/{postId}/flags` (source line: 152)
+  - **C0391.S1744** `post` (source line: 153)
+  - **C0391.S1724** `summary` (source line: 154)
+  - **C0391.S1739** `parameters` (source line: 155)
+  - **C0391.S1757** `- $ref` (source line: 156)
+  - **C0391.S1726** `responses` (source line: 157)
+  - **C0391.S1746** `201` (source line: 158)
+  - **C0391.S1748** `422` (source line: 159)
+  - **C0391.S1761** `/api/posts/{postId}/comments` (source line: 160)
+  - **C0391.S1723** `get` (source line: 161)
+  - **C0391.S1724** `summary` (source line: 162)
+  - **C0391.S1739** `parameters` (source line: 163)
+  - **C0391.S1757** `- $ref` (source line: 164)
+  - **C0391.S1726** `responses` (source line: 165)
+  - **C0391.S1727** `200` (source line: 166)
+  - **C0391.S1744** `post` (source line: 167)
+  - **C0391.S1724** `summary` (source line: 168)
+  - **C0391.S1739** `parameters` (source line: 169)
+  - **C0391.S1757** `- $ref` (source line: 170)
+  - **C0391.S1726** `responses` (source line: 171)
+  - **C0391.S1746** `201` (source line: 172)
+  - **C0391.S1754** `403` (source line: 173)
+  - **C0391.S1748** `422` (source line: 174)
+  - **C0391.S1762** `/console/api/posts` (source line: 175)
+  - **C0391.S1723** `get` (source line: 176)
+  - **C0391.S1724** `summary` (source line: 177)
+  - **C0391.S1726** `responses` (source line: 178)
+  - **C0391.S1727** `200` (source line: 179)
+  - **C0391.S1744** `post` (source line: 180)
+  - **C0391.S1724** `summary` (source line: 181)
+  - **C0391.S1726** `responses` (source line: 182)
+  - **C0391.S1746** `201` (source line: 183)
+  - **C0391.S1763** `/console/api/keychains` (source line: 184)
+  - **C0391.S1723** `get` (source line: 185)
+  - **C0391.S1724** `summary` (source line: 186)
+  - **C0391.S1726** `responses` (source line: 187)
+  - **C0391.S1727** `200` (source line: 188)
+  - **C0391.S1744** `post` (source line: 189)
+  - **C0391.S1724** `summary` (source line: 190)
+  - **C0391.S1726** `responses` (source line: 191)
+  - **C0391.S1746** `201` (source line: 192)
+  - **C0391.S1748** `422` (source line: 193)
+  - **C0391.S1764** `/console/api/keychains/{keychainId}/members` (source line: 194)
+  - **C0391.S1723** `get` (source line: 195)
+  - **C0391.S1724** `summary` (source line: 196)
+  - **C0391.S1739** `parameters` (source line: 197)
+  - **C0391.S1757** `- $ref` (source line: 198)
+  - **C0391.S1726** `responses` (source line: 199)
+  - **C0391.S1727** `200` (source line: 200)
+  - **C0391.S1744** `post` (source line: 201)
+  - **C0391.S1724** `summary` (source line: 202)
+  - **C0391.S1739** `parameters` (source line: 203)
+  - **C0391.S1757** `- $ref` (source line: 204)
+  - **C0391.S1745** `requestBody` (source line: 205)
+  - **C0391.S1742** `required` (source line: 206)
+  - **C0391.S1728** `content` (source line: 207)
+  - **C0391.S1729** `application/json` (source line: 208)
+  - **C0391.S1730** `schema` (source line: 209)
+  - **C0391.S1726** `responses` (source line: 210)
+  - **C0391.S1746** `201` (source line: 211)
+  - **C0391.S1747** `409` (source line: 212)
+  - **C0391.S1748** `422` (source line: 213)
+  - **C0391.S1765** `/console/api/keychains/{keychainId}/members/{memberKeyId}` (source line: 214)
+  - **C0391.S1766** `delete` (source line: 215)
+  - **C0391.S1724** `summary` (source line: 216)
+  - **C0391.S1739** `parameters` (source line: 217)
+  - **C0391.S1757** `- $ref` (source line: 218)
+  - **C0391.S1757** `- $ref` (source line: 219)
+  - **C0391.S1726** `responses` (source line: 220)
+  - **C0391.S1727** `200` (source line: 221)
+  - **C0391.S1758** `404` (source line: 222)
+  - **C0391.S1767** `/console/api/keychains/{keychainId}/resolve` (source line: 223)
+  - **C0391.S1723** `get` (source line: 224)
+  - **C0391.S1724** `summary` (source line: 225)
+  - **C0391.S1739** `parameters` (source line: 226)
+  - **C0391.S1757** `- $ref` (source line: 227)
+  - **C0391.S1726** `responses` (source line: 228)
+  - **C0391.S1727** `200` (source line: 229)
+  - **C0391.S1758** `404` (source line: 230)
+  - **C0391.S1768** `/console/api/invites` (source line: 231)
+  - **C0391.S1744** `post` (source line: 232)
+  - **C0391.S1724** `summary` (source line: 233)
+  - **C0391.S1726** `responses` (source line: 234)
+  - **C0391.S1746** `201` (source line: 235)
+  - **C0391.S1769** `/console/api/keys` (source line: 236)
+  - **C0391.S1744** `post` (source line: 237)
+  - **C0391.S1724** `summary` (source line: 238)
+  - **C0391.S1726** `responses` (source line: 239)
+  - **C0391.S1746** `201` (source line: 240)
+  - **C0391.S1770** `/console/api/keys/{keyId}/lifecycle` (source line: 241)
+  - **C0391.S1744** `post` (source line: 242)
+  - **C0391.S1724** `summary` (source line: 243)
+  - **C0391.S1739** `parameters` (source line: 244)
+  - **C0391.S1757** `- $ref` (source line: 245)
+  - **C0391.S1726** `responses` (source line: 246)
+  - **C0391.S1727** `200` (source line: 247)
+  - **C0391.S1771** `/console/api/posts/{postId}/moderation` (source line: 248)
+  - **C0391.S1744** `post` (source line: 249)
+  - **C0391.S1724** `summary` (source line: 250)
+  - **C0391.S1739** `parameters` (source line: 251)
+  - **C0391.S1757** `- $ref` (source line: 252)
+  - **C0391.S1726** `responses` (source line: 253)
+  - **C0391.S1727** `200` (source line: 254)
+  - **C0391.S1772** `/console/api/posts/{postId}/comments/{commentId}/moderation` (source line: 255)
+  - **C0391.S1744** `post` (source line: 256)
+  - **C0391.S1724** `summary` (source line: 257)
+  - **C0391.S1739** `parameters` (source line: 258)
+  - **C0391.S1757** `- $ref` (source line: 259)
+  - **C0391.S1757** `- $ref` (source line: 260)
+  - **C0391.S1726** `responses` (source line: 261)
+  - **C0391.S1727** `200` (source line: 262)
+- **C0012** `components` (source line: 263)
+  - **C0012.S1773** `securitySchemes` (source line: 264)
+  - **C0012.S1774** `bearerAuth` (source line: 265)
+  - **C0012.S1734** `type` (source line: 266)
+  - **C0012.S1775** `scheme` (source line: 267)
+  - **C0012.S1776** `bearerFormat` (source line: 268)
+  - **C0012.S1739** `parameters` (source line: 269)
+  - **C0012.S1777** `PostId` (source line: 270)
+  - **C0012.S1778** `in` (source line: 271)
+  - **C0012.S1741** `name` (source line: 272)
+  - **C0012.S1742** `required` (source line: 273)
+  - **C0012.S1730** `schema` (source line: 274)
+  - **C0012.S1779** `KeyId` (source line: 275)
+  - **C0012.S1778** `in` (source line: 276)
+  - **C0012.S1741** `name` (source line: 277)
+  - **C0012.S1742** `required` (source line: 278)
+  - **C0012.S1730** `schema` (source line: 279)
+  - **C0012.S1780** `CommentId` (source line: 280)
+  - **C0012.S1778** `in` (source line: 281)
+  - **C0012.S1741** `name` (source line: 282)
+  - **C0012.S1742** `required` (source line: 283)
+  - **C0012.S1730** `schema` (source line: 284)
+  - **C0012.S1781** `KeychainId` (source line: 285)
+  - **C0012.S1778** `in` (source line: 286)
+  - **C0012.S1741** `name` (source line: 287)
+  - **C0012.S1742** `required` (source line: 288)
+  - **C0012.S1730** `schema` (source line: 289)
+  - **C0012.S1782** `MemberKeyId` (source line: 290)
+  - **C0012.S1778** `in` (source line: 291)
+  - **C0012.S1741** `name` (source line: 292)
+  - **C0012.S1742** `required` (source line: 293)
+  - **C0012.S1730** `schema` (source line: 294)
+  - **C0012.S1726** `responses` (source line: 295)
+  - **C0012.S1783** `Success` (source line: 296)
+  - **C0012.S1719** `description` (source line: 297)
+  - **C0012.S1728** `content` (source line: 298)
+  - **C0012.S1729** `application/json` (source line: 299)
+  - **C0012.S1730** `schema` (source line: 300)
+  - **C0012.S1784** `Error` (source line: 301)
+  - **C0012.S1719** `description` (source line: 302)
+  - **C0012.S1728** `content` (source line: 303)
+  - **C0012.S1729** `application/json` (source line: 304)
+  - **C0012.S1730** `schema` (source line: 305)
+  - **C0012.S1785** `schemas` (source line: 306)
+  - **C0012.S1786** `Meta` (source line: 307)
+  - **C0012.S1734** `type` (source line: 308)
+  - **C0012.S1735** `properties` (source line: 309)
+  - **C0012.S1787** `envelope_version` (source line: 310)
+  - **C0012.S1788** `timestamp_utc` (source line: 311)
+  - **C0012.S1789** `SuccessEnvelope` (source line: 312)
+  - **C0012.S1734** `type` (source line: 313)
+  - **C0012.S1742** `required` (source line: 314)
+  - **C0012.S1735** `properties` (source line: 315)
+  - **C0012.S1790** `data` (source line: 316)
+  - **C0012.S1786** `meta` (source line: 317)
+  - **C0012.S1791** `ErrorEnvelope` (source line: 318)
+  - **C0012.S1734** `type` (source line: 319)
+  - **C0012.S1742** `required` (source line: 320)
+  - **C0012.S1735** `properties` (source line: 321)
+  - **C0012.S1784** `error` (source line: 322)
+  - **C0012.S1734** `type` (source line: 323)
+  - **C0012.S1742** `required` (source line: 324)
+  - **C0012.S1735** `properties` (source line: 325)
+  - **C0012.S1792** `code` (source line: 326)
+  - **C0012.S1793** `message` (source line: 327)
+  - **C0012.S1794** `details` (source line: 328)
+  - **C0012.S1795** `request_id` (source line: 329)
+  - **C0012.S1786** `meta` (source line: 330)
+  - **C0012.S1796** `OwnerSignupRequest` (source line: 331)
+  - **C0012.S1734** `type` (source line: 332)
+  - **C0012.S1742** `required` (source line: 333)
+  - **C0012.S1735** `properties` (source line: 334)
+  - **C0012.S1797** `email` (source line: 335)
+  - **C0012.S1798** `password` (source line: 336)
+  - **C0012.S1799** `OwnerLoginRequest` (source line: 337)
+  - **C0012.S1734** `type` (source line: 338)
+  - **C0012.S1742** `required` (source line: 339)
+  - **C0012.S1735** `properties` (source line: 340)
+  - **C0012.S1797** `email` (source line: 341)
+  - **C0012.S1798** `password` (source line: 342)
+  - **C0012.S1800** `KeyLoginRequest` (source line: 343)
+  - **C0012.S1734** `type` (source line: 344)
+  - **C0012.S1742** `required` (source line: 345)
+  - **C0012.S1735** `properties` (source line: 346)
+  - **C0012.S1801** `key_id` (source line: 347)
+  - **C0012.S1802** `api_key` (source line: 348)
+  - **C0012.S1803** `RefreshRequest` (source line: 349)
+  - **C0012.S1734** `type` (source line: 350)
+  - **C0012.S1742** `required` (source line: 351)
+  - **C0012.S1735** `properties` (source line: 352)
+  - **C0012.S1804** `refresh_token` (source line: 353)
+  - **C0012.S1805** `KeychainMemberAddRequest` (source line: 354)
+  - **C0012.S1734** `type` (source line: 355)
+  - **C0012.S1742** `required` (source line: 356)
+  - **C0012.S1735** `properties` (source line: 357)
+  - **C0012.S1806** `member_key_id` (source line: 358)
+  - **C0012.S1807** `role_hint` (source line: 359)
 
 ## File: `error-envelope.schema.json`
 - **Location:** `from_scratch/ssot_canon/schemas/error-envelope.schema.json`
 - **Components identified:** 7
 
-- **C0318** `$schema`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0319** `$id`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0320** `title`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0321** `type`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0322** `required`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0323** `additionalProperties`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0324** `properties`
-  - **C0324.S0082** `error`
-  - **C0324.S0084** `meta`
+- **C0392** `$schema` (source line: 1)
+  - **C0392.S1684** `value: str` (source line: 1)
+- **C0393** `$id` (source line: 1)
+  - **C0393.S1684** `value: str` (source line: 1)
+- **C0394** `title` (source line: 1)
+  - **C0394.S1684** `value: str` (source line: 1)
+- **C0395** `type` (source line: 1)
+  - **C0395.S1684** `value: str` (source line: 1)
+- **C0396** `required` (source line: 1)
+  - **C0396.S1808** `list[2]` (source line: 1)
+- **C0397** `additionalProperties` (source line: 1)
+  - **C0397.S1809** `value: bool` (source line: 1)
+- **C0398** `properties` (source line: 1)
+  - **C0398.S1784** `error` (source line: 1)
+  - **C0398.S1786** `meta` (source line: 1)
 
 ## File: `success-envelope.schema.json`
 - **Location:** `from_scratch/ssot_canon/schemas/success-envelope.schema.json`
 - **Components identified:** 7
 
-- **C0318** `$schema`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0319** `$id`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0320** `title`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0321** `type`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0322** `required`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0323** `additionalProperties`
-  - *(No explicit sub-components detected in heading/key structure.)*
-- **C0324** `properties`
-  - **C0324.S0088** `data`
-  - **C0324.S0084** `meta`
+- **C0392** `$schema` (source line: 1)
+  - **C0392.S1684** `value: str` (source line: 1)
+- **C0393** `$id` (source line: 1)
+  - **C0393.S1684** `value: str` (source line: 1)
+- **C0394** `title` (source line: 1)
+  - **C0394.S1684** `value: str` (source line: 1)
+- **C0395** `type` (source line: 1)
+  - **C0395.S1684** `value: str` (source line: 1)
+- **C0396** `required` (source line: 1)
+  - **C0396.S1808** `list[2]` (source line: 1)
+- **C0397** `additionalProperties` (source line: 1)
+  - **C0397.S1809** `value: bool` (source line: 1)
+- **C0398** `properties` (source line: 1)
+  - **C0398.S1790** `data` (source line: 1)
+  - **C0398.S1786** `meta` (source line: 1)
 
