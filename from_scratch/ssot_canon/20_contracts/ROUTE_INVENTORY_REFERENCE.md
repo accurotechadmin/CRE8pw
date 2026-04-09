@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, policy expectations, and parity references.
@@ -47,6 +47,6 @@ Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, pol
 | `/console/api/posts/{postId}/comments/{commentId}/moderation` | POST | console | owner JWT | comment moderation transitions | `/console/moderation/posts/{postId}/comments/{commentId}` |
 
 ## Notes
-- Surface behavior and middleware sequencing are defined in `Request_Pipeline_Reference.md`.
-- Error behavior is canonical in `Error_Code_Catalog.md`.
+- Surface behavior and middleware sequencing are defined in `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.
+- Error behavior is canonical in `ERROR_CODE_CATALOG.md`.
 - Route examples are canonical in `Endpoint_Examples_All_Routes.md`.

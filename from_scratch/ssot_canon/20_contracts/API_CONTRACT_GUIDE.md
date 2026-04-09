@@ -3,12 +3,12 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Canonical machine contract
 - OpenAPI source: `openapi/cre8.v1.yaml`
 - Envelope schemas: `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json`
-- PSR-7 runtime primitives: `slim/psr7` (see `Dependency_Reference.md`)
+- PSR-7 runtime primitives: `slim/psr7` (see `DEPENDENCY_BASELINE.md`)
 
 ## Envelope contract
 - Success: `{ data, meta }`
@@ -19,14 +19,14 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui/{route}`, owner/signup/auth routes
 - Gateway: `/api/*`
 - Console: `/console/api/*`
-- Canonical human route index: `Route_Inventory_Reference.md`
+- Canonical human route index: `ROUTE_INVENTORY_REFERENCE.md`
 
 ## Endpoint examples
 See `Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.
-For deep health semantics use `Health_Endpoint_Contract.md`.
+For deep health semantics use `HEALTH_ENDPOINT_CONTRACT.md`.
 
 ## Acceptance criteria linkage
-Use `Acceptance_Criteria_Matrix.md` for route-level Given/When/Then intent, including negative and edge behavior requirements.
+Use `ACCEPTANCE_CRITERIA_MATRIX.md` for route-level Given/When/Then intent, including negative and edge behavior requirements.
 
 ## Synchronization rule
 Any change to route paths, request schema, response schema, or error semantics must update OpenAPI and this guide in the same PR.

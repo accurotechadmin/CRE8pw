@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Control objectives
 1. Ensure credential authenticity and bounded token lifetime.
@@ -32,4 +32,4 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Structured audit logs: `monolog/monolog`
 
 ## Verification linkage
-Security controls are verified by suites listed in `Verification_Strategy.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `Security_Verification_Abuse_Cases.md`, and include mandatory header/CSP checks defined in `Security_Headers_and_CSP_Policy.md`.
+Security controls are verified by suites listed in `VERIFICATION_STRATEGY.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `SECURITY_VERIFICATION_ABUSE_CASES.md`, and include mandatory header/CSP checks defined in `Security_Headers_and_CSP_Policy.md`.

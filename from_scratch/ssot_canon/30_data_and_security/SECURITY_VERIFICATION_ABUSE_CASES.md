@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Expand security verification from high-level controls into explicit abuse-case test requirements and incident-ready verification evidence.
@@ -40,7 +40,7 @@ Production release is blocked if:
 
 ## Related SSOT docs
 - `SECURITY_THREAT_MODEL.md`
-- `Security_Controls_Spec.md`
-- `Verification_Strategy.md`
-- `Observability_Event_Catalog.md`
-- `Production_Readiness_Gates.md`
+- `SECURITY_CONTROLS_SPEC.md`
+- `VERIFICATION_STRATEGY.md`
+- `OBSERVABILITY_EVENT_CATALOG.md`
+- `PRODUCTION_READINESS_GATES.md`
