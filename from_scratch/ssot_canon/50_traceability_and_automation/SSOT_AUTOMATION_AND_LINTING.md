@@ -39,4 +39,4 @@ Automation run must emit:
 ## Related SSOT docs
 - `SSOT_INDEX.md`
 - `CHANGE_IMPACT_MAP_TEMPLATES.md`
-- `Known_Gaps_Tracker.md`
+- `KNOWN_GAPS_TRACKER.md`

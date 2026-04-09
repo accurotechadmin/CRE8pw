@@ -50,7 +50,7 @@ Response `meta` must include canonical envelope metadata.
 - subsystem object presence.
 
 ## Related SSOT docs
-- `API_Contract_Guide.md`
+- `API_CONTRACT_GUIDE.md`
 - `Endpoint_Examples_All_Routes.md`
 - `RELEASE_CHECKLIST.md`
 - `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`

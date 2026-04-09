@@ -32,4 +32,4 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Structured audit logs: `monolog/monolog`
 
 ## Verification linkage
-Security controls are verified by suites listed in `VERIFICATION_STRATEGY.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `SECURITY_VERIFICATION_ABUSE_CASES.md`, and include mandatory header/CSP checks defined in `Security_Headers_and_CSP_Policy.md`.
+Security controls are verified by suites listed in `VERIFICATION_STRATEGY.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `SECURITY_VERIFICATION_ABUSE_CASES.md`, and include mandatory header/CSP checks defined in `SECURITY_HEADERS_AND_CSP_POLICY.md`.

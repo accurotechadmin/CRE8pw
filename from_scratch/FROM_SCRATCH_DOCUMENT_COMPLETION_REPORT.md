@@ -12,7 +12,7 @@ A document is “complete” only if it is:
 
 ## Current state summary
 - Structural coverage: complete across governance, architecture, contracts, security, operations, traceability, decisions, implementation guidance, and program management.
-- Substantive maturity: mixed; strongest in contracts/data/security/verification, weaker where previous scaffold text persisted.
+- Substantive maturity: high and implementation-oriented across contracts/data/security/verification; remaining work is ongoing calibration and release-cycle evidence quality.
 
 ## Mandatory follow-up cadence
 - Weekly during active rebuild phase.
