@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Capture implementation-grade SPA runtime conventions that are required to deliver consistent UI/API parity behavior in the no-build UI model.
@@ -53,7 +53,7 @@ Optional substates (implementation convenience):
 - Explicit route-state visibility for async/error flows.
 
 ## Related SSOT docs
-- `UI_Parity_and_Contract.md`
-- `UI_Parity_Contract.md`
-- `UI_Contract_Artifacts_Reference.md`
-- `Error_Code_Catalog.md`
+- `UI_RUNTIME_CONTRACT.md`
+- `UI_RUNTIME_CONTRACT.md`
+- `UI_RUNTIME_CONTRACT.md`
+- `ERROR_CODE_CATALOG.md`

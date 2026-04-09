@@ -1,31 +1,26 @@
-# Master Plan Ssot Canon Scaffold And Stubs
+# Master Plan: SSOT Canon Scaffold and Stub Replacement
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Objective
+Replace all non-actionable scaffold text with implementation-grade guidance and align every section with machine artifacts and enforceable checks.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Replacement priorities
+1. Governance/index and ownership metadata.
+2. Product/architecture/system contracts.
+3. Route, authz, and data model contract surfaces.
+4. Operations/readiness/verification controls.
+5. Program and evidence governance.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
+## Anti-regression controls
+- Lint rule: reject placeholder language in adopted docs.
+- Link check: reject unresolved cross-document references.
+- Evidence check: PRs touching SSOT must include change-impact map.
 
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Completion target
+Every adopted document must have:
+- clear ownership,
+- actionable normative section,
+- explicit verification mechanism,
+- cross-reference integrity.

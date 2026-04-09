@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define canonical `/health` semantics for subsystem-level readiness and degraded-state triage.
@@ -52,5 +52,5 @@ Response `meta` must include canonical envelope metadata.
 ## Related SSOT docs
 - `API_Contract_Guide.md`
 - `Endpoint_Examples_All_Routes.md`
-- `Operations_Reference.md`
-- `Operational_Smoke_Check_Contract.md`
+- `RELEASE_CHECKLIST.md`
+- `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`

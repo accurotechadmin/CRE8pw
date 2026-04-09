@@ -1,31 +1,22 @@
-# Document Template And Style Guide
+# Document Template and Style Guide
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Required sections for adopted docs
+1. Purpose
+2. Scope
+3. Normative rules (MUST/SHOULD language)
+4. Failure behavior / edge cases
+5. Verification (automated + manual evidence)
+6. Related docs
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Writing standards
+- Prefer tables for policy and decision logic.
+- Use stable naming (all-caps filenames in this canon).
+- Avoid vague verbs (e.g., “handle appropriately”); specify expected outcomes.
+- Include explicit error/status mapping when behavior can fail.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
-
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Traceability conventions
+- Every capability entry should map route -> policy -> service -> tests.
+- Every new invariant should appear in both contract and verification documents.

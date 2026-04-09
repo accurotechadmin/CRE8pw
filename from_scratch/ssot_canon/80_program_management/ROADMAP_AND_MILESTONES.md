@@ -1,31 +1,16 @@
-# Roadmap And Milestones
+# Roadmap and Milestones
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Milestones
+- **M1 Foundation**: governance, index, contracts baseline complete.
+- **M2 Core implementation**: auth/content/console route families implemented to contract.
+- **M3 Security hardening**: abuse-case suite + controls verification green.
+- **M4 Production readiness**: SLO, smoke, readiness gates, runbooks validated.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
-
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
-
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Exit criteria by milestone
+- M1: OpenAPI/schemas + route inventory/acceptance matrix aligned.
+- M2: Route behavior and error mapping pass contract tests.
+- M3: Security suite + decision-table conformance verified.
+- M4: Release checklist complete with evidence package.

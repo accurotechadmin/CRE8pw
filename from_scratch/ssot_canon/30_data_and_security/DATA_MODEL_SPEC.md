@@ -3,9 +3,9 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
-This schema-level contract is implemented through `ext-pdo` prepared statements and transactional writes (see `Dependency_Reference.md`).
+This schema-level contract is implemented through `ext-pdo` prepared statements and transactional writes (see `DEPENDENCY_BASELINE.md`).
 
 ## Table contracts
 
@@ -128,4 +128,4 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 
 ## Consistency notes
 - Keychain behavior is part of the v1 required schema surface.
-- Any schema change requires synchronized updates to `Data_Model_Reference.md`, `ERD.md`, `Traceability_Matrix.md`, and `Route_Inventory_Reference.md`.
+- Any schema change requires synchronized updates to `DATA_MODEL_REFERENCE.md`, `ERD.md`, `TRACEABILITY_MATRIX.md`, and `ROUTE_INVENTORY_REFERENCE.md`.

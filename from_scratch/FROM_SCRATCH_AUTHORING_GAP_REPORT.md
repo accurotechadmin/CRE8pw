@@ -1,34 +1,21 @@
-# From Scratch Authoring Gap Report
+# From-Scratch Authoring Gap Report
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
 ## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+Track authoring weaknesses that reduce implementation confidence, even when docs are syntactically complete.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Gap taxonomy
+- **G1 Genericity:** text is too abstract to implement directly.
+- **G2 Verifiability:** lacks test/evidence hooks.
+- **G3 Traceability:** behavior cannot be mapped to code/tests.
+- **G4 Reference drift:** links/names inconsistent across docs.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
+## Current priority gaps
+- Template-heavy governance/program docs needing concrete procedures.
+- Cross-reference normalization across contract and operations docs.
+- Decisions index expansion to include policy rationale and consequences.
 
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
-
-## Session result
-This report has been superseded by the completion status report and remains as a historical baseline snapshot for audit history.
+## Resolution policy
+A gap closes only when the document is updated, reviewed by owner, and linked traceability/evidence artifacts are synchronized.

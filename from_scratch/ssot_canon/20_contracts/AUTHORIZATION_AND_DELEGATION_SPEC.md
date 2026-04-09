@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Scope
 Defines principals, key classes, delegation bounds, keychain aggregation behavior, and route-surface authorization behavior for CRE8 v1.
@@ -56,7 +56,7 @@ Canonical permission vocabulary:
 - Revocation may be local or cascading according to lineage policy.
 
 ## Related SSOT docs
-- `Security_Reference.md`
-- `Request_Pipeline_Reference.md`
-- `Data_Model_Reference.md`
-- `Route_Inventory_Reference.md`
+- `SECURITY_CONTROLS_SPEC.md`
+- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `DATA_MODEL_REFERENCE.md`
+- `ROUTE_INVENTORY_REFERENCE.md`

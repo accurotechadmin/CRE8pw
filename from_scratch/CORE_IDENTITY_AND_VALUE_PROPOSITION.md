@@ -3,29 +3,21 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Product identity
+CRE8 is a policy-governed content platform centered on delegated authorship, owner-governed control, and auditable lifecycle management.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Primary value propositions
+- **Deterministic governance:** owner console controls moderation, keys, and lifecycle transitions.
+- **Safe delegation:** strict subset/depth/expiry rules prevent privilege escalation.
+- **Operational confidence:** measurable SLOs, release gates, and abuse-case verification.
+- **Contract stability:** OpenAPI/envelope standards reduce client drift and integration risk.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
+## Intended user/actor model
+- Owners: governance administrators.
+- Keys (primary/secondary/use): delegated execution actors.
+- Keychains: aggregation principals for controlled group authority.
 
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Product promises encoded as engineering constraints
+- Never execute out-of-envelope authorization.
+- Never ship unverifiable contract changes.
+- Never hide failing-path context (request_id + stable error codes).

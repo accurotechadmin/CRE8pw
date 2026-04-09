@@ -1,34 +1,21 @@
-# Llm Prompt Build Ssot Canon
+# LLM Prompt: Build SSOT Canon
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Prompt purpose
+Provide an internal prompting contract for agents that author or modify SSOT documents in this folder.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Required agent behavior
+- Prefer from-scratch canon files as primary targets.
+- Use legacy SSOT/docs only as source material; normalize into this canon’s naming and structure.
+- Do not leave scaffold language in adopted docs.
+- Enforce intra-folder reference integrity.
+- Always produce developer-actionable outputs (contracts, tables, commands, failure behavior).
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
-
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
-
-## Prompt protocol
-Use this prompt to request strict SSOT updates with explicit file lists, citations, and verification commands. Require that generated edits preserve envelope contracts and route inventory stability.
+## Prompt checklist
+1. Identify impacted docs by capability.
+2. Update machine artifacts if interface changes.
+3. Update acceptance/verification/traceability artifacts.
+4. Add or update decision log entry.
+5. Update gaps/evidence docs as needed.

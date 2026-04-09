@@ -3,29 +3,27 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Runtime and stack assumptions
+- PHP application stack with PSR-7 HTTP model and contract-first interfaces.
+- JSON envelope standard for every API response path.
+- JWT-based owner/key authentication with lifecycle controls.
+- Database schema supporting principals, delegations, keychains, content, moderation, and auditability.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Build principles
+- Contract-first: OpenAPI/schema changes happen before handler implementation.
+- Policy-first: authorization decisions must be table-driven and testable.
+- Deterministic operations: startup assertions + health + smoke commands are release-gated.
+- Observability-by-default: request_id propagation, event families, measurable SLOs.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
+## Implementation milestones
+1. Bootstrap/runtime wiring + middleware skeleton.
+2. Public/auth surfaces and envelope responder.
+3. Gateway content routes + permission/scope guards.
+4. Console governance routes (keys/keychains/moderation/invites).
+5. Security hardening + abuse-case tests.
+6. Operationalization + release gates.
 
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Engineering quality bars
+- Zero undocumented route behavior.
+- Explicit failure mapping for authz/validation/internal errors.
+- Backward-compatibility policy enforced during contract updates.

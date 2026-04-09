@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define the canonical runtime environment-variable contract, default policy values, and profile hardening constraints required for deterministic CRE8 boot behavior.
@@ -62,7 +62,7 @@ Boot validation then performs:
 - middleware-order alignment checks.
 
 ## Related SSOT docs
-- `Boot_and_Startup_Failure_Contract.md`
-- `Operations_Reference.md`
-- `Security_Controls_Spec.md`
-- `Dependency_Reference.md`
+- `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`
+- `RELEASE_CHECKLIST.md`
+- `SECURITY_CONTROLS_SPEC.md`
+- `DEPENDENCY_BASELINE.md`

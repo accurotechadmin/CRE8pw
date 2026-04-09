@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Provide explicit policy truth tables for delegation, keychain resolution, and lifecycle authority so implementation and QA decisions are deterministic.
@@ -75,7 +75,7 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 - Missing/invalid auth maps to `401 auth_required|auth_invalid`.
 
 ## Related SSOT docs
-- `Authorization_and_Delegation_Spec.md`
-- `Error_Code_Catalog.md`
-- `Request_Pipeline_Reference.md`
-- `Data_Model_Reference.md`
+- `AUTHORIZATION_AND_DELEGATION_SPEC.md`
+- `ERROR_CODE_CATALOG.md`
+- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `DATA_MODEL_REFERENCE.md`

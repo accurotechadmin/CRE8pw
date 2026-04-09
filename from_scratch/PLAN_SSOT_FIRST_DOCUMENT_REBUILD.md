@@ -1,31 +1,26 @@
-# Plan Ssot First Document Rebuild
+# Plan: SSOT-First Document Rebuild
 
 _Status: adopted_
 _Last updated (UTC): 2026-04-08_
 
-## Purpose
-This document is finalized for the from-scratch SSOT canon and defines stable guidance for product, platform, and delivery teams.
+## Goal
+Produce a cohesive SSOT canon that enables implementation teams to build CRE8 from scratch with low ambiguity and high verification rigor.
 
-## Scope
-- Applies to all runtime surfaces under `public/`, `src/`, `code/src/`, and contract assets under `from_scratch/ssot_canon/`.
-- Aligns with canonical references in `docs/SSOT/` and test coverage in `tests/` and `code/tests/`.
+## Phases
+1. **Canon scaffold**: establish governance/index and machine contracts.
+2. **Core contract set**: product/system spec, API/route/auth/data/security docs.
+3. **Operational hardening**: verification, readiness gates, smoke contracts, SLOs.
+4. **Traceability and governance**: matrices, decision logs, change control, evidence templates.
 
-## Normative content
-- Requirements in this document are treated as binding for architecture, contracts, operations, and release controls.
-- Any change to normative behavior must be updated in this file and matching machine artifacts in the same pull request.
-- Cross references must remain synchronized with route contracts, security controls, and verification strategy documents.
+## Work breakdown
+- Baseline interfaces: `openapi/cre8.v1.yaml`, envelope schemas.
+- Canonical route behavior: `ROUTE_INVENTORY_REFERENCE.md` + `ACCEPTANCE_CRITERIA_MATRIX.md`.
+- Security and authorization baseline: delegation/keychain/lifecycle controls.
+- Data model baseline: entity contracts and invariants.
+- Program controls: DoD, risk register, roadmap, contribution workflow.
 
-## Implementation references
-- Runtime bootstrap and composition: `src/Bootstrap/*`, `code/src/Kernel/Bootstrap/*`.
-- HTTP contracts and middleware: `src/Http/*`, `code/src/Modules/*/Interface/*`.
-- Security and token flows: `src/Security/*`, `tests/Security/*`, `code/tests/Security/*`.
-
-## Verification
-- Contract checks: `composer test:contract` and `code/tests/Contract/*`.
-- Security checks: `composer test:security` and `tests/Security/*`.
-- Operational checks: `scripts/health_smoke.php`, `scripts/migrate_smoke.php`.
-
-## Change control
-- Owner: CRE8 platform maintainers.
-- Reviewer set: architecture, security, and operations maintainers.
-- Update cadence: every feature release and every material dependency change.
+## Exit criteria
+- No generic placeholders in normative sections.
+- Every route family has positive + negative acceptance criteria.
+- Every policy-critical decision appears in decision tables and traceability matrix.
+- Release checklist and evidence templates are executable by on-call teams.

@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Short, explicit register of unresolved SSOT-level gaps that could affect upcoming scaffolding and implementation planning.
@@ -17,9 +17,9 @@ Short, explicit register of unresolved SSOT-level gaps that could affect upcomin
 Prototype reconciliation notes are tracked in `Prototype_to_SSOT_Delta_Map.md` and should be converted into gap rows only when unresolved decisions (not implementation deltas) remain.
 
 ## Recently resolved in this SSOT cycle
-- GAP-004 (SSOT automation) resolved by introducing `SSOT_Automation_and_Linting.md` and linking enforcement expectations into release and change-impact artifacts.
-- GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `Authorization_and_Delegation_Spec.md`, `Data_Model_Reference.md`, `Data_Model_Spec.md`, `ERD.md`, route inventory, and contract artifacts.
-- GAP-002 (Route inventory) resolved by adding canonical `Route_Inventory_Reference.md`.
+- GAP-004 (SSOT automation) resolved by introducing `SSOT_AUTOMATION_AND_LINTING.md` and linking enforcement expectations into release and change-impact artifacts.
+- GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `DATA_MODEL_REFERENCE.md`, `DATA_MODEL_SPEC.md`, `ERD.md`, route inventory, and contract artifacts.
+- GAP-002 (Route inventory) resolved by adding canonical `ROUTE_INVENTORY_REFERENCE.md`.
 - GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.
 
 ## Triage rules

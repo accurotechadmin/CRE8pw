@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Envelope-level canonical codes
 | HTTP | code | Typical detail codes | Retryability | UI behavior |
@@ -46,4 +46,4 @@ Canonical terminology: `Canonical_Terminology_Dictionary.md`
 - Every error response must include `error.request_id`.
 - UI must preserve correlation ID in inspector/panel.
 - New detail codes require this catalog update in same PR.
-- Detail-code behavior must remain consistent with `Request_Pipeline_Reference.md` and `UI_Parity_Contract.md`.
+- Detail-code behavior must remain consistent with `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `UI_RUNTIME_CONTRACT.md`.

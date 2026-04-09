@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `Canonical_Terminology_Dictionary.md`
+Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Provide explicit, route-level Given/When/Then criteria (including negative and edge conditions) to reduce interpretation drift between backend, frontend, QA, and operations.
@@ -42,10 +42,10 @@ Provide explicit, route-level Given/When/Then criteria (including negative and e
 At minimum for each route family, tests must cover: unauthorized, forbidden (where applicable), validation failure, and internal error envelope behavior.
 
 ## Manual UAT checklist linkage
-Manual QA must execute route-family scenarios in `Verification_Strategy.md` and log request IDs for all failing paths.
+Manual QA must execute route-family scenarios in `VERIFICATION_STRATEGY.md` and log request IDs for all failing paths.
 
 ## Related SSOT docs
 - `openapi/cre8.v1.yaml`
-- `Error_Code_Catalog.md`
-- `Verification_Strategy.md`
-- `Traceability_Matrix.md`
+- `ERROR_CODE_CATALOG.md`
+- `VERIFICATION_STRATEGY.md`
+- `TRACEABILITY_MATRIX.md`
