@@ -1,0 +1,5323 @@
+# From Scratch Centralized Component Index
+
+Cross-document index of component and sub-component IDs discovered in `/from_scratch`.
+
+## Components
+
+- **C0001** `Core Identity And Value Proposition`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 1)
+- **C0002** `Product identity`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 6)
+- **C0003** `Primary value propositions`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 9)
+- **C0004** `Intended user/actor model`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 15)
+- **C0005** `Product promises encoded as engineering constraints`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 20)
+- **C0006** `From-Scratch Authoring Gap Report`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 1)
+- **C0007** `Purpose`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 6)
+  - `from_scratch/README.md` (line 6)
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 8)
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 8)
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 8)
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 8)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 8)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 8)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 8)
+  - `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` (line 6)
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 8)
+  - `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` (line 8)
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 8)
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 6)
+  - `from_scratch/ssot_canon/evidence/README.md` (line 6)
+- **C0008** `Gap taxonomy`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 9)
+- **C0009** `Current priority gaps`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 15)
+- **C0010** `Resolution policy`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 20)
+- **C0011** `From Scratch Centralized Component Index`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 1)
+- **C0012** `Components`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 5)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 263)
+- **C0013** `Sub-components`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 656)
+- **C0014** `From Scratch Document Component Inventory`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1)
+- **C0015** `File: `CORE_IDENTITY_AND_VALUE_PROPOSITION.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 5)
+- **C0016** `File: `FROM_SCRATCH_AUTHORING_GAP_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 20)
+- **C0017** `File: `FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 35)
+- **C0018** `File: `MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 50)
+- **C0019** `File: `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 65)
+- **C0020** `File: `README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 80)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1064)
+- **C0021** `File: `SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 97)
+- **C0022** `File: `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 112)
+- **C0023** `File: `LLM_PROMPT_BUILD_SSOT_CANON.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 127)
+- **C0024** `File: `CHANGE_CONTROL_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 140)
+- **C0025** `File: `DOCUMENT_STATUS_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 155)
+- **C0026** `File: `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 170)
+- **C0027** `File: `SSOT_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 183)
+- **C0028** `File: `ARCHITECTURE_AND_SURFACES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 196)
+- **C0029** `File: `CANONICAL_TERMINOLOGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 209)
+- **C0030** `File: `CRE8_PRODUCT_AND_SYSTEM_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 222)
+- **C0031** `File: `DEPENDENCY_BASELINE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 237)
+- **C0032** `File: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 254)
+- **C0033** `File: `API_CONTRACT_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 267)
+- **C0034** `File: `AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 288)
+- **C0035** `File: `AUTHORIZATION_DECISION_TABLES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 313)
+- **C0036** `File: `ERROR_CODE_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 338)
+- **C0037** `File: `Endpoint_Examples_All_Routes.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 351)
+- **C0038** `File: `ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 396)
+- **C0039** `File: `UI_RUNTIME_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 411)
+- **C0040** `File: `DATA_MODEL_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 434)
+- **C0041** `File: `DATA_MODEL_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 451)
+- **C0042** `File: `ERD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 476)
+- **C0043** `File: `SECURITY_CONTROLS_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 485)
+- **C0044** `File: `SECURITY_HEADERS_AND_CSP_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 502)
+- **C0045** `File: `SECURITY_THREAT_MODEL.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 521)
+- **C0046** `File: `SECURITY_VERIFICATION_ABUSE_CASES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 534)
+- **C0047** `File: `ACCEPTANCE_CRITERIA_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 553)
+- **C0048** `File: `BOOT_AND_STARTUP_FAILURE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 572)
+- **C0049** `File: `CONFIGURATION_ENVIRONMENT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 593)
+- **C0050** `File: `HEALTH_ENDPOINT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 614)
+- **C0051** `File: `Migration_Seed_Strategy.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 637)
+- **C0052** `File: `OBSERVABILITY_EVENT_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 658)
+- **C0053** `File: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 675)
+- **C0054** `File: `PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 698)
+- **C0055** `File: `RELEASE_CHECKLIST.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 715)
+- **C0056** `File: `SLO_SLI_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 728)
+- **C0057** `File: `VERIFICATION_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 747)
+- **C0058** `File: `CHANGE_IMPACT_MAP_TEMPLATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 764)
+- **C0059** `File: `KNOWN_GAPS_TRACKER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 777)
+- **C0060** `File: `Prototype_to_SSOT_Delta_Map.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 794)
+- **C0061** `File: `SSOT_AUTOMATION_AND_LINTING.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 807)
+- **C0062** `File: `TRACEABILITY_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 828)
+- **C0063** `File: `ADR_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 835)
+- **C0064** `File: `DECISIONS_LOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 848)
+- **C0065** `File: `DECISION_RECORD_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 859)
+- **C0066** `File: `ADR-001-ssot-first-governance.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 870)
+- **C0067** `File: `ADR-002-delegation-envelope-bounds.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 885)
+- **C0068** `File: `ADR-003-keychain-production-principal.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 900)
+- **C0069** `File: `ADR-004-envelope-first-api-standard.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 915)
+- **C0070** `File: `ADR-005-release-gating-controls.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 930)
+- **C0071** `File: `DEPRECATION_AND_VERSIONING_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 945)
+- **C0072** `File: `MIGRATION_AND_COMPATIBILITY_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 958)
+- **C0073** `File: `MODULE_BOUNDARIES_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 971)
+- **C0074** `File: `TEST_DATA_AND_FIXTURE_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 984)
+- **C0075** `File: `CONTRIBUTION_WORKFLOW_SSOT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 997)
+- **C0076** `File: `DEFINITION_OF_DONE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1012)
+- **C0077** `File: `RISK_REGISTER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1025)
+- **C0078** `File: `ROADMAP_AND_MILESTONES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1036)
+- **C0079** `File: `SCAFFOLD_BUILD_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1051)
+- **C0080** `File: `ssot_report.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1077)
+- **C0081** `File: `RELEASE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1089)
+- **C0082** `File: `SSOT_CHANGE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1104)
+- **C0083** `File: `cre8.v1.yaml``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1121)
+- **C0084** `File: `error-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1433)
+- **C0085** `File: `success-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1453)
+- **C0086** `From-Scratch Document Completion Report`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 1)
+- **C0087** `Completion criteria`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 6)
+- **C0088** `Current state summary`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 13)
+- **C0089** `Mandatory follow-up cadence`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 17)
+- **C0090** `Required artifacts per completion review`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 21)
+- **C0091** `Master Plan: SSOT Canon Scaffold and Stub Replacement`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 1)
+- **C0092** `Objective`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 6)
+- **C0093** `Replacement priorities`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 9)
+- **C0094** `Anti-regression controls`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 16)
+- **C0095** `Completion target`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 21)
+- **C0096** `Plan: SSOT-First Document Rebuild`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 1)
+- **C0097** `Goal`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 6)
+- **C0098** `Phases`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 9)
+- **C0099** `Work breakdown`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 15)
+- **C0100** `Exit criteria`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 22)
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 33)
+- **C0101** `CRE8 From-Scratch SSOT Canon`
+  - `from_scratch/README.md` (line 1)
+- **C0102** `What this canon governs`
+  - `from_scratch/README.md` (line 9)
+- **C0103** `Required reading path`
+  - `from_scratch/README.md` (line 14)
+- **C0104** `Non-negotiable rules`
+  - `from_scratch/README.md` (line 27)
+- **C0105** `Definition of quality for this canon`
+  - `from_scratch/README.md` (line 33)
+- **C0106** `From-Scratch Authoring Completion Status (Session Report)`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 1)
+- **C0107** `What was done in this session`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 7)
+- **C0108** `Finished (62 files)`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 12)
+- **C0109** `Unfinished (0 files)`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 76)
+- **C0110** `Definition used for this report`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 79)
+- **C0111** `Technical Foundation And Build Plan`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 1)
+- **C0112** `Runtime and stack assumptions`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 6)
+- **C0113** `Build principles`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 12)
+- **C0114** `Implementation milestones`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 18)
+- **C0115** `Engineering quality bars`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 26)
+- **C0116** `LLM Prompt: Build SSOT Canon`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 1)
+- **C0117** `Prompt purpose`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 6)
+- **C0118** `Required agent behavior`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 9)
+- **C0119** `Prompt checklist`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 16)
+- **C0120** `Change Control Policy`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 1)
+- **C0121** `Scope`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 6)
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 8)
+- **C0122** `Change classes`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 9)
+- **C0123** `Approval requirements`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 14)
+- **C0124** `Required PR payload`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 19)
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 15)
+- **C0125** `Document Status and Ownership`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 1)
+- **C0126** `Status model`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 6)
+- **C0127** `Ownership matrix`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 11)
+- **C0128** `Ownership obligations`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 20)
+- **C0129** `Review SLA`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 27)
+- **C0130** `Document Template and Style Guide`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 1)
+- **C0131** `Required sections for adopted docs`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 6)
+- **C0132** `Writing standards`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 14)
+- **C0133** `Traceability conventions`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 20)
+- **C0134** `SSOT Index`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 1)
+- **C0135** `Canon navigation`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 6)
+- **C0136** `Machine artifacts`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 17)
+- **C0137** `Usage rule`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 22)
+- **C0138** `Architecture and Surfaces`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 1)
+- **C0139** `Architectural model`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 6)
+- **C0140** `Layering`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 12)
+- **C0141** `Boundary rules`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 19)
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 22)
+- **C0142** `Canonical Terminology`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 1)
+- **C0143** `Principal terms`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 6)
+- **C0144** `Security terms`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 12)
+- **C0145** `Contract terms`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 17)
+- **C0146** `CRE8 Product and System Spec`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 1)
+- **C0147** `Product scope`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 6)
+- **C0148** `System capabilities (v1)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 9)
+- **C0149** `Core system constraints`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 15)
+- **C0150** `Out-of-scope (v1)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 21)
+- **C0151** `Dependency Baseline`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 1)
+- **C0152** `Baseline dependency families`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 6)
+- **C0153** `Dependency governance rules`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 12)
+- **C0154** `Runtime expectations`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 17)
+- **C0155** `Canonical package baseline (root `composer.json`)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 22)
+- **C0156** `Script contract baseline`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 30)
+- **C0157** `Request Pipeline and Middleware Contract`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 1)
+- **C0158** `Authoritative middleware order`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 6)
+- **C0159** `Contract rules`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 16)
+- **C0160** `Failure mapping baseline`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 21)
+- **C0161** `API Contract Guide (SSOT)`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 1)
+- **C0162** `Canonical machine contract`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 8)
+- **C0163** `Envelope contract`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 13)
+- **C0164** `Route groups`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 18)
+- **C0165** `Endpoint examples`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 24)
+- **C0166** `Acceptance criteria linkage`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 28)
+- **C0167** `Synchronization rule`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 31)
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 310)
+- **C0168** `Backward compatibility`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 34)
+- **C0169** `Authorization and Delegation Spec`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 1)
+- **C0170** `Principals`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 11)
+- **C0171** `Key classes`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 15)
+- **C0172** `Permission model (v1 allow-list)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 21)
+- **C0173** `Delegation invariants`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 31)
+- **C0174** `Keychain invariants (v1 production)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 37)
+- **C0175** `Surface enforcement model`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 47)
+- **C0176** `Lifecycle authority`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 52)
+- **C0177** `Related SSOT docs`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 58)
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 77)
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 55)
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 35)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 38)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 41)
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 47)
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 47)
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 64)
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 52)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 44)
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 40)
+- **C0178** `Authorization Decision Tables (SSOT)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 1)
+- **C0179** `Delegation issuance decision table`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 11)
+- **C0180** `Key class mint authority table (v1)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 24)
+- **C0181** `Keychain membership admission table`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 34)
+- **C0182** `Keychain effective permission/scope resolution`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 44)
+- **C0183** `Lifecycle action authority table`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 54)
+- **C0184** `Runtime decision order (authoritative)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 64)
+- **C0185** `Error mapping expectations`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 72)
+- **C0186** `Error Code Catalog (SSOT)`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 1)
+- **C0187** `Envelope-level canonical codes`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 8)
+- **C0188** `Canonical middleware/handler detail-code registry (v1 baseline)`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 22)
+- **C0189** `Mapping requirements`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 45)
+- **C0190** `Endpoint Examples (All Routes)`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 1)
+- **C0191** `Envelope conventions used in examples`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 11)
+- **C0192** `Public + auth surfaces`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 16)
+- **C0193** `Gateway surface`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 104)
+- **C0194** `Console surface`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 172)
+- **C0195** `Canonical negative-path example`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 295)
+- **C0196** `Route Inventory Reference (SSOT)`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 1)
+- **C0197** `Inventory governance`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 11)
+- **C0198** `Route inventory (v1)`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 16)
+- **C0199** `Notes`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 49)
+  - `from_scratch/ssot_canon/30_data_and_security/ERD.md` (line 26)
+- **C0200** `UI Runtime Contract (SSOT Appendix)`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 1)
+- **C0201** `Session and device persistence contract`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 11)
+- **C0202** `API client behavior contract`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 17)
+- **C0203** `Route-state runtime model`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 23)
+- **C0204** `Diagnostics UX minimums`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 38)
+- **C0205** `Security/UX guardrails`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 45)
+- **C0206** `Accessibility/runtime baseline`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 50)
+- **C0207** `Data Model Reference (SSOT)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 1)
+- **C0208** `Storage strategy`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 8)
+- **C0209** `Core entity groups`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 13)
+- **C0210** `Lifecycle invariants`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 19)
+- **C0211** `Transaction boundaries (required)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 29)
+- **C0212** `Data Model Spec (Production)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 1)
+- **C0213** `Table contracts`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 10)
+- **C0214** `Retention`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 124)
+- **C0215** `Consistency notes`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 129)
+- **C0216** `ERD (Text + Mermaid)`
+  - `from_scratch/ssot_canon/30_data_and_security/ERD.md` (line 1)
+- **C0217** `Security Controls Spec`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 1)
+- **C0218** `Control objectives`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 8)
+- **C0219** `Trust boundaries`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 13)
+- **C0220** `Control baseline`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 19)
+- **C0221** `Dependency mapping`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 26)
+- **C0222** `Verification linkage`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 34)
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 36)
+- **C0223** `Security Headers and CSP Policy (SSOT)`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 1)
+- **C0224** `Required default security headers`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 11)
+- **C0225** `Path-aware CSP contract`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 22)
+- **C0226** `Enforcement requirements`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 26)
+- **C0227** `Verification requirements`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 31)
+- **C0228** `Security Threat Model`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 1)
+- **C0229** `Threat scenarios`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 8)
+- **C0230** `Mitigations`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 16)
+- **C0231** `Dependency linkage`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 24)
+- **C0232** `Security Verification and Abuse Cases (SSOT)`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 1)
+- **C0233** `Abuse-case matrix (minimum required)`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 11)
+- **C0234** `Security test-pack requirements`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 24)
+- **C0235** `Incident-response verification hooks`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 29)
+- **C0236** `Release gate linkage`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 35)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 40)
+- **C0237** `Acceptance Criteria Matrix (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 1)
+- **C0238** `Usage contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 11)
+- **C0239** `Route acceptance matrix`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 16)
+- **C0240** `Required negative-path baseline per route`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 41)
+- **C0241** `Manual UAT checklist linkage`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 44)
+- **C0242** `Boot and Startup Failure Contract (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 1)
+- **C0243** `Startup sequence contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 11)
+- **C0244** `Mandatory boot assertions`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 18)
+- **C0245** `Startup success behavior`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 26)
+- **C0246** `Startup failure behavior`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 36)
+- **C0247** `Non-negotiable fail-closed rule`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 44)
+- **C0248** `Configuration and Environment Contract (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 1)
+- **C0249** `Required environment variables`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 11)
+- **C0250** `Optional policy variables (with defaults)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 24)
+- **C0251** `Profile hardening constraints`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 34)
+- **C0252** `Key material source rules`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 44)
+- **C0253** `Runtime mapping contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 51)
+- **C0254** `Health Endpoint Contract (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 1)
+- **C0255** `Route and surface`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 11)
+- **C0256** `Response contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 16)
+- **C0257** `Service-state semantics`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 30)
+- **C0258** `HTTP status guidance`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 35)
+- **C0259** `Failure reason examples`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 39)
+- **C0260** `Smoke-check expectations`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 45)
+- **C0261** `Migration Seed Strategy (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 1)
+- **C0262** `Strategy`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 11)
+- **C0263** `Required migration artifacts`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 17)
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 11)
+- **C0264** `Required seed artifacts`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 22)
+- **C0265** `Safety rules`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 27)
+- **C0266** `Command contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 32)
+- **C0267** `Observability Event Catalog`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 1)
+- **C0268** `Event families`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 8)
+- **C0269** `Canonical event naming guidance`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 24)
+- **C0270** `Required event fields`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 32)
+- **C0271** `Logging requirements`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 41)
+- **C0272** `Correlation requirements`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 47)
+- **C0273** `Operational Smoke Check Contract (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 1)
+- **C0274** `Canonical smoke commands`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 11)
+- **C0275** `Health smoke contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 15)
+- **C0276** `Migration smoke contract`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 23)
+- **C0277** `Evidence requirements`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 30)
+- **C0278** `Reconciliation rule`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 37)
+- **C0279** `Production Readiness Gates`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 1)
+- **C0280** `Gate A: Build/runtime integrity`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 8)
+- **C0281** `Gate B: Contract/security quality`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 14)
+- **C0282** `Gate C: UX parity`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 21)
+- **C0283** `Gate D: Operational readiness`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 26)
+- **C0284** `Release Checklist`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 1)
+- **C0285** `Pre-release requirements`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 6)
+- **C0286** `Security and operations gates`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 12)
+- **C0287** `Evidence package`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 17)
+- **C0288** `SLO/SLI Spec`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 1)
+- **C0289** `SLI definitions`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 8)
+- **C0290** `Initial SLO targets`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 15)
+- **C0291** `Measurement windows`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 21)
+- **C0292** `Instrumentation ownership matrix`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 26)
+- **C0293** `Alerting guidance`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 35)
+- **C0294** `Accountability rules`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 41)
+- **C0295** `Verification Strategy (SSOT)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 1)
+- **C0296** `Automated suites`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 8)
+- **C0297** `Required commands`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 14)
+- **C0298** `Release verification scope`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 24)
+- **C0299** `Acceptance criteria enforcement`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 31)
+- **C0300** `Stable QA script (manual)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 36)
+- **C0301** `Change Impact Map Templates (SSOT)`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` (line 1)
+- **C0302** `Minimal template`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` (line 9)
+- **C0303** `Rule`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` (line 20)
+- **C0304** `Known Gaps Tracker (SSOT)`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 1)
+- **C0305** `Open gaps`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 11)
+- **C0306** `Recently resolved in this SSOT cycle`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 19)
+- **C0307** `Triage rules`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 26)
+- **C0308** `Review cadence`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 31)
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 15)
+- **C0309** `Prototype to SSOT Delta Map (SSOT)`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` (line 1)
+- **C0310** `Delta map`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` (line 11)
+- **C0311** `Promotion rule`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` (line 18)
+- **C0312** `SSOT Automation and Linting (SSOT)`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 1)
+- **C0313** `Required automation checks`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 11)
+- **C0314** `PR policy integration`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 19)
+- **C0315** `Minimal command contract`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 24)
+- **C0316** `Evidence output requirements`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 29)
+- **C0317** `Ownership`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 36)
+- **C0318** `Traceability Matrix (Docs-to-Code)`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md` (line 1)
+- **C0319** `ADR Index`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 1)
+- **C0320** `Current indexed records`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 9)
+- **C0321** `Index contract`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 16)
+- **C0322** `Decisions Log`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 1)
+- **C0323** `Chronological entries`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 6)
+- **C0324** `Update rule`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 13)
+- **C0325** `Decision Record Template`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 1)
+- **C0326** `Required fields`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 6)
+- **C0327** `Quality bar`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 17)
+- **C0328** `ADR-001: SSOT-first contract governance model`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 1)
+- **C0329** `Context`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 6)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 6)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 6)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 6)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 6)
+- **C0330** `Decision`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 9)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 9)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 9)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 9)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 9)
+- **C0331** `Consequences`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 12)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 12)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 12)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 12)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 12)
+- **C0332** `Verification implications`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 16)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 16)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 16)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 16)
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 16)
+- **C0333** `ADR-002: Delegation envelope bounds (subset/depth/expiry)`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 1)
+- **C0334** `ADR-003: Keychain as production-active v1 principal class`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 1)
+- **C0335** `ADR-004: Envelope-first API response standard`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 1)
+- **C0336** `ADR-005: Release gating via verification + smoke + readiness controls`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 1)
+- **C0337** `Deprecation and Versioning Policy`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 1)
+- **C0338** `Versioning model`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 6)
+- **C0339** `Deprecation process`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 11)
+- **C0340** `Guardrails`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 17)
+- **C0341** `Migration and Compatibility Strategy`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 1)
+- **C0342** `Migration principles`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 6)
+- **C0343** `Compatibility checklist`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 17)
+- **C0344** `Module Boundaries and Ownership`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 1)
+- **C0345** `Core modules`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 6)
+- **C0346** `Ownership model`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 14)
+- **C0347** `Test Data and Fixture Strategy`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 1)
+- **C0348** `Fixture principles`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 6)
+- **C0349** `Required fixture packs`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 11)
+- **C0350** `Maintenance policy`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 17)
+- **C0351** `Contribution Workflow (SSOT)`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 1)
+- **C0352** `Workflow`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 6)
+- **C0353** `Review policy`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 21)
+- **C0354** `SLA and escalation`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 27)
+- **C0355** `Definition of Done`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 1)
+- **C0356** `Done means all are true`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 6)
+- **C0357** `Required evidence checklist`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 16)
+- **C0358** `Not-done examples`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 23)
+- **C0359** `Risk Register`
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 1)
+- **C0360** `Active risks`
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 6)
+- **C0361** `Roadmap and Milestones`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 1)
+- **C0362** `Milestones`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 6)
+- **C0363** `Exit criteria by milestone`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 12)
+- **C0364** `Milestone deliverables (minimum)`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 19)
+- **C0365** `Tracking rule`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 25)
+- **C0366** `Scaffold Build Report`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 1)
+- **C0367** `Report summary`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 6)
+- **C0368** `Verification completed`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 9)
+- **C0369** `Remaining maintenance tasks`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 14)
+- **C0370** `Evidence Package Guide`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 1)
+- **C0371** `Required evidence types`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 9)
+- **C0372** `Storage convention`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 15)
+- **C0373** `generated_at_utc`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+- **C0374** `status`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+- **C0375** `checks`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+- **C0376** `Release Evidence Template`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 1)
+- **C0377** `Release metadata`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 6)
+- **C0378** `Verification command results`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 11)
+- **C0379** `Contract and behavior deltas`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 19)
+- **C0380** `Operational signoff`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 24)
+- **C0381** `SSOT Change Evidence Template`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 1)
+- **C0382** `Change metadata`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 6)
+- **C0383** `Documents/artifacts changed`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 11)
+- **C0384** `Verification evidence`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 16)
+- **C0385** `Traceability`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 21)
+- **C0386** `Reviewer signoff`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 26)
+- **C0387** `openapi`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 1)
+- **C0388** `info`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 2)
+- **C0389** `servers`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 6)
+- **C0390** `security`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 8)
+- **C0391** `paths`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 10)
+- **C0392** `$schema`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0393** `$id`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0394** `title`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0395** `type`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0396** `required`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0397** `additionalProperties`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **C0398** `properties`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+
+## Sub-components
+
+- **S0001** `List item: **Deterministic governance:** owner console controls moderation, keys, and lifecycle transitions.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 10)
+- **S0002** `List item: **Safe delegation:** strict subset/depth/expiry rules prevent privilege escalation.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 11)
+- **S0003** `List item: **Operational confidence:** measurable SLOs, release gates, and abuse-case verification.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 12)
+- **S0004** `List item: **Contract stability:** OpenAPI/envelope standards reduce client drift and integration risk.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 13)
+- **S0005** `List item: Owners: governance administrators.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 16)
+- **S0006** `List item: Keys (primary/secondary/use): delegated execution actors.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 17)
+- **S0007** `List item: Keychains: aggregation principals for controlled group authority.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 18)
+- **S0008** `List item: Never execute out-of-envelope authorization.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 21)
+- **S0009** `List item: Never ship unverifiable contract changes.`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 22)
+- **S0010** `List item: Never hide failing-path context (request_id + stable error codes).`
+  - `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` (line 23)
+- **S0011** `List item: **G1 Genericity:** text is too abstract to implement directly.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 10)
+- **S0012** `List item: **G2 Verifiability:** lacks test/evidence hooks.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 11)
+- **S0013** `List item: **G3 Traceability:** behavior cannot be mapped to code/tests.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 12)
+- **S0014** `List item: **G4 Reference drift:** links/names inconsistent across docs.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 13)
+- **S0015** `List item: Template-heavy governance/program docs needing concrete procedures.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 16)
+- **S0016** `List item: Cross-reference normalization across contract and operations docs.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 17)
+- **S0017** `List item: Decisions index expansion to include policy rationale and consequences.`
+  - `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md` (line 18)
+- **S0018** `List item: **C0001** `Core Identity And Value Proposition``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 7)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 9)
+- **S0019** `List item: Documents: `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 8)
+- **S0020** `List item: **C0002** `Product identity``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 9)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 11)
+- **S0021** `List item: **C0003** `Primary value propositions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 11)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 13)
+- **S0022** `List item: **C0004** `Intended user/actor model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 13)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 15)
+- **S0023** `List item: **C0005** `Product promises encoded as engineering constraints``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 15)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 17)
+- **S0024** `List item: **C0006** `From-Scratch Authoring Gap Report``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 17)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 24)
+- **S0025** `List item: Documents: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 18)
+- **S0026** `List item: **C0007** `Purpose``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 19)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 26)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 86)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 319)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 357)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 402)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 417)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 508)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 540)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 559)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 578)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 599)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 620)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 643)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 681)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 770)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 783)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 800)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 813)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 841)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1070)
+- **S0027** `List item: Documents: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md`, `from_scratch/README.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`, `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`, `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`, `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`, `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`, `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`, `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`, `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`, `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md`, `from_scratch/ssot_canon/evidence/README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 20)
+- **S0028** `List item: **C0008** `Gap taxonomy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 21)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 28)
+- **S0029** `List item: **C0009** `Current priority gaps``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 23)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 30)
+- **S0030** `List item: **C0010** `Resolution policy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 25)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 32)
+- **S0031** `List item: **C0011** `From-Scratch Document Completion Report``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 27)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 39)
+- **S0032** `List item: Documents: `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 28)
+- **S0033** `List item: **C0012** `Completion criteria``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 29)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 41)
+- **S0034** `List item: **C0013** `Current state summary``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 31)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 43)
+- **S0035** `List item: **C0014** `Mandatory follow-up cadence``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 33)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 45)
+- **S0036** `List item: **C0015** `Required artifacts per completion review``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 35)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 47)
+- **S0037** `List item: **C0016** `Master Plan: SSOT Canon Scaffold and Stub Replacement``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 37)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 54)
+- **S0038** `List item: Documents: `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 38)
+- **S0039** `List item: **C0017** `Objective``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 39)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 56)
+- **S0040** `List item: **C0018** `Replacement priorities``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 41)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 58)
+- **S0041** `List item: **C0019** `Anti-regression controls``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 43)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 60)
+- **S0042** `List item: **C0020** `Completion target``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 45)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 62)
+- **S0043** `List item: **C0021** `Plan: SSOT-First Document Rebuild``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 47)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 69)
+- **S0044** `List item: Documents: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 48)
+- **S0045** `List item: **C0022** `Goal``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 49)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 71)
+- **S0046** `List item: **C0023** `Phases``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 51)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 73)
+- **S0047** `List item: **C0024** `Work breakdown``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 53)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 75)
+- **S0048** `List item: **C0025** `Exit criteria``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 55)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 77)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 712)
+- **S0049** `List item: Documents: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`, `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 56)
+- **S0050** `List item: **C0026** `CRE8 From-Scratch SSOT Canon``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 57)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 84)
+- **S0051** `List item: Documents: `from_scratch/README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 58)
+- **S0052** `List item: **C0027** `What this canon governs``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 59)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 88)
+- **S0053** `List item: **C0028** `Required reading path``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 61)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 90)
+- **S0054** `List item: **C0029** `Non-negotiable rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 63)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 92)
+- **S0055** `List item: **C0030** `Definition of quality for this canon``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 65)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 94)
+- **S0056** `List item: **C0031** `From-Scratch Authoring Completion Status (Session Report)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 67)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 101)
+- **S0057** `List item: Documents: `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 68)
+- **S0058** `List item: **C0032** `What was done in this session``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 69)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 103)
+- **S0059** `List item: **C0033** `Finished (62 files)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 71)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 105)
+- **S0060** `List item: **C0034** `Unfinished (0 files)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 73)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 107)
+- **S0061** `List item: **C0035** `Definition used for this report``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 75)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 109)
+- **S0062** `List item: **C0036** `Technical Foundation And Build Plan``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 77)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 116)
+- **S0063** `List item: Documents: `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 78)
+- **S0064** `List item: **C0037** `Runtime and stack assumptions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 79)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 118)
+- **S0065** `List item: **C0038** `Build principles``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 81)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 120)
+- **S0066** `List item: **C0039** `Implementation milestones``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 83)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 122)
+- **S0067** `List item: **C0040** `Engineering quality bars``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 85)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 124)
+- **S0068** `List item: **C0041** `LLM Prompt: Build SSOT Canon``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 87)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 131)
+- **S0069** `List item: Documents: `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 88)
+- **S0070** `List item: **C0042** `Prompt purpose``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 89)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 133)
+- **S0071** `List item: **C0043** `Required agent behavior``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 91)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 135)
+- **S0072** `List item: **C0044** `Prompt checklist``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 93)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 137)
+- **S0073** `List item: **C0045** `Change Control Policy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 95)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 144)
+- **S0074** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 96)
+- **S0075** `List item: **C0046** `Scope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 97)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 146)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 294)
+- **S0076** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 98)
+- **S0077** `List item: **C0047** `Change classes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 99)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 148)
+- **S0078** `List item: **C0048** `Approval requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 101)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 150)
+- **S0079** `List item: **C0049** `Required PR payload``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 103)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 152)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1005)
+- **S0080** `List item: Documents: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`, `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 104)
+- **S0081** `List item: **C0050** `Document Status and Ownership``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 105)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 159)
+- **S0082** `List item: Documents: `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 106)
+- **S0083** `List item: **C0051** `Status model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 107)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 161)
+- **S0084** `List item: **C0052** `Ownership matrix``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 109)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 163)
+- **S0085** `List item: **C0053** `Ownership obligations``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 111)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 165)
+- **S0086** `List item: **C0054** `Review SLA``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 113)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 167)
+- **S0087** `List item: **C0055** `Document Template and Style Guide``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 115)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 174)
+- **S0088** `List item: Documents: `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 116)
+- **S0089** `List item: **C0056** `Required sections for adopted docs``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 117)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 176)
+- **S0090** `List item: **C0057** `Writing standards``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 119)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 178)
+- **S0091** `List item: **C0058** `Traceability conventions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 121)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 180)
+- **S0092** `List item: **C0059** `SSOT Index``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 123)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 187)
+- **S0093** `List item: Documents: `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 124)
+- **S0094** `List item: **C0060** `Canon navigation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 125)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 189)
+- **S0095** `List item: **C0061** `Machine artifacts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 127)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 191)
+- **S0096** `List item: **C0062** `Usage rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 129)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 193)
+- **S0097** `List item: **C0063** `Architecture and Surfaces``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 131)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 200)
+- **S0098** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 132)
+- **S0099** `List item: **C0064** `Architectural model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 133)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 202)
+- **S0100** `List item: **C0065** `Layering``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 135)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 204)
+- **S0101** `List item: **C0066** `Boundary rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 137)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 206)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 981)
+- **S0102** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`, `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 138)
+- **S0103** `List item: **C0067** `Canonical Terminology``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 139)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 213)
+- **S0104** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 140)
+- **S0105** `List item: **C0068** `Principal terms``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 141)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 215)
+- **S0106** `List item: **C0069** `Security terms``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 143)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 217)
+- **S0107** `List item: **C0070** `Contract terms``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 145)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 219)
+- **S0108** `List item: **C0071** `CRE8 Product and System Spec``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 147)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 226)
+- **S0109** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 148)
+- **S0110** `List item: **C0072** `Product scope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 149)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 228)
+- **S0111** `List item: **C0073** `System capabilities (v1)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 151)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 230)
+- **S0112** `List item: **C0074** `Core system constraints``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 153)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 232)
+- **S0113** `List item: **C0075** `Out-of-scope (v1)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 155)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 234)
+- **S0114** `List item: **C0076** `Dependency Baseline``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 157)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 241)
+- **S0115** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 158)
+- **S0116** `List item: **C0077** `Baseline dependency families``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 159)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 243)
+- **S0117** `List item: **C0078** `Dependency governance rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 161)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 245)
+- **S0118** `List item: **C0079** `Runtime expectations``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 163)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 247)
+- **S0119** `List item: **C0080** `Canonical package baseline (root composer.json)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 165)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 249)
+- **S0120** `List item: **C0081** `Script contract baseline``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 167)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 251)
+- **S0121** `List item: **C0082** `Request Pipeline and Middleware Contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 169)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 258)
+- **S0122** `List item: Documents: `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 170)
+- **S0123** `List item: **C0083** `Authoritative middleware order``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 171)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 260)
+- **S0124** `List item: **C0084** `Contract rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 173)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 262)
+- **S0125** `List item: **C0085** `Failure mapping baseline``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 175)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 264)
+- **S0126** `List item: **C0086** `API Contract Guide (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 177)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 271)
+- **S0127** `List item: Documents: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 178)
+- **S0128** `List item: **C0087** `Canonical machine contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 179)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 273)
+- **S0129** `List item: **C0088** `Envelope contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 181)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 275)
+- **S0130** `List item: **C0089** `Route groups``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 183)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 277)
+- **S0131** `List item: **C0090** `Endpoint examples``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 185)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 279)
+- **S0132** `List item: **C0091** `Acceptance criteria linkage``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 187)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 281)
+- **S0133** `List item: **C0092** `Synchronization rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 189)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 283)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 393)
+- **S0134** `List item: Documents: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`, `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 190)
+- **S0135** `List item: **C0093** `Backward compatibility``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 191)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 285)
+- **S0136** `List item: **C0094** `Authorization and Delegation Spec``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 193)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 292)
+- **S0137** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 194)
+- **S0138** `List item: **C0095** `Principals``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 195)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 296)
+- **S0139** `List item: **C0096** `Key classes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 197)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 298)
+- **S0140** `List item: **C0097** `Permission model (v1 allow-list)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 199)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 300)
+- **S0141** `List item: **C0098** `Delegation invariants``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 201)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 302)
+- **S0142** `List item: **C0099** `Keychain invariants (v1 production)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 203)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 304)
+- **S0143** `List item: **C0100** `Surface enforcement model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 205)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 306)
+- **S0144** `List item: **C0101** `Lifecycle authority``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 207)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 308)
+- **S0145** `List item: **C0102** `Related SSOT docs``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 209)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 310)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 335)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 431)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 448)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 518)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 550)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 569)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 590)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 611)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 634)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 695)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 825)
+- **S0146** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`, `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`, `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`, `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`, `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`, `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`, `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 210)
+- **S0147** `List item: **C0103** `Authorization Decision Tables (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 211)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 317)
+- **S0148** `List item: Documents: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 212)
+- **S0149** `List item: **C0104** `Delegation issuance decision table``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 213)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 321)
+- **S0150** `List item: **C0105** `Key class mint authority table (v1)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 215)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 323)
+- **S0151** `List item: **C0106** `Keychain membership admission table``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 217)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 325)
+- **S0152** `List item: **C0107** `Keychain effective permission/scope resolution``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 219)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 327)
+- **S0153** `List item: **C0108** `Lifecycle action authority table``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 221)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 329)
+- **S0154** `List item: **C0109** `Runtime decision order (authoritative)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 223)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 331)
+- **S0155** `List item: **C0110** `Error mapping expectations``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 225)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 333)
+- **S0156** `List item: **C0111** `Error Code Catalog (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 227)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 342)
+- **S0157** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 228)
+- **S0158** `List item: **C0112** `Envelope-level canonical codes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 229)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 344)
+- **S0159** `List item: **C0113** `Canonical middleware/handler detail-code registry (v1 baseline)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 231)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 346)
+- **S0160** `List item: **C0114** `Mapping requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 233)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 348)
+- **S0161** `List item: **C0115** `Endpoint Examples (All Routes)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 235)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 355)
+- **S0162** `List item: Documents: `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 236)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 659)
+- **S0163** `List item: **C0116** `Envelope conventions used in examples``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 237)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 359)
+- **S0164** `List item: **C0117** `Public + auth surfaces``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 239)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 361)
+- **S0165** `List item: **C0118** `Gateway surface``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 241)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 369)
+- **S0166** `List item: **C0119** `Console surface``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 243)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 377)
+- **S0167** `List item: **C0120** `Canonical negative-path example``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 245)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 391)
+- **S0168** `List item: **C0121** `Route Inventory Reference (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 247)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 400)
+- **S0169** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 248)
+- **S0170** `List item: **C0122** `Inventory governance``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 249)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 404)
+- **S0171** `List item: **C0123** `Route inventory (v1)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 251)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 406)
+- **S0172** `List item: **C0124** `Notes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 253)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 408)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 482)
+- **S0173** `List item: Documents: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`, `from_scratch/ssot_canon/30_data_and_security/ERD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 254)
+- **S0174** `List item: **C0125** `UI Runtime Contract (SSOT Appendix)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 255)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 415)
+- **S0175** `List item: Documents: `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 256)
+- **S0176** `List item: **C0126** `Session and device persistence contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 257)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 419)
+- **S0177** `List item: **C0127** `API client behavior contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 259)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 421)
+- **S0178** `List item: **C0128** `Route-state runtime model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 261)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 423)
+- **S0179** `List item: **C0129** `Diagnostics UX minimums``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 263)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 425)
+- **S0180** `List item: **C0130** `Security/UX guardrails``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 265)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 427)
+- **S0181** `List item: **C0131** `Accessibility/runtime baseline``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 267)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 429)
+- **S0182** `List item: **C0132** `Data Model Reference (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 269)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 438)
+- **S0183** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 270)
+- **S0184** `List item: **C0133** `Storage strategy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 271)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 440)
+- **S0185** `List item: **C0134** `Core entity groups``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 273)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 442)
+- **S0186** `List item: **C0135** `Lifecycle invariants``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 275)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 444)
+- **S0187** `List item: **C0136** `Transaction boundaries (required)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 277)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 446)
+- **S0188** `List item: **C0137** `Data Model Spec (Production)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 279)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 455)
+- **S0189** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 280)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 715)
+- **S0190** `List item: **C0138** `Table contracts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 281)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 457)
+- **S0191** `List item: **C0139** `Retention``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 283)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 471)
+- **S0192** `List item: **C0140** `Consistency notes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 285)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 473)
+- **S0193** `List item: **C0141** `ERD (Text + Mermaid)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 287)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 480)
+- **S0194** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/ERD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 288)
+- **S0195** `List item: **C0142** `Security Controls Spec``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 289)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 489)
+- **S0196** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 290)
+- **S0197** `List item: **C0143** `Control objectives``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 291)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 491)
+- **S0198** `List item: **C0144** `Trust boundaries``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 293)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 493)
+- **S0199** `List item: **C0145** `Control baseline``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 295)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 495)
+- **S0200** `List item: **C0146** `Dependency mapping``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 297)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 497)
+- **S0201** `List item: **C0147** `Verification linkage``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 299)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 499)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 655)
+- **S0202** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`, `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 300)
+- **S0203** `List item: **C0148** `Security Headers and CSP Policy (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 301)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 506)
+- **S0204** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 302)
+- **S0205** `List item: **C0149** `Required default security headers``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 303)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 510)
+- **S0206** `List item: **C0150** `Path-aware CSP contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 305)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 512)
+- **S0207** `List item: **C0151** `Enforcement requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 307)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 514)
+- **S0208** `List item: **C0152** `Verification requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 309)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 516)
+- **S0209** `List item: **C0153** `Security Threat Model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 311)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 525)
+- **S0210** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 312)
+- **S0211** `List item: **C0154** `Threat scenarios``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 313)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 527)
+- **S0212** `List item: **C0155** `Mitigations``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 315)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 529)
+- **S0213** `List item: **C0156** `Dependency linkage``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 317)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 531)
+- **S0214** `List item: **C0157** `Security Verification and Abuse Cases (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 319)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 538)
+- **S0215** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 320)
+- **S0216** `List item: **C0158** `Abuse-case matrix (minimum required)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 321)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 542)
+- **S0217** `List item: **C0159** `Security test-pack requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 323)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 544)
+- **S0218** `List item: **C0160** `Incident-response verification hooks``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 325)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 546)
+- **S0219** `List item: **C0161** `Release gate linkage``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 327)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 548)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 693)
+- **S0220** `List item: Documents: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 328)
+- **S0221** `List item: **C0162** `Acceptance Criteria Matrix (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 329)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 557)
+- **S0222** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 330)
+- **S0223** `List item: **C0163** `Usage contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 331)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 561)
+- **S0224** `List item: **C0164** `Route acceptance matrix``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 333)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 563)
+- **S0225** `List item: **C0165** `Required negative-path baseline per route``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 335)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 565)
+- **S0226** `List item: **C0166** `Manual UAT checklist linkage``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 337)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 567)
+- **S0227** `List item: **C0167** `Boot and Startup Failure Contract (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 339)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 576)
+- **S0228** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 340)
+- **S0229** `List item: **C0168** `Startup sequence contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 341)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 580)
+- **S0230** `List item: **C0169** `Mandatory boot assertions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 343)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 582)
+- **S0231** `List item: **C0170** `Startup success behavior``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 345)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 584)
+- **S0232** `List item: **C0171** `Startup failure behavior``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 347)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 586)
+- **S0233** `List item: **C0172** `Non-negotiable fail-closed rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 349)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 588)
+- **S0234** `List item: **C0173** `Configuration and Environment Contract (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 351)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 597)
+- **S0235** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 352)
+- **S0236** `List item: **C0174** `Required environment variables``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 353)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 601)
+- **S0237** `List item: **C0175** `Optional policy variables (with defaults)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 355)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 603)
+- **S0238** `List item: **C0176** `Profile hardening constraints``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 357)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 605)
+- **S0239** `List item: **C0177** `Key material source rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 359)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 607)
+- **S0240** `List item: **C0178** `Runtime mapping contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 361)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 609)
+- **S0241** `List item: **C0179** `Health Endpoint Contract (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 363)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 618)
+- **S0242** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 364)
+- **S0243** `List item: **C0180** `Route and surface``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 365)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 622)
+- **S0244** `List item: **C0181** `Response contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 367)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 624)
+- **S0245** `List item: **C0182** `Service-state semantics``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 369)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 626)
+- **S0246** `List item: **C0183** `HTTP status guidance``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 371)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 628)
+- **S0247** `List item: **C0184** `Failure reason examples``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 373)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 630)
+- **S0248** `List item: **C0185** `Smoke-check expectations``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 375)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 632)
+- **S0249** `List item: **C0186** `Migration Seed Strategy (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 377)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 641)
+- **S0250** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 378)
+- **S0251** `List item: **C0187** `Strategy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 379)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 645)
+- **S0252** `List item: **C0188** `Required migration artifacts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 381)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 647)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 966)
+- **S0253** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`, `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 382)
+- **S0254** `List item: **C0189** `Required seed artifacts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 383)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 649)
+- **S0255** `List item: **C0190** `Safety rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 385)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 651)
+- **S0256** `List item: **C0191** `Command contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 387)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 653)
+- **S0257** `List item: **C0192** `Observability Event Catalog``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 389)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 662)
+- **S0258** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 390)
+- **S0259** `List item: **C0193** `Event families``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 391)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 664)
+- **S0260** `List item: **C0194** `Canonical event naming guidance``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 393)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 666)
+- **S0261** `List item: **C0195** `Required event fields``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 395)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 668)
+- **S0262** `List item: **C0196** `Logging requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 397)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 670)
+- **S0263** `List item: **C0197** `Correlation requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 399)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 672)
+- **S0264** `List item: **C0198** `Operational Smoke Check Contract (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 401)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 679)
+- **S0265** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 402)
+- **S0266** `List item: **C0199** `Canonical smoke commands``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 403)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 683)
+- **S0267** `List item: **C0200** `Health smoke contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 405)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 685)
+- **S0268** `List item: **C0201** `Migration smoke contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 407)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 687)
+- **S0269** `List item: **C0202** `Evidence requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 409)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 689)
+- **S0270** `List item: **C0203** `Reconciliation rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 411)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 691)
+- **S0271** `List item: **C0204** `Production Readiness Gates``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 413)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 702)
+- **S0272** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 414)
+- **S0273** `List item: **C0205** `Gate A: Build/runtime integrity``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 415)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 704)
+- **S0274** `List item: **C0206** `Gate B: Contract/security quality``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 417)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 706)
+- **S0275** `List item: **C0207** `Gate C: UX parity``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 419)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 708)
+- **S0276** `List item: **C0208** `Gate D: Operational readiness``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 421)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 710)
+- **S0277** `List item: **C0209** `Release Checklist``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 423)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 719)
+- **S0278** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 424)
+- **S0279** `List item: **C0210** `Pre-release requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 425)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 721)
+- **S0280** `List item: **C0211** `Security and operations gates``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 427)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 723)
+- **S0281** `List item: **C0212** `Evidence package``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 429)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 725)
+- **S0282** `List item: **C0213** `SLO/SLI Spec``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 431)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 732)
+- **S0283** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 432)
+- **S0284** `List item: **C0214** `SLI definitions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 433)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 734)
+- **S0285** `List item: **C0215** `Initial SLO targets``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 435)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 736)
+- **S0286** `List item: **C0216** `Measurement windows``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 437)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 738)
+- **S0287** `List item: **C0217** `Instrumentation ownership matrix``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 439)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 740)
+- **S0288** `List item: **C0218** `Alerting guidance``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 441)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 742)
+- **S0289** `List item: **C0219** `Accountability rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 443)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 744)
+- **S0290** `List item: **C0220** `Verification Strategy (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 445)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 751)
+- **S0291** `List item: Documents: `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 446)
+- **S0292** `List item: **C0221** `Automated suites``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 447)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 753)
+- **S0293** `List item: **C0222** `Required commands``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 449)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 755)
+- **S0294** `List item: **C0223** `Release verification scope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 451)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 757)
+- **S0295** `List item: **C0224** `Acceptance criteria enforcement``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 453)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 759)
+- **S0296** `List item: **C0225** `Stable QA script (manual)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 455)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 761)
+- **S0297** `List item: **C0226** `Change Impact Map Templates (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 457)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 768)
+- **S0298** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 458)
+- **S0299** `List item: **C0227** `Minimal template``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 459)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 772)
+- **S0300** `List item: **C0228** `Rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 461)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 774)
+- **S0301** `List item: **C0229** `Known Gaps Tracker (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 463)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 781)
+- **S0302** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 464)
+- **S0303** `List item: **C0230** `Open gaps``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 465)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 785)
+- **S0304** `List item: **C0231** `Recently resolved in this SSOT cycle``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 467)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 787)
+- **S0305** `List item: **C0232** `Triage rules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 469)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 789)
+- **S0306** `List item: **C0233** `Review cadence``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 471)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 791)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1033)
+- **S0307** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`, `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 472)
+- **S0308** `List item: **C0234** `Prototype to SSOT Delta Map (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 473)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 798)
+- **S0309** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 474)
+- **S0310** `List item: **C0235** `Delta map``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 475)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 802)
+- **S0311** `List item: **C0236** `Promotion rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 477)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 804)
+- **S0312** `List item: **C0237** `SSOT Automation and Linting (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 479)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 811)
+- **S0313** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 480)
+- **S0314** `List item: **C0238** `Required automation checks``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 481)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 815)
+- **S0315** `List item: **C0239** `PR policy integration``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 483)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 817)
+- **S0316** `List item: **C0240** `Minimal command contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 485)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 819)
+- **S0317** `List item: **C0241** `Evidence output requirements``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 487)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 821)
+- **S0318** `List item: **C0242** `Ownership``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 489)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 823)
+- **S0319** `List item: **C0243** `Traceability Matrix (Docs-to-Code)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 491)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 832)
+- **S0320** `List item: Documents: `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 492)
+- **S0321** `List item: **C0244** `ADR Index``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 493)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 839)
+- **S0322** `List item: Documents: `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 494)
+- **S0323** `List item: **C0245** `Current indexed records``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 495)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 843)
+- **S0324** `List item: **C0246** `Index contract``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 497)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 845)
+- **S0325** `List item: **C0247** `Decisions Log``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 499)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 852)
+- **S0326** `List item: Documents: `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 500)
+- **S0327** `List item: **C0248** `Chronological entries``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 501)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 854)
+- **S0328** `List item: **C0249** `Update rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 503)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 856)
+- **S0329** `List item: **C0250** `Decision Record Template``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 505)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 863)
+- **S0330** `List item: Documents: `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 506)
+- **S0331** `List item: **C0251** `Required fields``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 507)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 865)
+- **S0332** `List item: **C0252** `Quality bar``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 509)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 867)
+- **S0333** `List item: **C0253** `ADR-001: SSOT-first contract governance model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 511)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 874)
+- **S0334** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 512)
+- **S0335** `List item: **C0254** `Context``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 513)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 876)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 891)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 906)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 921)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 936)
+- **S0336** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`, `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 514)
+- **S0337** `List item: **C0255** `Decision``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 515)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 878)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 893)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 908)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 923)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 938)
+- **S0338** `List item: **C0256** `Consequences``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 517)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 880)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 895)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 910)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 925)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 940)
+- **S0339** `List item: **C0257** `Verification implications``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 519)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 882)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 897)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 912)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 927)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 942)
+- **S0340** `List item: **C0258** `ADR-002: Delegation envelope bounds (subset/depth/expiry)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 521)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 889)
+- **S0341** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 522)
+- **S0342** `List item: **C0259** `ADR-003: Keychain as production-active v1 principal class``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 523)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 904)
+- **S0343** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 524)
+- **S0344** `List item: **C0260** `ADR-004: Envelope-first API response standard``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 525)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 919)
+- **S0345** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 526)
+- **S0346** `List item: **C0261** `ADR-005: Release gating via verification + smoke + readiness controls``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 527)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 934)
+- **S0347** `List item: Documents: `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 528)
+- **S0348** `List item: **C0262** `Deprecation and Versioning Policy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 529)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 949)
+- **S0349** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 530)
+- **S0350** `List item: **C0263** `Versioning model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 531)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 951)
+- **S0351** `List item: **C0264** `Deprecation process``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 533)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 953)
+- **S0352** `List item: **C0265** `Guardrails``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 535)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 955)
+- **S0353** `List item: **C0266** `Migration and Compatibility Strategy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 537)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 962)
+- **S0354** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 538)
+- **S0355** `List item: **C0267** `Migration principles``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 539)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 964)
+- **S0356** `List item: **C0268** `Compatibility checklist``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 541)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 968)
+- **S0357** `List item: **C0269** `Module Boundaries and Ownership``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 543)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 975)
+- **S0358** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 544)
+- **S0359** `List item: **C0270** `Core modules``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 545)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 977)
+- **S0360** `List item: **C0271** `Ownership model``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 547)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 979)
+- **S0361** `List item: **C0272** `Test Data and Fixture Strategy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 549)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 988)
+- **S0362** `List item: Documents: `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 550)
+- **S0363** `List item: **C0273** `Fixture principles``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 551)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 990)
+- **S0364** `List item: **C0274** `Required fixture packs``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 553)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 992)
+- **S0365** `List item: **C0275** `Maintenance policy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 555)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 994)
+- **S0366** `List item: **C0276** `Contribution Workflow (SSOT)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 557)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1001)
+- **S0367** `List item: Documents: `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 558)
+- **S0368** `List item: **C0277** `Workflow``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 559)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1003)
+- **S0369** `List item: **C0278** `Review policy``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 561)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1007)
+- **S0370** `List item: **C0279** `SLA and escalation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 563)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1009)
+- **S0371** `List item: **C0280** `Definition of Done``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 565)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1016)
+- **S0372** `List item: Documents: `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 566)
+- **S0373** `List item: **C0281** `Done means all are true``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 567)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1018)
+- **S0374** `List item: **C0282** `Required evidence checklist``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 569)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1020)
+- **S0375** `List item: **C0283** `Not-done examples``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 571)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1022)
+- **S0376** `List item: **C0284** `Risk Register``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 573)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1029)
+- **S0377** `List item: Documents: `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 574)
+- **S0378** `List item: **C0285** `Active risks``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 575)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1031)
+- **S0379** `List item: **C0286** `Roadmap and Milestones``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 577)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1040)
+- **S0380** `List item: Documents: `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 578)
+- **S0381** `List item: **C0287** `Milestones``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 579)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1042)
+- **S0382** `List item: **C0288** `Exit criteria by milestone``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 581)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1044)
+- **S0383** `List item: **C0289** `Milestone deliverables (minimum)``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 583)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1046)
+- **S0384** `List item: **C0290** `Tracking rule``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 585)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1048)
+- **S0385** `List item: **C0291** `Scaffold Build Report``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 587)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1055)
+- **S0386** `List item: Documents: `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 588)
+- **S0387** `List item: **C0292** `Report summary``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 589)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1057)
+- **S0388** `List item: **C0293** `Verification completed``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 591)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1059)
+- **S0389** `List item: **C0294** `Remaining maintenance tasks``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 593)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1061)
+- **S0390** `List item: **C0295** `Evidence Package Guide``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 595)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1068)
+- **S0391** `List item: Documents: `from_scratch/ssot_canon/evidence/README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 596)
+- **S0392** `List item: **C0296** `Required evidence types``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 597)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1072)
+- **S0393** `List item: **C0297** `Storage convention``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 599)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1074)
+- **S0394** `List item: **C0298** `generated_at_utc``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 601)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1081)
+- **S0395** `List item: Documents: `from_scratch/ssot_canon/evidence/automation/ssot_report.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 602)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 741)
+- **S0396** `List item: **C0299** `status``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 603)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1083)
+- **S0397** `List item: **C0300** `checks``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 605)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1085)
+- **S0398** `List item: **C0301** `Release Evidence Template``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 607)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1093)
+- **S0399** `List item: Documents: `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 608)
+- **S0400** `List item: **C0302** `Release metadata``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 609)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1095)
+- **S0401** `List item: **C0303** `Verification command results``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 611)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1097)
+- **S0402** `List item: **C0304** `Contract and behavior deltas``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 613)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1099)
+- **S0403** `List item: **C0305** `Operational signoff``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 615)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1101)
+- **S0404** `List item: **C0306** `SSOT Change Evidence Template``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 617)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1108)
+- **S0405** `List item: Documents: `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 618)
+- **S0406** `List item: **C0307** `Change metadata``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 619)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1110)
+- **S0407** `List item: **C0308** `Documents/artifacts changed``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 621)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1112)
+- **S0408** `List item: **C0309** `Verification evidence``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 623)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1114)
+- **S0409** `List item: **C0310** `Traceability``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 625)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1116)
+- **S0410** `List item: **C0311** `Reviewer signoff``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 627)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1118)
+- **S0411** `List item: **C0312** `openapi``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 629)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1125)
+- **S0412** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 630)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 745)
+- **S0413** `List item: **C0313** `info``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 631)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1127)
+- **S0414** `List item: **C0314** `servers``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 633)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1131)
+- **S0415** `List item: **C0315** `security``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 635)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1133)
+- **S0416** `List item: **C0316** `paths``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 637)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1135)
+- **S0417** `List item: **C0317** `components``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 639)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1337)
+- **S0418** `List item: **C0318** `$schema``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 641)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1437)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1457)
+- **S0419** `List item: Documents: `from_scratch/ssot_canon/schemas/error-envelope.schema.json`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 642)
+- **S0420** `List item: **C0319** `$id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 643)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1439)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1459)
+- **S0421** `List item: **C0320** `title``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 645)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1441)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1461)
+- **S0422** `List item: **C0321** `type``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 647)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1443)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1463)
+- **S0423** `List item: **C0322** `required``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 649)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1445)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1465)
+- **S0424** `List item: **C0323** `additionalProperties``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 651)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1447)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1467)
+- **S0425** `List item: **C0324** `properties``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 653)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1449)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1469)
+- **S0426** `List item: **S0001** `GET /``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 658)
+- **S0427** `List item: **S0002** `GET /health``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 660)
+- **S0428** `List item: **S0003** `GET /.well-known/jwks.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 662)
+- **S0429** `List item: **S0004** `POST /console/owners``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 664)
+- **S0430** `List item: **S0005** `POST /api/auth/login``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 666)
+- **S0431** `List item: **S0006** `POST /api/auth/key-login``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 668)
+- **S0432** `List item: **S0007** `POST /api/auth/refresh``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 670)
+- **S0433** `List item: **S0008** `GET /api/feed``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 672)
+- **S0434** `List item: **S0009** `POST /api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 674)
+- **S0435** `List item: **S0010** `GET /api/posts/{postId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 676)
+- **S0436** `List item: **S0011** `PATCH /api/posts/{postId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 678)
+- **S0437** `List item: **S0012** `POST /api/posts/{postId}/flags``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 680)
+- **S0438** `List item: **S0013** `GET /api/posts/{postId}/comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 682)
+- **S0439** `List item: **S0014** `POST /api/posts/{postId}/comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 684)
+- **S0440** `List item: **S0015** `GET /console/api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 686)
+- **S0441** `List item: **S0016** `POST /console/api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 688)
+- **S0442** `List item: **S0017** `GET /console/api/keychains``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 690)
+- **S0443** `List item: **S0018** `POST /console/api/keychains``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 692)
+- **S0444** `List item: **S0019** `GET /console/api/keychains/{keychainId}/members``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 694)
+- **S0445** `List item: **S0020** `POST /console/api/keychains/{keychainId}/members``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 696)
+- **S0446** `List item: **S0021** `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 698)
+- **S0447** `List item: **S0022** `GET /console/api/keychains/{keychainId}/resolve``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 700)
+- **S0448** `List item: **S0023** `POST /console/api/invites``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 702)
+- **S0449** `List item: **S0024** `POST /console/api/keys``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 704)
+- **S0450** `List item: **S0025** `POST /console/api/keys/{keyId}/lifecycle``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 706)
+- **S0451** `List item: **S0026** `POST /console/api/posts/{postId}/moderation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 708)
+- **S0452** `List item: **S0027** `POST /console/api/posts/{postId}/comments/{commentId}/moderation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 710)
+- **S0453** `List item: **S0028** `Any protected route with missing token``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 712)
+- **S0454** `List item: **S0029** `principals``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 714)
+- **S0455** `List item: **S0030** `principal_emails``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 716)
+- **S0456** `List item: **S0031** `credentials``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 718)
+- **S0457** `List item: **S0032** `token_families``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 720)
+- **S0458** `List item: **S0033** `delegation_envelopes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 722)
+- **S0459** `List item: **S0034** `keychain_memberships``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 724)
+- **S0460** `List item: **S0035** `keychain_effective_snapshots``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 726)
+- **S0461** `List item: **S0036** `invite_receipts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 728)
+- **S0462** `List item: **S0037** `posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 730)
+- **S0463** `List item: **S0038** `post_revisions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 732)
+- **S0464** `List item: **S0039** `post_flags``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 734)
+- **S0465** `List item: **S0040** `comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 736)
+- **S0466** `List item: **S0041** `moderation_actions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 738)
+- **S0467** `List item: **S0042** `lint``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 740)
+- **S0468** `List item: **S0043** `sync_check``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 742)
+- **S0469** `List item: **S0044** `title``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 744)
+- **S0470** `List item: **S0045** `version``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 746)
+- **S0471** `List item: **S0046** `description``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 748)
+- **S0472** `List item: **S0047** `get``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 750)
+- **S0473** `List item: **S0048** `summary``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 752)
+- **S0474** `List item: **S0049** `security``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 754)
+- **S0475** `List item: **S0050** `responses``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 756)
+- **S0476** `List item: **S0051** `200``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 758)
+- **S0477** `List item: **S0052** `content``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 760)
+- **S0478** `List item: **S0053** `schema``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 762)
+- **S0479** `List item: **S0054** `type``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 764)
+- **S0480** `List item: **S0055** `properties``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 766)
+- **S0481** `List item: **S0056** `keys``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 768)
+- **S0482** `List item: **S0057** `items``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 770)
+- **S0483** `List item: **S0058** `parameters``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 772)
+- **S0484** `List item: **S0059** `name``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 774)
+- **S0485** `List item: **S0060** `required``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 776)
+- **S0486** `List item: **S0061** `post``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 778)
+- **S0487** `List item: **S0062** `requestBody``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 780)
+- **S0488** `List item: **S0063** `201``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 782)
+- **S0489** `List item: **S0064** `409``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 784)
+- **S0490** `List item: **S0065** `422``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 786)
+- **S0491** `List item: **S0066** `401``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 788)
+- **S0492** `List item: **S0067** `403``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 790)
+- **S0493** `List item: **S0068** `404``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 792)
+- **S0494** `List item: **S0069** `patch``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 794)
+- **S0495** `List item: **S0070** `delete``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 796)
+- **S0496** `List item: **S0071** `securitySchemes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 798)
+- **S0497** `List item: **S0072** `bearerAuth``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 800)
+- **S0498** `List item: **S0073** `scheme``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 802)
+- **S0499** `List item: **S0074** `bearerFormat``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 804)
+- **S0500** `List item: **S0075** `PostId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 806)
+- **S0501** `List item: **S0076** `in``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 808)
+- **S0502** `List item: **S0077** `KeyId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 810)
+- **S0503** `List item: **S0078** `CommentId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 812)
+- **S0504** `List item: **S0079** `KeychainId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 814)
+- **S0505** `List item: **S0080** `MemberKeyId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 816)
+- **S0506** `List item: **S0081** `Success``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 818)
+- **S0507** `List item: **S0082** `Error``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 820)
+- **S0508** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/error-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 821)
+- **S0509** `List item: **S0083** `schemas``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 822)
+- **S0510** `List item: **S0084** `Meta``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 824)
+- **S0511** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/error-envelope.schema.json`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 825)
+- **S0512** `List item: **S0085** `envelope_version``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 826)
+- **S0513** `List item: **S0086** `timestamp_utc``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 828)
+- **S0514** `List item: **S0087** `SuccessEnvelope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 830)
+- **S0515** `List item: **S0088** `data``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 832)
+- **S0516** `List item: Documents: `from_scratch/ssot_canon/openapi/cre8.v1.yaml`, `from_scratch/ssot_canon/schemas/success-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 833)
+- **S0517** `List item: **S0089** `ErrorEnvelope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 834)
+- **S0518** `List item: **S0090** `code``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 836)
+- **S0519** `List item: **S0091** `message``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 838)
+- **S0520** `List item: **S0092** `details``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 840)
+- **S0521** `List item: **S0093** `request_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 842)
+- **S0522** `List item: **S0094** `OwnerSignupRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 844)
+- **S0523** `List item: **S0095** `email``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 846)
+- **S0524** `List item: **S0096** `password``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 848)
+- **S0525** `List item: **S0097** `OwnerLoginRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 850)
+- **S0526** `List item: **S0098** `KeyLoginRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 852)
+- **S0527** `List item: **S0099** `key_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 854)
+- **S0528** `List item: **S0100** `api_key``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 856)
+- **S0529** `List item: **S0101** `RefreshRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 858)
+- **S0530** `List item: **S0102** `refresh_token``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 860)
+- **S0531** `List item: **S0103** `KeychainMemberAddRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 862)
+- **S0532** `List item: **S0104** `member_key_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 864)
+- **S0533** `List item: **S0105** `role_hint``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INDEX.md` (line 866)
+- **S0534** `List item: **Location:** `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 6)
+- **S0535** `List item: **Components identified:** 5`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 7)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 22)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 37)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 52)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 67)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 99)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 114)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 142)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 157)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 224)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 398)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 872)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 887)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 902)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 917)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 932)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 999)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1038)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1091)
+- **S0536** `List item: *(No explicit sub-components detected in heading/key structure.)*`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 10)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 25)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 40)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 55)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 70)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 85)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 102)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 117)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 132)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 145)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 160)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 175)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 188)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 201)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 214)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 227)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 242)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 259)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 272)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 293)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 318)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 343)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 356)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 401)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 416)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 439)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 456)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 481)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 490)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 507)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 526)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 539)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 558)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 577)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 598)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 619)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 642)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 663)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 680)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 703)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 720)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 733)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 752)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 769)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 782)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 799)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 812)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 833)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 840)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 853)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 864)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 875)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 890)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 905)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 920)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 935)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 950)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 963)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 976)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 989)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1002)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1017)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1030)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1041)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1056)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1069)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1082)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1094)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1109)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1126)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1438)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1458)
+- **S0537** `List item: **Location:** `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 21)
+- **S0538** `List item: **Location:** `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 36)
+- **S0539** `List item: **Location:** `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 51)
+- **S0540** `List item: **Location:** `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 66)
+- **S0541** `List item: **Location:** `from_scratch/README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 81)
+- **S0542** `List item: **Components identified:** 6`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 82)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 239)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 436)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 487)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 660)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 700)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 749)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 779)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1106)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1123)
+- **S0543** `List item: **Location:** `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 98)
+- **S0544** `List item: **Location:** `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 113)
+- **S0545** `List item: **Location:** `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 128)
+- **S0546** `List item: **Components identified:** 4`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 129)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 172)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 185)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 198)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 211)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 256)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 340)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 453)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 523)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 717)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 766)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 796)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 837)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 947)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 960)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 973)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 986)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1014)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1053)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1066)
+- **S0547** `List item: **Location:** `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 141)
+- **S0548** `List item: **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 156)
+- **S0549** `List item: **Location:** `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 171)
+- **S0550** `List item: **Location:** `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 184)
+- **S0551** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 197)
+- **S0552** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 210)
+- **S0553** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 223)
+- **S0554** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 238)
+- **S0555** `List item: **Location:** `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 255)
+- **S0556** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 268)
+- **S0557** `List item: **Components identified:** 8`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 269)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 353)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 574)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 595)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 639)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 809)
+- **S0558** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 289)
+- **S0559** `List item: **Components identified:** 10`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 290)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 315)
+- **S0560** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 314)
+- **S0561** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 339)
+- **S0562** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 352)
+- **S0563** `List item: **C0117.S0001** `GET /``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 362)
+- **S0564** `List item: **C0117.S0002** `GET /health``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 363)
+- **S0565** `List item: **C0117.S0003** `GET /.well-known/jwks.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 364)
+- **S0566** `List item: **C0117.S0004** `POST /console/owners``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 365)
+- **S0567** `List item: **C0117.S0005** `POST /api/auth/login``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 366)
+- **S0568** `List item: **C0117.S0006** `POST /api/auth/key-login``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 367)
+- **S0569** `List item: **C0117.S0007** `POST /api/auth/refresh``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 368)
+- **S0570** `List item: **C0118.S0008** `GET /api/feed``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 370)
+- **S0571** `List item: **C0118.S0009** `POST /api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 371)
+- **S0572** `List item: **C0118.S0010** `GET /api/posts/{postId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 372)
+- **S0573** `List item: **C0118.S0011** `PATCH /api/posts/{postId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 373)
+- **S0574** `List item: **C0118.S0012** `POST /api/posts/{postId}/flags``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 374)
+- **S0575** `List item: **C0118.S0013** `GET /api/posts/{postId}/comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 375)
+- **S0576** `List item: **C0118.S0014** `POST /api/posts/{postId}/comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 376)
+- **S0577** `List item: **C0119.S0015** `GET /console/api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 378)
+- **S0578** `List item: **C0119.S0016** `POST /console/api/posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 379)
+- **S0579** `List item: **C0119.S0017** `GET /console/api/keychains``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 380)
+- **S0580** `List item: **C0119.S0018** `POST /console/api/keychains``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 381)
+- **S0581** `List item: **C0119.S0019** `GET /console/api/keychains/{keychainId}/members``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 382)
+- **S0582** `List item: **C0119.S0020** `POST /console/api/keychains/{keychainId}/members``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 383)
+- **S0583** `List item: **C0119.S0021** `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 384)
+- **S0584** `List item: **C0119.S0022** `GET /console/api/keychains/{keychainId}/resolve``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 385)
+- **S0585** `List item: **C0119.S0023** `POST /console/api/invites``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 386)
+- **S0586** `List item: **C0119.S0024** `POST /console/api/keys``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 387)
+- **S0587** `List item: **C0119.S0025** `POST /console/api/keys/{keyId}/lifecycle``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 388)
+- **S0588** `List item: **C0119.S0026** `POST /console/api/posts/{postId}/moderation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 389)
+- **S0589** `List item: **C0119.S0027** `POST /console/api/posts/{postId}/comments/{commentId}/moderation``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 390)
+- **S0590** `List item: **C0120.S0028** `Any protected route with missing token``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 392)
+- **S0591** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 397)
+- **S0592** `List item: **Location:** `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 412)
+- **S0593** `List item: **Components identified:** 9`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 413)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 616)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 677)
+- **S0594** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 435)
+- **S0595** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 452)
+- **S0596** `List item: **C0138.S0029** `principals``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 458)
+- **S0597** `List item: **C0138.S0030** `principal_emails``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 459)
+- **S0598** `List item: **C0138.S0031** `credentials``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 460)
+- **S0599** `List item: **C0138.S0032** `token_families``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 461)
+- **S0600** `List item: **C0138.S0033** `delegation_envelopes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 462)
+- **S0601** `List item: **C0138.S0034** `keychain_memberships``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 463)
+- **S0602** `List item: **C0138.S0035** `keychain_effective_snapshots``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 464)
+- **S0603** `List item: **C0138.S0036** `invite_receipts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 465)
+- **S0604** `List item: **C0138.S0037** `posts``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 466)
+- **S0605** `List item: **C0138.S0038** `post_revisions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 467)
+- **S0606** `List item: **C0138.S0039** `post_flags``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 468)
+- **S0607** `List item: **C0138.S0040** `comments``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 469)
+- **S0608** `List item: **C0138.S0041** `moderation_actions``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 470)
+- **S0609** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/ERD.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 477)
+- **S0610** `List item: **Components identified:** 2`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 478)
+- **S0611** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 486)
+- **S0612** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 503)
+- **S0613** `List item: **Components identified:** 7`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 504)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 536)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 555)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 730)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1435)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1455)
+- **S0614** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 522)
+- **S0615** `List item: **Location:** `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 535)
+- **S0616** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 554)
+- **S0617** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 573)
+- **S0618** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 594)
+- **S0619** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 615)
+- **S0620** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 638)
+- **S0621** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 659)
+- **S0622** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 676)
+- **S0623** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 699)
+- **S0624** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 716)
+- **S0625** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 729)
+- **S0626** `List item: **Location:** `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 748)
+- **S0627** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 765)
+- **S0628** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 778)
+- **S0629** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 795)
+- **S0630** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 808)
+- **S0631** `List item: **Location:** `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 829)
+- **S0632** `List item: **Components identified:** 1`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 830)
+- **S0633** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 836)
+- **S0634** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 849)
+- **S0635** `List item: **Components identified:** 3`
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 850)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 861)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1027)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1079)
+- **S0636** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 860)
+- **S0637** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 871)
+- **S0638** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 886)
+- **S0639** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 901)
+- **S0640** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 916)
+- **S0641** `List item: **Location:** `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 931)
+- **S0642** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 946)
+- **S0643** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 959)
+- **S0644** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 972)
+- **S0645** `List item: **Location:** `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 985)
+- **S0646** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 998)
+- **S0647** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1013)
+- **S0648** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1026)
+- **S0649** `List item: **Location:** `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1037)
+- **S0650** `List item: **Location:** `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1052)
+- **S0651** `List item: **Location:** `from_scratch/ssot_canon/evidence/README.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1065)
+- **S0652** `List item: **Location:** `from_scratch/ssot_canon/evidence/automation/ssot_report.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1078)
+- **S0653** `List item: **C0300.S0042** `lint``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1086)
+- **S0654** `List item: **C0300.S0043** `sync_check``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1087)
+- **S0655** `List item: **Location:** `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1090)
+- **S0656** `List item: **Location:** `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1105)
+- **S0657** `List item: **Location:** `from_scratch/ssot_canon/openapi/cre8.v1.yaml``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1122)
+- **S0658** `List item: **C0313.S0044** `title``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1128)
+- **S0659** `List item: **C0313.S0045** `version``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1129)
+- **S0660** `List item: **C0313.S0046** `description``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1130)
+- **S0661** `List item: **C0316.S0047** `get``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1136)
+- **S0662** `List item: **C0316.S0048** `summary``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1137)
+- **S0663** `List item: **C0316.S0049** `security``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1138)
+- **S0664** `List item: **C0316.S0050** `responses``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1139)
+- **S0665** `List item: **C0316.S0051** `200``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1140)
+- **S0666** `List item: **C0316.S0046** `description``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1141)
+- **S0667** `List item: **C0316.S0052** `content``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1142)
+- **S0668** `List item: **C0316.S0053** `schema``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1143)
+- **S0669** `List item: **C0316.S0054** `type``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1160)
+- **S0670** `List item: **C0316.S0055** `properties``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1161)
+- **S0671** `List item: **C0316.S0056** `keys``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1162)
+- **S0672** `List item: **C0316.S0057** `items``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1164)
+- **S0673** `List item: **C0316.S0058** `parameters``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1169)
+- **S0674** `List item: **C0316.S0059** `name``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1170)
+- **S0675** `List item: **C0316.S0060** `required``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1171)
+- **S0676** `List item: **C0316.S0061** `post``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1175)
+- **S0677** `List item: **C0316.S0062** `requestBody``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1178)
+- **S0678** `List item: **C0316.S0063** `201``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1183)
+- **S0679** `List item: **C0316.S0064** `409``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1184)
+- **S0680** `List item: **C0316.S0065** `422``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1185)
+- **S0681** `List item: **C0316.S0066** `401``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1195)
+- **S0682** `List item: **C0316.S0067** `403``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1230)
+- **S0683** `List item: **C0316.S0068** `404``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1243)
+- **S0684** `List item: **C0316.S0069** `patch``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1244)
+- **S0685** `List item: **C0316.S0070** `delete``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1302)
+- **S0686** `List item: **C0317.S0071** `securitySchemes``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1338)
+- **S0687** `List item: **C0317.S0072** `bearerAuth``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1339)
+- **S0688** `List item: **C0317.S0054** `type``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1340)
+- **S0689** `List item: **C0317.S0073** `scheme``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1341)
+- **S0690** `List item: **C0317.S0074** `bearerFormat``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1342)
+- **S0691** `List item: **C0317.S0058** `parameters``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1343)
+- **S0692** `List item: **C0317.S0075** `PostId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1344)
+- **S0693** `List item: **C0317.S0076** `in``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1345)
+- **S0694** `List item: **C0317.S0059** `name``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1346)
+- **S0695** `List item: **C0317.S0060** `required``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1347)
+- **S0696** `List item: **C0317.S0053** `schema``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1348)
+- **S0697** `List item: **C0317.S0077** `KeyId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1349)
+- **S0698** `List item: **C0317.S0078** `CommentId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1354)
+- **S0699** `List item: **C0317.S0079** `KeychainId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1359)
+- **S0700** `List item: **C0317.S0080** `MemberKeyId``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1364)
+- **S0701** `List item: **C0317.S0050** `responses``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1369)
+- **S0702** `List item: **C0317.S0081** `Success``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1370)
+- **S0703** `List item: **C0317.S0046** `description``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1371)
+- **S0704** `List item: **C0317.S0052** `content``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1372)
+- **S0705** `List item: **C0317.S0082** `Error``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1374)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1394)
+- **S0706** `List item: **C0317.S0083** `schemas``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1378)
+- **S0707** `List item: **C0317.S0084** `Meta``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1379)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1389)
+- **S0708** `List item: **C0317.S0055** `properties``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1381)
+- **S0709** `List item: **C0317.S0085** `envelope_version``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1382)
+- **S0710** `List item: **C0317.S0086** `timestamp_utc``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1383)
+- **S0711** `List item: **C0317.S0087** `SuccessEnvelope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1384)
+- **S0712** `List item: **C0317.S0088** `data``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1388)
+- **S0713** `List item: **C0317.S0089** `ErrorEnvelope``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1390)
+- **S0714** `List item: **C0317.S0090** `code``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1398)
+- **S0715** `List item: **C0317.S0091** `message``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1399)
+- **S0716** `List item: **C0317.S0092** `details``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1400)
+- **S0717** `List item: **C0317.S0093** `request_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1401)
+- **S0718** `List item: **C0317.S0094** `OwnerSignupRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1403)
+- **S0719** `List item: **C0317.S0095** `email``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1407)
+- **S0720** `List item: **C0317.S0096** `password``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1408)
+- **S0721** `List item: **C0317.S0097** `OwnerLoginRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1409)
+- **S0722** `List item: **C0317.S0098** `KeyLoginRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1415)
+- **S0723** `List item: **C0317.S0099** `key_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1419)
+- **S0724** `List item: **C0317.S0100** `api_key``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1420)
+- **S0725** `List item: **C0317.S0101** `RefreshRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1421)
+- **S0726** `List item: **C0317.S0102** `refresh_token``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1425)
+- **S0727** `List item: **C0317.S0103** `KeychainMemberAddRequest``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1426)
+- **S0728** `List item: **C0317.S0104** `member_key_id``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1430)
+- **S0729** `List item: **C0317.S0105** `role_hint``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1431)
+- **S0730** `List item: **Location:** `from_scratch/ssot_canon/schemas/error-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1434)
+- **S0731** `List item: **C0324.S0082** `error``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1450)
+- **S0732** `List item: **C0324.S0084** `meta``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1451)
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1471)
+- **S0733** `List item: **Location:** `from_scratch/ssot_canon/schemas/success-envelope.schema.json``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1454)
+- **S0734** `List item: **C0324.S0088** `data``
+  - `from_scratch/FROM_SCRATCH_COMPONENT_INVENTORY.md` (line 1470)
+- **S0735** `List item: implemented with concrete normative instructions,`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 8)
+- **S0736** `List item: linked to at least one verification/evidence path,`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 9)
+- **S0737** `List item: consistent with related contracts,`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 10)
+- **S0738** `List item: free of unresolved placeholders.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 11)
+- **S0739** `List item: Structural coverage: complete across governance, architecture, contracts, security, operations, traceability, decisions, implementation guidance, and program management.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 14)
+- **S0740** `List item: Substantive maturity: high and implementation-oriented across contracts/data/security/verification; remaining work is ongoing calibration and release-cycle evidence quality.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 15)
+- **S0741** `List item: Weekly during active rebuild phase.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 18)
+- **S0742** `List item: Per-release thereafter.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 19)
+- **S0743** `List item: Updated `KNOWN_GAPS_TRACKER.md` entries.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 22)
+- **S0744** `List item: Updated `TRACEABILITY_MATRIX.md` rows when behavior changes.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 23)
+- **S0745** `List item: Evidence attachment using templates under `ssot_canon/evidence/templates/`.`
+  - `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md` (line 24)
+- **S0746** `List item: Governance/index and ownership metadata.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 10)
+- **S0747** `List item: Product/architecture/system contracts.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 11)
+- **S0748** `List item: Route, authz, and data model contract surfaces.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 12)
+- **S0749** `List item: Operations/readiness/verification controls.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 13)
+- **S0750** `List item: Program and evidence governance.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 14)
+- **S0751** `List item: Lint rule: reject placeholder language in adopted docs.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 17)
+- **S0752** `List item: Link check: reject unresolved cross-document references.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 18)
+- **S0753** `List item: Evidence check: PRs touching SSOT must include change-impact map.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 19)
+- **S0754** `List item: clear ownership,`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 23)
+- **S0755** `List item: actionable normative section,`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 24)
+- **S0756** `List item: explicit verification mechanism,`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 25)
+- **S0757** `List item: cross-reference integrity.`
+  - `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md` (line 26)
+- **S0758** `List item: **Canon scaffold**: establish governance/index and machine contracts.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 10)
+- **S0759** `List item: **Core contract set**: product/system spec, API/route/auth/data/security docs.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 11)
+- **S0760** `List item: **Operational hardening**: verification, readiness gates, smoke contracts, SLOs.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 12)
+- **S0761** `List item: **Traceability and governance**: matrices, decision logs, change control, evidence templates.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 13)
+- **S0762** `List item: Baseline interfaces: `openapi/cre8.v1.yaml`, envelope schemas.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 16)
+- **S0763** `List item: Canonical route behavior: `ROUTE_INVENTORY_REFERENCE.md` + `ACCEPTANCE_CRITERIA_MATRIX.md`.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 17)
+- **S0764** `List item: Security and authorization baseline: delegation/keychain/lifecycle controls.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 18)
+- **S0765** `List item: Data model baseline: entity contracts and invariants.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 19)
+- **S0766** `List item: Program controls: DoD, risk register, roadmap, contribution workflow.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 20)
+- **S0767** `List item: No generic placeholders in normative sections.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 23)
+- **S0768** `List item: Every route family has positive + negative acceptance criteria.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 24)
+- **S0769** `List item: Every policy-critical decision appears in decision tables and traceability matrix.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 25)
+- **S0770** `List item: Release checklist and evidence templates are executable by on-call teams.`
+  - `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md` (line 26)
+- **S0771** `List item: Product behavior and architecture boundaries.`
+  - `from_scratch/README.md` (line 10)
+- **S0772** `List item: API/UI/runtime contracts and data/security invariants.`
+  - `from_scratch/README.md` (line 11)
+- **S0773** `List item: Delivery controls: verification, release gates, traceability, and program governance.`
+  - `from_scratch/README.md` (line 12)
+- **S0774** `List item: `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md``
+  - `from_scratch/README.md` (line 15)
+- **S0775** `List item: `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md``
+  - `from_scratch/README.md` (line 16)
+- **S0776** `List item: `ssot_canon/00_governance/SSOT_INDEX.md``
+  - `from_scratch/README.md` (line 17)
+- **S0777** `List item: `ssot_canon/10_product_and_architecture/*``
+  - `from_scratch/README.md` (line 18)
+- **S0778** `List item: `ssot_canon/20_contracts/*``
+  - `from_scratch/README.md` (line 19)
+- **S0779** `List item: `ssot_canon/30_data_and_security/*``
+  - `from_scratch/README.md` (line 20)
+- **S0780** `List item: `ssot_canon/40_operations_and_quality/*``
+  - `from_scratch/README.md` (line 21)
+- **S0781** `List item: `ssot_canon/50_traceability_and_automation/*``
+  - `from_scratch/README.md` (line 22)
+- **S0782** `List item: `ssot_canon/60_decisions/*``
+  - `from_scratch/README.md` (line 23)
+- **S0783** `List item: `ssot_canon/70_implementation_guidance/*``
+  - `from_scratch/README.md` (line 24)
+- **S0784** `List item: `ssot_canon/80_program_management/*``
+  - `from_scratch/README.md` (line 25)
+- **S0785** `List item: OpenAPI + envelope schemas are machine source-of-truth for interface shape.`
+  - `from_scratch/README.md` (line 28)
+- **S0786** `List item: Route inventory + acceptance criteria are source-of-truth for behavior.`
+  - `from_scratch/README.md` (line 29)
+- **S0787** `List item: Data model, authorization, and security controls must remain mutually consistent.`
+  - `from_scratch/README.md` (line 30)
+- **S0788** `List item: Any behavior change requires traceability update in the same PR.`
+  - `from_scratch/README.md` (line 31)
+- **S0789** `List item: specific enough to implement without guessing,`
+  - `from_scratch/README.md` (line 35)
+- **S0790** `List item: testable with explicit commands/evidence,`
+  - `from_scratch/README.md` (line 36)
+- **S0791** `List item: traceable to code and operations controls,`
+  - `from_scratch/README.md` (line 37)
+- **S0792** `List item: internally link-consistent within this folder.`
+  - `from_scratch/README.md` (line 38)
+- **S0793** `List item: Synchronized canonical SSOT files and machine artifacts for from-scratch canon paths.`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 8)
+- **S0794** `List item: Fully authored remaining governance, architecture, decisions, implementation guidance, and program-management documents.`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 9)
+- **S0795** `List item: Removed draft markers and unchecked worklist markers across the from-scratch document set.`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 10)
+- **S0796** `List item: `from_scratch/CORE_IDENTITY_AND_VALUE_PROPOSITION.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 13)
+- **S0797** `List item: `from_scratch/FROM_SCRATCH_AUTHORING_GAP_REPORT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 14)
+- **S0798** `List item: `from_scratch/FROM_SCRATCH_DOCUMENT_COMPLETION_REPORT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 15)
+- **S0799** `List item: `from_scratch/MASTER_PLAN_SSOT_CANON_SCAFFOLD_AND_STUBS.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 16)
+- **S0800** `List item: `from_scratch/PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 17)
+- **S0801** `List item: `from_scratch/README.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 18)
+- **S0802** `List item: `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 19)
+- **S0803** `List item: `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 20)
+- **S0804** `List item: `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 21)
+- **S0805** `List item: `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 22)
+- **S0806** `List item: `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 23)
+- **S0807** `List item: `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 24)
+- **S0808** `List item: `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 25)
+- **S0809** `List item: `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 26)
+- **S0810** `List item: `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 27)
+- **S0811** `List item: `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 28)
+- **S0812** `List item: `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 29)
+- **S0813** `List item: `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 30)
+- **S0814** `List item: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 31)
+- **S0815** `List item: `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 32)
+- **S0816** `List item: `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 33)
+- **S0817** `List item: `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 34)
+- **S0818** `List item: `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 35)
+- **S0819** `List item: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 36)
+- **S0820** `List item: `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 37)
+- **S0821** `List item: `from_scratch/ssot_canon/30_data_and_security/ERD.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 38)
+- **S0822** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 39)
+- **S0823** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 40)
+- **S0824** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 41)
+- **S0825** `List item: `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 42)
+- **S0826** `List item: `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 43)
+- **S0827** `List item: `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 44)
+- **S0828** `List item: `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 45)
+- **S0829** `List item: `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 46)
+- **S0830** `List item: `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 47)
+- **S0831** `List item: `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 48)
+- **S0832** `List item: `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 49)
+- **S0833** `List item: `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 50)
+- **S0834** `List item: `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 51)
+- **S0835** `List item: `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 52)
+- **S0836** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 53)
+- **S0837** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 54)
+- **S0838** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 55)
+- **S0839** `List item: `from_scratch/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 56)
+- **S0840** `List item: `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 57)
+- **S0841** `List item: `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 58)
+- **S0842** `List item: `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 59)
+- **S0843** `List item: `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 60)
+- **S0844** `List item: `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 61)
+- **S0845** `List item: `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 62)
+- **S0846** `List item: `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 63)
+- **S0847** `List item: `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 64)
+- **S0848** `List item: `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 65)
+- **S0849** `List item: `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 66)
+- **S0850** `List item: `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 67)
+- **S0851** `List item: `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 68)
+- **S0852** `List item: `from_scratch/ssot_canon/evidence/README.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 69)
+- **S0853** `List item: `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 70)
+- **S0854** `List item: `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 71)
+- **S0855** `List item: `from_scratch/ssot_canon/openapi/cre8.v1.yaml``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 72)
+- **S0856** `List item: `from_scratch/ssot_canon/schemas/error-envelope.schema.json``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 73)
+- **S0857** `List item: `from_scratch/ssot_canon/schemas/success-envelope.schema.json``
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 74)
+- **S0858** `List item: None`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 77)
+- **S0859** `List item: **Finished:** no draft marker and no placeholder/work-in-progress markers detected.`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 80)
+- **S0860** `List item: **Unfinished:** contains draft status and/or placeholder/work-in-progress markers.`
+  - `from_scratch/SESSION_COMPLETION_STATUS_REPORT_2026-04-08.md` (line 81)
+- **S0861** `List item: PHP application stack with PSR-7 HTTP model and contract-first interfaces.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 7)
+- **S0862** `List item: JSON envelope standard for every API response path.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 8)
+- **S0863** `List item: JWT-based owner/key authentication with lifecycle controls.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 9)
+- **S0864** `List item: Database schema supporting principals, delegations, keychains, content, moderation, and auditability.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 10)
+- **S0865** `List item: Contract-first: OpenAPI/schema changes happen before handler implementation.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 13)
+- **S0866** `List item: Policy-first: authorization decisions must be table-driven and testable.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 14)
+- **S0867** `List item: Deterministic operations: startup assertions + health + smoke commands are release-gated.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 15)
+- **S0868** `List item: Observability-by-default: request_id propagation, event families, measurable SLOs.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 16)
+- **S0869** `List item: Bootstrap/runtime wiring + middleware skeleton.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 19)
+- **S0870** `List item: Public/auth surfaces and envelope responder.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 20)
+- **S0871** `List item: Gateway content routes + permission/scope guards.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 21)
+- **S0872** `List item: Console governance routes (keys/keychains/moderation/invites).`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 22)
+- **S0873** `List item: Security hardening + abuse-case tests.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 23)
+- **S0874** `List item: Operationalization + release gates.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 24)
+- **S0875** `List item: Zero undocumented route behavior.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 27)
+- **S0876** `List item: Explicit failure mapping for authz/validation/internal errors.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 28)
+- **S0877** `List item: Backward-compatibility policy enforced during contract updates.`
+  - `from_scratch/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` (line 29)
+- **S0878** `List item: Prefer from-scratch canon files as primary targets.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 10)
+- **S0879** `List item: Use legacy SSOT/docs only as source material; normalize into this canon’s naming and structure.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 11)
+- **S0880** `List item: Do not leave scaffold language in adopted docs.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 12)
+- **S0881** `List item: Enforce intra-folder reference integrity.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 13)
+- **S0882** `List item: Always produce developer-actionable outputs (contracts, tables, commands, failure behavior).`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 14)
+- **S0883** `List item: Identify impacted docs by capability.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 17)
+- **S0884** `List item: Update machine artifacts if interface changes.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 18)
+- **S0885** `List item: Update acceptance/verification/traceability artifacts.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 19)
+- **S0886** `List item: Add or update decision log entry.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 20)
+- **S0887** `List item: Update gaps/evidence docs as needed.`
+  - `from_scratch/prompts/LLM_PROMPT_BUILD_SSOT_CANON.md` (line 21)
+- **S0888** `List item: **Class A (breaking contract):** route/schema/auth/data invariant changes.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 10)
+- **S0889** `List item: **Class B (behavioral):** acceptance criteria, policy decision, readiness gate changes.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 11)
+- **S0890** `List item: **Class C (editorial):** wording/formatting without normative impact.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 12)
+- **S0891** `List item: Class A: architecture + security + operations approvers required.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 15)
+- **S0892** `List item: Class B: relevant domain owner + QA reviewer.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 16)
+- **S0893** `List item: Class C: single maintainer review.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 17)
+- **S0894** `List item: Change-impact map (template in traceability folder).`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 20)
+- **S0895** `List item: Updated traceability rows.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 21)
+- **S0896** `List item: Verification evidence for changed behavior.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 22)
+- **S0897** `List item: Decision log update when rationale changes policy/architecture.`
+  - `from_scratch/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` (line 23)
+- **S0898** `List item: `draft`: exploratory, non-binding.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 7)
+- **S0899** `List item: `adopted`: normative and release-governing.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 8)
+- **S0900** `List item: `deprecated`: retained for history; not authoritative.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 9)
+- **S0901** `List item: Keep references current and lint-clean.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 21)
+- **S0902** `List item: Ensure verification commands remain executable and evidence-producing.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 22)
+- **S0903** `List item: Reject ambiguous normative language.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 23)
+- **S0904** `List item: Review metadata (`Status`, `Last updated`) on every modified adopted file.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 24)
+- **S0905** `List item: Escalate unresolved cross-domain conflicts to architecture owner before merge.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 25)
+- **S0906** `List item: Standard SSOT change: owner response within 2 business days.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 28)
+- **S0907** `List item: Security-impacting change: security owner triage within 1 business day.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 29)
+- **S0908** `List item: Release-blocking change: same-day owner acknowledgment.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` (line 30)
+- **S0909** `List item: Purpose`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 7)
+- **S0910** `List item: Scope`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 8)
+- **S0911** `List item: Normative rules (MUST/SHOULD language)`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 9)
+- **S0912** `List item: Failure behavior / edge cases`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 10)
+- **S0913** `List item: Verification (automated + manual evidence)`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 11)
+- **S0914** `List item: Related docs`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 12)
+- **S0915** `List item: Prefer tables for policy and decision logic.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 15)
+- **S0916** `List item: Use stable naming (all-caps filenames in this canon).`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 16)
+- **S0917** `List item: Avoid vague verbs (e.g., “handle appropriately”); specify expected outcomes.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 17)
+- **S0918** `List item: Include explicit error/status mapping when behavior can fail.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 18)
+- **S0919** `List item: Every capability entry should map route -> policy -> service -> tests.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 21)
+- **S0920** `List item: Every new invariant should appear in both contract and verification documents.`
+  - `from_scratch/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` (line 22)
+- **S0921** `List item: `00_governance/` — ownership, policy, standards.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 7)
+- **S0922** `List item: `10_product_and_architecture/` — system intent and boundaries.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 8)
+- **S0923** `List item: `20_contracts/` — API, authorization, error, UI runtime contracts.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 9)
+- **S0924** `List item: `30_data_and_security/` — schema, controls, threat and abuse model.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 10)
+- **S0925** `List item: `40_operations_and_quality/` — acceptance, verification, readiness.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 11)
+- **S0926** `List item: `50_traceability_and_automation/` — change impact and lint/traceability controls.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 12)
+- **S0927** `List item: `60_decisions/` — ADR workflow + decision history.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 13)
+- **S0928** `List item: `70_implementation_guidance/` — module/version/migration/test-data guidance.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 14)
+- **S0929** `List item: `80_program_management/` — workflow, DoD, risk, roadmap.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 15)
+- **S0930** `List item: `openapi/cre8.v1.yaml``
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 18)
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 48)
+- **S0931** `List item: `schemas/success-envelope.schema.json``
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 19)
+- **S0932** `List item: `schemas/error-envelope.schema.json``
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 20)
+- **S0933** `List item: machine artifacts, 2) contracts/security docs, 3) operations docs, 4) program docs.`
+  - `from_scratch/ssot_canon/00_governance/SSOT_INDEX.md` (line 24)
+- **S0934** `List item: **Public/bootstrap** (`/`, `/health`, `/ui/*`, owner signup/auth)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 8)
+- **S0935** `List item: **Gateway** (`/api/*`) for delegated-key content actions`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 9)
+- **S0936** `List item: **Console** (`/console/api/*`) for owner governance actions`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 10)
+- **S0937** `List item: HTTP ingress + middleware pipeline`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 13)
+- **S0938** `List item: Route handlers (surface-scoped)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 14)
+- **S0939** `List item: Domain services (auth, keys, keychains, content, moderation)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 15)
+- **S0940** `List item: Persistence layer (transactional data model)`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 16)
+- **S0941** `List item: Observability + audit emissions`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 17)
+- **S0942** `List item: Console and gateway auth contexts are never interchangeable.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 20)
+- **S0943** `List item: Authorization decision logic is centralized and table-driven.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 21)
+- **S0944** `List item: Data invariants are enforced both in service layer and schema constraints.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` (line 22)
+- **S0945** `List item: **Owner principal**: governance authority for console operations.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 7)
+- **S0946** `List item: **Key principal**: delegated actor for gateway operations.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 8)
+- **S0947** `List item: **Key class**: `primary_author`, `secondary_author`, `use`, `keychain`.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 9)
+- **S0948** `List item: **Delegation envelope**: permission/scope/expiry bounds of delegated authority.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 10)
+- **S0949** `List item: **Lifecycle status**: active/suspended/cancelled/revoked state affecting authz.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 13)
+- **S0950** `List item: **Token family**: refresh lineage used for replay protection and rotation.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 14)
+- **S0951** `List item: **Request ID**: correlation identifier required in error and operational flows.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 15)
+- **S0952** `List item: **Success envelope**: JSON object with `data` and `meta`.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 18)
+- **S0953** `List item: **Error envelope**: JSON object with `error` and `meta`.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 19)
+- **S0954** `List item: **Normative requirement**: MUST-level behavior required for conformance.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` (line 20)
+- **S0955** `List item: Owner bootstrap and authentication.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 10)
+- **S0956** `List item: Key authentication and refresh rotation.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 11)
+- **S0957** `List item: Feed, posts, comments, flags.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 12)
+- **S0958** `List item: Owner console operations: posts, moderation, key issuance/lifecycle, keychain management, invites.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 13)
+- **S0959** `List item: Envelope response shape is mandatory for API responses.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 16)
+- **S0960** `List item: Authorization cannot exceed delegation envelope bounds.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 17)
+- **S0961** `List item: Keychain behavior (membership rules/effective resolution) is production-active in v1.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 18)
+- **S0962** `List item: Health and smoke contracts are release-gating requirements.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 19)
+- **S0963** `List item: Multi-tenant sharding.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 22)
+- **S0964** `List item: External plugin execution.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 23)
+- **S0965** `List item: Non-HTTP runtime protocols.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` (line 24)
+- **S0966** `List item: HTTP/runtime: PSR-7 compatible stack.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 7)
+- **S0967** `List item: Auth/security: JWT signing/verification + sodium-grade crypto.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 8)
+- **S0968** `List item: Validation/routing/middleware: deterministic request pipeline components.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 9)
+- **S0969** `List item: Testing: unit/contract/security suites and QA tooling.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 10)
+- **S0970** `List item: Security-sensitive dependency upgrades require threat/control review.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 13)
+- **S0971** `List item: Major-version upgrades require compatibility assessment and migration note.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 14)
+- **S0972** `List item: Dependency removal/addition must update verification strategy and readiness gates when behavior changes.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 15)
+- **S0973** `List item: Dependencies must support stable envelope serialization.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 18)
+- **S0974** `List item: Middleware dependencies must expose predictable ordering and failure behavior.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 19)
+- **S0975** `List item: Runtime: `php:^8.2`, `slim/slim:^4.14`, `slim/psr7:^1.7`, `php-di/php-di:^7.0``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 23)
+- **S0976** `List item: Security/auth: `firebase/php-jwt:^6.11`, `ext-sodium:*``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 24)
+- **S0977** `List item: Data/runtime: `ext-pdo:*`, `vlucas/phpdotenv:^5.6``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 25)
+- **S0978** `List item: HTTP/dependencies: `guzzlehttp/guzzle:^7.10`, `neomerx/cors-psr7:^3.0``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 26)
+- **S0979** `List item: Observability/rate limit: `monolog/monolog:^3.9`, `symfony/rate-limiter:^7.3`, `symfony/cache:^7.3``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 27)
+- **S0980** `List item: QA: `phpunit/phpunit:^11.5``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 28)
+- **S0981** `List item: `composer test``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 31)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 15)
+- **S0982** `List item: `composer test:contract``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 32)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 16)
+- **S0983** `List item: `composer test:security``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 33)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 17)
+- **S0984** `List item: `composer qa``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 34)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 18)
+- **S0985** `List item: `composer ops:health-smoke``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 35)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 12)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 19)
+- **S0986** `List item: `composer ops:migrate-smoke``
+  - `from_scratch/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` (line 36)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 13)
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 20)
+- **S0987** `List item: Request ID/correlation injection`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 7)
+- **S0988** `List item: Security headers / CSP policy`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 8)
+- **S0989** `List item: CORS / content-type normalization`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 9)
+- **S0990** `List item: Surface-specific authn/authz guards`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 10)
+- **S0991** `List item: Validation guards`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 11)
+- **S0992** `List item: Rate limiting / abuse controls`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 12)
+- **S0993** `List item: Route handler execution`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 13)
+- **S0994** `List item: Envelope responder + error mapper`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 14)
+- **S0995** `List item: Middleware order is normative; reordering requires security + QA review.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 17)
+- **S0996** `List item: Unauthorized/forbidden/validation failures must return canonical error envelopes.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 18)
+- **S0997** `List item: Gateway routes requiring device policy must enforce `X-Device-Id` validation before handler execution.`
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 19)
+- **S0998** `List item: Missing/invalid auth -> `401``
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 22)
+- **S0999** `List item: Policy denial -> `403``
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 23)
+- **S1000** `List item: Validation failure -> `422``
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 24)
+- **S1001** `List item: Unhandled internal error -> `500``
+  - `from_scratch/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` (line 25)
+- **S1002** `List item: OpenAPI source: `openapi/cre8.v1.yaml``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 9)
+- **S1003** `List item: Envelope schemas: `schemas/success-envelope.schema.json`, `schemas/error-envelope.schema.json``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 10)
+- **S1004** `List item: PSR-7 runtime primitives: `slim/psr7` (see `DEPENDENCY_BASELINE.md`)`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 11)
+- **S1005** `List item: Success: `{ data, meta }``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 14)
+- **S1006** `List item: Error: `{ error: { code, message, details, request_id }, meta }``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 15)
+- **S1007** `List item: `X-Envelope-Version` emitted on responder-managed responses.`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 16)
+- **S1008** `List item: Public/bootstrap: `/`, `/health`, `/.well-known/jwks.json`, `/ui/{route}`, owner/signup/auth routes`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 19)
+- **S1009** `List item: Gateway: `/api/*``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 20)
+- **S1010** `List item: Console: `/console/api/*``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 21)
+- **S1011** `List item: Canonical human route index: `ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 22)
+- **S1012** `List item: Breaking changes require a new major `openapi` version file.`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 35)
+- **S1013** `List item: Additive fields are non-breaking if envelope and required claims remain stable.`
+  - `from_scratch/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` (line 36)
+- **S1014** `List item: **Owner principal:** governance and console authority.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 12)
+- **S1015** `List item: **Key principal:** gateway content authority.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 13)
+- **S1016** `List item: `primary_author``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 16)
+- **S1017** `List item: `secondary_author``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 17)
+- **S1018** `List item: `use``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 18)
+- **S1019** `List item: `keychain` (v1 production-active)`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 19)
+- **S1020** `List item: `posts:read``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 23)
+- **S1021** `List item: `posts:create``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 24)
+- **S1022** `List item: `posts:edit``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 25)
+- **S1023** `List item: `comments:create``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 26)
+- **S1024** `List item: `keys:issue``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 27)
+- **S1025** `List item: `keys:revoke``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 28)
+- **S1026** `List item: `keychains:manage``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 29)
+- **S1027** `List item: Child envelope must be a strict subset of parent permissions/scope.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 32)
+- **S1028** `List item: Delegation max depth is `3`.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 33)
+- **S1029** `List item: Delegated credentials must carry explicit expiry.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 34)
+- **S1030** `List item: Delegation lineage must be preserved for token claim checks.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 35)
+- **S1031** `List item: Keychains are key principals with `key_class=keychain` and credential material equivalent to other key principals.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 38)
+- **S1032** `List item: Keychain members may include only `primary_author`, `secondary_author`, and `use` keys.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 39)
+- **S1033** `List item: Keychain-in-keychain membership is forbidden.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 40)
+- **S1034** `List item: Max keychain membership size is `50`.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 41)
+- **S1035** `List item: Effective permissions are computed as set-union across active members, then constrained by explicit keychain policy envelope.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 42)
+- **S1036** `List item: Scope merge is union for positive scope tokens; restrictive dimensions use intersection where policy families define restrictive semantics.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 43)
+- **S1037** `List item: Any revoked/suspended/cancelled member contributes no effective permissions/scope.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 44)
+- **S1038** `List item: Keychain actions must record both keychain actor and resolved source-key lineage references.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 45)
+- **S1039** `List item: **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 48)
+- **S1040** `List item: **Gateway (`/api/*`)**: key JWT (`typ=key`, gateway audience) + device guard where required.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 49)
+- **S1041** `List item: **Keychain management routes** are console-governed and require owner JWT plus `keychains:manage` policy authorization.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 50)
+- **S1042** `List item: Owners can issue/revoke/suspend/cancel keys under governance policy.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 53)
+- **S1043** `List item: Key principals may mint descendants only within delegated envelope bounds.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 54)
+- **S1044** `List item: Keychain creation and membership mutation are owner-governed operations in v1.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 55)
+- **S1045** `List item: Revocation may be local or cascading according to lineage policy.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 56)
+- **S1046** `List item: `SECURITY_CONTROLS_SPEC.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 59)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 39)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 43)
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 50)
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 67)
+- **S1047** `List item: `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 60)
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 80)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 40)
+- **S1048** `List item: `DATA_MODEL_REFERENCE.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 61)
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 81)
+- **S1049** `List item: `ROUTE_INVENTORY_REFERENCE.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` (line 62)
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 39)
+- **S1050** `List item: Validate token type/audience/surface binding.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 65)
+- **S1051** `List item: Validate lifecycle status (active vs suspended/cancelled/revoked).`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 66)
+- **S1052** `List item: Validate permission string allow-list.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 67)
+- **S1053** `List item: Validate scope coverage.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 68)
+- **S1054** `List item: Validate route-specific policy guards (device/CSRF/use-key constraints).`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 69)
+- **S1055** `List item: Execute operation and emit auditable policy decision event.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 70)
+- **S1056** `List item: Policy denials map to `403 forbidden` with stable detail codes.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 73)
+- **S1057** `List item: Structural request violations map to `422 validation_failed`.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 74)
+- **S1058** `List item: Missing/invalid auth maps to `401 auth_required|auth_invalid`.`
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 75)
+- **S1059** `List item: `AUTHORIZATION_AND_DELEGATION_SPEC.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 78)
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 38)
+- **S1060** `List item: `ERROR_CODE_CATALOG.md``
+  - `from_scratch/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` (line 79)
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 59)
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 49)
+- **S1061** `List item: Every error response must include `error.request_id`.`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 46)
+- **S1062** `List item: UI must preserve correlation ID in inspector/panel.`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 47)
+- **S1063** `List item: New detail codes require this catalog update in same PR.`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 48)
+- **S1064** `List item: Detail-code behavior must remain consistent with `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `UI_RUNTIME_CONTRACT.md`.`
+  - `from_scratch/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (line 49)
+- **S1065** `List item: Success envelope shape: `{ data, meta }`.`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 12)
+- **S1066** `List item: Error envelope shape: `{ error: { code, message, details, request_id }, meta }`.`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 13)
+- **S1067** `List item: `meta.envelope_version` is always present.`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 14)
+- **S1068** ``GET /``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 17)
+- **S1069** ``GET /health``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 26)
+- **S1070** ``GET /.well-known/jwks.json``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 46)
+- **S1071** ``POST /console/owners``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 52)
+- **S1072** ``POST /api/auth/login``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 65)
+- **S1073** ``POST /api/auth/key-login``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 78)
+- **S1074** ``POST /api/auth/refresh``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 91)
+- **S1075** ``GET /api/feed``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 105)
+- **S1076** ``POST /api/posts``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 114)
+- **S1077** ``GET /api/posts/{postId}``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 127)
+- **S1078** ``PATCH /api/posts/{postId}``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 136)
+- **S1079** ``POST /api/posts/{postId}/flags``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 146)
+- **S1080** ``GET /api/posts/{postId}/comments``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 156)
+- **S1081** ``POST /api/posts/{postId}/comments``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 162)
+- **S1082** ``GET /console/api/posts``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 173)
+- **S1083** ``POST /console/api/posts``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 179)
+- **S1084** ``GET /console/api/keychains``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 189)
+- **S1085** ``POST /console/api/keychains``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 195)
+- **S1086** ``GET /console/api/keychains/{keychainId}/members``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 205)
+- **S1087** ``POST /console/api/keychains/{keychainId}/members``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 211)
+- **S1088** ``DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 221)
+- **S1089** ``GET /console/api/keychains/{keychainId}/resolve``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 227)
+- **S1090** ``POST /console/api/invites``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 240)
+- **S1091** ``POST /console/api/keys``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 250)
+- **S1092** ``POST /console/api/keys/{keyId}/lifecycle``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 265)
+- **S1093** ``POST /console/api/posts/{postId}/moderation``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 275)
+- **S1094** ``POST /console/api/posts/{postId}/comments/{commentId}/moderation``
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 285)
+- **S1095** `Any protected route with missing token`
+  - `from_scratch/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` (line 296)
+- **S1096** `List item: This file is the canonical human-readable route index.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 12)
+- **S1097** `List item: `openapi/cre8.v1.yaml` remains canonical machine contract.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 13)
+- **S1098** `List item: Route additions/removals must update this file, OpenAPI, endpoint examples, and UI parity artifacts in the same PR.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 14)
+- **S1099** `List item: Surface behavior and middleware sequencing are defined in `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 50)
+- **S1100** `List item: Error behavior is canonical in `ERROR_CODE_CATALOG.md`.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 51)
+- **S1101** `List item: Route examples are canonical in `Endpoint_Examples_All_Routes.md`.`
+  - `from_scratch/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (line 52)
+- **S1102** `List item: Session storage key: `cre8_ui_session_v1``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 12)
+- **S1103** `List item: Device ID storage key: `cre8_ui_device_id_v1``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 13)
+- **S1104** `List item: Session model includes explicit `activeSurface` and per-surface tokens/context.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 14)
+- **S1105** `List item: Gateway calls requiring device policy attach persisted device ID in `X-Device-Id`.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 15)
+- **S1106** `List item: Envelope-aware JSON parsing for all routes.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 18)
+- **S1107** `List item: Normalized error object containing status/code/message/details/request_id.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 19)
+- **S1108** `List item: Resolve `request_id` from response header and/or envelope.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 20)
+- **S1109** `List item: Expose envelope version for diagnostics where available.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 21)
+- **S1110** `List item: `idle``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 25)
+- **S1111** `List item: `loading``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 26)
+- **S1112** `List item: `submitting``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 27)
+- **S1113** `List item: `success``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 28)
+- **S1114** `List item: `validation_error``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 29)
+- **S1115** `List item: `forbidden``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 30)
+- **S1116** `List item: `not_found``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 31)
+- **S1117** `List item: `server_error``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 32)
+- **S1118** `List item: `validating``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 35)
+- **S1119** `List item: `empty``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 36)
+- **S1120** `List item: Request inspector or equivalent diagnostics panel must expose:`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 39)
+- **S1121** `List item: status code,`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 40)
+- **S1122** `List item: request_id,`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 41)
+- **S1123** `List item: parsed envelope payload.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 42)
+- **S1124** `List item: Error-state screens must preserve request_id visibility for support triage.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 43)
+- **S1125** `List item: Owner routes must bind to owner session context.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 46)
+- **S1126** `List item: Gateway routes must bind to key session context + device header policy.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 47)
+- **S1127** `List item: UI pre-checks may reduce avoidable forbidden submissions but backend remains source-of-truth.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 48)
+- **S1128** `List item: Keyboard-navigable route transitions.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 51)
+- **S1129** `List item: Focus management after major state transitions.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 52)
+- **S1130** `List item: Explicit route-state visibility for async/error flows.`
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 53)
+- **S1131** `List item: `UI_RUNTIME_CONTRACT.md``
+  - `from_scratch/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` (line 56)
+- **S1132** `List item: Relational storage through `ext-pdo` prepared statements and transactions.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 9)
+- **S1133** `List item: Migration-safe schema evolution with backward-compatible change sequencing.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 10)
+- **S1134** `List item: Services may perform first-run table assertion checks; production migrations remain source of truth.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 11)
+- **S1135** `List item: Principals/auth: `principals`, `principal_emails`, `credentials`, `token_families``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 14)
+- **S1136** `List item: Delegation/lifecycle: `delegation_envelopes`, `invite_receipts``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 15)
+- **S1137** `List item: Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 16)
+- **S1138** `List item: Keychain model: `keychain_memberships`, `keychain_effective_snapshots``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 17)
+- **S1139** `List item: Principal types: `owner|key``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 20)
+- **S1140** `List item: Key classes (v1 active): `primary_author|secondary_author|use|keychain``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 21)
+- **S1141** `List item: Delegation max depth: `3``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 22)
+- **S1142** `List item: Keychain membership max size: `50``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 23)
+- **S1143** `List item: Keychain member classes allowed: `primary_author|secondary_author|use``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 24)
+- **S1144** `List item: Keychain nesting: forbidden`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 25)
+- **S1145** `List item: Post states: `draft|published|hidden|locked|archived|deleted``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 26)
+- **S1146** `List item: Comment states: `active|hidden|locked|deleted``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 27)
+- **S1147** `List item: Auth issuance + audit event write occur in a single logical transaction scope.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 30)
+- **S1148** `List item: Key lifecycle mutations + lineage update occur atomically.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 31)
+- **S1149** `List item: Keychain membership mutation + effective-snapshot update + audit event write occur atomically.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 32)
+- **S1150** `List item: Moderation decisions + revision metadata must commit together.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 33)
+- **S1151** `List item: `DATA_MODEL_SPEC.md``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 36)
+- **S1152** `List item: `ERD.md``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` (line 37)
+- **S1153** `principals`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 12)
+- **S1154** `principal_emails`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 19)
+- **S1155** `credentials`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 23)
+- **S1156** `token_families`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 30)
+- **S1157** `delegation_envelopes`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 39)
+- **S1158** `keychain_memberships`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 51)
+- **S1159** `keychain_effective_snapshots`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 62)
+- **S1160** `invite_receipts`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 72)
+- **S1161** `posts`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 80)
+- **S1162** `post_revisions`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 90)
+- **S1163** `post_flags`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 98)
+- **S1164** `comments`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 106)
+- **S1165** `moderation_actions`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 115)
+- **S1166** `List item: `id` PK`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 13)
+- **S1167** `List item: `principal_type` (`owner|key`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 14)
+- **S1168** `List item: `key_class` nullable (`primary_author|secondary_author|use|keychain` when `principal_type=key`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 15)
+- **S1169** `List item: `disabled_at` nullable timestamp`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 16)
+- **S1170** `List item: indexes: `(principal_type)`, `(key_class)`, `(disabled_at)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 17)
+- **S1171** `List item: `principal_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 20)
+- **S1172** `List item: `email_normalized` unique`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 21)
+- **S1173** `List item: `credential_type` (`password|api_key`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 25)
+- **S1174** `List item: `secret_hash``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 26)
+- **S1175** `List item: `revoked_at` nullable timestamp`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 27)
+- **S1176** `List item: index: `(principal_id, credential_type)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 28)
+- **S1177** `List item: `family_id` PK`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 31)
+- **S1178** `List item: `current_token_hash``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 33)
+- **S1179** `List item: `previous_nonce_hash``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 34)
+- **S1180** `List item: `expires_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 35)
+- **S1181** `List item: `revoked_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 36)
+- **S1182** `List item: indexes: `(principal_id)`, `(expires_at)`, `(revoked_at)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 37)
+- **S1183** `List item: `parent_key_id` nullable FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 41)
+- **S1184** `List item: `issued_key_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 42)
+- **S1185** `List item: `initial_author_key_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 43)
+- **S1186** `List item: `depth` int (<=3)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 44)
+- **S1187** `List item: `permissions_json``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 45)
+- **S1188** `List item: `scope_json``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 46)
+- **S1189** `List item: `status` (`active|suspended|cancelled|revoked`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 48)
+- **S1190** `List item: indexes: `(issued_key_id)`, `(parent_key_id)`, `(status)`, `(expires_at)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 49)
+- **S1191** `List item: `keychain_key_id` FK principals(id) where `key_class=keychain``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 53)
+- **S1192** `List item: `member_key_id` FK principals(id) where `key_class in (primary_author,secondary_author,use)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 54)
+- **S1193** `List item: `added_by_owner_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 55)
+- **S1194** `List item: `added_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 56)
+- **S1195** `List item: `removed_at` nullable`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 57)
+- **S1196** `List item: `status` (`active|removed`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 58)
+- **S1197** `List item: uniqueness: active `(keychain_key_id, member_key_id)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 59)
+- **S1198** `List item: indexes: `(keychain_key_id, status)`, `(member_key_id, status)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 60)
+- **S1199** `List item: `keychain_key_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 64)
+- **S1200** `List item: `effective_permissions_json``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 65)
+- **S1201** `List item: `effective_scope_json``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 66)
+- **S1202** `List item: `member_count``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 67)
+- **S1203** `List item: `computed_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 68)
+- **S1204** `List item: `computed_by` (`system|owner_action`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 69)
+- **S1205** `List item: indexes: `(keychain_key_id, computed_at DESC)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 70)
+- **S1206** `List item: `owner_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 74)
+- **S1207** `List item: `invite_code_hash``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 75)
+- **S1208** `List item: `email_target``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 76)
+- **S1209** `List item: `used_at` nullable`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 78)
+- **S1210** `List item: `author_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 82)
+- **S1211** `List item: `visibility_scope``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 83)
+- **S1212** `List item: `state``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 84)
+- **S1213** `List item: `title``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 85)
+- **S1214** `List item: `body``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 86)
+- **S1215** `List item: `created_at`, `updated_at`, `deleted_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 87)
+- **S1216** `List item: indexes: `(author_id, created_at DESC)`, `(state)`, `(visibility_scope)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 88)
+- **S1217** `List item: `post_id` FK posts(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 92)
+- **S1218** `List item: `editor_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 93)
+- **S1219** `List item: `reason_code``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 94)
+- **S1220** `List item: `title`, `body``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 95)
+- **S1221** `List item: `created_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 96)
+- **S1222** `List item: `actor_key_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 101)
+- **S1223** `List item: `notes``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 103)
+- **S1224** `List item: `created_at`, `deleted_at``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 112)
+- **S1225** `List item: indexes: `(post_id, created_at ASC)`, `(state)``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 113)
+- **S1226** `List item: `target_type` (`post|comment`)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 117)
+- **S1227** `List item: `target_id``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 118)
+- **S1228** `List item: `action``
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 119)
+- **S1229** `List item: `actor_owner_id` FK principals(id)`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 121)
+- **S1230** `List item: Soft-delete metadata retained by default.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 125)
+- **S1231** `List item: Audit and moderation rows retained for compliance and incident analysis.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 126)
+- **S1232** `List item: Keychain snapshots retained for lineage and incident reconstruction.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 127)
+- **S1233** `List item: Keychain behavior is part of the v1 required schema surface.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 130)
+- **S1234** `List item: Any schema change requires synchronized updates to `DATA_MODEL_REFERENCE.md`, `ERD.md`, `TRACEABILITY_MATRIX.md`, and `ROUTE_INVENTORY_REFERENCE.md`.`
+  - `from_scratch/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` (line 131)
+- **S1235** `List item: Delegation lineage is represented by `DELEGATION_ENVELOPES.parent_key_id` and `initial_author_key_id`.`
+  - `from_scratch/ssot_canon/30_data_and_security/ERD.md` (line 27)
+- **S1236** `List item: Refresh/replay protection is represented by `TOKEN_FAMILIES`.`
+  - `from_scratch/ssot_canon/30_data_and_security/ERD.md` (line 28)
+- **S1237** `List item: Keychain composition and effective aggregation history are represented by `KEYCHAIN_MEMBERSHIPS` and `KEYCHAIN_EFFECTIVE_SNAPSHOTS`.`
+  - `from_scratch/ssot_canon/30_data_and_security/ERD.md` (line 29)
+- **S1238** `List item: Ensure credential authenticity and bounded token lifetime.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 9)
+- **S1239** `List item: Prevent unauthorized mutation/actions via layered claim/policy checks.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 10)
+- **S1240** `List item: Preserve operational traceability with redacted structured logs.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 11)
+- **S1241** `List item: Browser/third-party clients ↔ API`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 14)
+- **S1242** `List item: API ↔ DB`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 15)
+- **S1243** `List item: API ↔ signing material`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 16)
+- **S1244** `List item: API ↔ logging/observability sinks`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 17)
+- **S1245** `List item: Key material validation and file permission checks at boot.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 20)
+- **S1246** `List item: JWT claim enforcement: issuer, audience, type, timing, lineage.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 21)
+- **S1247** `List item: Refresh family replay protection.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 22)
+- **S1248** `List item: Rate limiting + CSRF + CORS + device headers.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 23)
+- **S1249** `List item: Immutable error envelope with request correlation IDs.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 24)
+- **S1250** `List item: JWT: `firebase/php-jwt``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 27)
+- **S1251** `List item: Crypto primitives: `ext-sodium``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 28)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 26)
+- **S1252** `List item: Policy middleware host: `slim/slim``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 29)
+- **S1253** `List item: CORS: `neomerx/cors-psr7``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 30)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 27)
+- **S1254** `List item: Rate limiting state/policy: `symfony/rate-limiter` + `symfony/cache``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 31)
+- **S1255** `List item: Structured audit logs: `monolog/monolog``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` (line 32)
+- **S1256** `List item: `X-Frame-Options: DENY``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 12)
+- **S1257** `List item: `X-Content-Type-Options: nosniff``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 13)
+- **S1258** `List item: `Referrer-Policy: no-referrer``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 14)
+- **S1259** `List item: `Strict-Transport-Security: max-age=31536000; includeSubDomains``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 15)
+- **S1260** `List item: `Cross-Origin-Opener-Policy: same-origin``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 16)
+- **S1261** `List item: `Cross-Origin-Resource-Policy: same-origin``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 17)
+- **S1262** `List item: `Permissions-Policy: accelerometer=(), camera=(), geolocation=(), microphone=()``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 18)
+- **S1263** `List item: **API/public non-UI paths**: `default-src 'none'; frame-ancestors 'none'``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 23)
+- **S1264** `List item: **UI paths (`/ui*`)**: `default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 24)
+- **S1265** `List item: CSP policy is computed from request path.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 27)
+- **S1266** `List item: API and UI CSP must not be merged into a permissive union.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 28)
+- **S1267** `List item: Response generation path must avoid silently dropping CSP/security headers on error envelopes.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 29)
+- **S1268** `List item: contract test for default headers present,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 33)
+- **S1269** `List item: contract test for UI-path CSP,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 34)
+- **S1270** `List item: contract test ensuring pre-existing stricter CSP is not overwritten,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 35)
+- **S1271** `List item: regression check for error-envelope responses preserving security headers.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 36)
+- **S1272** `List item: `VERIFICATION_STRATEGY.md``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 41)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 44)
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 50)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 46)
+- **S1273** `List item: `PRODUCTION_READINESS_GATES.md``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` (line 42)
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 46)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 48)
+- **S1274** `List item: Stolen bearer token replay.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 9)
+- **S1275** `List item: Refresh token replay in family.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 10)
+- **S1276** `List item: Delegation escalation via over-scoped child key.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 11)
+- **S1277** `List item: CSRF on console write routes.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 12)
+- **S1278** `List item: Key file tampering/world-writable private keys.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 13)
+- **S1279** `List item: Abuse via request flooding.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 14)
+- **S1280** `List item: Short JWT TTL + refresh rotation/replay invalidation.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 17)
+- **S1281** `List item: Subset-only delegation with depth/expiry constraints.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 18)
+- **S1282** `List item: CSRF validation for applicable writes.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 19)
+- **S1283** `List item: Boot-time key material safety checks.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 20)
+- **S1284** `List item: Global rate limiter with retry metadata.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 21)
+- **S1285** `List item: Structured audit events with request IDs.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 22)
+- **S1286** `List item: JWT controls: `firebase/php-jwt``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 25)
+- **S1287** `List item: Rate limiting: `symfony/rate-limiter` + `symfony/cache``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 28)
+- **S1288** `List item: Logging/audit traces: `monolog/monolog``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` (line 29)
+- **S1289** `List item: Security suite must include both happy-path and abuse-path tests.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 25)
+- **S1290** `List item: Every abuse-case row requires at least one automated regression test.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 26)
+- **S1291** `List item: High-severity controls (authn/authz/token lifecycle) require two-sided tests: allow valid + deny invalid.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 27)
+- **S1292** `List item: emitted event family is documented,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 31)
+- **S1293** `List item: `request_id` is present in envelope + logs,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 32)
+- **S1294** `List item: runbook triage step is linked.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 33)
+- **S1295** `List item: any required abuse-case test fails,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 37)
+- **S1296** `List item: redaction verification fails,`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 38)
+- **S1297** `List item: replay-protection assertions are missing or stale.`
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 39)
+- **S1298** `List item: `SECURITY_THREAT_MODEL.md``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 42)
+- **S1299** `List item: `OBSERVABILITY_EVENT_CATALOG.md``
+  - `from_scratch/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` (line 45)
+- **S1300** `List item: This matrix is normative for QA acceptance and release signoff.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 12)
+- **S1301** `List item: OpenAPI remains normative for request/response shape; this matrix is normative for behavioral intent.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 13)
+- **S1302** `List item: For conflicts, update both this matrix and OpenAPI-related artifacts in the same PR.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 14)
+- **S1303** `List item: `TRACEABILITY_MATRIX.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` (line 51)
+- **S1304** `List item: Load environment + resolve key source references.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 12)
+- **S1305** `List item: Build typed runtime config.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 13)
+- **S1306** `List item: Build container and resolve core services.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 14)
+- **S1307** `List item: Execute boot assertions.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 15)
+- **S1308** `List item: Start app and expose routes.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 16)
+- **S1309** `List item: Core dependency class presence for runtime baseline.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 19)
+- **S1310** `List item: Container resolvability for token signer/verifier, observability emitter, and DB.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 20)
+- **S1311** `List item: Key material resolvability and format safety.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 21)
+- **S1312** `List item: Profile hardening checks (`APP_ENV`, issuer/cors profile restrictions).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 22)
+- **S1313** `List item: Private key path safety checks in stage/prod.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 23)
+- **S1314** `List item: Middleware order contract consistency check.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 24)
+- **S1315** `List item: Emit structured startup-ready event.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 27)
+- **S1316** `List item: If `BOOT_EVIDENCE_PATH` is configured, write startup evidence JSON including:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 28)
+- **S1317** `List item: status,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 29)
+- **S1318** `List item: timestamp,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 30)
+- **S1319** `List item: environment profile,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 31)
+- **S1320** `List item: middleware order,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 32)
+- **S1321** `List item: startup latency,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 33)
+- **S1322** `List item: key source mode indicators.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 34)
+- **S1323** `List item: Return deterministic JSON failure envelope:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 37)
+- **S1324** `List item: `error.code = boot_failed``
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 38)
+- **S1325** `List item: generated `request_id``
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 39)
+- **S1326** `List item: startup-safe message (no stack trace disclosure)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 40)
+- **S1327** `List item: Emit structured startup-failed event with failure metadata.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 41)
+- **S1328** `List item: Include `X-Request-Id` header in startup failure responses.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 42)
+- **S1329** `List item: `CONFIGURATION_ENVIRONMENT_CONTRACT.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 48)
+- **S1330** `List item: `RELEASE_CHECKLIST.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 49)
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 66)
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 55)
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 45)
+- **S1331** `List item: `OPERATIONAL_SMOKE_CHECK_CONTRACT.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` (line 51)
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 56)
+- **S1332** `List item: `APP_ENV` (`local|stage|prod`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 12)
+- **S1333** `List item: `DB_DSN``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 13)
+- **S1334** `List item: `DB_USER``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 14)
+- **S1335** `List item: `DB_PASS``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 15)
+- **S1336** `List item: `JWT_ISSUER``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 16)
+- **S1337** `List item: `JWT_AUDIENCE_CONSOLE``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 17)
+- **S1338** `List item: `JWT_AUDIENCE_GATEWAY``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 18)
+- **S1339** `List item: `JWT_PRIVATE_KEY` (inline PEM or path)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 19)
+- **S1340** `List item: `JWT_PUBLIC_KEY` (inline PEM or path)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 20)
+- **S1341** `List item: `CORS_ALLOWED_ORIGINS` (comma-separated)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 21)
+- **S1342** `List item: `CSRF_SECRET` (minimum length 32)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 22)
+- **S1343** `List item: `RATE_LIMIT_GLOBAL_ID` (default: `global`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 25)
+- **S1344** `List item: `RATE_LIMIT_GLOBAL_POLICY` (default: `fixed_window`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 26)
+- **S1345** `List item: `RATE_LIMIT_GLOBAL_INTERVAL` (default: `1 minute`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 27)
+- **S1346** `List item: `RATE_LIMIT_GLOBAL_LIMIT` (default: `180`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 28)
+- **S1347** `List item: `JWT_OWNER_TTL_SECONDS` (default: `900`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 29)
+- **S1348** `List item: `JWT_KEY_TTL_SECONDS` (default: `600`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 30)
+- **S1349** `List item: `JWT_DELEGATION_TTL_SECONDS` (default: `300`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 31)
+- **S1350** `List item: `BOOT_EVIDENCE_PATH` (optional path for startup evidence JSON)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 32)
+- **S1351** `List item: `APP_ENV` must be one of `local|stage|prod`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 35)
+- **S1352** `List item: Wildcard CORS (`*`) is allowed only in `local`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 36)
+- **S1353** `List item: `JWT_ISSUER` must be a valid URL.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 37)
+- **S1354** `List item: `JWT_ISSUER` must be `https://` in `stage|prod`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 38)
+- **S1355** `List item: `DB_DSN` must use `sqlite:`, `mysql:`, or `pgsql:` prefixes.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 39)
+- **S1356** `List item: `prod` must not use SQLite DSN.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 40)
+- **S1357** `List item: Optional numeric policy variables must be positive integers.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 41)
+- **S1358** `List item: In `stage|prod`, private-key file paths must satisfy strict permission checks.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 42)
+- **S1359** `List item: `JWT_PRIVATE_KEY` and `JWT_PUBLIC_KEY` may be:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 45)
+- **S1360** `List item: inline PEM, or`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 46)
+- **S1361** `List item: filesystem paths.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 47)
+- **S1362** `List item: Relative key paths are resolved against repository root at startup.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 48)
+- **S1363** `List item: PEM strings must include end markers; key paths must be readable.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 49)
+- **S1364** `List item: `RuntimeConfig``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 53)
+- **S1365** `List item: `RateLimitPolicy``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 54)
+- **S1366** `List item: `CorsPolicy``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 55)
+- **S1367** `List item: `JwtPolicy``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 56)
+- **S1368** `List item: profile safety checks,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 59)
+- **S1369** `List item: key source resolvability,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 60)
+- **S1370** `List item: key path safety checks,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 61)
+- **S1371** `List item: middleware-order alignment checks.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 62)
+- **S1372** `List item: `BOOT_AND_STARTUP_FAILURE_CONTRACT.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 65)
+- **S1373** `List item: `DEPENDENCY_BASELINE.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` (line 68)
+- **S1374** `List item: Route: `GET /health``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 12)
+- **S1375** `List item: Surface: public`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 13)
+- **S1376** `List item: Auth: none`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 14)
+- **S1377** `List item: `data.status` (`ok|degraded`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 18)
+- **S1378** `List item: `data.checked_at_utc` (ISO-8601)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 19)
+- **S1379** `List item: `data.latency_ms` (integer)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 20)
+- **S1380** `List item: `data.failures` (array of failure reason strings)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 21)
+- **S1381** `List item: `data.services` object containing:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 22)
+- **S1382** `List item: `db` status`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 23)
+- **S1383** `List item: `rate_limiter` status`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 24)
+- **S1384** `List item: `key_material` status`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 25)
+- **S1385** `List item: `http_dependency` status`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 26)
+- **S1386** `List item: `ok`: subsystem healthy for current probe.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 31)
+- **S1387** `List item: `degraded`: subsystem reachable but policy threshold failed.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 32)
+- **S1388** `List item: `down`: subsystem unavailable or probe exception.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 33)
+- **S1389** `List item: `200`: endpoint reachable and contract response emitted (including degraded cases).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 36)
+- **S1390** `List item: `500`: unrecoverable handler/runtime error.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 37)
+- **S1391** `List item: `db_probe_exception``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 40)
+- **S1392** `List item: `rate_limiter_rejected``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 41)
+- **S1393** `List item: `key_material_unavailable``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 42)
+- **S1394** `List item: `http_dependency_exception``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 43)
+- **S1395** `List item: route reachable,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 47)
+- **S1396** `List item: JSON envelope shape,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 48)
+- **S1397** `List item: `data.status` is valid (`ok|degraded`),`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 49)
+- **S1398** `List item: subsystem object presence.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 50)
+- **S1399** `List item: `API_CONTRACT_GUIDE.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 53)
+- **S1400** `List item: `Endpoint_Examples_All_Routes.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` (line 54)
+- **S1401** `List item: Migrations are forward-only and versioned with monotonically increasing identifiers.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 12)
+- **S1402** `List item: Production paths run migrations without demo seed data.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 13)
+- **S1403** `List item: Non-production paths may run minimal deterministic seed fixtures for smoke and QA.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 14)
+- **S1404** `List item: Migration execution must be idempotent at the version ledger level.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 15)
+- **S1405** `List item: Schema migration scripts for all table contracts in `DATA_MODEL_SPEC.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 18)
+- **S1406** `List item: Migration ledger table (or equivalent) that records applied versions and timestamps.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 19)
+- **S1407** `List item: Validation command for schema presence and version state.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 20)
+- **S1408** `List item: `owner_seed` (non-production only): one owner account fixture.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 23)
+- **S1409** `List item: `auth_seed` (non-production only): one keychain and one member key fixture.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 24)
+- **S1410** `List item: `content_seed` (optional): minimal post/comment fixtures for contract smoke.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 25)
+- **S1411** `List item: Seed execution is forbidden by default in `prod`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 28)
+- **S1412** `List item: Seed artifacts must never include plaintext secrets committed to VCS.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 29)
+- **S1413** `List item: Migration + seed commands must emit machine-readable pass/fail output.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 30)
+- **S1414** `List item: `composer ops:migrate-smoke` validates migration artifact presence and schema baseline.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 33)
+- **S1415** `List item: Optional seed smoke command must verify deterministic fixture counts where enabled.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 34)
+- **S1416** `List item: Related smoke semantics are defined in `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 37)
+- **S1417** `List item: Release proof requirements are defined in `RELEASE_CHECKLIST.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 38)
+- **S1418** `List item: Traceability updates for schema behavior changes are required in `TRACEABILITY_MATRIX.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` (line 39)
+- **S1419** `List item: `auth.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 9)
+- **S1420** `List item: `auth.owner_jwt.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 10)
+- **S1421** `List item: `auth.key_jwt.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 11)
+- **S1422** `List item: `security.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 12)
+- **S1423** `List item: `csrf.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 13)
+- **S1424** `List item: `rate_limit.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 14)
+- **S1425** `List item: `device_limit.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 15)
+- **S1426** `List item: `request_id.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 16)
+- **S1427** `List item: `keys.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 17)
+- **S1428** `List item: `comments.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 18)
+- **S1429** `List item: `moderation.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 19)
+- **S1430** `List item: `invites.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 20)
+- **S1431** `List item: `validation.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 21)
+- **S1432** `List item: `routing.*``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 22)
+- **S1433** `List item: Use `<family>.<action>` and `<family>.<entity>.<action>` patterns.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 25)
+- **S1434** `List item: Startup events:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 26)
+- **S1435** `List item: `boot.startup_ready``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 27)
+- **S1436** `List item: `boot.startup_failed``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 28)
+- **S1437** `List item: Delivery fallback event:`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 29)
+- **S1438** `List item: `audit.delivery_failed``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 30)
+- **S1439** `List item: `event_name``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 33)
+- **S1440** `List item: `timestamp_utc``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 34)
+- **S1441** `List item: `request_id``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 35)
+- **S1442** `List item: `surface` (`public|gateway|console`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 36)
+- **S1443** `List item: `actor_principal_id` (nullable where unauthenticated)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 37)
+- **S1444** `List item: `result` (`success|failure`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 38)
+- **S1445** `List item: `detail_code` (when failure)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 39)
+- **S1446** `List item: Structured logs must be emitted through channelized application/security/audit streams.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 42)
+- **S1447** `List item: Sensitive fields (`token`, `secret`, `private_key`) must be redacted before emission.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 43)
+- **S1448** `List item: Security-significant route outcomes (401/403/429) require an event emission.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 44)
+- **S1449** `List item: If primary audit delivery fails, fallback error-path emission must preserve `event_name`, `request_id` where available, and failure metadata.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 45)
+- **S1450** `List item: `request_id` must correlate between HTTP response envelope and emitted events.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 48)
+- **S1451** `List item: Incident timelines should be reconstructable using only event stream + request IDs.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` (line 49)
+- **S1452** `List item: call `/health` against configured base URL,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 17)
+- **S1453** `List item: require HTTP `200`,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 18)
+- **S1454** `List item: parse JSON envelope,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 19)
+- **S1455** `List item: validate `data.status` in `ok|degraded`,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 20)
+- **S1456** `List item: fail with deterministic machine-readable failure codes when invalid.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 21)
+- **S1457** `List item: validate migration artifact presence according to current migration strategy,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 25)
+- **S1458** `List item: execute migration sanity validation against ephemeral DB target,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 26)
+- **S1459** `List item: verify required core table set for target release profile,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 27)
+- **S1460** `List item: fail with deterministic machine-readable failure codes when artifacts/schema are missing.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 28)
+- **S1461** `List item: command output,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 32)
+- **S1462** `List item: pass/fail status,`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 33)
+- **S1463** `List item: failure reason code (if failed),`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 34)
+- **S1464** `List item: timestamp and environment profile.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 35)
+- **S1465** `List item: Gate A requires health smoke success.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 41)
+- **S1466** `List item: Gate D requires migration smoke and rollback-readiness evidence.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 42)
+- **S1467** `List item: `Migration_Seed_Strategy.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` (line 47)
+- **S1468** `List item: Dependencies installable in CI/CD from lockfile.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 9)
+- **S1469** `List item: App boots with no startup exceptions.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 10)
+- **S1470** `List item: Startup behavior matches `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 11)
+- **S1471** `List item: `/health` returns subsystem pass (`db`, `rate_limiter`, `jwt_keys`, `issuer_dependency`).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 12)
+- **S1472** `List item: Contract tests pass.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 15)
+- **S1473** `List item: Security tests pass.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 16)
+- **S1474** `List item: Abuse-case security regressions pass.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 17)
+- **S1475** `List item: No undocumented API or envelope changes.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 18)
+- **S1476** `List item: JWT claim, CSRF, CORS, and limiter behavior verified against SSOT.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 19)
+- **S1477** `List item: All declared endpoint/UI mappings implemented.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 22)
+- **S1478** `List item: Error-state mappings validated for 401/403/404/422/429/5xx.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 23)
+- **S1479** `List item: Correlation IDs surfaced in UI diagnostics.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 24)
+- **S1480** `List item: Rollback rehearsal completed.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 27)
+- **S1481** `List item: Key rotation runbook validated.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 28)
+- **S1482** `List item: Infrastructure/IaC evidence reviewed (plan/apply + backup/restore readiness).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 29)
+- **S1483** `List item: Alerting/dashboard checks pass for SLO/SLI targets.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 30)
+- **S1484** `List item: Operational smoke checks pass per `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` (line 31)
+- **S1485** `List item: All required test commands pass (`composer test`, contract, security, QA, smoke).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 7)
+- **S1486** `List item: OpenAPI/schema diffs reviewed and compatibility classified.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 8)
+- **S1487** `List item: Acceptance criteria for changed routes validated (positive + negative paths).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 9)
+- **S1488** `List item: Traceability matrix rows updated for changed capabilities.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 10)
+- **S1489** `List item: Abuse-case suite green.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 13)
+- **S1490** `List item: Readiness gates A/B/C satisfied.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 14)
+- **S1491** `List item: Observability coverage confirms request_id correlation and key event families.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 15)
+- **S1492** `List item: Attach release evidence template with command outputs and timestamps.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 18)
+- **S1493** `List item: Record known risks and mitigations in risk register.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 19)
+- **S1494** `List item: Confirm rollback/runbook readiness.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` (line 20)
+- **S1495** `List item: API availability: successful non-5xx response ratio for `/api/*` and `/console/api/*`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 9)
+- **S1496** `List item: Auth success latency: p95 for `/api/auth/login` and `/api/auth/key-login`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 10)
+- **S1497** `List item: Feed read latency: p95 for `GET /api/feed`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 11)
+- **S1498** `List item: Health reliability: `/health` pass ratio.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 12)
+- **S1499** `List item: Error budget burn: 5xx rate and auth failure anomalies.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 13)
+- **S1500** `List item: Availability: 99.9% monthly`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 16)
+- **S1501** `List item: p95 auth latency: <= 350ms`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 17)
+- **S1502** `List item: p95 feed read latency: <= 300ms`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 18)
+- **S1503** `List item: Health pass ratio: 99.95%`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 19)
+- **S1504** `List item: 1m realtime dashboards`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 22)
+- **S1505** `List item: 1h ops review rollups`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 23)
+- **S1506** `List item: 30d SLO compliance reports`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 24)
+- **S1507** `List item: Page on sustained 5xx spikes and `/health` degradation.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 36)
+- **S1508** `List item: Ticket on rising 401/403/429 anomalies beyond baseline.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 37)
+- **S1509** `List item: Link alert context with `request_id` traces and event catalog families.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 38)
+- **S1510** `List item: Alerts must include direct links to the corresponding runbook sections in `RELEASE_CHECKLIST.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 39)
+- **S1511** `List item: Every SLI has exactly one dashboard owner and one primary alert authority.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 42)
+- **S1512** `List item: Ownership changes require updates to this file and `RELEASE_CHECKLIST.md` in the same PR.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 43)
+- **S1513** `List item: Monthly operations review must confirm owner/authority assignments remain accurate.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` (line 44)
+- **S1514** `List item: Test framework dependency: `phpunit/phpunit` (see `DEPENDENCY_BASELINE.md`).`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 9)
+- **S1515** `List item: Contract tests (`tests/Contract/*`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 10)
+- **S1516** `List item: Security tests (`tests/Security/*`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 11)
+- **S1517** `List item: Abuse-case regressions aligned with `SECURITY_VERIFICATION_ABUSE_CASES.md``
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 12)
+- **S1518** `List item: Envelope stability`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 25)
+- **S1519** `List item: Middleware decision/detail-code behavior (`slim/slim`, `respect/validation`, `neomerx/cors-psr7`, `symfony/rate-limiter`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 26)
+- **S1520** `List item: Boot assertions and profile hardening`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 27)
+- **S1521** `List item: JWT signing/verification and key safety (`firebase/php-jwt`, `ext-sodium`)`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 28)
+- **S1522** `List item: Health endpoint and migration smoke`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 29)
+- **S1523** `List item: Route acceptance intent is defined in `ACCEPTANCE_CRITERIA_MATRIX.md` and must be used during QA signoff.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 32)
+- **S1524** `List item: Authorization truth-table behavior is validated against `AUTHORIZATION_DECISION_TABLES.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 33)
+- **S1525** `List item: Middleware detail-code behavior is validated against `ERROR_CODE_CATALOG.md`.`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 34)
+- **S1526** `List item: owner login + console list/create/moderation`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 37)
+- **S1527** `List item: key login + feed/post/comments`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 38)
+- **S1528** `List item: key lifecycle revoke confirmation path`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 39)
+- **S1529** `List item: invite issuance path`
+  - `from_scratch/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` (line 40)
+- **S1530** `List item: GAP-005 (Reference integrity) resolved by adding missing canonical artifacts (`Endpoint_Examples_All_Routes.md`, `Migration_Seed_Strategy.md`, `Prototype_to_SSOT_Delta_Map.md`) and normalizing filename references across SSOT docs.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 20)
+- **S1531** `List item: GAP-004 (SSOT automation) resolved by introducing `SSOT_AUTOMATION_AND_LINTING.md` and linking enforcement expectations into release and change-impact artifacts.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 21)
+- **S1532** `List item: GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `DATA_MODEL_REFERENCE.md`, `DATA_MODEL_SPEC.md`, `ERD.md`, route inventory, and contract artifacts.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 22)
+- **S1533** `List item: GAP-002 (Route inventory) resolved by adding canonical `ROUTE_INVENTORY_REFERENCE.md`.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 23)
+- **S1534** `List item: GAP-003 (SLO instrumentation ownership) resolved by adding ownership matrix and alert authority mapping in `SLO_SLI_SPEC.md`, plus operations linkage updates.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 24)
+- **S1535** `List item: Keep entries short and actionable.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 27)
+- **S1536** `List item: Close a gap only when the linked SSOT artifacts are updated and reviewed.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 28)
+- **S1537** `List item: New unresolved architectural assumptions must be logged here in the same PR.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` (line 29)
+- **S1538** `List item: **Cross-reference linter**: detect broken links/references between SSOT artifacts.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 12)
+- **S1539** `List item: **Contract sync checker**: detect route diffs between `ROUTE_INVENTORY_REFERENCE.md` and `openapi/cre8.v1.yaml`.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 13)
+- **S1540** `List item: **Error code sync checker**: verify error/detail codes used in examples/tests are registered in `ERROR_CODE_CATALOG.md`.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 14)
+- **S1541** `List item: **UI parity sync checker**: verify API route inventory changes have matching UI parity updates.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 15)
+- **S1542** `List item: **Timestamp/status checker**: ensure modified SSOT docs include updated metadata lines.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 16)
+- **S1543** `List item: **Startup/config sync checker**: verify environment variable contract and boot-failure contract remain synchronized with runtime configuration and startup behavior.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 17)
+- **S1544** `List item: SSOT-impacting PRs must run the automation pack in CI.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 20)
+- **S1545** `List item: Any failed SSOT automation check blocks merge.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 21)
+- **S1546** `List item: Overrides require explicit architecture/security owner approval and follow-up issue.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 22)
+- **S1547** `List item: `composer docs:ssot:lint``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 25)
+- **S1548** `List item: `composer docs:ssot:sync-check``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 26)
+- **S1549** `List item: `composer docs:ssot:report``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 27)
+- **S1550** `List item: machine-readable report (JSON),`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 31)
+- **S1551** `List item: human-readable summary,`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 32)
+- **S1552** `List item: failing artifact list with remediation hints,`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 33)
+- **S1553** `List item: canonical artifact at `evidence/automation/ssot_report.json` (or equivalent CI artifact path).`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 34)
+- **S1554** `List item: Document/tooling owners: architecture + QA leads.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 37)
+- **S1555** `List item: CI enforcement owner: platform/SRE.`
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 38)
+- **S1556** `List item: `SSOT_INDEX.md``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 41)
+- **S1557** `List item: `CHANGE_IMPACT_MAP_TEMPLATES.md``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 42)
+- **S1558** `List item: `KNOWN_GAPS_TRACKER.md``
+  - `from_scratch/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` (line 43)
+- **S1559** `List item: ADR-001: SSOT-first contract governance model (`records/ADR-001-ssot-first-governance.md`).`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 10)
+- **S1560** `List item: ADR-002: Delegation envelope subset/depth/expiry enforcement (`records/ADR-002-delegation-envelope-bounds.md`).`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 11)
+- **S1561** `List item: ADR-003: Keychain as production-active v1 principal class (`records/ADR-003-keychain-production-principal.md`).`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 12)
+- **S1562** `List item: ADR-004: Envelope-first API response standard (`records/ADR-004-envelope-first-api-standard.md`).`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 13)
+- **S1563** `List item: ADR-005: Release gating via verification + smoke + readiness controls (`records/ADR-005-release-gating-controls.md`).`
+  - `from_scratch/ssot_canon/60_decisions/ADR_INDEX.md` (line 14)
+- **S1564** `List item: **2026-04-06**: Adopted SSOT-first canonical structure and machine contract precedence.`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 7)
+- **S1565** `List item: **2026-04-06**: Promoted keychain model to v1 production behavior.`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 8)
+- **S1566** `List item: **2026-04-06**: Locked route inventory and acceptance matrix as behavioral source-of-truth.`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 9)
+- **S1567** `List item: **2026-04-07**: Added abuse-case verification and readiness gate controls.`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 10)
+- **S1568** `List item: **2026-04-08**: Replaced scaffold stubs with implementation-grade norms in from-scratch canon.`
+  - `from_scratch/ssot_canon/60_decisions/DECISIONS_LOG.md` (line 11)
+- **S1569** `List item: Decision ID`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 7)
+- **S1570** `List item: Date`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 8)
+- **S1571** `List item: Status (`proposed|accepted|superseded`)`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 9)
+- **S1572** `List item: Context/problem statement`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 10)
+- **S1573** `List item: Decision`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 11)
+- **S1574** `List item: Alternatives considered`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 12)
+- **S1575** `List item: Consequences (positive/negative)`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 13)
+- **S1576** `List item: Verification and rollout impacts`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 14)
+- **S1577** `List item: Related SSOT docs`
+  - `from_scratch/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` (line 15)
+- **S1578** `List item: Contract changes must be synchronized in one PR across machine + prose artifacts.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 13)
+- **S1579** `List item: Drift checks become merge-blocking in CI.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` (line 14)
+- **S1580** `List item: Policy checks are deterministic and testable.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 13)
+- **S1581** `List item: Over-scoped or depth-violating issuance fails with stable error behavior.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md` (line 14)
+- **S1582** `List item: Data model includes membership + effective snapshot tables.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 13)
+- **S1583** `List item: Authorization and route contracts include keychain governance behavior.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md` (line 14)
+- **S1584** `List item: Clients can use uniform parsing/error handling.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 13)
+- **S1585** `List item: Observability and support workflows rely on stable `request_id` and metadata fields.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md` (line 14)
+- **S1586** `List item: Releases become evidence-driven and auditable.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 13)
+- **S1587** `List item: Gate failures block release until remediated.`
+  - `from_scratch/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md` (line 14)
+- **S1588** `List item: Contract artifacts follow semantic versioning intent.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 7)
+- **S1589** `List item: Breaking changes require new major OpenAPI artifact and migration notes.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 8)
+- **S1590** `List item: Additive fields/behaviors are minor changes if backward compatible.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 9)
+- **S1591** `List item: Mark deprecated behavior in relevant SSOT docs and route inventory.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 12)
+- **S1592** `List item: Publish replacement behavior and migration path.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 13)
+- **S1593** `List item: Maintain compatibility window with explicit end date.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 14)
+- **S1594** `List item: Remove only after verification and adoption milestones are met.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 15)
+- **S1595** `List item: No silent removals.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 18)
+- **S1596** `List item: Deprecation notices must include operational and client impact.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` (line 19)
+- **S1597** `List item: Prefer additive rollout, then gated cutover, then cleanup.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 7)
+- **S1598** `List item: Keep envelope format stable during migrations unless major version bump.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 8)
+- **S1599** `List item: Pair schema changes with reversible migration paths when feasible.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 9)
+- **S1600** `List item: Compatibility assessment (breaking/non-breaking).`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 12)
+- **S1601** `List item: Data migration plan with backfill/rollback strategy.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 13)
+- **S1602** `List item: Test coverage for pre/post migration behavior.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 14)
+- **S1603** `List item: Operational smoke checks updated for new state assumptions.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 15)
+- **S1604** `List item: Route responses unchanged for legacy clients where promised.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 18)
+- **S1605** `List item: Auth/token semantics remain valid across transition window.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 19)
+- **S1606** `List item: Monitoring detects migration-induced regressions.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` (line 20)
+- **S1607** `List item: Auth and token lifecycle`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 7)
+- **S1608** `List item: Authorization/policy evaluation`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 8)
+- **S1609** `List item: Keychain management`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 9)
+- **S1610** `List item: Content (feed/posts/comments/flags)`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 10)
+- **S1611** `List item: Moderation`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 11)
+- **S1612** `List item: Operational/health/diagnostics`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 12)
+- **S1613** `List item: Cross-module calls must occur through documented service contracts.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 23)
+- **S1614** `List item: Policy decisions cannot be duplicated ad hoc across handlers.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 24)
+- **S1615** `List item: Shared invariants belong in centralized policy/validation services.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` (line 25)
+- **S1616** `List item: Deterministic, minimal, and role-complete (owner + key classes + keychain members).`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 7)
+- **S1617** `List item: Include lifecycle variants: active/suspended/cancelled/revoked.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 8)
+- **S1618** `List item: Include envelope edge cases and negative auth/validation inputs.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 9)
+- **S1619** `List item: Auth and refresh family replay pack.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 12)
+- **S1620** `List item: Delegation and keychain invariant pack.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 13)
+- **S1621** `List item: Content visibility and moderation transitions pack.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 14)
+- **S1622** `List item: Operational failure simulation pack for health/smoke.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 15)
+- **S1623** `List item: Fixture schema must evolve in lockstep with data model changes.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 18)
+- **S1624** `List item: Every bug fix adding behavior should add/adjust a fixture scenario.`
+  - `from_scratch/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` (line 19)
+- **S1625** `List item: Identify changed capability and enumerate impacted SSOT artifacts (contracts, machine artifacts, data/security, operations, traceability).`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 7)
+- **S1626** `List item: Update normative docs first (`20_`, `30_`, `40_` families) before implementation PR merge.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 8)
+- **S1627** `List item: Update machine artifacts (`openapi`, envelope schemas) in the same PR where interface shape changes.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 9)
+- **S1628** `List item: Update tests and verification docs (`VERIFICATION_STRATEGY.md`, acceptance matrix rows, smoke expectations).`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 10)
+- **S1629** `List item: Update traceability (`TRACEABILITY_MATRIX.md`) and impact map.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 11)
+- **S1630** `List item: Attach evidence using templates under `evidence/templates/`.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 12)
+- **S1631** `List item: Request required owner/co-reviewers per `DOCUMENT_STATUS_AND_OWNERSHIP.md`.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 13)
+- **S1632** `List item: Completed change-impact map.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 16)
+- **S1633** `List item: Verification command output (or CI links) for changed behavior.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 17)
+- **S1634** `List item: Explicit compatibility classification (breaking/non-breaking).`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 18)
+- **S1635** `List item: Updated known-gaps entry when unresolved assumptions remain.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 19)
+- **S1636** `List item: No SSOT PR merges without explicit verification evidence.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 22)
+- **S1637** `List item: Breaking changes require architecture + security signoff.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 23)
+- **S1638** `List item: Contract changes without machine-artifact synchronization are rejected.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 24)
+- **S1639** `List item: Unresolved gaps must be documented in `KNOWN_GAPS_TRACKER.md`.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 25)
+- **S1640** `List item: Owner review target: within 2 business days.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 28)
+- **S1641** `List item: Security-impacting changes: same-day triage by security owner.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 29)
+- **S1642** `List item: If reviewer SLA is missed, escalate through engineering manager/program owner.`
+  - `from_scratch/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` (line 30)
+- **S1643** `List item: Normative docs updated and internally consistent.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 7)
+- **S1644** `List item: Machine contracts updated for interface changes.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 8)
+- **S1645** `List item: Tests for positive/negative paths pass.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 9)
+- **S1646** `List item: Security controls and abuse-case expectations remain satisfied.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 10)
+- **S1647** `List item: Traceability matrix updated for changed capabilities.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 11)
+- **S1648** `List item: Release/readiness checks satisfied for impacted areas.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 12)
+- **S1649** `List item: Decision log and risk register updated when policy/architecture/risk profile changes.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 13)
+- **S1650** `List item: Evidence artifact attached using canonical templates.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 14)
+- **S1651** `List item: Verification commands and exit status.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 17)
+- **S1652** `List item: Contract deltas and compatibility classification.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 18)
+- **S1653** `List item: Startup/smoke evidence where operational behavior changed.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 19)
+- **S1654** `List item: Request IDs or correlation IDs for failures discovered during QA.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 20)
+- **S1655** `List item: Reviewer signoff notes.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 21)
+- **S1656** `List item: Doc-only claims without executable verification.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 24)
+- **S1657** `List item: Behavior changes lacking acceptance criteria updates.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 25)
+- **S1658** `List item: Policy changes without decision-table updates.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 26)
+- **S1659** `List item: Updated docs with stale metadata timestamps.`
+  - `from_scratch/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` (line 27)
+- **S1660** `List item: Re-evaluate risk ratings each release cycle and after any incident.`
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 16)
+- **S1661** `List item: Re-score risks when likelihood/impact assumptions change materially.`
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 17)
+- **S1662** `List item: Add mitigations to release evidence for any risk currently High impact.`
+  - `from_scratch/ssot_canon/80_program_management/RISK_REGISTER.md` (line 18)
+- **S1663** `List item: **M1 Foundation**: governance, index, contracts baseline complete.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 7)
+- **S1664** `List item: **M2 Core implementation**: auth/content/console route families implemented to contract.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 8)
+- **S1665** `List item: **M3 Security hardening**: abuse-case suite + controls verification green.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 9)
+- **S1666** `List item: **M4 Production readiness**: SLO, smoke, readiness gates, runbooks validated.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 10)
+- **S1667** `List item: M1: OpenAPI/schemas + route inventory/acceptance matrix aligned.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 13)
+- **S1668** `List item: M2: Route behavior and error mapping pass contract tests.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 14)
+- **S1669** `List item: M3: Security suite + decision-table conformance verified.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 15)
+- **S1670** `List item: M4: Release checklist complete with evidence package.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 16)
+- **S1671** `List item: **M1**: stable SSOT index, route inventory parity with OpenAPI, envelope schemas validated in CI.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 20)
+- **S1672** `List item: **M2**: all public/gateway/console route families implemented with contract + negative-path tests.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 21)
+- **S1673** `List item: **M3**: abuse-case matrix automated, lifecycle + delegation decision-table conformance verified.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 22)
+- **S1674** `List item: **M4**: readiness gates A/B/C/D green, release evidence template completed, rollback dry-run documented.`
+  - `from_scratch/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` (line 23)
+- **S1675** `List item: Placeholder-heavy docs were rewritten with role-specific guidance.`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 10)
+- **S1676** `List item: Governance/program docs now include concrete policies, roles, and gates.`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 11)
+- **S1677** `List item: Cross-document cohesion reinforced through shared terminology and workflow expectations.`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 12)
+- **S1678** `List item: Periodic reference-integrity sweeps.`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 15)
+- **S1679** `List item: Continuous refinement as implementation reveals ambiguity.`
+  - `from_scratch/ssot_canon/SCAFFOLD_BUILD_REPORT.md` (line 16)
+- **S1680** `List item: Command output (tests, smoke, QA checks).`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 10)
+- **S1681** `List item: Contract diff summary (OpenAPI/schema/route or policy tables).`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 11)
+- **S1682** `List item: Operational impact notes (alerts/SLO/readiness implications).`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 12)
+- **S1683** `List item: Risk and rollback considerations.`
+  - `from_scratch/ssot_canon/evidence/README.md` (line 13)
+- **S1684** `value: str`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **S1685** `lint`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+- **S1686** `sync_check`
+  - `from_scratch/ssot_canon/evidence/automation/ssot_report.json` (line 1)
+- **S1687** `List item: Release ID:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 7)
+- **S1688** `List item: Date/time (UTC):`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 8)
+- **S1689** `List item: Owner:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 9)
+- **S1690** `List item: `composer test`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 12)
+- **S1691** `List item: `composer test:contract`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 13)
+- **S1692** `List item: `composer test:security`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 14)
+- **S1693** `List item: `composer qa`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 15)
+- **S1694** `List item: `composer ops:health-smoke`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 16)
+- **S1695** `List item: `composer ops:migrate-smoke`:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 17)
+- **S1696** `List item: Changed routes/contracts:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 20)
+- **S1697** `List item: Acceptance criteria touched:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 21)
+- **S1698** `List item: Decision table changes:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 22)
+- **S1699** `List item: Readiness gates status:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 25)
+- **S1700** `List item: SLO/alert impact:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 26)
+- **S1701** `List item: Rollback readiness:`
+  - `from_scratch/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` (line 27)
+- **S1702** `List item: PR/Change ID:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 7)
+- **S1703** `List item: Capability:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 8)
+- **S1704** `List item: Change class (A/B/C):`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 9)
+- **S1705** `List item: Docs:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 12)
+- **S1706** `List item: OpenAPI/schemas:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 13)
+- **S1707** `List item: Tests:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 14)
+- **S1708** `List item: Automated checks passed:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 17)
+- **S1709** `List item: Manual validation performed:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 18)
+- **S1710** `List item: Negative-path checks:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 19)
+- **S1711** `List item: Updated matrix rows:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 22)
+- **S1712** `List item: Impact map attached:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 23)
+- **S1713** `List item: Decision log entry (if needed):`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 24)
+- **S1714** `List item: Architecture:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 27)
+- **S1715** `List item: Security:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 28)
+- **S1716** `List item: Operations/QA:`
+  - `from_scratch/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` (line 29)
+- **S1717** `title`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 3)
+- **S1718** `version`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 4)
+- **S1719** `description`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 5)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 17)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 28)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 39)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 297)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 302)
+- **S1720** `- url`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 7)
+- **S1721** `- bearerAuth`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 9)
+- **S1722** `/`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 11)
+- **S1723** `get`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 12)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 23)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 34)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 50)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 112)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 137)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 161)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 176)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 185)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 195)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 224)
+- **S1724** `summary`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 13)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 24)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 35)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 51)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 62)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 75)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 88)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 101)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 113)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 130)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 138)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 145)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 154)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 162)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 168)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 177)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 181)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 186)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 190)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 196)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 202)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 216)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 225)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 233)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 238)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 243)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 250)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 257)
+- **S1725** `security`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 14)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 25)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 36)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 52)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 63)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 76)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 89)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 102)
+- **S1726** `responses`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 15)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 26)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 37)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 58)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 69)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 82)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 95)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 108)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 124)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 131)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 141)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 148)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 157)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 165)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 171)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 178)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 182)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 187)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 191)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 199)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 210)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 220)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 228)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 234)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 239)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 246)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 253)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 261)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 295)
+- **S1727** `200`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 16)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 27)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 38)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 59)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 83)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 96)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 109)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 125)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 142)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 149)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 166)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 179)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 188)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 200)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 221)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 229)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 247)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 254)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 262)
+- **S1728** `content`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 18)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 29)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 40)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 66)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 79)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 92)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 105)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 207)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 298)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 303)
+- **S1729** `application/json`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 19)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 30)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 41)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 67)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 80)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 93)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 106)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 208)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 299)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 304)
+- **S1730** `schema`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 20)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 31)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 42)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 57)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 68)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 81)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 94)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 107)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 117)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 120)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 123)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 209)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 274)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 279)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 284)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 289)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 294)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 300)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 305)
+- **S1731** `$ref`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 21)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 32)
+- **S1732** `/health`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 22)
+- **S1733** `/.well-known/jwks.json`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 33)
+- **S1734** `type`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 43)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 46)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 48)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 266)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 308)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 313)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 319)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 323)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 332)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 338)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 344)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 350)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 355)
+- **S1735** `properties`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 44)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 309)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 315)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 321)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 325)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 334)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 340)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 346)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 352)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 357)
+- **S1736** `keys`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 45)
+- **S1737** `items`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 47)
+- **S1738** `/ui/{route}`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 49)
+- **S1739** `parameters`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 53)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 114)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 139)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 146)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 155)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 163)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 169)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 197)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 203)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 217)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 226)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 244)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 251)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 258)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 269)
+- **S1740** `- in`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 54)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 115)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 118)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 121)
+- **S1741** `name`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 55)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 116)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 119)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 122)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 272)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 277)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 282)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 287)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 292)
+- **S1742** `required`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 56)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 65)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 78)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 91)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 104)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 206)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 273)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 278)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 283)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 288)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 293)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 314)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 320)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 324)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 333)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 339)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 345)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 351)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 356)
+- **S1743** `/console/owners`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 60)
+- **S1744** `post`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 61)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 74)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 87)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 100)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 129)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 153)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 167)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 180)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 189)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 201)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 232)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 237)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 242)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 249)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 256)
+- **S1745** `requestBody`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 64)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 77)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 90)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 103)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 205)
+- **S1746** `201`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 70)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 132)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 158)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 172)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 183)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 192)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 211)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 235)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 240)
+- **S1747** `409`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 71)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 212)
+- **S1748** `422`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 72)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 85)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 98)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 135)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 151)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 159)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 174)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 193)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 213)
+- **S1749** `/api/auth/login`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 73)
+- **S1750** `401`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 84)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 97)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 110)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 126)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 133)
+- **S1751** `/api/auth/key-login`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 86)
+- **S1752** `/api/auth/refresh`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 99)
+- **S1753** `/api/feed`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 111)
+- **S1754** `403`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 127)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 134)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 150)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 173)
+- **S1755** `/api/posts`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 128)
+- **S1756** `/api/posts/{postId}`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 136)
+- **S1757** `- $ref`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 140)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 147)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 156)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 164)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 170)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 198)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 204)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 218)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 219)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 227)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 245)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 252)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 259)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 260)
+- **S1758** `404`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 143)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 222)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 230)
+- **S1759** `patch`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 144)
+- **S1760** `/api/posts/{postId}/flags`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 152)
+- **S1761** `/api/posts/{postId}/comments`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 160)
+- **S1762** `/console/api/posts`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 175)
+- **S1763** `/console/api/keychains`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 184)
+- **S1764** `/console/api/keychains/{keychainId}/members`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 194)
+- **S1765** `/console/api/keychains/{keychainId}/members/{memberKeyId}`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 214)
+- **S1766** `delete`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 215)
+- **S1767** `/console/api/keychains/{keychainId}/resolve`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 223)
+- **S1768** `/console/api/invites`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 231)
+- **S1769** `/console/api/keys`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 236)
+- **S1770** `/console/api/keys/{keyId}/lifecycle`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 241)
+- **S1771** `/console/api/posts/{postId}/moderation`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 248)
+- **S1772** `/console/api/posts/{postId}/comments/{commentId}/moderation`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 255)
+- **S1773** `securitySchemes`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 264)
+- **S1774** `bearerAuth`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 265)
+- **S1775** `scheme`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 267)
+- **S1776** `bearerFormat`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 268)
+- **S1777** `PostId`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 270)
+- **S1778** `in`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 271)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 276)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 281)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 286)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 291)
+- **S1779** `KeyId`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 275)
+- **S1780** `CommentId`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 280)
+- **S1781** `KeychainId`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 285)
+- **S1782** `MemberKeyId`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 290)
+- **S1783** `Success`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 296)
+- **S1784** `Error`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 301)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 322)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+- **S1785** `schemas`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 306)
+- **S1786** `Meta`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 307)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 317)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 330)
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **S1787** `envelope_version`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 310)
+- **S1788** `timestamp_utc`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 311)
+- **S1789** `SuccessEnvelope`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 312)
+- **S1790** `data`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 316)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **S1791** `ErrorEnvelope`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 318)
+- **S1792** `code`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 326)
+- **S1793** `message`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 327)
+- **S1794** `details`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 328)
+- **S1795** `request_id`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 329)
+- **S1796** `OwnerSignupRequest`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 331)
+- **S1797** `email`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 335)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 341)
+- **S1798** `password`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 336)
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 342)
+- **S1799** `OwnerLoginRequest`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 337)
+- **S1800** `KeyLoginRequest`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 343)
+- **S1801** `key_id`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 347)
+- **S1802** `api_key`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 348)
+- **S1803** `RefreshRequest`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 349)
+- **S1804** `refresh_token`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 353)
+- **S1805** `KeychainMemberAddRequest`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 354)
+- **S1806** `member_key_id`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 358)
+- **S1807** `role_hint`
+  - `from_scratch/ssot_canon/openapi/cre8.v1.yaml` (line 359)
+- **S1808** `list[2]`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
+- **S1809** `value: bool`
+  - `from_scratch/ssot_canon/schemas/error-envelope.schema.json` (line 1)
+  - `from_scratch/ssot_canon/schemas/success-envelope.schema.json` (line 1)
