@@ -1,7 +1,11 @@
 # SSOT Index
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-09_
+
+
+## Canon status
+This index governs the production from-scratch canon. Planning/completion scaffolding artifacts are intentionally excluded from authoritative scope.
 
 ## Canon navigation
 1. `00_governance/` — ownership, policy, standards.

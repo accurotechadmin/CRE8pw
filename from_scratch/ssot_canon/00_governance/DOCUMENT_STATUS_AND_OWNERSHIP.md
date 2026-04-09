@@ -4,9 +4,9 @@ _Status: adopted_
 _Last updated (UTC): 2026-04-09_
 
 ## Status model
-- `draft`: exploratory, non-binding.
 - `adopted`: normative and release-governing.
 - `deprecated`: retained for history; not authoritative.
+- `superseded`: replaced by a newer authoritative artifact; retained for audit trace only.
 
 ## Ownership matrix
 | Document family | Primary owner | Required co-reviewers | Verification accountability |
