@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-09_
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
-Short, explicit register of unresolved SSOT-level gaps that could affect upcoming scaffolding and implementation planning.
+Short, explicit register of unresolved SSOT-level gaps that could affect implementation, verification, or release decisions.
 
 ## Open gaps
 
@@ -29,4 +29,4 @@ Prototype reconciliation notes are tracked in `Prototype_to_SSOT_Delta_Map.md` a
 - New unresolved architectural assumptions must be logged here in the same PR.
 
 ## Review cadence
-Review at least once per release planning cycle and before major scaffolding milestones.
+Review at least once per release planning cycle and before each production release candidate.

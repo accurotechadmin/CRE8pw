@@ -1,18 +1,19 @@
 # CRE8 From-Scratch SSOT Canon
 
-_Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Status: adopted (production baseline)_
+_Last updated (UTC): 2026-04-09_
 
 ## Purpose
-This folder is the implementation-first, specification-grade canon for rebuilding CRE8 coherently from zero while preserving proven contracts from the legacy SSOT set.
+This folder is the standalone source-of-truth canon for implementing CRE8 from zero. It is intended to be sufficient on its own for architecture, contracts, data/security controls, verification, operations, and delivery governance.
 
-## What this canon governs
-- Product behavior and architecture boundaries.
-- API/UI/runtime contracts and data/security invariants.
-- Delivery controls: verification, release gates, traceability, and program governance.
+## Canon scope
+- Product and system intent, boundaries, and architectural constraints.
+- API/UI/runtime contracts, authorization model, error model, and route behavior.
+- Data model, security controls, threat/abuse verification, and operational controls.
+- Traceability, decision governance, implementation guidance, and program controls.
 
-## Required reading path
-1. `PLAN_SSOT_FIRST_DOCUMENT_REBUILD.md`
+## Authoritative reading path
+1. `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
 2. `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 3. `ssot_canon/00_governance/SSOT_INDEX.md`
 4. `ssot_canon/10_product_and_architecture/*`
@@ -24,15 +25,21 @@ This folder is the implementation-first, specification-grade canon for rebuildin
 10. `ssot_canon/70_implementation_guidance/*`
 11. `ssot_canon/80_program_management/*`
 
+## Finality and change policy
+- This canon is production-governing documentation, not a draft work area.
+- Changes are allowed only through SSOT-governed PR workflow with traceability and evidence.
+- Historical scaffolding/completion artifacts are intentionally excluded from this folder.
+
 ## Non-negotiable rules
 - OpenAPI + envelope schemas are machine source-of-truth for interface shape.
-- Route inventory + acceptance criteria are source-of-truth for behavior.
+- Route inventory + acceptance criteria are source-of-truth for behavior intent.
 - Data model, authorization, and security controls must remain mutually consistent.
-- Any behavior change requires traceability update in the same PR.
+- Any behavior change requires traceability updates in the same PR.
+- Release-impacting changes require verification and evidence artifacts.
 
-## Definition of quality for this canon
-A document is considered production-grade only when it is:
-- specific enough to implement without guessing,
-- testable with explicit commands/evidence,
-- traceable to code and operations controls,
-- internally link-consistent within this folder.
+## Definition of quality
+A canon document is acceptable only when it is:
+- normative and implementation-direct,
+- testable with explicit verification hooks,
+- traceable to routes/services/tests/operations controls,
+- internally consistent with the rest of this folder.
