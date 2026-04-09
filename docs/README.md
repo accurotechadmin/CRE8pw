@@ -1,30 +1,45 @@
-# CRE8.pw Documentation Set
+# CRE8 From-Scratch SSOT Canon
 
-_Last updated (UTC): 2026-04-05_
+_Status: adopted (production baseline)_
+_Last updated (UTC): 2026-04-09_
 
-This directory is the canonical documentation for the current repository state. The backend is a Slim 4 + PHP-DI API with a static SPA under `public/ui`, backed by policy-driven middleware, JWT auth, key lifecycle controls, and PDO-backed table bootstrap inside services.
+## Purpose
+This folder is the standalone source-of-truth canon for implementing CRE8 from zero. It is intended to be sufficient on its own for architecture, contracts, data/security controls, verification, operations, and delivery governance.
 
-## Recommended reading order
+## Canon scope
+- Product and system intent, boundaries, and architectural constraints.
+- API/UI/runtime contracts, authorization model, error model, and route behavior.
+- Data model, security controls, threat/abuse verification, and operational controls.
+- Traceability, decision governance, implementation guidance, and program controls.
 
-1. [`inventory_anatomy.md`](./inventory_anatomy.md)
-2. [`architecture_overview.md`](./architecture_overview.md)
-3. [`request_lifecycle.md`](./request_lifecycle.md)
-4. [`api_reference_stub.md`](./api_reference_stub.md)
-5. [`endpoints_ui_inventory.md`](./endpoints_ui_inventory.md)
-6. [`data_model_stub.md`](./data_model_stub.md)
-7. [`security_model.md`](./security_model.md)
-8. [`configuration_reference.md`](./configuration_reference.md)
-9. [`frontend_spa_guide.md`](./frontend_spa_guide.md)
-10. [`testing_strategy.md`](./testing_strategy.md)
-11. [`observability_runbook.md`](./observability_runbook.md)
-12. [`deployment_operations.md`](./deployment_operations.md)
-13. [`contributing.md`](./contributing.md)
-14. [`glossary.md`](./glossary.md)
-15. [`roadmap_backlog.md`](./roadmap_backlog.md)
+## Authoritative reading path
+1. `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+2. `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+3. `ssot_canon/00_governance/SSOT_INDEX.md`
+4. `ssot_canon/10_product_and_architecture/*`
+5. `ssot_canon/20_contracts/*`
+6. `ssot_canon/30_data_and_security/*`
+7. `ssot_canon/40_operations_and_quality/*`
+8. `ssot_canon/50_traceability_and_automation/*`
+9. `ssot_canon/60_decisions/*`
+10. `ssot_canon/70_implementation_guidance/*`
+11. `ssot_canon/80_program_management/*`
 
-## Documentation conventions
+## Finality and change policy
+- This canon is production-governing documentation, not a draft work area.
+- Changes are allowed only through SSOT-governed PR workflow with traceability and evidence.
+- Historical scaffolding/completion artifacts are intentionally excluded from this folder.
 
-- All endpoint behavior is described against `src/Http/Routes/RouteRegistrar.php` and middleware in `src/Http/Middleware/*`.
-- All security claims are tied to `src/Security/*`, auth services, and security tests in `tests/Security/*`.
-- All operational checks map to composer scripts and `scripts/*.php`.
-- `docs/dev/*` contains session history and execution artifacts; top-level docs are the durable reference layer.
+## Non-negotiable rules
+- OpenAPI + envelope schemas are machine source-of-truth for interface shape.
+- Route inventory + acceptance criteria are source-of-truth for behavior intent.
+- Data model, authorization, and security controls must remain mutually consistent.
+- Any behavior change requires traceability updates in the same PR.
+- Release-impacting changes require verification and evidence artifacts.
+
+## Definition of quality
+A canon document is acceptable only when it is:
+- normative and implementation-direct,
+- testable with explicit verification hooks,
+- traceable to routes/services/tests/operations controls,
+- internally consistent with the rest of this folder.

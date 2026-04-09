@@ -1,8 +1,0 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "error-envelope.schema.json",
-  "title": "TODO(owner: platform-core)",
-  "description": "Placeholder schema stub for Error envelope validation schema.",
-  "type": "object",
-  "additionalProperties": true
-}
