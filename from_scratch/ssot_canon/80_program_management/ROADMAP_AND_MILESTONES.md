@@ -14,3 +14,13 @@ _Last updated (UTC): 2026-04-08_
 - M2: Route behavior and error mapping pass contract tests.
 - M3: Security suite + decision-table conformance verified.
 - M4: Release checklist complete with evidence package.
+
+
+## Milestone deliverables (minimum)
+- **M1**: stable SSOT index, route inventory parity with OpenAPI, envelope schemas validated in CI.
+- **M2**: all public/gateway/console route families implemented with contract + negative-path tests.
+- **M3**: abuse-case matrix automated, lifecycle + delegation decision-table conformance verified.
+- **M4**: readiness gates A/B/C/D green, release evidence template completed, rollback dry-run documented.
+
+## Tracking rule
+Each milestone closeout must include: (1) evidence template, (2) traceability diff, (3) decision-log updates for policy changes.

@@ -17,6 +17,7 @@ Short, explicit register of unresolved SSOT-level gaps that could affect upcomin
 Prototype reconciliation notes are tracked in `Prototype_to_SSOT_Delta_Map.md` and should be converted into gap rows only when unresolved decisions (not implementation deltas) remain.
 
 ## Recently resolved in this SSOT cycle
+- GAP-005 (Reference integrity) resolved by adding missing canonical artifacts (`Endpoint_Examples_All_Routes.md`, `Migration_Seed_Strategy.md`, `Prototype_to_SSOT_Delta_Map.md`) and normalizing filename references across SSOT docs.
 - GAP-004 (SSOT automation) resolved by introducing `SSOT_AUTOMATION_AND_LINTING.md` and linking enforcement expectations into release and change-impact artifacts.
 - GAP-001 (Keychain model) resolved by promoting keychain to v1 production-active auth/data model in `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `DATA_MODEL_REFERENCE.md`, `DATA_MODEL_SPEC.md`, `ERD.md`, route inventory, and contract artifacts.
 - GAP-002 (Route inventory) resolved by adding canonical `ROUTE_INVENTORY_REFERENCE.md`.

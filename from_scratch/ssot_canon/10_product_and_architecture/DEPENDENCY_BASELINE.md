@@ -17,3 +17,20 @@ _Last updated (UTC): 2026-04-08_
 ## Runtime expectations
 - Dependencies must support stable envelope serialization.
 - Middleware dependencies must expose predictable ordering and failure behavior.
+
+
+## Canonical package baseline (root `composer.json`)
+- Runtime: `php:^8.2`, `slim/slim:^4.14`, `slim/psr7:^1.7`, `php-di/php-di:^7.0`
+- Security/auth: `firebase/php-jwt:^6.11`, `ext-sodium:*`
+- Data/runtime: `ext-pdo:*`, `vlucas/phpdotenv:^5.6`
+- HTTP/dependencies: `guzzlehttp/guzzle:^7.10`, `neomerx/cors-psr7:^3.0`
+- Observability/rate limit: `monolog/monolog:^3.9`, `symfony/rate-limiter:^7.3`, `symfony/cache:^7.3`
+- QA: `phpunit/phpunit:^11.5`
+
+## Script contract baseline
+- `composer test`
+- `composer test:contract`
+- `composer test:security`
+- `composer qa`
+- `composer ops:health-smoke`
+- `composer ops:migrate-smoke`
