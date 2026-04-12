@@ -88,6 +88,11 @@
 | `docs/narrative/10-evidence-history.md` | Read | Narrative synthesis | - Summarizes evidence model and template usage. <br> - Reinforces auditable release/change history discipline. |
 | `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
 | `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
+| `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` | Read | Execution planning | - Defines day-by-day generalized roadmap for Days 1–90 with milestone spine M1–M4. <br> - Declares daily proof discipline and no fallback/legacy implementation stance. |
+| `docs/M1_DAY_1_21_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M1 foundation/governance implementation. <br> - Includes M1 daily evidence checklist and M1→M2 entry gates. |
+| `docs/M2_DAY_22_45_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M2 data/auth/policy core and guard foundations. <br> - Includes M2 daily evidence checklist and M2→M3 entry gates. |
+| `docs/M3_DAY_46_69_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M3 domain completion and security/frontend parity start. <br> - Includes M3 daily evidence checklist and M3→M4 entry gates. |
+| `docs/M4_DAY_70_90_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M4 parity hardening, observability, rehearsals, and release closeout. <br> - Includes M4 daily evidence checklist and release-completion gates. |
 
 ## 2) CRE8 mental model (authoritative)
 
@@ -296,10 +301,10 @@
 **Facts**
 - SSOT docs present as a comprehensive adopted canon with high structural completeness.
 - Automation evidence (`ssot_report.json`) indicates lint and sync checks were passing at generation time (2026-04-09).
-- High-level report frames repository as specification-grade baseline with focus shifting to calibration/evidence quality.
+- Repository status is explicitly documentation-first: no runtime codebase is implemented yet beyond dependency stack selection, environment value templates, architecture definition, and planning artifacts.
 
 **Inference**
-- Repo appears documentation-first with strong canonical governance; actual runtime implementation completeness is not asserted by these docs alone.
+- Next execution priority is implementation parity against SSOT, not additional speculative architecture drafting.
 
 ### High-leverage next tasks (top 10)
 1. **Objective:** Verify runtime route parity vs OpenAPI/route inventory.
@@ -395,11 +400,11 @@
 
 ## 9) “Ask me anything” readiness statement
 
-**Confidence level:** High for SSOT governance, contract semantics, and implementation constraints; medium for actual runtime completeness due to limited direct code execution evidence.
+**Confidence level:** High for SSOT governance and contract semantics; high for implementation status declaration (documentation-first, implementation pending).
 
 **Top unresolved questions preventing perfect certainty**
-1. What percentage of documented route/service behavior is already implemented and passing tests today?
-2. Are current CI pipelines enforcing all declared SSOT automation and readiness checks?
-3. Are observability dashboards/runbooks materially present and linked, or still planned artifacts?
-4. Is key rotation runbook implemented end-to-end with validated rehearsal evidence?
-5. Are there hidden local/environment-specific assumptions not yet reflected in canonical docs?
+1. Which implementation modules should be staffed first by available team capacity (parallelization plan)?
+2. What CI/CD runtime environment constraints (secrets, infra access) exist for executing the full release-gate pipeline?
+3. Which dashboard/runbook platform will be authoritative for SLI/SLO evidence storage and long-term audit retention?
+4. What exact cut strategy will be used for Day-90 release candidate promotion (single cut vs staged cut windows)?
+5. What final signoff roster (named individuals) will own Gate A/B/C/D approvals?

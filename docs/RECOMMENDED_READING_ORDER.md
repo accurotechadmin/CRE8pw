@@ -1,6 +1,6 @@
 # Recommended Documentation Reading Order
 
-This sequence is designed so a new reader starts with foundational context and governance, then moves into product/architecture, contracts, data/security, operations, traceability, decisions, implementation guidance, program workflow, and finally evidence/templates and historical reports.
+This sequence is designed so a new reader starts with foundational context and governance, then moves into product/architecture, contracts, data/security, operations, traceability, decisions, implementation guidance, program workflow, and finally evidence/templates and current execution-planning artifacts.
 
 1. `docs/README.md`
 2. `docs/ssot_canon/00_governance/SSOT_INDEX.md`
@@ -65,6 +65,12 @@ This sequence is designed so a new reader starts with foundational context and g
 61. `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
 62. `docs/REPOSITORY_FILE_INVENTORY.md`
 63. `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
+64. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
+65. `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
+66. `docs/M1_DAY_1_21_DETAILED_SLICES.md`
+67. `docs/M2_DAY_22_45_DETAILED_SLICES.md`
+68. `docs/M3_DAY_46_69_DETAILED_SLICES.md`
+69. `docs/M4_DAY_70_90_DETAILED_SLICES.md`
 
 ## Supplemental machine-readable references (read after the core docs)
 
