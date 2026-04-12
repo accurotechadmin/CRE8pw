@@ -29,4 +29,5 @@ For current implementation sequencing and day-by-day handoff planning, see:
 - [curriculum/README](./curriculum/README.md)
 - [M1 governance/runtime foundations outline](./curriculum/M1_GOVERNANCE_RUNTIME_FOUNDATIONS_OUTLINE.md)
 - [M2 schema/auth/policy core outline](./curriculum/M2_SCHEMA_AUTH_POLICY_CORE_OUTLINE.md)
+- [M3 domain/security/frontend parity outline](./curriculum/M3_DOMAIN_SECURITY_FRONTEND_OUTLINE.md)
 

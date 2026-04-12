@@ -10,4 +10,5 @@ This folder contains episode-outline artifacts for a scripted educational progra
 ## Current curriculum artifacts
 - `M1_GOVERNANCE_RUNTIME_FOUNDATIONS_OUTLINE.md` — Days 1–21 narrative outlines plus M1→M2 entry-gate episodes.
 - `M2_SCHEMA_AUTH_POLICY_CORE_OUTLINE.md` — Days 22–45 narrative outlines plus M2→M3 entry-gate episodes.
+- `M3_DOMAIN_SECURITY_FRONTEND_OUTLINE.md` — Days 46–69 narrative outlines plus M3→M4 entry-gate episodes.
 
