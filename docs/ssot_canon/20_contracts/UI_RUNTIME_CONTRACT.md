@@ -1,7 +1,7 @@
 # UI Runtime Contract (SSOT Appendix)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-12_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -53,7 +53,8 @@ Optional substates (implementation convenience):
 - Explicit route-state visibility for async/error flows.
 
 ## Related SSOT docs
-- `UI_RUNTIME_CONTRACT.md`
-- `UI_RUNTIME_CONTRACT.md`
-- `UI_RUNTIME_CONTRACT.md`
+- `API_CONTRACT_GUIDE.md`
+- `ROUTE_INVENTORY_REFERENCE.md`
+- `ACCEPTANCE_CRITERIA_MATRIX.md`
 - `ERROR_CODE_CATALOG.md`
+- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`

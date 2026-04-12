@@ -86,6 +86,14 @@ Read these in order first:
 61. `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
 62. `docs/REPOSITORY_FILE_INVENTORY.md`
 63. `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
+64. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
+65. `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
+66. `docs/M1_DAY_1_21_DETAILED_SLICES.md`
+67. `docs/M2_DAY_22_45_DETAILED_SLICES.md`
+68. `docs/M3_DAY_46_69_DETAILED_SLICES.md`
+69. `docs/M4_DAY_70_90_DETAILED_SLICES.md`
+
+Current status note: runtime implementation is not yet built beyond dependency/env/architecture/planning artifacts; treat all implementation plans accordingly.
 
 Then read machine-readable references:
 - `docs/ssot_canon/openapi/cre8.v1.yaml`
