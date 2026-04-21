@@ -3,14 +3,14 @@
     "status": "ok",
     "checks": {
         "lint": {
-            "command": "php '/workspace/cre8w/scripts/docs_ssot_lint.php'",
+            "command": "php '/workspace/CRE8pw/scripts/docs_ssot_lint.php'",
             "exit_code": 0,
             "output": [
                 "docs_ssot_lint_ok"
             ]
         },
         "sync_check": {
-            "command": "php '/workspace/cre8w/scripts/docs_ssot_sync_check.php'",
+            "command": "php '/workspace/CRE8pw/scripts/docs_ssot_sync_check.php'",
             "exit_code": 0,
             "output": [
                 "docs_ssot_sync_check_ok"

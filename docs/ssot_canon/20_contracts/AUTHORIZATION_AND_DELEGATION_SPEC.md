@@ -1,7 +1,7 @@
 # Authorization and Delegation Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-21_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -13,6 +13,7 @@ Defines principals, key classes, delegation bounds, keychain aggregation behavio
 - **Key principal:** gateway content authority.
 
 ## Key classes
+- `master` (owner-only SYSADMIN class)
 - `primary_author`
 - `secondary_author`
 - `use`
@@ -51,6 +52,8 @@ Canonical permission vocabulary:
 
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
+- Master keys are owner-only SYSADMIN credentials and are non-delegable to non-owner principals.
+- Only the recorded owner of a master key may initiate master-key rotation.
 - Key principals may mint descendants only within delegated envelope bounds.
 - Keychain creation and membership mutation are owner-governed operations in v1.
 - Revocation may be local or cascading according to lineage policy.
@@ -60,3 +63,10 @@ Canonical permission vocabulary:
 - `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - `DATA_MODEL_REFERENCE.md`
 - `ROUTE_INVENTORY_REFERENCE.md`
+- `MASTER_KEY_SPEC.md`
+
+
+## Device-bound token invariant
+- Gateway key JWTs are minted with a mandatory `device_id` claim tied to the authenticating client device.
+- Runtime validation requires strict equality between JWT `device_id` claim and `X-Device-Id` header on protected gateway routes.
+- Device mismatch invalidates the token for that request and is treated as non-transferable credential enforcement.
