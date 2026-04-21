@@ -1,7 +1,7 @@
 # Error Code Catalog (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-21_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -9,9 +9,9 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 | HTTP | code | Typical detail codes | Retryability | UI behavior |
 |---|---|---|---|---|
 | 400 | bad_request | malformed_json, non_object_json, invalid_argument | no | show request fix guidance |
-| 401 | auth_required / auth_invalid | missing_bearer, token_invalid, token_type_invalid, token_audience_invalid, token_expired | conditional (after re-auth) | clear session, route to login |
+| 401 | auth_required / auth_invalid | missing_bearer, token_invalid, token_type_invalid, token_audience_invalid, token_expired, token_device_mismatch | conditional (after re-auth) | clear session, route to login |
 | 403 | forbidden | csrf_token_missing, csrf_token_malformed, csrf_token_mismatch, permission_denied, use_key_restricted, comments_disabled | no | show policy explanation |
-| 404 | not_found | post_not_found, comment_not_found, key_not_found | no | show not found panel |
+| 404 | not_found | post_not_found, comment_not_found, key_not_found, keychain_not_found | no | show not found panel |
 | 405 | method_not_allowed | route_method_not_allowed | no | show unsupported-action guidance |
 | 415 | unsupported_media_type | content_type_unsupported | no | show content-type guidance |
 | 409 | conflict | owner_exists, lifecycle_conflict | no | show conflict guidance |
@@ -22,7 +22,7 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 ## Canonical middleware/handler detail-code registry (v1 baseline)
 | Surface area | Detail code | Expected HTTP/code |
 |---|---|---|
-| Error handler | `route_not_found` | `404 not_found` |
+| Error handler | `route_not_found` (unmatched template only) | `404 not_found` |
 | Error handler | `route_method_not_allowed` | `405 method_not_allowed` |
 | Error handler | `http_unauthorized` | `401 auth_invalid` |
 | Error handler | `invalid_argument` | `400 bad_request` |
@@ -41,6 +41,11 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 | Gateway policy | `use_key_key_mutation_forbidden` | `403 forbidden` |
 | Token policy | `token_type_invalid` | `401 auth_invalid` |
 | Token policy | `token_audience_invalid` | `401 auth_invalid` |
+| Token policy | `token_device_mismatch` | `401 auth_invalid` |
+| Domain resolver | `post_not_found` | `404 not_found` |
+| Domain resolver | `comment_not_found` | `404 not_found` |
+| Domain resolver | `key_not_found` | `404 not_found` |
+| Domain resolver | `keychain_not_found` | `404 not_found` |
 
 ## Mapping requirements
 - Every error response must include `error.request_id`.

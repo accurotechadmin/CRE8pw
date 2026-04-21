@@ -360,7 +360,7 @@
 
 ## 7) Contradictions, ambiguities, and missing information
 
-1. **Potential conflict:** `ssot_report.json` command paths reference `/workspace/cre8w/...` while current repo path is `/workspace/CRE8pw`.
+1. **Resolved baseline:** `ssot_report.json` command paths are normalized to `/workspace/CRE8pw/...`, matching the current authoritative repo root.
    - Resolution path: regenerate SSOT report from current canonical workspace and replace artifact.
    - Owner role: Platform/SRE lead + architecture lead.
 2. **Ambiguity:** `UI_RUNTIME_CONTRACT.md` “Related SSOT docs” repeats self-reference only.

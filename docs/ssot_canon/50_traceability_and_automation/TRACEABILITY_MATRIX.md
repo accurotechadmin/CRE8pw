@@ -1,7 +1,7 @@
 # Traceability Matrix (Docs-to-Code)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-21_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -21,6 +21,7 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 | Keychain effective resolve | `GET /console/api/keychains/{keychainId}/resolve` | owner jwt + lineage projection policy | `KeychainService` | keychain contract tests | `ROUTE_INVENTORY_REFERENCE.md`, `DATA_MODEL_SPEC.md` |
 | Invite create | `POST /console/api/invites` | owner jwt + validation | `KeyLifecycleService` | console contract tests | `RELEASE_CHECKLIST.md`, `SECURITY_CONTROLS_SPEC.md` |
 | Key issue/lifecycle | `POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle` | owner jwt + validation + lineage bounds | `KeyLifecycleService` | security/contract tests | `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `DATA_MODEL_SPEC.md` |
+| Master-key SYSADMIN governance + device-bound auth invariants | `POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle`, SYSADMIN-designated routes | owner-only master-key policy + device-claim parity + emergency change loop controls | `KeyLifecycleService`, `AuthService`, security policy layer | security contract tests + abuse-case tests + governance workflow checks | `MASTER_KEY_SPEC.md`, `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `SECURITY_CONTROLS_SPEC.md`, `CHANGE_CONTROL_POLICY.md`, `CONTRIBUTION_WORKFLOW_SSOT.md` |
 | Moderation actions | `POST /console/api/posts/{postId}/moderation`, `POST /console/api/posts/{postId}/comments/{commentId}/moderation` | owner jwt + moderation transition policy | `ModerationService` | moderation integration tests | `ACCEPTANCE_CRITERIA_MATRIX.md`, `RELEASE_CHECKLIST.md` |
 
 Acceptance criteria for all listed capabilities are defined in `ACCEPTANCE_CRITERIA_MATRIX.md`; authorization edge decisions are defined in `AUTHORIZATION_DECISION_TABLES.md`.
