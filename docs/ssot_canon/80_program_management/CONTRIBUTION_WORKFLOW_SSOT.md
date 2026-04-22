@@ -1,7 +1,7 @@
 # Contribution Workflow (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-22_
 
 ## Workflow
 1. Identify changed capability and enumerate impacted SSOT artifacts (contracts, machine artifacts, data/security, operations, traceability).
@@ -16,15 +16,21 @@ _Last updated (UTC): 2026-04-09_
 - Completed change-impact map.
 - Verification command output (or CI links) for changed behavior.
 - Explicit compatibility classification (breaking/non-breaking).
-- Updated known-gaps entry when unresolved assumptions remain.
+- Updated risk/task register entry when unresolved assumptions remain.
 
 ## Review policy
 - No SSOT PR merges without explicit verification evidence.
 - Breaking changes require architecture + security signoff.
 - Contract changes without machine-artifact synchronization are rejected.
-- Unresolved gaps must be documented in `KNOWN_GAPS_TRACKER.md`.
+- Unresolved assumptions must be documented in `RISK_REGISTER.md` with owner and target date.
 
 ## SLA and escalation
 - Owner review target: within 2 business days.
 - Security-impacting changes: same-day triage by security owner.
 - If reviewer SLA is missed, escalate through engineering manager/program owner.
+
+
+## Emergency Class D workflow
+- For production incidents requiring immediate mitigation, use the Class D process in `CHANGE_CONTROL_POLICY.md`.
+- Class D allows hotfix merge under temporary SLA waiver, but requires a remediation PR opened within 24 hours to fully synchronize SSOT artifacts.
+- The remediation PR is mandatory and must include traceability and SSOT evidence payloads before closure.

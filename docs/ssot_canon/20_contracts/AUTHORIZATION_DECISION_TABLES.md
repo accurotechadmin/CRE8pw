@@ -1,7 +1,7 @@
 # Authorization Decision Tables (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -68,6 +68,15 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 4. Validate scope coverage.
 5. Validate route-specific policy guards (device/CSRF/use-key constraints).
 6. Execute operation and emit auditable policy decision event.
+
+## Device-binding decision table
+
+| Condition | Required outcome |
+|---|---|
+| Gateway route has JWT `device_id` claim matching `X-Device-Id` | Allow if all other checks pass |
+| `X-Device-Id` missing | Deny (`422 validation_failed`, `device_id_missing`) |
+| `X-Device-Id` malformed | Deny (`422 validation_failed`, `device_id_invalid_format`) |
+| JWT `device_id` missing/mismatch relative to header | Deny (`401 auth_invalid`, `token_device_mismatch`) |
 
 ## Error mapping expectations
 - Policy denials map to `403 forbidden` with stable detail codes.

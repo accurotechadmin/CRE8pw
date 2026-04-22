@@ -1,7 +1,7 @@
 # Acceptance Criteria Matrix (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -23,7 +23,7 @@ Provide explicit, route-level Given/When/Then criteria (including negative and e
 | UI shell fallback | `GET /ui/{route}` | Given a valid SPA route request, when requested, then UI shell/static asset response is returned for client-side routing. | Unknown static assets return `404`; route fallback must not leak API-only security headers/cookies. | Browser parity check + security header verification |
 | Owner signup | `POST /console/owners` | Given valid email/password, when submitted, then owner principal is created and success envelope returned. | Duplicate owner/email emits `409 conflict`; invalid payload emits `422 validation_failed`. | Contract tests for 201/409/422 |
 | Owner login | `POST /api/auth/login` | Given valid owner credentials, when submitted, then owner JWT + refresh issued. | Invalid credentials -> `401 auth_invalid`; malformed payload -> `422`. | Auth contract + security tests |
-| Key login | `POST /api/auth/key-login` | Given valid key credentials and policy compliance, when submitted, then key JWT + refresh issued. | Revoked/suspended/expired key or policy violation returns `401/403` as applicable. | Contract + security regression suite |
+| Key login | `POST /api/auth/key-login` | Given valid key credentials and policy compliance, when submitted, then key JWT + refresh issued. | Revoked/suspended/expired key or policy violation returns `401/403` as applicable; device claim/header mismatch on protected route returns `401 auth_invalid` (`token_device_mismatch`). | Contract + security regression suite |
 | Refresh | `POST /api/auth/refresh` | Given valid refresh token family state, when submitted, then access token rotates and family state updates atomically. | Replay/invalid refresh returns `401 auth_invalid`; invalid body returns `422`. | Refresh replay security tests |
 | Feed read | `GET /api/feed` | Given key JWT and required headers, when requested, then feed returns scoped content in stable order. | Missing/invalid auth -> `401`; disallowed scope -> `403`; limiter exceeded -> `429`. | Gateway contract + rate-limit tests |
 | Post create | `POST /api/posts` | Given key has `posts:create` and allowed scope, when submitted, then post is created and visible by policy. | Use-key mutation restriction or missing permission -> `403`; invalid payload -> `422`. | Gateway contract + authz tests |

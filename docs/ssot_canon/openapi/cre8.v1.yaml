@@ -306,6 +306,8 @@ components:
   schemas:
     Meta:
       type: object
+      required: [envelope_version]
+      additionalProperties: true
       properties:
         envelope_version: { type: string }
         timestamp_utc: { type: string, format: date-time }

@@ -1,7 +1,7 @@
 # From-Scratch Documentation High-Level Report (2026-04-09)
 
 ## Executive summary
-The `/from_scratch` tree is a specification-grade SSOT canon for rebuilding CRE8 from zero with contract-first implementation, strict authorization boundaries, security hardening, and release/operational governance.
+The `/workspace/CRE8pw/docs` tree is a specification-grade SSOT canon for rebuilding CRE8 from zero with contract-first implementation, strict authorization boundaries, security hardening, and release/operational governance.
 
 ## What it is
 - A full-stack specification set covering product intent, architecture, API/UI/runtime contracts, data model, security controls, operations, traceability, decisions, implementation guidance, and program management.
@@ -25,7 +25,7 @@ The `/from_scratch` tree is a specification-grade SSOT canon for rebuilding CRE8
 Session completion documentation states the from-scratch set is fully authored (62 finished, 0 unfinished), with ongoing work focused on calibration/evidence quality rather than missing structure.
 
 ## Practical interpretation
-Treat `/from_scratch` as the rebuild playbook + control plane:
+Treat `/workspace/CRE8pw/docs` as the rebuild playbook + control plane:
 - Build teams use it as implementation contract.
 - QA/SRE use it for verification and release gating.
 - Governance uses it for controlled change management and decision traceability.

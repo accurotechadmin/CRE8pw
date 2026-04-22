@@ -48,7 +48,7 @@
 | `docs/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` | Read | Automation governance | - Defines required SSOT lint/sync automation expectations. <br> - Integrates checks with PR policy and evidence outputs. |
 | `docs/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` | Read | Impact templates | - Provides minimal change-impact mapping template. <br> - Required artifact for SSOT-behavioral/contract changes. |
 | `docs/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` | Read | Reconciliation | - Tracks prototype-vs-SSOT deltas and promotion guidance. <br> - Unresolved architecture-level deltas must feed known-gap tracker. |
-| `docs/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md` | Read | Gaps governance | - Current tracker reports no open unresolved SSOT-level gaps. <br> - Includes recent resolved gap set and triage rules. |
+| `docs/ssot_canon/80_program_management/RISK_REGISTER.md` | Read | Risk governance | - Active risk register is authoritative for unresolved assumptions. <br> - Includes mitigation owners and trigger signals. |
 | `docs/ssot_canon/60_decisions/ADR_INDEX.md` | Read | Decision index | - Lists active ADR records and index contract expectations. <br> - Provides discoverability and governance linkage. |
 | `docs/ssot_canon/60_decisions/DECISIONS_LOG.md` | Read | Decision chronology | - Logs key governance/contract/security/release decisions. <br> - Requires updates when policy/architecture-affecting decisions change. |
 | `docs/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md` | Read | ADR | - Machine-artifact precedence and SSOT-first governance adopted. <br> - Drift checks become merge-blocking implication. |
@@ -360,7 +360,7 @@
 
 ## 7) Contradictions, ambiguities, and missing information
 
-1. **Potential conflict:** `ssot_report.json` command paths reference `/workspace/cre8w/...` while current repo path is `/workspace/CRE8pw`.
+1. **Resolved baseline:** `ssot_report.json` command paths are normalized to `/workspace/CRE8pw/...`, matching the current authoritative repo root.
    - Resolution path: regenerate SSOT report from current canonical workspace and replace artifact.
    - Owner role: Platform/SRE lead + architecture lead.
 2. **Ambiguity:** `UI_RUNTIME_CONTRACT.md` “Related SSOT docs” repeats self-reference only.

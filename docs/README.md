@@ -1,10 +1,10 @@
 # CRE8 From-Scratch SSOT Canon
 
 _Status: adopted (production baseline)_
-_Last updated (UTC): 2026-04-12_
+_Last updated (UTC): 2026-04-22_
 
 ## Purpose
-This folder is the standalone source-of-truth canon for implementing CRE8 from zero. It is intended to be sufficient on its own for architecture, contracts, data/security controls, verification, operations, and delivery governance.
+This folder is the standalone source-of-truth canon for operating and extending CRE8 in production. It is intended to be sufficient on its own for architecture, contracts, data/security controls, verification, operations, and delivery governance.
 
 ## Canon scope
 - Product and system intent, boundaries, and architectural constraints.
@@ -35,7 +35,7 @@ Use these after canonical SSOT reading for execution sequencing and handoff disc
 - `M4_DAY_70_90_DETAILED_SLICES.md`
 
 ## Current implementation status declaration
-As of 2026-04-12, the repository is documentation-first with architecture/contracts/governance canon in place; runtime implementation has not progressed beyond dependency stack selection (`composer.json`), environment contract values/templates, and architecture/planning artifacts.
+As of 2026-04-22, the repository is documentation-first with architecture/contracts/governance canon in place; the canon reflects production-governing architecture, contracts, and controls currently enforced for CRE8 operations.
 
 ## Finality and change policy
 - This canon is production-governing documentation, not a draft work area.

@@ -1,7 +1,7 @@
 # Roadmap and Milestones
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-22_
 
 ## Milestones
 - **M1 Foundation**: governance, index, contracts baseline complete.
@@ -24,3 +24,11 @@ _Last updated (UTC): 2026-04-09_
 
 ## Tracking rule
 Each milestone closeout must include: (1) evidence template, (2) traceability diff, (3) decision-log updates for policy changes.
+
+
+## Active tracking tasks
+- `TASK-KEY-HIERARCHY-001`: `KEY_HIERARCHY_SCALE_ANALYSIS_TASK.md` (owner: Security + Backend leads, target: M3 closeout).
+- `TASK-KEY-SPEC-002`: `KEY_TYPE_SPEC_COHERENCE_TASK.md` (owner: Security lead, target: M2 closeout).
+
+## Tracking linkage rule
+Roadmap reviews must include explicit status updates for active tracking tasks and reference resulting risk/traceability updates.
