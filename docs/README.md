@@ -38,6 +38,7 @@ Use these after canonical SSOT reading for execution sequencing and handoff disc
 - `M3_DAY_46_69_DETAILED_SLICES.md`
 - `M4_DAY_70_90_DETAILED_SLICES.md`
 - `INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`
+- `INSTRUCTOR_FOLLOWUP_LECTURE_EXTENDING_CRE8.md`
 
 ## Current implementation status declaration
 As of 2026-04-22, the repository is documentation-first with architecture/contracts/governance canon in place; the canon reflects production-governing architecture, contracts, and controls currently enforced for CRE8 operations.
