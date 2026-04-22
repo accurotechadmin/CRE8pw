@@ -4,7 +4,6 @@
 
 | Path | Status (Read) | Domain | Key takeaways (max 2 bullets) |
 |---|---|---|---|
-| `.htaccess` | Read | Runtime/web entry | - Rewrites `/public/*` to root and serves app via `public/` fallback. <br> - Disables directory listing. |
 | `composer.json` | Read | Dependency/runtime baseline | - PHP 8.2 + Slim 4 + JWT + PDO + sodium + rate limiter + monolog stack. <br> - Scripts include test/security/ops smoke and SSOT lint/sync/report. |
 | `dot.env` | Read | Local env scaffold | - Example env aligns with SSOT variables (DB/JWT/CORS/CSRF/rate/JWT TTL). <br> - Contains concrete sample secrets/paths that should be treated as sensitive. |
 | `docs/README.md` | Read | Canon entrypoint | - Declares SSOT-first from-scratch canon scope and usage rules. <br> - Defines precedence and non-negotiable contract/governance discipline. |
@@ -74,14 +73,10 @@
 | `docs/ssot_canon/schemas/success-envelope.schema.json` | Read | Machine schema | - Success envelope requires `{data,meta}` and `meta.envelope_version`. <br> - Supports extensible metadata. |
 | `docs/ssot_canon/schemas/error-envelope.schema.json` | Read | Machine schema | - Error envelope requires `{error,meta}` with `error.code/message/request_id`. <br> - Supports extensible `details` and metadata. |
 | `docs/ssot_canon/evidence/automation/ssot_report.json` | Read | Automation evidence | - Current artifact is marked `historical_record`; do not use it as live readiness state. <br> - Treat as audit history only unless replaced by a current run. |
-| `docs/narrative/*` | Not present in repository snapshot | Historical reference set | - Earlier onboarding template referenced narrative synthesis files that are not included in current repository state. <br> - Use `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md` + canonical SSOT families instead. |
 | `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
 | `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
-| `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` | Read | Execution planning | - Defines day-by-day generalized roadmap for Days 1–90 with milestone spine M1–M4. <br> - Declares daily proof discipline and no fallback/legacy implementation stance. |
-| `docs/M1_DAY_1_21_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M1 foundation/governance implementation. <br> - Includes M1 daily evidence checklist and M1→M2 entry gates. |
-| `docs/M2_DAY_22_45_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M2 data/auth/policy core and guard foundations. <br> - Includes M2 daily evidence checklist and M2→M3 entry gates. |
-| `docs/M3_DAY_46_69_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M3 domain completion and security/frontend parity start. <br> - Includes M3 daily evidence checklist and M3→M4 entry gates. |
-| `docs/M4_DAY_70_90_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M4 parity hardening, observability, rehearsals, and release closeout. <br> - Includes M4 daily evidence checklist and release-completion gates. |
+| `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | Read | Execution planning | - Defines authoritative completion-based stage model (Stage 0–8) with dependency-driven progression. <br> - Replaces prior fixed-duration plan language with gate/evidence-driven delivery. |
+| `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` | Read | Execution planning | - Defines full slice-level decomposition from Stage 0 through Stage 10 with dependencies/deliverables/evidence per slice. <br> - Serves as implementation execution companion to the master plan. |
 
 ## 2) CRE8 mental model (authoritative)
 
@@ -365,27 +360,27 @@
    - Resolution path: add explicit emergency change-control appendix with temporary waiver and remediation timeline requirements.
    - Owner role: Architecture lead + Eng manager/program owner.
 
-## 8) 30/60/90 day strategic development plan
+## 8) Stage-based strategic development plan
 
-### 30-day stabilization goals
+### Stage 0–2 stabilization and core platform goals
 - Establish executable parity baseline: routes, envelopes, error codes, middleware ordering.
 - Close ambiguity/consistency items (meta requirement alignment, UI runtime related-doc fixes, SSOT report path normalization).
 - Stand up minimum conformance suites: contract + auth decision + keychain invariants + abuse-case smoke subset.
 
-### 60-day capability build-out
+### Stage 3–5 capability build-out
 - Complete feature-complete v1 route families with deterministic authorization behavior.
 - Complete security abuse-case automation and redaction/replay verification.
 - Implement operational observability mapping to SLI/SLO with owner/alert routing.
 
-### 90-day hardening + scale path
+### Stage 6–8 hardening, reliability, and release path
 - Gate-driven pre-production dress rehearsals (rollback, key rotation, migration smoke, release evidence drills).
 - Performance and reliability hardening to SLOs with error-budget operational controls.
 - Institutionalize SSOT automation in CI/CD with milestone closeout evidence and periodic risk re-scoring.
 
 ### Mapping to roadmap/risk themes
-- 30-day maps to M1/M2 readiness and mitigates R-001/R-002/R-005.
-- 60-day maps to M2/M3 and mitigates R-002/R-003/R-004.
-- 90-day maps to M4 and reinforces mitigation coverage across all active risks.
+- Stages 0–2 map to M1/M2 readiness and mitigate R-001/R-002/R-005.
+- Stages 3–5 map to M2/M3 and mitigate R-002/R-003/R-004.
+- Stages 6–8 reinforce mitigation coverage across all active risks and release gates.
 
 ## 9) “Ask me anything” readiness statement
 
