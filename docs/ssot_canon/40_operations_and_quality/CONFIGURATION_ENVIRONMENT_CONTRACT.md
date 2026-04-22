@@ -1,7 +1,7 @@
 # Configuration and Environment Contract (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -30,6 +30,7 @@ Define the canonical runtime environment-variable contract, default policy value
 - `JWT_KEY_TTL_SECONDS` (default: `600`)
 - `JWT_DELEGATION_TTL_SECONDS` (default: `300`)
 - `BOOT_EVIDENCE_PATH` (optional path for startup evidence JSON)
+- `OWNER_SIGNUP_MODE` (default: `invite_required`; allowed: `invite_required|open`)
 
 ## Profile hardening constraints
 - `APP_ENV` must be one of `local|stage|prod`.
@@ -39,6 +40,7 @@ Define the canonical runtime environment-variable contract, default policy value
 - `DB_DSN` must use `sqlite:`, `mysql:`, or `pgsql:` prefixes.
 - `prod` must not use SQLite DSN.
 - Optional numeric policy variables must be positive integers.
+- `OWNER_SIGNUP_MODE=open` is allowed only when deployment explicitly accepts open owner bootstrap risk posture and documents controls in release evidence.
 - In `stage|prod`, private-key file paths must satisfy strict permission checks.
 
 ## Key material source rules
@@ -47,6 +49,11 @@ Define the canonical runtime environment-variable contract, default policy value
   2. filesystem paths.
 - Relative key paths are resolved against repository root at startup.
 - PEM strings must include end markers; key paths must be readable.
+
+## Owner bootstrap policy contract
+- Default mode: `invite_required` (owner signup requires valid invite code).
+- Optional mode: `open` (owner signup allowed without invite code).
+- Switching modes is a behavior-affecting policy change and must include acceptance/security evidence updates in the same PR/release package.
 
 ## Runtime mapping contract
 Environment values are mapped into:

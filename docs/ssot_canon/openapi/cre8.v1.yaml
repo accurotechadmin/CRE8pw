@@ -59,7 +59,7 @@ paths:
         '200': { description: UI content }
   /console/owners:
     post:
-      summary: Owner registration
+      summary: Owner registration (invite-gated by default)
       security: []
       requestBody:
         required: true
@@ -68,6 +68,7 @@ paths:
             schema: { $ref: '#/components/schemas/OwnerSignupRequest' }
       responses:
         '201': { $ref: '#/components/responses/Success' }
+        '403': { $ref: '#/components/responses/Error' }
         '409': { $ref: '#/components/responses/Error' }
         '422': { $ref: '#/components/responses/Error' }
   /api/auth/login:
@@ -332,10 +333,14 @@ components:
         meta: { $ref: '#/components/schemas/Meta' }
     OwnerSignupRequest:
       type: object
-      required: [email, password]
+      required: [email, password, invite_code]
       properties:
         email: { type: string, format: email }
         password: { type: string, minLength: 12 }
+        invite_code:
+          type: string
+          minLength: 8
+          description: Required unless deployment explicitly enables open owner signup mode.
     OwnerLoginRequest:
       type: object
       required: [email, password]

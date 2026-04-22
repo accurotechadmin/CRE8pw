@@ -22,13 +22,13 @@ Quick index of the repository document set and root-level configuration artifact
 
 ## SSOT canon families
 - `docs/ssot_canon/00_governance/*`
-- `docs/ssot_canon/10_product_and_architecture/*`
-- `docs/ssot_canon/20_contracts/*`
+- `docs/ssot_canon/10_product_and_architecture/*` (includes `CRE8_HUMAN_OPERATING_MODEL.md`)
+- `docs/ssot_canon/20_contracts/*` (includes `USAGE_SCENARIOS_AND_PERMISSION_STORIES.md`)
 - `docs/ssot_canon/30_data_and_security/*`
 - `docs/ssot_canon/40_operations_and_quality/*`
 - `docs/ssot_canon/50_traceability_and_automation/*`
 - `docs/ssot_canon/60_decisions/*`
-- `docs/ssot_canon/70_implementation_guidance/*`
+- `docs/ssot_canon/70_implementation_guidance/*` (includes `EXTENSIBILITY_PLAYBOOK.md`)
 - `docs/ssot_canon/80_program_management/*`
 - `docs/ssot_canon/openapi/cre8.v1.yaml`
 - `docs/ssot_canon/schemas/success-envelope.schema.json`

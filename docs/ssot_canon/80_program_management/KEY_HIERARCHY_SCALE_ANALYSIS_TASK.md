@@ -8,12 +8,12 @@ _Tracking ID: TASK-KEY-HIERARCHY-001_
 Analysis task
 
 ## Objective
-Evaluate the production hierarchy model (`owner > primary > secondary > use`) and document scaling behavior for Keychains and Audience Groups.
+Evaluate the production hierarchy model (`owner > primary > secondary > use`) and document scaling behavior for Keychains.
 
 ## Required outputs
 1. Hierarchy stress analysis for depth, revocation fan-out, and lineage observability.
 2. Keychain scaling analysis with mixed key-class membership constraints.
-3. Audience Group interaction model, especially isolation boundaries between governance and content routes.
+3. Isolation boundaries between governance and content routes across key classes and keychains.
 4. Recommendations for policy/runtime guard updates and test coverage expansions.
 
 ## Exit criteria

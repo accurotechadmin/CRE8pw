@@ -23,6 +23,8 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 
 Gateway protected routes require `X-Device-Id` parity with JWT `device_id` claim.
 
+Owner bootstrap (`POST /console/owners`) is invite-code gated by default. Deployments that intentionally allow open owner signup must enable it through configuration and preserve contract parity/evidence requirements when toggled.
+
 ## Endpoint examples
 See `docs/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.
 For deep health semantics use `docs/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md`.
@@ -36,3 +38,9 @@ Any change to route paths, request schema, response schema, or error semantics m
 ## Backward compatibility
 - Breaking changes require a new major `openapi` version file.
 - Additive fields are non-breaking if envelope and required claims remain stable.
+
+
+## Product-operating interpretation (non-normative)
+- Teams may start with owner-first usage and keep gateway exposure internal.
+- Enabling external API access should be treated as an operational rollout decision, not a contract rewrite.
+- Any profile toggle that changes observed behavior must be evidenced through acceptance + smoke checks.

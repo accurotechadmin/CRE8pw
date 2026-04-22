@@ -1,7 +1,7 @@
 # Module Boundaries and Ownership
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-22_
 
 ## Core modules
 - Auth and token lifecycle
@@ -23,3 +23,12 @@ _Last updated (UTC): 2026-04-08_
 - Cross-module calls must occur through documented service contracts.
 - Policy decisions cannot be duplicated ad hoc across handlers.
 - Shared invariants belong in centralized policy/validation services.
+
+
+## Extension seam ownership map
+| Extension seam | Required synchronized artifacts | Primary reviewer |
+|---|---|---|
+| Route/contract extension | OpenAPI + route inventory + endpoint examples + acceptance matrix | Architecture lead |
+| Policy/authorization extension | Auth spec + decision tables + error catalog + abuse cases | Security lead |
+| Data-model extension | Data model spec/reference/ERD + migration strategy + traceability matrix | Backend lead |
+| UI-runtime extension | UI runtime contract + acceptance matrix + examples | Frontend/QA leads |

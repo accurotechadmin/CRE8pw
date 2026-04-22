@@ -7,12 +7,12 @@ _Last updated (UTC): 2026-04-21_
 Analysis task
 
 ## Objective
-Evaluate the production hierarchy model (`owner > primary > secondary > use`) with the introduction of `master` key class and document scaling behavior for Keychains and Audience Groups.
+Evaluate the production hierarchy model (`owner > primary > secondary > use`) with the introduction of `master` key class and document scaling behavior for Keychains.
 
 ## Required outputs
 1. Hierarchy stress analysis for depth, revocation fan-out, and lineage observability.
 2. Keychain scaling analysis with mixed key-class membership constraints.
-3. Audience Group interaction model, especially isolation boundaries between SYSADMIN (`master`) and content routes.
+3. Isolation boundaries between SYSADMIN (`master`) governance paths and content routes.
 4. Recommendations for policy/runtime guard updates and test coverage expansions.
 
 ## Exit criteria

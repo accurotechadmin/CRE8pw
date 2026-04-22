@@ -19,6 +19,12 @@ Defines principals, key classes, delegation bounds, keychain aggregation behavio
 - `use`
 - `keychain` (v1 production-active)
 
+## Human-readable key class intent
+- `primary_author`: broad delegated authoring role that may mint descendants only within inherited envelope bounds.
+- `secondary_author`: constrained delegated authoring role with narrower mint authority and envelope-bound limits.
+- `use`: consumption/interaction role (for example feed read/comment where policy permits) and no mint authority.
+- `keychain`: aggregate key principal for collaborative access, governed through owner-controlled membership and effective-resolution rules.
+
 ## Permission model (v1 allow-list)
 Canonical permission vocabulary:
 - `posts:read`
@@ -30,7 +36,7 @@ Canonical permission vocabulary:
 - `keychains:manage`
 
 ## Delegation invariants
-- Child envelope must be a strict subset of parent permissions/scope.
+- Child envelope must be a strict subset of parent permissions/scope (no unlimited-over-parent delegation is permitted).
 - Delegation max depth is `3`.
 - Delegated credentials must carry explicit expiry.
 - Delegation lineage must be preserved for token claim checks.
@@ -44,6 +50,10 @@ Canonical permission vocabulary:
 - Scope merge is union for positive scope tokens; restrictive dimensions use intersection where policy families define restrictive semantics.
 - Any revoked/suspended/cancelled member contributes no effective permissions/scope.
 - Keychain actions must record both keychain actor and resolved source-key lineage references.
+
+## Owner bootstrap invitation requirement
+- Default owner bootstrap policy requires a valid invite code at `POST /console/owners`.
+- Deployments may enable open owner signup only through explicit configuration (`OWNER_SIGNUP_MODE=open`) and documented evidence.
 
 ## Surface enforcement model
 - **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).
@@ -68,3 +78,8 @@ Canonical permission vocabulary:
 - Gateway key JWTs are minted with a mandatory `device_id` claim tied to the authenticating client device.
 - Runtime validation requires strict equality between JWT `device_id` claim and `X-Device-Id` header on protected gateway routes.
 - Device mismatch invalidates the token for that request and is treated as non-transferable credential enforcement.
+
+
+## Non-owner participation model
+- Non-owner actors can access the platform with key credentials and do not require local username/email/password registration in the default delegated model.
+- Owner credentials remain governance-scoped and are not reused as keychain members.

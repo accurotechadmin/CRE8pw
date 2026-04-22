@@ -1,7 +1,7 @@
 # Architecture and Surfaces
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-08_
+_Last updated (UTC): 2026-04-22_
 
 ## Architectural model
 CRE8 is a multi-surface HTTP application with three primary runtime surfaces:
@@ -20,3 +20,14 @@ CRE8 is a multi-surface HTTP application with three primary runtime surfaces:
 - Console and gateway auth contexts are never interchangeable.
 - Authorization decision logic is centralized and table-driven.
 - Data invariants are enforced both in service layer and schema constraints.
+
+
+## Surface enablement matrix
+| Deployment profile | Public/bootstrap | Gateway | Console | Notes |
+|---|---|---|---|---|
+| Owner-first | required | optional/internal | required | Suitable for private systems using owner credentialing first. |
+| Delegated platform | required | required | required | Full CRE8 model with external key-based API access. |
+| Progressive | required | staged rollout | required | Start private; enable gateway externally when business/ops ready. |
+
+## Human-operations note
+The native UI routes are parity clients over the same APIs. This gives non-technical operators a guided UX while preserving the same contract behavior used by third-party API clients.

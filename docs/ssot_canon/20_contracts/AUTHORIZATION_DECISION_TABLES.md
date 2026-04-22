@@ -78,6 +78,11 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | `X-Device-Id` malformed | Deny (`422 validation_failed`, `device_id_invalid_format`) |
 | JWT `device_id` missing/mismatch relative to header | Deny (`401 auth_invalid`, `token_device_mismatch`) |
 
+## Human interpretation notes (non-normative)
+- Delegation flexibility exists, but only within strict parent bounds (subset/depth/expiry).
+- Primary/secondary keys can be specialized so one actor may mint descendants while another can only post/comment.
+- Use keys are intentionally non-minting and are safest for consumer-facing participation.
+
 ## Error mapping expectations
 - Policy denials map to `403 forbidden` with stable detail codes.
 - Structural request violations map to `422 validation_failed`.

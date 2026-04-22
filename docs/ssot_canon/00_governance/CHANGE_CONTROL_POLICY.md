@@ -10,6 +10,7 @@ Applies to all files under `/workspace/CRE8pw/docs/ssot_canon/` plus top-level p
 - **Class A (breaking contract):** route/schema/auth/data invariant changes.
 - **Class B (behavioral):** acceptance criteria, policy decision, readiness gate changes.
 - **Class C (editorial):** wording/formatting without normative impact.
+- Narrative-only edits remain Class C only if they do not alter behavioral meaning relative to machine contracts or decision tables.
 - **Class D (emergency production hotfix):** urgent production defect/security hotfix where immediate mitigation is required before full SSOT synchronization can be completed.
 
 ## Approval requirements
