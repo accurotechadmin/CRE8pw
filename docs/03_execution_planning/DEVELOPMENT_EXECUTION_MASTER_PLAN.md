@@ -4,7 +4,7 @@ _Status: authoritative execution plan replacing prior fixed-duration plan_
 _Last updated (UTC): 2026-04-22_
 
 ## Plan intent and framing
-This plan replaces the previous fixed day-count plan with a **completion-based execution system**. Work proceeds by readiness gates and dependency closure, not calendar targets.
+This plan is a **completion-based execution system**. Work proceeds by readiness gates and dependency closure, not calendar targets.
 
 Companion execution detail document:
 - `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` (slice-level implementation sequencing and evidence requirements).
