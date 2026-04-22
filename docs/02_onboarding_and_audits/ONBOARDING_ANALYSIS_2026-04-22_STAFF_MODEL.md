@@ -7,7 +7,7 @@ _Date (UTC): 2026-04-22_
 | Path | Status (Read) | Domain | Key takeaways (max 2 bullets) |
 |---|---|---|---|
 | `.htaccess` | Read | root/runtime hosting | - Apache rewrite sends traffic to `public/`. - `public` canonicalization rule present. |
-| `composer.json` | Read | root/runtime contract | - PHP 8.2 + Slim/JWT/validation/logging/rate-limiter baseline. - Scripts reference `tests/` and `scripts/` contracts. |
+| `../../composer.json` | Read | root/runtime contract | - PHP 8.2 + Slim/JWT/validation/logging/rate-limiter baseline. - Scripts reference `tests/` and `scripts/` contracts. |
 | `dot.env` | Read | root/config scaffold | - Environment template includes DB/JWT/CORS/CSRF knobs. - Contains concrete-looking credentials/paths (hygiene concern). |
 | `docs/01_foundation/README.md` | Read | repo governance | - Canon declared production-governing SSOT baseline. - Repo status declared documentation-first. |
 | `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` | Read | product identity | - Defines delegated-authorship value proposition. - Separates owner governance from delegated execution. |
@@ -151,7 +151,7 @@ _Date (UTC): 2026-04-22_
 
 ### Facts
 - Runtime implementation directories (`src/`, `tests/`, `scripts/`) are absent in this snapshot.
-- `composer.json` declares autoload and script contracts that assume those directories exist.
+- `../../composer.json` declares autoload and script contracts that assume those directories exist.
 - Execution plans are stage/slice complete as guidance, including Stage 0 skeleton creation and CI wiring expectations.
 
 ### Top 10 high-leverage next tasks
@@ -168,7 +168,7 @@ _Date (UTC): 2026-04-22_
 
 ## 7) Contradictions, ambiguities, and missing information
 
-1. **Script-contract vs repository reality mismatch:** `composer.json` references `tests/`/`scripts/` not present.  
+1. **Script-contract vs repository reality mismatch:** `../../composer.json` references `tests/`/`scripts/` not present.  
    - Resolution: either scaffold dirs and scripts (preferred, Stage 0) or temporarily remove contracts.  
    - Owner role: Platform Engineering + Release Engineering.
 2. **Environment scaffold hygiene risk:** `dot.env` has concrete-looking credentials/paths.  

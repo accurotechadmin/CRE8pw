@@ -4,7 +4,7 @@
 
 | Path | Status (Read) | Domain | Key takeaways (max 2 bullets) |
 |---|---|---|---|
-| `composer.json` | Read | Dependency/runtime baseline | - PHP 8.2 + Slim 4 + JWT + PDO + sodium + rate limiter + monolog stack. <br> - Scripts include test/security/ops smoke and SSOT lint/sync/report. |
+| `../../composer.json` | Read | Dependency/runtime baseline | - PHP 8.2 + Slim 4 + JWT + PDO + sodium + rate limiter + monolog stack. <br> - Scripts include test/security/ops smoke and SSOT lint/sync/report. |
 | `dot.env` | Read | Local env scaffold | - Example env aligns with SSOT variables (DB/JWT/CORS/CSRF/rate/JWT TTL). <br> - Contains concrete sample secrets/paths that should be treated as sensitive. |
 | `docs/01_foundation/README.md` | Read | Canon entrypoint | - Declares SSOT-first from-scratch canon scope and usage rules. <br> - Defines precedence and non-negotiable contract/governance discipline. |
 | `docs/ssot_canon/00_governance/SSOT_INDEX.md` | Read | Governance index | - Defines canon navigation and artifact tiers. <br> - Declares precedence: machine artifacts > contracts/security > ops > program docs. |
@@ -14,7 +14,7 @@
 | `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` | Read | Terminology | - Establishes canonical terms for principals, envelopes, policies, lifecycle states. <br> - Terminology is required for cross-doc consistency. |
 | `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` | Read | Architecture boundaries | - Defines layered architecture and surface boundaries (public/gateway/console). <br> - Enforces boundary and coupling rules for modules/services. |
 | `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` | Read | Request lifecycle | - Specifies normative middleware order (request-id → security → auth/policy → validation/rate → handler → envelope mapper). <br> - Defines baseline failure mappings (401/403/422/500). |
-| `docs/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` | Read | Dependency governance | - Norms dependency families and upgrade governance rules. <br> - Mirrors package/script baseline in `composer.json`. |
+| `docs/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` | Read | Dependency governance | - Norms dependency families and upgrade governance rules. <br> - Mirrors package/script baseline in `../../composer.json`. |
 | `docs/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` | Read | Governance ownership | - Defines adopted/deprecated/superseded model. <br> - Sets owner/co-reviewer/accountability matrix and SLAs. |
 | `docs/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` | Read | Change control | - Class A/B/C change taxonomy with approval requirements. <br> - Requires impact map, traceability updates, and evidence payloads. |
 | `docs/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` | Read | Documentation standards | - Sets required sections and writing quality bar for adopted docs. <br> - Enforces traceability conventions and metadata hygiene. |
@@ -284,7 +284,7 @@
 ### Inferred current implementation status (from evidence/reporting)
 **Facts**
 - SSOT docs present as a comprehensive adopted canon with high structural completeness.
-- Automation evidence (`ssot_report.json`) indicates lint and sync checks were passing at generation time (2026-04-09).
+- Automation evidence (`docs/ssot_canon/evidence/automation/ssot_report.json`) indicates lint and sync checks were passing at generation time (2026-04-09).
 - Repository status is explicitly documentation-first: no runtime codebase is implemented yet beyond dependency stack selection, environment value templates, architecture definition, and planning artifacts.
 
 **Inference**
@@ -292,7 +292,7 @@
 
 ### High-leverage next tasks (top 10)
 1. **Objective:** Verify runtime route parity vs OpenAPI/route inventory.
-   - Areas: `openapi/cre8.v1.yaml`, route definitions, contract tests.
+   - Areas: `docs/ssot_canon/openapi/cre8.v1.yaml`, route definitions, contract tests.
    - Dependencies: contract test harness.
    - Risks: hidden undocumented routes.
    - Evidence: parity diff + contract test output.
@@ -344,10 +344,10 @@
 
 ## 7) Contradictions, ambiguities, and missing information
 
-1. **Resolved baseline:** `ssot_report.json` command paths are normalized to `/workspace/CRE8pw/...`, matching the current authoritative repo root.
+1. **Resolved baseline:** `docs/ssot_canon/evidence/automation/ssot_report.json` command paths are normalized to `/workspace/CRE8pw/...`, matching the current authoritative repo root.
    - Resolution path: regenerate SSOT report from current canonical workspace and replace artifact.
    - Owner role: Platform/SRE lead + architecture lead.
-2. **Ambiguity:** `UI_RUNTIME_CONTRACT.md` “Related SSOT docs” repeats self-reference only.
+2. **Ambiguity:** `docs/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` “Related SSOT docs” repeats self-reference only.
    - Resolution path: replace with intended related docs (API contract, error catalog, route inventory, acceptance matrix).
    - Owner role: Backend/API lead + QA lead.
 3. **Potential inconsistency:** OpenAPI `Meta` schema does not require `envelope_version`, while JSON schemas do require it.

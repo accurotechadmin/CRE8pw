@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-09_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define deterministic migration and seed execution behavior required for boot validation, smoke checks, and release readiness.
@@ -15,7 +15,7 @@ Define deterministic migration and seed execution behavior required for boot val
 - Migration execution must be idempotent at the version ledger level.
 
 ## Required migration artifacts
-- Schema migration scripts for all table contracts in `DATA_MODEL_SPEC.md`.
+- Schema migration scripts for all table contracts in `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`.
 - Migration ledger table (or equivalent) that records applied versions and timestamps.
 - Validation command for schema presence and version state.
 
@@ -34,6 +34,6 @@ Define deterministic migration and seed execution behavior required for boot val
 - Optional seed smoke command must verify deterministic fixture counts where enabled.
 
 ## Verification linkage
-- Related smoke semantics are defined in `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.
-- Release proof requirements are defined in `RELEASE_CHECKLIST.md`.
-- Traceability updates for schema behavior changes are required in `TRACEABILITY_MATRIX.md`.
+- Related smoke semantics are defined in `docs/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.
+- Release proof requirements are defined in `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`.
+- Traceability updates for schema behavior changes are required in `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`.

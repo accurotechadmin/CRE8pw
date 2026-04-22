@@ -15,15 +15,15 @@ This folder is the standalone source-of-truth canon for operating and extending 
 ## Authoritative reading path
 1. `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
 2. `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
-3. `ssot_canon/00_governance/SSOT_INDEX.md`
-4. `ssot_canon/10_product_and_architecture/*`
-5. `ssot_canon/20_contracts/*`
-6. `ssot_canon/30_data_and_security/*`
-7. `ssot_canon/40_operations_and_quality/*`
-8. `ssot_canon/50_traceability_and_automation/*`
-9. `ssot_canon/60_decisions/*`
-10. `ssot_canon/70_implementation_guidance/*`
-11. `ssot_canon/80_program_management/*`
+3. `docs/ssot_canon/00_governance/SSOT_INDEX.md`
+4. `docs/ssot_canon/10_product_and_architecture/*`
+5. `docs/ssot_canon/20_contracts/*`
+6. `docs/ssot_canon/30_data_and_security/*`
+7. `docs/ssot_canon/40_operations_and_quality/*`
+8. `docs/ssot_canon/50_traceability_and_automation/*`
+9. `docs/ssot_canon/60_decisions/*`
+10. `docs/ssot_canon/70_implementation_guidance/*`
+11. `docs/ssot_canon/80_program_management/*`
 
 ## Implementation planning and onboarding artifacts (current)
 Use these after canonical SSOT reading for execution sequencing and handoff discipline:

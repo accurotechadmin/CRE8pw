@@ -72,7 +72,7 @@ Then read synthesis/support artifacts:
 - `docs/02_onboarding_and_audits/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 - `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`
 
-Then complete a full repository textual sweep for anything not yet covered (including root metadata like `composer.json` and `dot.env`).
+Then complete a full repository textual sweep for anything not yet covered (including root metadata like `../../composer.json` and `dot.env`).
 
 ### Phase 2 — Consistency and drift checks
 Perform focused checks across these invariants:

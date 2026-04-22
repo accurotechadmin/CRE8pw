@@ -5,12 +5,12 @@ The `/workspace/CRE8pw/docs` tree is a specification-grade SSOT canon for rebuil
 
 ## What it is
 - A full-stack specification set covering product intent, architecture, API/UI/runtime contracts, data model, security controls, operations, traceability, decisions, implementation guidance, and program management.
-- A machine-readable contract layer (`openapi/cre8.v1.yaml` + JSON envelope schemas) with precedence over narrative docs.
+- A machine-readable contract layer (`docs/ssot_canon/openapi/cre8.v1.yaml` + JSON envelope schemas) with precedence over narrative docs.
 - A governance model that requires synchronized doc+contract updates, verification evidence, and traceability updates for behavior changes.
 
 ## Structural shape
 1. **Top-level orchestration docs** (`PLAN_*`, `TECHNICAL_FOUNDATION_*`, completion/status reports, inventory/index docs).
-2. **Canonical SSOT folders (`ssot_canon/`)**:
+2. **Canonical SSOT folders (`docs/ssot_canon/`)**:
    - `00_governance` through `80_program_management` as lifecycle stages.
    - `openapi/` and `schemas/` as machine source-of-truth artifacts.
    - `evidence/` templates for release and SSOT change proof.

@@ -7,7 +7,7 @@ Quick index of the repository document set and root-level configuration artifact
 
 ## Root configuration artifacts
 - `dot.env` — Environment template/reference values aligned to runtime config contract.
-- `composer.json` — Dependency baseline and command contracts (`test`, `qa`, `ops:*`; optional `docs:ssot:*` when tooling exists).
+- `../../composer.json` — Dependency baseline and command contracts (`test`, `qa`, `ops:*`; optional `docs:ssot:*` when tooling exists).
 
 ## Foundational docs
 - `docs/01_foundation/README.md`

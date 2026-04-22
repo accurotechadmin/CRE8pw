@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-09_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Capture known prototype-to-canon deltas so unresolved implementation assumptions are tracked explicitly and either converged or promoted to formal gaps.

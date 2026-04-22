@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Expand security verification from high-level controls into explicit abuse-case test requirements and incident-ready verification evidence.
@@ -39,8 +39,8 @@ Production release is blocked if:
 - replay-protection assertions are missing or stale.
 
 ## Related SSOT docs
-- `SECURITY_THREAT_MODEL.md`
-- `SECURITY_CONTROLS_SPEC.md`
-- `VERIFICATION_STRATEGY.md`
-- `OBSERVABILITY_EVENT_CATALOG.md`
-- `PRODUCTION_READINESS_GATES.md`
+- `docs/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`
+- `docs/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`
+- `docs/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`
+- `docs/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`
+- `docs/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`

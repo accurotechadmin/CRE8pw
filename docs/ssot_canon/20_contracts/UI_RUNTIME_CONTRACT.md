@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-21_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Capture implementation-grade SPA runtime conventions that are required to deliver deterministic UI/API parity behavior in the production no-build UI model.
@@ -87,8 +87,8 @@ Optional substates (implementation convenience):
 - Explicit route-state visibility for async/error flows.
 
 ## Related SSOT docs
-- `API_CONTRACT_GUIDE.md`
-- `ROUTE_INVENTORY_REFERENCE.md`
-- `ACCEPTANCE_CRITERIA_MATRIX.md`
-- `ERROR_CODE_CATALOG.md`
-- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `docs/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
+- `docs/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md`
+- `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`
+- `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`

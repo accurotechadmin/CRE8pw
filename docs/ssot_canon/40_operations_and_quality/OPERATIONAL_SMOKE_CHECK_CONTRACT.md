@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-09_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define canonical operational smoke-check behaviors, expected outcomes, and failure evidence requirements for release readiness.
@@ -42,7 +42,7 @@ If migration strategy or artifact paths change, smoke scripts and this contract 
 - Gate D requires migration smoke and rollback-readiness evidence.
 
 ## Related SSOT docs
-- `RELEASE_CHECKLIST.md`
-- `VERIFICATION_STRATEGY.md`
-- `Migration_Seed_Strategy.md`
-- `PRODUCTION_READINESS_GATES.md`
+- `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`
+- `docs/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`
+- `docs/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md`
+- `docs/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
