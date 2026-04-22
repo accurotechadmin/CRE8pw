@@ -126,10 +126,10 @@ After reading, output these sections in this exact order:
 - Explicit list of doc conflicts or unclear points.
 - For each: proposed resolution path and owner role.
 
-### 8) 30/60/90 day strategic development plan
-- 30-day stabilization goals,
-- 60-day capability build-out,
-- 90-day hardening + scale path,
+### 8) Phased strategic development plan
+- Near-horizon stabilization goals,
+- Mid-horizon capability build-out,
+- Long-horizon hardening + scale path,
 - mapped to roadmap and risk register themes.
 
 ### 9) “Ask me anything” readiness statement

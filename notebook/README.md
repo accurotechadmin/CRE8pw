@@ -32,11 +32,11 @@ Use these after canonical SSOT reading for execution sequencing and handoff disc
 - `LLM_ONBOARDING_MASTER_PROMPT.md`
 - `ONBOARDING_ANALYSIS_2026-04-12.md`
 - `FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
-- `GENERALIZED_DAILY_PLAN_90_DAYS.md`
+- `DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
 - `M1_DAY_1_21_DETAILED_SLICES.md`
 - `M2_DAY_22_45_DETAILED_SLICES.md`
 - `M3_DAY_46_69_DETAILED_SLICES.md`
-- `M4_DAY_70_90_DETAILED_SLICES.md`
+- `M4_RELEASE_READINESS_DETAILED_SLICES.md`
 
 ## Current implementation status declaration
 As of 2026-04-22, the repository is documentation-first with architecture/contracts/governance canon in place; the canon reflects production-governing architecture, contracts, and controls currently enforced for CRE8 operations.

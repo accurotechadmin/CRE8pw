@@ -77,11 +77,11 @@
 | `docs/narrative/*` | Not present in repository snapshot | Historical reference set | - Earlier onboarding template referenced narrative synthesis files that are not included in current repository state. <br> - Use `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md` + canonical SSOT families instead. |
 | `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
 | `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
-| `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` | Read | Execution planning | - Defines day-by-day generalized roadmap for Days 1–90 with milestone spine M1–M4. <br> - Declares daily proof discipline and no fallback/legacy implementation stance. |
+| `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | Read | Execution planning | - Defines completion-based stage execution flow with readiness gates from implementation start through release and operations. <br> - Declares daily proof discipline and no fallback/legacy implementation stance. |
 | `docs/M1_DAY_1_21_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M1 foundation/governance implementation. <br> - Includes M1 daily evidence checklist and M1→M2 entry gates. |
 | `docs/M2_DAY_22_45_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M2 data/auth/policy core and guard foundations. <br> - Includes M2 daily evidence checklist and M2→M3 entry gates. |
 | `docs/M3_DAY_46_69_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M3 domain completion and security/frontend parity start. <br> - Includes M3 daily evidence checklist and M3→M4 entry gates. |
-| `docs/M4_DAY_70_90_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed daily slices for M4 parity hardening, observability, rehearsals, and release closeout. <br> - Includes M4 daily evidence checklist and release-completion gates. |
+| `docs/M4_RELEASE_READINESS_DETAILED_SLICES.md` | Read | Execution planning | - Defines detailed execution slices for M4 parity hardening, observability, rehearsals, and release closeout. <br> - Includes per-slice evidence checklist and release-completion gates. |
 
 ## 2) CRE8 mental model (authoritative)
 
@@ -365,7 +365,7 @@
    - Resolution path: add explicit emergency change-control appendix with temporary waiver and remediation timeline requirements.
    - Owner role: Architecture lead + Eng manager/program owner.
 
-## 8) 30/60/90 day strategic development plan
+## 8) phased strategic development plan
 
 ### 30-day stabilization goals
 - Establish executable parity baseline: routes, envelopes, error codes, middleware ordering.
@@ -377,7 +377,7 @@
 - Complete security abuse-case automation and redaction/replay verification.
 - Implement operational observability mapping to SLI/SLO with owner/alert routing.
 
-### 90-day hardening + scale path
+### Long-horizon hardening + scale path
 - Gate-driven pre-production dress rehearsals (rollback, key rotation, migration smoke, release evidence drills).
 - Performance and reliability hardening to SLOs with error-budget operational controls.
 - Institutionalize SSOT automation in CI/CD with milestone closeout evidence and periodic risk re-scoring.
@@ -385,7 +385,7 @@
 ### Mapping to roadmap/risk themes
 - 30-day maps to M1/M2 readiness and mitigates R-001/R-002/R-005.
 - 60-day maps to M2/M3 and mitigates R-002/R-003/R-004.
-- 90-day maps to M4 and reinforces mitigation coverage across all active risks.
+- Long-horizon hardening maps to release-readiness and reinforces mitigation coverage across active risks.
 
 ## 9) “Ask me anything” readiness statement
 
@@ -395,5 +395,5 @@
 1. Which implementation modules should be staffed first by available team capacity (parallelization plan)?
 2. What CI/CD runtime environment constraints (secrets, infra access) exist for executing the full release-gate pipeline?
 3. Which dashboard/runbook platform will be authoritative for SLI/SLO evidence storage and long-term audit retention?
-4. What exact cut strategy will be used for Day-90 release candidate promotion (single cut vs staged cut windows)?
+4. What exact cut strategy will be used for release candidate promotion (single cut vs staged cut windows)?
 5. What final signoff roster (named individuals) will own Gate A/B/C/D approvals?

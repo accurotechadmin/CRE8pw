@@ -99,11 +99,11 @@ _Last updated (UTC): 2026-04-22_
 - `docs/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
 
 ### Planning + execution cadence artifacts
-- `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` — day 1–90 implementation spine (draft).
+- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — completion-based implementation spine (draft).
 - `docs/M1_DAY_1_21_DETAILED_SLICES.md` — foundational implementation slices (draft).
 - `docs/M2_DAY_22_45_DETAILED_SLICES.md` — core feature implementation slices (draft).
 - `docs/M3_DAY_46_69_DETAILED_SLICES.md` — hardening and verification slices (draft).
-- `docs/M4_DAY_70_90_DETAILED_SLICES.md` — production readiness closeout slices (draft).
+- `docs/M4_RELEASE_READINESS_DETAILED_SLICES.md` — production readiness closeout slices (draft).
 
 ### SSOT Canon families
 

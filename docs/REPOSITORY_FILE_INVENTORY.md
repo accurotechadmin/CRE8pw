@@ -40,11 +40,11 @@ Quick index of the repository document set and root-level configuration artifact
 Narrative documents under docs/narrative/ (historical, not present) are not present in this repository snapshot and are not part of the active canon index.
 
 ## Implementation planning + execution artifacts (current)
-- `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
+- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
 - `docs/M1_DAY_1_21_DETAILED_SLICES.md`
 - `docs/M2_DAY_22_45_DETAILED_SLICES.md`
 - `docs/M3_DAY_46_69_DETAILED_SLICES.md`
-- `docs/M4_DAY_70_90_DETAILED_SLICES.md`
+- `docs/M4_RELEASE_READINESS_DETAILED_SLICES.md`
 
 ## Status declaration
 Current repository state is documentation-first: canonical SSOT, planning, and governance artifacts are present; runtime implementation remains to be built against these contracts.
