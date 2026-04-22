@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-21_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define the production contract for Master-Key-Level credentials used exclusively for owner-governed SYSADMIN system access.
@@ -31,7 +31,7 @@ Define the production contract for Master-Key-Level credentials used exclusively
 
 ## Cross-document synchronization requirements
 Any change to this spec requires same-PR updates to:
-- `AUTHORIZATION_AND_DELEGATION_SPEC.md`
-- `SECURITY_CONTROLS_SPEC.md`
-- `ROUTE_INVENTORY_REFERENCE.md` (if routes change)
-- `openapi/cre8.v1.yaml` (for interface-shape changes)
+- `docs/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`
+- `docs/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` (if routes change)
+- `docs/ssot_canon/openapi/cre8.v1.yaml` (for interface-shape changes)

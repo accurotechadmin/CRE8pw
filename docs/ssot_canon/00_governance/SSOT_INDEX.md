@@ -19,9 +19,9 @@ This index governs the production SSOT canon at `/workspace/CRE8pw/docs/ssot_can
 9. `80_program_management/` — workflow, DoD, risk, roadmap.
 
 ## Machine artifacts
-- `openapi/cre8.v1.yaml`
-- `schemas/success-envelope.schema.json`
-- `schemas/error-envelope.schema.json`
+- `docs/ssot_canon/openapi/cre8.v1.yaml`
+- `docs/ssot_canon/schemas/success-envelope.schema.json`
+- `docs/ssot_canon/schemas/error-envelope.schema.json`
 
 ## Usage rule
 If two documents disagree, precedence is:

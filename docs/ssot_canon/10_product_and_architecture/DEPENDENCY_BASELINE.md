@@ -19,7 +19,7 @@ _Last updated (UTC): 2026-04-09_
 - Middleware dependencies must expose predictable ordering and failure behavior.
 
 
-## Canonical package baseline (root `composer.json`)
+## Canonical package baseline (root `../../../composer.json`)
 - Runtime: `php:^8.2`, `slim/slim:^4.14`, `slim/psr7:^1.7`, `php-di/php-di:^7.0`
 - Security/auth: `firebase/php-jwt:^6.11`, `ext-sodium:*`
 - Data/runtime: `ext-pdo:*`, `vlucas/phpdotenv:^5.6`

@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define deterministic startup checks, startup evidence behavior, and failure-envelope semantics so CRE8 fails closed and remains operationally diagnosable.
@@ -45,7 +45,7 @@ Define deterministic startup checks, startup evidence behavior, and failure-enve
 If any mandatory boot assertion fails, startup must halt before serving user traffic.
 
 ## Related SSOT docs
-- `CONFIGURATION_ENVIRONMENT_CONTRACT.md`
-- `RELEASE_CHECKLIST.md`
-- `SECURITY_CONTROLS_SPEC.md`
-- `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
+- `docs/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`
+- `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`
+- `docs/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`
+- `docs/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`

@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## SLI definitions
 - API availability: successful non-5xx response ratio for `/api/*` and `/console/api/*`.
@@ -36,9 +36,9 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Page on sustained 5xx spikes and `/health` degradation.
 - Ticket on rising 401/403/429 anomalies beyond baseline.
 - Link alert context with `request_id` traces and event catalog families.
-- Alerts must include direct links to the corresponding runbook sections in `RELEASE_CHECKLIST.md`.
+- Alerts must include direct links to the corresponding runbook sections in `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`.
 
 ## Accountability rules
 - Every SLI has exactly one dashboard owner and one primary alert authority.
-- Ownership changes require updates to this file and `RELEASE_CHECKLIST.md` in the same PR.
+- Ownership changes require updates to this file and `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` in the same PR.
 - Monthly operations review must confirm owner/authority assignments remain accurate.

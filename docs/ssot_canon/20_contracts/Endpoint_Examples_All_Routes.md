@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-22_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Provide concrete request/response examples for every v1 route so backend, frontend, QA, and tooling teams can implement and validate behavior without inferential gaps.
@@ -350,4 +350,4 @@ Provide concrete request/response examples for every v1 route so backend, fronte
 ```
 
 ## Synchronization rule
-Any route behavior, payload-shape, or error-semantics update must modify this file, `openapi/cre8.v1.yaml`, and `ACCEPTANCE_CRITERIA_MATRIX.md` in the same PR.
+Any route behavior, payload-shape, or error-semantics update must modify this file, `docs/ssot_canon/openapi/cre8.v1.yaml`, and `docs/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` in the same PR.

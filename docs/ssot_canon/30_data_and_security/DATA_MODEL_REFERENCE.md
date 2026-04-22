@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Storage strategy
 - Relational storage through `ext-pdo` prepared statements and transactions.
@@ -33,7 +33,7 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Moderation decisions + revision metadata must commit together.
 
 ## Related SSOT docs
-- `DATA_MODEL_SPEC.md`
-- `ERD.md`
-- `AUTHORIZATION_AND_DELEGATION_SPEC.md`
-- `ROUTE_INVENTORY_REFERENCE.md`
+- `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
+- `docs/ssot_canon/30_data_and_security/ERD.md`
+- `docs/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md`
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`

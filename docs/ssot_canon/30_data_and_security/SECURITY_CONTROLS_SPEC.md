@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-22_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Control objectives
 1. Ensure credential authenticity and bounded token lifetime.
@@ -32,7 +32,7 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Structured audit logs: `monolog/monolog`
 
 ## Verification linkage
-Security controls are verified by suites listed in `VERIFICATION_STRATEGY.md`, aligned with `SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `SECURITY_VERIFICATION_ABUSE_CASES.md`, and include mandatory header/CSP checks defined in `SECURITY_HEADERS_AND_CSP_POLICY.md`.
+Security controls are verified by suites listed in `docs/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`, aligned with `docs/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md`, expanded through abuse-case requirements in `docs/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md`, and include mandatory header/CSP checks defined in `docs/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md`.
 
 
 ## Device binding control

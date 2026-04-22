@@ -7,7 +7,7 @@ _Date: 2026-04-09_
 Historically, behavioral truth was split across prose docs and implementation assumptions.
 
 ## Decision
-Machine artifacts (`openapi/cre8.v1.yaml`, envelope schemas) are precedence tier 1, with contract/security docs tier 2.
+Machine artifacts (`docs/ssot_canon/openapi/cre8.v1.yaml`, envelope schemas) are precedence tier 1, with contract/security docs tier 2.
 
 ## Consequences
 - Contract changes must be synchronized in one PR across machine + prose artifacts.

@@ -27,8 +27,8 @@ Each milestone closeout must include: (1) evidence template, (2) traceability di
 
 
 ## Active tracking tasks
-- `TASK-KEY-HIERARCHY-001`: `KEY_HIERARCHY_SCALE_ANALYSIS_TASK.md` (owner: Security + Backend leads, target: M3 closeout).
-- `TASK-KEY-SPEC-002`: `KEY_TYPE_SPEC_COHERENCE_TASK.md` (owner: Security lead, target: M2 closeout).
+- `TASK-KEY-HIERARCHY-001`: `docs/ssot_canon/80_program_management/KEY_HIERARCHY_SCALE_ANALYSIS_TASK.md` (owner: Security + Backend leads, target: M3 closeout).
+- `TASK-KEY-SPEC-002`: `docs/ssot_canon/80_program_management/KEY_TYPE_SPEC_COHERENCE_TASK.md` (owner: Security lead, target: M2 closeout).
 
 ## Tracking linkage rule
 Roadmap reviews must include explicit status updates for active tracking tasks and reference resulting risk/traceability updates.

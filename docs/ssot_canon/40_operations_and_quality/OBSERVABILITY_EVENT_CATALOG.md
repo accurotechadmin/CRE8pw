@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Event families
 - `auth.*`

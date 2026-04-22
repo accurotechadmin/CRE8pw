@@ -26,12 +26,12 @@ By the end of class, learners should be able to:
 
 ### 1.3 Required instructor prep
 Before lecture, review in this order:
-1. `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-2. `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
-3. `ssot_canon/10_product_and_architecture/*`
-4. `ssot_canon/20_contracts/*`
-5. `ssot_canon/30_data_and_security/*`
-6. `ssot_canon/40_operations_and_quality/*`
+1. `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+2. `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+3. `docs/ssot_canon/10_product_and_architecture/*`
+4. `docs/ssot_canon/20_contracts/*`
+5. `docs/ssot_canon/30_data_and_security/*`
+6. `docs/ssot_canon/40_operations_and_quality/*`
 
 ---
 
@@ -370,13 +370,13 @@ A: Mixing auth contexts between gateway and console paths or weakening envelope/
 ## 6) References for this lecture
 
 Primary source set:
-- `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-- `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
-- `ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
-- `ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
-- `ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
-- `ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
-- `ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`
-- `ssot_canon/40_operations_and_quality/*`
+- `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+- `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+- `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
+- `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
+- `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
+- `docs/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md`
+- `docs/ssot_canon/40_operations_and_quality/*`
 
 Use the above as canonical anchors whenever students ask “where is this rule defined?”

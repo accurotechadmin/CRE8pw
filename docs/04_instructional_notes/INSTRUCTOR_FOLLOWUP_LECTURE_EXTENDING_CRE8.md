@@ -2,7 +2,7 @@
 
 _Status: teaching-ready_
 _Audience: instructors teaching applied platform extension, integration architecture, and product customization_
-_Prerequisite: `INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`_
+_Prerequisite: `docs/04_instructional_notes/INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`_
 _Duration options: 120 minutes workshop or 2 x 75-minute sessions_
 _Last updated (UTC): 2026-04-22_
 
@@ -313,16 +313,16 @@ Suggested thresholds:
 ## 10) References (Canonical Anchors)
 
 Use these during workshop facilitation and review:
-- `INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`
-- `ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
-- `ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
-- `ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`
-- `ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
-- `ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`
-- `ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
-- `ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`
-- `ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
-- `ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`
-- `ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`
+- `docs/04_instructional_notes/INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`
+- `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
+- `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `docs/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
+- `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`
+- `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`
+- `docs/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md`
+- `docs/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`
+- `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`
+- `docs/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md`
 
 When students propose extension behavior, require them to cite which canonical anchor governs that behavior.

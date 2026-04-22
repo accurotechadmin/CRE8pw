@@ -45,7 +45,7 @@ _Last updated (UTC): 2026-04-22_
 - **Security hygiene risk** from environment example content if copied without sanitization.
 
 ### Recommended remediation priority
-1. Align `composer.json` scripts with actual repository contents (or add missing scripts/tests/source skeleton).
+1. Align `../../composer.json` scripts with actual repository contents (or add missing scripts/tests/source skeleton).
 2. Replace sensitive-looking `dot.env` values with obviously fake placeholders.
 3. Finalize evidence records (replace `pending-local` and pending reviewer signoffs where applicable).
 4. Keep all onboarding and inventory references synchronized to active files only; remove stale references during each documentation release cycle.
@@ -84,102 +84,102 @@ _Last updated (UTC): 2026-04-22_
 ## Functional inventory by file set
 
 ### Root runtime/config files
-- `composer.json` — PHP runtime baseline (Slim, DI, JWT, validation, CORS, logging, rate limiting, cache), QA/test/script contracts.
+- `../../composer.json` — PHP runtime baseline (Slim, DI, JWT, validation, CORS, logging, rate limiting, cache), QA/test/script contracts.
 - `dot.env` — local-development environment scaffold for DB/JWT/CORS/CSRF/rate-limit knobs.
 
 ### Foundational docs (non-canon root docs)
-- `docs/README.md` — declares SSOT purpose, scope, authority model, reading path, and current documentation-first status.
-- `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` — product identity and value promises.
-- `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` — runtime baseline and engineering quality bars.
-- `docs/RECOMMENDED_READING_ORDER.md` — sequenced reading curriculum.
-- `docs/REPOSITORY_FILE_INVENTORY.md` — repository map and declared artifact set.
-- `docs/HIGH_LEVEL_REPORT_2026-04-09.md` — earlier high-level interpretation.
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md` — detailed prior synthesis and mental model.
-- `docs/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
+- `docs/01_foundation/README.md` — declares SSOT purpose, scope, authority model, reading path, and current documentation-first status.
+- `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` — product identity and value promises.
+- `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` — runtime baseline and engineering quality bars.
+- `docs/01_foundation/RECOMMENDED_READING_ORDER.md` — sequenced reading curriculum.
+- `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md` — repository map and declared artifact set.
+- `docs/02_onboarding_and_audits/HIGH_LEVEL_REPORT_2026-04-09.md` — earlier high-level interpretation.
+- `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-12.md` — detailed prior synthesis and mental model.
+- `docs/02_onboarding_and_audits/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
 
 ### Planning + execution artifacts
-- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
-- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` — end-to-end slice decomposition aligned to the stage model (adopted companion).
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` — end-to-end slice decomposition aligned to the stage model (adopted companion).
 
 ### SSOT Canon families
 
 #### 00 Governance
-- `SSOT_INDEX.md` — top-level canon index + precedence + recent changes.
-- `DOCUMENT_STATUS_AND_OWNERSHIP.md` — status taxonomy and owner matrix.
-- `CHANGE_CONTROL_POLICY.md` — change classes/approval/release controls.
-- `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` — required sections/style/traceability conventions.
+- `docs/ssot_canon/00_governance/SSOT_INDEX.md` — top-level canon index + precedence + recent changes.
+- `docs/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` — status taxonomy and owner matrix.
+- `docs/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` — change classes/approval/release controls.
+- `docs/ssot_canon/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` — required sections/style/traceability conventions.
 
 #### 10 Product & architecture
-- `CRE8_PRODUCT_AND_SYSTEM_SPEC.md` — v1 scope, constraints, and out-of-scope boundary.
-- `ARCHITECTURE_AND_SURFACES.md` — surfaces/layering/boundary constraints.
-- `CANONICAL_TERMINOLOGY.md` — normalized domain language.
-- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` — middleware order and failure semantics.
-- `DEPENDENCY_BASELINE.md` — runtime dependency governance and baseline alignment.
+- `docs/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` — v1 scope, constraints, and out-of-scope boundary.
+- `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` — surfaces/layering/boundary constraints.
+- `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` — normalized domain language.
+- `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` — middleware order and failure semantics.
+- `docs/ssot_canon/10_product_and_architecture/DEPENDENCY_BASELINE.md` — runtime dependency governance and baseline alignment.
 
 #### 20 Contracts
-- `API_CONTRACT_GUIDE.md` — machine-contract primacy + synchronization rules.
-- `ROUTE_INVENTORY_REFERENCE.md` — human-readable route catalog with surface/auth/parity notes.
-- `Endpoint_Examples_All_Routes.md` — per-route example payloads.
-- `ERROR_CODE_CATALOG.md` — canonical error code/detail mapping.
-- `AUTHORIZATION_AND_DELEGATION_SPEC.md` — principals, key classes, delegation bounds.
-- `AUTHORIZATION_DECISION_TABLES.md` — authoritative policy decision tables.
-- `UI_RUNTIME_CONTRACT.md` — session/device/client/runtime parity and behaviors.
+- `docs/ssot_canon/20_contracts/API_CONTRACT_GUIDE.md` — machine-contract primacy + synchronization rules.
+- `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md` — human-readable route catalog with surface/auth/parity notes.
+- `docs/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md` — per-route example payloads.
+- `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` — canonical error code/detail mapping.
+- `docs/ssot_canon/20_contracts/AUTHORIZATION_AND_DELEGATION_SPEC.md` — principals, key classes, delegation bounds.
+- `docs/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md` — authoritative policy decision tables.
+- `docs/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md` — session/device/client/runtime parity and behaviors.
 
 #### 30 Data & security
-- `DATA_MODEL_REFERENCE.md` — storage strategy/entity groups/lifecycle invariants.
-- `DATA_MODEL_SPEC.md` — table-by-table schema contract.
-- `ERD.md` — text + Mermaid entity relationship model.
-- `MASTER_KEY_SPEC.md` — master-key governance/lifecycle controls.
-- `SECURITY_CONTROLS_SPEC.md` — trust boundaries/control objectives and baseline controls.
-- `SECURITY_THREAT_MODEL.md` — scenario-driven threat modeling.
-- `SECURITY_HEADERS_AND_CSP_POLICY.md` — path-aware security header/CSP rules.
-- `SECURITY_VERIFICATION_ABUSE_CASES.md` — abuse-case matrix and security verification hooks.
+- `docs/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md` — storage strategy/entity groups/lifecycle invariants.
+- `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md` — table-by-table schema contract.
+- `docs/ssot_canon/30_data_and_security/ERD.md` — text + Mermaid entity relationship model.
+- `docs/ssot_canon/30_data_and_security/MASTER_KEY_SPEC.md` — master-key governance/lifecycle controls.
+- `docs/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md` — trust boundaries/control objectives and baseline controls.
+- `docs/ssot_canon/30_data_and_security/SECURITY_THREAT_MODEL.md` — scenario-driven threat modeling.
+- `docs/ssot_canon/30_data_and_security/SECURITY_HEADERS_AND_CSP_POLICY.md` — path-aware security header/CSP rules.
+- `docs/ssot_canon/30_data_and_security/SECURITY_VERIFICATION_ABUSE_CASES.md` — abuse-case matrix and security verification hooks.
 
 #### 40 Operations & quality
-- `ACCEPTANCE_CRITERIA_MATRIX.md` — route-level acceptance and negative-path expectations.
-- `VERIFICATION_STRATEGY.md` — automated/manual verification packaging.
-- `CONFIGURATION_ENVIRONMENT_CONTRACT.md` — required/optional environment contract.
-- `BOOT_AND_STARTUP_FAILURE_CONTRACT.md` — startup assertions and fail-closed behavior.
-- `HEALTH_ENDPOINT_CONTRACT.md` — `/health` semantics and response expectations.
-- `OPERATIONAL_SMOKE_CHECK_CONTRACT.md` — canonical smoke command/evidence contract.
-- `PRODUCTION_READINESS_GATES.md` — gate A/B/C/D requirements.
-- `RELEASE_CHECKLIST.md` — release completion checklist.
-- `SLO_SLI_SPEC.md` — reliability targets/measurement/ownership.
-- `Migration_Seed_Strategy.md` — migration and seed artifact strategy.
-- `OBSERVABILITY_EVENT_CATALOG.md` — event taxonomy and field requirements.
+- `docs/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` — route-level acceptance and negative-path expectations.
+- `docs/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md` — automated/manual verification packaging.
+- `docs/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md` — required/optional environment contract.
+- `docs/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` — startup assertions and fail-closed behavior.
+- `docs/ssot_canon/40_operations_and_quality/HEALTH_ENDPOINT_CONTRACT.md` — `/health` semantics and response expectations.
+- `docs/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` — canonical smoke command/evidence contract.
+- `docs/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md` — gate A/B/C/D requirements.
+- `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` — release completion checklist.
+- `docs/ssot_canon/40_operations_and_quality/SLO_SLI_SPEC.md` — reliability targets/measurement/ownership.
+- `docs/ssot_canon/40_operations_and_quality/Migration_Seed_Strategy.md` — migration and seed artifact strategy.
+- `docs/ssot_canon/40_operations_and_quality/OBSERVABILITY_EVENT_CATALOG.md` — event taxonomy and field requirements.
 
 #### 50 Traceability & automation
-- `TRACEABILITY_MATRIX.md` — docs↔implementation trace contracts.
-- `Prototype_to_SSOT_Delta_Map.md` — prototype/canon reconciliation map.
-- `CHANGE_IMPACT_MAP_TEMPLATES.md` — impact-map templates for change planning.
-- `SSOT_AUTOMATION_AND_LINTING.md` — lint/sync/report automation guidance and evidence outputs.
+- `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md` — docs↔implementation trace contracts.
+- `docs/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md` — prototype/canon reconciliation map.
+- `docs/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md` — impact-map templates for change planning.
+- `docs/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md` — lint/sync/report automation guidance and evidence outputs.
 
 #### 60 Decisions
-- `ADR_INDEX.md` — decision record index.
-- `DECISIONS_LOG.md` — chronological decision log.
-- `DECISION_RECORD_TEMPLATE.md` — ADR template.
+- `docs/ssot_canon/60_decisions/ADR_INDEX.md` — decision record index.
+- `docs/ssot_canon/60_decisions/DECISIONS_LOG.md` — chronological decision log.
+- `docs/ssot_canon/60_decisions/DECISION_RECORD_TEMPLATE.md` — ADR template.
 - ADR records:
-  - `records/ADR-001-ssot-first-governance.md`
-  - `records/ADR-002-delegation-envelope-bounds.md`
-  - `records/ADR-003-keychain-production-principal.md`
-  - `records/ADR-004-envelope-first-api-standard.md`
-  - `records/ADR-005-release-gating-controls.md`
+  - `docs/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`
+  - `docs/ssot_canon/60_decisions/records/ADR-002-delegation-envelope-bounds.md`
+  - `docs/ssot_canon/60_decisions/records/ADR-003-keychain-production-principal.md`
+  - `docs/ssot_canon/60_decisions/records/ADR-004-envelope-first-api-standard.md`
+  - `docs/ssot_canon/60_decisions/records/ADR-005-release-gating-controls.md`
 
 #### 70 Implementation guidance
-- `MODULE_BOUNDARIES_AND_OWNERSHIP.md` — module decomposition and ownership model.
-- `MIGRATION_AND_COMPATIBILITY_STRATEGY.md` — compatibility-first migration approach.
-- `DEPRECATION_AND_VERSIONING_POLICY.md` — lifecycle/versioning/deprecation rules.
-- `TEST_DATA_AND_FIXTURE_STRATEGY.md` — fixture management and maintenance policy.
+- `docs/ssot_canon/70_implementation_guidance/MODULE_BOUNDARIES_AND_OWNERSHIP.md` — module decomposition and ownership model.
+- `docs/ssot_canon/70_implementation_guidance/MIGRATION_AND_COMPATIBILITY_STRATEGY.md` — compatibility-first migration approach.
+- `docs/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md` — lifecycle/versioning/deprecation rules.
+- `docs/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md` — fixture management and maintenance policy.
 
 #### 80 Program management
-- `ROADMAP_AND_MILESTONES.md` — milestone objectives and exit criteria.
-- `DEFINITION_OF_DONE.md` — non-negotiable completion requirements.
-- `RISK_REGISTER.md` — active risk tracking.
-- `CONTRIBUTION_WORKFLOW_SSOT.md` — contribution workflow and PR payload norms.
+- `docs/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md` — milestone objectives and exit criteria.
+- `docs/ssot_canon/80_program_management/DEFINITION_OF_DONE.md` — non-negotiable completion requirements.
+- `docs/ssot_canon/80_program_management/RISK_REGISTER.md` — active risk tracking.
+- `docs/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md` — contribution workflow and PR payload norms.
 - Tracking tasks:
-  - `KEY_HIERARCHY_SCALE_ANALYSIS_TASK.md`
-  - `KEY_TYPE_SPEC_COHERENCE_TASK.md`
-  - `MASTER_KEY_HIERARCHY_ANALYSIS_TASK.md`
+  - `docs/ssot_canon/80_program_management/KEY_HIERARCHY_SCALE_ANALYSIS_TASK.md`
+  - `docs/ssot_canon/80_program_management/KEY_TYPE_SPEC_COHERENCE_TASK.md`
+  - `docs/ssot_canon/80_program_management/MASTER_KEY_HIERARCHY_ANALYSIS_TASK.md`
 
 ### Evidence + machine artifacts
 - `docs/ssot_canon/openapi/cre8.v1.yaml` — canonical API machine contract.

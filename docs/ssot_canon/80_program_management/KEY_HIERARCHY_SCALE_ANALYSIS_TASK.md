@@ -17,5 +17,5 @@ Evaluate the production hierarchy model (`owner > primary > secondary > use`) an
 4. Recommendations for policy/runtime guard updates and test coverage expansions.
 
 ## Exit criteria
-- Analysis report linked from `RISK_REGISTER.md` and `ROADMAP_AND_MILESTONES.md`.
-- Identified contract changes mapped into `TRACEABILITY_MATRIX.md`.
+- Analysis report linked from `docs/ssot_canon/80_program_management/RISK_REGISTER.md` and `docs/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`.
+- Identified contract changes mapped into `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`.

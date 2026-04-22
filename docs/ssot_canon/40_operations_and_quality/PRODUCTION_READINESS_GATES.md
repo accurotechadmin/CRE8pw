@@ -3,12 +3,12 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Gate A: Build/runtime integrity
 - Dependencies installable in CI/CD from lockfile.
 - App boots with no startup exceptions.
-- Startup behavior matches `BOOT_AND_STARTUP_FAILURE_CONTRACT.md`.
+- Startup behavior matches `docs/ssot_canon/40_operations_and_quality/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`.
 - `/health` returns subsystem pass (`db`, `rate_limiter`, `jwt_keys`, `issuer_dependency`).
 
 ## Gate B: Contract/security quality
@@ -28,7 +28,7 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Key rotation runbook validated.
 - Infrastructure/IaC evidence reviewed (plan/apply + backup/restore readiness).
 - Alerting/dashboard checks pass for SLO/SLI targets.
-- Operational smoke checks pass per `OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.
+- Operational smoke checks pass per `docs/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`.
 
 ## Exit criteria
-A release is eligible only when all gates pass and `RELEASE_CHECKLIST.md` is complete.
+A release is eligible only when all gates pass and `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md` is complete.

@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-06_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Define the mandatory HTTP security header baseline and path-aware Content Security Policy behavior for CRE8 surfaces.
@@ -36,7 +36,7 @@ At minimum:
 - regression check for error-envelope responses preserving security headers.
 
 ## Related SSOT docs
-- `SECURITY_CONTROLS_SPEC.md`
-- `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
-- `VERIFICATION_STRATEGY.md`
-- `PRODUCTION_READINESS_GATES.md`
+- `docs/ssot_canon/30_data_and_security/SECURITY_CONTROLS_SPEC.md`
+- `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `docs/ssot_canon/40_operations_and_quality/VERIFICATION_STRATEGY.md`
+- `docs/ssot_canon/40_operations_and_quality/PRODUCTION_READINESS_GATES.md`

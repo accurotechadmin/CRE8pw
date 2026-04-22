@@ -40,10 +40,10 @@ If lower-tier docs conflict with higher-tier docs, explicitly call out the confl
 
 ## Active execution artifacts you must understand
 In addition to SSOT canon, treat these as active implementation context:
-- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` (stage objectives, gates, completion model)
-- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` (slice-level decomposition, dependencies, evidence)
-- `docs/RECOMMENDED_READING_ORDER.md` (ordered onboarding sequence)
-- `docs/REPOSITORY_FILE_INVENTORY.md` (artifact map)
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` (stage objectives, gates, completion model)
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` (slice-level decomposition, dependencies, evidence)
+- `docs/01_foundation/RECOMMENDED_READING_ORDER.md` (ordered onboarding sequence)
+- `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md` (artifact map)
 
 ## Execution protocol (strict)
 
@@ -55,7 +55,7 @@ In addition to SSOT canon, treat these as active implementation context:
 5. Record active plan artifacts present in-repo (master plan + detailed slices).
 
 ### Phase 1 — Required canonical reading sequence
-Use **`docs/RECOMMENDED_READING_ORDER.md`** as the single source of truth for ordered reads.
+Use **`docs/01_foundation/RECOMMENDED_READING_ORDER.md`** as the single source of truth for ordered reads.
 
 Execution rule:
 - Read files in the exact listed order.
@@ -68,11 +68,11 @@ Then read machine-readable references:
 - `docs/ssot_canon/evidence/automation/ssot_report.json`
 
 Then read synthesis/support artifacts:
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
-- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
-- `docs/REPOSITORY_FILE_INVENTORY.md`
+- `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-12.md`
+- `docs/02_onboarding_and_audits/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
+- `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`
 
-Then complete a full repository textual sweep for anything not yet covered (including root metadata like `composer.json` and `dot.env`).
+Then complete a full repository textual sweep for anything not yet covered (including root metadata like `../../composer.json` and `dot.env`).
 
 ### Phase 2 — Consistency and drift checks
 Perform focused checks across these invariants:

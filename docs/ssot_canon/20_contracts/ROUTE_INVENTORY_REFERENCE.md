@@ -3,14 +3,14 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-22_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, policy expectations, and parity references.
 
 ## Inventory governance
 - This file is the canonical human-readable route index.
-- `openapi/cre8.v1.yaml` remains canonical machine contract.
+- `docs/ssot_canon/openapi/cre8.v1.yaml` remains canonical machine contract.
 - Route additions/removals must update this file, OpenAPI, endpoint examples, and UI parity artifacts in the same PR.
 
 ## Route inventory (v1)
@@ -47,6 +47,6 @@ Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, pol
 | `/console/api/posts/{postId}/comments/{commentId}/moderation` | POST | console | owner JWT | comment moderation transitions | `/console/moderation/posts/{postId}/comments/{commentId}` |
 
 ## Notes
-- Surface behavior and middleware sequencing are defined in `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.
-- Error behavior is canonical in `ERROR_CODE_CATALOG.md`.
-- Route examples are canonical in `Endpoint_Examples_All_Routes.md`.
+- Surface behavior and middleware sequencing are defined in `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.
+- Error behavior is canonical in `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`.
+- Route examples are canonical in `docs/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`.

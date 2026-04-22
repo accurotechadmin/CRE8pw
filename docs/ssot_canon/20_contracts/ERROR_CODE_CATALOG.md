@@ -3,7 +3,7 @@
 _Status: adopted_
 _Last updated (UTC): 2026-04-21_
 
-Canonical terminology: `CANONICAL_TERMINOLOGY.md`
+Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Envelope-level canonical codes
 | HTTP | code | Typical detail codes | Retryability | UI behavior |
@@ -51,4 +51,4 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Every error response must include `error.request_id`.
 - UI must preserve correlation ID in inspector/panel.
 - New detail codes require this catalog update in same PR.
-- Detail-code behavior must remain consistent with `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `UI_RUNTIME_CONTRACT.md`.
+- Detail-code behavior must remain consistent with `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `docs/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`.
