@@ -67,11 +67,7 @@ This sequence is designed so a new reader starts with foundational context and g
 63. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
 64. `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 65. `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
-66. `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
-67. `docs/M1_DAY_1_21_DETAILED_SLICES.md`
-68. `docs/M2_DAY_22_45_DETAILED_SLICES.md`
-69. `docs/M3_DAY_46_69_DETAILED_SLICES.md`
-70. `docs/M4_DAY_70_90_DETAILED_SLICES.md`
+66. `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
 
 ## Supplemental machine-readable references (read after the core docs)
 
