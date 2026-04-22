@@ -48,7 +48,7 @@ _Last updated (UTC): 2026-04-22_
 1. Align `composer.json` scripts with actual repository contents (or add missing scripts/tests/source skeleton).
 2. Replace sensitive-looking `dot.env` values with obviously fake placeholders.
 3. Finalize evidence records (replace `pending-local` and pending reviewer signoffs where applicable).
-4. Decide whether to reintroduce docs/narrative/ (historical set, currently absent) as active docs or retain historical/non-present status permanently.
+4. Keep all onboarding and inventory references synchronized to active files only; remove stale references during each documentation release cycle.
 
 ## B) Inventory of components, sub-components, functional pieces, and purpose
 
@@ -78,13 +78,12 @@ _Last updated (UTC): 2026-04-22_
    - Traceability matrix, delta maps, lint/sync-check/report guidance.
    - Purpose: prevent silent contract drift and preserve auditability.
 9. **Program management subsystem**
-   - Milestones M1-M4, risk register, task trackers, day-by-day implementation plans.
+   - Stage-based execution plan, risk register, and tracking tasks.
    - Purpose: sequence delivery from documentation baseline to production readiness.
 
 ## Functional inventory by file set
 
 ### Root runtime/config files
-- `.htaccess` — Apache rewrite/canonicalization to serve app from `public/` path.
 - `composer.json` — PHP runtime baseline (Slim, DI, JWT, validation, CORS, logging, rate limiting, cache), QA/test/script contracts.
 - `dot.env` — local-development environment scaffold for DB/JWT/CORS/CSRF/rate-limit knobs.
 
@@ -98,12 +97,8 @@ _Last updated (UTC): 2026-04-22_
 - `docs/ONBOARDING_ANALYSIS_2026-04-12.md` — detailed prior synthesis and mental model.
 - `docs/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
 
-### Planning + execution cadence artifacts
-- `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` — day 1–90 implementation spine (draft).
-- `docs/M1_DAY_1_21_DETAILED_SLICES.md` — foundational implementation slices (draft).
-- `docs/M2_DAY_22_45_DETAILED_SLICES.md` — core feature implementation slices (draft).
-- `docs/M3_DAY_46_69_DETAILED_SLICES.md` — hardening and verification slices (draft).
-- `docs/M4_DAY_70_90_DETAILED_SLICES.md` — production readiness closeout slices (draft).
+### Planning + execution artifacts
+- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
 
 ### SSOT Canon families
 
