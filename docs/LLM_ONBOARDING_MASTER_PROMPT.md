@@ -13,21 +13,35 @@ Build a complete, precise working model of CRE8 so you can:
 3) propose and implement code/documentation changes consistent with governance,
 4) continue architecture and concept development without breaking traceability.
 
+## Repository reality check (must internalize first)
+- This repository is currently **documentation-first** and **implementation-light**.
+- Canonical governance/contracts/security/operations artifacts are present and authoritative.
+- Runtime implementation folders referenced by docs/scripts (`src/`, `tests/`, `scripts/`) may be absent in this snapshot.
+- Treat execution plans as active guidance; do not assume runtime completion unless evidence in-repo proves it.
+
 ## Non-negotiable operating rules
 - Treat docs under `docs/ssot_canon/` as canonical SSOT unless an explicit superseding policy says otherwise.
 - Preserve envelope-first API and governance constraints.
-- Never skip reading steps; do not summarize before finishing required reads.
+- Never skip required reading steps.
 - When facts conflict, surface conflict explicitly and cite both sources.
 - Distinguish **facts** from **inferences** and **open questions**.
+- Do not invent implementation details not grounded in repository artifacts.
+- Prefer canonical SSOT terminology from `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`.
 
-## Required reading sequence
-Use the maintained reading list at **`docs/RECOMMENDED_READING_ORDER.md`** as the single source of truth for core-document order.
+## Execution protocol (strict)
+
+### Phase 0 — Inventory and scope confirmation
+1. Enumerate repository files.
+2. Confirm whether runtime implementation directories exist.
+3. Confirm onboarding context date (for temporal statements).
+4. Record any missing file references encountered later as onboarding gaps.
+
+### Phase 1 — Required canonical reading sequence
+Use **`docs/RECOMMENDED_READING_ORDER.md`** as the single source of truth for ordered reads.
 
 Execution rule:
-- Read the files in `docs/RECOMMENDED_READING_ORDER.md` **in the exact listed order**.
-- If that list changes, follow the updated list (do not rely on stale copies embedded in older prompts).
-
-Current status note: runtime implementation remains early-stage and is primarily represented by dependency/environment/architecture/planning artifacts; treat execution plans as active guidance rather than completed implementation.
+- Read files in the exact listed order.
+- If list content differs from older prompts, follow the current file.
 
 Then read machine-readable references:
 - `docs/ssot_canon/openapi/cre8.v1.yaml`
@@ -35,18 +49,42 @@ Then read machine-readable references:
 - `docs/ssot_canon/schemas/error-envelope.schema.json`
 - `docs/ssot_canon/evidence/automation/ssot_report.json`
 
-Then read supplemental synthesis artifacts:
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md` (historical onboarding synthesis)
-- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md` (current full-inventory audit)
+Then read synthesis/support artifacts:
+- `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
+- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
+- `docs/REPOSITORY_FILE_INVENTORY.md`
 
-Then complete a full repository document sweep for anything not yet covered (including root docs/config metadata like `composer.json`, `dot.env`, and other textual docs).
+Then complete a full repository textual sweep for anything not yet covered (including root metadata like `composer.json`, `dot.env`, and `.htaccess` if present).
+
+### Phase 2 — Consistency and drift checks
+Perform focused checks across these invariants:
+1. **Contract parity:** OpenAPI ↔ route inventory ↔ endpoint examples ↔ UI runtime contract.
+2. **Policy parity:** authorization spec ↔ decision tables ↔ error catalog mappings.
+3. **Data-security parity:** data model spec/reference/ERD ↔ security controls/threat/abuse cases.
+4. **Ops parity:** verification strategy ↔ readiness gates ↔ release checklist ↔ smoke/health/startup contracts.
+5. **Governance parity:** change control ↔ contribution workflow ↔ DoD ↔ traceability/automation docs.
+
+### Phase 3 — Readiness assessment discipline
+When assessing readiness, explicitly separate:
+- **SSOT maturity** (docs/governance completeness),
+- **Implementation maturity** (actual runnable code/tests/scripts in-repo),
+- **Release maturity** (evidence and gate closure status).
+
+Never collapse these into one score.
+
+### Phase 4 — Contribution safety protocol (when asked to change artifacts)
+Before proposing or making changes:
+1. Classify change impact (contract/security/data/ops/governance/program scope).
+2. List required synchronized artifacts before editing.
+3. State verification evidence required by SSOT (tests, smoke checks, traceability, templates).
+4. If implementation files are missing, propose doc-aligned scaffolding tasks instead of pretending code exists.
 
 ## Required deliverables (output format)
 After reading, output these sections in this exact order:
 
 ### 1) Reading completion ledger
-- Table: `Path | Status (Read) | Domain | Key takeaways (max 2 bullets)`
-- Include **every** document you read.
+- Table: `Path | Status (Read) | Domain | Key takeaways (max 2 bullets)`.
+- Include **every** document/artifact read.
 
 ### 2) CRE8 mental model (authoritative)
 - Product mission and value proposition.
@@ -67,7 +105,7 @@ After reading, output these sections in this exact order:
 ### 4) Traceability and decision intelligence
 - Traceability matrix synthesis.
 - Open gaps + risk implications.
-- ADR map: each ADR decision, rationale, consequences, and current constraints on implementation.
+- ADR map: each ADR decision, rationale, consequences, and constraints.
 
 ### 5) Implementation playbook for new contributors
 - “How to safely make a change” step-by-step.
@@ -76,8 +114,8 @@ After reading, output these sections in this exact order:
 - Common failure modes and prevention controls.
 
 ### 6) Codebase execution readiness
-- Infer current implementation status from docs/reporting artifacts.
-- Identify likely high-leverage next tasks (top 10), each with:
+- Infer current implementation status from repository artifacts.
+- Identify top 10 high-leverage next tasks with:
   - objective,
   - affected docs/code areas,
   - dependencies,
@@ -95,14 +133,27 @@ After reading, output these sections in this exact order:
 - mapped to roadmap and risk register themes.
 
 ### 9) “Ask me anything” readiness statement
-- Brief statement of confidence level.
-- List the top unresolved questions preventing perfect certainty.
+- Confidence level with rationale.
+- Top unresolved questions preventing perfect certainty.
 
-## Quality bar
-- Be specific and reference file paths for factual claims.
-- Do not invent implementation details not grounded in docs.
-- Use concise but dense technical writing.
-- Prefer canonical SSOT terms from `CANONICAL_TERMINOLOGY.md`.
+## Response quality bar
+- Use precise file-path citations for factual claims.
+- Clearly label factual claims vs inference.
+- Highlight conflicts instead of smoothing them over.
+- Prefer concise, dense technical writing.
+
+## Optional command hints (if shell access exists)
+Use these to improve rigor (do not fail if unavailable):
+- `rg --files` (inventory)
+- `rg "_Status:" docs` (status metadata sweep)
+- `rg "TODO|TBD|pending|historical" docs` (open-gap signals)
+- `sed -n 'start,endp' <file>` (targeted deep reads)
+
+## Anti-patterns to avoid
+- Claiming runtime behavior that is not backed by code/tests in this repo snapshot.
+- Treating historical evidence artifacts as current release readiness proof.
+- Ignoring change-control/evidence obligations when proposing edits.
+- Mixing gateway vs console authorization assumptions.
+- Describing envelopes/errors without request-id and detail-code semantics.
 
 ---
-
