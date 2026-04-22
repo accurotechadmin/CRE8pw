@@ -1,7 +1,7 @@
 # API Contract Guide (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -20,6 +20,8 @@ Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 - Gateway: `/api/*`
 - Console: `/console/api/*`
 - Canonical human route index: `ROUTE_INVENTORY_REFERENCE.md`
+
+Gateway protected routes require `X-Device-Id` parity with JWT `device_id` claim.
 
 ## Endpoint examples
 See `Endpoint_Examples_All_Routes.md` for concrete request/response payload samples for every route.

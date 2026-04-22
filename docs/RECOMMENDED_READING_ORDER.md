@@ -43,7 +43,7 @@ This sequence is designed so a new reader starts with foundational context and g
 39. `docs/ssot_canon/50_traceability_and_automation/SSOT_AUTOMATION_AND_LINTING.md`
 40. `docs/ssot_canon/50_traceability_and_automation/CHANGE_IMPACT_MAP_TEMPLATES.md`
 41. `docs/ssot_canon/50_traceability_and_automation/Prototype_to_SSOT_Delta_Map.md`
-42. `docs/ssot_canon/50_traceability_and_automation/KNOWN_GAPS_TRACKER.md`
+42. `docs/ssot_canon/80_program_management/RISK_REGISTER.md`
 43. `docs/ssot_canon/60_decisions/ADR_INDEX.md`
 44. `docs/ssot_canon/60_decisions/DECISIONS_LOG.md`
 45. `docs/ssot_canon/60_decisions/records/ADR-001-ssot-first-governance.md`

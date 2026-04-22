@@ -16,4 +16,4 @@ Capture known prototype-to-canon deltas so unresolved implementation assumptions
 | D-003 | Verification | Prototype test guidance was ad hoc | Verification + smoke + readiness gates are mandatory | Resolved | QA lead |
 
 ## Promotion rule
-If a delta remains unresolved and materially impacts behavior, create/update a row in `KNOWN_GAPS_TRACKER.md` in the same PR.
+If a delta remains unresolved and materially impacts behavior, create/update a corresponding risk/task register entry in the same PR.

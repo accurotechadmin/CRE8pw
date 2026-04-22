@@ -1,7 +1,7 @@
 # Traceability Matrix (Docs-to-Code)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 

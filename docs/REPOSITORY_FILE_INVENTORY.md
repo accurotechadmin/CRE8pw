@@ -1,13 +1,13 @@
 # Repository File Inventory
 
-_Last updated (UTC): 2026-04-12_
+_Last updated (UTC): 2026-04-22_
 
 ## Purpose
 Quick index of the repository document set and root-level configuration artifacts used for SSOT-first implementation.
 
 ## Root configuration artifacts
 - `dot.env` — Environment template/reference values aligned to runtime config contract.
-- `composer.json` — Dependency baseline and command contracts (`test`, `qa`, `ops:*`, `docs:ssot:*`).
+- `composer.json` — Dependency baseline and command contracts (`test`, `qa`, `ops:*`; optional `docs:ssot:*` when tooling exists).
 - `.htaccess` — Runtime entry/rewrite behavior for root vs `public/` serving.
 
 ## Foundational docs

@@ -1,7 +1,7 @@
 # Contribution Workflow (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-22_
 
 ## Workflow
 1. Identify changed capability and enumerate impacted SSOT artifacts (contracts, machine artifacts, data/security, operations, traceability).
@@ -16,13 +16,13 @@ _Last updated (UTC): 2026-04-21_
 - Completed change-impact map.
 - Verification command output (or CI links) for changed behavior.
 - Explicit compatibility classification (breaking/non-breaking).
-- Updated known-gaps entry when unresolved assumptions remain.
+- Updated risk/task register entry when unresolved assumptions remain.
 
 ## Review policy
 - No SSOT PR merges without explicit verification evidence.
 - Breaking changes require architecture + security signoff.
 - Contract changes without machine-artifact synchronization are rejected.
-- Unresolved gaps must be documented in `KNOWN_GAPS_TRACKER.md`.
+- Unresolved assumptions must be documented in `RISK_REGISTER.md` with owner and target date.
 
 ## SLA and escalation
 - Owner review target: within 2 business days.

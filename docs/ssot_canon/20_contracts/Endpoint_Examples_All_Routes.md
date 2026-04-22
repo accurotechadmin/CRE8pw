@@ -1,7 +1,7 @@
 # Endpoint Examples (All Routes)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -302,6 +302,48 @@ Provide concrete request/response examples for every v1 route so backend, fronte
     "message": "Authentication is required.",
     "details": {"surface": "gateway"},
     "request_id": "req_123"
+  },
+  "meta": {"envelope_version": "1"}
+}
+```
+
+### Matched post route with missing post resource
+**Response 404**
+```json
+{
+  "error": {
+    "code": "not_found",
+    "message": "Requested post was not found.",
+    "details": {"code": "post_not_found", "post_id": "pst_missing"},
+    "request_id": "req_404_post"
+  },
+  "meta": {"envelope_version": "1"}
+}
+```
+
+### Matched key route with missing key resource
+**Response 404**
+```json
+{
+  "error": {
+    "code": "not_found",
+    "message": "Requested key was not found.",
+    "details": {"code": "key_not_found", "key_id": "key_missing"},
+    "request_id": "req_404_key"
+  },
+  "meta": {"envelope_version": "1"}
+}
+```
+
+### Device-binding mismatch on protected gateway route
+**Response 401**
+```json
+{
+  "error": {
+    "code": "auth_invalid",
+    "message": "Token is invalid for this device.",
+    "details": {"code": "token_device_mismatch"},
+    "request_id": "req_401_device"
   },
   "meta": {"envelope_version": "1"}
 }

@@ -1,7 +1,7 @@
 # Authorization and Delegation Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -52,8 +52,7 @@ Canonical permission vocabulary:
 
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
-- Master keys are owner-only SYSADMIN credentials and are non-delegable to non-owner principals.
-- Only the recorded owner of a master key may initiate master-key rotation.
+- Key rotation authority follows delegated envelope and governance policy rules.
 - Key principals may mint descendants only within delegated envelope bounds.
 - Keychain creation and membership mutation are owner-governed operations in v1.
 - Revocation may be local or cascading according to lineage policy.
@@ -63,7 +62,6 @@ Canonical permission vocabulary:
 - `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - `DATA_MODEL_REFERENCE.md`
 - `ROUTE_INVENTORY_REFERENCE.md`
-- `MASTER_KEY_SPEC.md`
 
 
 ## Device-bound token invariant

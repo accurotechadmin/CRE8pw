@@ -1,10 +1,10 @@
 # Change Control Policy
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-22_
 
 ## Scope
-Applies to all files under `from_scratch/ssot_canon/` plus top-level from-scratch planning/completion artifacts.
+Applies to all files under `/workspace/CRE8pw/docs/ssot_canon/` plus top-level planning/completion artifacts.
 
 ## Change classes
 - **Class A (breaking contract):** route/schema/auth/data invariant changes.

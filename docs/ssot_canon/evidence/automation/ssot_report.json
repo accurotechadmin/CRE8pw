@@ -1,20 +1,18 @@
 {
-    "generated_at_utc": "2026-04-09T11:13:13+00:00",
-    "status": "ok",
-    "checks": {
-        "lint": {
-            "command": "php '/workspace/CRE8pw/scripts/docs_ssot_lint.php'",
-            "exit_code": 0,
-            "output": [
-                "docs_ssot_lint_ok"
-            ]
-        },
-        "sync_check": {
-            "command": "php '/workspace/CRE8pw/scripts/docs_ssot_sync_check.php'",
-            "exit_code": 0,
-            "output": [
-                "docs_ssot_sync_check_ok"
-            ]
-        }
+  "generated_at_utc": "2026-04-09T11:13:13+00:00",
+  "status": "historical_record",
+  "historical": true,
+  "historical_note": "Retained for audit history only; do not use for current status evaluation.",
+  "checks": {
+    "lint": {
+      "command": "historical",
+      "exit_code": 0,
+      "output": ["historical_only"]
+    },
+    "sync_check": {
+      "command": "historical",
+      "exit_code": 0,
+      "output": ["historical_only"]
     }
+  }
 }

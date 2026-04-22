@@ -1,7 +1,7 @@
 # Security Controls Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-22_
 
 Canonical terminology: `CANONICAL_TERMINOLOGY.md`
 
@@ -38,5 +38,5 @@ Security controls are verified by suites listed in `VERIFICATION_STRATEGY.md`, a
 ## Device binding control
 - Gateway and session-bound JWTs include a mandatory `device_id` claim at issuance time.
 - `X-Device-Id` header validation is a claim-match check, not header-format-only validation.
-- Requests with missing `X-Device-Id`, missing JWT `device_id`, or mismatched values MUST fail with `422 validation_failed` (`device_id_missing` / `device_id_invalid_format`) or `401 auth_invalid` (`token_device_mismatch`) according to pipeline stage.
+- Requests with missing `X-Device-Id`, missing JWT `device_id`, malformed values, or mismatched values MUST fail with canonical outcomes by pipeline stage: `422 validation_failed` (`device_id_missing` / `device_id_invalid_format`) or `401 auth_invalid` (`token_device_mismatch`).
 - Tokens are non-transferable across devices; replay from a different device identifier is denied even with otherwise valid signature/timing claims.
