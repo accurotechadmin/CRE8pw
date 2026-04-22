@@ -15,6 +15,26 @@ Companion execution detail document:
 3. **Security as a build invariant:** security controls and abuse-case verification are implemented with each feature, not deferred.
 4. **Evidence-driven progress:** no task is “done” without machine-verifiable and auditable proof.
 5. **Release-by-gate:** advancement occurs only when each gate’s entry/exit criteria are satisfied.
+6. **Human-legible system behavior:** diagnostics, operational playbooks, and contributor guidance must remain understandable to humans under normal and incident conditions.
+7. **Ethos-preserving delivery:** implementation choices must preserve CRE8’s governance-first ethos: bounded delegation, explicit accountability, and safe-by-default operation.
+
+### Human narrative and ethos requirements (non-negotiable, all stages)
+These requirements are cross-cutting completion criteria, not optional quality improvements:
+1. **Narrative clarity artifacts**
+   - Every stage must produce a concise “what changed / why / operator impact” narrative linked from evidence packs.
+   - Route, policy, and lifecycle changes must include human-readable examples of success and failure paths.
+2. **Operator and support ergonomics**
+   - Every critical failure mode must include troubleshooting flow, expected signals, and rollback decision points.
+   - Error pathways must expose stable request-correlation semantics for support triage.
+3. **Contributor cognition safeguards**
+   - Each major subsystem requires ownership, glossary alignment, and “how to safely modify” notes.
+   - Any capability with high policy complexity (delegation, keychain, lifecycle) must include decision walkthroughs.
+4. **User-facing trust guarantees**
+   - UX diagnostics must communicate denial/error reasons without leaking sensitive policy internals.
+   - Security hardening and moderation controls must preserve fairness, consistency, and auditability expectations.
+5. **Release storytelling and accountability**
+   - Final release packages must include a plain-language operational readiness narrative.
+   - Launch and post-launch reviews must capture user/operator pain points and resulting remediation tasks.
 
 ---
 
@@ -310,10 +330,18 @@ Operate safely in production, close field gaps, and continuously improve archite
    - New features follow full impact/evidence workflow.
 5. **Program-level optimization**
    - Throughput metrics, cycle time reduction, quality trend analysis.
+6. **Human outcomes and trust calibration**
+   - Validate operator confidence, support responsiveness, and user-facing diagnostics comprehensibility.
+   - Capture production narratives from incidents/near-misses and convert them into durable requirements and tests.
+7. **No-loose-ends closure**
+   - Ensure all stage-delivered capabilities have owner-assigned runbooks, evidence lineage, and backlog disposition.
+   - Explicitly classify all remaining work as complete, accepted risk, or scheduled follow-up with owner and date.
 
 ### Exit criteria
 - Stable production operation confirmed across agreed observation windows.
 - Continuous-delivery governance operating without SSOT drift.
+- No unresolved critical work items remain unclassified.
+- Human narrative and ethos requirements are evidenced for each capability family.
 
 ---
 
@@ -383,6 +411,21 @@ CRE8 is considered “finished for initial full-platform delivery” only when:
 3. SSOT, implementation, and evidence artifacts are mutually consistent with no critical drift.
 4. Operational ownership is in place (alerts, runbooks, incident handling, release process).
 5. Outstanding gaps are only explicitly accepted non-blockers with owner and timeline.
+6. Human narrative and ethos obligations are fulfilled across documentation, UX diagnostics, operational workflows, and post-launch governance loops.
+
+## Final-stage closure protocol (nothing left undone)
+Before declaring final completion, perform an end-to-end closure sweep:
+1. **Capability closure audit**
+   - For each route/policy/data/security/ops capability: implementation artifact, tests, evidence, owner, and support note must all exist.
+2. **Drift and orphan scan**
+   - Validate no orphan slices/tasks/evidence links remain.
+   - Validate no unresolved TODO/TBD items persist in release-critical artifacts.
+3. **Human readiness confirmation**
+   - Confirm onboarding docs, runbooks, and incident playbooks enable a newly onboarded maintainer to operate safely.
+4. **Ethos conformance review**
+   - Confirm bounded-delegation safety, accountability, and fairness/consistency controls remain intact after all optimizations.
+5. **Disposition ledger finalization**
+   - Every open item must be closed, accepted with explicit risk signoff, or scheduled with committed owner/date and linked roadmap/risk entries.
 
 ---
 
