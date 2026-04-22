@@ -8,6 +8,10 @@ _Last updated (UTC): 2026-04-22_
 This index governs the production SSOT canon at `/workspace/CRE8pw/docs/ssot_canon/`. Planning/completion scaffolding artifacts are intentionally excluded from authoritative scope.
 
 ## Canon navigation
+- Human-operating model: `docs/ssot_canon/10_product_and_architecture/CRE8_HUMAN_OPERATING_MODEL.md`
+- Scenario narratives: `docs/ssot_canon/20_contracts/USAGE_SCENARIOS_AND_PERMISSION_STORIES.md`
+- Extensibility playbook: `docs/ssot_canon/70_implementation_guidance/EXTENSIBILITY_PLAYBOOK.md`
+
 1. `00_governance/` — ownership, policy, standards.
 2. `10_product_and_architecture/` — system intent and boundaries.
 3. `20_contracts/` — API, authorization, error, UI runtime contracts.

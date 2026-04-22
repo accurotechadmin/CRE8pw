@@ -28,6 +28,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S0-05 | Integrate evidence templates and PR payload enforcement. | S0-02,S0-04 | PR template + evidence template requirements | PR validation gate passing proof |
 | S0-06 | Enable docs sync/lint/report automation commands. | S0-04 | `docs:ssot:*` automation scripts and CI wiring | Lint/sync/report outputs archived |
 | S0-07 | Finalize implementation-era ADR logging workflow. | S0-03 | ADR intake/update process | Recorded dry-run ADR update |
+| S0-08 | Execute human-accessibility narrative pass across SSOT docs. | S0-02,S0-03 | Human-operating-model + scenario docs + style-guide updates | Terminology consistency check + architecture/security review signoff |
 
 ---
 
@@ -187,5 +188,5 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 5. Emergency changes must follow Class D process in `docs/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` and include remediation PR linkage.
 
 ## Completion rule
-Execution is complete only when all slices `S0-01` through `S10-05` are complete and all gates defined in `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
+Execution is complete only when all slices `S0-01` through `S10-05` (including S0-08 narrative clarity) are complete and all gates defined in `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
 

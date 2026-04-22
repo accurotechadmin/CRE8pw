@@ -21,7 +21,7 @@ Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, pol
 | `/health` | GET | public | none | dependency health probes | `/health` |
 | `/.well-known/jwks.json` | GET | public | none | current JWKS set | `/jwks` |
 | `/ui/{route}` | GET | public | none | static SPA + fallback | `/ui/*` |
-| `/console/owners` | POST | public/bootstrap | none | owner bootstrap registration | `/signup-owner` |
+| `/console/owners` | POST | public/bootstrap | none | owner bootstrap registration (invite code required by default; open signup configurable) | `/signup-owner` |
 | `/api/auth/login` | POST | public/auth | none | owner login token issuance | `/login` |
 | `/api/auth/key-login` | POST | public/auth | none | key login token issuance | `/key-login` |
 | `/api/auth/refresh` | POST | public/auth | refresh token | refresh family rotation/replay checks | `/session/refresh` |
@@ -47,6 +47,11 @@ Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, pol
 | `/console/api/posts/{postId}/comments/{commentId}/moderation` | POST | console | owner JWT | comment moderation transitions | `/console/moderation/posts/{postId}/comments/{commentId}` |
 
 ## Notes
+- Owner bootstrap is invite-gated by default. Open owner signup is a configuration-controlled mode and must remain explicitly documented in release evidence when enabled.
+
+## Human-access note
+- Console routes provide governance UX for non-technical operators while remaining API-contract equivalent to machine clients.
+
 - Surface behavior and middleware sequencing are defined in `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`.
 - Error behavior is canonical in `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`.
 - Route examples are canonical in `docs/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`.

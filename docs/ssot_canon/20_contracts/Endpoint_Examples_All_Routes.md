@@ -13,6 +13,11 @@ Provide concrete request/response examples for every v1 route so backend, fronte
 - Error envelope shape: `{ error: { code, message, details, request_id }, meta }`.
 - `meta.envelope_version` is always present.
 
+## Human journey quick maps
+- **Owner bootstrap journey:** owner receives invite -> registers owner account -> logs in -> governs keys/invites/moderation from console.
+- **Delegated creator journey:** owner mints key -> delegated actor logs in via key-login -> uses gateway APIs or native parity UI.
+- **Consumer journey:** use-class key reads feed and may comment where policy allows.
+
 ## Public + auth surfaces
 ### `GET /`
 **Response 200**
@@ -52,7 +57,7 @@ Provide concrete request/response examples for every v1 route so backend, fronte
 ### `POST /console/owners`
 **Request**
 ```json
-{"email": "owner@example.com", "password": "long-and-strong-passphrase"}
+{"email": "owner@example.com", "password": "long-and-strong-passphrase", "invite_code": "INV-8F29KQ1M"}
 ```
 **Response 201**
 ```json

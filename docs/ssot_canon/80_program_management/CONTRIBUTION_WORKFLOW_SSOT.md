@@ -11,6 +11,7 @@ _Last updated (UTC): 2026-04-22_
 5. Update traceability (`docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`) and impact map.
 6. Attach evidence using templates under `evidence/templates/`.
 7. Request required owner/co-reviewers per `docs/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`.
+8. Narrative or explanatory updates MUST be checked for conflict against OpenAPI/schemas and authorization decision tables.
 
 ## Required PR payload
 - Completed change-impact map.
