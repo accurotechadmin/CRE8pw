@@ -212,3 +212,250 @@ _Last updated (UTC): 2026-04-22_
 
 ## Overall assessment
 If evaluating only documentation architecture, CRE8 is at a **late design / pre-build-governed state**. If evaluating product runtime readiness from this repository alone, CRE8 is **not yet implementation-complete** despite strong contractual readiness.
+
+## Detailed engineering tour for shareholder-review audience
+
+### 1) System intent and business architecture
+CRE8 is specified as a **delegated-authorship platform** whose product center of gravity is controlled delegation: owners define authority, keys execute scoped work, and every action is bounded by explicit policy envelopes and lifecycle state. In practical business terms, this enables scale through controlled distribution of operational capability without diluting governance accountability.
+
+At runtime, CRE8 is intentionally split into three surfaces:
+- **Public/bootstrap surface** (`/`, `/health`, `/ui/*`, owner signup/login bootstrap)
+- **Gateway surface** (`/api/*`) for key-mediated content operations
+- **Console surface** (`/console/api/*`) for owner-governed administration
+
+That partition is not just URL taxonomy; it is a policy boundary:
+- Token audience/type binding differs by surface.
+- Security controls differ by surface (for example CSRF expectations in console workflows, device-binding enforcement in gateway workflows).
+- UX parity requirements differ by surface while still sharing a canonical envelope/error model.
+
+### 2) Control-plane architecture (governance as a first-class subsystem)
+CRE8's documentation defines governance as part of the architecture, not project overhead:
+- **SSOT precedence hierarchy** ensures machine contracts dominate narrative ambiguity.
+- **Document ownership and review SLA** create explicit stewardship for each domain family.
+- **Change-class governance** (A/B/C + emergency loop) acts as policy for release risk.
+- **ADR registry** captures architectural irreversibility decisions.
+
+The business implication: as product velocity increases, decision latency and risk are bounded by pre-defined governance paths rather than ad hoc judgment.
+
+### 3) Request lifecycle: from ingress to deterministic envelope
+The request pipeline is modeled as an ordered, normative control chain:
+1. request-id/correlation
+2. security headers/CSP
+3. CORS/content-type normalization
+4. surface authn/authz guards
+5. validation guards
+6. rate-limit/abuse controls
+7. handler execution
+8. envelope responder + error mapper
+
+This order has important non-obvious consequences:
+- **Observability quality:** request IDs exist early and are available to all later events/errors.
+- **Policy determinism:** auth/policy failures happen before domain mutation.
+- **UI determinism:** stable detail codes emerge from stable pipeline stage ownership.
+
+The system distinguishes router misses from entity misses:
+- unmatched template -> `route_not_found`
+- matched route + missing resource -> resource-specific code (`post_not_found`, `key_not_found`, etc.)
+
+This distinction powers precise UI `not_found` substates and faster operator triage.
+
+### 4) Interface contract stack (machine contract + envelope semantics)
+The API layer is anchored by OpenAPI 3.1 plus envelope schemas:
+- `SuccessEnvelope` (`data`, `meta`)
+- `ErrorEnvelope` (`error`, `meta`) where error includes `code`, `message`, `request_id`, optional `details`
+
+Strategically, this gives CRE8:
+- transport-level consistency across public/gateway/console surfaces,
+- observability consistency (`request_id` coherence), and
+- integration stability for client/runtime tooling.
+
+Route families map to business capabilities:
+- **Bootstrap/auth**: owner signup/login, key login, refresh rotation
+- **Content runtime**: feed, post CRUD subset, comments, flags
+- **Governance runtime**: key issuance/lifecycle, keychain operations, moderation, invites
+
+### 5) Identity, principals, and delegated authority model
+The principal model has two primary runtime actors:
+- **Owner principal** (governance authority)
+- **Key principal** (operational/content authority)
+
+Key classes express authority semantics:
+- `master` (owner-only SYSADMIN control class)
+- `primary_author`, `secondary_author`, `use`, `keychain`
+
+Delegation envelope invariants are core to system safety:
+- child permissions/scope must be strict subsets,
+- max depth = 3,
+- explicit expiry required,
+- lineage must be preserved for runtime claim checks.
+
+Operationally this means delegated growth is possible, but unbounded privilege propagation is structurally blocked.
+
+### 6) Decision-engine architecture (table-driven policy)
+Authorization behavior is codified in decision tables rather than scattered conditional logic. Critical families include:
+- delegation issuance decisions,
+- key-class mint authority,
+- keychain membership admission,
+- keychain effective resolution,
+- lifecycle action authority,
+- device-binding outcomes.
+
+Benefits to engineering and governance:
+- QA can validate explicit truth tables,
+- implementation teams avoid policy drift,
+- compliance/audit reviews can map behavior to declarative policy.
+
+Runtime decision order is explicit (token/surface -> lifecycle status -> permission allow-list -> scope coverage -> route guards -> operation + audit event), preventing accidental bypass paths.
+
+### 7) Device-binding as anti-transfer control
+For gateway-protected flows, CRE8 introduces mandatory device binding:
+- JWT contains a required `device_id` claim,
+- client sends `X-Device-Id`,
+- runtime enforces strict equality.
+
+Failure semantics are intentionally split by fault type:
+- missing/malformed header -> `422 validation_failed`
+- claim/header mismatch -> `401 auth_invalid` with `token_device_mismatch`
+
+This is a strong anti-token-sharing control with clear UX and audit behavior.
+
+### 8) Keychain subsystem: aggregate authority with bounded combinatorics
+Keychains are modeled as active key principals (`key_class=keychain`), not passive group metadata. Subsystem behaviors:
+- admitted member classes: `primary_author`, `secondary_author`, `use`
+- nested keychains disallowed
+- max membership size = 50
+- effective permissions = union(active member permissions) constrained by keychain envelope
+- scope resolution combines union/intersection semantics based on scope family rules
+- inactive/revoked members contribute nothing
+- membership mutation triggers atomic effective snapshot recomputation
+
+Business/technical effect:
+- grants scalable operational delegation,
+- keeps bounds explicit and computable,
+- preserves deterministic lineage for incident reconstruction.
+
+### 9) Data architecture and transactional invariants
+The relational model partitions into four major domains:
+1. principal/auth (`principals`, `principal_emails`, `credentials`, `token_families`)
+2. delegation/lifecycle (`delegation_envelopes`, `invite_receipts`)
+3. keychain (`keychain_memberships`, `keychain_effective_snapshots`)
+4. content/moderation (`posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`)
+
+Key integrity mechanics:
+- delegation depth/status/expiry is persisted, not inferred transiently,
+- token families support replay-safe refresh rotation,
+- moderation and revision records preserve accountability trails,
+- retention policy favors soft-delete/audit reconstructability.
+
+Atomicity requirements tie business correctness to write boundaries:
+- auth issuance + audit write together,
+- lifecycle mutation + lineage updates together,
+- keychain membership mutation + snapshot recompute + audit write together,
+- moderation decision + revision metadata together.
+
+### 10) Content and moderation subsystems
+Gateway flows provide day-to-day content operation under delegated keys:
+- feed read
+- post create/read/edit/flag
+- comment list/create
+
+Console flows provide governance-side control:
+- console post operations
+- moderation on posts/comments
+
+Moderation is specified as a state-transition engine with policy-driven validity, and conflict/validation outcomes are expected to be deterministic (`409`/`422` with stable detail semantics).
+
+### 11) UI runtime parity model (no-build SPA discipline)
+The UI runtime contract treats client behavior as a governed subsystem:
+- persistent session/device keys are named and versioned,
+- envelope parsing is mandatory,
+- canonical route states (`idle`, `loading`, `submitting`, `success`, `validation_error`, `forbidden`, `not_found`, `server_error`) are required,
+- per-endpoint parity matrix defines route-level success/error-state mapping,
+- diagnostics panel must surface `request_id` and envelope metadata.
+
+This transforms UI behavior from subjective implementation into auditable contract.
+
+### 12) Error model architecture (codes + detail taxonomy)
+CRE8 uses two-tier error semantics:
+- top-level envelope `error.code` by HTTP class (`auth_invalid`, `forbidden`, `validation_failed`, etc.)
+- granular `details.code` for deterministic caller behavior (`post_not_found`, `csrf_token_mismatch`, `device_id_invalid_format`, etc.)
+
+Crucial architectural rule: new detail codes require catalog updates in same PR, preventing undocumented behavior drift.
+
+### 13) Security control lattice
+Controls are layered across boundaries:
+- key material integrity and boot-time validation,
+- JWT claims (issuer/audience/type/timing/lineage/device),
+- refresh replay protection,
+- CORS + CSRF + rate limiting + device policy,
+- immutable correlation-bearing error envelopes,
+- structured, redacted logs and audit fallback emissions.
+
+The threat and abuse-case documents tie these controls to explicit adversarial scenarios, while verification strategy binds controls to executable suites.
+
+### 14) Operations, startup safety, and release gating
+Startup is fail-closed and evidence-producing:
+- environment/key source resolution,
+- typed config build,
+- container/service resolution,
+- mandatory boot assertions,
+- only then route exposure.
+
+Failure at any mandatory assertion halts startup before serving traffic and emits deterministic startup failure envelope plus structured event.
+
+Operational readiness is controlled via gate model:
+- **Gate A:** build/runtime integrity
+- **Gate B:** contract/security quality
+- **Gate C:** UX parity
+- **Gate D:** operational readiness
+
+Release eligibility requires all gates plus checklist/evidence completion.
+
+### 15) Observability and forensic reconstruction
+Event catalog requirements enforce cross-system causality reconstruction:
+- event naming discipline by family/action,
+- mandatory fields including request_id/surface/result,
+- correlation between envelopes and event stream,
+- redaction obligations,
+- explicit fallback behavior when primary audit delivery fails.
+
+This supports post-incident reconstruction using event stream + request IDs alone.
+
+### 16) Traceability as architecture glue
+The traceability matrix links each capability to:
+- routes,
+- middleware/policy layers,
+- service ownership,
+- test expectations,
+- authoritative docs.
+
+This prevents isolated changes from silently breaking policy, tests, or operations. It also provides a direct mechanism for change-impact analysis, which is critical for regulated or high-accountability environments.
+
+### 17) Program controls and delivery phasing
+M1→M4 milestone model maps canon readiness to implementation readiness:
+- M1 baseline contracts/governance
+- M2 core implementation
+- M3 security hardening
+- M4 production readiness
+
+Task trackers for key hierarchy and key-type coherence show where unresolved analytical debt is intentionally tracked instead of left implicit.
+
+### 18) Inter-component relationship map (narrative graph)
+- **Governance layer** constrains how every other layer may change.
+- **Machine/API contracts** constrain request/response shape consumed by UI and services.
+- **Auth/delegation policy** constrains which actor may execute which route/service action.
+- **Data model** persists the facts required for policy, lifecycle, and audit decisions.
+- **Security controls** harden route execution and token handling against abuse.
+- **Operations layer** ensures the system can start safely, signal health, and prove readiness.
+- **Traceability + verification** detect and prevent drift across all of the above.
+
+In short: CRE8 is designed as a **policy-constrained content system** where governance, security, and operations are modeled as peers to feature functionality—not afterthoughts.
+
+### 19) Investor/engineering interpretation
+From a shareholder + engineering lens, the architecture demonstrates:
+- strong risk-aware design maturity,
+- high contract discipline suitable for scale and auditability,
+- clear modular decomposition for parallel team execution,
+- explicit safety rails against privilege creep and undocumented drift.
+
+Primary remaining enterprise risk in this repository snapshot is implementation closure: the specification system is comparatively advanced relative to available runtime code artifacts.
