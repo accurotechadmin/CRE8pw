@@ -27,7 +27,11 @@ This folder is the standalone source-of-truth canon for operating and extending 
 
 ## Implementation planning and onboarding artifacts (current)
 Use these after canonical SSOT reading for execution sequencing and handoff discipline:
+- `RECOMMENDED_READING_ORDER.md`
+- `REPOSITORY_FILE_INVENTORY.md`
+- `LLM_ONBOARDING_MASTER_PROMPT.md`
 - `ONBOARDING_ANALYSIS_2026-04-12.md`
+- `FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 - `GENERALIZED_DAILY_PLAN_90_DAYS.md`
 - `M1_DAY_1_21_DETAILED_SLICES.md`
 - `M2_DAY_22_45_DETAILED_SLICES.md`

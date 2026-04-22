@@ -35,19 +35,9 @@ Then read machine-readable references:
 - `docs/ssot_canon/schemas/error-envelope.schema.json`
 - `docs/ssot_canon/evidence/automation/ssot_report.json`
 
-Then read all narrative docs (entire `docs/narrative/` folder):
-- `docs/narrative/README.md`
-- `docs/narrative/00-foundations.md`
-- `docs/narrative/01-governance.md`
-- `docs/narrative/02-product-architecture.md`
-- `docs/narrative/03-contracts.md`
-- `docs/narrative/04-data-security.md`
-- `docs/narrative/05-operations-quality.md`
-- `docs/narrative/06-traceability-automation.md`
-- `docs/narrative/07-decisions.md`
-- `docs/narrative/08-implementation-guidance.md`
-- `docs/narrative/09-program-management.md`
-- `docs/narrative/10-evidence-history.md`
+Then read supplemental synthesis artifacts:
+- `docs/ONBOARDING_ANALYSIS_2026-04-12.md` (historical onboarding synthesis)
+- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md` (current full-inventory audit)
 
 Then complete a full repository document sweep for anything not yet covered (including root docs/config metadata like `composer.json`, `dot.env`, and other textual docs).
 

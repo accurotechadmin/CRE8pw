@@ -57,20 +57,21 @@ This sequence is designed so a new reader starts with foundational context and g
 53. `docs/ssot_canon/70_implementation_guidance/DEPRECATION_AND_VERSIONING_POLICY.md`
 54. `docs/ssot_canon/70_implementation_guidance/TEST_DATA_AND_FIXTURE_STRATEGY.md`
 55. `docs/ssot_canon/80_program_management/ROADMAP_AND_MILESTONES.md`
-56. `docs/ssot_canon/80_program_management/RISK_REGISTER.md`
-57. `docs/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`
-58. `docs/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`
-59. `docs/ssot_canon/evidence/README.md`
-60. `docs/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`
-61. `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
-62. `docs/REPOSITORY_FILE_INVENTORY.md`
-63. `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
-64. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
-65. `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
-66. `docs/M1_DAY_1_21_DETAILED_SLICES.md`
-67. `docs/M2_DAY_22_45_DETAILED_SLICES.md`
-68. `docs/M3_DAY_46_69_DETAILED_SLICES.md`
-69. `docs/M4_DAY_70_90_DETAILED_SLICES.md`
+56. `docs/ssot_canon/80_program_management/CONTRIBUTION_WORKFLOW_SSOT.md`
+57. `docs/ssot_canon/80_program_management/DEFINITION_OF_DONE.md`
+58. `docs/ssot_canon/evidence/README.md`
+59. `docs/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`
+60. `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
+61. `docs/REPOSITORY_FILE_INVENTORY.md`
+62. `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
+63. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
+64. `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
+65. `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
+66. `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
+67. `docs/M1_DAY_1_21_DETAILED_SLICES.md`
+68. `docs/M2_DAY_22_45_DETAILED_SLICES.md`
+69. `docs/M3_DAY_46_69_DETAILED_SLICES.md`
+70. `docs/M4_DAY_70_90_DETAILED_SLICES.md`
 
 ## Supplemental machine-readable references (read after the core docs)
 
