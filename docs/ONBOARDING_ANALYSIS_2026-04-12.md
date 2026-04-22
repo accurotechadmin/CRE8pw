@@ -76,6 +76,7 @@
 | `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
 | `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
 | `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | Read | Execution planning | - Defines authoritative completion-based stage model (Stage 0–8) with dependency-driven progression. <br> - Replaces prior fixed-duration plan language with gate/evidence-driven delivery. |
+| `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` | Read | Execution planning | - Defines full slice-level decomposition from Stage 0 through Stage 10 with dependencies/deliverables/evidence per slice. <br> - Serves as implementation execution companion to the master plan. |
 
 ## 2) CRE8 mental model (authoritative)
 

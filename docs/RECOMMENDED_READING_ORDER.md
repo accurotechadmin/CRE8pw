@@ -68,6 +68,7 @@ This sequence is designed so a new reader starts with foundational context and g
 64. `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 65. `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
 66. `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
+67. `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
 
 ## Supplemental machine-readable references (read after the core docs)
 

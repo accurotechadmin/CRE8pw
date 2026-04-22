@@ -99,6 +99,7 @@ _Last updated (UTC): 2026-04-22_
 
 ### Planning + execution artifacts
 - `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
+- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` — end-to-end slice decomposition aligned to the stage model (adopted companion).
 
 ### SSOT Canon families
 

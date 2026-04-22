@@ -37,6 +37,7 @@ Quick index of the repository document set and root-level configuration artifact
 
 ## Implementation planning + execution artifacts (current)
 - `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
+- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
 
 ## Status declaration
 Current repository state is documentation-first: canonical SSOT, planning, and governance artifacts are present; runtime implementation remains to be built against these contracts.
