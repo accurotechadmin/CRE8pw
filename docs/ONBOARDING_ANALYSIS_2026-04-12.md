@@ -73,19 +73,8 @@
 | `docs/ssot_canon/openapi/cre8.v1.yaml` | Read | Machine contract | - OpenAPI 3.1 route contract with public/auth/gateway/console paths. <br> - Defines success/error envelope schemas and auth scheme baseline. |
 | `docs/ssot_canon/schemas/success-envelope.schema.json` | Read | Machine schema | - Success envelope requires `{data,meta}` and `meta.envelope_version`. <br> - Supports extensible metadata. |
 | `docs/ssot_canon/schemas/error-envelope.schema.json` | Read | Machine schema | - Error envelope requires `{error,meta}` with `error.code/message/request_id`. <br> - Supports extensible `details` and metadata. |
-| `docs/ssot_canon/evidence/automation/ssot_report.json` | Read | Automation evidence | - Latest recorded run status is `ok` for lint and sync-check. <br> - Command paths indicate evidence produced from a different workspace root string. |
-| `docs/narrative/README.md` | Read | Narrative map | - Provides documentary chunking and episode guide. <br> - Intended as narrative bridge across canonical chapters. |
-| `docs/narrative/00-foundations.md` | Read | Narrative synthesis | - Summarizes foundations docs and core framing. <br> - Reinforces canonical read ordering and baseline themes. |
-| `docs/narrative/01-governance.md` | Read | Narrative synthesis | - Consolidates governance family into narrative form. <br> - Reiterates ownership/change-control behaviors. |
-| `docs/narrative/02-product-architecture.md` | Read | Narrative synthesis | - Summarizes product/system and architecture surfaces. <br> - Highlights middleware/dependency constraints. |
-| `docs/narrative/03-contracts.md` | Read | Narrative synthesis | - Summarizes API/route/authz/error/UI contracts. <br> - Reinforces envelope and policy determinism. |
-| `docs/narrative/04-data-security.md` | Read | Narrative synthesis | - Summarizes data model + security controls/threats/abuse cases. <br> - Connects schema invariants to security verification. |
-| `docs/narrative/05-operations-quality.md` | Read | Narrative synthesis | - Summarizes verification/readiness/health/observability/SLO model. <br> - Emphasizes release-gated operational determinism. |
-| `docs/narrative/06-traceability-automation.md` | Read | Narrative synthesis | - Summarizes traceability matrices and automation constraints. <br> - Reinforces impact-map and gap-tracker workflows. |
-| `docs/narrative/07-decisions.md` | Read | Narrative synthesis | - Summarizes ADR stack and implications. <br> - Links decisions to implementation constraints. |
-| `docs/narrative/08-implementation-guidance.md` | Read | Narrative synthesis | - Summarizes module/compat/versioning/test-data guidance. <br> - Frames safe implementation mechanics. |
-| `docs/narrative/09-program-management.md` | Read | Narrative synthesis | - Summarizes roadmap/risk/workflow/DoD controls. <br> - Connects governance to delivery cadence. |
-| `docs/narrative/10-evidence-history.md` | Read | Narrative synthesis | - Summarizes evidence model and template usage. <br> - Reinforces auditable release/change history discipline. |
+| `docs/ssot_canon/evidence/automation/ssot_report.json` | Read | Automation evidence | - Current artifact is marked `historical_record`; do not use it as live readiness state. <br> - Treat as audit history only unless replaced by a current run. |
+| `docs/narrative/*` | Not present in repository snapshot | Historical reference set | - Earlier onboarding template referenced narrative synthesis files that are not included in current repository state. <br> - Use `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md` + canonical SSOT families instead. |
 | `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
 | `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
 | `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md` | Read | Execution planning | - Defines day-by-day generalized roadmap for Days 1–90 with milestone spine M1–M4. <br> - Declares daily proof discipline and no fallback/legacy implementation stance. |

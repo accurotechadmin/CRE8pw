@@ -33,7 +33,7 @@ _Last updated (UTC): 2026-04-22_
 - **Within the SSOT canon:** generally high.
   - Repeated agreement on envelope-first API behavior, route parity obligations, auth/delegation bounds, and release gates.
 - **Cross-artifact consistency gaps observed:**
-  1. **Narrative set references are stale** in some meta docs (`docs/narrative/*` is referenced but absent in repository).
+  1. **Narrative set is now explicitly marked historical/non-present** in inventory/onboarding metadata to avoid broken-reference confusion.
   2. **Composer script/test references imply implementation assets** (`scripts/`, `tests/`, `src/`) that are not present in this snapshot.
   3. **Example env file contains concrete-looking credentials/secrets paths**, which is risky even if intended as scaffold.
   4. **Recorded evidence file has pending signoffs / pending-local change ID**, reducing audit finality.
@@ -45,10 +45,10 @@ _Last updated (UTC): 2026-04-22_
 - **Security hygiene risk** from environment example content if copied without sanitization.
 
 ### Recommended remediation priority
-1. Resolve stale references (`docs/narrative/*`) or reintroduce those docs.
-2. Align `composer.json` scripts with actual repository contents (or add missing scripts/tests/source skeleton).
-3. Replace sensitive-looking `dot.env` values with obviously fake placeholders.
-4. Finalize evidence records (replace `pending-local` and pending reviewer signoffs where applicable).
+1. Align `composer.json` scripts with actual repository contents (or add missing scripts/tests/source skeleton).
+2. Replace sensitive-looking `dot.env` values with obviously fake placeholders.
+3. Finalize evidence records (replace `pending-local` and pending reviewer signoffs where applicable).
+4. Decide whether to reintroduce docs/narrative/ (historical set, currently absent) as active docs or retain historical/non-present status permanently.
 
 ## B) Inventory of components, sub-components, functional pieces, and purpose
 

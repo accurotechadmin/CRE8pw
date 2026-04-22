@@ -15,7 +15,11 @@ Quick index of the repository document set and root-level configuration artifact
 - `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
 - `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 - `docs/RECOMMENDED_READING_ORDER.md`
+- `docs/REPOSITORY_FILE_INVENTORY.md`
+- `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
 - `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
+- `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
+- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 
 ## SSOT canon families
 - `docs/ssot_canon/00_governance/*`
@@ -33,21 +37,9 @@ Quick index of the repository document set and root-level configuration artifact
 - `docs/ssot_canon/evidence/*`
 
 ## Narrative synthesis set
-- `docs/narrative/README.md`
-- `docs/narrative/00-foundations.md`
-- `docs/narrative/01-governance.md`
-- `docs/narrative/02-product-architecture.md`
-- `docs/narrative/03-contracts.md`
-- `docs/narrative/04-data-security.md`
-- `docs/narrative/05-operations-quality.md`
-- `docs/narrative/06-traceability-automation.md`
-- `docs/narrative/07-decisions.md`
-- `docs/narrative/08-implementation-guidance.md`
-- `docs/narrative/09-program-management.md`
-- `docs/narrative/10-evidence-history.md`
+Narrative documents under docs/narrative/ (historical, not present) are not present in this repository snapshot and are not part of the active canon index.
 
 ## Implementation planning + execution artifacts (current)
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
 - `docs/GENERALIZED_DAILY_PLAN_90_DAYS.md`
 - `docs/M1_DAY_1_21_DETAILED_SLICES.md`
 - `docs/M2_DAY_22_45_DETAILED_SLICES.md`
