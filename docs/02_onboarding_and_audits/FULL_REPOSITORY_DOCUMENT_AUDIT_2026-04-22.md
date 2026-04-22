@@ -88,18 +88,18 @@ _Last updated (UTC): 2026-04-22_
 - `dot.env` — local-development environment scaffold for DB/JWT/CORS/CSRF/rate-limit knobs.
 
 ### Foundational docs (non-canon root docs)
-- `docs/README.md` — declares SSOT purpose, scope, authority model, reading path, and current documentation-first status.
-- `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` — product identity and value promises.
-- `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` — runtime baseline and engineering quality bars.
-- `docs/RECOMMENDED_READING_ORDER.md` — sequenced reading curriculum.
-- `docs/REPOSITORY_FILE_INVENTORY.md` — repository map and declared artifact set.
-- `docs/HIGH_LEVEL_REPORT_2026-04-09.md` — earlier high-level interpretation.
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md` — detailed prior synthesis and mental model.
-- `docs/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
+- `docs/01_foundation/README.md` — declares SSOT purpose, scope, authority model, reading path, and current documentation-first status.
+- `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` — product identity and value promises.
+- `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` — runtime baseline and engineering quality bars.
+- `docs/01_foundation/RECOMMENDED_READING_ORDER.md` — sequenced reading curriculum.
+- `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md` — repository map and declared artifact set.
+- `docs/02_onboarding_and_audits/HIGH_LEVEL_REPORT_2026-04-09.md` — earlier high-level interpretation.
+- `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-12.md` — detailed prior synthesis and mental model.
+- `docs/02_onboarding_and_audits/LLM_ONBOARDING_MASTER_PROMPT.md` — strict onboarding workflow/prompt contract.
 
 ### Planning + execution artifacts
-- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
-- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` — end-to-end slice decomposition aligned to the stage model (adopted companion).
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` — authoritative stage-based execution blueprint (adopted).
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` — end-to-end slice decomposition aligned to the stage model (adopted companion).
 
 ### SSOT Canon families
 

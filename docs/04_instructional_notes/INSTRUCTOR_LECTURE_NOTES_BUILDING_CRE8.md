@@ -26,8 +26,8 @@ By the end of class, learners should be able to:
 
 ### 1.3 Required instructor prep
 Before lecture, review in this order:
-1. `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-2. `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+1. `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+2. `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 3. `ssot_canon/10_product_and_architecture/*`
 4. `ssot_canon/20_contracts/*`
 5. `ssot_canon/30_data_and_security/*`
@@ -370,8 +370,8 @@ A: Mixing auth contexts between gateway and console paths or weakening envelope/
 ## 6) References for this lecture
 
 Primary source set:
-- `CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-- `TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+- `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+- `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 - `ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
 - `ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - `ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`

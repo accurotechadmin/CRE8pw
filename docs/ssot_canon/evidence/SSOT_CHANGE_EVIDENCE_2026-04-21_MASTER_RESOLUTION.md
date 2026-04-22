@@ -21,7 +21,7 @@ _Last updated (UTC): 2026-04-21_
   - `docs/ssot_canon/80_program_management/MASTER_KEY_HIERARCHY_ANALYSIS_TASK.md`
   - `docs/ssot_canon/80_program_management/KEY_TYPE_SPEC_COHERENCE_TASK.md`
   - `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`
-  - `docs/README.md`, `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+  - `docs/01_foundation/README.md`, `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 - OpenAPI/schemas:
   - `docs/ssot_canon/openapi/cre8.v1.yaml`
 - Tests:
