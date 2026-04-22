@@ -29,6 +29,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S0-06 | Enable docs sync/lint/report automation commands. | S0-04 | `docs:ssot:*` automation scripts and CI wiring | Lint/sync/report outputs archived |
 | S0-07 | Finalize implementation-era ADR logging workflow. | S0-03 | ADR intake/update process | Recorded dry-run ADR update |
 | S0-08 | Execute human-accessibility narrative pass across SSOT docs. | S0-02,S0-03 | Human-operating-model + scenario docs + style-guide updates | Terminology consistency check + architecture/security review signoff |
+| S0-09 | Publish contributor cognition pack (module walk-throughs + safe-change guides). | S0-03,S0-08 | Maintainer onboarding and safe-modification guides | New-maintainer dry-run and owner signoff |
 
 ---
 
@@ -49,6 +50,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S1-11 | Implement observability emitter baseline and redaction. | S1-04,S1-05 | Structured event emitter + redaction rules | Event-shape and redaction tests |
 | S1-12 | Implement `/health` baseline service with subsystem probes. | S1-02,S1-03,S1-10 | Health probe service and endpoint | health ok/degraded/down verification |
 | S1-13 | Implement startup evidence output contract (`BOOT_EVIDENCE_PATH`). | S1-01,S1-06 | Startup evidence writer | Startup evidence artifact samples |
+| S1-14 | Add operator-first diagnostics narrative for startup and middleware failures. | S1-05,S1-13 | Troubleshooting decision trees + failure exemplars | On-call walkthrough simulation |
 
 ---
 
@@ -64,6 +66,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S2-06 | Implement content/moderation/invite schema set. | S2-03 | Posts/comments/revisions/flags/moderation/invites schema | Data integrity and FK tests |
 | S2-07 | Implement deterministic seed strategy and fixture packs. | S2-01,S2-06 | Seed scripts + fixture packs | Fixture determinism report |
 | S2-08 | Implement migration smoke operations (`ops:migrate-smoke`). | S2-01,S2-02,S2-07 | Migration smoke command | CI smoke artifact |
+| S2-09 | Add data-integrity narrative and rollback playbook examples for operators. | S2-02,S2-08 | Migration/rollback operator narrative pack | Restore/rollback tabletop evidence |
 
 ---
 
@@ -78,6 +81,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S3-05 | Implement refresh token family rotation/replay invalidation. | S2-04,S3-03 | Refresh lifecycle service | Replay invalidation test suite |
 | S3-06 | Implement lifecycle-aware auth denial states. | S2-04,S3-03 | Suspended/revoked/cancelled checks | Lifecycle deny-path tests |
 | S3-07 | Implement JWKS publication and key overlap handling. | S3-03 | JWKS route and rotation overlap logic | JWKS and rotation rehearsal evidence |
+| S3-08 | Add human-readable auth failure diagnostics contract (no sensitive leakage). | S3-04,S3-06 | Auth diagnostics matrix and UX guidance | Security + UX review signoff |
 
 ---
 
@@ -93,6 +97,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S4-06 | Implement keychain effective permission/scope resolution. | S4-05 | Effective resolver + snapshot recompute | Resolution deterministic tests |
 | S4-07 | Implement lifecycle authority transitions and cascade policy. | S4-04,S4-06 | Lifecycle decision engine | Lifecycle authority tests |
 | S4-08 | Emit auditable policy decision events for all privileged paths. | S4-01,S1-11 | Policy audit event integration | Event coverage report |
+| S4-09 | Publish policy decision walkthroughs for delegation/keychain/lifecycle edge cases. | S4-03,S4-06,S4-07 | Human-readable decision narratives + examples | Maintainer comprehension review |
 
 ---
 
@@ -110,6 +115,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S5-08 | Implement key lifecycle transition route. | S4-07 | Lifecycle transition handler | Lifecycle transition matrix tests |
 | S5-09 | Implement post/comment moderation routes. | S4-07 | Moderation handlers | Moderation transition tests |
 | S5-10 | Complete route-level error taxonomy parity and detail-code alignment. | S5-01..S5-09 | Error mapping coverage updates | Error taxonomy drift report |
+| S5-11 | Attach route-family operator narratives and support triage flows. | S5-10,S1-14 | Route-level troubleshooting/playbook bundle | Support simulation and signoff |
 
 ---
 
@@ -125,6 +131,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S6-06 | Implement keychain management/resolution UI flows. | S6-05,S5-06 | Keychain UI routes | Keychain UI parity tests |
 | S6-07 | Implement error/degraded-state UX mapping for required status families. | S6-02 | Error-state UX system | 401/403/404/422/429/5xx UI checks |
 | S6-08 | Implement accessibility and diagnostics minimums (request_id visibility). | S6-01,S6-07 | A11y and diagnostics controls | Accessibility checks + diagnostics screenshots |
+| S6-09 | Validate human trust and comprehensibility of denial/error UX states. | S6-07,S6-08,S3-08 | UX trust calibration findings + remediation list | User-support walkthrough evidence |
 
 ---
 
@@ -138,6 +145,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S7-04 | Harden rate limiting profiles by endpoint sensitivity. | S1-10,S5-* | Policy-tiered limiter configuration | Flood simulation report |
 | S7-05 | Harden secrets handling and sensitive log redaction. | S1-11 | Redaction policy + filters | Redaction verification suite |
 | S7-06 | Complete threat-to-test traceability and abuse matrix closure. | S7-01..S7-05 | Updated abuse-case coverage map | 100% abuse-case regression evidence |
+| S7-07 | Validate fairness/consistency of enforcement outcomes across equivalent cases. | S7-06,S4-09 | Enforcement consistency report | Policy fairness review signoff |
 
 ---
 
@@ -151,6 +159,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S8-04 | Execute dependency-failure/chaos scenarios. | S1-12,S8-01 | Failure injection harness | Degraded/down behavior evidence |
 | S8-05 | Stabilize flaky tests and enforce deterministic execution controls. | S8-01 | Isolation/retry/fixture controls | Flake-rate trend report |
 | S8-06 | Close acceptance criteria matrix coverage for all routes. | S8-01,S8-02 | Acceptance matrix evidence pack | Acceptance signoff report |
+| S8-07 | Produce end-to-end narrative quality report (tech outcomes + human/operator outcomes). | S8-03,S8-06,S6-09 | Quality narrative report linked to evidence | Cross-functional review approval |
 
 ---
 
@@ -165,6 +174,7 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S9-05 | Rehearse rollback and data restore operations. | S2-02,S9-01 | Rollback/restore runbooks | Rollback drill evidence |
 | S9-06 | Complete SLO/SLI dashboards and alert routing validation. | S8-03 | SLI dashboards + alert policies | Alert fire-drill report |
 | S9-07 | Assemble production readiness gates and release evidence package. | S9-01..S9-06 | Completed gate evidence and release template | Gate approval record |
+| S9-08 | Assemble plain-language release readiness narrative for operators/support/stakeholders. | S9-07,S8-07 | Release narrative dossier | Leadership + on-call signoff |
 
 ---
 
@@ -177,6 +187,9 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 | S10-03 | Close critical defects and document remediation evidence. | S10-02 | Defect remediation backlog and fixes | Regression evidence |
 | S10-04 | Re-baseline risks, traceability, and decisions from production learnings. | S10-02,S10-03 | Updated risk register + traceability diff + ADR/log updates | Governance update signoff |
 | S10-05 | Transition to continuous-delivery cadence with no SSOT drift. | S10-04 | Steady-state delivery workflow | Drift audit pass + release cadence report |
+| S10-06 | Execute no-loose-ends closure audit across all stages/slices/evidence links. | S10-04,S10-05 | Closure ledger with disposition for all open items | Closure audit signoff |
+| S10-07 | Validate maintainer handoff readiness via fresh-onboarded operator simulation. | S10-06,S0-09 | Handoff report + remediations | Successful shadow-ops evaluation |
+| S10-08 | Finalize ethos conformance review (bounded delegation, accountability, safe defaults). | S10-06,S7-07,S9-08 | Ethos conformance report + residual risk decisions | Final architecture/security/product approval |
 
 ---
 
@@ -186,7 +199,8 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 3. Any unresolved assumption must be recorded in `docs/ssot_canon/80_program_management/RISK_REGISTER.md` with owner and target date.
 4. Gate progression is blocked by missing evidence, unresolved critical defects, or SSOT drift.
 5. Emergency changes must follow Class D process in `docs/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md` and include remediation PR linkage.
+6. Every stage must include human-readable operational narrative and contributor guidance updates for affected capability families.
+7. No capability is complete until technical evidence, support/operator narrative, and ownership handoff artifacts are all present.
 
 ## Completion rule
-Execution is complete only when all slices `S0-01` through `S10-05` (including S0-08 narrative clarity) are complete and all gates defined in `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
-
+Execution is complete only when all slices `S0-01` through `S10-08` (including narrative, handoff, and ethos slices) are complete and all gates defined in `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
