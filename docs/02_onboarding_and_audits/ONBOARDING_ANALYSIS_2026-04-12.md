@@ -6,10 +6,10 @@
 |---|---|---|---|
 | `composer.json` | Read | Dependency/runtime baseline | - PHP 8.2 + Slim 4 + JWT + PDO + sodium + rate limiter + monolog stack. <br> - Scripts include test/security/ops smoke and SSOT lint/sync/report. |
 | `dot.env` | Read | Local env scaffold | - Example env aligns with SSOT variables (DB/JWT/CORS/CSRF/rate/JWT TTL). <br> - Contains concrete sample secrets/paths that should be treated as sensitive. |
-| `docs/README.md` | Read | Canon entrypoint | - Declares SSOT-first from-scratch canon scope and usage rules. <br> - Defines precedence and non-negotiable contract/governance discipline. |
+| `docs/01_foundation/README.md` | Read | Canon entrypoint | - Declares SSOT-first from-scratch canon scope and usage rules. <br> - Defines precedence and non-negotiable contract/governance discipline. |
 | `docs/ssot_canon/00_governance/SSOT_INDEX.md` | Read | Governance index | - Defines canon navigation and artifact tiers. <br> - Declares precedence: machine artifacts > contracts/security > ops > program docs. |
-| `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` | Read | Product identity | - CRE8 = governed delegation platform with auditable lifecycle control. <br> - Encodes engineering constraints (envelope compliance, auth boundaries, release evidence). |
-| `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` | Read | Technical strategy | - Contract-first, policy-first, observability-first implementation stance. <br> - Milestones from bootstrap to operations readiness are defined. |
+| `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` | Read | Product identity | - CRE8 = governed delegation platform with auditable lifecycle control. <br> - Encodes engineering constraints (envelope compliance, auth boundaries, release evidence). |
+| `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md` | Read | Technical strategy | - Contract-first, policy-first, observability-first implementation stance. <br> - Milestones from bootstrap to operations readiness are defined. |
 | `docs/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` | Read | Product/system spec | - Defines v1 capabilities across public/auth/gateway/console surfaces. <br> - States out-of-scope boundaries and system constraints. |
 | `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` | Read | Terminology | - Establishes canonical terms for principals, envelopes, policies, lifecycle states. <br> - Terminology is required for cross-doc consistency. |
 | `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` | Read | Architecture boundaries | - Defines layered architecture and surface boundaries (public/gateway/console). <br> - Enforces boundary and coupling rules for modules/services. |
@@ -67,16 +67,16 @@
 | `docs/ssot_canon/evidence/README.md` | Read | Evidence framework | - Defines evidence package purpose/types/storage convention. <br> - Aligns release and SSOT-change evidence practices. |
 | `docs/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md` | Read | Evidence template | - Template for SSOT change metadata/artifacts/verification/signoff. <br> - Ensures consistent change evidence completeness. |
 | `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md` | Read | Evidence template | - Template for release verification/gates/ops signoff evidence. <br> - Enforces auditable release evidence quality. |
-| `docs/REPOSITORY_FILE_INVENTORY.md` | Read | Repo inventory | - Enumerates key file set and content purpose summary. <br> - Aids onboarding/discovery from root-level artifacts. |
-| `docs/HIGH_LEVEL_REPORT_2026-04-09.md` | Read | SSOT status snapshot | - Reports SSOT canon as complete and specification-grade baseline. <br> - Emphasizes contract-first + governance + readiness themes. |
+| `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md` | Read | Repo inventory | - Enumerates key file set and content purpose summary. <br> - Aids onboarding/discovery from root-level artifacts. |
+| `docs/02_onboarding_and_audits/HIGH_LEVEL_REPORT_2026-04-09.md` | Read | SSOT status snapshot | - Reports SSOT canon as complete and specification-grade baseline. <br> - Emphasizes contract-first + governance + readiness themes. |
 | `docs/ssot_canon/openapi/cre8.v1.yaml` | Read | Machine contract | - OpenAPI 3.1 route contract with public/auth/gateway/console paths. <br> - Defines success/error envelope schemas and auth scheme baseline. |
 | `docs/ssot_canon/schemas/success-envelope.schema.json` | Read | Machine schema | - Success envelope requires `{data,meta}` and `meta.envelope_version`. <br> - Supports extensible metadata. |
 | `docs/ssot_canon/schemas/error-envelope.schema.json` | Read | Machine schema | - Error envelope requires `{error,meta}` with `error.code/message/request_id`. <br> - Supports extensible `details` and metadata. |
 | `docs/ssot_canon/evidence/automation/ssot_report.json` | Read | Automation evidence | - Current artifact is marked `historical_record`; do not use it as live readiness state. <br> - Treat as audit history only unless replaced by a current run. |
-| `docs/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
-| `docs/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
-| `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | Read | Execution planning | - Defines authoritative completion-based stage model (Stage 0–8) with dependency-driven progression. <br> - Replaces prior fixed-duration plan language with gate/evidence-driven delivery. |
-| `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` | Read | Execution planning | - Defines full slice-level decomposition from Stage 0 through Stage 10 with dependencies/deliverables/evidence per slice. <br> - Serves as implementation execution companion to the master plan. |
+| `docs/02_onboarding_and_audits/LLM_ONBOARDING_MASTER_PROMPT.md` | Read | Onboarding ops | - Mirrors strict onboarding sequence and deliverable structure. <br> - Encodes fact/inference/open-question discipline. |
+| `docs/01_foundation/RECOMMENDED_READING_ORDER.md` | Read | Onboarding map | - Provides reading order + machine-readable references. <br> - Aligns with SSOT onboarding flow. |
+| `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | Read | Execution planning | - Defines authoritative completion-based stage model (Stage 0–8) with dependency-driven progression. <br> - Replaces prior fixed-duration plan language with gate/evidence-driven delivery. |
+| `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` | Read | Execution planning | - Defines full slice-level decomposition from Stage 0 through Stage 10 with dependencies/deliverables/evidence per slice. <br> - Serves as implementation execution companion to the master plan. |
 
 ## 2) CRE8 mental model (authoritative)
 

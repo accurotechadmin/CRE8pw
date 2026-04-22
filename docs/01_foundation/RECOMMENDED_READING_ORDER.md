@@ -2,10 +2,10 @@
 
 This sequence is designed so a new reader starts with foundational context and governance, then moves into product/architecture, contracts, data/security, operations, traceability, decisions, implementation guidance, program workflow, and finally evidence/templates and current execution-planning artifacts.
 
-1. `docs/README.md`
+1. `docs/01_foundation/README.md`
 2. `docs/ssot_canon/00_governance/SSOT_INDEX.md`
-3. `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-4. `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+3. `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+4. `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
 5. `docs/ssot_canon/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`
 6. `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 7. `docs/ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
@@ -62,13 +62,13 @@ This sequence is designed so a new reader starts with foundational context and g
 58. `docs/ssot_canon/evidence/README.md`
 59. `docs/ssot_canon/evidence/templates/SSOT_CHANGE_EVIDENCE_TEMPLATE.md`
 60. `docs/ssot_canon/evidence/templates/RELEASE_EVIDENCE_TEMPLATE.md`
-61. `docs/REPOSITORY_FILE_INVENTORY.md`
-62. `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
-63. `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
-64. `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
-65. `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
-66. `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
-67. `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
+61. `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`
+62. `docs/02_onboarding_and_audits/HIGH_LEVEL_REPORT_2026-04-09.md`
+63. `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-12.md`
+64. `docs/02_onboarding_and_audits/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
+65. `docs/02_onboarding_and_audits/LLM_ONBOARDING_MASTER_PROMPT.md`
+66. `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
+67. `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
 
 ## Supplemental machine-readable references (read after the core docs)
 

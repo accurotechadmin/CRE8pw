@@ -10,15 +10,15 @@ Quick index of the repository document set and root-level configuration artifact
 - `composer.json` — Dependency baseline and command contracts (`test`, `qa`, `ops:*`; optional `docs:ssot:*` when tooling exists).
 
 ## Foundational docs
-- `docs/README.md`
-- `docs/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
-- `docs/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
-- `docs/RECOMMENDED_READING_ORDER.md`
-- `docs/REPOSITORY_FILE_INVENTORY.md`
-- `docs/LLM_ONBOARDING_MASTER_PROMPT.md`
-- `docs/HIGH_LEVEL_REPORT_2026-04-09.md`
-- `docs/ONBOARDING_ANALYSIS_2026-04-12.md`
-- `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
+- `docs/01_foundation/README.md`
+- `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`
+- `docs/01_foundation/TECHNICAL_FOUNDATION_AND_BUILD_PLAN.md`
+- `docs/01_foundation/RECOMMENDED_READING_ORDER.md`
+- `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`
+- `docs/02_onboarding_and_audits/LLM_ONBOARDING_MASTER_PROMPT.md`
+- `docs/02_onboarding_and_audits/HIGH_LEVEL_REPORT_2026-04-09.md`
+- `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-12.md`
+- `docs/02_onboarding_and_audits/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 
 ## SSOT canon families
 - `docs/ssot_canon/00_governance/*`
@@ -36,8 +36,8 @@ Quick index of the repository document set and root-level configuration artifact
 - `docs/ssot_canon/evidence/*`
 
 ## Implementation planning + execution artifacts (current)
-- `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
-- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
+- `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
 
 ## Status declaration
 Current repository state is documentation-first: canonical SSOT, planning, and governance artifacts are present; runtime implementation remains to be built against these contracts.

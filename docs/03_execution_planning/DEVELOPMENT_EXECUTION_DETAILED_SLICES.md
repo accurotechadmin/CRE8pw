@@ -2,10 +2,10 @@
 
 _Status: adopted execution companion_
 _Last updated (UTC): 2026-04-22_
-_Primary source: `docs/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`_
+_Primary source: `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`_
 
 ## Purpose
-This document is the execution-detail companion to `DEVELOPMENT_EXECUTION_MASTER_PLAN.md`.  
+This document is the execution-detail companion to `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`.  
 It translates the stage model (Stage 0–10) into complete, implementation-ready delivery slices with explicit dependencies, deliverables, and validation evidence.
 
 ## Usage contract
@@ -187,5 +187,5 @@ It translates the stage model (Stage 0–10) into complete, implementation-ready
 5. Emergency changes must follow Class D process in `CHANGE_CONTROL_POLICY.md` and include remediation PR linkage.
 
 ## Completion rule
-Execution is complete only when all slices `S0-01` through `S10-05` are complete and all gates defined in `DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
+Execution is complete only when all slices `S0-01` through `S10-05` are complete and all gates defined in `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` are passed with attached evidence.
 

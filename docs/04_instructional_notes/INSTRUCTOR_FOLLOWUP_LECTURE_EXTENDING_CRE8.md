@@ -2,7 +2,7 @@
 
 _Status: teaching-ready_
 _Audience: instructors teaching applied platform extension, integration architecture, and product customization_
-_Prerequisite: `INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`_
+_Prerequisite: `docs/04_instructional_notes/INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`_
 _Duration options: 120 minutes workshop or 2 x 75-minute sessions_
 _Last updated (UTC): 2026-04-22_
 
@@ -313,7 +313,7 @@ Suggested thresholds:
 ## 10) References (Canonical Anchors)
 
 Use these during workshop facilitation and review:
-- `INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`
+- `docs/04_instructional_notes/INSTRUCTOR_LECTURE_NOTES_BUILDING_CRE8.md`
 - `ssot_canon/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
 - `ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
 - `ssot_canon/20_contracts/API_CONTRACT_GUIDE.md`
