@@ -13,6 +13,7 @@ Defines principals, key classes, delegation bounds, keychain aggregation behavio
 - **Key principal:** gateway content authority.
 
 ## Key classes
+- `master` (owner-only SYSADMIN class)
 - `primary_author`
 - `secondary_author`
 - `use`
