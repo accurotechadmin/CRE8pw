@@ -6,6 +6,9 @@ _Last updated (UTC): 2026-04-22_
 ## Plan intent and framing
 This plan replaces the previous fixed day-count plan with a **completion-based execution system**. Work proceeds by readiness gates and dependency closure, not calendar targets.
 
+Companion execution detail document:
+- `docs/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` (slice-level implementation sequencing and evidence requirements).
+
 ### Core principles
 1. **SSOT-first delivery:** `docs/ssot_canon/` remains authoritative; implementation must prove parity continuously.
 2. **Envelope-first runtime:** all API behavior must remain contract-conformant to OpenAPI + envelope schemas + error catalog.

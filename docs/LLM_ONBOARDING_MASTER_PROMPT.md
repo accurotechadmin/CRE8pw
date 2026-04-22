@@ -54,7 +54,7 @@ Then read synthesis/support artifacts:
 - `docs/FULL_REPOSITORY_DOCUMENT_AUDIT_2026-04-22.md`
 - `docs/REPOSITORY_FILE_INVENTORY.md`
 
-Then complete a full repository textual sweep for anything not yet covered (including root metadata like `composer.json`, `dot.env`, and `.htaccess` if present).
+Then complete a full repository textual sweep for anything not yet covered (including root metadata like `composer.json` and `dot.env`).
 
 ### Phase 2 — Consistency and drift checks
 Perform focused checks across these invariants:
@@ -126,10 +126,10 @@ After reading, output these sections in this exact order:
 - Explicit list of doc conflicts or unclear points.
 - For each: proposed resolution path and owner role.
 
-### 8) 30/60/90 day strategic development plan
-- 30-day stabilization goals,
-- 60-day capability build-out,
-- 90-day hardening + scale path,
+### 8) Stage-based strategic development plan
+- Stage 0 initialization goals,
+- Stages 1–4 platform/core capability build-out,
+- Stages 5–8 hardening, quality, and release-readiness path,
 - mapped to roadmap and risk register themes.
 
 ### 9) “Ask me anything” readiness statement
