@@ -2,9 +2,18 @@
 
 _Status: analysis artifact_
 
-- Generated at (UTC): 2026-04-23T12:52:25Z
-- Documents scanned: 91
-- Source scope: docs tree + machine contracts/schemas + root metadata (`composer.json`, `dot.env`).
+- Generated at (UTC): 2026-04-23T13:28:49Z
+- Documents scanned: 95
+- Source scope: docs tree + machine contracts/schemas + root metadata (`composer.json`, `dot.env`) + root `README.md`.
+
+
+## 0) Extraction policy and normalization notes (2026-04-23 refresh)
+
+- Added strict-completeness scope entries for root `README.md`, this TOUR markdown, this TOUR JSON, and the artifact explanation file.
+- Added source-precedence tier tagging model: `machine_contract`, `ssot_canon`, `governance_or_analysis`, `root_metadata`.
+- Added extracted-item status model: `status` + `superseded_by` for downstream false-authority mitigation.
+- Added stable source-location granularity in JSON via `source_locations` with `line_start`/`line_end`.
+- Normalized malformed backtick fragments and filtered low-signal boilerplate tokens (`Field`, `Module`, `Document family`, `Notes`).
 
 ## 1) Document extraction index
 
@@ -12,6 +21,7 @@ _Status: analysis artifact_
 |---|---|---|
 | `composer.json` | — | — |
 | `dot.env` | CRE8 scaffold local-development environment example., Copy to `.env.local` (or equivalent) and replace all placeholder values before use., D | — |
+| `README.md` | CRE8 repository overview and orientation | documentation-first |
 | `docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md` | Core Identity And Value Proposition, Product identity, Primary value propositions | Deterministic governance:, Safe delegation: |
 | `docs/01_foundation/README.md` | CRE8 From-Scratch SSOT Canon, Purpose, Canon scope | — |
 | `docs/01_foundation/RECOMMENDED_READING_ORDER.md` | Recommended Documentation Reading Order, Supplemental machine-readable references (read after the core docs) | — |
@@ -25,7 +35,10 @@ _Status: analysis artifact_
 | `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-22_CODEX_REFRESH.md` | CRE8 Onboarding Analysis — Codex Refresh (2026-04-22), Scope and method, Key factual outcomes | Contract parity:, Policy parity: |
 | `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-22_STAFF_ENGINEER_WORKING_MODEL.md` | CRE8 Onboarding Analysis — Staff Engineer Working Model (2026-04-22), Phase 0 inventory and scope confirmation, 1) Reading completion ledger | Product mission/value:, System boundaries:, `composer.json`, `dot.env` |
 | `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-22_STAFF_MODEL.md` | CRE8 Onboarding Analysis — Senior Staff Engineer / Product-Architecture Model, 1) Reading completion ledger, 2) CRE8 mental model (authorita | Stage 0, Stages 1–4, `.htaccess`, `../../composer.json` |
-| `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-23_STAFF_ENGINEER_WORKING_MODEL.md` | CRE8 Onboarding Analysis — Staff Engineer Working Model (2026-04-23), Scope note, Phase 0 snapshot | — |
+| `docs/02_onboarding_and_audits/ONBOARDING_ANALYSIS_2026-04-23_STAFF_ENGINEER_WORKING_MODEL.md` | CRE8 Onboarding Analysis — Staff Engineer Working Model (2026-04-23), Scope note, Phase 0 snapshot | SSOT maturity, Implementation maturity, S0-01 |
+| `docs/02_onboarding_and_audits/ARTIFACT_EXPLANATION_2026-04-23_ONBOARDING_INVENTORY_SET.md` | Artifact Explanation: 2026-04-23 Onboarding + Inventory Set, Scope | document_extractions, central_inventory |
+| `docs/02_onboarding_and_audits/CRE8_TOURS_CONCEPT_DECISION_COMPONENT_PURPOSE_RELATIONSHIP_INVENTORY_2026-04-23.md` | CRE8 Tours Concept/Decision/Component/Purpose/Relationship Inventory, Document extraction index | Documents scanned, Source scope |
+| `docs/02_onboarding_and_audits/CRE8_TOURS_CONCEPT_DECISION_COMPONENT_PURPOSE_RELATIONSHIP_INVENTORY_2026-04-23.json` | Inventory metadata, document_extractions, central_inventory | inventory_name, generated_at_utc |
 | `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md` | CRE8 Development Execution Detailed Slices (End-to-End), Purpose, Usage contract | S0-01, S0-02 |
 | `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md` | CRE8 End-to-End Development Execution Master Plan, Plan intent and framing, Core principles | /health, /health |
 | `docs/04_instructional_notes/INSTRUCTOR_FOLLOWUP_LECTURE_EXTENDING_CRE8.md` | Instructor Follow-Up Lecture: Extending CRE8 in a Third-Party Product, 1) Workshop Intent and Framing, 1.1 Why this follow-up exists | /ui/* |
@@ -131,7 +144,7 @@ _Status: analysis artifact_
 | `I-ba2c380a` | ``/console/api/posts/{postId}/comments/{commentId}/moderation`` | component | 2 | — |
 | `I-3fe3f986` | ``/console/api/posts/{postId}/moderation`` | component | 2 | — |
 | `I-5c2bf2de` | ``/console/api/posts`` | component | 2 | — |
-| `I-6d163dd2` | ``/health` reliability` | component | 1 | — |
+| `I-6d163dd2` | `/health reliability` | component | 1 | — |
 | `I-b5d0ee8c` | ``composer.json`` | component | 1 | — |
 | `I-611208e6` | ``DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`` | component | 2 | policy:delegation |
 | `I-1c0851df` | ``docs/01_foundation/CORE_IDENTITY_AND_VALUE_PROPOSITION.md`` | component | 3 | — |
@@ -237,8 +250,8 @@ _Status: analysis artifact_
 | `I-f4d559ab` | ``POST /console/api/posts/{postId}/moderation`` | component | 2 | — |
 | `I-4ee04f79` | ``POST /console/api/posts`` | component | 2 | — |
 | `I-5ef76d30` | ``use`` | component | 1 | — |
-| `I-88295d11` | ``X-Device-Id` malformed` | component | 1 | — |
-| `I-43ad4669` | ``X-Device-Id` missing` | component | 1 | — |
+| `I-88295d11` | `X-Device-Id malformed` | component | 1 | — |
+| `I-43ad4669` | `X-Device-Id missing` | component | 1 | — |
 | `I-21232f29` | `admin` | component | 1 | — |
 | `I-24e23f18` | `admin (owner-delegated)` | component | 1 | — |
 | `I-9fa518c5` | `API availability (`/api/*`, `/console/api/*`)` | component | 1 | — |
@@ -284,7 +297,7 @@ _Status: analysis artifact_
 | `I-06e3d36f` | `Field` | component | 1 | — |
 | `I-4f83a3e4` | `Frontend/UI` | component | 1 | — |
 | `I-6d2d97bc` | `Gateway policy` | component | 1 | — |
-| `I-3c31c689` | `Gateway route has JWT `device_id` claim matching `X-Device-Id`` | component | 1 | — |
+| `I-3c31c689` | `Gateway route has JWT device_id claim matching X-Device-Id` | component | 1 | — |
 | `I-f9f1a9f8` | `Governance & SSOT sync` | component | 1 | — |
 | `I-1e55f26f` | `Governance + decisions` | component | 1 | — |
 | `I-b0eb7991` | `Health + JWKS publishing` | component | 1 | — |
@@ -955,7 +968,7 @@ _Status: analysis artifact_
   - `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`
   - `docs/ssot_canon/openapi/cre8.v1.yaml`
 
-### I-6d163dd2 — ``/health` reliability` (component)
+### I-6d163dd2 — `/health reliability` (component)
 - Pertinent info:
   - table@L32: `/health` reliability | Health probe success ratio + dependency status dimensions | Platform/SRE owner
 - Found in:
@@ -1928,13 +1941,13 @@ _Status: analysis artifact_
 - Found in:
   - `docs/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`
 
-### I-88295d11 — ``X-Device-Id` malformed` (component)
+### I-88295d11 — `X-Device-Id malformed` (component)
 - Pertinent info:
   - table@L78: `X-Device-Id` malformed | Deny (`422 validation_failed`, `device_id_invalid_format`)
 - Found in:
   - `docs/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`
 
-### I-43ad4669 — ``X-Device-Id` missing` (component)
+### I-43ad4669 — `X-Device-Id missing` (component)
 - Pertinent info:
   - table@L77: `X-Device-Id` missing | Deny (`422 validation_failed`, `device_id_missing`)
 - Found in:
@@ -2225,9 +2238,9 @@ _Status: analysis artifact_
 - Found in:
   - `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`
 
-### I-3c31c689 — `Gateway route has JWT `device_id` claim matching `X-Device-Id`` (component)
+### I-3c31c689 — `Gateway route has JWT device_id claim matching X-Device-Id` (component)
 - Pertinent info:
-  - table@L76: Gateway route has JWT `device_id` claim matching `X-Device-Id` | Allow if all other checks pass
+  - table@L76: Gateway route has JWT device_id claim matching X-Device-Id | Allow if all other checks pass
 - Found in:
   - `docs/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`
 
