@@ -1,7 +1,7 @@
 # Authorization and Delegation Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -59,6 +59,28 @@ Canonical permission vocabulary:
 - **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).
 - **Gateway (`/api/*`)**: key JWT (`typ=key`, gateway audience) + device guard where required.
 - **Keychain management routes** are console-governed and require owner JWT plus `keychains:manage` policy authorization.
+- All protected routes evaluate authorization through the PDP decision contract (`DecisionContext` -> `Decision`) and route handlers execute only after an explicit allow outcome.
+
+## Canonical PDP decision contract
+- `DecisionContext` is the canonical authorization input contract and includes:
+  - `request_id`
+  - `surface` (`public|gateway|console`)
+  - `route_action` (deterministic action identity resolved from route metadata)
+  - normalized actor claims (`typ`, `aud`, `sub`, `device_id`, lineage metadata when applicable)
+  - resolved principal and delegation envelope inputs
+- `Decision` is the canonical authorization output contract and includes:
+  - `effect` (`allow|deny`)
+  - `http_status`
+  - `error_code` (for deny outcomes)
+  - `detail_code` (for deny outcomes)
+  - `obligations` (route-specific enforcement obligations such as `device_binding_required` and `csrf_required`)
+- `PolicyRule` evaluates a `DecisionContext` and returns a deterministic `Decision` contribution under precedence rules defined in `AUTHORIZATION_DECISION_TABLES.md`.
+- `Obligation` values are mandatory enforcement constraints, not advisory metadata.
+
+## Policy context builders
+- **Owner context builder** produces normalized `DecisionContext` values for console routes and enforces owner-token invariants before policy evaluation.
+- **Route-action resolver** maps each route to one canonical `route_action` used by policy rules and audit evidence.
+- Route handlers and service methods MUST NOT infer policy context ad hoc; they consume normalized context produced by builders/resolvers.
 
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.

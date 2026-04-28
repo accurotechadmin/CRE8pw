@@ -1,7 +1,7 @@
 # ADR Index
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-28_
 
 ## Purpose
 Provide discoverable index of architectural and policy decisions that materially affect implementation behavior.
@@ -12,6 +12,7 @@ Provide discoverable index of architectural and policy decisions that materially
 - ADR-003: Keychain as production-active v1 principal class (`records/ADR-003-keychain-production-principal.md`).
 - ADR-004: Envelope-first API response standard (`records/ADR-004-envelope-first-api-standard.md`).
 - ADR-005: Release gating via verification + smoke + readiness controls (`records/ADR-005-release-gating-controls.md`).
+- ADR-006: PDP in-process as canonical authorization architecture (`records/ADR-006-pdp-in-process-canonical-authz.md`).
 
 ## Index contract
 Every ADR entry must include context, decision, consequences, and verification implications.
