@@ -76,9 +76,9 @@ _Last updated (UTC): 2026-04-28_
 | UX-02 | completed | 2026-04-28 | work@2026-04-28-ux-parity-404-semantics | Resource-specific `404` semantics re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ux-parity-404-semantics.md` |
 | SEC-01 | completed | 2026-04-28 | work@2026-04-28-sec-abuse-token-matrix | Full auth-boundary abuse matrix closure synchronized in security abuse-case SSOT, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_sec-abuse-token-matrix.md` |
 | SEC-02 | completed | 2026-04-28 | work@2026-04-28-sec-abuse-token-matrix | Post-CQRS device-binding and token confusion matrix closure synchronized with deterministic deny-code parity requirements; see `SESSION_LOG_2026-04-28_sec-abuse-token-matrix.md` |
-| OPS-01 | not_started |  |  |  |
-| OPS-02 | not_started |  |  |  |
-| GOV-01 | not_started |  |  |  |
+| OPS-01 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Integrated smoke contract closure synchronized in smoke contract, readiness gates, and traceability matrix; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
+| OPS-02 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Release readiness gate evidence closure synchronized with architecture-upgrade and SEC linkage requirements; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
+| GOV-01 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Traceability matrix architecture-upgrade mapping closure synchronized for OPS/GOV control coverage; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
 | GOV-02 | not_started |  |  |  |
 | ACT-01 | not_started |  |  |  |
 | ACT-02 | not_started |  |  |  |
