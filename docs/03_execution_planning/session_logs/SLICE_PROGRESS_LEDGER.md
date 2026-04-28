@@ -19,9 +19,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-04 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | Key-context builder contract adopted for gateway claim normalization + fail-closed evaluation; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
 | UA-05 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | `PdpService` + `RuleRegistry` deterministic invocation contract synchronized across SSOT artifacts; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
 | UA-06 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | Owner-only console governance rule pack and canonical deny mappings adopted; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
-| UA-07 | not_started |  |  |  |
-| UA-08 | not_started |  |  |  |
-| UA-09 | not_started |  |  |  |
+| UA-07 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Gateway route-action permission rule pack synchronized across authorization spec, decision tables, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
+| UA-08 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Delegation subset/depth/expiry rule family synchronized with deterministic deny mappings and verification obligations; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
+| UA-09 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Use-key mutation restriction rule family synchronized with canonical policy deny detail-codes and traceability coverage; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
 | UA-10 | not_started |  |  |  |
 | UA-11 | not_started |  |  |  |
 | UA-12 | not_started |  |  |  |

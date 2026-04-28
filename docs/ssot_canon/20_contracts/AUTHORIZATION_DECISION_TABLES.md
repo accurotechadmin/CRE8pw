@@ -24,8 +24,9 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Child permissions are strict subset of parent envelope | Allow if all other checks pass |
 | Child permissions exceed parent | Deny (`403 forbidden`, detail `permission_denied`) |
 | Child scope exceeds parent | Deny (`403 forbidden`) |
-| Parent depth is 3 and child requested | Deny (`422 validation_failed` or `403` policy deny) |
-| Child expiry missing | Deny (`422 validation_failed`) |
+| Parent depth is 3 and child requested | Deny (`403 forbidden`, detail `delegation_depth_exceeded`) |
+| Child expiry missing | Deny (`422 validation_failed`, detail `expiry_required`) |
+| Child expiry exceeds issuer expiry | Deny (`403 forbidden`, detail `delegation_expiry_exceeds_parent`) |
 | Parent lacks `keys:issue` | Deny (`403 forbidden`) |
 | Issuer is keychain principal | Deny (keychains cannot mint credentials) |
 | Issuer is owner principal via console issue route | Allow subject to governance policy |
@@ -88,6 +89,26 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Keychain actor resolves active membership snapshot | `DecisionContext` includes keychain effective permission/scope snapshot and source lineage references |
 | Gateway route requires device binding and `device_id` claim/header are both present | `DecisionContext` includes normalized device binding claims for downstream obligation evaluation |
 | Key claims cannot be normalized (missing lineage, invalid envelope inputs, malformed identifiers) | Deny (`401 auth_invalid` or `422 validation_failed`) before rule-family execution |
+
+## Gateway permission table (route-action canonical)
+
+| Route action | Required permission(s) | Additional rule |
+|---|---|---|
+| `gateway.feed.read` | `posts:read` | device-binding obligation where route requires it |
+| `gateway.posts.create` | `posts:create` | key class `use` denied |
+| `gateway.posts.edit` | `posts:edit` | key class `use` denied |
+| `gateway.posts.flags.create` | `posts:read` | content lifecycle guard remains enforced |
+| `gateway.comments.list` | `posts:read` | target post must be visible to actor scope |
+| `gateway.comments.create` | `comments:create` | `use` allowed when permission present |
+
+## Use-key mutation restriction table
+
+| Condition | Required outcome |
+|---|---|
+| Actor key class is `use` and route action is `gateway.posts.create` | Deny (`403 forbidden`, detail `use_key_mutation_forbidden`) |
+| Actor key class is `use` and route action is `gateway.posts.edit` | Deny (`403 forbidden`, detail `use_key_mutation_forbidden`) |
+| Actor key class is `use` and route action is console governance operation | Deny (`403 forbidden`, detail `owner_context_required`) |
+| Actor key class is `use` and route action is `gateway.comments.create` with `comments:create` permission | Allow if all other checks pass |
 
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.

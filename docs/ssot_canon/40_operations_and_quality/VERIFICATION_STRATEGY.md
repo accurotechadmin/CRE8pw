@@ -63,3 +63,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UA-04 requires key-context tests that prove gateway claim normalization, lineage/envelope input hydration, and fail-closed behavior for malformed key claims.
 - UA-05 requires PDP invocation tests that prove deterministic `RuleRegistry` ordering and stable allow/deny decision shaping in `PdpService`.
 - UA-06 requires owner-rule tests that prove owner-only console governance operations deny non-owner actors with canonical detail-code mappings.
+- UA-07 requires gateway permission matrix tests that prove canonical route-action to permission enforcement for feed, posts, comments, and flags routes.
+- UA-08 requires delegation-bound regression tests that prove subset/depth/expiry constraints and canonical deny mapping for bound violations.
+- UA-09 requires use-key mutation negative-path tests that prove `use` keys cannot create/edit posts and preserve canonical deny detail codes.
