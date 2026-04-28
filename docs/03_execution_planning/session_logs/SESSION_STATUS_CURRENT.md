@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
-- UB: in_progress (6/18 complete: UB-01 through UB-06 complete)
+- UB: in_progress (9/18 complete: UB-01 through UB-09 complete)
 - UC: not_started
 - UX: not_started
 - SEC: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UB-09 — gateway comments route family migrated to Gateway BFF orchestration contract with route-parity/detail-code stability verification obligations and traceability coverage (2026-04-28)
+- UB-08 — gateway post create/edit/flag route family migrated to Gateway BFF orchestration contract with contract/security regression obligations and traceability coverage (2026-04-28)
+- UB-07 — gateway feed read route family migrated to Gateway BFF orchestration contract with contract-parity and latency-comparison verification obligations (2026-04-28)
 - UB-06 — console error-state mapper contract synchronized with canonical detail-code preservation and deterministic UI-runtime recovery hints, including verification and traceability updates (2026-04-28)
 - UB-05 — gateway error-state mapper contract synchronized with canonical envelope/detail-code preservation and regression-verification requirements (2026-04-28)
 - UB-04 — route registration partition contract synchronized across architecture/module boundaries with fail-closed route boot drift checks (2026-04-28)
@@ -46,6 +49,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UB-07 — migrate gateway feed read route family to Gateway BFF
-2. UB-08 — migrate gateway post create/edit/flag route family to Gateway BFF
-3. UB-09 — migrate gateway comments route family to Gateway BFF
+1. UB-10 — migrate console posts list/create flows to Console BFF
+2. UB-11 — migrate console moderation flows to Console BFF
+3. UB-12 — migrate console keychain/invite/key issuance flows to Console BFF

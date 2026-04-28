@@ -39,6 +39,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Http/Controller/Gateway/*` and `src/Application/Http/Controller/Console/*` own HTTP handling and envelope response invocation for their surface.
 - `src/Application/Bff/Gateway/*` and `src/Application/Bff/Console/*` own route-family orchestration for their surface.
 - `src/Application/Bff/Gateway/Dto/*` and `src/Application/Bff/Console/Dto/*` own surface-specific DTO/view-model contracts and remain isolated by surface.
+- `src/Application/Bff/Gateway/Feed/*` owns gateway feed-read route-family orchestration (`GET /api/feed`).
+- `src/Application/Bff/Gateway/Posts/*` owns gateway posts route-family orchestration (`POST /api/posts`, `GET/PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`).
+- `src/Application/Bff/Gateway/Comments/*` owns gateway comments route-family orchestration (`GET/POST /api/posts/{postId}/comments`).
 - `src/Application/Bff/Gateway/Error/*` owns gateway error-state mapping and preserves canonical `error.code` and `details.code` behavior without lossy remapping.
 - `src/Application/Bff/Console/Error/*` owns console error-state mapping and emits UI-runtime-compatible recovery hints while preserving canonical `error.code` and `details.code` behavior.
 - Surface BFF modules may call shared domain services and authorization outcomes but may not call each other directly.

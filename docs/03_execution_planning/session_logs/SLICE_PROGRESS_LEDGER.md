@@ -39,9 +39,9 @@ _Last updated (UTC): 2026-04-28_
 | UB-04 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Route registration partition contract synchronized across architecture/module boundaries with fail-closed route-boot drift controls; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
 | UB-05 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Gateway error-state mapper canonical detail-code preservation contract synchronized with verification and traceability coverage; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
 | UB-06 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Console error-state mapper diagnostics-hint and canonical envelope/detail-code preservation contract synchronized with UI-runtime parity obligations; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
-| UB-07 | not_started |  |  |  |
-| UB-08 | not_started |  |  |  |
-| UB-09 | not_started |  |  |  |
+| UB-07 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway feed route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
+| UB-08 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway posts route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
+| UB-09 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway comments route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
 | UB-10 | not_started |  |  |  |
 | UB-11 | not_started |  |  |  |
 | UB-12 | not_started |  |  |  |
