@@ -34,3 +34,10 @@ _Last updated (UTC): 2026-04-28_
 - `route_not_found` is reserved strictly for unmatched route templates at the router boundary.
 - For matched routes where a target resource is absent, handlers/services MUST emit specific detail codes aligned to `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (including `post_not_found`, `comment_not_found`, `key_not_found`, and `keychain_not_found`).
 - UI runtime contracts depend on resource-specific 404 detail codes to drive deterministic `not_found` substates and recovery actions.
+
+
+## Policy bootstrap and registry integrity contract
+- Boot sequence validates `config/policy/route_actions.php`, `config/policy/permissions.php`, and `config/policy/detail_codes.php` before protected routes are activated.
+- Startup fails closed when policy maps are missing, malformed, duplicated, or inconsistent with canonical permission/detail-code vocabularies.
+- `PolicyDecisionMiddleware` consumes immutable in-memory policy tables produced at boot and does not read mutable policy state from handlers.
+- Runtime policy decisions use the boot-validated `RuleRegistry` composition snapshot; composition drift is a release-blocking defect.

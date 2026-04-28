@@ -86,6 +86,27 @@ Canonical permission vocabulary:
 - `RuleRegistry` publishes deterministic rule ordering and surface-scoped rule packs, including owner-only console governance rules.
 - Route handlers and service methods MUST NOT infer policy context ad hoc; they consume normalized context produced by builders/resolvers and PDP outcomes.
 
+## Policy table externalization and rule loading contract
+- `RuleRegistry` consumes canonical policy configuration from:
+  - `config/policy/route_actions.php`
+  - `config/policy/permissions.php`
+  - `config/policy/detail_codes.php`
+- `route_actions.php` is the authoritative map from method/path template to `route_action`; route handlers and middleware consume resolver outputs and never maintain parallel route-action maps.
+- `permissions.php` is the authoritative map from `route_action` to required permission set and route-class constraints (including `use` mutation restrictions).
+- `detail_codes.php` is the authoritative map from deny condition classes to canonical `details.code` values aligned to `ERROR_CODE_CATALOG.md`.
+- Policy configuration loading is fail-closed:
+  - missing file, malformed structure, duplicate `route_action`, unknown permission token, or unmapped deny condition prevents protected-route startup and records startup evidence.
+  - unknown route-action at runtime denies with canonical policy error mapping and audit emission.
+- Rule-pack composition is deterministic and immutable at runtime after boot:
+  - owner-context rules
+  - key-context rules
+  - delegation-bound rules
+  - keychain invariant rules
+  - master-key SYSADMIN boundary rules
+  - device-binding obligation rules
+- Rule-pack precedence is canonical: auth-context validity -> lifecycle validity -> route-action/permission constraints -> delegation/keychain/master-key/device obligations -> final allow/deny shaping.
+- Changes to policy config contracts require synchronized updates to authorization decision tables, verification strategy, traceability matrix, and middleware startup assertions.
+
 ## Gateway permission and use-key mutation enforcement
 - Gateway authorization rules are bound to canonical `route_action` values and evaluate required permissions before handler execution.
 - `GET /api/feed` requires `posts:read`.

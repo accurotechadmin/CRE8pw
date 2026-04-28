@@ -25,9 +25,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-10 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Keychain membership invariant PDP rule family synchronized with canonical deny mappings and verification obligations; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
 | UA-11 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Master-key SYSADMIN boundary rule family synchronized across authorization, master-key, error-catalog, and traceability artifacts; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
 | UA-12 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Device-binding PDP deny outcomes synchronized including missing-claim/mismatch mapping and verification coverage; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
-| UA-13 | not_started |  |  |  |
-| UA-14 | not_started |  |  |  |
-| UA-15 | not_started |  |  |  |
+| UA-13 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Policy table externalization contract synchronized for route-action/permission/detail-code maps; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
+| UA-14 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Route-action + permissions config integrity and fail-closed startup requirements synchronized; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
+| UA-15 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Deterministic rule-pack composition/loading controls synchronized with verification and traceability updates; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
 | UA-16 | not_started |  |  |  |
 | UA-17 | not_started |  |  |  |
 | UA-18 | not_started |  |  |  |

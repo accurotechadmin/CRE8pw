@@ -123,6 +123,28 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Actor key class is `use` and route action is console governance operation | Deny (`403 forbidden`, detail `owner_context_required`) |
 | Actor key class is `use` and route action is `gateway.comments.create` with `comments:create` permission | Allow if all other checks pass |
 
+## Policy configuration integrity table (UA-13/UA-14)
+
+| Condition | Required outcome |
+|---|---|
+| `route_actions.php` contains unique route template + method mappings and all protected routes resolve to canonical `route_action` values | Allow startup and expose resolver map for audit evidence |
+| Protected route has no `route_action` mapping | Deny startup for protected surfaces and emit startup evidence with missing mapping identifier |
+| Duplicate route-action mapping or conflicting route template key exists | Deny startup and emit configuration integrity failure |
+| `permissions.php` contains unknown permission token outside canonical allow-list | Deny startup and emit configuration integrity failure |
+| `permissions.php` omits required policy entry for a protected `route_action` | Deny startup and emit configuration integrity failure |
+| `detail_codes.php` omits canonical detail code for deny condition class | Deny startup and emit configuration integrity failure |
+
+## Rule registry composition and precedence table (UA-15)
+
+| Condition | Required outcome |
+|---|---|
+| Rule packs load in canonical sequence (owner, key, delegation, keychain, master-key, device) | `RuleRegistry` activation succeeds and deterministic order snapshot is emitted |
+| Rule pack id is duplicated or unknown in configured composition list | Deny startup and emit configuration integrity failure |
+| Runtime evaluation attempts to invoke rule pack not registered at boot | Deny request (`500 internal_error`, detail `policy_rule_registry_invalid`) and emit audit event bound to `request_id` |
+| Runtime evaluation encounters unknown `route_action` after successful startup | Deny request (`403 forbidden`, detail `policy_route_action_unmapped`) and emit policy decision event |
+| Rule precedence conflict occurs between deny and allow candidates | Deny takes precedence and canonical deny mapping is returned |
+| Rule registry snapshot hash differs from approved deployment artifact | Release gate blocks rollout until snapshot parity is restored |
+
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.
 2. Validate lifecycle status (active vs suspended/cancelled/revoked).
