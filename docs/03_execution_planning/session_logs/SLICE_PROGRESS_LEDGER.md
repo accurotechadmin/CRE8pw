@@ -28,9 +28,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-13 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Policy table externalization contract synchronized for route-action/permission/detail-code maps; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
 | UA-14 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Route-action + permissions config integrity and fail-closed startup requirements synchronized; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
 | UA-15 | completed | 2026-04-28 | work@2026-04-28-ua-policy-config-registry | Deterministic rule-pack composition/loading controls synchronized with verification and traceability updates; see `SESSION_LOG_2026-04-28_ua-policy-config-registry.md` |
-| UA-16 | not_started |  |  |  |
-| UA-17 | not_started |  |  |  |
-| UA-18 | not_started |  |  |  |
+| UA-16 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Gateway read-route PDP enforcement contract synchronized across authorization, middleware, verification, and traceability artifacts; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
+| UA-17 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Gateway write-route PDP enforcement contract synchronized with canonical deny short-circuit/detail-code stability requirements; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
+| UA-18 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Console governance-route PDP enforcement contract synchronized with owner-context and CSRF obligation gating requirements; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
 | UA-19 | not_started |  |  |  |
 | UA-20 | not_started |  |  |  |
 | UB-01 | not_started |  |  |  |

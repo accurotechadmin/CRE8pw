@@ -21,6 +21,7 @@ _Last updated (UTC): 2026-04-28_
 - Gateway routes requiring device policy must enforce `X-Device-Id` validation before handler execution.
 - PDP deny outcomes are authoritative and route handlers execute only after explicit policy allow.
 - PDP decision events carry `request_id`, `surface`, and `route_action` for audit and regression comparison.
+- Gateway read, gateway write, and console governance protected route families execute `PolicyDecisionMiddleware` with canonical context builders before handlers; deny outcomes short-circuit the pipeline with canonical envelopes.
 
 ## Failure mapping baseline
 - Missing/invalid auth -> `401`

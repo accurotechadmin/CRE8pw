@@ -156,6 +156,15 @@ Canonical permission vocabulary:
 - Missing JWT `device_id` claim on a route that requires device binding MUST deny with `401 auth_invalid` and detail code `token_device_claim_missing`.
 - Device-binding deny mappings are canonical and are not overridden by route handlers.
 
+## PDP enforcement coverage by protected route family
+- `PolicyDecisionMiddleware` is active on protected route families in canonical sequence and executes before route handlers.
+- Gateway read routes (`GET /api/feed`, `GET /api/posts/{postId}/comments`) enforce PDP decisions through normalized key context and canonical `route_action` mapping.
+- Gateway write routes (`POST /api/posts`, `PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`, `POST /api/posts/{postId}/comments`) enforce PDP decisions through normalized key context and deny on any unresolved obligation.
+- Console governance routes (`POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle`, `POST /console/api/invites`, `POST /console/api/keychains`, `POST /console/api/keychains/{keychainId}/members`) enforce PDP decisions through normalized owner context and CSRF obligations where required.
+- `ARCH_PDP_ENABLED=true` makes PDP allow/deny outcomes enforcement-authoritative for the listed route families.
+- `ARCH_PDP_ENABLED=false` keeps PDP decision logging enabled through `ARCH_POLICY_DECISION_LOG` for shadow comparison and release-gate mismatch analysis.
+- PDP integration for UA-16 through UA-18 preserves canonical envelope/error semantics; no protected handler executes on deny outcomes.
+
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
 - Key rotation authority follows delegated envelope and governance policy rules.

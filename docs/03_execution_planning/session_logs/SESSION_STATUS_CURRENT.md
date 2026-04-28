@@ -5,7 +5,7 @@ _Last updated (UTC): 2026-04-28_
 
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
-- UA: in_progress (15/20 complete: UA-01 through UA-15)
+- UA: in_progress (18/20 complete: UA-01 through UA-18)
 - UB: not_started
 - UC: not_started
 - UX: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UA-18 — console governance protected-route PDP enforcement synchronized across authorization contracts, pipeline contract, verification obligations, and traceability matrix (2026-04-28)
+- UA-17 — gateway write protected-route PDP enforcement synchronized with deny short-circuit and detail-code stability requirements (2026-04-28)
+- UA-16 — gateway read protected-route PDP enforcement synchronized with route-family integration decision-table coverage (2026-04-28)
 - UA-15 — deterministic policy rule-pack composition/loading controls synchronized with fail-closed startup and immutable registry snapshot requirements (2026-04-28)
 - UA-14 — route-action/permission/detail-code policy table externalization synchronized with startup integrity assertions and canonical mapping contracts (2026-04-28)
 - UA-13 — policy configuration externalization contract synchronized across authorization, middleware, verification, and traceability artifacts (2026-04-28)
@@ -35,6 +38,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UA-16 — integrate PDP enforcement for gateway read routes behind flag
-2. UA-17 — integrate PDP enforcement for gateway write routes behind flag
-3. UA-18 — integrate PDP enforcement for console governance routes behind flag
+1. UA-19 — remove legacy ad-hoc authorization logic from handlers
+2. UA-20 — SSOT sync + ADR package for PDP canonicalization closure
+3. UB-01 — establish BFF-by-surface entrypoints and shared dependency graph
