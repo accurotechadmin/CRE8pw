@@ -28,6 +28,7 @@ _Last updated (UTC): 2026-04-28_
 - The authorization module owns the PDP primitives: `Decision`, `DecisionContext`, `Obligation`, and `PolicyRule`.
 - Route-action resolution and surface-specific context builders (owner and key) are authorization-module responsibilities and feed all protected-route policy evaluation.
 - The authorization module owns `PdpService` and `RuleRegistry`, including deterministic rule-pack ordering and owner-only console governance rule families.
+- The authorization module owns policy configuration loaders for `config/policy/route_actions.php`, `config/policy/permissions.php`, and `config/policy/detail_codes.php`, including boot-time integrity validation and immutable runtime snapshots.
 - Gateway and console handlers consume authorization outcomes and obligations; they do not construct authorization decisions directly.
 
 
