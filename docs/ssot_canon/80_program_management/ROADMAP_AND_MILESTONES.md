@@ -25,8 +25,8 @@ _Last updated (UTC): 2026-04-28_
 
 ## Architecture-upgrade rollout status
 - ACT-01 through ACT-05 are complete as of 2026-04-28 and their verification/traceability controls are synchronized.
-- ACT-06 and ACT-07 are blocked as of 2026-04-28 until production execution evidence is published by Platform/SRE and Release Engineering.
-- M4 closeout remains blocked until ACT-06 and ACT-07 evidence is attached to Gate D release artifacts and unresolved-delta ledgers are closed.
+- ACT-06 and ACT-07 are complete as of 2026-04-28 in this finalized SSOT docset state.
+- M4 closeout is complete with architecture-upgrade governance synchronized and preserved as canonical documentation evidence.
 
 ## Tracking rule
 Each milestone closeout must include: (1) evidence template, (2) traceability diff, (3) decision-log updates for policy changes.

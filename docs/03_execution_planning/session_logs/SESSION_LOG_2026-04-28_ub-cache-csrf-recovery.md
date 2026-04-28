@@ -1,3 +1,5 @@
+> **Archival notice (2026-04-28):** Session logs are immutable historical execution records and do not define current normative completion state.
+
 # Session Log — 2026-04-28 — ub-cache-csrf-recovery
 
 ## Session metadata
