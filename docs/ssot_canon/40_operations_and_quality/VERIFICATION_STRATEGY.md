@@ -128,3 +128,8 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 
 - SEC-01 requires full authorization-boundary abuse regression execution for integrated PDP + BFF flows with deterministic deny mappings for wrong-surface replay, audience mismatch, token-type confusion, delegation escalation, key-class violations, and owner-only governance protections.
 - SEC-02 requires post-CQRS integrated device-binding + token confusion regression execution for command and query route families with canonical `error.code`/`details.code` parity for missing/invalid/mismatched device identity and cross-surface auth-context misuse.
+
+## Activation slice verification controls
+- ACT-01 requires staging read-route PDP comparison evidence with mismatch ledger entries that include route-action, principal class, expected decision, observed decision, and disposition. Any unresolved mismatch blocks ACT-02.
+- ACT-02 requires staging write-route and console governance-route enforcement evidence with `ARCH_PDP_ENABLED=true`, `composer test:contract` pass output, `composer test:security` pass output, and boundary smoke pass output.
+- ACT-01 and ACT-02 require canonical error envelope and `details.code` parity assertions for deny outcomes under activation profile.

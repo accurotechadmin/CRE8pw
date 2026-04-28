@@ -79,9 +79,9 @@ _Last updated (UTC): 2026-04-28_
 | OPS-01 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Integrated smoke contract closure synchronized in smoke contract, readiness gates, and traceability matrix; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
 | OPS-02 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Release readiness gate evidence closure synchronized with architecture-upgrade and SEC linkage requirements; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
 | GOV-01 | completed | 2026-04-28 | work@2026-04-28-ops-gov-smoke-readiness-traceability | Traceability matrix architecture-upgrade mapping closure synchronized for OPS/GOV control coverage; see `SESSION_LOG_2026-04-28_ops-gov-smoke-readiness-traceability.md` |
-| GOV-02 | not_started |  |  |  |
-| ACT-01 | not_started |  |  |  |
-| ACT-02 | not_started |  |  |  |
+| GOV-02 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Final integration ADR/log package synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
+| ACT-01 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Staging read-route PDP activation comparison governance synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
+| ACT-02 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Staging write/console PDP enforcement activation governance synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
 | ACT-03 | not_started |  |  |  |
 | ACT-04 | not_started |  |  |  |
 | ACT-05 | not_started |  |  |  |
