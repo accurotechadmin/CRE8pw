@@ -69,9 +69,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-16 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Async projection mode contract synchronized with queue-worker retry/dead-letter controls and verification/traceability evidence; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
 | UC-17 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Async projection health lag/queue-depth subcheck contract synchronized in health/smoke/verification artifacts; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
 | UC-18 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Command failure + projection latency dashboard/alerting contract synchronized with SLO and observability event catalog updates; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
-| UC-19 | not_started |  |  |  |
-| UC-20 | not_started |  |  |  |
-| UC-21 | not_started |  |  |  |
+| UC-19 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | Migrated BFF read-path authority synchronized to canonical QueryBus/query-handler/projection contracts across architecture/UI-runtime/acceptance/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
+| UC-20 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | Migrated BFF write-path authority synchronized to canonical CommandBus/transactional-command contracts with contract/security regression obligations; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
+| UC-21 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | CQRS-lite audit-first closure SSOT package completed with ADR-009 publication and decisions index/log synchronization; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
 | UX-01 | not_started |  |  |  |
 | UX-02 | not_started |  |  |  |
 | SEC-01 | not_started |  |  |  |

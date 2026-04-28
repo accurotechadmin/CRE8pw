@@ -84,6 +84,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Infrastructure/Observability/OperationalAlertPublisher.php` owns command-failure-rate and projection-latency threshold breach alert publication to on-call channels.
 - Sync projection mode remains mandatory when `ARCH_CQRS_LITE_ENABLED=true`; command success paths fail closed if projector application cannot complete.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
+- `src/Application/Bff/Gateway/*` read route families invoke `QueryBus` and canonical query handlers for `GET /api/feed`, `GET /api/posts/{postId}`, and `GET /api/posts/{postId}/comments`; direct read-domain bypass from BFF modules is prohibited.
+- `src/Application/Bff/Console/*` read route families invoke `QueryBus` and canonical query handlers for console posts/keychains/members/resolve read routes; direct read-domain bypass from BFF modules is prohibited.
+- `src/Application/Bff/Gateway/*` and `src/Application/Bff/Console/*` write route families invoke `CommandBus` through `TransactionalCommandExecutor`; direct mutation-domain bypass from BFF modules is prohibited.
 
 ## Extension seam ownership map
 | Extension seam | Required synchronized artifacts | Primary reviewer |
