@@ -1,6 +1,6 @@
 # Architecture Additions and Upgrades Implementation Master Plan
 
-_Status: proposed_
+_Status: adopted implementation specification_
 _Last updated (UTC): 2026-04-28_
 
 ## Purpose
@@ -10,7 +10,7 @@ Provide a complete implementation plan for three architecture additions/upgrades
 2. **Upgrade B** — BFF-by-surface (Gateway BFF + Console BFF in one Slim runtime).
 3. **Upgrade C** — Evented Command/Query split (CQRS-lite) with audit-first core.
 
-This document is written as repository-upgrade instructions that can be executed by engineering teams and tracked slice-by-slice.
+This document is the authoritative implementation specification for executing these upgrades slice-by-slice.
 
 ## Scope and assumptions
 - This repository is SSOT-driven and may be partially scaffolded in runtime code.
@@ -368,7 +368,9 @@ At each stage, require:
 
 ---
 
-## 5) Migration slices (example backlog)
+## 5) Migration slices
+
+Normative exhaustive backlog: `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_EXHAUSTIVE_SLICES.md`.
 
 ### Slice A1
 - Create PDP primitives + decision objects.
@@ -470,4 +472,3 @@ Every PR with behavioral change MUST include synchronized updates (when affected
 - [ ] Slice backlog created with acceptance criteria.
 - [ ] CI jobs enforcing contract/security/ops checks.
 - [ ] First PDP slice branch cut.
-
