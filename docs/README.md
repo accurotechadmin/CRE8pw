@@ -1,19 +1,18 @@
 # Docs Directory Structure
 
-This repository's top-level `docs/` files have been grouped into intuitive folders:
+This repository’s documentation is organized into authoritative, role-specific folders:
 
 - `docs/01_foundation/`
-  - Core repository entrypoint and foundational orientation docs.
+  - Core repository entrypoint and foundational orientation documents.
 - `docs/02_onboarding_and_audits/`
   - Onboarding prompts, analyses, and audit/synthesis artifacts.
 - `docs/03_execution_planning/`
-  - Active execution plans and delivery slices.
-  - Architecture additions and upgrades implementation master plan:
-    - `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_IMPLEMENTATION_MASTER_PLAN.md`
+  - Stage plans, delivery slices, and execution governance records.
+  - Includes architecture additions/upgrades implementation planning artifacts.
 - `docs/04_instructional_notes/`
   - Instructor lecture and follow-up notes.
 - `docs/ssot_canon/`
-  - Canonical SSOT governance/contracts/security/operations/program docs.
+  - Canonical SSOT governance, architecture, contracts, security, operations, traceability, decisions, implementation guidance, and program controls.
 
-For canonical onboarding order, see:
+Canonical onboarding order is defined in:
 - `docs/01_foundation/RECOMMENDED_READING_ORDER.md`

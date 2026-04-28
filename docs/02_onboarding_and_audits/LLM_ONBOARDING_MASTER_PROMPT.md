@@ -1,3 +1,5 @@
+> **Archival notice (2026-04-28):** This document is retained as historical onboarding/audit context and is non-normative for current SSOT production-governing behavior.
+
 # CRE8 Full-Context Bootstrap Prompt (for a fresh LLM session)
 
 Copy everything in the block below into a new LLM session.

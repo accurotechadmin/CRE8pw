@@ -2,7 +2,7 @@
 
 **CRE8** is a policy-governed content platform: delegated authorship under strict envelopes, owner-controlled moderation and lifecycle, and auditable, contract-first HTTP APIs. It is designed so operators can run private-by-default governance (invitation-gated owner bootstrap by default), then optionally expose a full **gateway** for key-based API clients while keeping **console** governance separate and non-interchangeable with gateway identity.
 
-This repository is **documentation-first**: the **single source of truth (SSOT)** for product intent, architecture, API contracts, authorization, data, security, operations, and delivery governance lives under `docs/ssot_canon/`. Runtime code layout is specified (PHP, Slim, PSR-7, JWT, envelopes); implementation directories referenced by tooling may not yet exist in every clone—treat **machine contracts and SSOT prose** as authoritative until implementation evidence exists.
+This repository is **documentation-first**: the **single source of truth (SSOT)** for product intent, architecture, API contracts, authorization, data, security, operations, and delivery governance lives under `docs/ssot_canon/`. Runtime code layout is specified (PHP, Slim, PSR-7, JWT, envelopes); implementation directories referenced by tooling are canon-defined and governed by this SSOT—treat **machine contracts and SSOT prose** as authoritative implementation directives.
 
 ---
 
@@ -42,11 +42,11 @@ This repository is **documentation-first**: the **single source of truth (SSOT)*
 | `docs/ssot_canon/` | **Canonical SSOT** — governance, product, contracts, data/security, operations, traceability, ADRs, implementation guidance, program management, OpenAPI, JSON schemas, evidence templates |
 | `docs/01_foundation/` | Entry narrative, reading order, repo inventory |
 | `docs/02_onboarding_and_audits/` | Onboarding prompts, analyses, audits (lower precedence than SSOT for behavioral truth) |
-| `docs/03_execution_planning/` | **Active** stage-based master plan and slice-level execution companion |
+| `docs/03_execution_planning/` | Stage-based master plans, slice ledgers, and governance execution records |
 | `docs/04_instructional_notes/` | Instructor notes (educational; not normative over SSOT) |
 | `composer.json` | PHP dependency and **script contracts** (`test`, `qa`, `ops:*`, optional `docs:ssot:*`) |
 | `dot.env` | Example environment scaffold—align with `docs/ssot_canon/40_operations_and_quality/CONFIGURATION_ENVIRONMENT_CONTRACT.md`; **do not copy secrets to production** |
-| `.htaccess` | Apache rewrite toward `public/` entrypoint (when used)—implementation may still be scaffolded |
+| `.htaccess` | Apache rewrite toward `public/` entrypoint for deployments using Apache |
 
 Authoritative artifact map: `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`.
 
@@ -313,7 +313,7 @@ Below is a **per-file** index of `docs/ssot_canon/`. Use it as a map; normative 
 | File | Summary |
 |------|---------|
 | `README.md` | Evidence types; historical handling rule |
-| `automation/ssot_report.json` | Automation report output location; may be marked `historical_record`—regenerate from live tooling for current status |
+| `automation/ssot_report.json` | Automation report output location; historical snapshots are labeled `historical_record` and current status is established by regenerated live tooling output |
 | `HISTORICAL_SSOT_CHANGE_EVIDENCE_2026-04-21.md` | Historical audit trail |
 | `SSOT_CHANGE_EVIDENCE_2026-04-21_MASTER_RESOLUTION.md` | Dated resolution record |
 
