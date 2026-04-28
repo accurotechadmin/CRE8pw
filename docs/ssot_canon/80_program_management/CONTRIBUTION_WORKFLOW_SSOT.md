@@ -1,7 +1,7 @@
 # Contribution Workflow (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 ## Workflow
 1. Identify changed capability and enumerate impacted SSOT artifacts (contracts, machine artifacts, data/security, operations, traceability).
@@ -16,6 +16,7 @@ _Last updated (UTC): 2026-04-22_
 ## Required PR payload
 - Completed change-impact map.
 - Verification command output (or CI links) for changed behavior.
+- Architecture-upgrade PRs MUST attach evidence for these CI gates: `composer qa`, `composer test:contract`, `composer test:security`, and `composer ops:health-smoke`.
 - Explicit compatibility classification (breaking/non-breaking).
 - Updated risk/task register entry when unresolved assumptions remain.
 

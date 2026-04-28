@@ -4,7 +4,7 @@ _Status: active_
 _Last updated (UTC): 2026-04-28_
 
 ## Overall completion by slice family
-- U0: not_started
+- U0: in_progress (3/8 complete: U0-03, U0-05, U0-06)
 - UA: not_started
 - UB: not_started
 - UC: not_started
@@ -21,9 +21,11 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
-- none recorded
+- U0-03 — risk register upgrades for architecture migration risks (2026-04-28)
+- U0-05 — architecture feature flags added to configuration/environment contract (2026-04-28)
+- U0-06 — baseline CI verification gate requirements documented in SSOT and contribution workflow (2026-04-28)
 
 ## Upcoming recommended batch
-1. U0-01 — governance registration
-2. U0-02 — epic/ticket structure
-3. U0-03 — risk register entries
+1. U0-07 — per-surface non-interchangeability smoke checks
+2. U0-08 — upgrade PR checklist matrix publication
+3. UA-01 — PDP decision primitives
