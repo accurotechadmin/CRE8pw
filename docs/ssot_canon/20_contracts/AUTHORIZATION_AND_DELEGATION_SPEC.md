@@ -86,6 +86,30 @@ Canonical permission vocabulary:
 - `RuleRegistry` publishes deterministic rule ordering and surface-scoped rule packs, including owner-only console governance rules.
 - Route handlers and service methods MUST NOT infer policy context ad hoc; they consume normalized context produced by builders/resolvers and PDP outcomes.
 
+## Gateway permission and use-key mutation enforcement
+- Gateway authorization rules are bound to canonical `route_action` values and evaluate required permissions before handler execution.
+- `GET /api/feed` requires `posts:read`.
+- `POST /api/posts` requires `posts:create`.
+- `PATCH /api/posts/{postId}` requires `posts:edit`.
+- `POST /api/posts/{postId}/flags` requires `posts:read`.
+- `GET /api/posts/{postId}/comments` requires `posts:read`.
+- `POST /api/posts/{postId}/comments` requires `comments:create`.
+- Key class `use` is mutation-restricted in gateway routes:
+  - `use` MAY create comments when `comments:create` is present.
+  - `use` MUST NOT create or edit posts.
+  - `use` MUST NOT perform governance operations on console surfaces.
+- Deny outcomes for permission or key-class mutation violations return canonical `403 forbidden` with stable detail-code mappings from `ERROR_CODE_CATALOG.md`.
+
+## Delegation bound enforcement
+- Delegation issuance rules are enforced through PDP delegation rule packs before issuance handlers execute.
+- Requested child permissions MUST be strict subsets of issuer effective permissions.
+- Requested child scope MUST be a subset of issuer effective scope envelope.
+- Requested child depth MUST remain within canonical maximum depth `3`.
+- Requested child expiry MUST be explicitly set and MUST NOT exceed the issuer expiry.
+- Delegation-bound violations return deterministic deny outcomes:
+  - Structural request defects return `422 validation_failed`.
+  - Policy-bound violations return `403 forbidden`.
+
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
 - Key rotation authority follows delegated envelope and governance policy rules.
