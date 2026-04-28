@@ -85,5 +85,5 @@ _Last updated (UTC): 2026-04-28_
 | ACT-03 | completed | 2026-04-28 | work@2026-04-28-act-bff-staging-activation | Staged BFF split activation governance synchronized with deterministic parity and unresolved-delta disposition controls; see `SESSION_LOG_2026-04-28_act-bff-staging-activation.md` |
 | ACT-04 | completed | 2026-04-28 | work@2026-04-28_act-cqrs-staging-sync-async | Staging CQRS sync-mode activation requirements synchronized in verification + traceability artifacts; see `SESSION_LOG_2026-04-28_act-cqrs-staging-sync-async.md` |
 | ACT-05 | completed | 2026-04-28 | work@2026-04-28_act-cqrs-staging-sync-async | Staging async projection activation requirements synchronized with lag/retry/dead-letter and rollback/alert evidence controls; see `SESSION_LOG_2026-04-28_act-cqrs-staging-sync-async.md` |
-| ACT-06 | not_started |  |  |  |
-| ACT-07 | not_started |  |  |  |
+| ACT-06 | in_progress |  | work@2026-04-28-act-production-canary-stabilization | SSOT canary/stabilization verification and traceability controls synchronized; execution evidence pending runtime canary waves. See `SESSION_LOG_2026-04-28_act-production-canary-stabilization.md` |
+| ACT-07 | in_progress |  | work@2026-04-28-act-production-canary-stabilization | SSOT post-soak toggle-retirement and stabilization closure controls synchronized; completion blocked on ACT-06 canary execution + soak evidence. See `SESSION_LOG_2026-04-28_act-production-canary-stabilization.md` |
