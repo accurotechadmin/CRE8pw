@@ -33,9 +33,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-18 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Console governance-route PDP enforcement contract synchronized with owner-context and CSRF obligation gating requirements; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
 | UA-19 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-canonicalization-closure | Removed handler-level ad-hoc authorization from canonical contract model; added explicit no-ad-hoc-auth audit obligations and traceability linkage; see `SESSION_LOG_2026-04-28_ua-pdp-canonicalization-closure.md` |
 | UA-20 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-canonicalization-closure | Final SSOT sync package completed across authorization spec/tables, pipeline, error catalog, traceability, and ADR-007/decisions log; see `SESSION_LOG_2026-04-28_ua-pdp-canonicalization-closure.md` |
-| UB-01 | not_started |  |  |  |
-| UB-02 | not_started |  |  |  |
-| UB-03 | not_started |  |  |  |
+| UB-01 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Controller surface ownership split synchronized across architecture/module boundaries, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
+| UB-02 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Gateway/Console BFF service scaffolding boundaries synchronized with strict no cross-surface BFF call contract; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
+| UB-03 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Surface DTO/view-model package isolation synchronized with UI runtime contract and response-shape verification obligations; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
 | UB-04 | not_started |  |  |  |
 | UB-05 | not_started |  |  |  |
 | UB-06 | not_started |  |  |  |
