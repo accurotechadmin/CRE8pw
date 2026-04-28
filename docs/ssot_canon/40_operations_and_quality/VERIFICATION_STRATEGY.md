@@ -60,3 +60,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UA-01 requires unit tests that verify invariants for `Decision`, `DecisionContext`, `Obligation`, and `PolicyRule`.
 - UA-02 requires resolver matrix tests that prove deterministic route-to-`route_action` mapping for gateway and console surfaces.
 - UA-03 requires owner-context tests that prove normalization and fail-closed handling for console actor claims.
+- UA-04 requires key-context tests that prove gateway claim normalization, lineage/envelope input hydration, and fail-closed behavior for malformed key claims.
+- UA-05 requires PDP invocation tests that prove deterministic `RuleRegistry` ordering and stable allow/deny decision shaping in `PdpService`.
+- UA-06 requires owner-rule tests that prove owner-only console governance operations deny non-owner actors with canonical detail-code mappings.

@@ -16,9 +16,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-01 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Canonical PDP primitive contract synchronized across authorization specs, decision tables, verification strategy, and ADR-006; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
 | UA-02 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Route-action resolver + metadata policy context plumbing adopted in auth and middleware contracts; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
 | UA-03 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Owner-context normalization contract and test obligations adopted; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
-| UA-04 | not_started |  |  |  |
-| UA-05 | not_started |  |  |  |
-| UA-06 | not_started |  |  |  |
+| UA-04 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | Key-context builder contract adopted for gateway claim normalization + fail-closed evaluation; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
+| UA-05 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | `PdpService` + `RuleRegistry` deterministic invocation contract synchronized across SSOT artifacts; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
+| UA-06 | completed | 2026-04-28 | work@2026-04-28-ua-key-context-pdp-owner-rules | Owner-only console governance rule pack and canonical deny mappings adopted; see `SESSION_LOG_2026-04-28_ua-key-context-pdp-owner-rules.md` |
 | UA-07 | not_started |  |  |  |
 | UA-08 | not_started |  |  |  |
 | UA-09 | not_started |  |  |  |

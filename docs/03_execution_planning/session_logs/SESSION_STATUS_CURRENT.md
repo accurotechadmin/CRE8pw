@@ -5,7 +5,7 @@ _Last updated (UTC): 2026-04-28_
 
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
-- UA: in_progress (3/20 complete: UA-01 through UA-03)
+- UA: in_progress (6/20 complete: UA-01 through UA-06)
 - UB: not_started
 - UC: not_started
 - UX: not_started
@@ -21,12 +21,12 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UA-06 — owner-only console governance rule contract synchronized across authorization spec, decision tables, verification strategy, and traceability matrix (2026-04-28)
+- UA-05 — PDP engine and rule-registry scaffolding contract synchronized across policy, middleware, module ownership, verification, and traceability artifacts (2026-04-28)
+- UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 - UA-03 — owner-context builder normalization contract and verification obligations synchronized across auth spec, decision tables, pipeline contract, and verification strategy (2026-04-28)
-- UA-02 — route-action resolver and metadata policy context plumbing synchronized in normative authorization and middleware contracts (2026-04-28)
-- UA-01 — canonical PDP primitives (`Decision`, `DecisionContext`, `Obligation`, `PolicyRule`) standardized with ADR adoption and traceability linkage (2026-04-28)
-- U0-04 — repository structure hardening scaffold established under required `src/`, `config/`, `database/`, and `tests/` directories (2026-04-28)
 
 ## Upcoming recommended batch
-1. UA-04 — key-context builder for gateway policy evaluation
-2. UA-05 — PDP engine and rule registry scaffolding
-3. UA-06 — owner-only console governance rule pack
+1. UA-07 — gateway permission rules (`posts:*`, comments, flags)
+2. UA-08 — delegation subset/depth/expiry rule family
+3. UA-09 — use-key mutation restriction rules
