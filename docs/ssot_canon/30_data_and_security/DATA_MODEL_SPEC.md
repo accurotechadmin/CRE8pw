@@ -102,6 +102,28 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 - `projected_at`
 - `source_event_id` unique
 - indexes: `(visibility_scope, ordering_score DESC, post_id)`, `(projected_at DESC)`
+
+### keychain_effective_projection
+- `id` PK
+- `keychain_key_id` FK principals(id)
+- `effective_permissions_json`
+- `effective_scope_json`
+- `lineage_summary_json`
+- `projected_at`
+- `source_event_id`
+- uniqueness: `(keychain_key_id, source_event_id)`
+- indexes: `(keychain_key_id, projected_at DESC)`, `(projected_at DESC)`
+
+### projection_event_receipts
+- `id` PK
+- `projector_name`
+- `source_event_id`
+- `source_event_name`
+- `received_at`
+- `request_id` nullable
+- uniqueness: `(projector_name, source_event_id)`
+- indexes: `(projector_name, received_at DESC)`, `(source_event_id)`
+
 ### posts
 - `id` PK
 - `author_id` FK principals(id)
@@ -153,4 +175,5 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 
 ## Consistency notes
 - Keychain behavior is part of the v1 required schema surface.
+- Projection replay protection is part of the v1 required schema surface; projector idempotency is enforced by `projection_event_receipts` and projection-table source-event uniqueness constraints.
 - Any schema change requires synchronized updates to `docs/ssot_canon/30_data_and_security/DATA_MODEL_REFERENCE.md`, `docs/ssot_canon/30_data_and_security/ERD.md`, `docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`, and `docs/ssot_canon/20_contracts/ROUTE_INVENTORY_REFERENCE.md`.

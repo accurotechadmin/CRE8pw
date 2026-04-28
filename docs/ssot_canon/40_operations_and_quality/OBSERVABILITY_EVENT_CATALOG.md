@@ -38,7 +38,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Command-dispatch outcomes emit `command.dispatch.success` or `command.dispatch.failure`.
 - Query-dispatch outcomes emit `query.dispatch.success` or `query.dispatch.failure` when dispatch-level failures occur.
 - Projection updater outcomes emit `projection.update.applied`, `projection.update.skipped_duplicate`, or `projection.update.failed` with preserved `request_id`/`source_event_id` metadata.
+- Keychain-effective projection updates for resolve flows emit the same canonical `projection.update.*` outcomes with `projector_name=KeychainEffectiveProjector`.
 - Transactional command execution emits `command.transaction.committed` on atomic write+event success and `command.transaction.rolled_back` when the transaction is aborted.
+- Sync projection mode emits `command.projection_sync.required` when `ARCH_CQRS_LITE_ENABLED=true`; sync-update failure paths emit `command.projection_sync.failed` and terminate with fail-closed command outcomes.
 - Command handlers for moderation and key lifecycle flows emit `command.moderation.executed` and `command.key_lifecycle.executed` for successful high-audit mutations.
 - Event publication failures emit `audit.delivery_failed` with preserved `request_id` and failed `event_name` metadata.
 - Event emission redacts token material, secret material, and private-key material before sink delivery.

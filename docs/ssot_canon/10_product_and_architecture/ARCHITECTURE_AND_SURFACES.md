@@ -65,6 +65,10 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Query handlers for console read families (`ListConsolePosts`, `ListKeychains`, `GetKeychainMembers`, `ResolveKeychainEffective`) are the canonical read-path orchestration boundary for console listing and keychain resolve routes and preserve canonical owner-governance envelope and detail-code semantics.
 - `ProjectionUpdater` and projector contracts are the canonical projection update boundary for CQRS-lite read-model maintenance and execute idempotently for every accepted domain event.
 - Feed ordering read responses are served from the canonical feed-ordering projection model maintained by `FeedOrderingProjector` under sync projection mode by default.
+- Keychain effective resolve responses are served from the canonical keychain-effective projection model maintained by `KeychainEffectiveProjector` under sync projection mode by default.
+- Projector idempotency and replay protection are enforced by canonical projection event-receipt controls keyed by projector identity and source event ID.
+- Sync projection mode is the default runtime contract. When `ARCH_CQRS_LITE_ENABLED=true`, command completion requires synchronous projector application before the success envelope is emitted.
+- Runtime fails closed when synchronous projection updates cannot be applied while sync mode is active.
 - Command and query contracts preserve envelope-first HTTP semantics and do not alter gateway/console auth-context non-interchangeability.
 - Event payloads include `event_name`, `timestamp_utc`, `request_id`, `surface`, `actor_principal_id` (nullable when unauthenticated), `result`, and `detail_code` (when failure).
 
