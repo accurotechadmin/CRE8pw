@@ -27,9 +27,10 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - Boot assertions and profile hardening
 - JWT signing/verification and key safety (`firebase/php-jwt`, `ext-sodium`)
 - Health endpoint and migration smoke
+- Auth-context boundary smoke for gateway/console non-interchangeability
 
 ## Acceptance criteria enforcement
-- Route acceptance intent is defined in `docs/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` and must be used during QA signoff.
+- Route acceptance intent is defined in `docs/ssot_canon/40_operations_and_quality/ACCEPTANCE_CRITERIA_MATRIX.md` and is required during QA signoff.
 - Authorization truth-table behavior is validated against `docs/ssot_canon/20_contracts/AUTHORIZATION_DECISION_TABLES.md`.
 - Middleware detail-code behavior is validated against `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md`.
 
@@ -39,7 +40,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - key lifecycle revoke confirmation path
 - invite issuance path
 
-
 ## CI baseline gate contract
 - Every architecture-upgrade PR executes `composer qa`, `composer test:contract`, `composer test:security`, and `composer ops:health-smoke` in CI.
 - CI fails closed when any required command fails or is missing from the workflow.
@@ -47,7 +47,8 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 
 ## Surface-boundary verification contract
 - Verification includes explicit non-interchangeability checks for gateway and console auth contexts.
-- Security regression suites include token `typ` confusion, audience confusion, and gateway device-binding mismatch scenarios.
+- Security regression suites include token `typ` confusion, audience confusion, wrong-surface replay, and gateway device-binding mismatch scenarios.
+- Boundary denials return canonical envelope errors with stable `error.code` and `details.code` mappings.
 - Release candidates are blocked when cross-surface replay or boundary confusion tests pass unexpectedly.
 
 ## Upgrade-feature-flag verification
