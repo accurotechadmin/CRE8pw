@@ -15,6 +15,7 @@ Provide discoverable index of architectural and policy decisions that materially
 - ADR-006: PDP in-process as canonical authorization architecture (`records/ADR-006-pdp-in-process-canonical-authz.md`).
 - ADR-007: PDP canonicalization closure and no-ad-hoc-handler authorization policy (`records/ADR-007-pdp-canonicalization-closure.md`).
 - ADR-008: BFF-by-surface closure and legacy orchestration retirement (`records/ADR-008-bff-by-surface-closure.md`).
+- ADR-009: CQRS-lite audit-first closure and BFF-to-bus integration authority (`records/ADR-009-cqrs-lite-audit-first-closure.md`).
 
 ## Index contract
 Every ADR entry must include context, decision, consequences, and verification implications.
