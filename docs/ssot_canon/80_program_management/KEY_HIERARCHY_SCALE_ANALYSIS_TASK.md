@@ -1,3 +1,5 @@
+> **Program artifact classification (2026-04-28):** This document is a management/control record and does not indicate incomplete SSOT production-governing canon status.
+
 # Tracking Task: Key Hierarchy Scale Analysis
 
 _Status: adopted_

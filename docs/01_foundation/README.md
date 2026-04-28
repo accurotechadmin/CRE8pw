@@ -25,7 +25,7 @@ This folder is the standalone source-of-truth canon for operating and extending 
 10. `docs/ssot_canon/70_implementation_guidance/*`
 11. `docs/ssot_canon/80_program_management/*`
 
-## Implementation planning and onboarding artifacts (current)
+## Implementation planning and onboarding artifacts
 Use these after canonical SSOT reading for execution sequencing and handoff discipline:
 - `docs/01_foundation/RECOMMENDED_READING_ORDER.md`
 - `docs/01_foundation/REPOSITORY_FILE_INVENTORY.md`
