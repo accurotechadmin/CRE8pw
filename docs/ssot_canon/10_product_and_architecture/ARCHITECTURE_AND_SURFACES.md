@@ -33,6 +33,15 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Gateway controllers invoke Gateway BFF route-family orchestration and do not call domain services directly for multi-step flow composition.
 - Gateway BFF route-family orchestration preserves canonical API envelope semantics, canonical error/detail-code mappings, and gateway/console auth-context non-interchangeability constraints.
 
+
+## Console BFF route-family orchestration contract
+- `GET /console/api/posts` and `POST /console/api/posts` are orchestrated by Console BFF posts-governance flow components.
+- `POST /console/api/posts/{postId}/moderation` and `POST /console/api/posts/{postId}/comments/{commentId}/moderation` are orchestrated by Console BFF moderation flow components.
+- `GET /console/api/keychains`, `POST /console/api/keychains`, `GET /console/api/keychains/{keychainId}/members`, `POST /console/api/keychains/{keychainId}/members`, `DELETE /console/api/keychains/{keychainId}/members/{memberKeyId}`, and `GET /console/api/keychains/{keychainId}/resolve` are orchestrated by Console BFF keychain-governance flow components.
+- `POST /console/api/invites`, `POST /console/api/keys`, and `POST /console/api/keys/{keyId}/lifecycle` are orchestrated by Console BFF governance flow components.
+- Console controllers invoke Console BFF route-family orchestration and do not call domain services directly for multi-step flow composition.
+- Console BFF route-family orchestration preserves canonical API envelope semantics, canonical error/detail-code mappings, CSRF enforcement semantics, and gateway/console auth-context non-interchangeability constraints.
+
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.
 - Authorization decision logic is centralized and table-driven.
