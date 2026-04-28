@@ -79,6 +79,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Projection/Projector/FeedOrderingProjector.php` owns feed-ordering projection maintenance for `GET /api/feed` read consistency.
 - `src/Application/Projection/Projector/KeychainEffectiveProjector.php` owns keychain-effective projection maintenance for `GET /console/api/keychains/{keychainId}/resolve` read consistency.
 - `src/Application/Projection/ProjectionEventReceiptStore.php` owns projector replay-protection receipt insertion and duplicate source-event detection keyed by projector identity.
+- `src/Application/Projection/ProjectionAsyncWorker.php` owns async queue dequeue, projector invocation, bounded retry scheduling, and dead-letter routing when `ARCH_PROJECTION_ASYNC=true`.
+- `src/Application/Projection/ProjectionQueueHealthProbe.php` owns async queue/dead-letter depth and lag measurement used by `/health` projection subchecks.
+- `src/Infrastructure/Observability/OperationalAlertPublisher.php` owns command-failure-rate and projection-latency threshold breach alert publication to on-call channels.
 - Sync projection mode remains mandatory when `ARCH_CQRS_LITE_ENABLED=true`; command success paths fail closed if projector application cannot complete.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 

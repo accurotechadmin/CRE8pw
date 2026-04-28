@@ -1,7 +1,7 @@
 # SLO/SLI Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -11,12 +11,16 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Feed read latency: p95 for `GET /api/feed`.
 - Health reliability: `/health` pass ratio.
 - Error budget burn: 5xx rate and auth failure anomalies.
+- Command execution reliability: successful command completion ratio for protected write routes.
+- Projection freshness: projector lag p95 and projection dead-letter queue depth (when `ARCH_PROJECTION_ASYNC=true`).
 
 ## Initial SLO targets
 - Availability: 99.9% monthly
 - p95 auth latency: <= 350ms
 - p95 feed read latency: <= 300ms
 - Health pass ratio: 99.95%
+- Command execution reliability: 99.5% monthly
+- Projection freshness: p95 lag <= 2000ms and dead-letter queue depth = 0 sustained (stage/prod when async enabled)
 
 ## Measurement windows
 - 1m realtime dashboards
@@ -31,6 +35,8 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 | Feed latency (`GET /api/feed`) | Route-level latency histogram + DB timing spans | Backend maintainer lead | Backend on-call rotation | Platform/SRE owner |
 | `/health` reliability | Health probe success ratio + dependency status dimensions | Platform/SRE owner | Platform on-call | Backend maintainer lead |
 | Error budget burn | 5xx ratio + anomaly detector on 401/403/429 families | Platform/SRE owner | Platform on-call | Security owner |
+| Command execution reliability | `command.dispatch.*` + `command.transaction.*` success/failure counters | Backend maintainer lead | Backend on-call rotation | Platform/SRE owner |
+| Projection freshness and DLQ health (async mode) | `projection.update.*` lag histogram + queue/dead-letter depth gauges | Platform/SRE owner | Platform on-call | Backend maintainer lead |
 
 ## Alerting guidance
 - Page on sustained 5xx spikes and `/health` degradation.

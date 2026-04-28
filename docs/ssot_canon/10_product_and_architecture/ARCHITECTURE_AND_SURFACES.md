@@ -69,6 +69,10 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Projector idempotency and replay protection are enforced by canonical projection event-receipt controls keyed by projector identity and source event ID.
 - Sync projection mode is the default runtime contract. When `ARCH_CQRS_LITE_ENABLED=true`, command completion requires synchronous projector application before the success envelope is emitted.
 - Runtime fails closed when synchronous projection updates cannot be applied while sync mode is active.
+- Async projection mode is optional and is enabled only when `ARCH_PROJECTION_ASYNC=true` and `ARCH_CQRS_LITE_ENABLED=true`; command/event writes remain atomic and projector execution is delegated to queue workers.
+- Async projection mode enforces deterministic retry and dead-letter queue handling with bounded attempts, idempotent replay-safe projector execution, and explicit failure-state observability.
+- Health subchecks expose projector lag and projection queue/dead-letter depth when async mode is enabled; threshold breaches mark `/health` as `degraded` while preserving canonical envelope semantics.
+- Operational dashboards and alerts for command failure rate, projection apply latency, queue depth, and dead-letter growth are required before async projection activation outside local environments.
 - Command and query contracts preserve envelope-first HTTP semantics and do not alter gateway/console auth-context non-interchangeability.
 - Event payloads include `event_name`, `timestamp_utc`, `request_id`, `surface`, `actor_principal_id` (nullable when unauthenticated), `result`, and `detail_code` (when failure).
 
