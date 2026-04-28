@@ -1,3 +1,5 @@
+> **Archival notice (2026-04-28):** This document is retained as historical onboarding/audit context and is non-normative for current SSOT production-governing behavior.
+
 # CRE8 Onboarding Analysis — Staff Engineer Working Model (2026-04-23)
 
 _Status: analysis artifact_

@@ -1,3 +1,5 @@
+> **Archival notice (2026-04-28):** This document is retained as historical onboarding/audit context and is non-normative for current SSOT production-governing behavior.
+
 # CRE8 Onboarding Analysis — Senior Staff Engineer / Product-Architecture Model
 
 _Date (UTC): 2026-04-22_
