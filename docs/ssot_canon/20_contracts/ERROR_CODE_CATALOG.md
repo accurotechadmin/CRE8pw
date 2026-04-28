@@ -74,3 +74,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Console error-state mapper preserves canonical HTTP status, `error.code`, and `details.code` for console responses.
 - Console recovery hints are additive UI diagnostics only; hints do not alter canonical envelope code semantics.
 - Gateway and console error-state mappers do not introduce surface-specific detail codes outside this catalog.
+
+## Console diagnostics-hint contract
+- Console diagnostics hints are additive metadata fields attached by Console BFF error mapping and are not canonical error/detail codes.
+- Allowed CSRF hint values are `refresh_csrf`, `retry_write`, and `re_auth_owner_session`.
+- CSRF hint values are emitted only when `details.code` is `csrf_token_missing`, `csrf_token_malformed`, or `csrf_token_mismatch`.
+- Any diagnostics-hint expansion requires same-PR updates to `UI_RUNTIME_CONTRACT.md`, `VERIFICATION_STRATEGY.md`, and `TRACEABILITY_MATRIX.md`.
