@@ -8,8 +8,8 @@ This repository's top-level `docs/` files have been grouped into intuitive folde
   - Onboarding prompts, analyses, and audit/synthesis artifacts.
 - `docs/03_execution_planning/`
   - Active execution plans and delivery slices.
-  - Architecture alternatives implementation master plan:
-    - `docs/03_execution_planning/ARCHITECTURE_ALTERNATIVES_IMPLEMENTATION_MASTER_PLAN.md`
+  - Architecture additions and upgrades implementation master plan:
+    - `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_IMPLEMENTATION_MASTER_PLAN.md`
 - `docs/04_instructional_notes/`
   - Instructor lecture and follow-up notes.
 - `docs/ssot_canon/`
