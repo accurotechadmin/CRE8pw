@@ -8,7 +8,7 @@ _Last updated (UTC): 2026-04-28_
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
 - UC: completed (21/21 complete: UC-01 through UC-21)
-- UX: not_started
+- UX: completed (2/2 complete: UX-01 through UX-02)
 - SEC: not_started
 - OPS: not_started
 - GOV: not_started
@@ -21,6 +21,8 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UX-02 — resource-specific `404` semantics re-validation synchronized across UI runtime, error catalog alignment constraints, acceptance matrix, verification strategy, and traceability mapping (2026-04-28)
+- UX-01 — UI runtime error-state parity re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability mapping (2026-04-28)
 - UC-21 — CQRS-lite audit-first closure package synchronized across architecture, module ownership, UI runtime, acceptance, verification, traceability, and ADR artifacts (2026-04-28)
 - UC-20 — migrated BFF write route families synchronized to canonical command-handler and transactional-command boundaries with contract/security regression obligations (2026-04-28)
 - UC-19 — migrated BFF read route families synchronized to canonical query-handler/projection boundaries with route-parity and latency obligations (2026-04-28)
@@ -79,6 +81,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UX-01 — map BFF/CQRS route impacts to UI parity screens and interaction states
-2. UX-02 — finalize UI-runtime recovery and operator diagnostics after CQRS integration
-3. SEC-01 — expand integrated BFF/CQRS authorization and projection-failure security verification
+1. SEC-01 — re-run full auth-boundary abuse matrix after A+B migration with UX parity evidence attached
+2. SEC-02 — execute post-CQRS device-binding and token-type confusion matrix with deny-code stability checks
+3. OPS-01 — update smoke contracts to include projection health and boundary checks

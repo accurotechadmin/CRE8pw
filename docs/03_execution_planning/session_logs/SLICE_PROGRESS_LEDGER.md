@@ -72,8 +72,8 @@ _Last updated (UTC): 2026-04-28_
 | UC-19 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | Migrated BFF read-path authority synchronized to canonical QueryBus/query-handler/projection contracts across architecture/UI-runtime/acceptance/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
 | UC-20 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | Migrated BFF write-path authority synchronized to canonical CommandBus/transactional-command contracts with contract/security regression obligations; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
 | UC-21 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | CQRS-lite audit-first closure SSOT package completed with ADR-009 publication and decisions index/log synchronization; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
-| UX-01 | not_started |  |  |  |
-| UX-02 | not_started |  |  |  |
+| UX-01 | completed | 2026-04-28 | work@2026-04-28-ux-parity-404-semantics | UI runtime error-state parity re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ux-parity-404-semantics.md` |
+| UX-02 | completed | 2026-04-28 | work@2026-04-28-ux-parity-404-semantics | Resource-specific `404` semantics re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ux-parity-404-semantics.md` |
 | SEC-01 | not_started |  |  |  |
 | SEC-02 | not_started |  |  |  |
 | OPS-01 | not_started |  |  |  |
