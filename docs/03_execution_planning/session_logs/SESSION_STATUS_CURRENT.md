@@ -5,7 +5,7 @@ _Last updated (UTC): 2026-04-28_
 
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
-- UA: in_progress (18/20 complete: UA-01 through UA-18)
+- UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: not_started
 - UC: not_started
 - UX: not_started
@@ -21,6 +21,8 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UA-20 — SSOT/ADR PDP canonicalization closure completed with explicit no-ad-hoc-handler authorization boundary, error-catalog synchronization, and ADR-007 adoption (2026-04-28)
+- UA-19 — legacy ad-hoc handler authorization logic removed from normative contract model with mandatory no-ad-hoc-auth verification evidence (2026-04-28)
 - UA-18 — console governance protected-route PDP enforcement synchronized across authorization contracts, pipeline contract, verification obligations, and traceability matrix (2026-04-28)
 - UA-17 — gateway write protected-route PDP enforcement synchronized with deny short-circuit and detail-code stability requirements (2026-04-28)
 - UA-16 — gateway read protected-route PDP enforcement synchronized with route-family integration decision-table coverage (2026-04-28)
@@ -38,6 +40,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UA-19 — remove legacy ad-hoc authorization logic from handlers
-2. UA-20 — SSOT sync + ADR package for PDP canonicalization closure
-3. UB-01 — establish BFF-by-surface entrypoints and shared dependency graph
+1. UB-01 — create Gateway/Console controller module split
+2. UB-02 — create Gateway/Console BFF service module scaffolding
+3. UB-03 — introduce surface-specific DTO/view-model packages

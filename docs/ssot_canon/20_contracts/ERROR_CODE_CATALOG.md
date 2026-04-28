@@ -62,3 +62,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - UI must preserve correlation ID in inspector/panel.
 - New detail codes require this catalog update in same PR.
 - Detail-code behavior must remain consistent with `docs/ssot_canon/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` and `docs/ssot_canon/20_contracts/UI_RUNTIME_CONTRACT.md`.
+
+
+## Authorization deny-source contract
+- Authorization deny responses are produced through the canonical PDP decision path and error mapper only.
+- Handlers and service methods do not introduce alternate authorization detail codes outside this catalog.
+- Any new authorization deny detail code requires same-PR updates to `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `AUTHORIZATION_DECISION_TABLES.md`, `TRACEABILITY_MATRIX.md`, and verification evidence.

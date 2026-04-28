@@ -78,3 +78,5 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UA-16 requires gateway-read enforcement tests that prove `PolicyDecisionMiddleware` gates `GET /api/feed` and `GET /api/posts/{postId}/comments` on PDP allow outcomes.
 - UA-17 requires gateway-write enforcement tests that prove PDP deny outcomes block write handlers for posts, flags, and comment creation with canonical detail-code stability.
 - UA-18 requires console-governance enforcement tests that prove owner-context PDP evaluation and CSRF obligations gate key, invite, and keychain governance routes.
+- UA-19 requires no-ad-hoc-authorization audit evidence proving protected handlers do not evaluate permission/delegation/key-class/owner-context/device-binding policy branches.
+- UA-20 requires full SSOT synchronization checks for authorization spec, decision tables, middleware pipeline, error catalog, traceability matrix, and ADR linkage.

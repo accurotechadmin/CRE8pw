@@ -31,8 +31,8 @@ _Last updated (UTC): 2026-04-28_
 | UA-16 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Gateway read-route PDP enforcement contract synchronized across authorization, middleware, verification, and traceability artifacts; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
 | UA-17 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Gateway write-route PDP enforcement contract synchronized with canonical deny short-circuit/detail-code stability requirements; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
 | UA-18 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-enforcement-routes | Console governance-route PDP enforcement contract synchronized with owner-context and CSRF obligation gating requirements; see `SESSION_LOG_2026-04-28_ua-pdp-enforcement-routes.md` |
-| UA-19 | not_started |  |  |  |
-| UA-20 | not_started |  |  |  |
+| UA-19 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-canonicalization-closure | Removed handler-level ad-hoc authorization from canonical contract model; added explicit no-ad-hoc-auth audit obligations and traceability linkage; see `SESSION_LOG_2026-04-28_ua-pdp-canonicalization-closure.md` |
+| UA-20 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-canonicalization-closure | Final SSOT sync package completed across authorization spec/tables, pipeline, error catalog, traceability, and ADR-007/decisions log; see `SESSION_LOG_2026-04-28_ua-pdp-canonicalization-closure.md` |
 | UB-01 | not_started |  |  |  |
 | UB-02 | not_started |  |  |  |
 | UB-03 | not_started |  |  |  |
