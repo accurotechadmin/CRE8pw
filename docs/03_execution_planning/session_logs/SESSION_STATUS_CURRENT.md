@@ -7,7 +7,7 @@ _Last updated (UTC): 2026-04-28_
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
-- UC: not_started
+- UC: in_progress (3/21 complete: UC-01 through UC-03)
 - UX: not_started
 - SEC: not_started
 - OPS: not_started
@@ -15,12 +15,17 @@ _Last updated (UTC): 2026-04-28_
 - ACT: not_started
 
 ## In-progress slices
-- none
+- UC-04
+- UC-05
+- UC-06
 
 ## Blocked slices + blockers + owner needed
 - none recorded
 
 ## Recently completed slices
+- UC-03 — audit/domain-event core model and `EventPublisher` contract synchronized across architecture/module/observability/verification/traceability artifacts (2026-04-28)
+- UC-02 — query-bus interface and base query contract synchronized with deterministic handler-resolution and fail-closed semantics (2026-04-28)
+- UC-01 — command-bus interface and base command contract synchronized with deterministic handler-resolution and fail-closed semantics (2026-04-28)
 - UB-18 — BFF-by-surface closure package synchronized across architecture, UI-runtime, module-boundary, acceptance, verification, traceability, and ADR artifacts (2026-04-28)
 - UB-17 — legacy non-BFF orchestration paths retired from migrated protected routes with fail-closed dead-path audit obligations (2026-04-28)
 - UB-16 — surface-level route-to-BFF integration verification obligations synchronized for all migrated gateway and console route families (2026-04-28)
@@ -58,6 +63,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UC-01 — introduce command-bus interface and base command contract
-2. UC-02 — introduce query-bus interface and base query contract
-3. UC-03 — implement audit/domain-event core model and publisher contract
+1. UC-04 — implement observability event sink with redaction safeguards
+2. UC-05 — implement transactional command boundary contract (write + event append)
+3. UC-06 — add initial command handlers for moderation and key lifecycle flows

@@ -1,7 +1,7 @@
 # Observability Event Catalog
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -18,6 +18,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - `comments.*`
 - `moderation.*`
 - `invites.*`
+- `domain_event.*`
+- `command.*`
+- `query.*`
 - `validation.*`
 - `routing.*`
 
@@ -28,6 +31,13 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
   - `boot.startup_failed`
 - Delivery fallback event:
   - `audit.delivery_failed`
+
+## Domain event publication contract
+- `DomainEvent` payloads are published through `EventPublisher` and map to `domain_event.*` event names.
+- Command-dispatch outcomes emit `command.dispatch.success` or `command.dispatch.failure`.
+- Query-dispatch outcomes emit `query.dispatch.success` or `query.dispatch.failure` when dispatch-level failures occur.
+- Event publication failures emit `audit.delivery_failed` with preserved `request_id` and failed `event_name` metadata.
+- Event emission redacts token material, secret material, and private-key material before sink delivery.
 
 ## Required event fields
 - `event_name`

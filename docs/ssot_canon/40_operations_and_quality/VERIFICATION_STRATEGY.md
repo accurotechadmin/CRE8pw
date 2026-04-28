@@ -98,3 +98,7 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UB-16 requires surface-level integration tests that prove every migrated gateway and console route family executes through its canonical surface BFF orchestration path and preserves envelope/detail-code parity.
 - UB-17 requires dead-path audit tests that prove legacy non-BFF orchestration entrypoints are unreachable, unreferenced, and fail closed when invoked directly.
 - UB-18 requires BFF-by-surface closure checks that prove architecture, UI runtime, module ownership, acceptance matrix, traceability matrix, and ADR artifacts are synchronized in the same change set.
+
+- UC-01 requires command-bus dispatch tests that prove base command contract invariants, deterministic command-handler resolution, and fail-closed behavior on unknown command types.
+- UC-02 requires query-bus dispatch tests that prove base query contract invariants, deterministic query-handler resolution, and fail-closed behavior on unknown query types.
+- UC-03 requires domain-event shape tests that prove `DomainEvent` and `EventPublisher` emit required canonical fields and preserve request-correlation metadata across success and failure outcomes.
