@@ -13,7 +13,7 @@ Define the evidence minimum required for SSOT-impacting changes.
 - Risk and rollback considerations.
 
 ## Storage convention
-Store evidence artifacts in PR description and/or linked build artifacts, using the templates in `templates/`.
+Store evidence artifacts in PR descriptions and linked build artifacts using the templates in `templates/`.
 
 
 ## Historical evidence handling
