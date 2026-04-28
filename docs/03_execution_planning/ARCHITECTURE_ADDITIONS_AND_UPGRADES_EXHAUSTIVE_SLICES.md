@@ -1,8 +1,8 @@
 # Architecture Additions and Upgrades — Exhaustive Slice Backlog
 
-_Status: proposed execution backlog_
+_Status: adopted execution backlog_
 _Last updated (UTC): 2026-04-28_
-_Primary source: `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_IMPLEMENTATION_MASTER_PLAN.md`_
+_Canonical scope: final A/B/C architecture upgrade execution slices_
 
 ## Purpose
 Provide the exhaustive, implementation-ready slice list for the three architecture upgrades:
@@ -11,7 +11,7 @@ Provide the exhaustive, implementation-ready slice list for the three architectu
 - **Upgrade B** — BFF-by-surface.
 - **Upgrade C** — CQRS-lite + audit-first.
 
-This backlog is intended for iterative execution in small PRs with evidence.
+This backlog is the authoritative execution plan for iterative PR-based delivery with evidence.
 
 ## Usage rules
 1. Do not start an upgrade slice before completing prerequisites (`U0-*`) unless explicitly marked parallel-safe.
