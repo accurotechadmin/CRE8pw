@@ -36,9 +36,9 @@ _Last updated (UTC): 2026-04-28_
 | UB-01 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Controller surface ownership split synchronized across architecture/module boundaries, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
 | UB-02 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Gateway/Console BFF service scaffolding boundaries synchronized with strict no cross-surface BFF call contract; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
 | UB-03 | completed | 2026-04-28 | work@2026-04-28-ub-surface-modules-dto | Surface DTO/view-model package isolation synchronized with UI runtime contract and response-shape verification obligations; see `SESSION_LOG_2026-04-28_ub-surface-modules-dto.md` |
-| UB-04 | not_started |  |  |  |
-| UB-05 | not_started |  |  |  |
-| UB-06 | not_started |  |  |  |
+| UB-04 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Route registration partition contract synchronized across architecture/module boundaries with fail-closed route-boot drift controls; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
+| UB-05 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Gateway error-state mapper canonical detail-code preservation contract synchronized with verification and traceability coverage; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
+| UB-06 | completed | 2026-04-28 | work@2026-04-28-ub-routes-error-mappers | Console error-state mapper diagnostics-hint and canonical envelope/detail-code preservation contract synchronized with UI-runtime parity obligations; see `SESSION_LOG_2026-04-28_ub-routes-error-mappers.md` |
 | UB-07 | not_started |  |  |  |
 | UB-08 | not_started |  |  |  |
 | UB-09 | not_started |  |  |  |
