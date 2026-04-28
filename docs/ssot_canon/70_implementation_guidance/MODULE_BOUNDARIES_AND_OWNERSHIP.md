@@ -1,7 +1,7 @@
 # Module Boundaries and Ownership
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 ## Core modules
 - Auth and token lifecycle
@@ -23,6 +23,11 @@ _Last updated (UTC): 2026-04-22_
 - Cross-module calls must occur through documented service contracts.
 - Policy decisions cannot be duplicated ad hoc across handlers.
 - Shared invariants belong in centralized policy/validation services.
+
+## Authorization module internal contract
+- The authorization module owns the PDP primitives: `Decision`, `DecisionContext`, `Obligation`, and `PolicyRule`.
+- Route-action resolution and surface-specific context builders are authorization-module responsibilities and feed all protected-route policy evaluation.
+- Gateway and console handlers consume authorization outcomes and obligations; they do not construct authorization decisions directly.
 
 
 ## Extension seam ownership map

@@ -1,12 +1,21 @@
 # Authorization Decision Tables (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
 Provide explicit policy truth tables for delegation, keychain resolution, and lifecycle authority so implementation and QA decisions are deterministic.
+
+## Canonical PDP input/output primitives
+
+| Primitive | Required fields | Enforcement rule |
+|---|---|---|
+| `DecisionContext` | `request_id`, `surface`, `route_action`, normalized actor claims, resolved principal state, delegation envelope inputs | Policy evaluation executes only against normalized context from route-action resolver and context builders |
+| `Decision` | `effect`, `http_status`, `error_code`, `detail_code`, `obligations` | Deny outcomes are canonical and map directly to envelope/error contracts |
+| `Obligation` | stable obligation key + value payload | Obligations are mandatory; missing obligation enforcement is a release-blocking defect |
+| `PolicyRule` | stable rule id + deterministic predicate/evaluator | Rule execution order and precedence remain deterministic and testable |
 
 ## Delegation issuance decision table
 
@@ -64,10 +73,12 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.
 2. Validate lifecycle status (active vs suspended/cancelled/revoked).
-3. Validate permission string allow-list.
-4. Validate scope coverage.
-5. Validate route-specific policy guards (device/CSRF/use-key constraints).
-6. Execute operation and emit auditable policy decision event.
+3. Resolve canonical `route_action` from route metadata.
+4. Build normalized `DecisionContext` for the active surface.
+5. Validate permission string allow-list.
+6. Validate scope coverage.
+7. Validate route-specific policy guards (device/CSRF/use-key constraints) and emit obligations.
+8. Execute operation and emit auditable policy decision event linked by `request_id` and `route_action`.
 
 ## Device-binding decision table
 

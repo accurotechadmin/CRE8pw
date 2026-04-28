@@ -55,3 +55,8 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - `ARCH_PDP_ENABLED`, `ARCH_BFF_SPLIT_ENABLED`, and `ARCH_CQRS_LITE_ENABLED` default to `false` until slice activation evidence is approved.
 - `ARCH_PROJECTION_ASYNC=true` requires projection lag and replay/idempotency evidence in the same validation run.
 - `ARCH_POLICY_DECISION_LOG` output is retained in CI artifacts for policy regression triage during PDP rollout.
+
+## PDP primitive verification contract
+- UA-01 requires unit tests that verify invariants for `Decision`, `DecisionContext`, `Obligation`, and `PolicyRule`.
+- UA-02 requires resolver matrix tests that prove deterministic route-to-`route_action` mapping for gateway and console surfaces.
+- UA-03 requires owner-context tests that prove normalization and fail-closed handling for console actor claims.

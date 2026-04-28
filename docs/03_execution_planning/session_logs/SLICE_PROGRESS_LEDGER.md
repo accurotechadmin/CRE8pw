@@ -13,9 +13,9 @@ _Last updated (UTC): 2026-04-28_
 | U0-06 | completed | 2026-04-28 | work@2026-04-28-u0-risk-config-ci | Added baseline CI gate requirements in `VERIFICATION_STRATEGY.md` and contribution workflow; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
 | U0-07 | completed | 2026-04-28 | work@2026-04-28-u0-boundary-checklist | Auth-context non-interchangeability smoke contract/evidence requirements synchronized; see `SESSION_LOG_2026-04-28_u0-boundary-checklist.md` |
 | U0-08 | completed | 2026-04-28 | work@2026-04-28-u0-boundary-checklist | Architecture-upgrade PR checklist published and linked in workflow/templates; see `SESSION_LOG_2026-04-28_u0-boundary-checklist.md` |
-| UA-01 | not_started |  |  |  |
-| UA-02 | not_started |  |  |  |
-| UA-03 | not_started |  |  |  |
+| UA-01 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Canonical PDP primitive contract synchronized across authorization specs, decision tables, verification strategy, and ADR-006; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
+| UA-02 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Route-action resolver + metadata policy context plumbing adopted in auth and middleware contracts; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
+| UA-03 | completed | 2026-04-28 | work@2026-04-28-ua-pdp-primitives-context | Owner-context normalization contract and test obligations adopted; see `SESSION_LOG_2026-04-28_ua-pdp-primitives-context.md` |
 | UA-04 | not_started |  |  |  |
 | UA-05 | not_started |  |  |  |
 | UA-06 | not_started |  |  |  |
