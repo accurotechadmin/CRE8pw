@@ -44,6 +44,10 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Bff/Gateway/Comments/*` owns gateway comments route-family orchestration (`GET/POST /api/posts/{postId}/comments`).
 - `src/Application/Bff/Gateway/Error/*` owns gateway error-state mapping and preserves canonical `error.code` and `details.code` behavior without lossy remapping.
 - `src/Application/Bff/Console/Error/*` owns console error-state mapping and emits UI-runtime-compatible recovery hints while preserving canonical `error.code` and `details.code` behavior.
+- `src/Application/Bff/Console/Posts/*` owns console posts route-family orchestration (`GET/POST /console/api/posts`).
+- `src/Application/Bff/Console/Moderation/*` owns console moderation route-family orchestration (`POST /console/api/posts/{postId}/moderation`, `POST /console/api/posts/{postId}/comments/{commentId}/moderation`).
+- `src/Application/Bff/Console/Keychains/*` owns console keychain route-family orchestration (`GET/POST /console/api/keychains`, members list/mutate, resolve).
+- `src/Application/Bff/Console/Governance/*` owns console invite and key-governance route-family orchestration (`POST /console/api/invites`, `POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle`).
 - Surface BFF modules may call shared domain services and authorization outcomes but may not call each other directly.
 - Route registration ownership is partitioned by `config/routes_gateway.php`, `config/routes_console.php`, and `config/routes_public.php`.
 - `config/routes_public.php` owns public/bootstrap route registration only; `config/routes_gateway.php` owns gateway route registration only; `config/routes_console.php` owns console route registration only.

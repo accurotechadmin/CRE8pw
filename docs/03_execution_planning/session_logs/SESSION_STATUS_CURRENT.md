@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
-- UB: in_progress (9/18 complete: UB-01 through UB-09 complete)
+- UB: in_progress (12/18 complete: UB-01 through UB-12 complete)
 - UC: not_started
 - UX: not_started
 - SEC: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UB-12 — console keychain/invite/key-issuance/lifecycle route families migrated to Console BFF governance/keychain orchestration contract with auth-context boundary and CSRF parity verification obligations (2026-04-28)
+- UB-11 — console moderation route family migrated to Console BFF moderation orchestration contract with transition-rule parity and canonical detail-code stability obligations (2026-04-28)
+- UB-10 — console posts list/create route family migrated to Console BFF posts-governance orchestration contract with CSRF and envelope/error parity obligations (2026-04-28)
 - UB-09 — gateway comments route family migrated to Gateway BFF orchestration contract with route-parity/detail-code stability verification obligations and traceability coverage (2026-04-28)
 - UB-08 — gateway post create/edit/flag route family migrated to Gateway BFF orchestration contract with contract/security regression obligations and traceability coverage (2026-04-28)
 - UB-07 — gateway feed read route family migrated to Gateway BFF orchestration contract with contract-parity and latency-comparison verification obligations (2026-04-28)
@@ -49,6 +52,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UB-10 — migrate console posts list/create flows to Console BFF
-2. UB-11 — migrate console moderation flows to Console BFF
-3. UB-12 — migrate console keychain/invite/key issuance flows to Console BFF
+1. UB-13 — implement optional gateway read caching with actor/scope-aware cache keys
+2. UB-14 — implement optional console inventory caching with short-TTL leakage-safe controls
+3. UB-15 — add console BFF CSRF recovery helper and deterministic diagnostics-hint coverage

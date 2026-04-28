@@ -42,9 +42,9 @@ _Last updated (UTC): 2026-04-28_
 | UB-07 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway feed route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
 | UB-08 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway posts route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
 | UB-09 | completed | 2026-04-28 | work@2026-04-28-ub-gateway-route-families | Gateway comments route-family Gateway BFF orchestration contract synchronized with architecture/module/UI-runtime/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-gateway-route-families.md` |
-| UB-10 | not_started |  |  |  |
-| UB-11 | not_started |  |  |  |
-| UB-12 | not_started |  |  |  |
+| UB-10 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console posts route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
+| UB-11 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console moderation route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
+| UB-12 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console keychain/invite/key governance route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
 | UB-13 | not_started |  |  |  |
 | UB-14 | not_started |  |  |  |
 | UB-15 | not_started |  |  |  |
