@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
-- UB: in_progress (12/18 complete: UB-01 through UB-12 complete)
+- UB: in_progress (15/18 complete: UB-01 through UB-15 complete)
 - UC: not_started
 - UX: not_started
 - SEC: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UB-15 — console BFF CSRF recovery-helper diagnostics contract synchronized with canonical CSRF detail-code preservation, deterministic hint taxonomy, and non-CSRF hint suppression verification obligations (2026-04-28)
+- UB-14 — console inventory short-TTL caching contract synchronized with owner-principal cache isolation and fail-closed cache bypass obligations (2026-04-28)
+- UB-13 — gateway read-cache seams synchronized with actor/scope-aware key derivation and mutation-triggered invalidation obligations (2026-04-28)
 - UB-12 — console keychain/invite/key-issuance/lifecycle route families migrated to Console BFF governance/keychain orchestration contract with auth-context boundary and CSRF parity verification obligations (2026-04-28)
 - UB-11 — console moderation route family migrated to Console BFF moderation orchestration contract with transition-rule parity and canonical detail-code stability obligations (2026-04-28)
 - UB-10 — console posts list/create route family migrated to Console BFF posts-governance orchestration contract with CSRF and envelope/error parity obligations (2026-04-28)
@@ -52,6 +55,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UB-13 — implement optional gateway read caching with actor/scope-aware cache keys
-2. UB-14 — implement optional console inventory caching with short-TTL leakage-safe controls
-3. UB-15 — add console BFF CSRF recovery helper and deterministic diagnostics-hint coverage
+1. UB-16 — expand surface-level integration tests for route->BFF orchestration
+2. UB-17 — remove legacy orchestration paths superseded by BFF modules
+3. UB-18 — complete SSOT + ADR closure for BFF-by-surface architecture

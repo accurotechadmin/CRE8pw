@@ -42,8 +42,11 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Bff/Gateway/Feed/*` owns gateway feed-read route-family orchestration (`GET /api/feed`).
 - `src/Application/Bff/Gateway/Posts/*` owns gateway posts route-family orchestration (`POST /api/posts`, `GET/PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`).
 - `src/Application/Bff/Gateway/Comments/*` owns gateway comments route-family orchestration (`GET/POST /api/posts/{postId}/comments`).
+- `src/Application/Bff/Gateway/Cache/*` owns gateway read-cache key derivation, cache read/write orchestration, and mutation-triggered invalidation hooks for feed/comments read families.
 - `src/Application/Bff/Gateway/Error/*` owns gateway error-state mapping and preserves canonical `error.code` and `details.code` behavior without lossy remapping.
 - `src/Application/Bff/Console/Error/*` owns console error-state mapping and emits UI-runtime-compatible recovery hints while preserving canonical `error.code` and `details.code` behavior.
+- `src/Application/Bff/Console/Cache/*` owns console inventory cache key derivation and short-TTL owner-principal cache controls for console read listings.
+- `src/Application/Bff/Console/Error/CsrfRecoveryHintProvider.php` owns deterministic CSRF diagnostics-hint generation using canonical CSRF detail codes only.
 - `src/Application/Bff/Console/Posts/*` owns console posts route-family orchestration (`GET/POST /console/api/posts`).
 - `src/Application/Bff/Console/Moderation/*` owns console moderation route-family orchestration (`POST /console/api/posts/{postId}/moderation`, `POST /console/api/posts/{postId}/comments/{commentId}/moderation`).
 - `src/Application/Bff/Console/Keychains/*` owns console keychain route-family orchestration (`GET/POST /console/api/keychains`, members list/mutate, resolve).

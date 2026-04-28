@@ -32,6 +32,8 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - `GET /api/posts/{postId}/comments` and `POST /api/posts/{postId}/comments` are orchestrated by Gateway BFF comments flow components.
 - Gateway controllers invoke Gateway BFF route-family orchestration and do not call domain services directly for multi-step flow composition.
 - Gateway BFF route-family orchestration preserves canonical API envelope semantics, canonical error/detail-code mappings, and gateway/console auth-context non-interchangeability constraints.
+- Gateway BFF read caching is enabled only for `GET` route families and uses actor/scope-aware cache keys composed from principal identity, keychain scope envelope, route template, and query fingerprint.
+- Gateway BFF read caching never serves console-surface responses, never serves data across distinct key principals, and invalidates cached entries on post/comment/flag mutations that affect feed or comment read projections.
 
 
 ## Console BFF route-family orchestration contract
@@ -41,6 +43,9 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - `POST /console/api/invites`, `POST /console/api/keys`, and `POST /console/api/keys/{keyId}/lifecycle` are orchestrated by Console BFF governance flow components.
 - Console controllers invoke Console BFF route-family orchestration and do not call domain services directly for multi-step flow composition.
 - Console BFF route-family orchestration preserves canonical API envelope semantics, canonical error/detail-code mappings, CSRF enforcement semantics, and gateway/console auth-context non-interchangeability constraints.
+- Console BFF inventory caching is enabled only for read-oriented owner governance listings and uses owner-principal-scoped cache keys.
+- Console BFF inventory caching enforces short TTL windows, performs fail-closed bypass on cache faults, and never reuses cached data across owner principals or auth contexts.
+- Console BFF CSRF recovery helpers are deterministic diagnostics overlays attached only after canonical CSRF deny outcomes (`csrf_token_missing`, `csrf_token_malformed`, `csrf_token_mismatch`) and do not alter canonical HTTP/envelope/detail-code semantics.
 
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.

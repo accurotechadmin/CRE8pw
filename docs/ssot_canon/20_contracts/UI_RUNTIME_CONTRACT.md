@@ -34,6 +34,8 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Console moderation route states are orchestrated by Console BFF moderation flow components without changing canonical response semantics for `POST /console/api/posts/{postId}/moderation` and `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
 - Console keychain route states are orchestrated by Console BFF keychain-governance flow components without changing canonical response semantics for keychain list/create/member/resolve route families.
 - Console invite and key-governance route states are orchestrated by Console BFF governance flow components without changing canonical response semantics for `POST /console/api/invites`, `POST /console/api/keys`, and `POST /console/api/keys/{keyId}/lifecycle`.
+- Gateway read-route states use actor/scope-aware cache entries for `GET /api/feed` and `GET /api/posts/{postId}/comments` only; cache hits and misses preserve the same canonical envelope/detail-code semantics as uncached responses.
+- Console inventory route states use short-TTL owner-scoped cache entries for `GET /console/api/posts`, `GET /console/api/keychains`, and `GET /console/api/keychains/{keychainId}/members`; cached entries are never reused across owner principals.
 
 
 ## Surface error-state mapper contract
@@ -41,6 +43,8 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Gateway BFF error-state mapper translates canonical error semantics into gateway UI route-state transitions without introducing non-canonical error codes.
 - Console BFF error-state mapper preserves canonical envelope semantics and canonical `details.code` values for all console responses.
 - Console BFF error-state mapper attaches deterministic UI-runtime-compatible recovery hints for owner-governance flows (including CSRF/session recovery), while preserving canonical HTTP/envelope/detail-code behavior.
+- Console CSRF recovery hints are emitted only when canonical CSRF detail codes are present and map to deterministic UI actions: refresh CSRF token, retry write request, or re-authenticate owner session.
+- Console CSRF recovery hints do not add or replace detail codes and do not change state mapping precedence (`403 forbidden` remains authoritative).
 - Gateway and console error-state mappers are isolated by surface and do not share surface-specific rendering hints.
 
 ## Route-state runtime model
@@ -77,7 +81,7 @@ Optional substates (implementation convenience):
 | API route | UI route | Success state | Error-state mapping | Notes |
 |---|---|---|---|---|
 | `GET /console/api/posts` | `/console/posts` | `success` or `empty` | `401 -> auth_required`, `403 -> forbidden`, `500 -> server_error` | Owner session only. Route family is orchestrated by Console BFF posts-governance flow components. |
-| `POST /console/api/posts` | `/console/posts/new` | `success` | `401 -> auth_required`, `403 -> forbidden`, `422 -> validation_error`, `500 -> server_error` | CSRF failures map to forbidden with recovery guidance. Route family is orchestrated by Console BFF posts-governance flow components. |
+| `POST /console/api/posts` | `/console/posts/new` | `success` | `401 -> auth_required`, `403 -> forbidden`, `422 -> validation_error`, `500 -> server_error` | CSRF failures map to forbidden with deterministic CSRF recovery hints (`refresh_csrf`, `retry_write`, `re_auth_owner_session`). Route family is orchestrated by Console BFF posts-governance flow components. |
 | `GET /console/api/keychains` | `/console/keychains` | `success` or `empty` | `401 -> auth_required`, `403 -> forbidden`, `500 -> server_error` | Includes membership counts and status badges. Route family is orchestrated by Console BFF keychain-governance flow components. |
 | `POST /console/api/keychains` | `/console/keychains/new` | `success` | `401 -> auth_required`, `403 -> forbidden`, `422 -> validation_error`, `409 -> validation_error`, `500 -> server_error` | Conflict path renders duplicate-name/invariant guidance. Route family is orchestrated by Console BFF keychain-governance flow components. |
 | `GET /console/api/keychains/{keychainId}/members` | `/console/keychains/{id}` | `success` or `empty` | `404(keychain_not_found) -> not_found`, `401/403 -> auth_required/forbidden`, `500 -> server_error` | Membership list and audit metadata must render together. Route family is orchestrated by Console BFF keychain-governance flow components. |

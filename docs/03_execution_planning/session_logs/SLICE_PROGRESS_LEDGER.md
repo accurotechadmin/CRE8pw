@@ -45,9 +45,9 @@ _Last updated (UTC): 2026-04-28_
 | UB-10 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console posts route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
 | UB-11 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console moderation route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
 | UB-12 | completed | 2026-04-28 | work@2026-04-28-ub-console-route-families | Console keychain/invite/key governance route-family Console BFF orchestration contract synchronized; see `SESSION_LOG_2026-04-28_ub-console-route-families.md` |
-| UB-13 | not_started |  |  |  |
-| UB-14 | not_started |  |  |  |
-| UB-15 | not_started |  |  |  |
+| UB-13 | completed | 2026-04-28 | work@2026-04-28-ub-cache-csrf-recovery | Gateway read-cache seams synchronized with actor/scope-aware cache key and invalidation contract updates; see `SESSION_LOG_2026-04-28_ub-cache-csrf-recovery.md` |
+| UB-14 | completed | 2026-04-28 | work@2026-04-28-ub-cache-csrf-recovery | Console inventory short-TTL cache isolation contract synchronized with fail-closed cache-bypass verification obligations; see `SESSION_LOG_2026-04-28_ub-cache-csrf-recovery.md` |
+| UB-15 | completed | 2026-04-28 | work@2026-04-28-ub-cache-csrf-recovery | Console CSRF recovery-helper diagnostics contract synchronized with canonical detail-code preservation and deterministic hint taxonomy; see `SESSION_LOG_2026-04-28_ub-cache-csrf-recovery.md` |
 | UB-16 | not_started |  |  |  |
 | UB-17 | not_started |  |  |  |
 | UB-18 | not_started |  |  |  |
