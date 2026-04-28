@@ -37,6 +37,9 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Gateway read-route states use actor/scope-aware cache entries for `GET /api/feed` and `GET /api/posts/{postId}/comments` only; cache hits and misses preserve the same canonical envelope/detail-code semantics as uncached responses.
 - Console inventory route states use short-TTL owner-scoped cache entries for `GET /console/api/posts`, `GET /console/api/keychains`, and `GET /console/api/keychains/{keychainId}/members`; cached entries are never reused across owner principals.
 
+- Route-state transitions for migrated gateway and console route families are emitted only from canonical surface BFF orchestration paths; superseded orchestration paths are removed from runtime execution.
+- UI runtime parity verification includes a dead-path audit that confirms no route-state branch depends on superseded non-BFF orchestration modules.
+
 
 ## Surface error-state mapper contract
 - Gateway BFF error-state mapper preserves canonical envelope semantics and canonical `details.code` values for all gateway responses.

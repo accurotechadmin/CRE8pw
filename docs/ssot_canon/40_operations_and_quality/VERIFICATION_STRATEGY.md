@@ -95,3 +95,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UB-13 requires gateway read-cache correctness tests that prove actor/scope-aware key derivation, mutation-triggered invalidation for feed/comments affected reads, and strict no cross-principal cache reuse.
 - UB-14 requires console inventory cache tests that prove owner-principal cache isolation, short-TTL expiry behavior, and fail-closed bypass on cache adapter faults.
 - UB-15 requires console CSRF recovery-helper tests that prove canonical CSRF detail-code preservation, deterministic diagnostics-hint emission, and no hint emission for non-CSRF forbids.
+- UB-16 requires surface-level integration tests that prove every migrated gateway and console route family executes through its canonical surface BFF orchestration path and preserves envelope/detail-code parity.
+- UB-17 requires dead-path audit tests that prove legacy non-BFF orchestration entrypoints are unreachable, unreferenced, and fail closed when invoked directly.
+- UB-18 requires BFF-by-surface closure checks that prove architecture, UI runtime, module ownership, acceptance matrix, traceability matrix, and ADR artifacts are synchronized in the same change set.

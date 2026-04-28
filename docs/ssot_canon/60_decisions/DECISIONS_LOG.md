@@ -11,6 +11,7 @@ _Last updated (UTC): 2026-04-28_
 - **2026-04-08**: Finalized implementation-grade norms across the SSOT canon at `/workspace/CRE8pw/docs/ssot_canon/`.
 - **2026-04-28**: Adopted in-process PDP as canonical authorization architecture (ADR-006).
 - **2026-04-28**: Finalized PDP canonicalization closure; authorization policy evaluation is centralized in PDP and removed from protected route handlers (ADR-007).
+- **2026-04-28**: Finalized BFF-by-surface architecture closure; migrated route families execute through surface BFF orchestration and superseded orchestration paths are retired (ADR-008).
 
 ## Update rule
 Any decision that changes API shape, auth policy, data invariants, or release gates must be logged here in same PR.
