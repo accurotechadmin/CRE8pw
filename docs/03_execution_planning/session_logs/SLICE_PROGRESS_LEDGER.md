@@ -63,9 +63,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-10 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Console read query-handler ownership synchronized for posts/keychains/members/resolve route families with verification and traceability updates; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
 | UC-11 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Projection updater/projector contract synchronized with idempotent source-event application and fail-closed projector dependency semantics; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
 | UC-12 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Feed-ordering projection model/projector synchronized across data model, architecture, verification, acceptance, and traceability artifacts; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
-| UC-13 | not_started |  |  |  |
-| UC-14 | not_started |  |  |  |
-| UC-15 | not_started |  |  |  |
+| UC-13 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Keychain-effective projection model/projector contract synchronized across architecture, data model, route/UI runtime, acceptance, verification, and traceability artifacts; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
+| UC-14 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Projector replay-protection and idempotency receipt contract synchronized with deterministic duplicate-event no-op semantics and observability outcomes; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
+| UC-15 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Sync projection-mode default runtime contract synchronized with fail-closed command-completion requirements when `ARCH_CQRS_LITE_ENABLED=true`; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
 | UC-16 | not_started |  |  |  |
 | UC-17 | not_started |  |  |  |
 | UC-18 | not_started |  |  |  |

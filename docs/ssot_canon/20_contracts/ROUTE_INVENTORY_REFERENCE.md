@@ -39,7 +39,7 @@ Canonical, versioned inventory of CRE8 v1 routes with surface, auth context, pol
 | `/console/api/keychains/{keychainId}/members` | GET | console | owner JWT | list active/removed memberships served by canonical `GetKeychainMembers` query handler | `/console/keychains/{id}` |
 | `/console/api/keychains/{keychainId}/members` | POST | console | owner JWT | add member key, enforce class/nesting/size invariants | `/console/keychains/{id}/add-member` |
 | `/console/api/keychains/{keychainId}/members/{memberKeyId}` | DELETE | console | owner JWT | remove member; recompute effective snapshot | `/console/keychains/{id}` |
-| `/console/api/keychains/{keychainId}/resolve` | GET | console | owner JWT | preview effective permissions/scope + lineage summary served by canonical `ResolveKeychainEffective` query handler | `/console/keychains/{id}/resolve` |
+| `/console/api/keychains/{keychainId}/resolve` | GET | console | owner JWT | preview effective permissions/scope + lineage summary served by canonical `ResolveKeychainEffective` query handler backed by keychain-effective projection model | `/console/keychains/{id}/resolve` |
 | `/console/api/invites` | POST | console | owner JWT | invite issuance constraints | `/console/invites/new` |
 | `/console/api/keys` | POST | console | owner JWT | issue delegated key with envelope bounds | `/console/keys/new` |
 | `/console/api/keys/{keyId}/lifecycle` | POST | console | owner JWT | suspend/cancel/revoke + cascade policy | `/console/keys/{keyId}/lifecycle` |

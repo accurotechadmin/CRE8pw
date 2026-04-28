@@ -24,6 +24,9 @@ erDiagram
   PRINCIPALS ||--o{ DOMAIN_EVENTS : actor
   POSTS ||--o{ FEED_ORDERING_PROJECTION : projected
   DOMAIN_EVENTS ||--o{ FEED_ORDERING_PROJECTION : drives
+  PRINCIPALS ||--o{ KEYCHAIN_EFFECTIVE_PROJECTION : projected
+  DOMAIN_EVENTS ||--o{ KEYCHAIN_EFFECTIVE_PROJECTION : drives
+  DOMAIN_EVENTS ||--o{ PROJECTION_EVENT_RECEIPTS : received
 ```
 
 ## Notes
@@ -32,3 +35,5 @@ erDiagram
 - Keychain composition and effective aggregation history are represented by `KEYCHAIN_MEMBERSHIPS` and `KEYCHAIN_EFFECTIVE_SNAPSHOTS`.
 - CQRS-lite audit/event lineage is represented by `DOMAIN_EVENTS`.
 - Feed read ordering model maintenance is represented by `FEED_ORDERING_PROJECTION` keyed by projector source event IDs.
+- Keychain effective resolve projection maintenance is represented by `KEYCHAIN_EFFECTIVE_PROJECTION` keyed by keychain principal and projector source event IDs.
+- Projector replay protection and idempotency receipts are represented by `PROJECTION_EVENT_RECEIPTS` keyed by projector identity and source event ID.

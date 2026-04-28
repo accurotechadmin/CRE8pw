@@ -77,6 +77,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Query/Handler/ListConsolePostsQueryHandler.php`, `ListKeychainsQueryHandler.php`, `GetKeychainMembersQueryHandler.php`, and `ResolveKeychainEffectiveQueryHandler.php` own canonical query-path orchestration for console listing and keychain resolve route families.
 - `src/Application/Projection/ProjectionUpdater.php` owns projector orchestration and idempotent event fan-out under sync mode by default.
 - `src/Application/Projection/Projector/FeedOrderingProjector.php` owns feed-ordering projection maintenance for `GET /api/feed` read consistency.
+- `src/Application/Projection/Projector/KeychainEffectiveProjector.php` owns keychain-effective projection maintenance for `GET /console/api/keychains/{keychainId}/resolve` read consistency.
+- `src/Application/Projection/ProjectionEventReceiptStore.php` owns projector replay-protection receipt insertion and duplicate source-event detection keyed by projector identity.
+- Sync projection mode remains mandatory when `ARCH_CQRS_LITE_ENABLED=true`; command success paths fail closed if projector application cannot complete.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 
 ## Extension seam ownership map

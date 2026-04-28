@@ -32,13 +32,14 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Gateway comments route states are orchestrated by Gateway BFF comments flow components without changing canonical response semantics for `GET/POST /api/posts/{postId}/comments`.
 - Console posts route states are orchestrated by Console BFF posts-governance flow components without changing canonical response semantics for `GET/POST /console/api/posts`; console read paths execute canonical `ListConsolePosts` query-handler orchestration.
 - Console moderation route states are orchestrated by Console BFF moderation flow components without changing canonical response semantics for `POST /console/api/posts/{postId}/moderation` and `POST /console/api/posts/{postId}/comments/{commentId}/moderation`.
-- Console keychain route states are orchestrated by Console BFF keychain-governance flow components without changing canonical response semantics for keychain list/create/member/resolve route families; console read paths execute canonical `ListKeychains`, `GetKeychainMembers`, and `ResolveKeychainEffective` query-handler orchestration.
+- Console keychain route states are orchestrated by Console BFF keychain-governance flow components without changing canonical response semantics for keychain list/create/member/resolve route families; console read paths execute canonical `ListKeychains`, `GetKeychainMembers`, and `ResolveKeychainEffective` query-handler orchestration backed by the keychain-effective projection model for resolve responses.
 - Console invite and key-governance route states are orchestrated by Console BFF governance flow components without changing canonical response semantics for `POST /console/api/invites`, `POST /console/api/keys`, and `POST /console/api/keys/{keyId}/lifecycle`.
 - Gateway read-route states use actor/scope-aware cache entries for `GET /api/feed` and `GET /api/posts/{postId}/comments` only; cache hits and misses preserve the same canonical envelope/detail-code semantics as uncached responses.
 - Console inventory route states use short-TTL owner-scoped cache entries for `GET /console/api/posts`, `GET /console/api/keychains`, and `GET /console/api/keychains/{keychainId}/members`; cached entries are never reused across owner principals.
 
 - Route-state transitions for migrated gateway and console route families are emitted only from canonical surface BFF orchestration paths; superseded orchestration paths are removed from runtime execution.
 - UI runtime parity verification includes a dead-path audit that confirms no route-state branch depends on superseded non-BFF orchestration modules.
+- Projection-backed resolve states fail closed when sync projection updates are unavailable; UI surfaces do not present stale keychain-effective resolve results as successful state.
 
 
 ## Surface error-state mapper contract
