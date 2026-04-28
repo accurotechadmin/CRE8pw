@@ -33,6 +33,9 @@ This document is the authoritative implementation specification for executing th
 2. Add three epic tickets (A/B/C) plus one integration epic.
 3. Add risk register entries for policy regressions, auth boundary drift, and projection consistency.
 4. Define rollout owners: security lead, backend lead, platform/SRE lead, QA lead.
+5. Maintain governance approval and backlog artifacts in:
+   - `docs/03_execution_planning/ARCHITECTURE_UPGRADE_GOVERNANCE_APPROVAL_RECORD.md`
+   - `docs/03_execution_planning/ARCHITECTURE_UPGRADE_EPIC_BACKLOG.md`
 
 ### 0.2 Repository structure hardening
 Create/confirm the following directories:

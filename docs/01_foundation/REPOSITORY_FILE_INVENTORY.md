@@ -1,6 +1,6 @@
 # Repository File Inventory
 
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 ## Purpose
 Quick index of the repository document set and root-level configuration artifacts used for SSOT-first implementation.
@@ -38,6 +38,31 @@ Quick index of the repository document set and root-level configuration artifact
 ## Implementation planning + execution artifacts (current)
 - `docs/03_execution_planning/DEVELOPMENT_EXECUTION_MASTER_PLAN.md`
 - `docs/03_execution_planning/DEVELOPMENT_EXECUTION_DETAILED_SLICES.md`
+- `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_IMPLEMENTATION_MASTER_PLAN.md`
+- `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_EXHAUSTIVE_SLICES.md`
+- `docs/03_execution_planning/ARCHITECTURE_UPGRADE_GOVERNANCE_APPROVAL_RECORD.md`
+- `docs/03_execution_planning/ARCHITECTURE_UPGRADE_EPIC_BACKLOG.md`
+
+## Runtime scaffold directories (U0-04 baseline)
+- `src/Application/Http/Middleware/`
+- `src/Application/Http/Controller/Gateway/`
+- `src/Application/Http/Controller/Console/`
+- `src/Application/Policy/`
+- `src/Application/Auth/`
+- `src/Application/Domain/`
+- `src/Application/Command/`
+- `src/Application/Query/`
+- `src/Application/Projection/`
+- `src/Application/Audit/`
+- `src/Infrastructure/Persistence/`
+- `src/Infrastructure/Observability/`
+- `config/`
+- `database/migrations/`
+- `database/seeds/`
+- `tests/Contract/`
+- `tests/Security/`
+- `tests/Integration/`
+- `tests/Unit/`
 
 ## Status declaration
-Current repository state is documentation-first: canonical SSOT, planning, and governance artifacts are present; runtime implementation remains to be built against these contracts.
+Current repository state is SSOT-driven with architecture-upgrade planning artifacts and runtime scaffold directories in place for implementation slices.
