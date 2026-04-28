@@ -6,6 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Core modules
 - Auth and token lifecycle
 - Authorization/policy evaluation
+- Surface BFF orchestration (gateway and console)
 - Keychain management
 - Content (feed/posts/comments/flags)
 - Moderation
@@ -16,6 +17,7 @@ _Last updated (UTC): 2026-04-28_
 |---|---|---|
 | Auth + lifecycle | Security/backend lead | Platform lead |
 | Authorization/policy | Security lead | Backend lead |
+| Surface BFF orchestration | Backend lead | Frontend/QA leads |
 | Content + moderation | Backend lead | QA lead |
 | Operations + observability | Platform/SRE lead | Backend lead |
 
@@ -23,6 +25,8 @@ _Last updated (UTC): 2026-04-28_
 - Cross-module calls must occur through documented service contracts.
 - Policy decisions cannot be duplicated ad hoc across handlers.
 - Shared invariants belong in centralized policy/validation services.
+- Controllers are surface-scoped and delegate orchestration to surface BFF modules; controllers do not contain multi-step orchestration logic.
+- Surface BFF modules are the only layer that shapes surface DTO/view-model payloads.
 
 ## Authorization module internal contract
 - The authorization module owns the PDP primitives: `Decision`, `DecisionContext`, `Obligation`, and `PolicyRule`.
@@ -30,6 +34,13 @@ _Last updated (UTC): 2026-04-28_
 - The authorization module owns `PdpService` and `RuleRegistry`, including deterministic rule-pack ordering and owner-only console governance rule families.
 - The authorization module owns policy configuration loaders for `config/policy/route_actions.php`, `config/policy/permissions.php`, and `config/policy/detail_codes.php`, including boot-time integrity validation and immutable runtime snapshots.
 - Gateway and console handlers consume authorization outcomes and obligations; they do not construct authorization decisions directly.
+
+## Surface BFF module contract
+- `src/Application/Http/Controller/Gateway/*` and `src/Application/Http/Controller/Console/*` own HTTP handling and envelope response invocation for their surface.
+- `src/Application/Bff/Gateway/*` and `src/Application/Bff/Console/*` own route-family orchestration for their surface.
+- `src/Application/Bff/Gateway/Dto/*` and `src/Application/Bff/Console/Dto/*` own surface-specific DTO/view-model contracts and remain isolated by surface.
+- Surface BFF modules may call shared domain services and authorization outcomes but may not call each other directly.
+- Route registration ownership is partitioned by `config/routes_gateway.php`, `config/routes_console.php`, and `config/routes_public.php`.
 
 
 ## Extension seam ownership map

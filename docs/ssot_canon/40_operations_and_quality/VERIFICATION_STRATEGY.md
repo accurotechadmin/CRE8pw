@@ -80,3 +80,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UA-18 requires console-governance enforcement tests that prove owner-context PDP evaluation and CSRF obligations gate key, invite, and keychain governance routes.
 - UA-19 requires no-ad-hoc-authorization audit evidence proving protected handlers do not evaluate permission/delegation/key-class/owner-context/device-binding policy branches.
 - UA-20 requires full SSOT synchronization checks for authorization spec, decision tables, middleware pipeline, error catalog, traceability matrix, and ADR linkage.
+- UB-01 requires route-ownership verification that gateway controllers map only to `/api/*` route families and console controllers map only to `/console/api/*` route families.
+- UB-02 requires BFF-wiring tests that verify gateway controllers depend on Gateway BFF services and console controllers depend on Console BFF services without cross-surface BFF calls.
+- UB-03 requires DTO contract tests that verify gateway DTO/view-model schemas and console DTO/view-model schemas are isolated by surface and preserve canonical envelope/error semantics.

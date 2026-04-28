@@ -1,7 +1,7 @@
 # UI Runtime Contract (SSOT Appendix)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -21,6 +21,12 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Resolve `request_id` from response header and/or envelope.
 - Expose envelope version for diagnostics where available.
 - Preserve `details.code` without lossy mapping; UI state machine uses canonical detail codes.
+
+## Surface BFF orchestration contract
+- Gateway UI routes call gateway API endpoints orchestrated by Gateway BFF modules.
+- Console UI routes call console API endpoints orchestrated by Console BFF modules.
+- UI runtime behavior remains contract-driven by canonical status, envelope, and detail-code semantics regardless of internal BFF orchestration.
+- UI parity validation treats BFF internals as non-authoritative; API contract and envelope semantics are authoritative.
 
 ## Route-state runtime model
 Canonical required states:

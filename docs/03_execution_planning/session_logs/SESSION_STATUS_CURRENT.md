@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
-- UB: not_started
+- UB: in_progress (3/18 complete: UB-01 through UB-03 complete)
 - UC: not_started
 - UX: not_started
 - SEC: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UB-03 — surface-specific DTO/view-model package isolation synchronized across architecture/module/UI runtime contracts, verification obligations, and traceability mapping (2026-04-28)
+- UB-02 — Gateway/Console BFF service scaffolding boundaries synchronized across architecture/module contracts, verification obligations, and traceability mapping (2026-04-28)
+- UB-01 — Gateway/Console controller module split synchronized across architecture/module contracts, verification obligations, and traceability mapping (2026-04-28)
 - UA-20 — SSOT/ADR PDP canonicalization closure completed with explicit no-ad-hoc-handler authorization boundary, error-catalog synchronization, and ADR-007 adoption (2026-04-28)
 - UA-19 — legacy ad-hoc handler authorization logic removed from normative contract model with mandatory no-ad-hoc-auth verification evidence (2026-04-28)
 - UA-18 — console governance protected-route PDP enforcement synchronized across authorization contracts, pipeline contract, verification obligations, and traceability matrix (2026-04-28)
@@ -40,6 +43,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UB-01 — create Gateway/Console controller module split
-2. UB-02 — create Gateway/Console BFF service module scaffolding
-3. UB-03 — introduce surface-specific DTO/view-model packages
+1. UB-04 — split route registration into `routes_public`, `routes_gateway`, and `routes_console` config artifacts
+2. UB-05 — implement gateway error-state mapper with canonical detail-code preservation
+3. UB-06 — implement console error-state mapper with UI-runtime-compatible diagnostics hints
