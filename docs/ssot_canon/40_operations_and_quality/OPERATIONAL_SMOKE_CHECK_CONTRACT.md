@@ -50,6 +50,21 @@ Evidence requirements for auth-boundary smoke:
 - stable envelope `error.code` + `details.code` outcomes for each denied replay case,
 - timestamp and environment profile.
 
+
+## Architecture-upgrade integrated smoke controls
+`ops:health-smoke` and `ops:migrate-smoke` are release-blocking controls for integrated PDP, BFF-by-surface, and CQRS-lite runtime semantics.
+
+Required integrated assertions:
+- PDP enforcement readiness: smoke evidence includes deterministic deny-path stability for policy decision middleware and no auth-context interchangeability regressions.
+- BFF-by-surface readiness: smoke evidence confirms gateway and console route-family health checks run independently and fail closed on cross-surface dependency drift.
+- CQRS-lite readiness: smoke evidence confirms projection mode subchecks reflect configured mode (`ARCH_PROJECTION_ASYNC=false` or `true`) with deterministic status outputs.
+- Security hardening linkage: each smoke run references current SEC-01 and SEC-02 abuse-suite evidence identifiers in the release package.
+
+Failure-code requirements:
+- `ops:health-smoke` emits stable machine codes for `health_unreachable`, `health_schema_invalid`, `health_status_invalid`, and `health_projection_async_invalid`.
+- `ops:migrate-smoke` emits stable machine codes for `migration_artifact_missing`, `migration_execution_failed`, and `migration_schema_incomplete`.
+- Any auth-boundary smoke subset failure emits `security_boundary_smoke_failed` with attached denied-case matrix key.
+
 ## Evidence requirements
 Each smoke execution must produce:
 - command output,

@@ -10,8 +10,8 @@ _Last updated (UTC): 2026-04-28_
 - UC: completed (21/21 complete: UC-01 through UC-21)
 - UX: completed (2/2 complete: UX-01 through UX-02)
 - SEC: completed (2/2 complete: SEC-01 through SEC-02)
-- OPS: not_started
-- GOV: not_started
+- OPS: completed (2/2 complete: OPS-01 through OPS-02)
+- GOV: in_progress (1/2 complete: GOV-01 complete, GOV-02 remaining)
 - ACT: not_started
 
 ## In-progress slices
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- GOV-01 — architecture-upgrade traceability matrix closure synchronized with explicit OPS/GOV capability mapping rows and completeness-check expectations (2026-04-28)
+- OPS-02 — production readiness Gate D evidence package synchronized with architecture-upgrade and SEC-01/SEC-02 linkage requirements (2026-04-28)
+- OPS-01 — integrated operational smoke contract synchronized for PDP/BFF/CQRS controls with deterministic failure-code obligations (2026-04-28)
 - SEC-02 — post-CQRS device-binding and token-type confusion matrix closure synchronized across security abuse cases, verification strategy, and traceability matrix with deterministic deny-code parity requirements (2026-04-28)
 - SEC-01 — full auth-boundary abuse matrix closure synchronized across security abuse cases, verification strategy, and traceability matrix with integrated PDP+BFF enforcement scope (2026-04-28)
 - UX-02 — resource-specific `404` semantics re-validation synchronized across UI runtime, error catalog alignment constraints, acceptance matrix, verification strategy, and traceability mapping (2026-04-28)
@@ -83,6 +86,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. OPS-01 — update smoke contracts for integrated security-control and projection-health evidence requirements.
-2. OPS-02 — update readiness gates with explicit architecture-upgrade evidence package requirements.
-3. GOV-01 — execute program-level traceability closure review across U0/UA/UB/UC/UX/SEC slices.
+1. GOV-02 — finalize integration ADR/log package for architecture-upgrade cutover decisions.
+2. ACT-01 — activate PDP on read routes in staging and produce mismatch comparison evidence.
+3. ACT-02 — activate PDP on write and console routes in staging with contract/security evidence.
