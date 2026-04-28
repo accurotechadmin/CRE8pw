@@ -7,7 +7,7 @@ _Last updated (UTC): 2026-04-28_
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
-- UC: in_progress (9/21 complete: UC-01 through UC-09)
+- UC: in_progress (12/21 complete: UC-01 through UC-12)
 - UX: not_started
 - SEC: not_started
 - OPS: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UC-12 — feed-ordering projection model and projector contract synchronized with sync-first projection-update semantics, idempotent source-event handling, and projection freshness verification/traceability coverage (2026-04-28)
+- UC-11 — projection updater/projector canonical ownership synchronized with deterministic projector registration and fail-closed idempotency obligations (2026-04-28)
+- UC-10 — console read query-handler canonical ownership synchronized for posts/keychains/members/resolve routes with envelope/detail-code parity verification obligations (2026-04-28)
 - UC-09 — gateway read query-handler canonical ownership synchronized for feed/post/comments read routes with resource-specific `404` detail-code stability and route-parity verification obligations (2026-04-28)
 - UC-08 — keychain membership command-handler canonical ownership synchronized for membership mutation routes with invariant deny-path preservation and verification/traceability coverage (2026-04-28)
 - UC-07 — gateway content command-handler canonical ownership synchronized for create/edit/flag/comment mutation routes with stable `403/404/422` detail-code semantics (2026-04-28)
@@ -67,6 +70,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UC-10 — add query handlers for console listings/keychain resolve flows
-2. UC-11 — implement projection updater and projector contracts
-3. UC-12 — add feed ordering projection model and projector
+1. UC-13 — add keychain effective-view projection model and projector
+2. UC-14 — add event-idempotency and replay protection in projectors
+3. UC-15 — enable sync projection mode by default in runtime flow

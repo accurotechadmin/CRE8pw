@@ -1,7 +1,7 @@
 # Data Model Reference (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -15,6 +15,7 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Delegation/lifecycle: `delegation_envelopes`, `invite_receipts`
 - Content/moderation: `posts`, `post_revisions`, `post_flags`, `comments`, `moderation_actions`
 - Keychain model: `keychain_memberships`, `keychain_effective_snapshots`
+- CQRS-lite audit/projection model: `domain_events`, `feed_ordering_projection`
 
 ## Lifecycle invariants
 - Principal types: `owner|key`
@@ -31,6 +32,8 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Key lifecycle mutations + lineage update occur atomically.
 - Keychain membership mutation + effective-snapshot update + audit event write occur atomically.
 - Moderation decisions + revision metadata must commit together.
+- Command-state mutation + `domain_events` append must commit atomically.
+- `feed_ordering_projection` updates are idempotent by `source_event_id` and execute through `ProjectionUpdater` in sync mode by default.
 
 ## Related SSOT docs
 - `docs/ssot_canon/30_data_and_security/DATA_MODEL_SPEC.md`

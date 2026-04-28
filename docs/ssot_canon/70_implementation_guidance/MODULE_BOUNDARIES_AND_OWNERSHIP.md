@@ -74,6 +74,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Command/Handler/CreatePostCommandHandler.php`, `EditPostCommandHandler.php`, `FlagPostCommandHandler.php`, and `CreateCommentCommandHandler.php` own canonical command-path orchestration for gateway content mutation routes.
 - `src/Application/Command/Handler/AddKeychainMemberCommandHandler.php` and `RemoveKeychainMemberCommandHandler.php` own canonical command-path orchestration for console keychain membership mutation routes.
 - `src/Application/Query/Handler/GetFeedQueryHandler.php`, `GetPostDetailQueryHandler.php`, and `GetPostCommentsQueryHandler.php` own canonical query-path orchestration for gateway read route families.
+- `src/Application/Query/Handler/ListConsolePostsQueryHandler.php`, `ListKeychainsQueryHandler.php`, `GetKeychainMembersQueryHandler.php`, and `ResolveKeychainEffectiveQueryHandler.php` own canonical query-path orchestration for console listing and keychain resolve route families.
+- `src/Application/Projection/ProjectionUpdater.php` owns projector orchestration and idempotent event fan-out under sync mode by default.
+- `src/Application/Projection/Projector/FeedOrderingProjector.php` owns feed-ordering projection maintenance for `GET /api/feed` read consistency.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 
 ## Extension seam ownership map
