@@ -54,6 +54,13 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Console CSRF recovery hints do not add or replace detail codes and do not change state mapping precedence (`403 forbidden` remains authoritative).
 - Gateway and console error-state mappers are isolated by surface and do not share surface-specific rendering hints.
 
+## UI parity re-validation contract
+- UI parity verification remains mandatory after PDP, BFF-by-surface, and CQRS-lite architecture upgrades.
+- Gateway and console route-state mappings are validated against canonical HTTP status, `error.code`, and `details.code` outcomes from the error catalog.
+- UI parity verification explicitly includes `404` distinction checks between resource resolver outcomes (`post_not_found`, `comment_not_found`, `key_not_found`, `keychain_not_found`) and unmatched-template router outcomes (`route_not_found`).
+- UI route-state handling maps resource resolver `404` responses to route-level not-found views and maps unmatched-template `404` responses to global route-missing handling without conflating the two cases.
+- Any regression that merges resource resolver `404` semantics with router `404` semantics blocks release.
+
 ## Route-state runtime model
 Canonical required states:
 - `idle`
