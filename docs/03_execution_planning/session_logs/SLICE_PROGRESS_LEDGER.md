@@ -5,14 +5,14 @@ _Last updated (UTC): 2026-04-28_
 
 | Slice ID | Status | Completion date (UTC) | PR/Commit reference | Notes/Evidence links |
 |---|---|---|---|---|
-| U0-01 | not_started |  |  |  |
-| U0-02 | not_started |  |  |  |
-| U0-03 | completed | 2026-04-28 | pending-current-session-commit | Added R-008/R-009/R-010 in `RISK_REGISTER.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
-| U0-04 | not_started |  |  |  |
-| U0-05 | completed | 2026-04-28 | pending-current-session-commit | Added `ARCH_*` feature-flag contract in `CONFIGURATION_ENVIRONMENT_CONTRACT.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
-| U0-06 | completed | 2026-04-28 | pending-current-session-commit | Added baseline CI gate requirements in `VERIFICATION_STRATEGY.md` and contribution workflow; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
-| U0-07 | not_started |  |  |  |
-| U0-08 | not_started |  |  |  |
+| U0-01 | completed | 2026-04-28 | work@2026-04-28-u0-governance-backlog-structure | Governance approval record published; see `ARCHITECTURE_UPGRADE_GOVERNANCE_APPROVAL_RECORD.md` and `SESSION_LOG_2026-04-28_u0-governance-backlog-structure.md` |
+| U0-02 | completed | 2026-04-28 | work@2026-04-28-u0-governance-backlog-structure | Epic/backlog structure published; see `ARCHITECTURE_UPGRADE_EPIC_BACKLOG.md` and `SESSION_LOG_2026-04-28_u0-governance-backlog-structure.md` |
+| U0-03 | completed | 2026-04-28 | work@2026-04-28-u0-risk-config-ci | Added R-008/R-009/R-010 in `RISK_REGISTER.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
+| U0-04 | completed | 2026-04-28 | work@2026-04-28-u0-governance-backlog-structure | Repository structure scaffold created under `src/`, `config/`, `database/`, and `tests/`; see `SESSION_LOG_2026-04-28_u0-governance-backlog-structure.md` |
+| U0-05 | completed | 2026-04-28 | work@2026-04-28-u0-risk-config-ci | Added `ARCH_*` feature-flag contract in `CONFIGURATION_ENVIRONMENT_CONTRACT.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
+| U0-06 | completed | 2026-04-28 | work@2026-04-28-u0-risk-config-ci | Added baseline CI gate requirements in `VERIFICATION_STRATEGY.md` and contribution workflow; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
+| U0-07 | completed | 2026-04-28 | work@2026-04-28-u0-boundary-checklist | Auth-context non-interchangeability smoke contract/evidence requirements synchronized; see `SESSION_LOG_2026-04-28_u0-boundary-checklist.md` |
+| U0-08 | completed | 2026-04-28 | work@2026-04-28-u0-boundary-checklist | Architecture-upgrade PR checklist published and linked in workflow/templates; see `SESSION_LOG_2026-04-28_u0-boundary-checklist.md` |
 | UA-01 | not_started |  |  |  |
 | UA-02 | not_started |  |  |  |
 | UA-03 | not_started |  |  |  |
