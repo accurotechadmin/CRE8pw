@@ -66,9 +66,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-13 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Keychain-effective projection model/projector contract synchronized across architecture, data model, route/UI runtime, acceptance, verification, and traceability artifacts; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
 | UC-14 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Projector replay-protection and idempotency receipt contract synchronized with deterministic duplicate-event no-op semantics and observability outcomes; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
 | UC-15 | completed | 2026-04-28 | work@2026-04-28-uc-keychain-projection-sync-default | Sync projection-mode default runtime contract synchronized with fail-closed command-completion requirements when `ARCH_CQRS_LITE_ENABLED=true`; see `SESSION_LOG_2026-04-28_uc-keychain-projection-sync-default.md` |
-| UC-16 | not_started |  |  |  |
-| UC-17 | not_started |  |  |  |
-| UC-18 | not_started |  |  |  |
+| UC-16 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Async projection mode contract synchronized with queue-worker retry/dead-letter controls and verification/traceability evidence; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
+| UC-17 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Async projection health lag/queue-depth subcheck contract synchronized in health/smoke/verification artifacts; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
+| UC-18 | completed | 2026-04-28 | work@2026-04-28-uc-async-health-alerting | Command failure + projection latency dashboard/alerting contract synchronized with SLO and observability event catalog updates; see `SESSION_LOG_2026-04-28_uc-async-health-alerting.md` |
 | UC-19 | not_started |  |  |  |
 | UC-20 | not_started |  |  |  |
 | UC-21 | not_started |  |  |  |

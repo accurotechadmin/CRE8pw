@@ -21,6 +21,12 @@ Define canonical operational smoke-check behaviors, expected outcomes, and failu
 - validate `data.status` in `ok|degraded`,
 - fail with deterministic machine-readable failure codes when invalid.
 
+## Async projection health smoke extension
+When `ARCH_PROJECTION_ASYNC=true`, `ops:health-smoke` must also validate:
+- `data.services.projection_async` presence and schema (`lag_ms`, `queue_depth`, `dead_letter_depth`),
+- deterministic degraded-state assertion when lag/depth thresholds are exceeded during failure injection,
+- canonical envelope/error semantics remain unchanged while status is `degraded`.
+
 ## Migration smoke contract
 `ops:migrate-smoke` must:
 - validate migration artifact presence according to current migration strategy,

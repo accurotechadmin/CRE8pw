@@ -115,3 +115,7 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UC-13 requires keychain-effective projection tests that prove keychain membership/lifecycle events update `keychain_effective_projection` synchronously, preserve effective permissions/scope and lineage determinism, and keep resolve-route envelope/detail-code semantics stable.
 - UC-14 requires projector replay-protection tests that prove `projection_event_receipts` enforces duplicate source-event no-op behavior by projector identity, prevents duplicate projection writes, and preserves deterministic observability outcomes (`projection.update.skipped_duplicate`).
 - UC-15 requires sync-mode default runtime tests that prove command success envelopes are emitted only after synchronous projector completion when `ARCH_CQRS_LITE_ENABLED=true`, and fail closed when projection updates cannot complete.
+
+- UC-16 requires async projection mode tests that prove queue-worker dispatch, bounded retry scheduling, dead-letter routing on terminal projector failures, and rollback-safe command/event durability with `ARCH_PROJECTION_ASYNC=true`.
+- UC-17 requires health-contract tests that prove `/health` exposes projector lag and queue/dead-letter depth subchecks in async mode and marks status `degraded` on threshold breach while preserving canonical envelope semantics.
+- UC-18 requires operations-alert tests that prove dashboards and alert policies for command failure rate and projection latency trigger deterministic `alert.*` events and route to on-call ownership.

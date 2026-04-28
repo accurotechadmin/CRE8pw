@@ -22,6 +22,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - `command.*`
 - `query.*`
 - `projection.*`
+- `projection.worker.*`
+- `queue.*`
+- `alert.*`
 - `validation.*`
 - `routing.*`
 
@@ -41,6 +44,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Keychain-effective projection updates for resolve flows emit the same canonical `projection.update.*` outcomes with `projector_name=KeychainEffectiveProjector`.
 - Transactional command execution emits `command.transaction.committed` on atomic write+event success and `command.transaction.rolled_back` when the transaction is aborted.
 - Sync projection mode emits `command.projection_sync.required` when `ARCH_CQRS_LITE_ENABLED=true`; sync-update failure paths emit `command.projection_sync.failed` and terminate with fail-closed command outcomes.
+- Async projection worker events emit `projection.worker.dequeue`, `projection.worker.retry_scheduled`, `projection.worker.dead_lettered`, and `projection.worker.applied` with preserved `request_id` and `source_event_id` metadata where available.
+- Queue health events emit `queue.depth.sampled` and `queue.dead_letter_depth.sampled` for async projection queues.
+- Alert pipeline emits `alert.command_failure_rate.breached` and `alert.projection_latency.breached` when SLO thresholds are exceeded.
 - Command handlers for moderation and key lifecycle flows emit `command.moderation.executed` and `command.key_lifecycle.executed` for successful high-audit mutations.
 - Event publication failures emit `audit.delivery_failed` with preserved `request_id` and failed `event_name` metadata.
 - Event emission redacts token material, secret material, and private-key material before sink delivery.

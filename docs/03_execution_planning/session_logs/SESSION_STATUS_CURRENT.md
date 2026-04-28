@@ -7,7 +7,7 @@ _Last updated (UTC): 2026-04-28_
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
-- UC: in_progress (15/21 complete: UC-01 through UC-15)
+- UC: in_progress (18/21 complete: UC-01 through UC-18)
 - UX: not_started
 - SEC: not_started
 - OPS: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UC-18 — operational dashboards and alerting contract synchronized for command failure rate and projection latency with deterministic on-call routing obligations (2026-04-28)
+- UC-17 — `/health` async projection lag/queue-depth subcheck contract synchronized with degraded-threshold semantics and smoke/verification obligations (2026-04-28)
+- UC-16 — optional async projection mode contract synchronized with queue-worker retries, dead-letter routing, and fail-closed observability obligations (2026-04-28)
 - UC-15 — sync projection mode default runtime contract synchronized with fail-closed command-completion semantics requiring synchronous projector application when `ARCH_CQRS_LITE_ENABLED=true` (2026-04-28)
 - UC-14 — projector idempotency and replay-protection contract synchronized with projection receipt controls and deterministic duplicate-event no-op semantics (2026-04-28)
 - UC-13 — keychain effective-view projection model/projector contract synchronized across architecture, data model, route/UI runtime, acceptance, verification, and traceability artifacts (2026-04-28)
@@ -73,6 +76,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UC-16 — implement optional async projection mode (worker + retries + DLQ)
-2. UC-17 — add health checks for projector lag and queue depth
-3. UC-18 — add operational dashboards for command failures and projection latency
+1. UC-19 — migrate BFF read paths to query services/projections incrementally
+2. UC-20 — migrate BFF write paths to command handlers incrementally
+3. UC-21 — SSOT sync + ADR closure for CQRS-lite audit-first architecture

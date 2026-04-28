@@ -1,7 +1,7 @@
 # Health Endpoint Contract (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-09_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -24,6 +24,8 @@ Success envelope shape:
   - `rate_limiter` status
   - `key_material` status
   - `http_dependency` status
+  - `projection_sync` status
+  - `projection_async` status (present only when `ARCH_PROJECTION_ASYNC=true`)
 
 Response `meta` must include canonical envelope metadata.
 
@@ -54,3 +56,16 @@ Response `meta` must include canonical envelope metadata.
 - `docs/ssot_canon/20_contracts/Endpoint_Examples_All_Routes.md`
 - `docs/ssot_canon/40_operations_and_quality/RELEASE_CHECKLIST.md`
 - `docs/ssot_canon/40_operations_and_quality/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
+
+
+## Projection health semantics
+- `projection_sync` reports the status of synchronous projector application guarantees when `ARCH_CQRS_LITE_ENABLED=true`.
+- `projection_async` reports queue-worker projection freshness when `ARCH_PROJECTION_ASYNC=true`; required fields are `lag_ms`, `queue_depth`, and `dead_letter_depth`.
+- `/health` returns `degraded` when projection lag or queue/dead-letter depth exceeds configured thresholds, while continuing to return HTTP `200` if the endpoint itself is reachable.
+- `/health` returns `500` only when health handler execution fails and cannot emit the canonical envelope.
+
+## Async projection smoke expectations
+When `ARCH_PROJECTION_ASYNC=true`, `ops:health-smoke` must additionally validate:
+- `data.services.projection_async` object exists,
+- `lag_ms`, `queue_depth`, and `dead_letter_depth` fields are present and numeric,
+- degraded-state transitions occur when lag/depth thresholds are breached in failure-injection checks.
