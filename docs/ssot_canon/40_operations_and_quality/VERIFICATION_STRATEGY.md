@@ -75,3 +75,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UA-13 requires policy-table configuration integrity tests that fail startup on missing/duplicate route-action mappings and malformed policy table structures.
 - UA-14 requires permission/detail-code externalization tests that fail startup on unknown permissions, missing route-action permission bindings, or missing deny detail-code mappings.
 - UA-15 requires rule-registry composition tests that verify deterministic rule-pack ordering, immutable boot snapshots, and fail-closed behavior for composition drift.
+- UA-16 requires gateway-read enforcement tests that prove `PolicyDecisionMiddleware` gates `GET /api/feed` and `GET /api/posts/{postId}/comments` on PDP allow outcomes.
+- UA-17 requires gateway-write enforcement tests that prove PDP deny outcomes block write handlers for posts, flags, and comment creation with canonical detail-code stability.
+- UA-18 requires console-governance enforcement tests that prove owner-context PDP evaluation and CSRF obligations gate key, invite, and keychain governance routes.

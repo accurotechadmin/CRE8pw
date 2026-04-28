@@ -145,6 +145,16 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Rule precedence conflict occurs between deny and allow candidates | Deny takes precedence and canonical deny mapping is returned |
 | Rule registry snapshot hash differs from approved deployment artifact | Release gate blocks rollout until snapshot parity is restored |
 
+## PDP enforcement integration coverage table (UA-16/UA-17/UA-18)
+
+| Route family | Enforcement requirement |
+|---|---|
+| Gateway read (`GET /api/feed`, `GET /api/posts/{postId}/comments`) | Route-action resolver + key context builder + PDP allow required before handler execution |
+| Gateway write (`POST /api/posts`, `PATCH /api/posts/{postId}`, `POST /api/posts/{postId}/flags`, `POST /api/posts/{postId}/comments`) | Route-action resolver + key context builder + permission/delegation/use-key/device obligations + PDP allow required |
+| Console governance (`POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle`, `POST /console/api/invites`, `POST /console/api/keychains`, `POST /console/api/keychains/{keychainId}/members`) | Route-action resolver + owner context builder + CSRF obligation (where required) + PDP allow required |
+| Any protected route with PDP deny outcome | Return canonical error envelope and do not execute handler/service mutation path |
+| `ARCH_PDP_ENABLED=false` rollout mode | PDP decision events remain emitted to `ARCH_POLICY_DECISION_LOG` for mismatch triage; enforcement remains disabled |
+
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.
 2. Validate lifecycle status (active vs suspended/cancelled/revoked).
