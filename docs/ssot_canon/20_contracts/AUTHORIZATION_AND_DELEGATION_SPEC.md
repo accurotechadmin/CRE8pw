@@ -110,6 +110,31 @@ Canonical permission vocabulary:
   - Structural request defects return `422 validation_failed`.
   - Policy-bound violations return `403 forbidden`.
 
+
+## Keychain membership invariant enforcement
+- Keychain membership mutation routes are authorized through dedicated PDP keychain invariant rules before persistence handlers execute.
+- Candidate membership is allowed only for active `primary_author`, `secondary_author`, and `use` key principals.
+- Candidate membership MUST be denied for `master`, `keychain`, and owner principals.
+- Nested keychain membership MUST be denied with canonical `403 forbidden` and detail code `keychain_nested_membership_forbidden`.
+- Keychains with `50` existing members MUST reject additional member admission with canonical `403 forbidden` and detail code `keychain_membership_limit_exceeded`.
+- Candidate keys in non-active lifecycle states MUST be denied with canonical `403 forbidden` and detail code `member_key_inactive`.
+- Successful membership mutations MUST recompute effective keychain permission/scope snapshots atomically with membership writes.
+
+## Master-key SYSADMIN boundary enforcement
+- Master-key authorization is evaluated through dedicated PDP boundary rules for SYSADMIN-designated console governance operations.
+- Master-key tokens MUST be denied for gateway route actions with canonical `403 forbidden` and detail code `master_key_gateway_forbidden`.
+- Master-key issuance and lifecycle routes MUST deny non-owner actors with canonical `403 forbidden` and detail code `master_key_owner_required`.
+- Master-key mint authority is restricted to owner principals and is never delegated to key principals or keychains.
+- Master-key credential material MUST remain excluded from keychain membership resolution and effective-envelope computation.
+
+## Device-binding deny semantics in PDP outcomes
+- Device-binding requirements are expressed as mandatory PDP obligations for gateway route actions that require device-bound tokens.
+- Missing `X-Device-Id` header on a device-bound route MUST deny with `422 validation_failed` and detail code `device_id_missing`.
+- Malformed `X-Device-Id` header on a device-bound route MUST deny with `422 validation_failed` and detail code `device_id_invalid_format`.
+- JWT/header `device_id` mismatch on a device-bound route MUST deny with `401 auth_invalid` and detail code `token_device_mismatch`.
+- Missing JWT `device_id` claim on a route that requires device binding MUST deny with `401 auth_invalid` and detail code `token_device_claim_missing`.
+- Device-binding deny mappings are canonical and are not overridden by route handlers.
+
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
 - Key rotation authority follows delegated envelope and governance policy rules.

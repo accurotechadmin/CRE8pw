@@ -1,7 +1,7 @@
 # Master Key Spec
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-21_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -14,8 +14,8 @@ Define the production contract for Master-Key-Level credentials used exclusively
 - Scope: system-governance and platform administrative operations only.
 
 ## Authorization constraints
-- Master keys are reserved for **Owners**.
-- Master-key tokens are valid only for SYSADMIN-designated surfaces and never for gateway content-authoring routes.
+- Master keys are reserved for **owner principals** and non-owner actors are denied with canonical `403 forbidden` detail `master_key_owner_required` on master-key governance operations.
+- Master-key tokens are valid only for SYSADMIN-designated console governance routes and are denied on gateway route actions with canonical `403 forbidden` detail `master_key_gateway_forbidden`.
 - Master keys cannot be minted by key principals (`primary_author`, `secondary_author`, `use`, or `keychain`).
 - Master keys do not participate in keychain membership.
 
