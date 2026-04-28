@@ -139,9 +139,9 @@ This backlog is the authoritative execution plan for iterative PR-based delivery
 | ACT-02 | Activate PDP for all write and console routes in staging. | UA-17,UA-18,ACT-01 | Staging enforcement evidence | Full contract/security pass |
 | ACT-03 | Activate BFF split route families progressively in staging. | UB-07..UB-12,ACT-02 | Staging cutover checklist | Route family parity report |
 | ACT-04 | Activate CQRS sync mode for selected route families in staging. | UC-19,UC-20,ACT-03 | CQRS sync activation evidence | Freshness/consistency report |
-| ACT-05 | Optionally activate async projections in staging with alarms. | UC-16,UC-17,UC-18,ACT-04 | Async activation and rollback switch | Lag + retry evidence |
-| ACT-06 | Production canary activation (A then B then C) with rollback guards. | ACT-02,ACT-03,ACT-04 | Canary runbooks and executed canaries | Canary acceptance evidence |
-| ACT-07 | Remove legacy toggles/paths after soak and finalize stabilization. | ACT-06 | Cleanup PRs + final architecture state docs | Post-soak incident-free report |
+| ACT-05 | Activate async projections in staging with alarms under bounded retry and rollback controls. | UC-16,UC-17,UC-18,ACT-04 | Async activation, rollback-switch execution, and alert drill evidence | Lag/retry/dead-letter evidence pack + health degraded-state validation |
+| ACT-06 | Execute production canary activation in deterministic sequence A then B then C with rollback guards. | ACT-02,ACT-03,ACT-04 | Executed canary waves, rollback-drill records per wave, unresolved-delta disposition ledger | Canary acceptance evidence with stage-gated signoff (Platform/SRE + Release Engineering) |
+| ACT-07 | Retire legacy toggles/paths after soak and finalize stabilization closure. | ACT-06 | Toggle/path retirement diff audit, cleanup PR package, final architecture-state documentation | Post-soak regression evidence bundle + incident review record |
 
 ---
 

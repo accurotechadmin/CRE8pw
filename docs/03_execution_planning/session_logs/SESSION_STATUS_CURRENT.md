@@ -1,7 +1,7 @@
 # CRE8 Docset Session Status (Current)
 
 _Status: active_
-_Last updated (UTC): 2026-04-28T22:46:25Z_
+_Last updated (UTC): 2026-04-28T22:50:22Z_
 
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
@@ -22,6 +22,8 @@ _Last updated (UTC): 2026-04-28T22:46:25Z_
 - ACT-07 blocked on ACT-06 completion plus post-soak duration completion, toggle/path retirement diff audit, and full regression evidence package (owner needed: Platform/SRE + Release Engineering leads).
 
 ## Recently completed slices
+- Activation backlog hardening — ACT-05/ACT-06/ACT-07 wording synchronized to deterministic evidence requirements; blocked status for ACT-06/ACT-07 unchanged pending production execution artifacts (2026-04-28)
+
 - Documentation synchronization batch — ACT-06/ACT-07 production canary and stabilization verification/traceability controls adopted (2026-04-28, status blocked pending runtime evidence)
 
 - ACT-05 — staging async projection activation requirements synchronized with lag/queue/dead-letter thresholds, rollback-switch execution evidence, and alert drill obligations (2026-04-28)
