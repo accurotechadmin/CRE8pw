@@ -124,3 +124,7 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UC-21 requires CQRS-lite closure checks that prove architecture, module ownership, UI runtime, data model, observability, health, SLO/SLI, acceptance matrix, traceability matrix, and ADR artifacts are synchronized in the same change set.
 - UX-01 requires UI runtime error-state parity tests that prove gateway and console UI state mappings remain aligned with canonical `401/403/404/409/422/429/500` API outcomes after PDP/BFF/CQRS architecture upgrades.
 - UX-02 requires resource-specific `404` parity tests that prove resolver `404` detail codes (`post_not_found`, `comment_not_found`, `key_not_found`, `keychain_not_found`) remain distinct from unmatched-template `404` (`route_not_found`) in both API behavior and UI route-state handling.
+
+
+- SEC-01 requires full authorization-boundary abuse regression execution for integrated PDP + BFF flows with deterministic deny mappings for wrong-surface replay, audience mismatch, token-type confusion, delegation escalation, key-class violations, and owner-only governance protections.
+- SEC-02 requires post-CQRS integrated device-binding + token confusion regression execution for command and query route families with canonical `error.code`/`details.code` parity for missing/invalid/mismatched device identity and cross-surface auth-context misuse.

@@ -74,8 +74,8 @@ _Last updated (UTC): 2026-04-28_
 | UC-21 | completed | 2026-04-28 | work@2026-04-28-uc-bff-bus-closure | CQRS-lite audit-first closure SSOT package completed with ADR-009 publication and decisions index/log synchronization; see `SESSION_LOG_2026-04-28_uc-bff-bus-closure.md` |
 | UX-01 | completed | 2026-04-28 | work@2026-04-28-ux-parity-404-semantics | UI runtime error-state parity re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ux-parity-404-semantics.md` |
 | UX-02 | completed | 2026-04-28 | work@2026-04-28-ux-parity-404-semantics | Resource-specific `404` semantics re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ux-parity-404-semantics.md` |
-| SEC-01 | not_started |  |  |  |
-| SEC-02 | not_started |  |  |  |
+| SEC-01 | completed | 2026-04-28 | work@2026-04-28-sec-abuse-token-matrix | Full auth-boundary abuse matrix closure synchronized in security abuse-case SSOT, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_sec-abuse-token-matrix.md` |
+| SEC-02 | completed | 2026-04-28 | work@2026-04-28-sec-abuse-token-matrix | Post-CQRS device-binding and token confusion matrix closure synchronized with deterministic deny-code parity requirements; see `SESSION_LOG_2026-04-28_sec-abuse-token-matrix.md` |
 | OPS-01 | not_started |  |  |  |
 | OPS-02 | not_started |  |  |  |
 | GOV-01 | not_started |  |  |  |
