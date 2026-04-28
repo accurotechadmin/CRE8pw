@@ -165,6 +165,13 @@ Canonical permission vocabulary:
 - `ARCH_PDP_ENABLED=false` keeps PDP decision logging enabled through `ARCH_POLICY_DECISION_LOG` for shadow comparison and release-gate mismatch analysis.
 - PDP integration for UA-16 through UA-18 preserves canonical envelope/error semantics; no protected handler executes on deny outcomes.
 
+## Canonical authorization enforcement boundary (UA-19/UA-20)
+- Route handlers do not contain independent authorization branches for permission, delegation-depth, key-class, device-binding, or owner-context decisions.
+- `PdpService` outcomes are the single authorization gate for protected gateway and console route families when `ARCH_PDP_ENABLED=true`.
+- Handler/service layers may enforce domain invariants only after PDP allow (for example resource existence and lifecycle transition invariants) and do not remap PDP deny semantics.
+- Any newly introduced handler-level authorization branch is a release-blocking defect and requires same-PR removal plus regression evidence update.
+- Canonical deny behavior remains envelope-first with stable `error.code` and `details.code` mappings from `ERROR_CODE_CATALOG.md`.
+
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.
 - Key rotation authority follows delegated envelope and governance policy rules.

@@ -13,6 +13,7 @@ Provide discoverable index of architectural and policy decisions that materially
 - ADR-004: Envelope-first API response standard (`records/ADR-004-envelope-first-api-standard.md`).
 - ADR-005: Release gating via verification + smoke + readiness controls (`records/ADR-005-release-gating-controls.md`).
 - ADR-006: PDP in-process as canonical authorization architecture (`records/ADR-006-pdp-in-process-canonical-authz.md`).
+- ADR-007: PDP canonicalization closure and no-ad-hoc-handler authorization policy (`records/ADR-007-pdp-canonicalization-closure.md`).
 
 ## Index contract
 Every ADR entry must include context, decision, consequences, and verification implications.

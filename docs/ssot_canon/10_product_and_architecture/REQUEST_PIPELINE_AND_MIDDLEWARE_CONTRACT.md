@@ -22,6 +22,8 @@ _Last updated (UTC): 2026-04-28_
 - PDP deny outcomes are authoritative and route handlers execute only after explicit policy allow.
 - PDP decision events carry `request_id`, `surface`, and `route_action` for audit and regression comparison.
 - Gateway read, gateway write, and console governance protected route families execute `PolicyDecisionMiddleware` with canonical context builders before handlers; deny outcomes short-circuit the pipeline with canonical envelopes.
+- Route handlers do not evaluate authorization policy logic already represented in PDP rule packs (permission, delegation, key-class, owner-context, device-binding).
+- Handler/service layers enforce domain invariants after PDP allow and preserve canonical error/detail-code mappings.
 
 ## Failure mapping baseline
 - Missing/invalid auth -> `401`

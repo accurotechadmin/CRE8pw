@@ -155,6 +155,15 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Any protected route with PDP deny outcome | Return canonical error envelope and do not execute handler/service mutation path |
 | `ARCH_PDP_ENABLED=false` rollout mode | PDP decision events remain emitted to `ARCH_POLICY_DECISION_LOG` for mismatch triage; enforcement remains disabled |
 
+## Canonical authorization source-of-truth table (UA-19/UA-20)
+
+| Condition | Required outcome |
+|---|---|
+| Protected request reaches handler with PDP deny effect | Forbidden state; release-blocking defect and immediate remediation required |
+| Handler contains branch that evaluates permission, delegation-depth, key-class, owner-context, or device-binding authorization policy | Forbidden state; remove branch and re-run authorization regression suite before release |
+| Handler enforces domain invariant after PDP allow (resource existence, lifecycle transition validity, data-shape constraints) | Allowed when invariant maps to canonical non-authorization error semantics |
+| Authorization deny mapping emitted from any layer other than PDP/error-mapper canonical path | Forbidden state; normalize to PDP deny mapping and update evidence |
+
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.
 2. Validate lifecycle status (active vs suspended/cancelled/revoked).
