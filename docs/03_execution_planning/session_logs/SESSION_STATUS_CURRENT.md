@@ -6,7 +6,7 @@ _Last updated (UTC): 2026-04-28_
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
-- UB: in_progress (15/18 complete: UB-01 through UB-15 complete)
+- UB: completed (18/18 complete: UB-01 through UB-18)
 - UC: not_started
 - UX: not_started
 - SEC: not_started
@@ -21,6 +21,9 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- UB-18 — BFF-by-surface closure package synchronized across architecture, UI-runtime, module-boundary, acceptance, verification, traceability, and ADR artifacts (2026-04-28)
+- UB-17 — legacy non-BFF orchestration paths retired from migrated protected routes with fail-closed dead-path audit obligations (2026-04-28)
+- UB-16 — surface-level route-to-BFF integration verification obligations synchronized for all migrated gateway and console route families (2026-04-28)
 - UB-15 — console BFF CSRF recovery-helper diagnostics contract synchronized with canonical CSRF detail-code preservation, deterministic hint taxonomy, and non-CSRF hint suppression verification obligations (2026-04-28)
 - UB-14 — console inventory short-TTL caching contract synchronized with owner-principal cache isolation and fail-closed cache bypass obligations (2026-04-28)
 - UB-13 — gateway read-cache seams synchronized with actor/scope-aware key derivation and mutation-triggered invalidation obligations (2026-04-28)
@@ -55,6 +58,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UB-16 — expand surface-level integration tests for route->BFF orchestration
-2. UB-17 — remove legacy orchestration paths superseded by BFF modules
-3. UB-18 — complete SSOT + ADR closure for BFF-by-surface architecture
+1. UC-01 — introduce command-bus interface and base command contract
+2. UC-02 — introduce query-bus interface and base query contract
+3. UC-03 — implement audit/domain-event core model and publisher contract

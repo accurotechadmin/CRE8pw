@@ -46,6 +46,8 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Console BFF inventory caching is enabled only for read-oriented owner governance listings and uses owner-principal-scoped cache keys.
 - Console BFF inventory caching enforces short TTL windows, performs fail-closed bypass on cache faults, and never reuses cached data across owner principals or auth contexts.
 - Console BFF CSRF recovery helpers are deterministic diagnostics overlays attached only after canonical CSRF deny outcomes (`csrf_token_missing`, `csrf_token_malformed`, `csrf_token_mismatch`) and do not alter canonical HTTP/envelope/detail-code semantics.
+- Surface integration suites verify each migrated route family executes through its canonical surface BFF orchestration path and does not bypass BFF components.
+- Legacy non-BFF orchestration paths are removed from protected route families; boot and runtime checks fail closed when superseded orchestration entrypoints are referenced.
 
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.

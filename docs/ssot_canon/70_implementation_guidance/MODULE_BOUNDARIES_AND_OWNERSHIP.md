@@ -52,6 +52,8 @@ _Last updated (UTC): 2026-04-28_
 - `src/Application/Bff/Console/Keychains/*` owns console keychain route-family orchestration (`GET/POST /console/api/keychains`, members list/mutate, resolve).
 - `src/Application/Bff/Console/Governance/*` owns console invite and key-governance route-family orchestration (`POST /console/api/invites`, `POST /console/api/keys`, `POST /console/api/keys/{keyId}/lifecycle`).
 - Surface BFF modules may call shared domain services and authorization outcomes but may not call each other directly.
+- Legacy orchestration classes or handler-level multi-step flow logic superseded by surface BFF modules are prohibited from protected route execution paths.
+- Build-time and integration verification checks fail closed on references from protected route handlers/controllers to superseded orchestration modules.
 - Route registration ownership is partitioned by `config/routes_gateway.php`, `config/routes_console.php`, and `config/routes_public.php`.
 - `config/routes_public.php` owns public/bootstrap route registration only; `config/routes_gateway.php` owns gateway route registration only; `config/routes_console.php` owns console route registration only.
 - Route registration partition checks are required at boot and fail closed on cross-surface registration drift.
