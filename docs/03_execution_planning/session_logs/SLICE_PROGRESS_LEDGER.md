@@ -82,7 +82,7 @@ _Last updated (UTC): 2026-04-28_
 | GOV-02 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Final integration ADR/log package synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
 | ACT-01 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Staging read-route PDP activation comparison governance synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
 | ACT-02 | completed | 2026-04-28 | work@2026-04-28-gov-adr-act-activation | Staging write/console PDP enforcement activation governance synchronized; see `SESSION_LOG_2026-04-28_gov-adr-act-activation.md` |
-| ACT-03 | not_started |  |  |  |
+| ACT-03 | completed | 2026-04-28 | work@2026-04-28-act-bff-staging-activation | Staged BFF split activation governance synchronized with deterministic parity and unresolved-delta disposition controls; see `SESSION_LOG_2026-04-28_act-bff-staging-activation.md` |
 | ACT-04 | not_started |  |  |  |
 | ACT-05 | not_started |  |  |  |
 | ACT-06 | not_started |  |  |  |
