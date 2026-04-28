@@ -7,10 +7,10 @@ _Last updated (UTC): 2026-04-28_
 |---|---|---|---|---|
 | U0-01 | not_started |  |  |  |
 | U0-02 | not_started |  |  |  |
-| U0-03 | not_started |  |  |  |
+| U0-03 | completed | 2026-04-28 | pending-current-session-commit | Added R-008/R-009/R-010 in `RISK_REGISTER.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
 | U0-04 | not_started |  |  |  |
-| U0-05 | not_started |  |  |  |
-| U0-06 | not_started |  |  |  |
+| U0-05 | completed | 2026-04-28 | pending-current-session-commit | Added `ARCH_*` feature-flag contract in `CONFIGURATION_ENVIRONMENT_CONTRACT.md`; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
+| U0-06 | completed | 2026-04-28 | pending-current-session-commit | Added baseline CI gate requirements in `VERIFICATION_STRATEGY.md` and contribution workflow; see session log `SESSION_LOG_2026-04-28_u0-risk-config-ci.md` |
 | U0-07 | not_started |  |  |  |
 | U0-08 | not_started |  |  |  |
 | UA-01 | not_started |  |  |  |

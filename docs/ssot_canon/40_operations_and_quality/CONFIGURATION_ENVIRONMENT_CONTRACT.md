@@ -1,12 +1,12 @@
 # Configuration and Environment Contract (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
 ## Purpose
-Define the canonical runtime environment-variable contract, default policy values, and profile hardening constraints required for deterministic CRE8 boot behavior.
+Define the canonical runtime environment-variable contract, default policy values, and profile hardening constraints required for deterministic boot behavior for CRE8: the Credential Registry Engine.
 
 ## Required environment variables
 - `APP_ENV` (`local|stage|prod`)
@@ -31,6 +31,11 @@ Define the canonical runtime environment-variable contract, default policy value
 - `JWT_DELEGATION_TTL_SECONDS` (default: `300`)
 - `BOOT_EVIDENCE_PATH` (optional path for startup evidence JSON)
 - `OWNER_SIGNUP_MODE` (default: `invite_required`; allowed: `invite_required|open`)
+- `ARCH_PDP_ENABLED` (default: `false`; allowed: `true|false`)
+- `ARCH_BFF_SPLIT_ENABLED` (default: `false`; allowed: `true|false`)
+- `ARCH_CQRS_LITE_ENABLED` (default: `false`; allowed: `true|false`)
+- `ARCH_PROJECTION_ASYNC` (default: `false`; allowed: `true|false`)
+- `ARCH_POLICY_DECISION_LOG` (default: `true`; allowed: `true|false`)
 
 ## Profile hardening constraints
 - `APP_ENV` must be one of `local|stage|prod`.
@@ -42,6 +47,10 @@ Define the canonical runtime environment-variable contract, default policy value
 - Optional numeric policy variables must be positive integers.
 - `OWNER_SIGNUP_MODE=open` is allowed only when deployment explicitly accepts open owner bootstrap risk posture and documents controls in release evidence.
 - In `stage|prod`, private-key file paths must satisfy strict permission checks.
+- `ARCH_PROJECTION_ASYNC=true` requires `ARCH_CQRS_LITE_ENABLED=true`.
+- `ARCH_BFF_SPLIT_ENABLED=true` requires route-family parity validation evidence before `stage|prod` deployment.
+- `ARCH_PDP_ENABLED=true` requires decision-table conformance evidence and deny-detail-code parity evidence.
+- `ARCH_POLICY_DECISION_LOG=true` is mandatory in `stage|prod` while PDP rollout slices are incomplete.
 
 ## Key material source rules
 - `JWT_PRIVATE_KEY` and `JWT_PUBLIC_KEY` may be:
@@ -61,6 +70,7 @@ Environment values are mapped into:
 - `RateLimitPolicy`
 - `CorsPolicy`
 - `JwtPolicy`
+- `ArchitectureUpgradePolicy`
 
 Boot validation then performs:
 - profile safety checks,
