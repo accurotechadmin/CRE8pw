@@ -1,7 +1,7 @@
 # Roadmap and Milestones
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 ## Milestones
 - **M1 Foundation**: governance, index, contracts baseline complete.
@@ -21,6 +21,12 @@ _Last updated (UTC): 2026-04-22_
 - **M2**: all public/gateway/console route families implemented with contract + negative-path tests.
 - **M3**: abuse-case matrix automated, lifecycle + delegation decision-table conformance verified.
 - **M4**: readiness gates A/B/C/D green, release evidence template completed, rollback dry-run documented.
+
+
+## Architecture-upgrade rollout status
+- ACT-01 through ACT-05 are complete as of 2026-04-28 and their verification/traceability controls are synchronized.
+- ACT-06 and ACT-07 are blocked as of 2026-04-28 until production execution evidence is published by Platform/SRE and Release Engineering.
+- M4 closeout remains blocked until ACT-06 and ACT-07 evidence is attached to Gate D release artifacts and unresolved-delta ledgers are closed.
 
 ## Tracking rule
 Each milestone closeout must include: (1) evidence template, (2) traceability diff, (3) decision-log updates for policy changes.

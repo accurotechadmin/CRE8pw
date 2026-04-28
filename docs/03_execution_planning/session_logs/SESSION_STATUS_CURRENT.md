@@ -1,7 +1,7 @@
 # CRE8 Docset Session Status (Current)
 
 _Status: active_
-_Last updated (UTC): 2026-04-28_
+_Last updated (UTC): 2026-04-28T22:46:25Z_
 
 ## Overall completion by slice family
 - U0: completed (8/8 complete: U0-01 through U0-08)
@@ -12,17 +12,17 @@ _Last updated (UTC): 2026-04-28_
 - SEC: completed (2/2 complete: SEC-01 through SEC-02)
 - OPS: completed (2/2 complete: OPS-01 through OPS-02)
 - GOV: completed (2/2 complete: GOV-01 through GOV-02)
-- ACT: in_progress (5/7 complete: ACT-01 through ACT-05 complete; ACT-06 and ACT-07 in_progress pending runtime execution evidence)
+- ACT: blocked (5/7 complete: ACT-01 through ACT-05 complete; ACT-06 and ACT-07 blocked pending production runtime execution evidence)
 
 ## In-progress slices
-- ACT-06 — production canary activation sequencing controls and rollback-guard evidence requirements synchronized; runtime canary execution evidence pending.
-- ACT-07 — post-soak legacy toggle/path retirement stabilization controls synchronized; completion blocked on ACT-06 execution and soak outcomes.
+- None.
 
 ## Blocked slices + blockers + owner needed
-- ACT-07 completion blocked by ACT-06 runtime canary completion and soak evidence package (owner needed: Platform/SRE + Release Engineering leads).
+- ACT-06 blocked on production canary wave execution evidence (A then B then C), rollback-drill records per wave, and unresolved-delta disposition ledger closure (owner needed: Platform/SRE + Release Engineering leads).
+- ACT-07 blocked on ACT-06 completion plus post-soak duration completion, toggle/path retirement diff audit, and full regression evidence package (owner needed: Platform/SRE + Release Engineering leads).
 
 ## Recently completed slices
-- Documentation synchronization batch — ACT-06/ACT-07 production canary and stabilization verification/traceability controls adopted (2026-04-28, status remains in_progress pending runtime evidence)
+- Documentation synchronization batch — ACT-06/ACT-07 production canary and stabilization verification/traceability controls adopted (2026-04-28, status blocked pending runtime evidence)
 
 - ACT-05 — staging async projection activation requirements synchronized with lag/queue/dead-letter thresholds, rollback-switch execution evidence, and alert drill obligations (2026-04-28)
 - ACT-04 — staging CQRS sync-mode activation requirements synchronized with freshness/consistency, contract/security parity, and unresolved-delta disposition controls (2026-04-28)
@@ -31,6 +31,6 @@ _Last updated (UTC): 2026-04-28_
 - ACT-01 — staging PDP read-route comparison activation requirements synchronized with mismatch disposition governance and release-blocking unresolved delta policy (2026-04-28)
 - GOV-02 — final architecture-upgrade integration ADR/log package synchronized with activation governance ADR-010 and decision chronology updates (2026-04-28)
 ## Upcoming recommended batch
-1. Execute ACT-06 production canary waves (A then B then C) and attach rollback-drill evidence per wave.
+1. Execute ACT-06 production canary waves (A then B then C) and publish rollback-drill evidence per wave.
 2. Execute ACT-07 post-soak toggle/path retirement and publish stabilization regression evidence bundle.
-3. Run final integrated release-gate rehearsal focused on ACT evidence link integrity and rollback drills.
+3. Complete final integrated release-gate rehearsal focused on ACT evidence-link integrity and unresolved-delta closure governance.
