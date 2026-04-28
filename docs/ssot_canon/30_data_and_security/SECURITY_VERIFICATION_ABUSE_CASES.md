@@ -1,7 +1,7 @@
 # Security Verification and Abuse Cases (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -20,6 +20,14 @@ Expand security verification from high-level controls into explicit abuse-case t
 | Keychain nesting bypass | Insert keychain into keychain | Membership validation denies nested keychains | Keychain contract/security negative test |
 | Device-header bypass | Access gateway route without required device policy | Device policy denies missing/invalid header | Gateway authz tests for missing/invalid `X-Device-Id` |
 | Sensitive log leakage | Exfiltrate secrets via logs/errors | Redaction of token/secret/private key fields | Log redaction tests + sampling audit |
+
+
+## Architecture-upgrade hardening closure requirements
+- SEC-01 is complete only when the full authorization-boundary abuse matrix passes for integrated PDP + BFF-by-surface execution paths.
+- SEC-01 evidence includes deny-path assertions for wrong-surface replay, audience mismatch, token-type confusion, owner-only governance protection, delegation-bound violations, and key-class restriction enforcement.
+- SEC-02 is complete only when post-CQRS integrated device-binding and token confusion suites pass for command and query paths routed through canonical buses.
+- SEC-02 evidence includes deterministic canonical `error.code` and `details.code` parity assertions for missing/invalid/mismatched `X-Device-Id`, missing `device_id` claim, and gateway/console auth-context non-interchangeability.
+- Security signoff artifacts are mandatory and are linked from the current session log and slice progress ledger.
 
 ## Security test-pack requirements
 - Security suite must include both happy-path and abuse-path tests.

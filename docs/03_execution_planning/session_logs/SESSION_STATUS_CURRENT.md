@@ -9,7 +9,7 @@ _Last updated (UTC): 2026-04-28_
 - UB: completed (18/18 complete: UB-01 through UB-18)
 - UC: completed (21/21 complete: UC-01 through UC-21)
 - UX: completed (2/2 complete: UX-01 through UX-02)
-- SEC: not_started
+- SEC: completed (2/2 complete: SEC-01 through SEC-02)
 - OPS: not_started
 - GOV: not_started
 - ACT: not_started
@@ -21,6 +21,8 @@ _Last updated (UTC): 2026-04-28_
 - none recorded
 
 ## Recently completed slices
+- SEC-02 — post-CQRS device-binding and token-type confusion matrix closure synchronized across security abuse cases, verification strategy, and traceability matrix with deterministic deny-code parity requirements (2026-04-28)
+- SEC-01 — full auth-boundary abuse matrix closure synchronized across security abuse cases, verification strategy, and traceability matrix with integrated PDP+BFF enforcement scope (2026-04-28)
 - UX-02 — resource-specific `404` semantics re-validation synchronized across UI runtime, error catalog alignment constraints, acceptance matrix, verification strategy, and traceability mapping (2026-04-28)
 - UX-01 — UI runtime error-state parity re-validation synchronized across UI runtime, acceptance matrix, verification strategy, and traceability mapping (2026-04-28)
 - UC-21 — CQRS-lite audit-first closure package synchronized across architecture, module ownership, UI runtime, acceptance, verification, traceability, and ADR artifacts (2026-04-28)
@@ -81,6 +83,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. SEC-01 — re-run full auth-boundary abuse matrix after A+B migration with UX parity evidence attached
-2. SEC-02 — execute post-CQRS device-binding and token-type confusion matrix with deny-code stability checks
-3. OPS-01 — update smoke contracts to include projection health and boundary checks
+1. OPS-01 — update smoke contracts for integrated security-control and projection-health evidence requirements.
+2. OPS-02 — update readiness gates with explicit architecture-upgrade evidence package requirements.
+3. GOV-01 — execute program-level traceability closure review across U0/UA/UB/UC/UX/SEC slices.
