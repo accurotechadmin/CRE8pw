@@ -22,7 +22,7 @@ Defines principals, key classes, delegation bounds, keychain aggregation behavio
 ## Human-readable key class intent
 - `primary_author`: broad delegated authoring role that may mint descendants only within inherited envelope bounds.
 - `secondary_author`: constrained delegated authoring role with narrower mint authority and envelope-bound limits.
-- `use`: consumption/interaction role (for example feed read/comment where policy permits) and no mint authority.
+- `use`: consumption/interaction role (including feed-read and comment-create operations where policy permits) and no mint authority.
 - `keychain`: aggregate key principal for collaborative access, governed through owner-controlled membership and effective-resolution rules.
 
 ## Permission model (v1 allow-list)
@@ -59,6 +59,7 @@ Canonical permission vocabulary:
 - **Console (`/console/api/*`)**: owner JWT (`typ=owner`, console audience).
 - **Gateway (`/api/*`)**: key JWT (`typ=key`, gateway audience) + device guard where required.
 - **Keychain management routes** are console-governed and require owner JWT plus `keychains:manage` policy authorization.
+- **Owner-only console governance operations** are evaluated by dedicated owner rule packs in the PDP registry and deny non-owner actors before handler execution.
 - All protected routes evaluate authorization through the PDP decision contract (`DecisionContext` -> `Decision`) and route handlers execute only after an explicit allow outcome.
 
 ## Canonical PDP decision contract
@@ -79,8 +80,11 @@ Canonical permission vocabulary:
 
 ## Policy context builders
 - **Owner context builder** produces normalized `DecisionContext` values for console routes and enforces owner-token invariants before policy evaluation.
+- **Key context builder** produces normalized `DecisionContext` values for gateway routes, including key lineage, effective delegation envelope inputs, and device-claim context.
 - **Route-action resolver** maps each route to one canonical `route_action` used by policy rules and audit evidence.
-- Route handlers and service methods MUST NOT infer policy context ad hoc; they consume normalized context produced by builders/resolvers.
+- `PdpService` evaluates normalized context through `RuleRegistry` and returns authoritative `Decision` outcomes for all protected routes.
+- `RuleRegistry` publishes deterministic rule ordering and surface-scoped rule packs, including owner-only console governance rules.
+- Route handlers and service methods MUST NOT infer policy context ad hoc; they consume normalized context produced by builders/resolvers and PDP outcomes.
 
 ## Lifecycle authority
 - Owners can issue/revoke/suspend/cancel keys under governance policy.

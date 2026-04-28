@@ -60,6 +60,15 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Inactive/revoked member contribution | Excluded entirely |
 | Membership change | Recompute effective snapshot atomically with mutation |
 
+## Owner-only console operation table
+
+| Condition | Required outcome |
+|---|---|
+| Console route is governance-scoped and actor is owner principal with valid owner token | Allow subject to route-specific permissions and obligations |
+| Console route is governance-scoped and actor is key principal token | Deny (`403 forbidden`, detail `owner_context_required`) |
+| Console route is governance-scoped and owner token has wrong audience/type | Deny (`401 auth_invalid`, detail `token_type_or_audience_invalid`) |
+| Console write route requires CSRF obligation and obligation is unsatisfied | Deny (`403 forbidden`, detail `csrf_required`) |
+
 ## Lifecycle action authority table
 
 | Actor | Action | Allowed? | Conditions |
@@ -70,6 +79,16 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | admin (owner-delegated) | moderation actions | yes | scoped by owner delegation policy |
 | admin | root governance policy changes | no | owner-only |
 
+## Key-context normalization table (gateway)
+
+| Condition | Required outcome |
+|---|---|
+| Key JWT has valid `typ=key`, gateway audience, and active lineage | Gateway `DecisionContext` includes normalized key claims and lineage inputs |
+| Effective delegation envelope resolves for key principal | `DecisionContext` includes canonical permission/scope envelope inputs for PDP evaluation |
+| Keychain actor resolves active membership snapshot | `DecisionContext` includes keychain effective permission/scope snapshot and source lineage references |
+| Gateway route requires device binding and `device_id` claim/header are both present | `DecisionContext` includes normalized device binding claims for downstream obligation evaluation |
+| Key claims cannot be normalized (missing lineage, invalid envelope inputs, malformed identifiers) | Deny (`401 auth_invalid` or `422 validation_failed`) before rule-family execution |
+
 ## Runtime decision order (authoritative)
 1. Validate token type/audience/surface binding.
 2. Validate lifecycle status (active vs suspended/cancelled/revoked).
@@ -78,7 +97,8 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 5. Validate permission string allow-list.
 6. Validate scope coverage.
 7. Validate route-specific policy guards (device/CSRF/use-key constraints) and emit obligations.
-8. Execute operation and emit auditable policy decision event linked by `request_id` and `route_action`.
+8. Evaluate `PdpService` using deterministic `RuleRegistry` ordering and collect mandatory obligations.
+9. Execute operation and emit auditable policy decision event linked by `request_id` and `route_action`.
 
 ## Device-binding decision table
 

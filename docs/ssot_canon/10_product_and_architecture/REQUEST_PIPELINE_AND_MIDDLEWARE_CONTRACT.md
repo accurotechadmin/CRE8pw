@@ -8,8 +8,8 @@ _Last updated (UTC): 2026-04-28_
 2. Security headers / CSP policy
 3. CORS / content-type normalization
 4. Surface-specific authentication guard
-5. Route-action resolution + policy-context builder
-6. PDP policy decision guard (deny short-circuit + obligation handoff)
+5. Route-action resolution + policy-context builders (owner or key by surface)
+6. PDP policy decision guard (`PdpService` + `RuleRegistry`; deny short-circuit + obligation handoff)
 7. Validation guards
 8. Rate limiting / abuse controls
 9. Route handler execution
@@ -32,5 +32,5 @@ _Last updated (UTC): 2026-04-28_
 ## 404 resource-resolution policy
 - The request pipeline and middleware stack MUST emit resource-specific `details.code` values for entity misses.
 - `route_not_found` is reserved strictly for unmatched route templates at the router boundary.
-- For matched routes where a target resource is absent, handlers/services MUST emit specific detail codes aligned to `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (for example: `post_not_found`, `comment_not_found`, `key_not_found`, `keychain_not_found`).
+- For matched routes where a target resource is absent, handlers/services MUST emit specific detail codes aligned to `docs/ssot_canon/20_contracts/ERROR_CODE_CATALOG.md` (including `post_not_found`, `comment_not_found`, `key_not_found`, and `keychain_not_found`).
 - UI runtime contracts depend on resource-specific 404 detail codes to drive deterministic `not_found` substates and recovery actions.
