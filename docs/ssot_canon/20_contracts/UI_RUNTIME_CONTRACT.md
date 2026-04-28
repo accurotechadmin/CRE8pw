@@ -27,6 +27,9 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - Console UI routes call console API endpoints orchestrated by Console BFF modules.
 - UI runtime behavior remains contract-driven by canonical status, envelope, and detail-code semantics regardless of internal BFF orchestration.
 - UI parity validation treats BFF internals as non-authoritative; API contract and envelope semantics are authoritative.
+- Gateway feed route states are orchestrated by Gateway BFF feed flow components without changing canonical response semantics for `GET /api/feed`.
+- Gateway post route states are orchestrated by Gateway BFF posts flow components without changing canonical response semantics for `POST /api/posts`, `GET/PATCH /api/posts/{postId}`, and `POST /api/posts/{postId}/flags`.
+- Gateway comments route states are orchestrated by Gateway BFF comments flow components without changing canonical response semantics for `GET/POST /api/posts/{postId}/comments`.
 
 ## Surface error-state mapper contract
 - Gateway BFF error-state mapper preserves canonical envelope semantics and canonical `details.code` values for all gateway responses.

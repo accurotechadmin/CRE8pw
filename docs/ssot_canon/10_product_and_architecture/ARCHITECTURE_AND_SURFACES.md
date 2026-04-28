@@ -26,6 +26,13 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - `config/routes_console.php` registers console route families only (`/console/api/*`).
 - Boot fails closed when a route is registered in the wrong surface route file or when a protected-route family is missing from its canonical surface route file.
 
+## Gateway BFF route-family orchestration contract
+- `GET /api/feed` is orchestrated by Gateway BFF feed-read flow components.
+- `POST /api/posts`, `GET /api/posts/{postId}`, `PATCH /api/posts/{postId}`, and `POST /api/posts/{postId}/flags` are orchestrated by Gateway BFF posts flow components.
+- `GET /api/posts/{postId}/comments` and `POST /api/posts/{postId}/comments` are orchestrated by Gateway BFF comments flow components.
+- Gateway controllers invoke Gateway BFF route-family orchestration and do not call domain services directly for multi-step flow composition.
+- Gateway BFF route-family orchestration preserves canonical API envelope semantics, canonical error/detail-code mappings, and gateway/console auth-context non-interchangeability constraints.
+
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.
 - Authorization decision logic is centralized and table-driven.
