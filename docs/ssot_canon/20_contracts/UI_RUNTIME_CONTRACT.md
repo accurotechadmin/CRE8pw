@@ -28,6 +28,13 @@ Capture implementation-grade SPA runtime conventions that are required to delive
 - UI runtime behavior remains contract-driven by canonical status, envelope, and detail-code semantics regardless of internal BFF orchestration.
 - UI parity validation treats BFF internals as non-authoritative; API contract and envelope semantics are authoritative.
 
+## Surface error-state mapper contract
+- Gateway BFF error-state mapper preserves canonical envelope semantics and canonical `details.code` values for all gateway responses.
+- Gateway BFF error-state mapper translates canonical error semantics into gateway UI route-state transitions without introducing non-canonical error codes.
+- Console BFF error-state mapper preserves canonical envelope semantics and canonical `details.code` values for all console responses.
+- Console BFF error-state mapper attaches deterministic UI-runtime-compatible recovery hints for owner-governance flows (including CSRF/session recovery), while preserving canonical HTTP/envelope/detail-code behavior.
+- Gateway and console error-state mappers are isolated by surface and do not share surface-specific rendering hints.
+
 ## Route-state runtime model
 Canonical required states:
 - `idle`

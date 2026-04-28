@@ -83,3 +83,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UB-01 requires route-ownership verification that gateway controllers map only to `/api/*` route families and console controllers map only to `/console/api/*` route families.
 - UB-02 requires BFF-wiring tests that verify gateway controllers depend on Gateway BFF services and console controllers depend on Console BFF services without cross-surface BFF calls.
 - UB-03 requires DTO contract tests that verify gateway DTO/view-model schemas and console DTO/view-model schemas are isolated by surface and preserve canonical envelope/error semantics.
+- UB-04 requires route-boot parity tests that prove `config/routes_public.php`, `config/routes_gateway.php`, and `config/routes_console.php` register only their canonical surface route families and fail closed on cross-surface registration drift.
+- UB-05 requires gateway error-mapper regression tests that prove canonical HTTP/envelope/detail-code preservation for gateway deny/error flows and stable gateway UI state transitions.
+- UB-06 requires console error-mapper parity tests that prove canonical HTTP/envelope/detail-code preservation with deterministic UI-runtime-compatible recovery hints for owner-governance error flows.

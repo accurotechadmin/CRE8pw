@@ -19,11 +19,19 @@ CRE8 is a multi-surface HTTP application with three primary runtime surfaces:
 
 Gateway controllers call Gateway BFF modules only. Console controllers call Console BFF modules only. Shared domain services remain surface-neutral and are the only allowed cross-surface integration seam.
 
+## Route registration partition contract
+- Route registration is partitioned into `config/routes_public.php`, `config/routes_gateway.php`, and `config/routes_console.php`.
+- `config/routes_public.php` registers public/bootstrap routes only (`/`, `/health`, `/.well-known/jwks.json`, `/ui/*`, `/console/owners`, auth endpoints).
+- `config/routes_gateway.php` registers gateway route families only (`/api/*`).
+- `config/routes_console.php` registers console route families only (`/console/api/*`).
+- Boot fails closed when a route is registered in the wrong surface route file or when a protected-route family is missing from its canonical surface route file.
+
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.
 - Authorization decision logic is centralized and table-driven.
 - Data invariants are enforced both in service layer and schema constraints.
 - Surface DTO/view-model contracts are isolated by surface; gateway DTOs are not reused in console BFF flows and console DTOs are not reused in gateway BFF flows.
+- Gateway and console error-state mappers are surface-scoped. Gateway mapper preserves canonical envelope/detail-code semantics for delegated-key UX. Console mapper preserves canonical envelope/detail-code semantics and exposes UI-runtime-compatible recovery hints for owner-governance UX.
 
 
 ## Surface enablement matrix

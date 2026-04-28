@@ -68,3 +68,9 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 - Authorization deny responses are produced through the canonical PDP decision path and error mapper only.
 - Handlers and service methods do not introduce alternate authorization detail codes outside this catalog.
 - Any new authorization deny detail code requires same-PR updates to `AUTHORIZATION_AND_DELEGATION_SPEC.md`, `AUTHORIZATION_DECISION_TABLES.md`, `TRACEABILITY_MATRIX.md`, and verification evidence.
+
+## Surface error-mapper invariants
+- Gateway error-state mapper preserves canonical HTTP status, `error.code`, and `details.code` for gateway responses.
+- Console error-state mapper preserves canonical HTTP status, `error.code`, and `details.code` for console responses.
+- Console recovery hints are additive UI diagnostics only; hints do not alter canonical envelope code semantics.
+- Gateway and console error-state mappers do not introduce surface-specific detail codes outside this catalog.
