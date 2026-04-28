@@ -57,9 +57,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-04 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Observability event sink redaction safeguard contract synchronized across architecture/module/observability/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
 | UC-05 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Transactional command boundary contract synchronized with atomic write+event append rollback semantics; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
 | UC-06 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Moderation and key-lifecycle command-handler canonical contract synchronized with PDP-gated high-audit mutation path requirements; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
-| UC-07 | not_started |  |  |  |
-| UC-08 | not_started |  |  |  |
-| UC-09 | not_started |  |  |  |
+| UC-07 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Content command-handler ownership synchronized for gateway create/edit/flag/comment mutation routes with verification and traceability updates; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
+| UC-08 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Keychain membership command-handler ownership synchronized for console membership mutation routes with invariant-deny stability obligations; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
+| UC-09 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Gateway read query-handler ownership synchronized for feed/post/comments reads with resource-specific `404` detail-code parity obligations; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
 | UC-10 | not_started |  |  |  |
 | UC-11 | not_started |  |  |  |
 | UC-12 | not_started |  |  |  |

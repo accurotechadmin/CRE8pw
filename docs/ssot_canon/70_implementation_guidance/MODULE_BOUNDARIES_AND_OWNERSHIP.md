@@ -71,6 +71,9 @@ _Last updated (UTC): 2026-04-28_
 - `src/Infrastructure/Observability/MonologEventSink.php` owns sink-channel delivery and mandatory redaction of `token`, `secret`, and `private_key` fields before log emission.
 - `src/Application/Command/TransactionalCommandExecutor.php` owns atomic write+event boundary enforcement for command execution and fails closed when event append cannot be committed.
 - `src/Application/Command/Handler/ModerationCommandHandler.php` and `src/Application/Command/Handler/KeyLifecycleCommandHandler.php` own canonical command-path orchestration for moderation and key lifecycle mutations.
+- `src/Application/Command/Handler/CreatePostCommandHandler.php`, `EditPostCommandHandler.php`, `FlagPostCommandHandler.php`, and `CreateCommentCommandHandler.php` own canonical command-path orchestration for gateway content mutation routes.
+- `src/Application/Command/Handler/AddKeychainMemberCommandHandler.php` and `RemoveKeychainMemberCommandHandler.php` own canonical command-path orchestration for console keychain membership mutation routes.
+- `src/Application/Query/Handler/GetFeedQueryHandler.php`, `GetPostDetailQueryHandler.php`, and `GetPostCommentsQueryHandler.php` own canonical query-path orchestration for gateway read route families.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 
 ## Extension seam ownership map

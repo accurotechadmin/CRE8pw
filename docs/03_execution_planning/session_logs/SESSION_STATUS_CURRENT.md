@@ -7,7 +7,7 @@ _Last updated (UTC): 2026-04-28_
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
-- UC: in_progress (6/21 complete: UC-01 through UC-06)
+- UC: in_progress (9/21 complete: UC-01 through UC-09)
 - UX: not_started
 - SEC: not_started
 - OPS: not_started
@@ -15,14 +15,15 @@ _Last updated (UTC): 2026-04-28_
 - ACT: not_started
 
 ## In-progress slices
-- UC-07
-- UC-08
-- UC-09
+- none recorded
 
 ## Blocked slices + blockers + owner needed
 - none recorded
 
 ## Recently completed slices
+- UC-09 — gateway read query-handler canonical ownership synchronized for feed/post/comments read routes with resource-specific `404` detail-code stability and route-parity verification obligations (2026-04-28)
+- UC-08 — keychain membership command-handler canonical ownership synchronized for membership mutation routes with invariant deny-path preservation and verification/traceability coverage (2026-04-28)
+- UC-07 — gateway content command-handler canonical ownership synchronized for create/edit/flag/comment mutation routes with stable `403/404/422` detail-code semantics (2026-04-28)
 - UC-06 — moderation and key-lifecycle command-handler canonical ownership synchronized with PDP-gated high-audit mutation path requirements and verification/traceability coverage (2026-04-28)
 - UC-05 — transactional command boundary contract synchronized with atomic write+event append rollback semantics and verification/traceability coverage (2026-04-28)
 - UC-04 — observability sink redaction safeguards synchronized with deterministic sink-level redaction and fallback delivery metadata requirements (2026-04-28)
@@ -66,6 +67,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UC-07 — add command handlers for content creation/edit/flag/comment routes
-2. UC-08 — add command handlers for keychain membership operations
-3. UC-09 — add initial query handlers for feed/post/comments/read families
+1. UC-10 — add query handlers for console listings/keychain resolve flows
+2. UC-11 — implement projection updater and projector contracts
+3. UC-12 — add feed ordering projection model and projector
