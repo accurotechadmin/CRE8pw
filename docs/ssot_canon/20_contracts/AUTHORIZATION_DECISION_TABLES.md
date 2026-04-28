@@ -41,15 +41,17 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | use key | no | no | no | no |
 | keychain key | no | no | no | no |
 
-## Keychain membership admission table
+## Keychain membership invariant decision table
 
-| Candidate member class | Allowed? | Notes |
-|---|---|---|
-| `primary_author` | yes | must be active and not revoked/suspended/cancelled |
-| `secondary_author` | yes | same activity constraints |
-| `use` | yes | same activity constraints |
-| `keychain` | no | nested keychains forbidden |
-| owner principal | no | owner credentials are not keychain members |
+| Condition | Required outcome |
+|---|---|
+| Candidate class is `primary_author`, `secondary_author`, or `use` and candidate lifecycle is active | Allow if all other checks pass |
+| Candidate class is `keychain` | Deny (`403 forbidden`, detail `keychain_nested_membership_forbidden`) |
+| Candidate class is `master` | Deny (`403 forbidden`, detail `keychain_member_class_forbidden`) |
+| Candidate actor is owner principal credential | Deny (`403 forbidden`, detail `keychain_member_class_forbidden`) |
+| Keychain membership count is already `50` before add | Deny (`403 forbidden`, detail `keychain_membership_limit_exceeded`) |
+| Candidate lifecycle is suspended/cancelled/revoked | Deny (`403 forbidden`, detail `member_key_inactive`) |
+| Membership mutation succeeds | Recompute effective snapshot atomically and emit audit event bound to `request_id` |
 
 ## Keychain effective permission/scope resolution
 
@@ -69,6 +71,17 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Console route is governance-scoped and actor is key principal token | Deny (`403 forbidden`, detail `owner_context_required`) |
 | Console route is governance-scoped and owner token has wrong audience/type | Deny (`401 auth_invalid`, detail `token_type_or_audience_invalid`) |
 | Console write route requires CSRF obligation and obligation is unsatisfied | Deny (`403 forbidden`, detail `csrf_required`) |
+
+
+## Master-key SYSADMIN boundary decision table
+
+| Condition | Required outcome |
+|---|---|
+| Actor is owner principal, route is SYSADMIN-designated console governance operation, and master-key policy checks pass | Allow subject to route-specific obligations |
+| Actor is key principal or keychain principal for master-key governance route | Deny (`403 forbidden`, detail `master_key_owner_required`) |
+| Route action is gateway and token class is `master` | Deny (`403 forbidden`, detail `master_key_gateway_forbidden`) |
+| Mint request targets `master` class and issuer is non-owner actor | Deny (`403 forbidden`, detail `master_key_owner_required`) |
+| Membership request targets adding `master` key to keychain | Deny (`403 forbidden`, detail `keychain_member_class_forbidden`) |
 
 ## Lifecycle action authority table
 
@@ -128,7 +141,8 @@ Provide explicit policy truth tables for delegation, keychain resolution, and li
 | Gateway route has JWT `device_id` claim matching `X-Device-Id` | Allow if all other checks pass |
 | `X-Device-Id` missing | Deny (`422 validation_failed`, `device_id_missing`) |
 | `X-Device-Id` malformed | Deny (`422 validation_failed`, `device_id_invalid_format`) |
-| JWT `device_id` missing/mismatch relative to header | Deny (`401 auth_invalid`, `token_device_mismatch`) |
+| JWT `device_id` missing relative to route that requires device binding | Deny (`401 auth_invalid`, `token_device_claim_missing`) |
+| JWT/header `device_id` mismatch | Deny (`401 auth_invalid`, `token_device_mismatch`) |
 
 ## Human interpretation notes (non-normative)
 - Delegation flexibility exists, but only within strict parent bounds (subset/depth/expiry).

@@ -22,9 +22,9 @@ _Last updated (UTC): 2026-04-28_
 | UA-07 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Gateway route-action permission rule pack synchronized across authorization spec, decision tables, verification strategy, and traceability matrix; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
 | UA-08 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Delegation subset/depth/expiry rule family synchronized with deterministic deny mappings and verification obligations; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
 | UA-09 | completed | 2026-04-28 | work@2026-04-28-ua-gateway-delegation-use-rules | Use-key mutation restriction rule family synchronized with canonical policy deny detail-codes and traceability coverage; see `SESSION_LOG_2026-04-28_ua-gateway-delegation-use-rules.md` |
-| UA-10 | not_started |  |  |  |
-| UA-11 | not_started |  |  |  |
-| UA-12 | not_started |  |  |  |
+| UA-10 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Keychain membership invariant PDP rule family synchronized with canonical deny mappings and verification obligations; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
+| UA-11 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Master-key SYSADMIN boundary rule family synchronized across authorization, master-key, error-catalog, and traceability artifacts; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
+| UA-12 | completed | 2026-04-28 | work@2026-04-28-ua-keychain-master-device-rules | Device-binding PDP deny outcomes synchronized including missing-claim/mismatch mapping and verification coverage; see `SESSION_LOG_2026-04-28_ua-keychain-master-device-rules.md` |
 | UA-13 | not_started |  |  |  |
 | UA-14 | not_started |  |  |  |
 | UA-15 | not_started |  |  |  |

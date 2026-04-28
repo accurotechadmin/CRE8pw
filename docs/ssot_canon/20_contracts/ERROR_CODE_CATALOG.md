@@ -1,7 +1,7 @@
 # Error Code Catalog (SSOT)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-22_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -9,8 +9,8 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 | HTTP | code | Typical detail codes | Retryability | UI behavior |
 |---|---|---|---|---|
 | 400 | bad_request | malformed_json, non_object_json, invalid_argument | no | show request fix guidance |
-| 401 | auth_required / auth_invalid | missing_bearer, token_invalid, token_type_invalid, token_audience_invalid, token_expired, token_device_mismatch | conditional (after re-auth) | clear session, route to login |
-| 403 | forbidden | csrf_token_missing, csrf_token_malformed, csrf_token_mismatch, permission_denied, use_key_restricted, comments_disabled, invite_code_invalid | no | show policy explanation |
+| 401 | auth_required / auth_invalid | missing_bearer, token_invalid, token_type_invalid, token_audience_invalid, token_expired, token_device_claim_missing, token_device_mismatch | conditional (after re-auth) | clear session, route to login |
+| 403 | forbidden | csrf_token_missing, csrf_token_malformed, csrf_token_mismatch, permission_denied, use_key_restricted, comments_disabled, invite_code_invalid, owner_context_required, use_key_mutation_forbidden, keychain_nested_membership_forbidden, keychain_member_class_forbidden, keychain_membership_limit_exceeded, member_key_inactive, master_key_owner_required, master_key_gateway_forbidden | no | show policy explanation |
 | 404 | not_found | post_not_found, comment_not_found, key_not_found, keychain_not_found | no | show not found panel |
 | 405 | method_not_allowed | route_method_not_allowed | no | show unsupported-action guidance |
 | 415 | unsupported_media_type | content_type_unsupported | no | show content-type guidance |
@@ -39,15 +39,23 @@ Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TE
 | Device guard | `device_id_missing` | `422 validation_failed` |
 | Device guard | `device_id_invalid_format` | `422 validation_failed` |
 | Rate limit | `rate_limit_exceeded` | `429 rate_limited` |
-| Gateway policy | `use_key_post_create_forbidden` | `403 forbidden` |
-| Gateway policy | `use_key_key_mutation_forbidden` | `403 forbidden` |
 | Token policy | `token_type_invalid` | `401 auth_invalid` |
 | Token policy | `token_audience_invalid` | `401 auth_invalid` |
+| Token policy | `token_device_claim_missing` | `401 auth_invalid` |
 | Token policy | `token_device_mismatch` | `401 auth_invalid` |
 | Domain resolver | `post_not_found` | `404 not_found` |
 | Domain resolver | `comment_not_found` | `404 not_found` |
 | Domain resolver | `key_not_found` | `404 not_found` |
 | Domain resolver | `keychain_not_found` | `404 not_found` |
+| Gateway/Console policy | `owner_context_required` | `403 forbidden` |
+| Gateway policy | `use_key_mutation_forbidden` | `403 forbidden` |
+| Keychain policy | `keychain_nested_membership_forbidden` | `403 forbidden` |
+| Keychain policy | `keychain_member_class_forbidden` | `403 forbidden` |
+| Keychain policy | `keychain_membership_limit_exceeded` | `403 forbidden` |
+| Keychain policy | `member_key_inactive` | `403 forbidden` |
+| Master-key policy | `master_key_owner_required` | `403 forbidden` |
+| Master-key policy | `master_key_gateway_forbidden` | `403 forbidden` |
+
 
 ## Mapping requirements
 - Every error response must include `error.request_id`.
