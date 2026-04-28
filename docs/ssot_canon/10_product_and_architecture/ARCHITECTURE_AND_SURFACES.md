@@ -56,6 +56,9 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - `src/Application/Query/QueryBus.php` is the canonical read-path dispatch boundary for gateway and console read flows.
 - `src/Application/Audit/DomainEvent.php` defines the canonical event envelope emitted for command outcomes and security-significant runtime decisions.
 - `src/Application/Audit/EventPublisher.php` is the canonical publication boundary and emits events with stable request-correlation fields.
+- `src/Infrastructure/Observability/MonologEventSink.php` is the canonical sink adapter for `EventPublisher` and enforces deterministic redaction before event delivery to audit channels.
+- Command execution for write mutations is transactional: command-side state mutation and corresponding `DomainEvent` append succeed or fail atomically.
+- Command handlers for moderation and key lifecycle operations are the canonical high-audit mutation path and execute only after PDP allow outcomes and surface-auth obligations are satisfied.
 - Command and query contracts preserve envelope-first HTTP semantics and do not alter gateway/console auth-context non-interchangeability.
 - Event payloads include `event_name`, `timestamp_utc`, `request_id`, `surface`, `actor_principal_id` (nullable when unauthenticated), `result`, and `detail_code` (when failure).
 

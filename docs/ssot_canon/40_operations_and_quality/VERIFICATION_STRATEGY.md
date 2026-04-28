@@ -102,3 +102,6 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - UC-01 requires command-bus dispatch tests that prove base command contract invariants, deterministic command-handler resolution, and fail-closed behavior on unknown command types.
 - UC-02 requires query-bus dispatch tests that prove base query contract invariants, deterministic query-handler resolution, and fail-closed behavior on unknown query types.
 - UC-03 requires domain-event shape tests that prove `DomainEvent` and `EventPublisher` emit required canonical fields and preserve request-correlation metadata across success and failure outcomes.
+- UC-04 requires observability sink tests that prove deterministic redaction for `token`, `secret`, and `private_key` fields, plus canonical event-shape preservation after sink serialization.
+- UC-05 requires transactional command-boundary tests that prove command-state writes and `DomainEvent` append operations commit atomically and roll back together on event-append failure paths.
+- UC-06 requires moderation and key-lifecycle command-handler integration tests that prove canonical command-path execution, PDP/obligation gating preservation, and stable envelope/detail-code behavior on success and deny outcomes.

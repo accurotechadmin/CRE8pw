@@ -68,6 +68,9 @@ _Last updated (UTC): 2026-04-28_
 - Base command and query abstractions define immutable payload boundaries and deterministic handler resolution.
 - `src/Application/Audit/DomainEvent.php` owns canonical event shape fields required by observability and audit streams.
 - `src/Application/Audit/EventPublisher.php` owns event publication guarantees and request-correlation propagation.
+- `src/Infrastructure/Observability/MonologEventSink.php` owns sink-channel delivery and mandatory redaction of `token`, `secret`, and `private_key` fields before log emission.
+- `src/Application/Command/TransactionalCommandExecutor.php` owns atomic write+event boundary enforcement for command execution and fails closed when event append cannot be committed.
+- `src/Application/Command/Handler/ModerationCommandHandler.php` and `src/Application/Command/Handler/KeyLifecycleCommandHandler.php` own canonical command-path orchestration for moderation and key lifecycle mutations.
 - Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 
 ## Extension seam ownership map

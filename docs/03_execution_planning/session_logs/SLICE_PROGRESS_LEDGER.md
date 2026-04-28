@@ -54,9 +54,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-01 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | CommandBus/base command contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
 | UC-02 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | QueryBus/base query contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
 | UC-03 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | DomainEvent/EventPublisher core contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
-| UC-04 | not_started |  |  |  |
-| UC-05 | not_started |  |  |  |
-| UC-06 | not_started |  |  |  |
+| UC-04 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Observability event sink redaction safeguard contract synchronized across architecture/module/observability/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
+| UC-05 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Transactional command boundary contract synchronized with atomic write+event append rollback semantics; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
+| UC-06 | completed | 2026-04-28 | work@2026-04-28-uc-observability-transactional-handlers | Moderation and key-lifecycle command-handler canonical contract synchronized with PDP-gated high-audit mutation path requirements; see `SESSION_LOG_2026-04-28_uc-observability-transactional-handlers.md` |
 | UC-07 | not_started |  |  |  |
 | UC-08 | not_started |  |  |  |
 | UC-09 | not_started |  |  |  |

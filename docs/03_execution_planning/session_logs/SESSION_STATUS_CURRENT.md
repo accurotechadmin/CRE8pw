@@ -7,7 +7,7 @@ _Last updated (UTC): 2026-04-28_
 - U0: completed (8/8 complete: U0-01 through U0-08)
 - UA: completed (20/20 complete: UA-01 through UA-20)
 - UB: completed (18/18 complete: UB-01 through UB-18)
-- UC: in_progress (3/21 complete: UC-01 through UC-03)
+- UC: in_progress (6/21 complete: UC-01 through UC-06)
 - UX: not_started
 - SEC: not_started
 - OPS: not_started
@@ -15,14 +15,17 @@ _Last updated (UTC): 2026-04-28_
 - ACT: not_started
 
 ## In-progress slices
-- UC-04
-- UC-05
-- UC-06
+- UC-07
+- UC-08
+- UC-09
 
 ## Blocked slices + blockers + owner needed
 - none recorded
 
 ## Recently completed slices
+- UC-06 — moderation and key-lifecycle command-handler canonical ownership synchronized with PDP-gated high-audit mutation path requirements and verification/traceability coverage (2026-04-28)
+- UC-05 — transactional command boundary contract synchronized with atomic write+event append rollback semantics and verification/traceability coverage (2026-04-28)
+- UC-04 — observability sink redaction safeguards synchronized with deterministic sink-level redaction and fallback delivery metadata requirements (2026-04-28)
 - UC-03 — audit/domain-event core model and `EventPublisher` contract synchronized across architecture/module/observability/verification/traceability artifacts (2026-04-28)
 - UC-02 — query-bus interface and base query contract synchronized with deterministic handler-resolution and fail-closed semantics (2026-04-28)
 - UC-01 — command-bus interface and base command contract synchronized with deterministic handler-resolution and fail-closed semantics (2026-04-28)
@@ -63,6 +66,6 @@ _Last updated (UTC): 2026-04-28_
 - UA-04 — key-context builder normalization contract adopted for gateway policy evaluation and fail-closed claim handling (2026-04-28)
 
 ## Upcoming recommended batch
-1. UC-04 — implement observability event sink with redaction safeguards
-2. UC-05 — implement transactional command boundary contract (write + event append)
-3. UC-06 — add initial command handlers for moderation and key lifecycle flows
+1. UC-07 — add command handlers for content creation/edit/flag/comment routes
+2. UC-08 — add command handlers for keychain membership operations
+3. UC-09 — add initial query handlers for feed/post/comments/read families
