@@ -51,9 +51,9 @@ _Last updated (UTC): 2026-04-28_
 | UB-16 | completed | 2026-04-28 | work@2026-04-28-ub-integration-closure | Surface-level route-to-BFF integration verification obligations synchronized across architecture/UI runtime/acceptance/verification/traceability artifacts; see `SESSION_LOG_2026-04-28_ub-integration-closure.md` |
 | UB-17 | completed | 2026-04-28 | work@2026-04-28-ub-integration-closure | Legacy non-BFF orchestration retirement and dead-path audit requirements synchronized across module-boundary and verification contracts; see `SESSION_LOG_2026-04-28_ub-integration-closure.md` |
 | UB-18 | completed | 2026-04-28 | work@2026-04-28-ub-integration-closure | BFF-by-surface closure SSOT package completed with ADR-008 publication and decision-log/index synchronization; see `SESSION_LOG_2026-04-28_ub-integration-closure.md` |
-| UC-01 | not_started |  |  |  |
-| UC-02 | not_started |  |  |  |
-| UC-03 | not_started |  |  |  |
+| UC-01 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | CommandBus/base command contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
+| UC-02 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | QueryBus/base query contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
+| UC-03 | completed | 2026-04-28 | work@2026-04-28-uc-command-query-audit-primitives | DomainEvent/EventPublisher core contract SSOT synchronization complete; see `SESSION_LOG_2026-04-28_uc-command-query-audit-primitives.md` |
 | UC-04 | not_started |  |  |  |
 | UC-05 | not_started |  |  |  |
 | UC-06 | not_started |  |  |  |

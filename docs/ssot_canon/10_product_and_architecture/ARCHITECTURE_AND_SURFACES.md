@@ -15,7 +15,8 @@ CRE8 is a multi-surface HTTP application with three primary runtime surfaces:
 3. Surface BFF orchestration modules (GatewayBff and ConsoleBff)
 4. Domain services (auth, keys, keychains, content, moderation)
 5. Persistence layer (transactional data model)
-6. Observability + audit emissions
+6. Command and query application services
+7. Observability + audit emissions
 
 Gateway controllers call Gateway BFF modules only. Console controllers call Console BFF modules only. Shared domain services remain surface-neutral and are the only allowed cross-surface integration seam.
 
@@ -48,6 +49,15 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Console BFF CSRF recovery helpers are deterministic diagnostics overlays attached only after canonical CSRF deny outcomes (`csrf_token_missing`, `csrf_token_malformed`, `csrf_token_mismatch`) and do not alter canonical HTTP/envelope/detail-code semantics.
 - Surface integration suites verify each migrated route family executes through its canonical surface BFF orchestration path and does not bypass BFF components.
 - Legacy non-BFF orchestration paths are removed from protected route families; boot and runtime checks fail closed when superseded orchestration entrypoints are referenced.
+
+
+## CQRS-lite + audit-first runtime contract
+- `src/Application/Command/CommandBus.php` is the canonical write-path dispatch boundary for protected route mutations.
+- `src/Application/Query/QueryBus.php` is the canonical read-path dispatch boundary for gateway and console read flows.
+- `src/Application/Audit/DomainEvent.php` defines the canonical event envelope emitted for command outcomes and security-significant runtime decisions.
+- `src/Application/Audit/EventPublisher.php` is the canonical publication boundary and emits events with stable request-correlation fields.
+- Command and query contracts preserve envelope-first HTTP semantics and do not alter gateway/console auth-context non-interchangeability.
+- Event payloads include `event_name`, `timestamp_utc`, `request_id`, `surface`, `actor_principal_id` (nullable when unauthenticated), `result`, and `detail_code` (when failure).
 
 ## Boundary rules
 - Console and gateway auth contexts are never interchangeable.

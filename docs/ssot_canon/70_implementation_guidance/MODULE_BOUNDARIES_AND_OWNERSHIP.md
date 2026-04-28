@@ -10,6 +10,8 @@ _Last updated (UTC): 2026-04-28_
 - Keychain management
 - Content (feed/posts/comments/flags)
 - Moderation
+- CQRS-lite command/query boundary
+- Audit/domain event publication
 - Operational/health/diagnostics
 
 ## Ownership model
@@ -58,6 +60,15 @@ _Last updated (UTC): 2026-04-28_
 - `config/routes_public.php` owns public/bootstrap route registration only; `config/routes_gateway.php` owns gateway route registration only; `config/routes_console.php` owns console route registration only.
 - Route registration partition checks are required at boot and fail closed on cross-surface registration drift.
 
+
+
+## CQRS-lite and audit module contract
+- `src/Application/Command/CommandBus.php` owns command dispatch and command handler selection for mutation paths.
+- `src/Application/Query/QueryBus.php` owns query dispatch and query handler selection for read paths.
+- Base command and query abstractions define immutable payload boundaries and deterministic handler resolution.
+- `src/Application/Audit/DomainEvent.php` owns canonical event shape fields required by observability and audit streams.
+- `src/Application/Audit/EventPublisher.php` owns event publication guarantees and request-correlation propagation.
+- Command handlers and query handlers may share domain services but must not bypass bus boundaries.
 
 ## Extension seam ownership map
 | Extension seam | Required synchronized artifacts | Primary reviewer |
