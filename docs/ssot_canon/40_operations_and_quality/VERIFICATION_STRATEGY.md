@@ -133,3 +133,4 @@ Smoke command semantics and evidence requirements are defined in `docs/ssot_cano
 - ACT-01 requires staging read-route PDP comparison evidence with mismatch ledger entries that include route-action, principal class, expected decision, observed decision, and disposition. Any unresolved mismatch blocks ACT-02.
 - ACT-02 requires staging write-route and console governance-route enforcement evidence with `ARCH_PDP_ENABLED=true`, `composer test:contract` pass output, `composer test:security` pass output, and boundary smoke pass output.
 - ACT-01 and ACT-02 require canonical error envelope and `details.code` parity assertions for deny outcomes under activation profile.
+- ACT-03 requires staged BFF route-family activation evidence that proves `ARCH_BFF_SPLIT_ENABLED=true` route-family cutovers preserve canonical envelope/detail-code parity, gateway/console auth-context boundary checks, and UI runtime route-state parity for migrated families before advancing to ACT-04.
