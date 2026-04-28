@@ -12,20 +12,22 @@ _Last updated (UTC): 2026-04-28_
 - SEC: completed (2/2 complete: SEC-01 through SEC-02)
 - OPS: completed (2/2 complete: OPS-01 through OPS-02)
 - GOV: completed (2/2 complete: GOV-01 through GOV-02)
-- ACT: in_progress (3/7 complete: ACT-01 through ACT-03 complete)
+- ACT: in_progress (5/7 complete: ACT-01 through ACT-05 complete)
 
 ## In-progress slices
-- ACT program activation family (ACT-04 through ACT-07 pending staged rollout execution)
+- ACT program activation family (ACT-06 through ACT-07 pending production-canary and post-soak stabilization execution)
 
 ## Blocked slices + blockers + owner needed
 - none recorded
 
 ## Recently completed slices
+- ACT-05 — staging async projection activation requirements synchronized with lag/queue/dead-letter thresholds, rollback-switch execution evidence, and alert drill obligations (2026-04-28)
+- ACT-04 — staging CQRS sync-mode activation requirements synchronized with freshness/consistency, contract/security parity, and unresolved-delta disposition controls (2026-04-28)
 - ACT-03 — staged BFF split route-family activation requirements synchronized with deterministic contract/security/UI runtime parity evidence and unresolved-delta disposition controls (2026-04-28)
 - ACT-02 — staging PDP enforcement activation requirements synchronized for gateway write and console governance route families with deterministic contract/security evidence requirements (2026-04-28)
 - ACT-01 — staging PDP read-route comparison activation requirements synchronized with mismatch disposition governance and release-blocking unresolved delta policy (2026-04-28)
 - GOV-02 — final architecture-upgrade integration ADR/log package synchronized with activation governance ADR-010 and decision chronology updates (2026-04-28)
 ## Upcoming recommended batch
-1. ACT-04 — activate CQRS sync mode for selected route families in staging with freshness/consistency evidence.
-2. ACT-05 — optionally activate async projections in staging with alarms and rollback evidence.
-3. ACT-06 — production canary activation (A then B then C) with rollback guards.
+1. ACT-06 — production canary activation (A then B then C) with rollback guards.
+2. ACT-07 — remove legacy toggles/paths after soak and finalize stabilization.
+3. Final integrated release-gate rehearsal focused on ACT evidence link integrity and rollback drills.
