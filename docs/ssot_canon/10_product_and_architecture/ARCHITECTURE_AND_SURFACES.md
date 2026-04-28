@@ -62,6 +62,9 @@ Gateway controllers call Gateway BFF modules only. Console controllers call Cons
 - Command handlers for gateway content mutations (`CreatePost`, `EditPost`, `FlagPost`, `CreateComment`) are the canonical write-path orchestration boundary for `POST/PATCH` gateway content routes and preserve stable envelope and detail-code semantics.
 - Command handlers for console keychain membership mutations (`AddKeychainMember`, `RemoveKeychainMember`) are the canonical write-path orchestration boundary for keychain membership mutation routes and preserve keychain invariant enforcement semantics.
 - Query handlers for feed/post/comments read families (`GetFeed`, `GetPostDetail`, `GetPostComments`) are the canonical read-path orchestration boundary for gateway read routes and preserve resource-specific `404` detail-code semantics.
+- Query handlers for console read families (`ListConsolePosts`, `ListKeychains`, `GetKeychainMembers`, `ResolveKeychainEffective`) are the canonical read-path orchestration boundary for console listing and keychain resolve routes and preserve canonical owner-governance envelope and detail-code semantics.
+- `ProjectionUpdater` and projector contracts are the canonical projection update boundary for CQRS-lite read-model maintenance and execute idempotently for every accepted domain event.
+- Feed ordering read responses are served from the canonical feed-ordering projection model maintained by `FeedOrderingProjector` under sync projection mode by default.
 - Command and query contracts preserve envelope-first HTTP semantics and do not alter gateway/console auth-context non-interchangeability.
 - Event payloads include `event_name`, `timestamp_utc`, `request_id`, `surface`, `actor_principal_id` (nullable when unauthenticated), `result`, and `detail_code` (when failure).
 

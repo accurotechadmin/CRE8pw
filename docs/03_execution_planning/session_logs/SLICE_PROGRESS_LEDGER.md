@@ -60,9 +60,9 @@ _Last updated (UTC): 2026-04-28_
 | UC-07 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Content command-handler ownership synchronized for gateway create/edit/flag/comment mutation routes with verification and traceability updates; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
 | UC-08 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Keychain membership command-handler ownership synchronized for console membership mutation routes with invariant-deny stability obligations; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
 | UC-09 | completed | 2026-04-28 | work@2026-04-28-uc-content-keychain-query-handlers | Gateway read query-handler ownership synchronized for feed/post/comments reads with resource-specific `404` detail-code parity obligations; see `SESSION_LOG_2026-04-28_uc-content-keychain-query-handlers.md` |
-| UC-10 | not_started |  |  |  |
-| UC-11 | not_started |  |  |  |
-| UC-12 | not_started |  |  |  |
+| UC-10 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Console read query-handler ownership synchronized for posts/keychains/members/resolve route families with verification and traceability updates; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
+| UC-11 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Projection updater/projector contract synchronized with idempotent source-event application and fail-closed projector dependency semantics; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
+| UC-12 | completed | 2026-04-28 | work@2026-04-28-uc-console-query-projections | Feed-ordering projection model/projector synchronized across data model, architecture, verification, acceptance, and traceability artifacts; see `SESSION_LOG_2026-04-28_uc-console-query-projections.md` |
 | UC-13 | not_started |  |  |  |
 | UC-14 | not_started |  |  |  |
 | UC-15 | not_started |  |  |  |

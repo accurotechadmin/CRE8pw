@@ -1,7 +1,7 @@
 # Data Model Spec (Production)
 
 _Status: adopted_
-_Last updated (UTC): 2026-04-06_
+_Last updated (UTC): 2026-04-28_
 
 Canonical terminology: `docs/ssot_canon/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
 
@@ -77,6 +77,31 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 - `expires_at`
 - `used_at` nullable
 
+
+### domain_events
+- `id` PK
+- `event_id` unique
+- `event_name`
+- `aggregate_type`
+- `aggregate_id`
+- `surface` (`public|gateway|console`)
+- `actor_principal_id` nullable FK principals(id)
+- `request_id` nullable
+- `result` (`success|failure`)
+- `detail_code` nullable
+- `payload_json`
+- `occurred_at`
+- indexes: `(event_name, occurred_at DESC)`, `(aggregate_type, aggregate_id, occurred_at DESC)`, `(request_id)`
+
+### feed_ordering_projection
+- `id` PK
+- `post_id` FK posts(id)
+- `visibility_scope`
+- `ordering_score`
+- `ordering_bucket`
+- `projected_at`
+- `source_event_id` unique
+- indexes: `(visibility_scope, ordering_score DESC, post_id)`, `(projected_at DESC)`
 ### posts
 - `id` PK
 - `author_id` FK principals(id)
@@ -123,7 +148,7 @@ This schema-level contract is implemented through `ext-pdo` prepared statements 
 
 ## Retention
 - Soft-delete metadata retained by default.
-- Audit and moderation rows retained for compliance and incident analysis.
+- Audit, domain-event, and moderation rows retained for compliance and incident analysis.
 - Keychain snapshots retained for lineage and incident reconstruction.
 
 ## Consistency notes
