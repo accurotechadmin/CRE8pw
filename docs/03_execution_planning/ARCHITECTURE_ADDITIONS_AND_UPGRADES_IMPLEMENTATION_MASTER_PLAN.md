@@ -368,7 +368,10 @@ At each stage, require:
 
 ---
 
-## 5) Migration slices (example backlog)
+## 5) Migration slices
+
+Exhaustive backlog: `docs/03_execution_planning/ARCHITECTURE_ADDITIONS_AND_UPGRADES_EXHAUSTIVE_SLICES.md`.
+The list below remains a compact quick-reference starter set.
 
 ### Slice A1
 - Create PDP primitives + decision objects.
@@ -470,4 +473,3 @@ Every PR with behavioral change MUST include synchronized updates (when affected
 - [ ] Slice backlog created with acceptance criteria.
 - [ ] CI jobs enforcing contract/security/ops checks.
 - [ ] First PDP slice branch cut.
-
