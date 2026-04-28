@@ -11,12 +11,13 @@ _Last updated (UTC): 2026-04-28_
 5. Update traceability (`docs/ssot_canon/50_traceability_and_automation/TRACEABILITY_MATRIX.md`) and impact map.
 6. Attach evidence using templates under `evidence/templates/`.
 7. Request required owner/co-reviewers per `docs/ssot_canon/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`.
-8. Narrative or explanatory updates MUST be checked for conflict against OpenAPI/schemas and authorization decision tables.
+8. Narrative or explanatory updates must be checked for conflict against OpenAPI/schemas and authorization decision tables.
 
 ## Required PR payload
 - Completed change-impact map.
 - Verification command output (or CI links) for changed behavior.
-- Architecture-upgrade PRs MUST attach evidence for these CI gates: `composer qa`, `composer test:contract`, `composer test:security`, and `composer ops:health-smoke`.
+- Architecture-upgrade PRs must attach evidence for CI gates: `composer qa`, `composer test:contract`, `composer test:security`, and `composer ops:health-smoke`.
+- Completed architecture-upgrade checklist: `docs/ssot_canon/80_program_management/ARCHITECTURE_UPGRADE_PR_CHECKLIST.md`.
 - Explicit compatibility classification (breaking/non-breaking).
 - Updated risk/task register entry when unresolved assumptions remain.
 
@@ -30,7 +31,6 @@ _Last updated (UTC): 2026-04-28_
 - Owner review target: within 2 business days.
 - Security-impacting changes: same-day triage by security owner.
 - If reviewer SLA is missed, escalate through engineering manager/program owner.
-
 
 ## Emergency Class D workflow
 - For production incidents requiring immediate mitigation, use the Class D process in `docs/ssot_canon/00_governance/CHANGE_CONTROL_POLICY.md`.
