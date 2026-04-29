@@ -10,8 +10,10 @@ $proseParityPath = $repoRoot . '/docs/31_machine_contracts/PROSE_OPENAPI_PARITY_
 $routeInventory = file_get_contents($routeInventoryPath);
 $openApi = file_get_contents($openApiPath);
 $proseParity = file_get_contents($proseParityPath);
-if ($routeInventory === false || $openApi === false || $proseParity === false) {
-    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, or prose parity file" . PHP_EOL);
+$traceabilityMatrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
+$traceabilityMatrix = file_get_contents($traceabilityMatrixPath);
+if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false) {
+    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, or traceability matrix" . PHP_EOL);
     exit(1);
 }
 
@@ -47,6 +49,21 @@ foreach ($lines as $line) {
 }
 
 $errors = [];
+
+$traceRequirementIds = [];
+$traceHookIds = [];
+foreach (explode("\n", $traceabilityMatrix) as $line) {
+    if (!preg_match('/^\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|/i', trim($line))) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 4) {
+        continue;
+    }
+    $traceRequirementIds[strtoupper($cols[0])] = true;
+    $traceHookIds[strtoupper($cols[3])] = true;
+}
+
 foreach (array_keys($inventoryPairs) as $pair) {
     if (!isset($openApiPairs[$pair])) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing in OpenAPI: {$pair}";
@@ -178,6 +195,9 @@ foreach (explode("\n", $proseParity) as $line) {
 
     [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef, $successStatusCodes, $errorStatusCodes, $errorExampleRefs, $errorCodes] = $cols;
     $routeId = strtoupper($routeId);
+    if (isset($proseRows[$routeId])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] duplicate prose parity route_id row: {$routeId}";
+    }
     $pair = strtoupper($inventoryMethod) . ' ' . $inventoryPath;
     $openApiPair = strtoupper($openApiMethod) . ' ' . $openApiPath;
     $proseRows[$routeId] = true;
@@ -195,9 +215,13 @@ foreach (explode("\n", $proseParity) as $line) {
     }
     if (!preg_match('/^CRE8-[A-Z]+-REQ-[0-9]{4}$/', $requirementId)) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid primary_requirement_id for {$routeId}: {$requirementId}";
+    } elseif (!isset($traceRequirementIds[strtoupper($requirementId)])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] primary_requirement_id not found in traceability matrix for {$routeId}: {$requirementId}";
     }
     if (!preg_match('/^HOOK-[A-Z0-9-]+$/', $hookId)) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid primary_hook_id for {$routeId}: {$hookId}";
+    } elseif (!isset($traceHookIds[strtoupper($hookId)])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] primary_hook_id not found in traceability matrix for {$routeId}: {$hookId}";
     }
     if ($routeFamily === '' || $depthPriority === '' || $depthStatus === '') {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing Phase 2 depth metadata for {$routeId}";
@@ -253,6 +277,11 @@ foreach (explode("\n", $proseParity) as $line) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error example ref missing code mapping for {$routeId}: {$ref}";
         }
     }
+    foreach (array_keys($openApiExampleRefs) as $ref) {
+        if (!in_array($ref, $declaredExampleRefs, true)) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] OpenAPI error example ref missing from prose parity row for {$routeId}: {$ref}";
+        }
+    }
     $exampleCodes = [];
     foreach ($declaredExampleRefs as $ref) {
         if (isset($exampleCodeMap[$ref])) {
@@ -266,6 +295,11 @@ foreach (explode("\n", $proseParity) as $line) {
         }
         if (!isset($exampleCodes[$code])) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] declared error code missing from declared examples for {$routeId}: {$code}";
+        }
+    }
+    foreach (array_keys($exampleCodes) as $code) {
+        if (!in_array($code, $declaredErrorCodes, true)) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] OpenAPI-derived error code missing from prose parity row for {$routeId}: {$code}";
         }
     }
     foreach ($errorStatuses as $status) {
