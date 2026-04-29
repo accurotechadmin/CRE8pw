@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.6.0
+version: 1.7.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -40,11 +40,12 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0013**: Every Route Family Coverage Policy row **MUST** declare accountable `owner` and `decision_ref`; `decision_ref` **MUST** reference `ADR-###` or `DLOG-YYYYMMDD-###` to preserve deferred-breadth governance linkage.
 - **CRE8-MACHINE-REQ-0014**: Every Route Family Coverage Policy `decision_ref` **MUST** resolve to an existing ADR in `ADR_INDEX.md` or decision event in `DECISIONS_LOG.md`; format-only references are insufficient.
 - **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
+- **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
 
 ## Route Family Coverage Policy
 | route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | owner | decision_ref | notes |
 |---|---:|---|---|---|---|---|
-| system_health | 0 | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | API Contracts WG | ADR-003 | Baseline-only family; high-priority depth not required. |
+| system_health | 0 | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | API Contracts WG | ADR-001 | Baseline-only family; high-priority depth not required. |
 | auth_decision | 1 | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | Identity & Policy WG | ADR-003 | High-risk authorization family under ADR-003 depth expansion. |
 | key_lifecycle | 2 | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | Security Engineering WG | ADR-003 | Includes suspend and revoke lifecycle controls. |
 | feed_audience | 1 | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | ADR-003 | Interaction deny mapping and audience safeguards are high priority. |

@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T23:20:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2320
+- Last updated (UTC): 2026-04-29T23:24:38Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2324
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -65,27 +65,28 @@
 ## Deferred breadth decomposition table (owner, due date, decision reference)
 | item_id | source | summary | owner | priority | hook_id(s) | due date (UTC) | decision_ref | status | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
+| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | partially_complete | Executable contract-level checks delivered; future runtime-integrated fixture depth still pending.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | partially_complete | Deterministic capability matrix and parity checker delivered; deeper auth-prerequisite parity coverage pending.
 | P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | partially_complete | Contract-level deny mapping automation delivered; prose-level extension still pending. |
 | P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-04-29 | ADR-003 | complete | Both governance hooks are executable and CI-bound. |
+| P2-DB-006 | ADR-003 / Slice 6 | Key lifecycle revoke/suspend propagation depth expansion for descendant/interaction deny-path coverage. | Security Engineering WG | High | HOOK-SEC-LIFECYCLE-PROPAGATION | 2026-05-12 | ADR-003 | in_progress | Existing parity rows are depth_in_progress; runtime multi-actor propagation fixtures remain pending. |
 
 ## Status snapshot
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
-| Lane B — Deferred breadth decomposition | partially complete | 88% | Medium | Auth depth residual now includes OpenAPI fixture-level checks; runtime breadth expansion remains pending. |
-| Lane C — Parity expansion | in progress | 87% | Medium | Coverage policy now machine-enforces owner taxonomy resolution plus decision_ref existence against ADR index/decision log. |
+| Lane B — Deferred breadth decomposition | partially complete | 90% | Medium | Added explicit key-lifecycle deferred row and normalized auth policy-order linkage; runtime depth expansion remains pending. |
+| Lane C — Parity expansion | in progress | 89% | Medium | Coverage policy now machine-enforces ADR-003 linkage to deferred breadth rows (owner+hook) in addition to owner/decision resolution. |
 | Lane D — Traceability/evidence hardening | in progress | 99% | Medium | Added matrix linkage for new coverage-policy governance requirement and deterministic owner/decision metadata checks. |
 | Lane E — Acceptance planning | in progress | 45% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2320.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2315.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2310.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2306.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2301.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2324.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2320.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2315.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2310.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2306.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
