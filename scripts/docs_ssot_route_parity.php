@@ -251,6 +251,7 @@ foreach ($lines as $line) {
 $proseRows = [];
 $familyHighPriorityCounts = [];
 $coveragePolicies = [];
+$familyDepthStatuses = [];
 foreach (explode("\n", $proseParity) as $line) {
     if (preg_match('/^\|\s*[a-z0-9_]+\s*\|\s*[0-9]+\s*\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|\s*HOOK-[A-Z0-9-]+\s*\|/i', trim($line)) === 1) {
         $coverageCols = array_map('trim', explode('|', trim($line, '|')));
@@ -330,6 +331,7 @@ foreach (explode("\n", $proseParity) as $line) {
     if ($depthPriority === 'high') {
         $familyHighPriorityCounts[$routeFamily] = ($familyHighPriorityCounts[$routeFamily] ?? 0) + 1;
     }
+    $familyDepthStatuses[$routeFamily][] = $depthStatus;
 
     if (!preg_match('/^#\/components\/schemas\/[A-Za-z0-9._-]+$/', $successSchemaRef)) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid success_schema_ref for {$routeId}: {$successSchemaRef}";
@@ -497,14 +499,16 @@ foreach (explode("\n", $phase2ProgressBoard) as $line) {
         continue;
     }
     $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) < 8) {
+    if (count($cols) < 9) {
         continue;
     }
     $deferredBreadthRows[] = [
         'item_id' => strtoupper($cols[0]),
         'owner' => $cols[3],
         'hooks' => strtoupper($cols[5]),
+        'due_date' => $cols[6],
         'decision_ref' => strtoupper($cols[7]),
+        'status' => strtolower($cols[8]),
     ];
 }
 
@@ -531,7 +535,7 @@ foreach ($coveragePolicies as $family => $policy) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy decision_ref event not found in DECISIONS_LOG for family {$family}: {$policy['decision_ref']}";
     }
     if ($policy['decision_ref'] === 'ADR-003') {
-        $hasLinkedDeferredRow = false;
+        $linkedDeferredRow = null;
         foreach ($deferredBreadthRows as $deferredRow) {
             if ($deferredRow['decision_ref'] !== 'ADR-003') {
                 continue;
@@ -542,11 +546,25 @@ foreach ($coveragePolicies as $family => $policy) {
             if (!str_contains($deferredRow['hooks'], strtoupper($policy['hook_id']))) {
                 continue;
             }
-            $hasLinkedDeferredRow = true;
+            $linkedDeferredRow = $deferredRow;
             break;
         }
-        if (!$hasLinkedDeferredRow) {
+        if ($linkedDeferredRow === null) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] ADR-003 coverage policy row lacks matching deferred-breadth linkage (owner + hook) in PHASE2_PROGRESS_BOARD for family {$family}";
+        } else {
+            if ($policy['phase2_due_date_utc'] !== $linkedDeferredRow['due_date']) {
+                $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] ADR-003 coverage policy due date mismatch for family {$family}: policy={$policy['phase2_due_date_utc']} deferred={$linkedDeferredRow['due_date']}";
+            }
+            $allDepthComplete = true;
+            foreach ($familyDepthStatuses[$family] ?? [] as $depthStatus) {
+                if ($depthStatus !== 'depth_complete') {
+                    $allDepthComplete = false;
+                    break;
+                }
+            }
+            if ($allDepthComplete && ($familyDepthStatuses[$family] ?? []) !== [] && $linkedDeferredRow['status'] !== 'complete') {
+                $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] ADR-003 family {$family} marks all routes depth_complete while deferred breadth row {$linkedDeferredRow['item_id']} status is {$linkedDeferredRow['status']}";
+            }
         }
     }
 }

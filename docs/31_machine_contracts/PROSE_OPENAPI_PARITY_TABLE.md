@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.8.0
+version: 1.9.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -42,6 +42,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
 - **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
 - **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.
+- **CRE8-MACHINE-REQ-0018**: For every `decision_ref=ADR-003` route family, parity depth closure **MUST** be status-aligned with deferred breadth status in `PHASE2_PROGRESS_BOARD.md`: policy rows tied to deferred rows not marked `complete` **MUST NOT** set all family routes to `parity_depth_status=depth_complete`; parity checks **MUST** fail on premature closure drift.
 
 
 ## Route Family Coverage Policy
