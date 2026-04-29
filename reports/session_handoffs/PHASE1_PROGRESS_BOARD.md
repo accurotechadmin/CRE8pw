@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T04:07:18Z
-- Current owner/session: Codex session `20260429-0407`
+- Last updated (UTC): 2026-04-29T04:12:23Z
+- Current owner/session: Codex session `20260429-0412`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -14,7 +14,7 @@
 - [~] Slice 2 — Seed-to-canon mapping lock
   - [x] Build promotion tracker (seed requirement -> target doc -> hook)
   - [x] Build unresolved-seed-gap register
-  - [ ] Populate tracker comprehensively across all seed docs
+  - [~] Populate tracker comprehensively across all seed docs (domain-level baseline complete; requirement-level anchors pending)
   - [ ] Add traceability rows for promoted mappings
   - [x] Implement/define `docs:ssot:sync-check` executable contract (normative contract defined; script pending)
 - [ ] Slice 3 — Cross-document linking architecture
@@ -38,8 +38,9 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0407.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0402.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0356.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0352.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0347.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0412.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0407.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0402.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0356.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0352.md`
+
