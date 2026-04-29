@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T07:09:31Z
-- Current owner/session: Codex session `20260429-0709`
+- Last updated (UTC): 2026-04-29T07:14:40Z
+- Current owner/session: Codex session `20260429-0714`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -69,13 +69,14 @@
   - [x] Add trace rows for topology/anti-orphan hooks
   - [x] Wire CI group `ssot_phase1_gate` and enforce hard-fail merge behavior
 - [~] Slice 10 — Acceptance review + baseline freeze
-  - [~] Initialize acceptance prep tracker + handoff sequencing discipline
-  - [x] Create `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md` with deterministic acceptance gates
+  - [x] Initialize acceptance prep tracker + handoff sequencing discipline
+  - [x] Promote acceptance draft to provisional normative memo with explicit gate dispositions
+  - [x] Add canonical acceptance command bundle (`composer phase1:acceptance-bundle`)
   - [x] Create `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` for residual manual hooks
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0649.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
