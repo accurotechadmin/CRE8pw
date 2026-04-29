@@ -241,20 +241,26 @@ $coveragePolicies = [];
 foreach (explode("\n", $proseParity) as $line) {
     if (preg_match('/^\|\s*[a-z0-9_]+\s*\|\s*[0-9]+\s*\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|\s*HOOK-[A-Z0-9-]+\s*\|/i', trim($line)) === 1) {
         $coverageCols = array_map('trim', explode('|', trim($line, '|')));
-        if (count($coverageCols) >= 7) {
+        if (count($coverageCols) >= 8) {
             $family = $coverageCols[0];
             $minimum = (int) $coverageCols[1];
             $coverageRequirementId = strtoupper($coverageCols[2]);
             $coverageHookId = strtoupper($coverageCols[3]);
             $coverageOwner = trim($coverageCols[4]);
             $coverageDecisionRef = strtoupper(trim($coverageCols[5]));
+            $coverageDueDate = trim($coverageCols[6]);
             $coveragePolicies[$family] = [
                 'minimum_high_priority_routes' => $minimum,
                 'requirement_id' => $coverageRequirementId,
                 'hook_id' => $coverageHookId,
                 'owner' => $coverageOwner,
                 'decision_ref' => $coverageDecisionRef,
+                'phase2_due_date_utc' => $coverageDueDate,
             ];
+
+            if ($coverageDueDate !== 'n/a' && preg_match('/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/', $coverageDueDate) !== 1) {
+                $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy phase2_due_date_utc must be YYYY-MM-DD or n/a for family {$family}: {$coverageDueDate}";
+            }
             if (!isset($traceRequirementIds[$coverageRequirementId])) {
                 $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy requirement_id not found in traceability matrix for family {$family}: {$coverageRequirementId}";
             }

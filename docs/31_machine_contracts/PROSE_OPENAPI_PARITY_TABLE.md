@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.7.0
+version: 1.8.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -41,14 +41,17 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0014**: Every Route Family Coverage Policy `decision_ref` **MUST** resolve to an existing ADR in `ADR_INDEX.md` or decision event in `DECISIONS_LOG.md`; format-only references are insufficient.
 - **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
 - **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
+- **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.
+- **CRE8-MACHINE-REQ-0016
+- **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
 
 ## Route Family Coverage Policy
-| route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | owner | decision_ref | notes |
-|---|---:|---|---|---|---|---|
-| system_health | 0 | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | API Contracts WG | ADR-001 | Baseline-only family; high-priority depth not required. |
-| auth_decision | 1 | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | Identity & Policy WG | ADR-003 | High-risk authorization family under ADR-003 depth expansion. |
-| key_lifecycle | 2 | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | Security Engineering WG | ADR-003 | Includes suspend and revoke lifecycle controls. |
-| feed_audience | 1 | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | ADR-003 | Interaction deny mapping and audience safeguards are high priority. |
+| route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | owner | decision_ref | phase2_due_date_utc | notes |
+|---|---:|---|---|---|---|---|---|
+| system_health | 0 | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | API Contracts WG | ADR-001 | n/a | Baseline-only family; high-priority depth not required. |
+| auth_decision | 1 | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | Identity & Policy WG | ADR-003 | 2026-05-06 | High-risk authorization family under ADR-003 depth expansion. |
+| key_lifecycle | 2 | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | Security Engineering WG | ADR-003 | 2026-05-12 | Includes suspend and revoke lifecycle controls. |
+| feed_audience | 1 | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | ADR-003 | 2026-05-13 | Interaction deny mapping and audience safeguards are high priority. |
 
 ## Parity matrix
 | route_id | inventory_method | inventory_path | openapi_method | openapi_path | parity_status | route_family | depth_priority | primary_requirement_id | primary_hook_id | parity_depth_status | success_schema_ref | error_schema_ref | success_status_codes | error_status_codes | error_example_refs | error_codes |
