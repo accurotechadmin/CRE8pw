@@ -56,6 +56,12 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-GOV-REQ-0005 | CRE8-GOV-SSOT-INDEX | docs/00_governance/SSOT_INDEX.md | HOOK-SSOT-LINT-METADATA | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
 | CRE8-GOV-REQ-0033 | CRE8-GOV-CONTRIBUTION-WORKFLOW | docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md | HOOK-REVIEW-GATE-CHECK | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
 | CRE8-GOV-REQ-0053 | CRE8-GOV-DEFINITION-OF-DONE | docs/00_governance/DEFINITION_OF_DONE.md | HOOK-DOD-TRACE-CHECK | manual | Program Traceability WG | normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0060 | CRE8-TRACE-ROADMAP-MILESTONES | docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md | HOOK-TRACE-ROADMAP-SCHEMA | manual | Program Traceability WG | normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0070 | CRE8-TRACE-SEED-PROMOTION-TRACKER | docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md | HOOK-SEED-PROMOTION-SCHEMA | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0080 | CRE8-TRACE-UNRESOLVED-SEED-GAPS | docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md | HOOK-SEED-GAP-REGISTER-SCHEMA | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0090 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-LINT-METADATA | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0092 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-SYNC-PROMOTED-TRACE | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0094 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-REPORT-COVERAGE | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 
 ## Verification hooks
 - **HOOK-TRACE-MATRIX-SCHEMA**: Validate required columns and required non-empty values.
