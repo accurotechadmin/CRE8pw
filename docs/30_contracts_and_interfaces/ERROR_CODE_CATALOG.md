@@ -1,7 +1,49 @@
+---
+doc_id: CRE8-CONTRACTS-ERROR-CATALOG
+version: 1.0.0
+status: provisional-normative
+owner: API Contracts WG
+reviewers:
+  - Security WG
+  - Identity & Policy WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-13
+source_seed_refs:
+  - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
+  - README.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md
+---
+
 # Error Code Catalog
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **ERROR_CODE_CATALOG.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define canonical API error envelope and stable error-code semantics for deterministic client handling and operator diagnostics.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-CONTRACT-REQ-0001**: Every non-2xx API response **MUST** use a stable JSON error envelope with fields: `error.code`, `error.message`, `error.category`, `error.request_id`, and `error.timestamp_utc`.
+- **CRE8-CONTRACT-REQ-0002**: Error `code` values **MUST** be globally unique, uppercase snake-case strings, and **MUST NOT** be repurposed with different semantics once published.
+- **CRE8-CONTRACT-REQ-0003**: Authorization and delegation failures **MUST** map to deterministic codes (`AUTH_DENY_*`) bound to policy-deny classes from `AUTHORIZATION_AND_DELEGATION_SPEC.md`.
+- **CRE8-CONTRACT-REQ-0004**: 5xx responses **MUST NOT** expose secrets, key material, stack traces, or internal policy state in `error.message`.
+- **CRE8-CONTRACT-REQ-0005**: Validation failures **SHOULD** include machine-parseable `details[]` entries with field path and violation type.
+- **CRE8-CONTRACT-REQ-0006**: Error catalog updates **MUST** include contract test updates and traceability matrix updates in the same change.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Baseline categories
+- `AUTH_DENY_*`: authorization/delegation denials.
+- `AUTHN_*`: authentication/proof validation failures.
+- `INPUT_*`: request schema/semantic validation failures.
+- `LIFECYCLE_*`: lifecycle state constraints (suspended/revoked/expired).
+- `SYSTEM_*`: server/runtime failure classes.
+
+## Verification hooks
+- **HOOK-CONTRACT-ERROR-DETERMINISM**: Verify stable envelope shape and code mapping behavior.
+- **HOOK-CONTRACT-ERROR-SECRETS-REDaction**: Verify sensitive data is absent from server error payloads.
+
+## See also
+- [API Contract Guide](./API_CONTRACT_GUIDE.md)
+- [Authorization And Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
+- [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- [API Contract and Error Seed](../../seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md)

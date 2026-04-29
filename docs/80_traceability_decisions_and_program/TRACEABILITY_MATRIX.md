@@ -68,6 +68,13 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-TRACE-REQ-0096 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-MANUAL-BACKLOG-LINK | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0097 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PR-EVIDENCE-REQUIRED | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0098 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Program Traceability WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-AUTH-REQ-0001 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-CONTRACT-POLICY-ORDER | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0002 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-INHERITANCE-BOUNDARY | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0006 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0001 | CRE8-CONTRACTS-ERROR-CATALOG | docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md | HOOK-CONTRACT-ERROR-DETERMINISM | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0004 | CRE8-CONTRACTS-ERROR-CATALOG | docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md | HOOK-CONTRACT-ERROR-SECRETS-REDaction | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-OPS-REQ-0001 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-REPORT-COVERAGE | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-OPS-REQ-0005 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0061 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINT-METADATA | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0062 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-TOPOLOGY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -82,6 +89,11 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-SSOT-LINK-TOPOLOGY**: Automated validation hook for required vertical/lateral SSOT link topology invariants.
 - **HOOK-SSOT-ANTI-ORPHAN-CHECK**: Automated validation hook ensuring no requirement-bearing normative/provisional docs are orphaned from governance/domain entrypoints.
 - **HOOK-SSOT-PHASE1-GATE-CI**: Automated CI hook that executes all required `docs:ssot:*` commands as hard-fail checks.
+- **HOOK-CONTRACT-POLICY-ORDER**: Manual/automated contract test hook for deterministic authorization evaluation order and deny precedence.
+- **HOOK-AUTH-INHERITANCE-BOUNDARY**: Manual/automated hook for descendant grant boundary constraints.
+- **HOOK-AUTH-LIFECYCLE-ENFORCEMENT**: Manual/automated hook for suspend/revoke/expire enforcement.
+- **HOOK-CONTRACT-ERROR-DETERMINISM**: Manual/automated hook for error envelope stability and deterministic code mapping.
+- **HOOK-CONTRACT-ERROR-SECRETS-REDaction**: Manual/automated hook ensuring secrets are never exposed in error payloads.
 
 ## Drift and reconciliation policy
 - Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.
