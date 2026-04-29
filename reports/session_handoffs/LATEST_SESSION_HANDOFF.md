@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
 
 Summary:
-- Converted `HOOK-AUTH-INHERITANCE-BOUNDARY` and `HOOK-AUTH-LIFECYCLE-ENFORCEMENT` to deterministic automated checks in `composer test:contract:auth`.
-- Updated traceability matrix verification modes/evidence links and removed the two hooks from the Phase 1 manual backlog.
-- Updated the Phase 2 progress board burn-down/deferred tables to reflect partial closure of `P2-DB-001` under ADR-003 constraints.
+- Converted `HOOK-SSOT-MANUAL-BACKLOG-LINK` to explicit automated hook-tagged sync-check enforcement semantics.
+- Converted `HOOK-FEED-INTERACTION-DENY-MAPPING` to executable deny-matrix assertions in `composer test:contract:feed`.
+- Updated traceability matrix/manual-backlog/progress board and discoverability pointers for new automation state under ADR-003 constraints.
