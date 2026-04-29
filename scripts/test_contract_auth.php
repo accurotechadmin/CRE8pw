@@ -78,6 +78,18 @@ if (!str_contains($openapi, 'depthExceeded:')) {
 if (!str_contains($openapi, '#/components/examples/ErrorAuthDepthExceeded')) {
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ErrorAuthDepthExceeded deny fixture reference in OpenAPI authz route';
 }
+if (!str_contains($openapi, 'explicitDeny:')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing explicitDeny response fixture key in OpenAPI authz route';
+}
+if (!str_contains($openapi, '#/components/examples/ErrorExplicitDeny')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ErrorExplicitDeny fixture reference in OpenAPI authz route';
+}
+if (!str_contains($openapi, 'permissionDenied:')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing permissionDenied response fixture key in OpenAPI authz route';
+}
+if (!str_contains($openapi, '#/components/examples/ErrorPermissionDenied')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ErrorPermissionDenied fixture reference in OpenAPI authz route';
+}
 
 if ($errors !== []) {
     foreach ($errors as $e) {
