@@ -1,7 +1,59 @@
+---
+doc_id: CRE8-TRACE-DECISIONS-LOG
+version: 1.0.0
+status: provisional-normative
+owner: Architecture Governance WG
+reviewers:
+  - Platform Architecture WG
+  - Docs Governance WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/80_traceability_decisions_and_program/ADR_INDEX.md
+  - docs/80_traceability_decisions_and_program/DECISION_RECORD_TEMPLATE.md
+  - docs/00_governance/CHANGE_CONTROL_POLICY.md
+---
+
 # Decisions Log
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **DECISIONS_LOG.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+This document defines the append-only operational log for architecture and governance decisions that affect normative requirements, risk posture, or verification obligations.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-TRACE-REQ-0040**: Decision events **MUST** be append-only; existing rows **MUST NOT** be modified except to correct typographical errors with a correction note.
+- **CRE8-TRACE-REQ-0041**: Every event row **MUST** include `Event ID`, `Timestamp (UTC)`, `ADR ID`, `Event Type`, `Actor`, `Change Summary`, `Impacted Requirement IDs`, and `Evidence Link`.
+- **CRE8-TRACE-REQ-0042**: `Event Type` **MUST** be one of `created`, `status_changed`, `superseded`, `deprecated`, `rollback_invoked`, or `editorial_correction`.
+- **CRE8-TRACE-REQ-0043**: Every `status_changed`, `superseded`, or `deprecated` event **MUST** reference a corresponding row in `ADR_INDEX.md` and **MUST** include prior and new status values in `Change Summary`.
+- **CRE8-TRACE-REQ-0044**: Events impacting requirements **MUST** include at least one `CRE8-*-REQ-####` identifier and **MUST** trigger traceability-matrix update before merge.
+- **CRE8-TRACE-REQ-0045**: `rollback_invoked` events **MUST** include rollback trigger, scope boundary, and restoration verification evidence path.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Event schema
+| Field | Type | Required | Rule |
+|---|---|---:|---|
+| Event ID | string | yes | `DLOG-YYYYMMDD-###` unique |
+| Timestamp (UTC) | datetime | yes | ISO-8601 UTC |
+| ADR ID | string | yes | `ADR-###` |
+| Event Type | enum | yes | Allowed values in REQ-0042 |
+| Actor | string | yes | Approver or automation actor |
+| Change Summary | string | yes | Includes status transition when relevant |
+| Impacted Requirement IDs | list | yes | `none` allowed only for editorial correction |
+| Evidence Link | path | yes | Relative path to ADR/evidence artifact |
+
+## Baseline events
+| Event ID | Timestamp (UTC) | ADR ID | Event Type | Actor | Change Summary | Impacted Requirement IDs | Evidence Link |
+|---|---|---|---|---|---|---|---|
+| DLOG-20260429-001 | 2026-04-29T03:40:00Z | ADR-001 | status_changed | Docs Governance WG | proposed -> accepted for requirement ID normalization | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | ./adrs/ADR-001-requirement-id-normalization.md |
+| DLOG-20260429-002 | 2026-04-29T03:45:00Z | ADR-002 | status_changed | Architecture Governance WG | proposed -> accepted for traceability matrix schema | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | ./adrs/ADR-002-traceability-matrix-minimum-schema.md |
+
+## Verification hooks
+- **HOOK-TRACE-DECISION-APPENDONLY**: Assert stable hash for historical rows and detect non-tail edits.
+- **HOOK-TRACE-DECISION-EVENT-TYPE**: Validate event type taxonomy and required fields by event type.
+- **HOOK-TRACE-DECISION-ADR-LINK**: Validate ADR references exist in `ADR_INDEX.md` and target ADR file path resolves.
+
+## See also
+- [ADR Index](./ADR_INDEX.md)
+- [Decision Record Template](./DECISION_RECORD_TEMPLATE.md)
+- [Traceability Matrix](./TRACEABILITY_MATRIX.md)
+- [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
