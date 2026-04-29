@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T22:52:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2252
+- Last updated (UTC): 2026-04-29T22:57:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2257
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -25,7 +25,7 @@
 - [x] `HOOK-CONTRACT-SURFACE-PARITY` -> automated via `scripts/test_contract_surface_parity.php` + `composer test:contract:surface-parity`.
 - [x] `HOOK-FEED-INTERACTION-DENY-MAPPING` -> automated in `composer test:contract:feed` via interaction deny fixture/code matrix assertions.
 - [x] `HOOK-SSOT-MANUAL-BACKLOG-LINK` -> automated hard-fail semantics in `composer docs:ssot:sync-check` with hook-tagged output.
-- [x] `HOOK-SSOT-PR-EVIDENCE-REQUIRED` -> automated via `composer docs:ssot:pr-evidence-check` in `.github/workflows/ssot_phase1_gate.yml`.
+- [x] `HOOK-SSOT-PR-EVIDENCE-REQUIRED` -> automated via `composer docs:ssot:pr-evidence-check` in `.github/workflows/ssot_phase_gate.yml`.
 
 ### Lane B — Deferred Slice 6/7 breadth decomposition (ADR-003)
 - [x] Create owner-assigned Phase 2 milestones for deferred contract breadth (Slice 6).
@@ -77,15 +77,15 @@
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
 | Lane B — Deferred breadth decomposition | partially complete | 86% | Medium | Governance evidence-gate residual closed; remaining depth-expansion items still partially complete. |
 | Lane C — Parity expansion | in progress | 76% | Medium | Route parity now enforces error-code catalog/inventory bounds in addition to family coverage and parity-depth determinism. |
-| Lane D — Traceability/evidence hardening | in progress | 94% | Medium | Route-level error code governance drift now machine-detected and hard-fail enforced. |
-| Lane E — Acceptance planning | in progress | 30% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
+| Lane D — Traceability/evidence hardening | in progress | 96% | Medium | Route-level error code governance drift now machine-detected and hard-fail enforced. |
+| Lane E — Acceptance planning | in progress | 45% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2252.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1352.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1345.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1341.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1334.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2257.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2252.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1352.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1345.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1341.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`

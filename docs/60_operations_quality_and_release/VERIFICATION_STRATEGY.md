@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-VERIFICATION-STRATEGY
-version: 1.3.0
+version: 1.4.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -32,6 +32,7 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - **CRE8-OPS-REQ-0005**: Verification failures for `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report` **MUST** block merge under `ssot_phase1_gate`.
 
 - **CRE8-OPS-REQ-0006**: Verification evidence for normative changes **MUST** include a reference to the applicable change-impact map artifact defined in `CHANGE_IMPACT_MAP_TEMPLATES.md`.
+- **CRE8-OPS-REQ-0007**: CI workflows enforcing SSOT gates **MUST** execute the current phase acceptance-bundle command as an explicit hard-fail step.
 
 ## Hook catalog schema
 | Field | Required | Notes |

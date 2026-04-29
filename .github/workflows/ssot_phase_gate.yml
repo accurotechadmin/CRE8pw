@@ -1,4 +1,4 @@
-name: ssot_phase1_gate
+name: ssot_phase_gate
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ on:
       - '.github/workflows/ssot_phase1_gate.yml'
 
 jobs:
-  ssot_phase1_gate:
+  ssot_phase_gate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -55,3 +55,6 @@ jobs:
 
       - name: Run SSOT PR evidence check
         run: composer docs:ssot:pr-evidence-check
+      - name: Run Phase 2 acceptance bundle
+        run: composer phase2:acceptance-bundle
+
