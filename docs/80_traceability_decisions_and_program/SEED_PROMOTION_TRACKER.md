@@ -42,12 +42,16 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | notes | no | Rationale and consolidation details. |
 
 ## Initial promotion tracker (Phase 1 baseline)
-| seed_requirement_ref | target_doc_id | target_requirement_id | promotion_status | verification_hook_id | notes |
-|---|---|---|---|---|---|
-| seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#permission-evaluation-order | CRE8-CONTRACTS-ACCESS-POLICY | TBD | candidate | HOOK-CONTRACT-POLICY-ORDER | Candidate for Slice 6 identity/delegation hardening. |
-| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | TBD | candidate | HOOK-CONTRACT-ERROR-DETERMINISM | Candidate for Slice 6 API/error contract hardening. |
-| seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | CRE8-SEC-KEY-LIFECYCLE | TBD | candidate | HOOK-SEC-LIFECYCLE-PROPAGATION | Candidate for Slice 6 lifecycle hardening. |
-| seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-AUDIENCE-CONTRACT | TBD | candidate | HOOK-FEED-AUTH-ORDER | Candidate for Slice 8 verification binding. |
+| seed_requirement_ref | target_doc_id | target_requirement_id | promotion_status | verification_hook_id | decision_ref | notes |
+|---|---|---|---|---|---|---|
+| seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md#id-keypair-first-principal-model | CRE8-ARCH-IDENTITY-FOUNDATIONS | TBD | candidate | HOOK-SEED-PROMOTION-SCHEMA |  | Foundational identity model seed; queued for Slice 6 contract hardening. |
+| seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#permission-evaluation-order | CRE8-CONTRACTS-ACCESS-POLICY | TBD | candidate | HOOK-CONTRACT-POLICY-ORDER |  | Candidate for deterministic policy evaluation contract. |
+| seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | CRE8-SEC-KEY-LIFECYCLE | TBD | candidate | HOOK-SEC-LIFECYCLE-PROPAGATION |  | Candidate for lifecycle enforcement hardening. |
+| seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md#cross-surface-parity | CRE8-CONTRACTS-SURFACE-PARITY | TBD | candidate | HOOK-CONTRACT-SURFACE-PARITY |  | Candidate for Owner Console/API parity obligations. |
+| seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-AUDIENCE-CONTRACT | TBD | candidate | HOOK-FEED-AUTH-ORDER |  | Candidate for deterministic audience/feed ordering controls. |
+| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | TBD | candidate | HOOK-CONTRACT-ERROR-DETERMINISM |  | Candidate for error envelope stabilization and deny semantics. |
+| seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | CRE8-EXT-MODULE-SEAMS | TBD | candidate | HOOK-EXT-SEAM-COMPATIBILITY |  | Candidate for extension invariants and compatibility gates. |
+| seed/CRE8_SEED_PRESERVATION_MATRIX.md#preservation-obligations | CRE8-TRACE-SEED-PRESERVATION | TBD | candidate | HOOK-SEED-PRESERVATION-COVERAGE |  | Candidate for preservation accountability and redesign traceability. |
 
 ## Verification hooks
 - **HOOK-SEED-PROMOTION-SCHEMA**: Validate required columns and promotion status enums.
