@@ -93,6 +93,10 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-CONTRACT-REQ-0055 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-CURSOR-GRAMMAR | automated | API Contracts WG | provisional-normative | docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md |
 | CRE8-OPS-REQ-0001 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-REPORT-COVERAGE | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-OPS-REQ-0005 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-OPS-REQ-0010 | CRE8-OPS-PHASE2-ACCEPTANCE | docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | automated | Operations Quality WG | provisional-normative | reports/session_handoffs/LATEST_SESSION_HANDOFF.md |
+| CRE8-OPS-REQ-0011 | CRE8-OPS-PHASE2-ACCEPTANCE | docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | automated | Operations Quality WG | provisional-normative | reports/session_handoffs/LATEST_SESSION_HANDOFF.md |
+| CRE8-OPS-REQ-0012 | CRE8-OPS-PHASE2-ACCEPTANCE | docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | automated | Operations Quality WG | provisional-normative | reports/session_handoffs/LATEST_SESSION_HANDOFF.md |
+| CRE8-OPS-REQ-0013 | CRE8-OPS-PHASE2-ACCEPTANCE | docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | automated | Operations Quality WG | provisional-normative | reports/session_handoffs/PHASE2_PROGRESS_BOARD.md |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0061 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINT-METADATA | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0062 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-TOPOLOGY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -140,6 +144,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-FEED-INTERACTION-DENY-MAPPING**: Manual/automated hook validating one-to-one interaction deny-condition to canonical error-code mapping.
 - **HOOK-SEC-LIFECYCLE-PROPAGATION**: Manual/automated hook validating immediate revoke/rotate propagation across direct and descendant credentials.
 - **HOOK-EXT-SEAM-COMPATIBILITY**: Manual/automated hook validating module seam compatibility, PDP-chain preservation, and envelope stability.
+- **HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE**: Automated acceptance hook running the full Phase 2 command bundle with hard-fail semantics on first-class SSOT and contract tests.
 
 ## Drift and reconciliation policy
 - Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.

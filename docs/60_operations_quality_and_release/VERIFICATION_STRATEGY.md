@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-VERIFICATION-STRATEGY
-version: 1.2.0
+version: 1.3.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -16,12 +16,13 @@ normative_dependencies:
   - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
   - docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md
+  - docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md
 ---
 
 # Verification Strategy
 
 ## Purpose
-Define mandatory verification hook structure, execution policy, and evidence expectations for Phase 1 normative contracts.
+Define mandatory verification hook structure, execution policy, and evidence expectations for Phase 1 and Phase 2 normative contracts.
 
 ## Normative requirements
 - **CRE8-OPS-REQ-0001**: Every normative or provisional-normative requirement **MUST** map to at least one verification hook recorded in `TRACEABILITY_MATRIX.md`.
@@ -29,6 +30,8 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - **CRE8-OPS-REQ-0003**: Pull requests that modify requirement semantics **MUST** include verification execution evidence or explicit manual verification notes with reproducible steps.
 - **CRE8-OPS-REQ-0004**: Hooks without automation **MUST** include a documented “next automation candidate” note and **MUST** be listed in `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` to support Slice 8 backlog reduction.
 - **CRE8-OPS-REQ-0005**: Verification failures for `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report` **MUST** block merge under `ssot_phase1_gate`.
+
+- **CRE8-OPS-REQ-0006**: Verification evidence for normative changes **MUST** include a reference to the applicable change-impact map artifact defined in `CHANGE_IMPACT_MAP_TEMPLATES.md`.
 
 ## Hook catalog schema
 | Field | Required | Notes |
@@ -59,6 +62,7 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 | HOOK-AUTH-DECISION-REASON-MAPPING | PR | `composer test:contract:auth-reasons` | One-to-one reason/code mapping with no unmapped deny reason | docs/evidence/templates/README.md | Implemented as `test:contract:auth-reasons` |
 | HOOK-SEC-LIFECYCLE-PROPAGATION | PR | `composer docs:ssot:sync-check` | Trace row for lifecycle propagation exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with runtime revoke/rotate propagation contract tests |
 | HOOK-EXT-SEAM-COMPATIBILITY | PR | `composer docs:ssot:sync-check` | Trace row for seam compatibility exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with module seam contract fixture suite |
+| HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | PR | `composer phase2:acceptance-bundle` | Bundle hard-fails on any failed SSOT/contract command in Phase 2 acceptance command contract | reports/ssot/coverage_latest.json; reports/session_handoffs/LATEST_SESSION_HANDOFF.md | Implemented as `phase2:acceptance-bundle` |
 
 
 ## See also
@@ -67,3 +71,5 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [SSOT Automation and Linting](../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md)
 - [Phase 1 Manual Hook Backlog](../../reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md)
+- [Phase 2 Acceptance Criteria](./PHASE2_ACCEPTANCE_CRITERIA.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
