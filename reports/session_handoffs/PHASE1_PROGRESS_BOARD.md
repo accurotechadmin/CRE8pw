@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T12:10:00Z
-- Current owner/session: Codex session `20260429-1210`
+- Last updated (UTC): 2026-04-29T11:33:00Z
+- Current owner/session: Codex session `20260429-1133`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -82,3 +82,8 @@
 3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
 4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
 5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
+
+
+## Audit validation note
+- Statuses above are **audit-validated for acceptance scope** unless otherwise noted; they are not blanket claims of zero residual breadth.
+- Slices 6–8 retain deferred breadth/manual-depth residuals tracked in `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`.
