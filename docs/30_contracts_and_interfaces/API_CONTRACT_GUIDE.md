@@ -50,3 +50,6 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - [Prose↔OpenAPI Parity Table](../31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+
+
+See also: [UI Runtime Contract](./UI_RUNTIME_CONTRACT.md).

@@ -1,7 +1,38 @@
-# Feed Ranking And Ordering Rules
+---
+doc_id: CRE8-FEED-AUDIENCE-CONTRACT
+version: 1.0.0
+status: provisional-normative
+owner: Product Policy WG
+reviewers:
+  - API Contracts WG
+  - Identity & Policy WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-20
+source_seed_refs:
+  - seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md
+normative_dependencies:
+  - docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **FEED_RANKING_AND_ORDERING_RULES.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# Feed Ranking and Ordering Rules
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Purpose
+Define deterministic feed authorization and ordering behavior for CRE8 audience-targeted content.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-FEED-REQ-0001**: Feed inclusion **MUST** be authorization-gated; items are eligible only when requester principal/key is within effective audience targeting policy at evaluation time.
+- **CRE8-FEED-REQ-0002**: Eligible feed items **MUST** be ordered newest-first by canonical content timestamp, with deterministic tie-breaker on immutable `content_id` ascending.
+- **CRE8-FEED-REQ-0003**: Authorization revocation or audience-policy change **MUST** remove newly ineligible items from subsequent feed responses with no grace bypass unless an explicit emergency policy exception exists.
+- **CRE8-FEED-REQ-0004**: Feed response metadata **MUST** expose `ordering_basis` and pagination cursor semantics so clients can reproduce deterministic ordering.
+
+## Verification hooks
+- **HOOK-FEED-AUTH-ORDER**: Validate authorized-only inclusion and deterministic newest-first ordering semantics.
+- **Next automation candidate**: Add contract snapshots for mixed-visibility fixtures under `test:contract` to verify ordering and revocation behavior.
+
+## See also
+- [Content Model and Targeting Spec](./CONTENT_MODEL_AND_TARGETING_SPEC.md)
+- [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
+- [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
