@@ -235,15 +235,19 @@ $coveragePolicies = [];
 foreach (explode("\n", $proseParity) as $line) {
     if (preg_match('/^\|\s*[a-z0-9_]+\s*\|\s*[0-9]+\s*\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|\s*HOOK-[A-Z0-9-]+\s*\|/i', trim($line)) === 1) {
         $coverageCols = array_map('trim', explode('|', trim($line, '|')));
-        if (count($coverageCols) >= 4) {
+        if (count($coverageCols) >= 7) {
             $family = $coverageCols[0];
             $minimum = (int) $coverageCols[1];
             $coverageRequirementId = strtoupper($coverageCols[2]);
             $coverageHookId = strtoupper($coverageCols[3]);
+            $coverageOwner = trim($coverageCols[4]);
+            $coverageDecisionRef = strtoupper(trim($coverageCols[5]));
             $coveragePolicies[$family] = [
                 'minimum_high_priority_routes' => $minimum,
                 'requirement_id' => $coverageRequirementId,
                 'hook_id' => $coverageHookId,
+                'owner' => $coverageOwner,
+                'decision_ref' => $coverageDecisionRef,
             ];
             if (!isset($traceRequirementIds[$coverageRequirementId])) {
                 $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy requirement_id not found in traceability matrix for family {$family}: {$coverageRequirementId}";
@@ -427,6 +431,12 @@ foreach ($coveragePolicies as $family => $policy) {
     }
     if ($policy['minimum_high_priority_routes'] < 0) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] minimum_high_priority_routes cannot be negative for family {$family}";
+    }
+    if ($policy['owner'] === '') {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing owner in coverage policy for family {$family}";
+    }
+    if (!preg_match('/^(ADR-[0-9]{3}|DLOG-[0-9]{8}-[0-9]{3})$/', $policy['decision_ref'])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid decision_ref in coverage policy for family {$family}: {$policy['decision_ref']}";
     }
 }
 
