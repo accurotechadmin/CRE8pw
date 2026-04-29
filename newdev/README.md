@@ -145,3 +145,14 @@ Any future `/newdev` document updates MUST:
 - improve extensibility without weakening security invariants.
 
 When this `/newdev` set is complete enough, it will be moved to a fresh repository and matured into full production-grade SSOT documentation and implementation guidance.
+
+
+## 13) Seed document map (navigation)
+- `CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md`: root architectural inventory and acceptance baseline.
+- `CRE8_PERMISSION_AND_DELEGATION_SEED.md`: bounded hierarchical authority and policy rules.
+- `CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md`: lifecycle security and cryptographic controls.
+- `CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md`: dual-surface architecture and UI/API parity rules.
+- `CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md`: content targeting, audience model, comments, and feed behavior.
+- `CRE8_API_CONTRACT_AND_ERROR_SEED.md`: envelope-first contract and deterministic deny/error mapping.
+- `CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`: extension seams and module pattern guardrails.
+- `CRE8_SEED_PRESERVATION_MATRIX.md`: legacy-canon carry-forward and redesign accountability matrix.
