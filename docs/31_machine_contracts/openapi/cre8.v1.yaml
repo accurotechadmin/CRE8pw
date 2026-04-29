@@ -1,0 +1,7 @@
+openapi: 3.1.0
+info:
+  title: CRE8 API Placeholder
+  version: 0.0.0-scaffold
+  description: >-
+    This placeholder OpenAPI file will mature into the authoritative machine contract for CRE8 endpoints, envelopes, errors, auth requirements, and compatibility policy.
+paths: {}
