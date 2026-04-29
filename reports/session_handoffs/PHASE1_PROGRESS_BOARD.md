@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T07:14:40Z
-- Current owner/session: Codex session `20260429-0714`
+- Last updated (UTC): 2026-04-29T11:09:00Z
+- Current owner/session: Codex session `20260429-1109`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -53,6 +53,7 @@
   - [x] Expand OpenAPI component schema depth and route response examples
   - [x] Deepen authz + lifecycle route payload schemas beyond envelope-only modeling
   - [x] Deepen feed route success payload schema beyond envelope-only modeling
+  - [x] Expand lifecycle machine-contract route parity with explicit revoke operation + schema
 - [x] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
   - [x] Enforce executable gap-tracker sync via `docs:ssot:sync-check`
@@ -75,8 +76,8 @@
   - [x] Create `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` for residual manual hooks
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
