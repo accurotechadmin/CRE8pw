@@ -183,7 +183,29 @@ foreach ($lines as $line) {
 }
 // Validate prose parity table rows remain synchronized and contain Phase 2 depth metadata.
 $proseRows = [];
+$familyHighPriorityCounts = [];
+$coveragePolicies = [];
 foreach (explode("\n", $proseParity) as $line) {
+    if (preg_match('/^\|\s*[a-z0-9_]+\s*\|\s*[0-9]+\s*\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|\s*HOOK-[A-Z0-9-]+\s*\|/i', trim($line)) === 1) {
+        $coverageCols = array_map('trim', explode('|', trim($line, '|')));
+        if (count($coverageCols) >= 4) {
+            $family = $coverageCols[0];
+            $minimum = (int) $coverageCols[1];
+            $coverageRequirementId = strtoupper($coverageCols[2]);
+            $coverageHookId = strtoupper($coverageCols[3]);
+            $coveragePolicies[$family] = [
+                'minimum_high_priority_routes' => $minimum,
+                'requirement_id' => $coverageRequirementId,
+                'hook_id' => $coverageHookId,
+            ];
+            if (!isset($traceRequirementIds[$coverageRequirementId])) {
+                $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy requirement_id not found in traceability matrix for family {$family}: {$coverageRequirementId}";
+            }
+            if (!isset($traceHookIds[$coverageHookId])) {
+                $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy hook_id not found in traceability matrix for family {$family}: {$coverageHookId}";
+            }
+        }
+    }
     if (!preg_match('/^\|\s*CRE8-ROUTE-[0-9]{4}\s*\|/i', trim($line))) {
         continue;
     }
@@ -225,6 +247,12 @@ foreach (explode("\n", $proseParity) as $line) {
     }
     if ($routeFamily === '' || $depthPriority === '' || $depthStatus === '') {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing Phase 2 depth metadata for {$routeId}";
+    }
+    if (!in_array($depthStatus, ['baseline_complete', 'depth_in_progress', 'depth_complete'], true)) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid parity_depth_status for {$routeId}: {$depthStatus}";
+    }
+    if ($depthPriority === 'high') {
+        $familyHighPriorityCounts[$routeFamily] = ($familyHighPriorityCounts[$routeFamily] ?? 0) + 1;
     }
 
     if (!preg_match('/^#\/components\/schemas\/[A-Za-z0-9._-]+$/', $successSchemaRef)) {
@@ -316,6 +344,22 @@ foreach (explode("\n", $proseParity) as $line) {
         }
     }
 
+}
+
+if ($coveragePolicies === []) {
+    $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing Route Family Coverage Policy table rows in prose parity table";
+}
+foreach ($familyHighPriorityCounts as $family => $_count) {
+    if (!isset($coveragePolicies[$family])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing coverage policy row for route_family: {$family}";
+    }
+}
+foreach ($coveragePolicies as $family => $policy) {
+    $actual = $familyHighPriorityCounts[$family] ?? 0;
+    $minimum = $policy['minimum_high_priority_routes'];
+    if ($actual < $minimum) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] high-priority route coverage below minimum for family {$family}: actual={$actual}, minimum={$minimum}";
+    }
 }
 
 foreach (array_keys($inventoryRouteIds) as $routeId) {
