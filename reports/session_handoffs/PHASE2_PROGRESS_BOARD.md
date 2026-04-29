@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T23:31:54Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2331
+- Last updated (UTC): 2026-04-29T23:37:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2337
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -76,17 +76,17 @@
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
-| Lane B — Deferred breadth decomposition | partially complete | 90% | Medium | Added explicit key-lifecycle deferred row and normalized auth policy-order linkage; runtime depth expansion remains pending. |
-| Lane C — Parity expansion | in progress | 91% | Medium | Auth decision deny-path parity undercoverage removed across inventory/OpenAPI/parity and executable fixture checks. |
+| Lane B — Deferred breadth decomposition | partially complete | 91% | Medium | Added explicit key-lifecycle deferred row and normalized auth policy-order linkage; runtime depth expansion remains pending. |
+| Lane C — Parity expansion | in progress | 93% | Medium | Auth deny mapping now enforces semantic OpenAPI example code/category coherence in executable checks. |
 | Lane D — Traceability/evidence hardening | in progress | 99% | Medium | Added matrix linkage for new coverage-policy governance requirement and deterministic owner/decision metadata checks. |
 | Lane E — Acceptance planning | in progress | 45% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2331.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2324.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2320.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2315.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2310.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2337.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2331.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2324.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2320.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2315.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
