@@ -47,6 +47,9 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | `docs:ssot:deprecation-schema` | Route inventory deprecation schema checks (`sunset_utc` and `replacement_route_id` completeness + format). | Missing-field/format failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:review-gate-check` | Owner/reviewer metadata and change-impact-map references for changed normative docs. | Hook-tagged failures and deterministic pass summary. | Docs Governance WG |
 | `docs:ssot:dod-trace-check` | Changed requirement IDs must exist in `TRACEABILITY_MATRIX.md` with matching `source_path`. | Hook-tagged failures and deterministic pass summary. | Program Traceability WG |
+| `docs:ssot:roadmap-schema-check` | Roadmap baseline table schema checks for status enum, date format, and required columns. | Schema failures with deterministic pass summary. | Program Traceability WG |
+| `docs:ssot:seed-promotion-schema` | Seed promotion tracker schema checks for row IDs, enum values, and promoted/deferred constraints. | Schema failures with deterministic pass summary. | Program Traceability WG |
+| `docs:ssot:seed-gap-schema` | Unresolved gap register schema checks, due-date format, and tracker_ref existence in seed tracker. | Schema and tracker-link failures with deterministic pass summary. | Program Traceability WG |
 | `test:contract:error` | Error determinism checks for route-declared error codes and canonical 4xx/5xx status mapping. | Hook-tagged failures and deterministic pass summary. | API Contracts WG |
 | `test:contract:auth-reasons` | Authorization decision reason-code mapping coverage against error catalog entries. | Missing-mapping failures and deterministic pass summary. | Identity & Policy WG |
 | `test:contract:auth` | Authorization decision-table gate order and deterministic short-circuit deny reason checks. | Step-order drift failures and deterministic pass summary. | Identity & Policy WG |
@@ -62,6 +65,9 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **HOOK-SSOT-REPORT-COVERAGE**: Compute and publish requirement/hook coverage summary.
 - **HOOK-REVIEW-GATE-CHECK-AUTO**: Validate owner/reviewer metadata and change-impact-map references on changed normative docs.
 - **HOOK-DOD-TRACE-CHECK-AUTO**: Validate changed requirement IDs remain synchronized with `TRACEABILITY_MATRIX.md`.
+- **HOOK-TRACE-ROADMAP-SCHEMA-AUTO**: Validate roadmap baseline milestone table schema and enums.
+- **HOOK-SEED-PROMOTION-SCHEMA-AUTO**: Validate seed promotion tracker schema and status-transition constraints.
+- **HOOK-SEED-GAP-REGISTER-SCHEMA-AUTO**: Validate unresolved seed gap schema and tracker linkage integrity.
 
 ## Manual verification procedure (until automation exists)
 1. Run `rg "^doc_id:|^version:|^status:|^owner:|^reviewers:|^last_reviewed_utc:|^next_review_due_utc:|^source_seed_refs:|^normative_dependencies:" docs` and verify each normative file has all required keys.

@@ -64,6 +64,9 @@
     "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php",
     "test:contract:feed": "@php scripts/test_contract_feed.php",
     "docs:ssot:review-gate-check": "@php scripts/docs_ssot_review_gate_check.php",
-    "docs:ssot:dod-trace-check": "@php scripts/docs_ssot_dod_trace_check.php"
+    "docs:ssot:dod-trace-check": "@php scripts/docs_ssot_dod_trace_check.php",
+    "docs:ssot:roadmap-schema-check": "@php scripts/docs_ssot_roadmap_schema_check.php",
+    "docs:ssot:seed-promotion-schema": "@php scripts/docs_ssot_seed_promotion_schema.php",
+    "docs:ssot:seed-gap-schema": "@php scripts/docs_ssot_seed_gap_schema.php"
   }
 }
