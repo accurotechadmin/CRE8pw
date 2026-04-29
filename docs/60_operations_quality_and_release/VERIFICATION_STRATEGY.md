@@ -43,8 +43,9 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 ## Phase 1 initial hooks
 | hook_id | trigger | tool_or_procedure | expected_result | evidence_location | next_automation_candidate |
 |---|---|---|---|---|---|
-| HOOK-CONTRACT-POLICY-ORDER | PR | Contract tests for policy order and deny precedence | Deterministic pass/fail on order invariants | docs/evidence/templates/README.md | Add `test:contract:auth` executable suite |
+| HOOK-CONTRACT-POLICY-ORDER | PR | `composer test:contract:auth` | Deterministic pass/fail on order invariants | docs/evidence/templates/README.md | Implemented as `test:contract:auth` |
 | HOOK-CONTRACT-ERROR-DETERMINISM | PR | `composer test:contract:error` | Stable envelope + code mapping | docs/evidence/templates/README.md | Implemented as `test:contract:error` |
+| HOOK-CONTRACT-ERROR-SECRETS-REDaction | PR | `composer test:contract:error-secrets` | OpenAPI error examples and descriptions contain no forbidden secret-leak tokens and include redacted 5xx example | docs/evidence/templates/README.md | Implemented as `test:contract:error-secrets` |
 | HOOK-SSOT-LINT-METADATA | PR | `composer docs:ssot:lint` | Exit code 0 with no metadata/link failures | reports/ssot/coverage_latest.json |  |
 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | PR | `composer docs:ssot:route-parity` | Method/path and route_id parity maintained with no undocumented drift | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:route-parity` |
 | HOOK-CONTRACT-ROUTE-UNIQUENESS | PR | `composer docs:ssot:route-uniqueness` | No duplicate IDs or method/path collisions | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:route-uniqueness` |

@@ -59,6 +59,8 @@
     "docs:ssot:error-code-coverage": "@php scripts/docs_ssot_error_code_coverage.php",
     "docs:ssot:deprecation-schema": "@php scripts/docs_ssot_deprecation_schema.php",
     "test:contract:error": "@php scripts/test_contract_error.php",
-    "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php"
+    "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php",
+    "test:contract:auth": "@php scripts/test_contract_auth.php",
+    "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php"
   }
 }
