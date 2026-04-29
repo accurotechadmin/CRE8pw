@@ -10,6 +10,7 @@ $commands = [
     'composer docs:ssot:review-gate-check',
     'composer test:contract:auth',
     'composer test:contract:feed',
+    'composer test:contract:lifecycle',
     'composer test:contract:identity-issuance',
     'composer test:contract:identity-context',
     'composer test:contract:surface-parity',
