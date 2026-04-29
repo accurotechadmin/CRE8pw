@@ -80,6 +80,8 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-CONTRACT-REQ-0012 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-COMPAT-DECLARATION | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-CONTRACT-REQ-0020 | CRE8-CONTRACTS-ROUTE-INVENTORY | docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md | HOOK-CONTRACT-ROUTE-UNIQUENESS | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-CONTRACT-REQ-0023 | CRE8-CONTRACTS-ROUTE-INVENTORY | docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md | HOOK-CONTRACT-DEPRECATION-SCHEMA | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-CONTRACT-REQ-0016 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-METADATA-STABILITY | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-CONTRACT-REQ-0017 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-METADATA-STABILITY | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-OPS-REQ-0001 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-REPORT-COVERAGE | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-OPS-REQ-0005 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -116,6 +118,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-CONTRACT-COMPAT-DECLARATION**: Manual/automated hook validating compatibility/migration declaration sections for contract changes.
 - **HOOK-CONTRACT-ROUTE-UNIQUENESS**: Manual/automated hook ensuring unique route identifiers and method/path pairs.
 - **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Manual/automated hook validating sunset and replacement fields for deprecated routes.
+- **HOOK-CONTRACT-FEED-METADATA-STABILITY**: Automated hook validating feed metadata fields/enums and schema-version marker remain contract-stable.
 - **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Manual/automated hook validating that ID keypair issuance precedes all utility-key issuance.
 - **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated hook validating utility-key context isolation and no cross-context reuse.
 - **HOOK-CONTRACT-SURFACE-PARITY**: Manual/automated hook validating supported UI capabilities map to canonical API route contracts or approved exceptions.

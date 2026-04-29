@@ -34,6 +34,23 @@
           "published_utc": {
             "type": "string",
             "format": "date-time"
+          },
+          "audience_labels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_.:-]+$"
+            },
+            "maxItems": 16
+          },
+          "moderation_state": {
+            "type": "string",
+            "enum": [
+              "none",
+              "pending_review",
+              "restricted",
+              "blocked"
+            ]
           }
         },
         "additionalProperties": false
@@ -46,7 +63,8 @@
         "timestamp_utc",
         "contract_version",
         "next_cursor",
-        "cursor_basis"
+        "cursor_basis",
+        "feed_metadata_schema_version"
       ],
       "properties": {
         "request_id": {
@@ -70,6 +88,10 @@
           "enum": [
             "published_utc_desc__item_id_asc"
           ]
+        },
+        "feed_metadata_schema_version": {
+          "type": "string",
+          "pattern": "^feed-meta-v[0-9]+$"
         }
       },
       "additionalProperties": true
