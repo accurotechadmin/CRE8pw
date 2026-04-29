@@ -31,6 +31,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **CRE8-TRACE-REQ-0094**: The repository **MUST** define a `docs:ssot:report` command contract that emits a machine-readable coverage summary containing, at minimum, total normative requirements, traced requirements, untraced requirements, and manual-only verification hooks.
 - **CRE8-TRACE-REQ-0095**: Each automation command contract **MUST** declare deterministic exit semantics (`0=pass`, non-zero `=fail`) and **MUST** include reproducible local invocation instructions.
 - **CRE8-TRACE-REQ-0096**: For each hook listed in this document, `TRACEABILITY_MATRIX.md` **MUST** reflect the current verification mode (`automated` when implemented; `manual` only when automation is unavailable) with an explicit next automation action in `notes` for manual rows.
+- **CRE8-TRACE-REQ-0099**: `docs:ssot:sync-check` **MUST** fail if any `TRACEABILITY_MATRIX.md` row uses `verification_mode=manual` and the corresponding `verification_hook_id` is missing in `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` or missing owner/priority/target-command fields.
 - **CRE8-TRACE-REQ-0097**: Any PR that changes normative requirements **MUST** include evidence of running all currently-available `docs:ssot:*` commands and **MUST** document missing-automation gaps in the session handoff.
 - **CRE8-TRACE-REQ-0098**: The repository **MUST** provide a CI workflow group named `ssot_phase1_gate` that hard-fails on non-zero exit from `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report`.
 
@@ -38,7 +39,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | Command | Required checks | Output contract | Owner |
 |---|---|---|---|
 | `docs:ssot:lint` | Metadata key completeness; link integrity; scaffold/prohibited phrase detection. | Line-oriented failures with file path + requirement/hook context. | Docs Governance WG |
-| `docs:ssot:sync-check` | Promotion tracker schema; promoted-row target existence; promoted-row traceability row existence. | Summary counts and explicit failing row IDs. | Program Traceability WG |
+| `docs:ssot:sync-check` | Promotion tracker schema; promoted-row target existence; promoted-row traceability row existence; manual-mode matrix rows must reconcile with manual-hook backlog rows + required metadata. | Summary counts and explicit failing row IDs. | Program Traceability WG |
 | `docs:ssot:report` | Trace coverage summary; manual vs automated hook split; missing evidence path summary. | JSON artifact at `reports/ssot/coverage_latest.json`. | Program Traceability WG |
 | `docs:ssot:route-parity` | Route inventory method/path parity with OpenAPI operations. | Line-oriented drift failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:route-uniqueness` | Duplicate `route_id` and method/path detection in route inventory. | Duplicate failures with deterministic pass summary. | API Contracts WG |

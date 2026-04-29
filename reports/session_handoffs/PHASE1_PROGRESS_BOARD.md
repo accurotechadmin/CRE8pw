@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T11:33:00Z
-- Current owner/session: Codex session `20260429-1133`
+- Last updated (UTC): 2026-04-29T11:53:00Z
+- Current owner/session: Codex session `20260429-1153`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -77,13 +77,28 @@
   - [x] Record formal freeze-closure waiver decision for residual Slice 6/7 breadth via ADR-003
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1133.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
 
 
 ## Audit validation note
 - Statuses above are **audit-validated for acceptance scope** unless otherwise noted; they are not blanket claims of zero residual breadth.
 - Slices 6–8 retain deferred breadth/manual-depth residuals tracked in `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`.
+
+
+## Re-baselined truth snapshot
+| Slice | Status | % (est.) | Confidence | Evidence basis |
+|---|---|---:|---|---|
+| 1 | complete | 100% | High | Governance hardening artifacts stable and required checks green. |
+| 2 | complete | 100% | High | Seed mapping and unresolved-gap schema checks pass. |
+| 3 | complete | 100% | High | Link topology/anti-orphan automation checks pass. |
+| 4 | partially complete | 95% | Medium | Review/ownership hooks pass; organizational approval execution remains process-layer. |
+| 5 | partially complete | 95% | Medium | Traceability/decision mechanisms hardened; exhaustive breadth proof is sampled not full runtime validation. |
+| 6 | partially complete | 85% | Medium | Acceptance-critical contract checks pass; deferred breadth remains by ADR-003. |
+| 7 | partially complete | 85% | Medium | Baseline prose-machine parity checks pass; breadth remains deferred by ADR-003. |
+| 8 | partially complete | 88% | Medium | Gate hooks pass; residual non-gate manual hooks now explicitly backlog-tracked. |
+| 9 | complete | 95% | High | SSOT gate command family and acceptance bundle are executable and passing. |
+| 10 | complete | 100% | High | Freeze acceptance gates pass with same-session evidence bundle. |
