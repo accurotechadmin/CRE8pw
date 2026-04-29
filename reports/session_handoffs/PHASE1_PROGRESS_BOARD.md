@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T04:50:13Z
-- Current owner/session: Codex session `20260429-0450`
+- Last updated (UTC): 2026-04-29T04:56:29Z
+- Current owner/session: Codex session `20260429-0456`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -33,7 +33,7 @@
 - [~] Slice 6 — Contract domain hardening
   - [x] Harden `AUTHORIZATION_AND_DELEGATION_SPEC.md`
   - [x] Harden `ERROR_CODE_CATALOG.md`
-  - [ ] Harden decision tables and route-level contract corpus
+  - [x] Harden decision tables and route-level contract corpus
 - [ ] Slice 7 — Machine contract synchronization
 - [~] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
@@ -47,8 +47,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0432.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`

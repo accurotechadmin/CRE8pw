@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
 
 Summary:
-- Hardened first Slice 6 contract docs: authorization/delegation and error catalog, each with metadata, deterministic requirements, and verification hooks.
-- Hardened Slice 8 `VERIFICATION_STRATEGY.md` with hook schema and merge-blocking verification requirements.
-- Added traceability matrix rows and hook registry entries for new `CRE8-AUTH-*`, `CRE8-CONTRACT-*`, and `CRE8-OPS-*` requirements.
+- Hardened Slice 6 `AUTHORIZATION_DECISION_TABLES.md` with deterministic gate order and deny reason mapping requirements.
+- Hardened Slice 6 `API_CONTRACT_GUIDE.md` and `ROUTE_INVENTORY_REFERENCE.md` with route parity, compatibility, and inventory schema requirements.
+- Extended traceability matrix with new `CRE8-AUTH-*` and `CRE8-CONTRACT-*` rows plus route/auth hook glossary entries.

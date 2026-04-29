@@ -1,7 +1,65 @@
+---
+doc_id: CRE8-CONTRACTS-ROUTE-INVENTORY
+version: 1.0.0
+status: provisional-normative
+owner: API Contracts WG
+reviewers:
+  - Platform Architecture WG
+  - Identity & Policy WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - seed/
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+normative_dependencies:
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/31_machine_contracts/openapi/cre8.v1.yaml
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+---
+
 # Route Inventory Reference
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **ROUTE_INVENTORY_REFERENCE.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define the minimum authoritative route inventory schema and parity obligations for all CRE8 HTTP interfaces.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-CONTRACT-REQ-0020**: The inventory table **MUST** contain one row per externally callable route with unique `route_id`.
+- **CRE8-CONTRACT-REQ-0021**: Each row **MUST** include `method`, `path`, `auth_model`, `required_permission`, `scope_type`, `success_status`, and `error_code_set`.
+- **CRE8-CONTRACT-REQ-0022**: `method`+`path` combinations **MUST NOT** be duplicated across active route rows.
+- **CRE8-CONTRACT-REQ-0023**: Any route marked `deprecated` **MUST** include `sunset_utc` and `replacement_route_id`.
+- **CRE8-CONTRACT-REQ-0024**: Inventory updates **MUST** occur in the same change set as related OpenAPI and API guide updates.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Inventory schema (authoritative columns)
+| Column | Required | Description |
+|---|---|---|
+| route_id | yes | Stable route identifier (`CRE8-ROUTE-####`). |
+| method | yes | HTTP method. |
+| path | yes | Absolute API path. |
+| auth_model | yes | `public`, `id-key`, `utility-key`, `delegated`. |
+| required_permission | yes | Permission token required to authorize request. |
+| scope_type | yes | Scope family (`tenant`, `group`, `resource`, `global`). |
+| success_status | yes | Deterministic success status code(s). |
+| error_code_set | yes | Comma-separated codes from `ERROR_CODE_CATALOG.md`. |
+| lifecycle | yes | `active`, `deprecated`, `sunset`. |
+| sunset_utc | conditional | Required if lifecycle is `deprecated` or `sunset`. |
+| replacement_route_id | conditional | Required if lifecycle is `deprecated` or `sunset`. |
+
+## Baseline route inventory (Phase 1 placeholder rows)
+| route_id | method | path | auth_model | required_permission | scope_type | success_status | error_code_set | lifecycle |
+|---|---|---|---|---|---|---|---|---|
+| CRE8-ROUTE-0001 | POST | /v1/auth/authorize | delegated | auth.evaluate | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY | active |
+| CRE8-ROUTE-0002 | GET | /v1/policy/grants/{grantId} | delegated | policy.read | resource | 200 | AUTH_SCOPE_DENIED,AUTH_GRANT_EXPIRED | active |
+
+## Verification hooks
+- **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.
+- **HOOK-CONTRACT-ROUTE-UNIQUENESS**: Validate uniqueness of `method`+`path` and `route_id` values.
+- **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Validate presence of sunset and replacement fields for deprecated routes.
+
+## Drift notes
+- Baseline inventory rows are provisional placeholders pending complete route promotion from seed canon and machine contracts.
+
+## See also
+- [API Contract Guide](./API_CONTRACT_GUIDE.md)
+- [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
+- [Error Code Catalog](./ERROR_CODE_CATALOG.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

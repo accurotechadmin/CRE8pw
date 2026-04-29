@@ -71,8 +71,14 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-AUTH-REQ-0001 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-CONTRACT-POLICY-ORDER | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-AUTH-REQ-0002 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-INHERITANCE-BOUNDARY | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-AUTH-REQ-0006 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0010 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-CONTRACT-POLICY-ORDER | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0015 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-AUTH-DECISION-REASON-MAPPING | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-CONTRACT-REQ-0001 | CRE8-CONTRACTS-ERROR-CATALOG | docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md | HOOK-CONTRACT-ERROR-DETERMINISM | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-CONTRACT-REQ-0004 | CRE8-CONTRACTS-ERROR-CATALOG | docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md | HOOK-CONTRACT-ERROR-SECRETS-REDaction | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0010 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0014 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-ERROR-CODE-COVERAGE | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0020 | CRE8-CONTRACTS-ROUTE-INVENTORY | docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md | HOOK-CONTRACT-ROUTE-UNIQUENESS | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0023 | CRE8-CONTRACTS-ROUTE-INVENTORY | docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md | HOOK-CONTRACT-DEPRECATION-SCHEMA | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-OPS-REQ-0001 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-REPORT-COVERAGE | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-OPS-REQ-0005 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -92,8 +98,14 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-CONTRACT-POLICY-ORDER**: Manual/automated contract test hook for deterministic authorization evaluation order and deny precedence.
 - **HOOK-AUTH-INHERITANCE-BOUNDARY**: Manual/automated hook for descendant grant boundary constraints.
 - **HOOK-AUTH-LIFECYCLE-ENFORCEMENT**: Manual/automated hook for suspend/revoke/expire enforcement.
+- **HOOK-AUTH-DECISION-REASON-MAPPING**: Manual/automated hook for one-to-one mapping from authorization decision reasons to API error codes.
 - **HOOK-CONTRACT-ERROR-DETERMINISM**: Manual/automated hook for error envelope stability and deterministic code mapping.
 - **HOOK-CONTRACT-ERROR-SECRETS-REDaction**: Manual/automated hook ensuring secrets are never exposed in error payloads.
+- **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Manual/automated hook for route inventory method/path parity with OpenAPI.
+- **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Manual/automated hook verifying route-declared error codes exist in the error catalog.
+- **HOOK-CONTRACT-COMPAT-DECLARATION**: Manual/automated hook validating compatibility/migration declaration sections for contract changes.
+- **HOOK-CONTRACT-ROUTE-UNIQUENESS**: Manual/automated hook ensuring unique route identifiers and method/path pairs.
+- **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Manual/automated hook validating sunset and replacement fields for deprecated routes.
 
 ## Drift and reconciliation policy
 - Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.
