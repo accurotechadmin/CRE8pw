@@ -83,6 +83,10 @@ paths:
               examples:
                 scopeDenied:
                   $ref: '#/components/examples/ErrorScopeDenied'
+                depthExceeded:
+                  $ref: '#/components/examples/ErrorAuthDepthExceeded'
+                grantExpired:
+                  $ref: '#/components/examples/ErrorGrantExpired'
   /v1/keys/{key_id}/lifecycle/suspend:
     post:
       operationId: postKeyLifecycleSuspend
@@ -139,6 +143,10 @@ paths:
                   $ref: '#/components/examples/ErrorPermissionDenied'
                 scopeDenied:
                   $ref: '#/components/examples/ErrorScopeDenied'
+                depthExceeded:
+                  $ref: '#/components/examples/ErrorAuthDepthExceeded'
+                grantExpired:
+                  $ref: '#/components/examples/ErrorGrantExpired'
 components:
   schemas:
     SuccessEnvelope:
@@ -192,10 +200,18 @@ components:
         data:
           - { item_id: "itm_001", rank: 1, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:59:00Z" }
           - { item_id: "itm_002", rank: 2, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z" }
-        meta: { request_id: "req-feed-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+        meta: { request_id: "req-feed-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0", next_cursor: "pub:2026-04-29T05:54:00Z|itm_002", cursor_basis: "published_utc_desc__item_id_asc" }
     ErrorPermissionDenied:
       value:
         error: { code: AUTH_PERMISSION_DENIED, message: "Permission denied.", category: AUTH_DENY, request_id: "req-feed-002", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-feed-002", contract_version: "1.0.0" }
+    ErrorAuthDepthExceeded:
+      value:
+        error: { code: AUTH_DEPTH_EXCEEDED, message: "Delegation depth exceeded.", category: AUTH_DENY, request_id: "req-feed-003", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-feed-003", contract_version: "1.0.0" }
+    ErrorGrantExpired:
+      value:
+        error: { code: AUTH_GRANT_EXPIRED, message: "Delegated grant expired.", category: AUTH_DENY, request_id: "req-feed-004", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-feed-004", contract_version: "1.0.0" }
 security:
   - cre8Proof: []
