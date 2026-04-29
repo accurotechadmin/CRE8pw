@@ -21,6 +21,7 @@ if ($routeInventory === false || $openApi === false || $proseParity === false ||
 
 $inventoryPairs = [];
 $inventoryRouteIds = [];
+$inventoryFamilies = [];
 foreach (explode("\n", $routeInventory) as $line) {
     if (!preg_match('/^\|\s*CRE8-ROUTE-[0-9]{4}\s*\|/i', trim($line))) {
         continue;
@@ -34,6 +35,20 @@ foreach (explode("\n", $routeInventory) as $line) {
     $path = $cols[2];
     $inventoryPairs[$method . ' ' . $path] = true;
     $inventoryRouteIds[$routeId] = $method . ' ' . $path;
+    if (count($cols) >= 8) {
+        $requiredPermission = strtolower(trim($cols[4]));
+        $family = 'uncategorized';
+        if (str_starts_with($requiredPermission, 'authz.')) {
+            $family = 'auth_decision';
+        } elseif (str_starts_with($requiredPermission, 'key.lifecycle.')) {
+            $family = 'key_lifecycle';
+        } elseif (str_starts_with($requiredPermission, 'feed.')) {
+            $family = 'feed_audience';
+        } elseif (str_starts_with($requiredPermission, 'system.')) {
+            $family = 'system_health';
+        }
+        $inventoryFamilies[$family] = true;
+    }
 }
 
 $openApiPairs = [];
@@ -400,6 +415,21 @@ foreach ($familyHighPriorityCounts as $family => $_count) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing coverage policy row for route_family: {$family}";
     }
 }
+
+foreach (array_keys($inventoryFamilies) as $family) {
+    if (!isset($coveragePolicies[$family])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing coverage policy row for inventory-derived family: {$family}";
+    }
+}
+foreach ($coveragePolicies as $family => $policy) {
+    if (!preg_match('/^[a-z0-9_]+$/', $family)) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid route_family format in coverage policy: {$family}";
+    }
+    if ($policy['minimum_high_priority_routes'] < 0) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] minimum_high_priority_routes cannot be negative for family {$family}";
+    }
+}
+
 foreach ($coveragePolicies as $family => $policy) {
     $actual = $familyHighPriorityCounts[$family] ?? 0;
     $minimum = $policy['minimum_high_priority_routes'];

@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.3.0
+version: 1.4.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -36,6 +36,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0009**: `parity_depth_status` values **MUST** use only `baseline_complete`, `depth_in_progress`, or `depth_complete`.
 - **CRE8-MACHINE-REQ-0010**: Each parity-row `error_codes` value **MUST** reference only canonical codes from `ERROR_CODE_CATALOG.md` and **MUST** be contained within the route `error_code_set` declared in `ROUTE_INVENTORY_REFERENCE.md`.
 - **CRE8-MACHINE-REQ-0011**: For each route, every non-baseline deny code in `ROUTE_INVENTORY_REFERENCE.md#error_code_set` **MUST** be represented in parity-row `error_codes` to prevent deny-mapping undercoverage.
+- **CRE8-MACHINE-REQ-0012**: Route Family Coverage Policy rows **MUST** include every route family derivable from active route inventory permission namespaces; missing family policy rows **MUST** fail parity checks.
 
 ## Route Family Coverage Policy
 | route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | notes |
