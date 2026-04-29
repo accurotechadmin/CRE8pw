@@ -3,13 +3,21 @@
   "$id": "https://cre8.local/schemas/feed-items-response.schema.json",
   "title": "FeedItemsSuccessEnvelope",
   "type": "object",
-  "required": ["data", "meta"],
+  "required": [
+    "data",
+    "meta"
+  ],
   "properties": {
     "data": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["item_id", "rank", "visibility_scope", "published_utc"],
+        "required": [
+          "item_id",
+          "rank",
+          "visibility_scope",
+          "published_utc"
+        ],
         "properties": {
           "item_id": {
             "type": "string",
@@ -33,7 +41,13 @@
     },
     "meta": {
       "type": "object",
-      "required": ["request_id", "timestamp_utc", "contract_version"],
+      "required": [
+        "request_id",
+        "timestamp_utc",
+        "contract_version",
+        "next_cursor",
+        "cursor_basis"
+      ],
       "properties": {
         "request_id": {
           "type": "string",
@@ -46,6 +60,16 @@
         "contract_version": {
           "type": "string",
           "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "next_cursor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cursor_basis": {
+          "type": "string",
+          "enum": [
+            "published_utc_desc__item_id_asc"
+          ]
         }
       },
       "additionalProperties": true
