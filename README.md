@@ -1,12 +1,12 @@
-# CRE8 `/newdev` Seed Canon README
+# CRE8 Seed Canon README
 
 _Status: authoritative seed overview_  
 _Last updated (UTC): 2026-04-29_
 
-## 1) Why `/newdev` exists
-`/newdev` is the launchpad for the **next canonical CRE8 SSOT repository**. It is intentionally a clean cleave from the legacy `/docs` corpus while preserving the essential CRE8 ethos: deterministic governance, safe delegation, dual-surface operation, and auditable trust.
+## 1) Why this seed canon exists
+This seed canon is the launchpad for the canonical CRE8 SSOT repository. It preserves the essential CRE8 ethos: deterministic governance, safe delegation, dual-surface operation, and auditable trust.
 
-This folder is not a scratchpad. It is the migration-ready seed canon that captures what must survive into the new repository and what is intentionally redesigned. The primary redesign is the **ID-keypair-first architecture** for delegated principals.
+This document set is not a scratchpad. It is the SSOT seed canon that captures required CRE8 invariants and intentional redesigns. The primary redesign is the **ID-keypair-first architecture** for delegated principals.
 
 ---
 
@@ -124,19 +124,19 @@ Planned growth examples include direct messaging, file/image/media sharing, and 
 
 ---
 
-## 11) Canon preservation strategy during cleave
+## 11) Canon preservation strategy
 The migration strategy is:
-1. Extract every important legacy CRE8 truth worth preserving.
-2. Re-express it inside `/newdev` under the new architecture.
-3. Drop or rewrite only what conflicts with ID-keypair-first design and modernized governance boundaries.
-4. Produce a coherent, portable seed canon that can become the new repository’s SSOT origin.
+1. Preserve every essential CRE8 invariant.
+2. Express all requirements under the ID-keypair-first architecture.
+3. Remove or rewrite assumptions that conflict with bounded delegation and modernized governance boundaries.
+4. Produce a coherent, portable seed canon that serves as SSOT origin.
 
-`/newdev/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md` is the root seed anchor. Supporting `/newdev` files decompose the model into permissions, lifecycle/crypto, surfaces/parity, extensibility, and indexing.
+`CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md` is the root seed anchor. Supporting seed files decompose the model into permissions, lifecycle/crypto, surfaces/parity, extensibility, and indexing.
 
 ---
 
 ## 12) What this README obligates future authoring to do
-Any future `/newdev` document updates MUST:
+Any future seed-canon document updates MUST:
 - remain consistent with ID-keypair-first minting,
 - preserve bounded hierarchical delegation,
 - preserve dual-surface and UI/API parity principles,
@@ -144,7 +144,7 @@ Any future `/newdev` document updates MUST:
 - preserve audit/provenance and lifecycle governance rigor,
 - improve extensibility without weakening security invariants.
 
-When this `/newdev` set is complete enough, it will be moved to a fresh repository and matured into full production-grade SSOT documentation and implementation guidance.
+When this seed set is complete enough, it MUST be matured into full production-grade SSOT documentation and implementation guidance.
 
 
 ## 13) Seed document map (navigation)
@@ -155,4 +155,4 @@ When this `/newdev` set is complete enough, it will be moved to a fresh reposito
 - `CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md`: content targeting, audience model, comments, and feed behavior.
 - `CRE8_API_CONTRACT_AND_ERROR_SEED.md`: envelope-first contract and deterministic deny/error mapping.
 - `CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`: extension seams and module pattern guardrails.
-- `CRE8_SEED_PRESERVATION_MATRIX.md`: legacy-canon carry-forward and redesign accountability matrix.
+- `CRE8_SEED_PRESERVATION_MATRIX.md`: preservation and redesign accountability matrix.
