@@ -35,6 +35,8 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **CRE8-CONTRACT-REQ-0050**: Route `/v1/feed/items` fixtures **MUST** encode a deterministic tie-break rule for identical `published_utc` values by ordering ascending `item_id` values within the same timestamp bucket.
 - **CRE8-CONTRACT-REQ-0051**: Route `/v1/feed/items` contract changes that modify `feed_metadata_schema_version` **MUST** include explicit compatibility classification and migration notes documenting consumer-impact and rollback expectations in this guide before merge.
 - **CRE8-CONTRACT-REQ-0052**: Route `/v1/feed/items` deny examples **MUST** map only to canonical codes declared in `ERROR_CODE_CATALOG.md`; non-catalog feed deny codes are prohibited.
+- **CRE8-CONTRACT-REQ-0053**: Route `/v1/feed/items` **MUST** include a lifecycle-deny example using canonical code `AUTH_LIFECYCLE_BLOCKED` and this example **MUST** remain synchronized between prose and OpenAPI fixtures.
+- **CRE8-CONTRACT-REQ-0054**: Feed cursor fixtures **MUST** demonstrate monotonic multi-page progression where each page `next_cursor` is strictly older than the prior page cursor under `published_utc_desc__item_id_asc`.
 
 ## Parity policy (prose ↔ machine)
 - Route identifiers in prose **MUST** match OpenAPI operation IDs when defined.
@@ -46,7 +48,8 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Validate all declared error codes exist in `ERROR_CODE_CATALOG.md`.
 - **HOOK-CONTRACT-COMPAT-DECLARATION**: Validate compatibility classification and migration note sections for contract-impacting changes.
 - **HOOK-CONTRACT-FEED-ORDER-CURSOR**: Validate feed fixtures encode newest-first ordering, tie-case ordering (`published_utc` then `item_id`), and cursor-to-last-item determinism.
-- **HOOK-CONTRACT-FEED-DENY-CODE-CATALOG**: Validate feed deny examples map only to canonical error-code catalog entries.
+- **HOOK-CONTRACT-FEED-DENY-CODE-CATALOG**: Validate feed deny examples map only to canonical error-code catalog entries (including required lifecycle deny coverage).
+- **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Validate multi-page feed fixtures preserve strict cursor monotonicity across sequential pages.
 
 ## Drift notes
 - OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.

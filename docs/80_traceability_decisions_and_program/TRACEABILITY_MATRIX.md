@@ -85,7 +85,9 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-CONTRACT-REQ-0018 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-ORDER-CURSOR | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-CONTRACT-REQ-0050 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-ORDER-CURSOR | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-CONTRACT-REQ-0051 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-ORDER-CURSOR | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
-| CRE8-CONTRACT-REQ-0052 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG | automated | API Contracts WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-CONTRACT-REQ-0052 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG | automated | API Contracts WG | provisional-normative | docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md |
+| CRE8-CONTRACT-REQ-0053 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG | automated | API Contracts WG | provisional-normative | docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md |
+| CRE8-CONTRACT-REQ-0054 | CRE8-CONTRACTS-API-GUIDE | docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md | HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC | automated | API Contracts WG | provisional-normative | docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md |
 | CRE8-OPS-REQ-0001 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-REPORT-COVERAGE | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-OPS-REQ-0005 | CRE8-OPS-VERIFICATION-STRATEGY | docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Operations Quality WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -124,6 +126,8 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Manual/automated hook validating sunset and replacement fields for deprecated routes.
 - **HOOK-CONTRACT-FEED-METADATA-STABILITY**: Automated hook validating feed metadata fields/enums and schema-version marker remain contract-stable.
 - **HOOK-CONTRACT-FEED-ORDER-CURSOR**: Automated hook validating feed fixture ordering invariants and cursor-to-last-item determinism.
+- **HOOK-CONTRACT-FEED-DENY-CODE-CATALOG**: Automated hook validating feed deny examples resolve only to canonical error catalog codes, including lifecycle deny coverage.
+- **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Automated hook validating strict cursor monotonic progression across sequential feed page fixtures.
 - **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Manual/automated hook validating that ID keypair issuance precedes all utility-key issuance.
 - **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated hook validating utility-key context isolation and no cross-context reuse.
 - **HOOK-CONTRACT-SURFACE-PARITY**: Manual/automated hook validating supported UI capabilities map to canonical API route contracts or approved exceptions.
