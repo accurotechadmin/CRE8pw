@@ -1,3 +1,22 @@
 {
-  "_placeholder": "This schema file will define mature CRE8 machine-contract JSON Schema constraints for this domain, including required fields, validation semantics, and compatibility/versioning rules."
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/policy-decision.schema.json",
+  "title": "Authorization Decision Request",
+  "type": "object",
+  "required": ["principal_id", "action", "resource_scope", "request_context"],
+  "additionalProperties": false,
+  "properties": {
+    "principal_id": {"type": "string", "minLength": 3},
+    "action": {"type": "string", "minLength": 3},
+    "resource_scope": {"type": "string", "minLength": 3},
+    "request_context": {
+      "type": "object",
+      "required": ["tenant_id", "surface"],
+      "additionalProperties": false,
+      "properties": {
+        "tenant_id": {"type": "string", "minLength": 2},
+        "surface": {"type": "string", "enum": ["api", "console", "public"]}
+      }
+    }
+  }
 }

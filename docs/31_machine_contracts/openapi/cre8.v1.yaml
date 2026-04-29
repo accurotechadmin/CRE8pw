@@ -64,10 +64,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SuccessEnvelope'
+                $ref: '#/components/schemas/AuthzDecisionSuccessEnvelope'
               examples:
                 allow:
                   $ref: '#/components/examples/AuthDecisionAllow'
+        '400':
+          description: Invalid authorization decision request payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
         '403':
           description: Policy denied.
           content:
@@ -94,7 +100,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SuccessEnvelope'
+                $ref: '#/components/schemas/LifecycleSuspendSuccessEnvelope'
               examples:
                 accepted:
                   $ref: '#/components/examples/LifecycleSuspendAccepted'
@@ -137,6 +143,10 @@ components:
       $ref: ../schemas/success-envelope.schema.json
     ErrorEnvelope:
       $ref: ../schemas/error-envelope.schema.json
+    AuthzDecisionSuccessEnvelope:
+      $ref: ../schemas/authz-decision-response.schema.json
+    LifecycleSuspendSuccessEnvelope:
+      $ref: ../schemas/lifecycle-suspend-response.schema.json
   securitySchemes:
     cre8Proof:
       type: http
@@ -156,10 +166,10 @@ components:
         error: { code: SYSTEM_INTERNAL_ERROR, message: "An internal error occurred.", category: SYSTEM, request_id: "req-sys-001", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-sys-001", contract_version: "1.0.0" }
     AuthDecisionRequestScopeDeny:
-      value: { principal_id: "prn_001", action: "feed.items.read", resource_scope: "group:g-123" }
+      value: { principal_id: "prn_001", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api" } }
     AuthDecisionAllow:
       value:
-        data: { decision: "allow", decision_reason_code: "ALLOW" }
+        data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7 }
         meta: { request_id: "req-authz-allow-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
     ErrorScopeDenied:
       value:
@@ -167,7 +177,7 @@ components:
         meta: { request_id: "req-authz-001", contract_version: "1.0.0" }
     LifecycleSuspendAccepted:
       value:
-        data: { key_id: "key_123", lifecycle_state: "suspended" }
+        data: { key_id: "key_123", lifecycle_state: "suspended", effective_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-life-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
     ErrorLifecycleBlocked:
       value:
