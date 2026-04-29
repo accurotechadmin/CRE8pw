@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0402.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0407.md`
 
 Summary:
-- Completed Slice 5 by hardening `ROADMAP_AND_MILESTONES.md` with deterministic milestone, blocker, and evidence-link requirements.
-- Bootstrapped Slice 2 with new normative `SEED_PROMOTION_TRACKER.md` and `UNRESOLVED_SEED_GAP_REGISTER.md` artifacts.
-- Updated progress board to mark Slice 5 complete and Slice 2 materially in progress with next automation steps identified.
+- Hardened `SSOT_AUTOMATION_AND_LINTING.md` into a normative command-contract and hook-registry spec for `docs:ssot:*` checks.
+- Added baseline traceability rows for recently introduced Slice 2/5 requirements and new automation requirements.
+- Advanced Slice 9 from not-started to in-progress with explicit next-step implementation hooks.
