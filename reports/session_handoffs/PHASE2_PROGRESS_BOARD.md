@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T13:04:39Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1304
+- Last updated (UTC): 2026-04-29T13:09:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1309
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -25,7 +25,7 @@
 - [x] `HOOK-CONTRACT-SURFACE-PARITY` -> automated via `scripts/test_contract_surface_parity.php` + `composer test:contract:surface-parity`.
 - [x] `HOOK-FEED-INTERACTION-DENY-MAPPING` -> automated in `composer test:contract:feed` via interaction deny fixture/code matrix assertions.
 - [x] `HOOK-SSOT-MANUAL-BACKLOG-LINK` -> automated hard-fail semantics in `composer docs:ssot:sync-check` with hook-tagged output.
-- [ ] `HOOK-SSOT-PR-EVIDENCE-REQUIRED` -> automate via CI/PR metadata parser in `.github/workflows/ssot_phase1_gate.yml` (or successor).
+- [x] `HOOK-SSOT-PR-EVIDENCE-REQUIRED` -> automated via `composer docs:ssot:pr-evidence-check` in `.github/workflows/ssot_phase1_gate.yml`.
 
 ### Lane B — Deferred Slice 6/7 breadth decomposition (ADR-003)
 - [x] Create owner-assigned Phase 2 milestones for deferred contract breadth (Slice 6).
@@ -55,12 +55,12 @@
 |---|---|---|---|---|---|---|---|---|
 | HOOK-AUTH-INHERITANCE-BOUNDARY | Identity & Policy WG | High | automated | `composer test:contract:auth` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md | Implemented via deterministic clause and hook declaration checks in `scripts/test_contract_auth.php`. |
 | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | Identity & Policy WG | High | automated | `composer test:contract:auth` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md | Implemented via lifecycle enforcement clause and hook declaration drift checks in `scripts/test_contract_auth.php`. |
-| HOOK-IDENTITY-ID-FIRST-ISSUANCE | Platform Architecture WG | Medium | automated | `composer test:contract:identity-issuance` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md | Deterministic clause + fixture deny-path assertions implemented in `scripts/test_contract_identity_issuance.php`. |
-| HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | Platform Architecture WG | Medium | automated | `composer test:contract:identity-context` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md | Deterministic context-isolation and cross-context reuse deny assertions implemented in `scripts/test_contract_identity_context.php`. |
-| HOOK-CONTRACT-SURFACE-PARITY | API Contracts WG | Medium | automated | `composer test:contract:surface-parity` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md | Deterministic UI capability parity matrix + exception metadata checks against route inventory implemented. |
+| HOOK-IDENTITY-ID-FIRST-ISSUANCE | Platform Architecture WG | Medium | automated | `composer test:contract:identity-issuance` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md | Deterministic clause + fixture deny-path assertions implemented in `scripts/test_contract_identity_issuance.php`. |
+| HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | Platform Architecture WG | Medium | automated | `composer test:contract:identity-context` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md | Deterministic context-isolation and cross-context reuse deny assertions implemented in `scripts/test_contract_identity_context.php`. |
+| HOOK-CONTRACT-SURFACE-PARITY | API Contracts WG | Medium | automated | `composer test:contract:surface-parity` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md | Deterministic UI capability parity matrix + exception metadata checks against route inventory implemented. |
 | HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | Medium | automated | `composer test:contract:feed` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md | Interaction deny fixture/code one-to-one matrix assertions added. |
 | HOOK-SSOT-MANUAL-BACKLOG-LINK | Program Traceability WG | Medium | automated | `composer docs:ssot:sync-check` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md | Hook-tagged hard-fail semantics now explicit in sync-check output contract. |
-| HOOK-SSOT-PR-EVIDENCE-REQUIRED | Program Traceability WG | Medium | manual | `.github/workflows/ssot_phase1_gate.yml` PR evidence parser/update | 2026-05-15 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Ensure semantic-change PRs include evidence section. |
+| HOOK-SSOT-PR-EVIDENCE-REQUIRED | Program Traceability WG | Medium | automated | `composer docs:ssot:pr-evidence-check` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md | CI gate now enforces latest handoff command-evidence presence for `docs:ssot:*` suite. |
 
 ## Deferred breadth decomposition table (owner, due date, decision reference)
 | item_id | source | summary | owner | priority | hook_id(s) | due date (UTC) | decision_ref | status | notes |
@@ -69,24 +69,23 @@
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | partially_complete | Executable contract-level checks delivered; future runtime-integrated fixture depth still pending.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | partially_complete | Deterministic capability matrix and parity checker delivered; deeper auth-prerequisite parity coverage pending.
 | P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | partially_complete | Contract-level deny mapping automation delivered; prose-level extension still pending. |
-| P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-05-15 | ADR-003 | partially_complete | Manual-backlog link hard-fail closed; PR evidence enforcement still pending. |
+| P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-04-29 | ADR-003 | complete | Both governance hooks are executable and CI-bound. |
 
 ## Status snapshot
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
-| Lane A — Manual-hook automation | in progress | 83% | Medium | Surface parity now automated; only PR evidence hook remains manual. |
-| Lane B — Deferred breadth decomposition | partially complete | 70% | Medium | Surface parity deferred item moved to partially complete with executable hook closure. |
-| Lane C — Parity expansion | in progress | 22% | Medium | Interaction deny-mapping parity assertions added in feed contract checks. |
-| Lane D — Traceability/evidence hardening | in progress | 58% | Medium | Matrix/backlog synchronization extended for surface parity automation conversion. |
+| Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
+| Lane B — Deferred breadth decomposition | partially complete | 78% | Medium | Governance deferred item closed; remaining depth-expansion items still partially complete. |
+| Lane C — Parity expansion | in progress | 30% | Medium | Surface and feed parity automation landed; broader route-family depth still pending. |
+| Lane D — Traceability/evidence hardening | in progress | 68% | Medium | PR evidence enforcement now automated in CI and synchronized in matrix/backlog artifacts. |
 | Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
-
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`

@@ -71,6 +71,7 @@
     "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php",
     "test:contract:identity-issuance": "@php scripts/test_contract_identity_issuance.php",
     "test:contract:identity-context": "@php scripts/test_contract_identity_context.php",
-    "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php"
+    "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
+    "docs:ssot:pr-evidence-check": "@php scripts/docs_ssot_pr_evidence_check.php"
   }
 }
