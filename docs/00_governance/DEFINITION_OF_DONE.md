@@ -1,7 +1,52 @@
-# Definition Of Done
+---
+doc_id: CRE8-GOV-DEFINITION-OF-DONE
+version: 1.0.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Platform Architecture WG
+  - Security WG
+  - Delivery Operations WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md
+  - docs/00_governance/CHANGE_CONTROL_POLICY.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **DEFINITION_OF_DONE.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# Definition of Done
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Purpose
+This document defines the mandatory completion criteria for SSOT changes prior to merge.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-GOV-REQ-0050**: Every normative document change **MUST** pass metadata-header completeness checks.
+- **CRE8-GOV-REQ-0051**: Every normative document change **MUST** include deterministic requirement statements and **MUST NOT** contain scaffold placeholder prose.
+- **CRE8-GOV-REQ-0052**: Requirement ID changes **MUST** be unique and conform to `CRE8-<DOMAIN>-REQ-####` format.
+- **CRE8-GOV-REQ-0053**: Each changed requirement **MUST** include a declared verification hook or explicit reference to centralized verification catalog coverage.
+- **CRE8-GOV-REQ-0054**: Each normative change **MUST** include traceability references to impacted dependencies and related artifacts.
+- **CRE8-GOV-REQ-0055**: Required reviewers and owner approvals **MUST** be complete according to change class gates.
+- **CRE8-GOV-REQ-0056**: Any unresolved ambiguity, risk, or deferred item **MUST** be documented in a visible follow-up artifact before merge.
+
+## Done checklist
+- Metadata header valid and complete.
+- Requirement statements updated with stable IDs.
+- Cross-links and dependencies updated.
+- Verification executed and evidence recorded.
+- Traceability and impact artifacts updated.
+- Required approvals complete.
+
+## Verification hooks
+- **HOOK-SSOT-DOD-METADATA**: Validate metadata schema compliance.
+- **HOOK-SSOT-DOD-PLACEHOLDER-BLOCK**: Detect prohibited scaffold language in normative docs.
+- **HOOK-SSOT-DOD-TRACEABILITY**: Validate requirement-level traceability references exist.
+
+## See also
+- [Contribution Workflow SSOT](./CONTRIBUTION_WORKFLOW_SSOT.md)
+- [Change Control Policy](./CHANGE_CONTROL_POLICY.md)
+- [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

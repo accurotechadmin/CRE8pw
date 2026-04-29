@@ -1,7 +1,51 @@
+---
+doc_id: CRE8-GOV-CHANGE-CONTROL
+version: 1.0.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Platform Architecture WG
+  - Security WG
+  - Delivery Operations WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md
+  - docs/00_governance/DEFINITION_OF_DONE.md
+  - docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+
 # Change Control Policy
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **CHANGE_CONTROL_POLICY.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+This document defines how SSOT changes are proposed, reviewed, approved, and recorded to preserve canon integrity and deterministic platform direction.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-GOV-REQ-0040**: Every normative SSOT change **MUST** include a change record containing scope, rationale, affected requirement IDs, and compatibility notes.
+- **CRE8-GOV-REQ-0041**: Change records **MUST** classify compatibility as one of `backward-compatible`, `conditionally-compatible`, or `breaking`.
+- **CRE8-GOV-REQ-0042**: `breaking` changes **MUST** include migration notes and explicit rollout sequencing requirements.
+- **CRE8-GOV-REQ-0043**: Changes that add or modify requirement IDs **MUST** update the traceability mapping location referenced by `TRACEABILITY_MATRIX.md`.
+- **CRE8-GOV-REQ-0044**: Deferred verification or deferred machine-contract sync **MUST** include a time-bounded follow-up item with named owner and due date.
+- **CRE8-GOV-REQ-0045**: A change **MUST NOT** be merged when required review gates defined by `CONTRIBUTION_WORKFLOW_SSOT.md` are incomplete.
+- **CRE8-GOV-REQ-0046**: Post-merge discovery of semantic drift **MUST** trigger corrective change control within 2 business days.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Required change artifacts
+1. Change summary and scope statement.
+2. Requirement impact map (IDs changed, added, removed).
+3. Compatibility classification and migration notes when applicable.
+4. Verification evidence links.
+5. Deferred-work register entries (if any) with owner and due date.
+
+## Verification hooks
+- **HOOK-SSOT-CHANGE-RECORD-COMPLETE**: Validate presence of required change artifacts for normative changes.
+- **HOOK-SSOT-COMPAT-CLASSIFICATION**: Validate compatibility class and migration notes for breaking changes.
+- **HOOK-SSOT-DEFERRED-WORK-BOUNDED**: Validate deferred items contain owner and due date.
+
+## See also
+- [Contribution Workflow SSOT](./CONTRIBUTION_WORKFLOW_SSOT.md)
+- [Definition of Done](./DEFINITION_OF_DONE.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
