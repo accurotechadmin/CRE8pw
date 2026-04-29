@@ -31,6 +31,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **CRE8-CONTRACT-REQ-0015**: Route deprecation **MUST** include a documented sunset date, replacement route reference, and a verification-plan update.
 - **CRE8-CONTRACT-REQ-0016**: Route `/v1/feed/items` **MUST** return item-level moderation metadata using stable enum values (`none`, `pending_review`, `restricted`, `blocked`) when the field is present.
 - **CRE8-CONTRACT-REQ-0017**: Route `/v1/feed/items` response `meta` **MUST** include `feed_metadata_schema_version`; version changes **MUST** be declared as compatibility-impacting changes under this guide.
+- **CRE8-CONTRACT-REQ-0018**: Route `/v1/feed/items` fixture examples **MUST** encode deterministic cursor semantics where `next_cursor` references the last item in the returned page using `pub:<published_utc>|<item_id>` and `cursor_basis=published_utc_desc__item_id_asc`.
 
 ## Parity policy (prose ↔ machine)
 - Route identifiers in prose **MUST** match OpenAPI operation IDs when defined.
@@ -41,6 +42,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Compare route inventory entries against OpenAPI path/method tuples.
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Validate all declared error codes exist in `ERROR_CODE_CATALOG.md`.
 - **HOOK-CONTRACT-COMPAT-DECLARATION**: Validate compatibility classification and migration note sections for contract-impacting changes.
+- **HOOK-CONTRACT-FEED-ORDER-CURSOR**: Validate feed fixtures encode newest-first ordering and cursor-to-last-item determinism.
 
 ## Drift notes
 - OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.
