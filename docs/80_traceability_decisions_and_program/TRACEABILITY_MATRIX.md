@@ -87,6 +87,10 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-GOV-REQ-0063 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-ANTI-ORPHAN-CHECK | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0064 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-TOPOLOGY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0065 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-SYNC-PROMOTED-TRACE | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-ARCH-REQ-0001 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-ID-FIRST-ISSUANCE | manual | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-ARCH-REQ-0002 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | manual | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-CONTRACT-REQ-0030 | CRE8-CONTRACTS-SURFACE-PARITY | docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md | HOOK-CONTRACT-SURFACE-PARITY | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-FEED-REQ-0002 | CRE8-FEED-AUDIENCE-CONTRACT | docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md | HOOK-FEED-AUTH-ORDER | manual | Product Policy WG | provisional-normative | docs/evidence/templates/README.md |
 
 ## Verification hooks
 - **HOOK-TRACE-MATRIX-SCHEMA**: Validate required columns and required non-empty values.
@@ -106,6 +110,10 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-CONTRACT-COMPAT-DECLARATION**: Manual/automated hook validating compatibility/migration declaration sections for contract changes.
 - **HOOK-CONTRACT-ROUTE-UNIQUENESS**: Manual/automated hook ensuring unique route identifiers and method/path pairs.
 - **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Manual/automated hook validating sunset and replacement fields for deprecated routes.
+- **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Manual/automated hook validating that ID keypair issuance precedes all utility-key issuance.
+- **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated hook validating utility-key context isolation and no cross-context reuse.
+- **HOOK-CONTRACT-SURFACE-PARITY**: Manual/automated hook validating supported UI capabilities map to canonical API route contracts or approved exceptions.
+- **HOOK-FEED-AUTH-ORDER**: Manual/automated hook validating authorized-only feed inclusion and deterministic newest-first ordering semantics.
 
 ## Drift and reconciliation policy
 - Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.
