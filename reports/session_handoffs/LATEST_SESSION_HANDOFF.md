@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0638.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0643.md`
 
 Summary:
-- Expanded `composer test:contract:feed` to enforce feed ordering and cursor determinism fixtures.
-- Added API normative requirement `CRE8-CONTRACT-REQ-0018` for `/v1/feed/items` cursor semantics.
-- Converted feed ordering trace coverage (`CRE8-FEED-REQ-0002`) from manual to automated hook mapping.
+- Added feed tie-case ordering fixture coverage (`published_utc` tie => ascending `item_id`) and cursor-last-row enforcement.
+- Added API normative requirements `CRE8-CONTRACT-REQ-0050..0052` for tie-case ordering, metadata-version compatibility clauses, and deny-code catalog conformance.
+- Added trace/hook coverage for `HOOK-CONTRACT-FEED-DENY-CODE-CATALOG` with executable validation in `composer test:contract:feed`.
