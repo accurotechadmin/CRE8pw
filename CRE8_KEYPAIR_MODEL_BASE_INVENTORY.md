@@ -4,7 +4,7 @@ _Status: authoritative seed_
 _Effective date (UTC): 2026-04-29_
 
 ## 1. Authority, role, and intent
-This document is the authoritative seed inventory for the next-generation CRE8 SSOT document set under `/newdev`. It preserves the high-value invariants from the current repository canon and re-roots the architecture around mandatory ID-keypair minting at actor creation time, followed by delegated Utility-keypair minting per service/context.
+This document is the authoritative seed inventory for the next-generation CRE8 SSOT document set. It preserves high-value CRE8 invariants and roots the architecture around mandatory ID-keypair minting at actor creation time, followed by delegated Utility-keypair minting per service/context.
 
 This seed is written so developers can copy it into a greenfield repository and extend it quickly with new account types, post types, permission families, and integration patterns, while preserving deterministic security and policy behavior.
 
@@ -98,8 +98,8 @@ The seed set must encode better-than-industry-standard defense-in-depth through 
 - deterministic access cutoff upon revocation,
 - audit/event integrity and forensic exportability.
 
-## 10. Canon preservation + cleave strategy
-This `/newdev` document set is intentionally a clean break from the existing `/docs` canon while preserving essential behavior, security, governance, and extensibility expectations.
+## 10. Canon preservation strategy
+This document set preserves essential behavior, security, governance, and extensibility expectations while codifying the ID-keypair-first architecture.
 
 Migration principle:
 - preserve essential invariants and capabilities,
@@ -107,7 +107,7 @@ Migration principle:
 - keep documents concise now, then mature each into full SSOT authority.
 
 ## 11. Immediate seed-to-SSOT expansion plan
-The `/newdev` set should next mature into a full canonical stack including:
+This seed set should next mature into a full canonical stack including:
 - terminology and actor glossary,
 - permission lattice and delegation rules,
 - key lifecycle and cryptographic operations spec,

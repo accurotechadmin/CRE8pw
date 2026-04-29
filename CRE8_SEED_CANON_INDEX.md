@@ -1,4 +1,4 @@
-# CRE8 Seed Canon Index (`/newdev`)
+# CRE8 Seed Canon Index
 
 This index defines the authoritative seed map for the next CRE8 SSOT lifecycle. `CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md` is the root inventory. All seed documents MUST remain consistent with it.
 
@@ -21,12 +21,12 @@ This index defines the authoritative seed map for the next CRE8 SSOT lifecycle. 
 - **Content targeting + feed behavior**: `CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md`
 - **Envelope/error determinism**: `CRE8_API_CONTRACT_AND_ERROR_SEED.md`
 - **Extension model and module seams**: `CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`
-- **Legacy-to-new carry-forward accountability**: `CRE8_SEED_PRESERVATION_MATRIX.md`
+- **Preservation and redesign accountability**: `CRE8_SEED_PRESERVATION_MATRIX.md`
 
 ## 3) Seed governance constraints
 - New seed docs MUST use deterministic normative language where behavior is mandatory.
-- Seed docs MUST NOT reintroduce legacy assumptions that conflict with ID-keypair-first minting.
+- Seed docs MUST NOT introduce assumptions that conflict with ID-keypair-first minting.
 - Cross-document terminology MUST remain stable (Owner, Primary Author, Secondary Author, Use Key, ID Keypair, Utility Keypair, Keychain, Audience Group).
 
 ## 4) Maturation expectation
-As this set moves to a new repository, each seed file should mature into full SSOT specs with decision tables, API examples, threat/abuse matrices, and verification gates while preserving policy determinism and provenance rigor.
+Each seed file should mature into full SSOT specs with decision tables, API examples, threat/abuse matrices, and verification gates while preserving policy determinism and provenance rigor.

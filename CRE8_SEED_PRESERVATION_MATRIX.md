@@ -1,6 +1,6 @@
-# CRE8 Seed Preservation Matrix (Legacy Canon -> `/newdev`)
+# CRE8 Seed Preservation Matrix
 
-This document records which legacy CRE8 truths are preserved, redesigned, or intentionally dropped in the new seed canon.
+This document records which CRE8 truths are preserved, redesigned, or intentionally dropped in the seed canon.
 
 ## 1) Preserved and re-anchored concepts
 - Dual-surface runtime model (public/bootstrap, gateway, console) is preserved and restated with parity constraints.
@@ -16,8 +16,8 @@ This document records which legacy CRE8 truths are preserved, redesigned, or int
 - Identity anchor keys (ID) and externally shared proxy keys (Utility) are now explicit separate classes.
 - Delegation/gov specs MUST be interpreted through ID-key lineage and utility-key operational usage.
 
-## 3) Intentionally dropped or constrained legacy assumptions
-- Any legacy assumption of non-keypair key issuance for delegated actors is dropped.
+## 3) Intentionally dropped or constrained assumptions
+- Any assumption of non-keypair key issuance for delegated actors is dropped.
 - Any handler-local authorization branching pattern is dropped; PDP outcome is authoritative.
 - Any surface-crossing auth-context interchangeability assumption is dropped.
 - Any extension pattern that bypasses provenance events or deterministic deny semantics is dropped.
