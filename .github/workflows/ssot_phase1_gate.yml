@@ -46,3 +46,6 @@ jobs:
 
       - name: Run SSOT coverage report
         run: composer docs:ssot:report
+
+      - name: Run SSOT PR evidence check
+        run: composer docs:ssot:pr-evidence-check
