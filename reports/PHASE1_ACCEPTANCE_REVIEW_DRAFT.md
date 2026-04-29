@@ -1,7 +1,7 @@
 ---
 doc_id: CRE8-REPORT-PHASE1-ACCEPTANCE
 version: 1.0.0
-status: provisional-normative
+status: normative
 owner: Program Traceability WG
 reviewers:
   - Docs Governance WG
@@ -30,7 +30,7 @@ This document defines the deterministic acceptance gate contract for freezing CR
 - **CRE8-ACCEPT-REQ-0005**: Freeze disposition **MUST** link the latest handoff pointer (`reports/session_handoffs/LATEST_SESSION_HANDOFF.md`) and current progress board snapshot (`reports/session_handoffs/PHASE1_PROGRESS_BOARD.md`).
 - **CRE8-ACCEPT-REQ-0006**: Acceptance execution **MUST** run `composer phase1:acceptance-bundle` as the canonical evidence command bundle before claiming a pass state.
 
-## Current gate disposition (2026-04-29 UTC)
+## Current gate disposition (2026-04-29 UTC, finalized by ADR-003)
 | Gate ID | Status | Evidence |
 |---|---|---|
 | CRE8-ACCEPT-REQ-0001 | PASS | Slice status maintained in progress board and latest handoff. |
@@ -52,9 +52,9 @@ This document defines the deterministic acceptance gate contract for freezing CR
 3. Confirm no blocker rows in the current status board.
 4. Record freeze decision in handoff and next acceptance memo revision.
 
-## Open decisions before final freeze
-- Slice 6 remaining runtime lifecycle simulation breadth should be either completed or explicitly waived by ADR prior to declaring Phase 1 complete.
-- Slice 7 additional route/schema breadth should be either completed or explicitly waived by ADR prior to declaring Phase 1 complete.
+## Freeze decision
+- Phase 1 freeze is approved with acceptance gates passing and residual Slice 6/7 breadth explicitly waived under [ADR-003](../docs/80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md).
+- Residual breadth items are moved to post-freeze backlog and must follow ADR-003 requirements for future normative/machine-contract changes.
 
 ## See also
 - [Phase 1 Roadmap](./PHASE1_CANON_HARDENING_ROADMAP.md)
