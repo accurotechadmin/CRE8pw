@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/feed-items-response.schema.json",
+  "title": "FeedItemsSuccessEnvelope",
+  "type": "object",
+  "required": ["data", "meta"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "rank", "visibility_scope", "published_utc"],
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "pattern": "^itm_[A-Za-z0-9_-]+$"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "visibility_scope": {
+            "type": "string",
+            "pattern": "^(group|tenant|resource|global):[A-Za-z0-9._:-]+$"
+          },
+          "published_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["request_id", "timestamp_utc", "contract_version"],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "contract_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

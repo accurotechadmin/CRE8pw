@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0612.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0618.md`
 
 Summary:
-- Deepened OpenAPI authz request and success response modeling with typed schemas beyond envelope-only contracts.
-- Deepened lifecycle suspend success response modeling with constrained typed payload schema.
-- Regenerated SSOT coverage evidence with all relevant verification commands passing.
+- Added typed feed success payload schema and bound `/v1/feed/items` 200 responses to machine-validated fields.
+- Expanded feed 403 deny example coverage with explicit scope-deny variant.
+- Regenerated SSOT verification coverage evidence with parity/lint/sync/report hooks passing.
