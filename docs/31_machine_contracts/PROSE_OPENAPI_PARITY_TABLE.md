@@ -42,8 +42,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
 - **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
 - **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.
-- **CRE8-MACHINE-REQ-0016
-- **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
+
 
 ## Route Family Coverage Policy
 | route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | owner | decision_ref | phase2_due_date_utc | notes |

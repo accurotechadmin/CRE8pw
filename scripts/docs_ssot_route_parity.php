@@ -73,6 +73,19 @@ foreach ($lines as $line) {
 
 $errors = [];
 
+$parityRequirementIds = [];
+foreach (explode("\n", $proseParity) as $line) {
+    if (preg_match('/^-\s*\*\*(CRE8-MACHINE-REQ-[0-9]{4})\*\*:/', trim($line), $m) !== 1) {
+        continue;
+    }
+    $requirementId = strtoupper($m[1]);
+    if (isset($parityRequirementIds[$requirementId])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] duplicate normative requirement ID in PROSE_OPENAPI_PARITY_TABLE: {$requirementId}";
+        continue;
+    }
+    $parityRequirementIds[$requirementId] = true;
+}
+
 
 $inventoryErrorCodesByRoute = [];
 foreach (explode("\n", $routeInventory) as $line) {
