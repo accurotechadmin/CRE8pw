@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
 
 Summary:
-- Created Slice 10 acceptance draft artifact with deterministic acceptance gates and required evidence bundle definitions.
-- Added explicit manual verification automation backlog (`PHASE1_MANUAL_HOOK_BACKLOG.md`) and linked it normatively from verification strategy.
-- Extended feed contract executable coverage with an additional runtime lifecycle deny-path fixture assertion.
+- Implemented executable `docs:ssot:review-gate-check` and `docs:ssot:dod-trace-check` hooks with deterministic pass/fail semantics.
+- Updated traceability + automation canon to mark `CRE8-GOV-REQ-0033` and `CRE8-GOV-REQ-0053` checks as automated.
+- Removed corresponding P1 manual-hook backlog rows and regenerated SSOT coverage report.

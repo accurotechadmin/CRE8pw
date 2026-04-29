@@ -45,6 +45,8 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | `docs:ssot:compat-declaration` | Presence checks for required compatibility/migration/deprecation clauses in API guide. | Missing-clause failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:error-code-coverage` | Route inventory `error_code_set` coverage against canonical error catalog code table. | Undocumented-code failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:deprecation-schema` | Route inventory deprecation schema checks (`sunset_utc` and `replacement_route_id` completeness + format). | Missing-field/format failures and deterministic pass summary. | API Contracts WG |
+| `docs:ssot:review-gate-check` | Owner/reviewer metadata and change-impact-map references for changed normative docs. | Hook-tagged failures and deterministic pass summary. | Docs Governance WG |
+| `docs:ssot:dod-trace-check` | Changed requirement IDs must exist in `TRACEABILITY_MATRIX.md` with matching `source_path`. | Hook-tagged failures and deterministic pass summary. | Program Traceability WG |
 | `test:contract:error` | Error determinism checks for route-declared error codes and canonical 4xx/5xx status mapping. | Hook-tagged failures and deterministic pass summary. | API Contracts WG |
 | `test:contract:auth-reasons` | Authorization decision reason-code mapping coverage against error catalog entries. | Missing-mapping failures and deterministic pass summary. | Identity & Policy WG |
 | `test:contract:auth` | Authorization decision-table gate order and deterministic short-circuit deny reason checks. | Step-order drift failures and deterministic pass summary. | Identity & Policy WG |
@@ -58,6 +60,8 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **HOOK-SSOT-SYNC-PROMOTED-TARGET**: Validate each promoted seed row maps to an existing target requirement in target doc.
 - **HOOK-SSOT-SYNC-PROMOTED-TRACE**: Validate each promoted seed row maps to an existing traceability matrix row.
 - **HOOK-SSOT-REPORT-COVERAGE**: Compute and publish requirement/hook coverage summary.
+- **HOOK-REVIEW-GATE-CHECK-AUTO**: Validate owner/reviewer metadata and change-impact-map references on changed normative docs.
+- **HOOK-DOD-TRACE-CHECK-AUTO**: Validate changed requirement IDs remain synchronized with `TRACEABILITY_MATRIX.md`.
 
 ## Manual verification procedure (until automation exists)
 1. Run `rg "^doc_id:|^version:|^status:|^owner:|^reviewers:|^last_reviewed_utc:|^next_review_due_utc:|^source_seed_refs:|^normative_dependencies:" docs` and verify each normative file has all required keys.
@@ -75,3 +79,4 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - [Traceability Matrix](./TRACEABILITY_MATRIX.md)
 - [Seed Promotion Tracker](./SEED_PROMOTION_TRACKER.md)
 - [Unresolved Seed Gap Register](./UNRESOLVED_SEED_GAP_REGISTER.md)
+- [Change Impact Map Templates](./CHANGE_IMPACT_MAP_TEMPLATES.md)
