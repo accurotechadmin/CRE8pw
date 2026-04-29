@@ -123,6 +123,36 @@ paths:
               examples:
                 lifecycleBlocked:
                   $ref: '#/components/examples/ErrorLifecycleBlocked'
+  /v1/keys/{key_id}/lifecycle/revoke:
+    post:
+      operationId: postKeyLifecycleRevoke
+      summary: Revoke a key lifecycle state
+      tags: [lifecycle]
+      parameters:
+        - in: path
+          name: key_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Lifecycle transition accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LifecycleRevokeSuccessEnvelope'
+              examples:
+                accepted:
+                  $ref: '#/components/examples/LifecycleRevokeAccepted'
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                lifecycleBlocked:
+                  $ref: '#/components/examples/ErrorLifecycleBlocked'
   /v1/feed/items:
     get:
       operationId: getFeedItems
@@ -165,6 +195,8 @@ components:
       $ref: ../schemas/authz-decision-response.schema.json
     LifecycleSuspendSuccessEnvelope:
       $ref: ../schemas/lifecycle-suspend-response.schema.json
+    LifecycleRevokeSuccessEnvelope:
+      $ref: ../schemas/lifecycle-revoke-response.schema.json
     FeedItemsSuccessEnvelope:
       $ref: ../schemas/feed-items-response.schema.json
   securitySchemes:
@@ -201,6 +233,10 @@ components:
       value:
         data: { key_id: "key_123", lifecycle_state: "suspended", effective_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-life-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+    LifecycleRevokeAccepted:
+      value:
+        data: { key_id: "key_123", lifecycle_state: "revoked", effective_utc: "2026-04-29T06:12:00Z" }
+        meta: { request_id: "req-life-003", timestamp_utc: "2026-04-29T06:12:00Z", contract_version: "1.0.0" }
     ErrorLifecycleBlocked:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Lifecycle state blocked.", category: LIFECYCLE, request_id: "req-life-002", timestamp_utc: "2026-04-29T06:10:00Z" }

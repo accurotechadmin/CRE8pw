@@ -35,6 +35,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 | CRE8-ROUTE-0002 | POST | /v1/authz/decide | POST | /v1/authz/decide | in_sync |
 | CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | POST | /v1/keys/{key_id}/lifecycle/suspend | in_sync |
 | CRE8-ROUTE-0004 | GET | /v1/feed/items | GET | /v1/feed/items | in_sync |
+| CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | POST | /v1/keys/{key_id}/lifecycle/revoke | in_sync |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Execute `composer docs:ssot:route-parity` and block merge if drift is detected.

@@ -51,6 +51,7 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED,AUTH_POLICY_UNRESOLVED | active |  |  |
 | CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | id-key | key.lifecycle.suspend | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
 | CRE8-ROUTE-0004 | GET | /v1/feed/items | utility-key | feed.items.read | group | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED | active |  |  |
+| CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | id-key | key.lifecycle.revoke | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.

@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
 
 Summary:
-- Promoted Phase 1 acceptance draft content into a provisional-normative memo with explicit gate-pass table.
-- Added canonical acceptance evidence command bundle: `composer phase1:acceptance-bundle`.
-- Refreshed progress board checklist and latest handoff links for continued Slice 6/7 closure work.
+- Expanded Slice 7 machine/prose lifecycle parity with explicit revoke route and response schema.
+- Refreshed manual-hook backlog to explicit “none open” state with current session metadata.
+- Re-ran canonical acceptance bundle and updated progress board + latest handoff links.
