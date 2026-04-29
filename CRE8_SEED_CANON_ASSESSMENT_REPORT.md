@@ -193,3 +193,6 @@ CRE8 SHALL be treated as a governance-grade credential and authorization platfor
 8. Produce `route-inventory.md` and `error-catalog.md` with parity tags and deterministic mappings.
 9. Publish `logical-data-model.md` and `provenance-event-model.md` with immutable lineage guarantees.
 10. Create `readiness-gates.md` and `release-evidence-model.md` so implementation is gated by verified controls.
+
+## 10. Dependency Ground-Layer Integration Addendum
+To reduce architecture drift, every pending SSOT artifact SHOULD include a “Dependency Binding” subsection that names concrete dependency responsibilities (routing, DI, validation, crypto, persistence, logging, rate-limiting, testing). Release-readiness evidence SHOULD include proof that each normative subsystem behavior is implemented through its designated dependency layer rather than ad-hoc alternatives.

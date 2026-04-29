@@ -27,3 +27,12 @@ This document records which CRE8 truths are preserved, redesigned, or intentiona
 - Canonical lifecycle state machine diagrams for ID and Utility key classes.
 - Concrete API route catalog + examples for keypair issuance, rotation, and revocation.
 - Data lineage schema for key ancestry, utility context labels, and audit-event joins.
+
+## 5) Dependency-preservation commitments
+- Preserve framework-level enforcement through `slim/slim` middleware boundaries.
+- Preserve cryptographic rigor through `ext-sodium` and `firebase/php-jwt` claim/proof workflows.
+- Preserve deterministic persistence through `ext-pdo` transactions and prepared statements.
+- Preserve deterministic input/error semantics through `respect/validation` + canonical error mapping.
+- Preserve observability and evidence through channelized `monolog/monolog` logs.
+- Preserve abuse controls through `symfony/rate-limiter` + `symfony/cache` state.
+- Preserve verifiability through `phpunit/phpunit` contract/security regression packs.

@@ -197,3 +197,22 @@ Notable maturity gaps acknowledged by the repo itself:
 ## Overall conclusion
 
 The repository currently functions as a **high-quality strategic specification seed**, not an implementation repo. It provides a clear canonical direction, strong invariants, and a credible path to production SSOT maturity. The next logical step is to convert these normative requirements into explicit, testable artifacts and then bind runtime code and CI gates to those artifacts.
+
+## Dependency-grounded architecture directives (new alignment)
+
+Following further review, the repository direction should explicitly bind each functional domain to installed dependencies:
+
+- Surface routing/error pipeline: `slim/slim` + `slim/psr7`.
+- Composition root and module wiring: `php-di/php-di`.
+- Key/JWT verification and claims enforcement: `firebase/php-jwt`.
+- Credential hashing/randomness/constant-time compare: `ext-sodium`.
+- Policy/provenance persistence: `ext-pdo` with transactional writes.
+- Request schema enforcement and deterministic 422 details: `respect/validation`.
+- Startup env validation and typed configuration: `vlucas/phpdotenv`.
+- Outbound integration (JWKS/webhooks): `guzzlehttp/guzzle`.
+- CORS enforcement: `neomerx/cors-psr7`.
+- Structured application/security/provenance logging: `monolog/monolog`.
+- Abuse throttling and limiter state: `symfony/rate-limiter` + `symfony/cache`.
+- Contract/lifecycle/security regression evidence: `phpunit/phpunit`.
+
+Each SSOT document should carry explicit dependency references so architectural intent and implementation mechanics remain intrinsically linked.
