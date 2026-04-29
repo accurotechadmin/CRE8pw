@@ -65,12 +65,12 @@ foreach (explode("\n", $proseParity) as $line) {
         continue;
     }
     $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) < 11) {
+    if (count($cols) < 13) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] malformed prose parity row: {$line}";
         continue;
     }
 
-    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus] = $cols;
+    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef] = $cols;
     $routeId = strtoupper($routeId);
     $pair = strtoupper($inventoryMethod) . ' ' . $inventoryPath;
     $openApiPair = strtoupper($openApiMethod) . ' ' . $openApiPath;
@@ -95,6 +95,17 @@ foreach (explode("\n", $proseParity) as $line) {
     }
     if ($routeFamily === '' || $depthPriority === '' || $depthStatus === '') {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing Phase 2 depth metadata for {$routeId}";
+    }
+
+    if (!preg_match('/^#\/components\/schemas\/[A-Za-z0-9._-]+$/', $successSchemaRef)) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid success_schema_ref for {$routeId}: {$successSchemaRef}";
+    } elseif (strpos($openApi, $successSchemaRef) === false) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] success_schema_ref not found in OpenAPI for {$routeId}: {$successSchemaRef}";
+    }
+    if (!preg_match('/^#\/components\/schemas\/[A-Za-z0-9._-]+$/', $errorSchemaRef)) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid error_schema_ref for {$routeId}: {$errorSchemaRef}";
+    } elseif (strpos($openApi, $errorSchemaRef) === false) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error_schema_ref not found in OpenAPI for {$routeId}: {$errorSchemaRef}";
     }
 }
 
