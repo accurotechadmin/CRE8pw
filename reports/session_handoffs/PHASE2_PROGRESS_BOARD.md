@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T13:24:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1324
+- Last updated (UTC): 2026-04-29T13:30:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1330
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -76,16 +76,16 @@
 |---|---|---:|---|---|
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
 | Lane B — Deferred breadth decomposition | partially complete | 86% | Medium | Governance evidence-gate residual closed; remaining depth-expansion items still partially complete. |
-| Lane C — Parity expansion | in progress | 45% | Medium | Route-parity now validates route-family depth metadata and requirement/hook linkage for all parity rows; broader schema-depth expansion still pending. |
-| Lane D — Traceability/evidence hardening | in progress | 82% | Medium | Route-parity now enforces schema-ref metadata depth in addition to requirement/hook format, prose completeness, and PR evidence enforcement. |
+| Lane C — Parity expansion | in progress | 60% | Medium | Route-parity now validates status-code-specific response schema mappings in addition to route-family metadata and requirement/hook linkage; deny-example/code depth expansion still pending. |
+| Lane D — Traceability/evidence hardening | in progress | 86% | Medium | Route-parity now enforces per-status response schema linkage, schema-ref metadata depth, requirement/hook format, prose completeness, and PR evidence enforcement. |
 | Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1324.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1320.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1314.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1330.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1324.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1320.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1314.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
