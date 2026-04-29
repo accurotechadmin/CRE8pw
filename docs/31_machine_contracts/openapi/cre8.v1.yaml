@@ -58,6 +58,8 @@ paths:
             examples:
               denyScope:
                 $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
+              commentCreate:
+                $ref: '#/components/examples/AuthDecisionRequestCommentCreate'
       responses:
         '200':
           description: Authorization decision generated.
@@ -87,6 +89,8 @@ paths:
                   $ref: '#/components/examples/ErrorAuthDepthExceeded'
                 grantExpired:
                   $ref: '#/components/examples/ErrorGrantExpired'
+                interactionLifecycleBlocked:
+                  $ref: '#/components/examples/ErrorInteractionLifecycleBlocked'
   /v1/keys/{key_id}/lifecycle/suspend:
     post:
       operationId: postKeyLifecycleSuspend
@@ -179,6 +183,8 @@ components:
         meta: { request_id: "req-sys-001", contract_version: "1.0.0" }
     AuthDecisionRequestScopeDeny:
       value: { principal_id: "prn_001", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api" } }
+    AuthDecisionRequestCommentCreate:
+      value: { principal_id: "prn_004", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_001" } }
     AuthDecisionAllow:
       value:
         data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7 }
@@ -198,9 +204,9 @@ components:
     FeedItemsSuccess:
       value:
         data:
-          - { item_id: "itm_001", rank: 1, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:59:00Z" }
-          - { item_id: "itm_002", rank: 2, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z" }
-        meta: { request_id: "req-feed-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0", next_cursor: "pub:2026-04-29T05:54:00Z|itm_002", cursor_basis: "published_utc_desc__item_id_asc" }
+          - { item_id: "itm_001", rank: 1, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:59:00Z", audience_labels: ["group.core", "region.us"], moderation_state: "none" }
+          - { item_id: "itm_002", rank: 2, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z", moderation_state: "pending_review" }
+        meta: { request_id: "req-feed-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0", next_cursor: "pub:2026-04-29T05:54:00Z|itm_002", cursor_basis: "published_utc_desc__item_id_asc", feed_metadata_schema_version: "feed-meta-v1" }
     ErrorPermissionDenied:
       value:
         error: { code: AUTH_PERMISSION_DENIED, message: "Permission denied.", category: AUTH_DENY, request_id: "req-feed-002", timestamp_utc: "2026-04-29T06:10:00Z" }
@@ -213,5 +219,9 @@ components:
       value:
         error: { code: AUTH_GRANT_EXPIRED, message: "Delegated grant expired.", category: AUTH_DENY, request_id: "req-feed-004", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-feed-004", contract_version: "1.0.0" }
+    ErrorInteractionLifecycleBlocked:
+      value:
+        error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Interaction blocked by lifecycle state.", category: LIFECYCLE, request_id: "req-interact-001", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-interact-001", contract_version: "1.0.0" }
 security:
   - cre8Proof: []

@@ -29,6 +29,8 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **CRE8-CONTRACT-REQ-0013**: Routes requiring delegated authority **MUST** declare required permission, scope boundary, and lifecycle prerequisites.
 - **CRE8-CONTRACT-REQ-0014**: Error responses **MUST** use codes defined in `ERROR_CODE_CATALOG.md`; undocumented codes are prohibited.
 - **CRE8-CONTRACT-REQ-0015**: Route deprecation **MUST** include a documented sunset date, replacement route reference, and a verification-plan update.
+- **CRE8-CONTRACT-REQ-0016**: Route `/v1/feed/items` **MUST** return item-level moderation metadata using stable enum values (`none`, `pending_review`, `restricted`, `blocked`) when the field is present.
+- **CRE8-CONTRACT-REQ-0017**: Route `/v1/feed/items` response `meta` **MUST** include `feed_metadata_schema_version`; version changes **MUST** be declared as compatibility-impacting changes under this guide.
 
 ## Parity policy (prose ↔ machine)
 - Route identifiers in prose **MUST** match OpenAPI operation IDs when defined.

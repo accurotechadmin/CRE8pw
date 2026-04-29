@@ -61,6 +61,7 @@
     "test:contract:error": "@php scripts/test_contract_error.php",
     "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php",
     "test:contract:auth": "@php scripts/test_contract_auth.php",
-    "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php"
+    "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php",
+    "test:contract:feed": "@php scripts/test_contract_feed.php"
   }
 }
