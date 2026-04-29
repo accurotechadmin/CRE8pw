@@ -59,3 +59,5 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Definition of Done](./DEFINITION_OF_DONE.md)
 - [Cross-Document Linking Policy](./CROSS_DOCUMENT_LINKING_POLICY.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- [ADR-001 Record](../80_traceability_decisions_and_program/records/ADR-001-placeholder.md)
+- [ADR-002 Record](../80_traceability_decisions_and_program/records/ADR-002-placeholder.md)

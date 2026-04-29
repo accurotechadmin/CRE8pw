@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T11:09:00Z
-- Current owner/session: Codex session `20260429-1109`
+- Last updated (UTC): 2026-04-29T11:16:00Z
+- Current owner/session: Codex session `20260429-1116`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -76,8 +76,8 @@
   - [x] Create `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` for residual manual hooks
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
