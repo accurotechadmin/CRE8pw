@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-VERIFICATION-STRATEGY
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -54,6 +54,7 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 | HOOK-CONTRACT-DEPRECATION-SCHEMA | PR | `composer docs:ssot:deprecation-schema` | Every `deprecated`/`sunset` route includes `sunset_utc` and valid `replacement_route_id` format | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:deprecation-schema` |
 | HOOK-CONTRACT-FEED-ORDER-CURSOR | PR | `composer test:contract:feed` | Feed fixtures include deterministic ordering, tie-case behavior (`published_utc` tie => ascending `item_id`), and cursor semantics (`published_utc_desc__item_id_asc`; cursor points at final returned row) | reports/ssot/coverage_latest.json; docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md | Implemented as `test:contract:feed` |
 | HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC | PR | `composer test:contract:feed` | Sequential feed fixture pages preserve strict cursor monotonicity (`page2.input_cursor == page1.next_cursor`; `page2.next_cursor` older than page1 cursor basis order) | reports/ssot/coverage_latest.json; docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md | Implemented as `test:contract:feed` |
+| HOOK-CONTRACT-FEED-CURSOR-GRAMMAR | PR | `composer test:contract:feed` | Feed cursor fixtures parse under `pub:<ISO8601 UTC>|<item_id>` grammar and enforce executable linkage checks (`page2.input_cursor == page1.next_cursor`) | reports/ssot/coverage_latest.json; docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md | Implemented as `test:contract:feed` |
 | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG | PR | `composer test:contract:feed` | Feed deny examples in OpenAPI resolve only to canonical error codes listed in `ERROR_CODE_CATALOG.md`, including lifecycle deny code coverage (`AUTH_LIFECYCLE_BLOCKED`) | reports/ssot/coverage_latest.json; docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md | Implemented as `test:contract:feed` |
 | HOOK-AUTH-DECISION-REASON-MAPPING | PR | `composer test:contract:auth-reasons` | One-to-one reason/code mapping with no unmapped deny reason | docs/evidence/templates/README.md | Implemented as `test:contract:auth-reasons` |
 | HOOK-SEC-LIFECYCLE-PROPAGATION | PR | `composer docs:ssot:sync-check` | Trace row for lifecycle propagation exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with runtime revoke/rotate propagation contract tests |
