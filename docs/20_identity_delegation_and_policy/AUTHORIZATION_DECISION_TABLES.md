@@ -47,7 +47,7 @@ Define deterministic authorization decision-table requirements that implement th
 - **HOOK-AUTH-DECISION-REASON-MAPPING**: Validate one-to-one mapping between decision reason codes and API error codes.
 
 ## Drift notes
-- Manual verification remains primary until contract tests are implemented. Next automation hook: add `test:contract:auth_decision_tables` and register it under `HOOK-CONTRACT-POLICY-ORDER`.
+- Reason-to-error mapping is automated via `composer test:contract:auth-reasons`; policy-order runtime suites remain pending under `HOOK-CONTRACT-POLICY-ORDER`.
 
 ## See also
 - [Authorization And Delegation Spec](./AUTHORIZATION_AND_DELEGATION_SPEC.md)
