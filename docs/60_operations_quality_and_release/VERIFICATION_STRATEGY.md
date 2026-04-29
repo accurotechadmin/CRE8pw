@@ -27,7 +27,7 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - **CRE8-OPS-REQ-0001**: Every normative or provisional-normative requirement **MUST** map to at least one verification hook recorded in `TRACEABILITY_MATRIX.md`.
 - **CRE8-OPS-REQ-0002**: Each hook definition **MUST** declare `hook_id`, `trigger`, `tool_or_procedure`, `expected_result`, and `evidence_location`.
 - **CRE8-OPS-REQ-0003**: Pull requests that modify requirement semantics **MUST** include verification execution evidence or explicit manual verification notes with reproducible steps.
-- **CRE8-OPS-REQ-0004**: Hooks without automation **MUST** include a documented “next automation candidate” note to support Slice 8 backlog reduction.
+- **CRE8-OPS-REQ-0004**: Hooks without automation **MUST** include a documented “next automation candidate” note and **MUST** be listed in `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` to support Slice 8 backlog reduction.
 - **CRE8-OPS-REQ-0005**: Verification failures for `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report` **MUST** block merge under `ssot_phase1_gate`.
 
 ## Hook catalog schema
@@ -66,3 +66,4 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [SSOT Automation and Linting](../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md)
+- [Phase 1 Manual Hook Backlog](../../reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md)
