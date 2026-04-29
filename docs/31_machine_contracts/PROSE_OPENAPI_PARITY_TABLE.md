@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -28,6 +28,9 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0001**: Every active route in `ROUTE_INVENTORY_REFERENCE.md` **MUST** have exactly one matching OpenAPI `path` + `method` tuple.
 - **CRE8-MACHINE-REQ-0002**: The parity table **MUST** be updated in the same change set as any route addition, removal, or method/path change.
 - **CRE8-MACHINE-REQ-0003**: Parity validation **MUST** pass `composer docs:ssot:route-parity` before merge for contract-impacting changes.
+- **CRE8-MACHINE-REQ-0004**: Each parity row `primary_requirement_id` and `primary_hook_id` **MUST** resolve to active entries in `TRACEABILITY_MATRIX.md`.
+- **CRE8-MACHINE-REQ-0005**: Each parity row **MUST** declare the complete error example and error code set exposed by OpenAPI error statuses (no omissions/additions).
+- **CRE8-MACHINE-REQ-0006**: The parity table **MUST NOT** contain duplicate `route_id` rows.
 
 ## Parity matrix
 | route_id | inventory_method | inventory_path | openapi_method | openapi_path | parity_status | route_family | depth_priority | primary_requirement_id | primary_hook_id | parity_depth_status | success_schema_ref | error_schema_ref | success_status_codes | error_status_codes | error_example_refs | error_codes |
