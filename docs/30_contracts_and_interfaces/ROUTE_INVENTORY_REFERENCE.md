@@ -45,15 +45,15 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | replacement_route_id | conditional | Required if lifecycle is `deprecated` or `sunset`. |
 
 ## Baseline route inventory (Phase 1 promoted rows)
-| route_id | method | path | auth_model | required_permission | scope_type | success_status | error_code_set | lifecycle |
-|---|---|---|---|---|---|---|---|---|
-| CRE8-ROUTE-0001 | GET | /v1/system/health | public | system.health.read | global | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |
-| CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED | active |
+| route_id | method | path | auth_model | required_permission | scope_type | success_status | error_code_set | lifecycle | sunset_utc | replacement_route_id |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CRE8-ROUTE-0001 | GET | /v1/system/health | public | system.health.read | global | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED | active |  |  |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.
 - **HOOK-CONTRACT-ROUTE-UNIQUENESS**: Validate uniqueness of `method`+`path` and `route_id` values.
-- **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Validate presence of sunset and replacement fields for deprecated routes.
+- **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Execute `composer docs:ssot:deprecation-schema` to validate sunset/replacement completeness and identifier format for `deprecated`/`sunset` routes.
 
 ## Drift notes
 - Route inventory rows are synchronized with current OpenAPI baseline and MUST be updated in the same changeset when either source changes.

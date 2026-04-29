@@ -44,6 +44,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | `docs:ssot:route-uniqueness` | Duplicate `route_id` and method/path detection in route inventory. | Duplicate failures with deterministic pass summary. | API Contracts WG |
 | `docs:ssot:compat-declaration` | Presence checks for required compatibility/migration/deprecation clauses in API guide. | Missing-clause failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:error-code-coverage` | Route inventory `error_code_set` coverage against canonical error catalog code table. | Undocumented-code failures and deterministic pass summary. | API Contracts WG |
+| `docs:ssot:deprecation-schema` | Route inventory deprecation schema checks (`sunset_utc` and `replacement_route_id` completeness + format). | Missing-field/format failures and deterministic pass summary. | API Contracts WG |
 | `ssot_phase1_gate` (CI) | Execute `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report` as merge-blocking checks. | Workflow status in CI provider; non-zero command exit fails gate. | Program Traceability WG |
 
 ## Hook registry
