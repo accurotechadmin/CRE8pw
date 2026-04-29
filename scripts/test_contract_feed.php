@@ -100,6 +100,14 @@ if (strpos($openapi, 'ErrorFeedLifecycleBlocked') === false) {
     exit(1);
 }
 
+if (strpos($openapi, 'ErrorInteractionLifecycleBlocked') === false) {
+    fwrite(STDERR, "Missing interaction runtime deny-path fixture for lifecycle-blocked comment.create action in OpenAPI.
+");
+    exit(1);
+}
+
+
+
 
 function parseCursor(string $cursor): ?array
 {
