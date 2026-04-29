@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2337.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2342.md`
 
 Summary:
-- Upgraded `HOOK-CONTRACT-POLICY-ORDER` automation in `scripts/test_contract_auth.php` from fixture-reference presence checks to semantic OpenAPI deny-example `error.code` + `error.category` contract checks.
-- Executed full verification suite (`test:contract:auth`, route parity, sync-check, and phase2 acceptance bundle) with all PASS outcomes.
-- Refreshed Phase 2 progress board latest-handoff chain and lane percentages while preserving ADR-003 governance/deferment constraints.
+- Added deterministic ADR-003 due-date governance to Route Family Coverage Policy via new `phase2_due_date_utc` requirement and machine checks.
+- Extended `HOOK-CONTRACT-ROUTE-INVENTORY-PARITY` automation to hard-fail on missing/invalid/mismatched due-date linkage against `P2-DB-*` rows.
+- Kept full acceptance bundle green and refreshed progress/handoff discoverability artifacts.
