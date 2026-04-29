@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-TRACE-SEED-PROMOTION-TRACKER
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
   - Docs Governance WG
   - Platform Architecture WG
 last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-06
+next_review_due_utc: 2026-05-13
 source_seed_refs:
   - seed/CRE8_SEED_CANON_INDEX.md
   - seed/CRE8_SEED_PRESERVATION_MATRIX.md
@@ -29,6 +29,7 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - **CRE8-TRACE-REQ-0073**: A row **MUST NOT** transition to `promoted` unless `target_requirement_id` exists in the target doc and is represented in `TRACEABILITY_MATRIX.md`.
 - **CRE8-TRACE-REQ-0074**: Rows marked `deferred` or `retired` **MUST** include `decision_ref` to either ADR ID or decision event ID.
 - **CRE8-TRACE-REQ-0075**: Multiple seed refs **MAY** map to one target requirement only when semantic consolidation is explicitly documented in `notes`.
+- **CRE8-TRACE-REQ-0076**: A row marked `promoted` **MUST** include a non-`TBD` `target_requirement_id` and **MUST** use a verification hook that exists in the authoritative hook registry within `TRACEABILITY_MATRIX.md`.
 
 ## Tracker schema
 | Field | Required | Description |
@@ -51,7 +52,7 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-AUDIENCE-CONTRACT | TBD | candidate | HOOK-FEED-AUTH-ORDER |  | Candidate for deterministic audience/feed ordering controls. |
 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | TBD | candidate | HOOK-CONTRACT-ERROR-DETERMINISM |  | Candidate for error envelope stabilization and deny semantics. |
 | seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | CRE8-EXT-MODULE-SEAMS | TBD | candidate | HOOK-EXT-SEAM-COMPATIBILITY |  | Candidate for extension invariants and compatibility gates. |
-| seed/CRE8_SEED_PRESERVATION_MATRIX.md#preservation-obligations | CRE8-TRACE-SEED-PRESERVATION | TBD | candidate | HOOK-SEED-PRESERVATION-COVERAGE |  | Candidate for preservation accountability and redesign traceability. |
+| seed/CRE8_SEED_PRESERVATION_MATRIX.md#preservation-obligations | CRE8-TRACE-SEED-PROMOTION-TRACKER | CRE8-TRACE-REQ-0070 | promoted | HOOK-SSOT-SYNC-PROMOTED-TRACE |  | Seed preservation obligation promoted into mandatory seed row mapping contract. |
 
 ## Verification hooks
 - **HOOK-SEED-PROMOTION-SCHEMA**: Validate required columns and promotion status enums.
