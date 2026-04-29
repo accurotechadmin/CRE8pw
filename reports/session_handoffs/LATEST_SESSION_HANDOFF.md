@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
 
 Summary:
-- Implemented automated SSOT lint topology/orphan hooks for Slice 3 link architecture hardening.
-- Added explicit README -> SSOT Index vertical link required by topology policy.
-- Updated traceability See also links and progress artifacts to reflect automation completion and next CI gating work.
+- Added CI workflow `ssot_phase1_gate` to hard-fail on `docs:ssot:lint`, `docs:ssot:sync-check`, and `docs:ssot:report` failures.
+- Added normative requirement `CRE8-TRACE-REQ-0098` and traceability row `HOOK-SSOT-PHASE1-GATE-CI`.
+- Promoted an additional seed-preservation mapping row to `CRE8-TRACE-REQ-0080` and validated promoted-row sync coverage.

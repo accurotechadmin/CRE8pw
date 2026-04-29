@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SEED-PROMOTION-TRACKER
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -53,6 +53,7 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | TBD | candidate | HOOK-CONTRACT-ERROR-DETERMINISM |  | Candidate for error envelope stabilization and deny semantics. |
 | seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | CRE8-EXT-MODULE-SEAMS | TBD | candidate | HOOK-EXT-SEAM-COMPATIBILITY |  | Candidate for extension invariants and compatibility gates. |
 | seed/CRE8_SEED_PRESERVATION_MATRIX.md#preservation-obligations | CRE8-TRACE-SEED-PROMOTION-TRACKER | CRE8-TRACE-REQ-0070 | promoted | HOOK-SSOT-SYNC-PROMOTED-TRACE |  | Seed preservation obligation promoted into mandatory seed row mapping contract. |
+| seed/CRE8_SEED_PRESERVATION_MATRIX.md#unresolved-gap-accountability | CRE8-TRACE-SEED-GAP-REGISTER | CRE8-TRACE-REQ-0080 | promoted | HOOK-SSOT-SYNC-PROMOTED-TRACE |  | Seed gap accountability obligations promoted into canonical unresolved-gap register requirements. |
 
 ## Verification hooks
 - **HOOK-SEED-PROMOTION-SCHEMA**: Validate required columns and promotion status enums.
