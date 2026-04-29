@@ -62,6 +62,8 @@
     "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php",
     "test:contract:auth": "@php scripts/test_contract_auth.php",
     "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php",
-    "test:contract:feed": "@php scripts/test_contract_feed.php"
+    "test:contract:feed": "@php scripts/test_contract_feed.php",
+    "docs:ssot:review-gate-check": "@php scripts/docs_ssot_review_gate_check.php",
+    "docs:ssot:dod-trace-check": "@php scripts/docs_ssot_dod_trace_check.php"
   }
 }

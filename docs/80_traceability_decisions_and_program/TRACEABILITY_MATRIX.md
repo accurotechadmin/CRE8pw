@@ -54,8 +54,8 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | requirement_id | source_doc_id | source_path | verification_hook_id | verification_mode | owner | status | evidence_location |
 |---|---|---|---|---|---|---|---|
 | CRE8-GOV-REQ-0005 | CRE8-GOV-SSOT-INDEX | docs/00_governance/SSOT_INDEX.md | HOOK-SSOT-LINT-METADATA | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
-| CRE8-GOV-REQ-0033 | CRE8-GOV-CONTRIBUTION-WORKFLOW | docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md | HOOK-REVIEW-GATE-CHECK | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
-| CRE8-GOV-REQ-0053 | CRE8-GOV-DEFINITION-OF-DONE | docs/00_governance/DEFINITION_OF_DONE.md | HOOK-DOD-TRACE-CHECK | manual | Program Traceability WG | normative | docs/evidence/templates/README.md |
+| CRE8-GOV-REQ-0033 | CRE8-GOV-CONTRIBUTION-WORKFLOW | docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md | HOOK-REVIEW-GATE-CHECK-AUTO | automated | Docs Governance WG | normative | reports/ssot/coverage_latest.json |
+| CRE8-GOV-REQ-0053 | CRE8-GOV-DEFINITION-OF-DONE | docs/00_governance/DEFINITION_OF_DONE.md | HOOK-DOD-TRACE-CHECK-AUTO | automated | Program Traceability WG | normative | reports/ssot/coverage_latest.json |
 | CRE8-TRACE-REQ-0060 | CRE8-TRACE-ROADMAP-MILESTONES | docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md | HOOK-TRACE-ROADMAP-SCHEMA | manual | Program Traceability WG | normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0070 | CRE8-TRACE-SEED-PROMOTION-TRACKER | docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md | HOOK-SEED-PROMOTION-SCHEMA | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0080 | CRE8-TRACE-UNRESOLVED-SEED-GAPS | docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md | HOOK-SEED-GAP-REGISTER-SCHEMA | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |

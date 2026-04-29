@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T06:57:12Z
-- Current owner/session: Codex session `20260429-0657`
+- Last updated (UTC): 2026-04-29T07:03:30Z
+- Current owner/session: Codex session `20260429-0703`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -59,6 +59,7 @@
   - [x] Close lifecycle/seam verification automation gaps (`GAP-003`, `GAP-006`) via sync-check automation enforcement
   - [x] Convert route uniqueness and compatibility declaration hooks from manual to executable commands
   - [x] Convert error-code coverage hook from manual to executable command
+  - [x] Convert review-gate and DoD trace hooks from manual to executable commands
   - [~] Expand runtime test coverage across lifecycle/feed/security families (feed ordering/cursor fixture automation + multipage cursor monotonicity + lifecycle deny mapping coverage added; runtime-level simulation pending)
 - [x] Slice 9 — Programmatic quality gates
   - [x] Define normative command contracts for `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report`
@@ -72,8 +73,8 @@
   - [x] Create `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` for residual manual hooks
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0649.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0643.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0638.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0657.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0649.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0643.md`
