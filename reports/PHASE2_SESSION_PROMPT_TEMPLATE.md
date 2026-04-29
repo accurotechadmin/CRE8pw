@@ -28,13 +28,16 @@ Work through a **small, high-quality batch** of Phase 2 issues (usually 2–5 is
 12. `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md`
 13. `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
 14. The latest 3–5 files under `reports/session_handoffs/SESSION_HANDOFF_*.md`
-15. `docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`
-16. `docs/31_machine_contracts/openapi/cre8.v1.yaml`
-17. `docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md`
-18. `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-19. `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
-20. `docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md`
-21. `docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md`
+15. `reports/REPO_STUDY_HIGH_LEVEL_REPORT_2026-04-29.md`
+16. `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
+17. `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` (if present; otherwise create in this session before close)
+18. `docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`
+19. `docs/31_machine_contracts/openapi/cre8.v1.yaml`
+20. `docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md`
+21. `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
+22. `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
+23. `docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md`
+24. `docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md`
 
 ### Phase 2 objective model (non-optional)
 Treat these as the Phase 2 completion drivers:
@@ -47,6 +50,7 @@ Treat these as the Phase 2 completion drivers:
 ### Mandatory operating model
 1. **Assess current state first**
    - Locate latest handoff via `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`.
+   - Open `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` first for the current Phase 2 lane state and burn-down tables; if missing, bootstrap it before other edits.
    - Summarize:
      - last completed,
      - in progress,
@@ -94,6 +98,8 @@ Treat these as the Phase 2 completion drivers:
      - `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md`
        - If it does not exist yet, create it.
        - Keep a “latest 5 handoffs” list.
+   - If you changed Phase 2 status interpretation, reflect it in:
+     - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md` (or create a newer dated status summary and reference it in the handoff).
 
 ### Session scope guardrails
 - Do **not** attempt all remaining Phase 2 work in one session.
@@ -169,6 +175,7 @@ Maintain `PHASE2_PROGRESS_BOARD.md` with:
 - Residual manual-hook burn-down table.
 - Deferred breadth decomposition table (owner, hook, due date, decision ref).
 - Quick links to the latest 5 handoff reports.
+- A pointer to the latest Phase 2 status summary report file in `reports/`.
 
 ### Conspicuous discoverability requirement
 At end of session, ensure these are true:
