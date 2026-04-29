@@ -38,7 +38,17 @@ Define canonical API error envelope and stable error-code semantics for determin
 - `LIFECYCLE_*`: lifecycle state constraints (suspended/revoked/expired).
 - `SYSTEM_*`: server/runtime failure classes.
 
+
+## Baseline canonical error codes
+| code | category | default_http_status | description |
+|---|---|---:|---|
+| AUTH_CREDENTIAL_INVALID | AUTHN | 401 | Credential proof is missing, malformed, expired, or cryptographically invalid. |
+| AUTH_PERMISSION_DENIED | AUTH_DENY | 403 | Principal lacks required permission for requested operation. |
+| AUTH_EXPLICIT_DENY | AUTH_DENY | 403 | Policy contains an explicit deny rule for the evaluated scope or action. |
+| AUTH_SCOPE_DENIED | AUTH_DENY | 403 | Principal permission exists but requested scope boundary is not satisfied. |
+
 ## Verification hooks
+- **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Verify all route inventory `error_code_set` declarations resolve to documented catalog codes.
 - **HOOK-CONTRACT-ERROR-DETERMINISM**: Verify stable envelope shape and code mapping behavior.
 - **HOOK-CONTRACT-ERROR-SECRETS-REDaction**: Verify sensitive data is absent from server error payloads.
 

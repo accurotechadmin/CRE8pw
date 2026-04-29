@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0542.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0547.md`
 
 Summary:
-- Implemented executable `docs:ssot:route-uniqueness` command and promoted `HOOK-CONTRACT-ROUTE-UNIQUENESS` to automated trace mode.
-- Implemented executable `docs:ssot:compat-declaration` command and bound `CRE8-CONTRACT-REQ-0012` to automated `HOOK-CONTRACT-COMPAT-DECLARATION`.
-- Reconciled verification strategy, traceability matrix, and SSOT automation command catalog for both newly automated hooks.
+- Implemented executable `docs:ssot:error-code-coverage` and promoted `HOOK-CONTRACT-ERROR-CODE-COVERAGE` to automated trace mode.
+- Hardened `ERROR_CODE_CATALOG.md` with deterministic baseline canonical error-code table consumed by the new hook.
+- Reconciled verification strategy, traceability matrix, and SSOT automation command catalog to reflect the new command and evidence paths.
