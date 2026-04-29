@@ -100,6 +100,32 @@ if (strpos($openapi, 'ErrorFeedLifecycleBlocked') === false) {
     exit(1);
 }
 
+
+$interactionDenyMatrix = [
+    ['example' => 'ErrorPermissionDenied', 'code' => 'AUTH_PERMISSION_DENIED'],
+    ['example' => 'ErrorScopeDenied', 'code' => 'AUTH_SCOPE_DENIED'],
+    ['example' => 'ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED'],
+    ['example' => 'ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED'],
+    ['example' => 'ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED'],
+];
+
+$mappedInteractionCodes = [];
+foreach ($interactionDenyMatrix as $row) {
+    if (strpos($openapi, $row['example']) === false) {
+        fwrite(STDERR, "Missing interaction deny example fixture in OpenAPI: {$row['example']}\n");
+        exit(1);
+    }
+    if (strpos($openapi, $row['code']) === false) {
+        fwrite(STDERR, "Missing interaction deny code fixture in OpenAPI: {$row['code']}\n");
+        exit(1);
+    }
+    $mappedInteractionCodes[] = $row['code'];
+}
+if (count(array_unique($mappedInteractionCodes)) !== count($interactionDenyMatrix)) {
+    fwrite(STDERR, "Interaction deny mapping must be one-to-one between deny fixtures and canonical error codes.\n");
+    exit(1);
+}
+
 if (strpos($openapi, 'ErrorInteractionLifecycleBlocked') === false) {
     fwrite(STDERR, "Missing interaction runtime deny-path fixture for lifecycle-blocked comment.create action in OpenAPI.
 ");
@@ -175,4 +201,4 @@ if (!is_string($apiGuide) || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0053') === fal
     exit(1);
 }
 
-echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=6, metadata_fields=2, ordering_cursor=tiecase-multipage-parser-validated, deny_catalog=validated)' . PHP_EOL;
+echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=6,interaction_deny_matrix=5, metadata_fields=2, ordering_cursor=tiecase-multipage-parser-validated, deny_catalog=validated)' . PHP_EOL;

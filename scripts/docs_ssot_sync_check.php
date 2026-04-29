@@ -176,10 +176,10 @@ foreach ($manualBacklogRows as $cols) {
     $currentMode = $cols[4] ?? '';
     $targetCommand = $cols[6] ?? '';
     if ($owner === '' || $priority === '' || $targetCommand === '') {
-        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$hookId}: backlog row must include owner, priority, and target command/script";
+        $errors[] = "[HOOK-SSOT-MANUAL-BACKLOG-LINK] {$hookId}: backlog row must include owner, priority, and target command/script";
     }
     if ($currentMode !== 'manual') {
-        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$hookId}: current mode must be 'manual'";
+        $errors[] = "[HOOK-SSOT-MANUAL-BACKLOG-LINK] {$hookId}: current mode must be 'manual'";
     }
 
     $manualHooksInBacklog[$hookId] = true;
@@ -206,7 +206,7 @@ foreach ($matrixRows as $cols) {
 
     $manualRowsChecked++;
     if (!isset($manualHooksInBacklog[$hookId])) {
-        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$requirementId}: manual hook '{$hookId}' missing from PHASE1_MANUAL_HOOK_BACKLOG.md";
+        $errors[] = "[HOOK-SSOT-MANUAL-BACKLOG-LINK] {$requirementId}: manual hook '{$hookId}' missing from PHASE1_MANUAL_HOOK_BACKLOG.md";
     }
 }
 
@@ -217,5 +217,5 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo "docs:ssot:sync-check PASS (promoted_rows_checked={$promotedChecked}, gap_refs_checked={$gapRefsChecked}, manual_rows_checked={$manualRowsChecked})" . PHP_EOL;
+echo "docs:ssot:sync-check PASS (promoted_rows_checked={$promotedChecked}, gap_refs_checked={$gapRefsChecked}, manual_backlog_link_rows_checked={$manualRowsChecked})" . PHP_EOL;
 exit(0);

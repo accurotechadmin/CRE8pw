@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T12:45:58Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1245
+- Last updated (UTC): 2026-04-29T12:52:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1252
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -23,8 +23,8 @@
 - [ ] `HOOK-IDENTITY-ID-FIRST-ISSUANCE` -> automate via new `scripts/test_contract_identity_issuance.php` + composer binding.
 - [ ] `HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION` -> automate via new `scripts/test_contract_identity_context.php` + composer binding.
 - [ ] `HOOK-CONTRACT-SURFACE-PARITY` -> automate via route inventory + UI runtime parity fixture check.
-- [ ] `HOOK-FEED-INTERACTION-DENY-MAPPING` -> automate via `composer test:contract:feed` deny-code matrix assertions.
-- [ ] `HOOK-SSOT-MANUAL-BACKLOG-LINK` -> automate hard-fail in `composer docs:ssot:sync-check`.
+- [x] `HOOK-FEED-INTERACTION-DENY-MAPPING` -> automated in `composer test:contract:feed` via interaction deny fixture/code matrix assertions.
+- [x] `HOOK-SSOT-MANUAL-BACKLOG-LINK` -> automated hard-fail semantics in `composer docs:ssot:sync-check` with hook-tagged output.
 - [ ] `HOOK-SSOT-PR-EVIDENCE-REQUIRED` -> automate via CI/PR metadata parser in `.github/workflows/ssot_phase1_gate.yml` (or successor).
 
 ### Lane B — Deferred Slice 6/7 breadth decomposition (ADR-003)
@@ -58,8 +58,8 @@
 | HOOK-IDENTITY-ID-FIRST-ISSUANCE | Platform Architecture WG | Medium | manual | `composer test:contract:identity-issuance` (to be added) | 2026-05-10 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Requires new command wiring in `composer.json`. |
 | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | Platform Architecture WG | Medium | manual | `composer test:contract:identity-context` (to be added) | 2026-05-10 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Keep scenario set deterministic and replay-safe. |
 | HOOK-CONTRACT-SURFACE-PARITY | API Contracts WG | Medium | manual | `composer docs:ssot:route-parity` + UI parity fixture checker (new) | 2026-05-13 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Needs fixture source-of-truth decision. |
-| HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | Medium | manual | `composer test:contract:feed` (extend deny mapping assertions) | 2026-05-13 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Prioritize deny-code determinism parity. |
-| HOOK-SSOT-MANUAL-BACKLOG-LINK | Program Traceability WG | Medium | manual | `composer docs:ssot:sync-check` hard-fail row parity enforcement | 2026-05-03 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Fastest governance-hardening win. |
+| HOOK-FEED-INTERACTION-DENY-MAPPING | Product Policy WG | Medium | automated | `composer test:contract:feed` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md | Interaction deny fixture/code one-to-one matrix assertions added. |
+| HOOK-SSOT-MANUAL-BACKLOG-LINK | Program Traceability WG | Medium | automated | `composer docs:ssot:sync-check` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md | Hook-tagged hard-fail semantics now explicit in sync-check output contract. |
 | HOOK-SSOT-PR-EVIDENCE-REQUIRED | Program Traceability WG | Medium | manual | `.github/workflows/ssot_phase1_gate.yml` PR evidence parser/update | 2026-05-15 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Ensure semantic-change PRs include evidence section. |
 
 ## Deferred breadth decomposition table (owner, due date, decision reference)
@@ -68,24 +68,24 @@
 | P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | queued | Include context-boundary negative cases.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | queued | Define canonical fixture source before implementation.
-| P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | queued | Validate deny catalog parity with route-specific outcomes.
-| P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-05-15 | ADR-003 | in_progress | Planning complete; implementation pending next session batch.
+| P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | partially_complete | Contract-level deny mapping automation delivered; prose-level extension still pending. |
+| P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-05-15 | ADR-003 | partially_complete | Manual-backlog link hard-fail closed; PR evidence enforcement still pending. |
 
 ## Status snapshot
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
-| Lane A — Manual-hook automation | in progress | 28% | Medium | Two highest-risk auth hooks converted to automated checks; remaining hooks queued. |
-| Lane B — Deferred breadth decomposition | partially complete | 45% | Medium | Decomposition with owner/hook/due/decision_ref completed this session. |
-| Lane C — Parity expansion | not started | 0% | Medium | Awaiting first parity-depth implementation batch. |
-| Lane D — Traceability/evidence hardening | in progress | 26% | Medium | Traceability matrix verification_mode and evidence paths updated for two auth hooks. |
+| Lane A — Manual-hook automation | in progress | 44% | Medium | Auth + feed deny + manual-backlog-link hooks automated; identity/surface/PR evidence hooks remain. |
+| Lane B — Deferred breadth decomposition | partially complete | 60% | Medium | Two deferred items moved to partially complete while preserving owner/due/decision controls. |
+| Lane C — Parity expansion | in progress | 22% | Medium | Interaction deny-mapping parity assertions added in feed contract checks. |
+| Lane D — Traceability/evidence hardening | in progress | 40% | Medium | Additional matrix/backlog synchronization for newly automated hooks completed. |
 | Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1133.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1133.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
