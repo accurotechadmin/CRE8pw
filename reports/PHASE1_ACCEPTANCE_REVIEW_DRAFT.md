@@ -36,7 +36,7 @@ This document defines the deterministic acceptance gate contract for freezing CR
 | CRE8-ACCEPT-REQ-0001 | PASS | Slice status maintained in progress board and latest handoff. |
 | CRE8-ACCEPT-REQ-0002 | PASS | SSOT lint/sync/report commands currently green in latest sessions. |
 | CRE8-ACCEPT-REQ-0003 | PASS | Contract command family currently green in latest sessions. |
-| CRE8-ACCEPT-REQ-0004 | PASS | Manual-hook backlog file retained and currently records no remaining manual hooks. |
+| CRE8-ACCEPT-REQ-0004 | PASS | Gate-set manual-hook policy satisfied: backlog is present and reconciles remaining non-gate manual hooks with owner/priority/automation-target metadata. |
 | CRE8-ACCEPT-REQ-0005 | PASS | Pointer + board files exist and are updated per session. |
 | CRE8-ACCEPT-REQ-0006 | PASS | `phase1:acceptance-bundle` command added and executed in this session. |
 
