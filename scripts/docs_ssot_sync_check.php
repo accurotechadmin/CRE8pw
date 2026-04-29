@@ -54,7 +54,7 @@ foreach ($rows as $row) {
         if (!$docPath->isFile() || strtolower($docPath->getExtension()) !== 'md') {
             continue;
         }
-        $contents = file_get_contents($docPath);
+        $contents = file_get_contents($docPath->getPathname());
         if ($contents !== false && str_contains($contents, $targetReq)) {
             $foundRequirement = true;
             break;

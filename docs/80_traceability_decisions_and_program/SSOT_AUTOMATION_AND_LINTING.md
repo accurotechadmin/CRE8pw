@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-TRACE-SSOT-AUTOMATION
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
   - Docs Governance WG
   - Platform Architecture WG
 last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-06
+next_review_due_utc: 2026-05-13
 source_seed_refs:
   - seed/CRE8_SEED_CANON_INDEX.md
   - README.md
@@ -30,7 +30,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **CRE8-TRACE-REQ-0093**: `docs:ssot:sync-check` **MUST** fail if a row in `SEED_PROMOTION_TRACKER.md` has `promotion_status=promoted` and either `target_requirement_id` is missing in the target source doc or no matching `requirement_id` row exists in `TRACEABILITY_MATRIX.md`.
 - **CRE8-TRACE-REQ-0094**: The repository **MUST** define a `docs:ssot:report` command contract that emits a machine-readable coverage summary containing, at minimum, total normative requirements, traced requirements, untraced requirements, and manual-only verification hooks.
 - **CRE8-TRACE-REQ-0095**: Each automation command contract **MUST** declare deterministic exit semantics (`0=pass`, non-zero `=fail`) and **MUST** include reproducible local invocation instructions.
-- **CRE8-TRACE-REQ-0096**: Until command implementations exist, each hook listed in this document **MUST** be tracked as `manual` in `TRACEABILITY_MATRIX.md` with an explicit next automation action in `notes`.
+- **CRE8-TRACE-REQ-0096**: For each hook listed in this document, `TRACEABILITY_MATRIX.md` **MUST** reflect the current verification mode (`automated` when implemented; `manual` only when automation is unavailable) with an explicit next automation action in `notes` for manual rows.
 - **CRE8-TRACE-REQ-0097**: Any PR that changes normative requirements **MUST** include evidence of running all currently-available `docs:ssot:*` commands and **MUST** document missing-automation gaps in the session handoff.
 
 ## Command contracts (Phase 1 minimum)
