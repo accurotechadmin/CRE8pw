@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SEED-GAP-REGISTER
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -57,7 +57,7 @@ Define the canonical register for seed requirements that are not yet promoted in
 ## Verification hooks
 - **HOOK-SEED-GAP-SCHEMA**: Validate required fields and enum values for all gap rows.
 - **HOOK-SEED-GAP-DUE-DATE**: Flag overdue open gaps for escalation.
-- **HOOK-SEED-GAP-TRACKER-SYNC**: Validate each open gap has matching tracker row.
+- **HOOK-SEED-GAP-TRACKER-SYNC**: Validate each non-closed gap has matching `tracker_ref` row in Seed Promotion Tracker (enforced by `docs:ssot:sync-check`).
 
 ## See also
 - [Seed Promotion Tracker](./SEED_PROMOTION_TRACKER.md)

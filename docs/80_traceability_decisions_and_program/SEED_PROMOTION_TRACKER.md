@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SEED-PROMOTION-TRACKER
-version: 1.3.0
+version: 1.4.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -52,7 +52,7 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | SPR-005 | seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | CRE8-SEC-KEY-LIFECYCLE | TBD | drafted | HOOK-SEC-LIFECYCLE-PROPAGATION |  | Target doc exists but full requirement ID promotion still pending. |
 | SPR-006 | seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md#cross-surface-parity | CRE8-CONTRACTS-SURFACE-PARITY | TBD | candidate | HOOK-CONTRACT-SURFACE-PARITY |  | Candidate for Owner Console/API parity obligations. |
 | SPR-007 | seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-AUDIENCE-CONTRACT | TBD | candidate | HOOK-FEED-AUTH-ORDER |  | Candidate for deterministic audience/feed ordering controls. |
-| SPR-008 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | CRE8-ERROR-REQ-0001 | promoted | HOOK-CONTRACT-ERROR-DETERMINISM |  | Promoted into deterministic error envelope and stable error code requirements. |
+| SPR-008 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | CRE8-CONTRACT-REQ-0001 | promoted | HOOK-CONTRACT-ERROR-DETERMINISM |  | Promoted into deterministic error envelope and stable error code requirements. |
 | SPR-009 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#contract-machine-parity | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0010 | promoted | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY |  | Promoted into route inventory and machine contract parity requirements. |
 | SPR-010 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#compatibility-and-migration-disclosure | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0014 | promoted | HOOK-CONTRACT-COMPAT-DECLARATION |  | Promoted into mandatory compatibility declaration obligations. |
 | SPR-011 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#route-inventory-determinism | CRE8-CONTRACTS-ROUTE-INVENTORY | CRE8-CONTRACT-REQ-0020 | promoted | HOOK-CONTRACT-ROUTE-UNIQUENESS |  | Promoted into unique route_id and method/path constraints. |
@@ -65,6 +65,7 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - **HOOK-SEED-PROMOTION-SCHEMA**: Validate required columns and promotion status enums.
 - **HOOK-SEED-PROMOTION-TRACE-LINK**: Validate `promoted` rows have matching traceability matrix row.
 - **HOOK-SEED-PROMOTION-DECISION-REF**: Validate deferred/retired rows include decision references.
+- **HOOK-SSOT-SYNC-PROMOTED-TARGET**: Validate every `promoted` tracker row has non-`TBD` target requirement and doc presence.
 
 ## See also
 - [Traceability Matrix](./TRACEABILITY_MATRIX.md)

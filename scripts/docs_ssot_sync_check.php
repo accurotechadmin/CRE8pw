@@ -4,46 +4,93 @@ declare(strict_types=1);
 
 $repoRoot = dirname(__DIR__);
 $trackerPath = $repoRoot . '/docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md';
+$gapPath = $repoRoot . '/docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md';
 $matrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
 
 $tracker = file_get_contents($trackerPath);
+$gapRegister = file_get_contents($gapPath);
 $matrix = file_get_contents($matrixPath);
-if ($tracker === false || $matrix === false) {
-    fwrite(STDERR, "[HOOK-SSOT-SYNC-PROMOTED-TARGET] unable to read tracker or matrix" . PHP_EOL);
+if ($tracker === false || $gapRegister === false || $matrix === false) {
+    fwrite(STDERR, "[HOOK-SSOT-SYNC] unable to read tracker, gap register, or matrix" . PHP_EOL);
     exit(1);
 }
 
-$rows = [];
-foreach (explode("\n", $tracker) as $line) {
-    if (!str_starts_with(trim($line), '| seed/')) {
+function parseMarkdownTableRows(string $markdown, string $headerToken): array
+{
+    $rows = [];
+    $lines = explode("\n", $markdown);
+
+    $inTargetTable = false;
+    foreach ($lines as $line) {
+        $trimmed = trim($line);
+        if ($trimmed === '') {
+            if ($inTargetTable) {
+                break;
+            }
+            continue;
+        }
+
+        if (str_contains($trimmed, $headerToken)) {
+            $inTargetTable = true;
+            continue;
+        }
+
+        if (!$inTargetTable) {
+            continue;
+        }
+
+        if (!str_starts_with($trimmed, '|')) {
+            break;
+        }
+
+        if (preg_match('/^\|\s*---/', $trimmed) === 1) {
+            continue;
+        }
+
+        $rows[] = array_map('trim', explode('|', trim($trimmed, '|')));
+    }
+
+    return $rows;
+}
+
+$trackerRows = parseMarkdownTableRows($tracker, '| tracker_ref | seed_requirement_ref |');
+$gapRows = parseMarkdownTableRows($gapRegister, '| gap_id | seed_requirement_ref |');
+
+$trackerRefs = [];
+$trackerByRef = [];
+foreach ($trackerRows as $cols) {
+    if (count($cols) < 8) {
         continue;
     }
 
-    $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) < 7) {
-        continue;
-    }
-
-    $rows[] = [
-        'seed_requirement_ref' => $cols[0],
-        'target_doc_id' => $cols[1],
-        'target_requirement_id' => $cols[2],
-        'promotion_status' => $cols[3],
-        'verification_hook_id' => $cols[4],
+    $row = [
+        'tracker_ref' => $cols[0],
+        'seed_requirement_ref' => $cols[1],
+        'target_doc_id' => $cols[2],
+        'target_requirement_id' => $cols[3],
+        'promotion_status' => $cols[4],
+        'verification_hook_id' => $cols[5],
     ];
+
+    if ($row['tracker_ref'] === '' || $row['tracker_ref'] === 'tracker_ref') {
+        continue;
+    }
+
+    $trackerRefs[$row['tracker_ref']] = true;
+    $trackerByRef[$row['tracker_ref']] = $row;
 }
 
 $errors = [];
-$checked = 0;
-foreach ($rows as $row) {
+$promotedChecked = 0;
+foreach ($trackerByRef as $row) {
     if ($row['promotion_status'] !== 'promoted') {
         continue;
     }
-    $checked++;
 
+    $promotedChecked++;
     $targetReq = $row['target_requirement_id'];
     if ($targetReq === '' || $targetReq === 'TBD') {
-        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TARGET] {$row['seed_requirement_ref']}: promoted row has invalid target requirement";
+        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TARGET] {$row['tracker_ref']}: promoted row has invalid target requirement";
         continue;
     }
 
@@ -60,12 +107,37 @@ foreach ($rows as $row) {
             break;
         }
     }
+
     if (!$foundRequirement) {
-        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TARGET] {$row['seed_requirement_ref']}: target requirement '{$targetReq}' not found";
+        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TARGET] {$row['tracker_ref']}: target requirement '{$targetReq}' not found";
     }
 
     if (!str_contains($matrix, $targetReq)) {
-        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TRACE] {$row['seed_requirement_ref']}: requirement '{$targetReq}' missing in traceability matrix";
+        $errors[] = "[HOOK-SSOT-SYNC-PROMOTED-TRACE] {$row['tracker_ref']}: requirement '{$targetReq}' missing in traceability matrix";
+    }
+}
+
+$gapRefsChecked = 0;
+foreach ($gapRows as $cols) {
+    if (count($cols) < 8) {
+        continue;
+    }
+
+    $gapId = $cols[0];
+    $status = $cols[5];
+    $trackerRef = $cols[7];
+
+    if ($gapId === '' || $gapId === 'gap_id') {
+        continue;
+    }
+
+    if ($status === 'closed') {
+        continue;
+    }
+
+    $gapRefsChecked++;
+    if ($trackerRef === '' || !isset($trackerRefs[$trackerRef])) {
+        $errors[] = "[HOOK-SEED-GAP-TRACKER-SYNC] {$gapId}: tracker_ref '{$trackerRef}' missing from seed promotion tracker";
     }
 }
 
@@ -76,5 +148,5 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo "docs:ssot:sync-check PASS (promoted_rows_checked={$checked})" . PHP_EOL;
+echo "docs:ssot:sync-check PASS (promoted_rows_checked={$promotedChecked}, gap_refs_checked={$gapRefsChecked})" . PHP_EOL;
 exit(0);
