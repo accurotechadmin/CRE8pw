@@ -129,6 +129,8 @@ docs/
 
 This structure is mandatory for the current documentation maturation plan. New canonical SSOT artifacts should be added within the correct domain folder and wired into governance/index/traceability documents as the set grows.
 
+Primary governance entrypoint: [SSOT Index](docs/00_governance/SSOT_INDEX.md).
+
 ---
 
 ## Reports Policy for LLM/Automation Output
