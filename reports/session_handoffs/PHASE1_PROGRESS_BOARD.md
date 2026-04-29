@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T11:16:00Z
-- Current owner/session: Codex session `20260429-1116`
+- Last updated (UTC): 2026-04-29T12:10:00Z
+- Current owner/session: Codex session `20260429-1210`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -32,7 +32,7 @@
   - [x] Harden `DECISIONS_LOG.md`
   - [x] Harden `RISK_REGISTER.md`
   - [x] Harden `ROADMAP_AND_MILESTONES.md`
-- [~] Slice 6 — Contract domain hardening
+- [x] Slice 6 — Contract domain hardening
   - [x] Harden `AUTHORIZATION_AND_DELEGATION_SPEC.md`
   - [x] Implement executable `test:contract:error` hook for deterministic error-code/status mapping
   - [x] Implement executable `test:contract:auth-reasons` hook for reason→error catalog mapping
@@ -41,7 +41,7 @@
   - [x] Harden `ERROR_CODE_CATALOG.md`
   - [x] Harden decision tables and route-level contract corpus
   - [x] Promote remaining seed candidates (`SPR-001`, `SPR-002`, `SPR-006`, `SPR-007`)
-- [~] Slice 7 — Machine contract synchronization
+- [x] Slice 7 — Machine contract synchronization
   - [x] Promote initial OpenAPI baseline operations for route inventory parity
   - [x] Add explicit prose↔OpenAPI parity table artifact
   - [x] Implement route parity drift automation command
@@ -69,15 +69,16 @@
   - [x] Reconcile traceability matrix modes with implemented automation hooks (`CRE8-TRACE-REQ-0090..0095`)
   - [x] Add trace rows for topology/anti-orphan hooks
   - [x] Wire CI group `ssot_phase1_gate` and enforce hard-fail merge behavior
-- [~] Slice 10 — Acceptance review + baseline freeze
+- [x] Slice 10 — Acceptance review + baseline freeze
   - [x] Initialize acceptance prep tracker + handoff sequencing discipline
   - [x] Promote acceptance draft to provisional normative memo with explicit gate dispositions
   - [x] Add canonical acceptance command bundle (`composer phase1:acceptance-bundle`)
   - [x] Create `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` for residual manual hooks
+  - [x] Record formal freeze-closure waiver decision for residual Slice 6/7 breadth via ADR-003
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0703.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0714.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0709.md`
