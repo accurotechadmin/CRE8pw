@@ -30,3 +30,6 @@ This index defines the authoritative seed map for the next CRE8 SSOT lifecycle. 
 
 ## 4) Maturation expectation
 Each seed file should mature into full SSOT specs with decision tables, API examples, threat/abuse matrices, and verification gates while preserving policy determinism and provenance rigor.
+
+## 5) Dependency reference requirement
+All seed and SSOT documents MUST explicitly reference applicable Composer/runtime dependencies when defining behavior, controls, contracts, and verification obligations.

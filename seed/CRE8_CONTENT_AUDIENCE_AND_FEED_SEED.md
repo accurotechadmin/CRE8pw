@@ -22,3 +22,6 @@ CRE8 content behavior MUST remain policy-governed, key-aware, and deterministic 
 - New content families (for example direct messages or media/file objects) MUST plug into the same policy and provenance model.
 - New interaction types MUST NOT bypass PDP-first authorization and MUST preserve envelope/error determinism.
 - Any extension MUST emit immutable provenance/audit events for creation, mutation, and moderation/lifecycle actions.
+
+## Dependency anchoring for content, audience, and feed
+Content/audience/feed APIs SHOULD use `slim/slim` route families with `slim/psr7` responses. Visibility inputs SHOULD be schema-validated via `respect/validation`; feed and permission reads/writes SHOULD use `ext-pdo` prepared statements and transaction scopes; feed abuse throttling SHOULD use `symfony/rate-limiter`; moderation and visibility decisions SHOULD emit structured provenance-ready logs via `monolog/monolog`.

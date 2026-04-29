@@ -156,3 +156,23 @@ When this seed set is complete enough, it MUST be matured into full production-g
 - `CRE8_API_CONTRACT_AND_ERROR_SEED.md`: envelope-first contract and deterministic deny/error mapping.
 - `CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`: extension seams and module pattern guardrails.
 - `CRE8_SEED_PRESERVATION_MATRIX.md`: preservation and redesign accountability matrix.
+
+---
+
+## 14) Dependency bedrock policy (implementation-binding)
+All future SSOT and implementation docs MUST treat the Composer dependencies as architectural bedrock (not optional utilities). Documentation for each subsystem MUST name the dependency and responsibility directly:
+- `slim/slim`: route groups per surface, middleware order, and centralized error pipeline.
+- `slim/psr7`: immutable PSR-7 request/response primitives and upload handling.
+- `php-di/php-di`: composition root for services/repositories/middleware.
+- `firebase/php-jwt`: token mint/verify, `iss`/`aud`/`exp`/`typ` checks, and JWKS-compatible key validation.
+- `ext-pdo`: prepared statements and transaction-scoped policy/audit writes.
+- `ext-sodium`: Argon2id hashing, CSPRNG bytes, and constant-time comparisons.
+- `respect/validation`: composable request validators and deterministic 422 mapping.
+- `vlucas/phpdotenv`: startup env loading, required key assertions, typed parsing.
+- `guzzlehttp/guzzle`: outbound integrations (JWKS/webhook/service calls) with retry/timeout policy.
+- `neomerx/cors-psr7`: CORS policy enforcement without ad-hoc header logic.
+- `monolog/monolog`: structured app/security/audit channels with correlation processors.
+- `symfony/rate-limiter` + `symfony/cache`: policy buckets, burst control, and limiter-state persistence.
+- `phpunit/phpunit`: contract/middleware/security/lifecycle regression suites.
+
+Every domain document MUST be updated to reference these dependencies where behavior is specified.
