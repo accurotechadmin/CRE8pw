@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-PHASE2-ACCEPTANCE
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -28,6 +28,7 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 - **CRE8-OPS-REQ-0011**: `phase2:acceptance-bundle` **MUST** hard-fail on any non-zero exit code from its required command set.
 - **CRE8-OPS-REQ-0012**: Any Phase 2 scope change touching contracts, parity, hooks, or traceability **MUST** include bundle execution evidence in the latest session handoff.
 - **CRE8-OPS-REQ-0013**: Deferred Phase 2 breadth items retained after a bundle run **MUST** remain listed in `PHASE2_PROGRESS_BOARD.md` with owner, due date, and decision reference.
+- **CRE8-OPS-REQ-0014**: Pull-request and protected-branch CI that executes SSOT contract gates **MUST** invoke `composer phase2:acceptance-bundle` as a required hard-fail step.
 
 ## Required acceptance bundle commands
 1. `composer docs:ssot:lint`
@@ -41,6 +42,10 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 9. `composer test:contract:identity-context`
 10. `composer test:contract:surface-parity`
 
+## Change-impact map reference
+- Template: `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
+- Session artifact expectation: link the generated/updated change-impact map in the active `SESSION_HANDOFF_*.md` under verification evidence.
+
 ## Verification hooks
 - **HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE**: Execute `composer phase2:acceptance-bundle`; expected result is zero exit with all constituent commands passing and logged in session handoff evidence.
 
@@ -49,3 +54,4 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 - [Prose↔OpenAPI Parity Table](../31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [Phase 2 Progress Board](../../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
