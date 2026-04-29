@@ -1,7 +1,54 @@
-# Document Template And Style Guide
+---
+doc_id: CRE8-GOV-DOC-TEMPLATE
+version: 1.0.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# Document Template and Style Guide
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Required metadata header schema
+All normative documents under `docs/` **MUST** include a YAML frontmatter header with the following keys:
+- `doc_id`
+- `version`
+- `status`
+- `owner`
+- `reviewers`
+- `last_reviewed_utc`
+- `next_review_due_utc`
+- `source_seed_refs`
+- `normative_dependencies`
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-GOV-REQ-0010**: `doc_id` **MUST** be unique within the repository.
+- **CRE8-GOV-REQ-0011**: `status` **MUST** be one of: `draft`, `provisional-normative`, `normative`, `deprecated`.
+- **CRE8-GOV-REQ-0012**: `version` **MUST** follow semantic versioning (`MAJOR.MINOR.PATCH`).
+- **CRE8-GOV-REQ-0013**: `last_reviewed_utc` and `next_review_due_utc` **MUST** use `YYYY-MM-DD` UTC date format.
+- **CRE8-GOV-REQ-0014**: `normative_dependencies` **MUST** list relative paths to documents that materially constrain interpretation.
+- **CRE8-GOV-REQ-0015**: Normative requirement statements **MUST** use RFC-style keywords (`MUST`, `SHOULD`, `MAY`) and **MUST NOT** use placeholder prose.
+- **CRE8-GOV-REQ-0016**: Requirement identifiers **MUST** use `CRE8-<DOMAIN>-REQ-####` format and remain stable once published.
+- **CRE8-GOV-REQ-0017**: Each normative document **MUST** declare at least one verification hook or explicit reference to a centralized verification catalog.
+
+## Authoring conventions
+- Prefer one behavioral invariant per bullet to reduce ambiguity.
+- Keep failure semantics deterministic and machine-testable when possible.
+- Include a `See also` section with direct links to adjacent and governing canon.
+
+## Verification hooks
+- **HOOK-SSOT-LINT-METADATA**: Verify required metadata keys and key formats.
+- **HOOK-SSOT-LINT-NORMATIVE-TERMS**: Verify normative docs include RFC-style requirement terms and no scaffold placeholder language.
+- **HOOK-SSOT-REQID-FORMAT**: Verify requirement IDs conform to mandated pattern.
+
+## See also
+- [SSOT Index](./SSOT_INDEX.md)
+- [Document Status and Ownership](./DOCUMENT_STATUS_AND_OWNERSHIP.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

@@ -1,7 +1,59 @@
-# Ssot Index
+---
+doc_id: CRE8-GOV-SSOT-INDEX
+version: 1.0.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Security WG
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+  - docs/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md
+  - docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md
+  - docs/00_governance/CHANGE_CONTROL_POLICY.md
+  - docs/00_governance/DEFINITION_OF_DONE.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **SSOT_INDEX.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# SSOT Index
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Purpose
+This document defines the authoritative SSOT topology, precedence model, and minimum governance linkage rules for the CRE8 repository.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-GOV-REQ-0001**: The repository **MUST** treat `README.md` as the root project-level SSOT anchor.
+- **CRE8-GOV-REQ-0002**: Domain canonical requirements **MUST** be authored under `docs/` and **MUST** supersede `seed/` material where both define the same behavior.
+- **CRE8-GOV-REQ-0003**: `seed/` artifacts **MUST** be used as promotion input when corresponding mature normative domain documentation is incomplete.
+- **CRE8-GOV-REQ-0004**: `reports/` artifacts **MUST** be treated as informational and non-normative unless explicitly promoted by governance-controlled change.
+- **CRE8-GOV-REQ-0005**: Every normative document **MUST** include the metadata header defined by `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`.
+- **CRE8-GOV-REQ-0006**: Every normative document **MUST** declare `normative_dependencies` and **MUST** include at least one cross-domain or governance link when dependencies exist.
+- **CRE8-GOV-REQ-0007**: Changes that alter requirement semantics **MUST** follow `CHANGE_CONTROL_POLICY.md` and pass `DEFINITION_OF_DONE.md` gates before merge.
+
+## Canon precedence
+1. `README.md`
+2. Normative docs under `docs/`
+3. `seed/` documents (fallback source for unpromoted requirements)
+4. `reports/` session and analysis outputs
+
+## Required SSOT map
+- `docs/00_governance/`: governance policy, templates, workflow, and acceptance gates.
+- `docs/10_*` through `docs/80_*`: domain contracts and program controls.
+- `docs/31_machine_contracts/`: machine-readable contract artifacts (OpenAPI/schemas).
+- `docs/evidence/`: evidence templates and automation linkage.
+
+## Verification hooks
+- **HOOK-SSOT-LINT-METADATA**: Validate metadata header presence and required keys across normative docs.
+- **HOOK-SSOT-LINK-INTEGRITY**: Validate all internal markdown links and anti-orphan requirements.
+- **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between `README.md` and updated normative docs before merge.
+
+## See also
+- [README.md](../../README.md)
+- [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+- [Document Status and Ownership](./DOCUMENT_STATUS_AND_OWNERSHIP.md)
+- [Contribution Workflow SSOT](./CONTRIBUTION_WORKFLOW_SSOT.md)
+- [Change Control Policy](./CHANGE_CONTROL_POLICY.md)
+- [Definition of Done](./DEFINITION_OF_DONE.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

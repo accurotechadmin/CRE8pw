@@ -1,7 +1,50 @@
-# Document Status And Ownership
+---
+doc_id: CRE8-GOV-DOC-OWNERSHIP
+version: 1.0.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Platform Architecture WG
+  - Delivery Operations WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **DOCUMENT_STATUS_AND_OWNERSHIP.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# Document Status and Ownership
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Status lifecycle
+- `draft`: exploratory content not approved for implementation direction.
+- `provisional-normative`: approved for bounded implementation with identified follow-up gaps.
+- `normative`: approved as authoritative implementation direction.
+- `deprecated`: retained for history and backward reference; not valid for new implementation guidance.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-GOV-REQ-0020**: Every document in `docs/` **MUST** have exactly one declared owner team.
+- **CRE8-GOV-REQ-0021**: Every normative or provisional-normative document **MUST** list at least one reviewer team distinct from the owner.
+- **CRE8-GOV-REQ-0022**: A document **MUST NOT** move to `normative` status without recorded review completion under `CONTRIBUTION_WORKFLOW_SSOT.md`.
+- **CRE8-GOV-REQ-0023**: `next_review_due_utc` **MUST** be no later than 90 days after `last_reviewed_utc` for `normative` documents.
+- **CRE8-GOV-REQ-0024**: Changes to owner or status **MUST** be logged in the change artifact required by `CHANGE_CONTROL_POLICY.md`.
+- **CRE8-GOV-REQ-0025**: `deprecated` documents **MUST** include replacement references or explicit retirement rationale.
+
+## Ownership protocol
+1. Proposer opens a change with owner and reviewer assignments.
+2. Current owner validates scope and dependency impacts.
+3. Reviewer(s) approve or request changes.
+4. Owner updates metadata dates and status.
+5. Change is merged only after Definition of Done checks pass.
+
+## Verification hooks
+- **HOOK-SSOT-OWNER-PRESENCE**: Validate owner/reviewer fields exist for all normative and provisional-normative docs.
+- **HOOK-SSOT-REVIEW-CADENCE**: Validate review dates and maximum review age policy.
+- **HOOK-SSOT-STATUS-TRANSITION**: Validate status promotions include workflow evidence references.
+
+## See also
+- [SSOT Index](./SSOT_INDEX.md)
+- [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+- [Contribution Workflow SSOT](./CONTRIBUTION_WORKFLOW_SSOT.md)
+- [Change Control Policy](./CHANGE_CONTROL_POLICY.md)
