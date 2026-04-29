@@ -83,6 +83,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorEnvelope'
               examples:
+                explicitDeny:
+                  $ref: '#/components/examples/ErrorExplicitDeny'
+                permissionDenied:
+                  $ref: '#/components/examples/ErrorPermissionDenied'
                 scopeDenied:
                   $ref: '#/components/examples/ErrorScopeDenied'
                 depthExceeded:
@@ -252,6 +256,10 @@ components:
       value:
         error: { code: AUTH_PERMISSION_DENIED, message: "Permission denied.", category: AUTH_DENY, request_id: "req-feed-002", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-feed-002", contract_version: "1.0.0" }
+    ErrorExplicitDeny:
+      value:
+        error: { code: AUTH_EXPLICIT_DENY, message: "Explicit policy deny matched.", category: AUTH_DENY, request_id: "req-authz-004", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-authz-004", contract_version: "1.0.0" }
     ErrorAuthDepthExceeded:
       value:
         error: { code: AUTH_DEPTH_EXCEEDED, message: "Delegation depth exceeded.", category: AUTH_DENY, request_id: "req-feed-003", timestamp_utc: "2026-04-29T06:10:00Z" }
