@@ -1,10 +1,51 @@
+---
+doc_id: CRE8-CONTRACTS-API-GUIDE
+version: 1.0.0
+status: provisional-normative
+owner: API Contracts WG
+reviewers:
+  - Platform Architecture WG
+  - Security WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - seed/
+  - docs/31_machine_contracts/openapi/cre8.v1.yaml
+normative_dependencies:
+  - docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+  - docs/31_machine_contracts/openapi/cre8.v1.yaml
+---
+
 # Api Contract Guide
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **API_CONTRACT_GUIDE.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define normative API contract obligations, route lifecycle rules, and prose-to-machine parity expectations for CRE8 interfaces.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-CONTRACT-REQ-0010**: Every externally callable CRE8 route **MUST** have one canonical entry in `ROUTE_INVENTORY_REFERENCE.md` and one corresponding OpenAPI path+operation in `docs/31_machine_contracts/openapi/cre8.v1.yaml`.
+- **CRE8-CONTRACT-REQ-0011**: Request and response bodies **MUST** use stable envelope fields with explicit required/optional semantics documented in prose and OpenAPI.
+- **CRE8-CONTRACT-REQ-0012**: Contract-affecting changes **MUST** include backward-compatibility classification (`compatible`, `conditionally-compatible`, `breaking`) and migration notes before merge.
+- **CRE8-CONTRACT-REQ-0013**: Routes requiring delegated authority **MUST** declare required permission, scope boundary, and lifecycle prerequisites.
+- **CRE8-CONTRACT-REQ-0014**: Error responses **MUST** use codes defined in `ERROR_CODE_CATALOG.md`; undocumented codes are prohibited.
+- **CRE8-CONTRACT-REQ-0015**: Route deprecation **MUST** include a documented sunset date, replacement route reference, and a verification-plan update.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Parity policy (prose ↔ machine)
+- Route identifiers in prose **MUST** match OpenAPI operation IDs when defined.
+- Path/method tuples **MUST** be unique and consistent between sources.
+- If drift is discovered, merge **MUST** be blocked until either prose or machine artifact is updated in the same change set.
 
+## Verification hooks
+- **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Compare route inventory entries against OpenAPI path/method tuples.
+- **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Validate all declared error codes exist in `ERROR_CODE_CATALOG.md`.
+- **HOOK-CONTRACT-COMPAT-DECLARATION**: Validate compatibility classification and migration note sections for contract-impacting changes.
 
-See also: [Error Code Catalog](./ERROR_CODE_CATALOG.md)
+## Drift notes
+- Current OpenAPI file remains placeholder and creates known parity debt. Next automation hook: implement `docs:ssot:contract-parity-check` with path+operation comparison and integrate into `ssot_phase1_gate`.
+
+## See also
+- [Route Inventory Reference](./ROUTE_INVENTORY_REFERENCE.md)
+- [Error Code Catalog](./ERROR_CODE_CATALOG.md)
+- [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
+- [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
