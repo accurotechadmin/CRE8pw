@@ -28,6 +28,8 @@ $requiredCommands = [
     'composer docs:ssot:lint',
     'composer docs:ssot:sync-check',
     'composer docs:ssot:report',
+    'composer docs:ssot:review-gate-check',
+    'composer docs:ssot:route-parity',
 ];
 
 $missing = [];

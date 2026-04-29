@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T13:09:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1309
+- Last updated (UTC): 2026-04-29T13:14:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1314
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -31,7 +31,7 @@
 - [x] Create owner-assigned Phase 2 milestones for deferred contract breadth (Slice 6).
 - [x] Create owner-assigned Phase 2 milestones for deferred machine-contract breadth (Slice 7).
 - [x] Attach due dates and decision references to every deferred item.
-- [ ] Require change-impact maps and route-parity evidence on normative/machine-contract behavior changes.
+- [x] Require change-impact maps and route-parity evidence on normative/machine-contract behavior changes.
 
 ### Lane C — Prose↔OpenAPI↔Schema parity expansion
 - [ ] Expand route parity coverage beyond current baseline set.
@@ -75,17 +75,17 @@
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
-| Lane B — Deferred breadth decomposition | partially complete | 78% | Medium | Governance deferred item closed; remaining depth-expansion items still partially complete. |
-| Lane C — Parity expansion | in progress | 30% | Medium | Surface and feed parity automation landed; broader route-family depth still pending. |
-| Lane D — Traceability/evidence hardening | in progress | 68% | Medium | PR evidence enforcement now automated in CI and synchronized in matrix/backlog artifacts. |
+| Lane B — Deferred breadth decomposition | partially complete | 86% | Medium | Governance evidence-gate residual closed; remaining depth-expansion items still partially complete. |
+| Lane C — Parity expansion | in progress | 36% | Medium | Route-parity and review-gate evidence is now mandatory in CI/handoff checks; broader route-family depth still pending. |
+| Lane D — Traceability/evidence hardening | in progress | 74% | Medium | PR evidence enforcement now requires review-gate + route-parity command outcomes with CI enforcement. |
 | Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1314.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
