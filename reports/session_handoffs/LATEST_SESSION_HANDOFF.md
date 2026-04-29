@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2351.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2357.md`
 
 Summary:
-- Removed malformed duplicated normative requirement text in `PROSE_OPENAPI_PARITY_TABLE.md` to restore deterministic requirement catalog integrity.
-- Expanded `HOOK-CONTRACT-ROUTE-INVENTORY-PARITY` automation to hard-fail duplicate `CRE8-MACHINE-REQ-####` entries in parity normative requirements.
-- Revalidated full `phase2:acceptance-bundle` after parity-governance hardening and updated Phase 2 progress board status links.
+- Added executable due-date equality enforcement between ADR-003 route-family policy rows and deferred breadth rows in route parity checks.
+- Added new normative requirement `CRE8-MACHINE-REQ-0018` to block premature `depth_complete` closure drift versus deferred-row status.
+- Revalidated full `phase2:acceptance-bundle` and refreshed Phase 2 progress-board latest-links/status.
