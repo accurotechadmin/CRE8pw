@@ -46,6 +46,10 @@ Define canonical API error envelope and stable error-code semantics for determin
 | AUTH_PERMISSION_DENIED | AUTH_DENY | 403 | Principal lacks required permission for requested operation. |
 | AUTH_EXPLICIT_DENY | AUTH_DENY | 403 | Policy contains an explicit deny rule for the evaluated scope or action. |
 | AUTH_SCOPE_DENIED | AUTH_DENY | 403 | Principal permission exists but requested scope boundary is not satisfied. |
+| AUTH_DEPTH_EXCEEDED | AUTH_DENY | 403 | Delegation depth exceeds ancestor-defined maximum depth budget. |
+| AUTH_GRANT_EXPIRED | AUTH_DENY | 403 | Grant or delegated credential is outside the allowed expiry window. |
+| AUTH_LIFECYCLE_BLOCKED | LIFECYCLE | 403 | Principal or key lifecycle state blocks request authorization. |
+| AUTH_POLICY_UNRESOLVED | AUTH_DENY | 403 | Policy context is missing or ambiguous and is resolved as deterministic deny. |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Verify all route inventory `error_code_set` declarations resolve to documented catalog codes.

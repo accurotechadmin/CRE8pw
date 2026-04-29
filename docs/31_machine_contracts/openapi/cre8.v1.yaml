@@ -22,19 +22,28 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../schemas/success-envelope.schema.json
+                $ref: '#/components/schemas/SuccessEnvelope'
+              examples:
+                ok:
+                  $ref: '#/components/examples/SuccessHealth'
         '401':
           description: Unauthorized request.
           content:
             application/json:
               schema:
-                $ref: ../schemas/error-envelope.schema.json
-        '429':
-          description: Rate limited request.
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                invalidCredential:
+                  $ref: '#/components/examples/ErrorCredentialInvalid'
+        '500':
+          description: Internal error (redacted response).
           content:
             application/json:
               schema:
-                $ref: ../schemas/error-envelope.schema.json
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                redacted:
+                  $ref: '#/components/examples/ErrorSystemRedacted'
   /v1/authz/decide:
     post:
       operationId: postAuthorizationDecision
@@ -46,36 +55,133 @@ paths:
           application/json:
             schema:
               $ref: ../schemas/policy-decision.schema.json
+            examples:
+              denyScope:
+                $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
       responses:
         '200':
           description: Authorization decision generated.
           content:
             application/json:
               schema:
-                $ref: ../schemas/success-envelope.schema.json
-        '400':
-          description: Invalid request payload.
-          content:
-            application/json:
-              schema:
-                $ref: ../schemas/error-envelope.schema.json
+                $ref: '#/components/schemas/SuccessEnvelope'
+              examples:
+                allow:
+                  $ref: '#/components/examples/AuthDecisionAllow'
         '403':
           description: Policy denied.
           content:
             application/json:
               schema:
-                $ref: ../schemas/error-envelope.schema.json
-        '409':
-          description: Lifecycle conflict prevents deterministic decision.
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                scopeDenied:
+                  $ref: '#/components/examples/ErrorScopeDenied'
+  /v1/keys/{key_id}/lifecycle/suspend:
+    post:
+      operationId: postKeyLifecycleSuspend
+      summary: Suspend a key lifecycle state
+      tags: [lifecycle]
+      parameters:
+        - in: path
+          name: key_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Lifecycle transition accepted.
           content:
             application/json:
               schema:
-                $ref: ../schemas/error-envelope.schema.json
+                $ref: '#/components/schemas/SuccessEnvelope'
+              examples:
+                accepted:
+                  $ref: '#/components/examples/LifecycleSuspendAccepted'
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                lifecycleBlocked:
+                  $ref: '#/components/examples/ErrorLifecycleBlocked'
+  /v1/feed/items:
+    get:
+      operationId: getFeedItems
+      summary: Retrieve authorized feed items in deterministic order
+      tags: [feed]
+      responses:
+        '200':
+          description: Authorized feed payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessEnvelope'
+              examples:
+                feed:
+                  $ref: '#/components/examples/FeedItemsSuccess'
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+              examples:
+                permissionDenied:
+                  $ref: '#/components/examples/ErrorPermissionDenied'
 components:
+  schemas:
+    SuccessEnvelope:
+      $ref: ../schemas/success-envelope.schema.json
+    ErrorEnvelope:
+      $ref: ../schemas/error-envelope.schema.json
   securitySchemes:
     cre8Proof:
       type: http
       scheme: bearer
       bearerFormat: CRE8-Proof
+  examples:
+    SuccessHealth:
+      value:
+        data: { status: "ok" }
+        meta: { request_id: "req-health-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+    ErrorCredentialInvalid:
+      value:
+        error: { code: AUTH_CREDENTIAL_INVALID, message: "Credential proof invalid.", category: AUTHN, request_id: "req-authn-001", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-authn-001", contract_version: "1.0.0" }
+    ErrorSystemRedacted:
+      value:
+        error: { code: SYSTEM_INTERNAL_ERROR, message: "An internal error occurred.", category: SYSTEM, request_id: "req-sys-001", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-sys-001", contract_version: "1.0.0" }
+    AuthDecisionRequestScopeDeny:
+      value: { principal_id: "prn_001", action: "feed.items.read", resource_scope: "group:g-123" }
+    AuthDecisionAllow:
+      value:
+        data: { decision: "allow", decision_reason_code: "ALLOW" }
+        meta: { request_id: "req-authz-allow-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+    ErrorScopeDenied:
+      value:
+        error: { code: AUTH_SCOPE_DENIED, message: "Scope boundary denied.", category: AUTH_DENY, request_id: "req-authz-001", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-authz-001", contract_version: "1.0.0" }
+    LifecycleSuspendAccepted:
+      value:
+        data: { key_id: "key_123", lifecycle_state: "suspended" }
+        meta: { request_id: "req-life-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+    ErrorLifecycleBlocked:
+      value:
+        error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Lifecycle state blocked.", category: LIFECYCLE, request_id: "req-life-002", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-life-002", contract_version: "1.0.0" }
+    FeedItemsSuccess:
+      value:
+        data:
+          - { item_id: "itm_001", rank: 1 }
+          - { item_id: "itm_002", rank: 2 }
+        meta: { request_id: "req-feed-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
+    ErrorPermissionDenied:
+      value:
+        error: { code: AUTH_PERMISSION_DENIED, message: "Permission denied.", category: AUTH_DENY, request_id: "req-feed-002", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-feed-002", contract_version: "1.0.0" }
 security:
   - cre8Proof: []

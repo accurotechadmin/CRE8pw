@@ -48,7 +48,9 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | route_id | method | path | auth_model | required_permission | scope_type | success_status | error_code_set | lifecycle | sunset_utc | replacement_route_id |
 |---|---|---|---|---|---|---|---|---|---|---|
 | CRE8-ROUTE-0001 | GET | /v1/system/health | public | system.health.read | global | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
-| CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED | active |  |  |
+| CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED,AUTH_POLICY_UNRESOLVED | active |  |  |
+| CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | id-key | key.lifecycle.suspend | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
+| CRE8-ROUTE-0004 | GET | /v1/feed/items | utility-key | feed.items.read | group | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED | active |  |  |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.

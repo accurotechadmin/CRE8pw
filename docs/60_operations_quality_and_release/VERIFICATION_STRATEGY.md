@@ -43,15 +43,16 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 ## Phase 1 initial hooks
 | hook_id | trigger | tool_or_procedure | expected_result | evidence_location | next_automation_candidate |
 |---|---|---|---|---|---|
-| HOOK-CONTRACT-POLICY-ORDER | PR | Contract tests for policy order and deny precedence | Deterministic pass/fail on order invariants | docs/evidence/templates/README.md | Add `test:contract:auth` executable suite |
-| HOOK-CONTRACT-ERROR-DETERMINISM | PR | Contract tests for error envelope and code mapping | Stable envelope + code mapping | docs/evidence/templates/README.md | Add `test:contract:error` executable suite |
+| HOOK-CONTRACT-POLICY-ORDER | PR | `composer test:contract:auth` | Deterministic pass/fail on order invariants | docs/evidence/templates/README.md | Implemented as `test:contract:auth` |
+| HOOK-CONTRACT-ERROR-DETERMINISM | PR | `composer test:contract:error` | Stable envelope + code mapping | docs/evidence/templates/README.md | Implemented as `test:contract:error` |
+| HOOK-CONTRACT-ERROR-SECRETS-REDaction | PR | `composer test:contract:error-secrets` | OpenAPI error examples and descriptions contain no forbidden secret-leak tokens and include redacted 5xx example | docs/evidence/templates/README.md | Implemented as `test:contract:error-secrets` |
 | HOOK-SSOT-LINT-METADATA | PR | `composer docs:ssot:lint` | Exit code 0 with no metadata/link failures | reports/ssot/coverage_latest.json |  |
 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | PR | `composer docs:ssot:route-parity` | Method/path and route_id parity maintained with no undocumented drift | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:route-parity` |
 | HOOK-CONTRACT-ROUTE-UNIQUENESS | PR | `composer docs:ssot:route-uniqueness` | No duplicate IDs or method/path collisions | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:route-uniqueness` |
 | HOOK-CONTRACT-COMPAT-DECLARATION | PR | `composer docs:ssot:compat-declaration` | Compatibility class/migration/deprecation clauses are present in canonical API guide | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:compat-declaration` |
 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | PR | `composer docs:ssot:error-code-coverage` | Every route inventory error code resolves to a canonical code in `ERROR_CODE_CATALOG.md` | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:error-code-coverage` |
 | HOOK-CONTRACT-DEPRECATION-SCHEMA | PR | `composer docs:ssot:deprecation-schema` | Every `deprecated`/`sunset` route includes `sunset_utc` and valid `replacement_route_id` format | reports/ssot/coverage_latest.json; docs/evidence/templates/README.md | Implemented as `docs:ssot:deprecation-schema` |
-| HOOK-AUTH-DECISION-REASON-MAPPING | PR | Manual cross-check: auth decision table deny reason -> `ERROR_CODE_CATALOG.md` code mapping | One-to-one reason/code mapping with no unmapped deny reason | docs/evidence/templates/README.md | Add `test:contract:auth-reasons` suite |
+| HOOK-AUTH-DECISION-REASON-MAPPING | PR | `composer test:contract:auth-reasons` | One-to-one reason/code mapping with no unmapped deny reason | docs/evidence/templates/README.md | Implemented as `test:contract:auth-reasons` |
 | HOOK-SEC-LIFECYCLE-PROPAGATION | PR | `composer docs:ssot:sync-check` | Trace row for lifecycle propagation exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with runtime revoke/rotate propagation contract tests |
 | HOOK-EXT-SEAM-COMPATIBILITY | PR | `composer docs:ssot:sync-check` | Trace row for seam compatibility exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with module seam contract fixture suite |
 
