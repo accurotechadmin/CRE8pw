@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0649.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0653.md`
 
 Summary:
-- Added multipage feed cursor monotonicity requirement + executable validation (`CRE8-CONTRACT-REQ-0054`).
-- Added explicit feed lifecycle deny requirement/example enforcement for `AUTH_LIFECYCLE_BLOCKED` (`CRE8-CONTRACT-REQ-0053`).
-- Added dedicated feed evidence template and rewired verification/traceability evidence paths.
+- Replaced feed cursor monotonicity checks with parser-backed grammar/equality/ordering assertions in `test:contract:feed`.
+- Added canonical feed cursor grammar requirement (`CRE8-CONTRACT-REQ-0055`) and verification hook mapping (`HOOK-CONTRACT-FEED-CURSOR-GRAMMAR`).
+- Updated progress board to start Slice 10 acceptance preparation tracking.

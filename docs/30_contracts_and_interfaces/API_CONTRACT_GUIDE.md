@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-CONTRACTS-API-GUIDE
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -37,6 +37,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **CRE8-CONTRACT-REQ-0052**: Route `/v1/feed/items` deny examples **MUST** map only to canonical codes declared in `ERROR_CODE_CATALOG.md`; non-catalog feed deny codes are prohibited.
 - **CRE8-CONTRACT-REQ-0053**: Route `/v1/feed/items` **MUST** include a lifecycle-deny example using canonical code `AUTH_LIFECYCLE_BLOCKED` and this example **MUST** remain synchronized between prose and OpenAPI fixtures.
 - **CRE8-CONTRACT-REQ-0054**: Feed cursor fixtures **MUST** demonstrate monotonic multi-page progression where each page `next_cursor` is strictly older than the prior page cursor under `published_utc_desc__item_id_asc`.
+- **CRE8-CONTRACT-REQ-0055**: Feed cursor fixtures **MUST** conform to grammar `pub:<ISO8601 UTC>|<item_id>` and multipage fixtures **MUST** prove `page2.input_cursor == page1.next_cursor` via executable validation logic (not string-presence-only checks).
 
 ## Parity policy (prose ↔ machine)
 - Route identifiers in prose **MUST** match OpenAPI operation IDs when defined.
@@ -50,6 +51,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-FEED-ORDER-CURSOR**: Validate feed fixtures encode newest-first ordering, tie-case ordering (`published_utc` then `item_id`), and cursor-to-last-item determinism.
 - **HOOK-CONTRACT-FEED-DENY-CODE-CATALOG**: Validate feed deny examples map only to canonical error-code catalog entries (including required lifecycle deny coverage).
 - **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Validate multi-page feed fixtures preserve strict cursor monotonicity across sequential pages.
+- **HOOK-CONTRACT-FEED-CURSOR-GRAMMAR**: Validate feed cursor fixtures conform to `pub:<ISO8601 UTC>|<item_id>` grammar and executable page-link equality rules.
 
 ## Drift notes
 - OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.

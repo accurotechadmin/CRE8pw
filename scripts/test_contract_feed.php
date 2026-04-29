@@ -100,6 +100,34 @@ if (strpos($openapi, 'ErrorFeedLifecycleBlocked') === false) {
     exit(1);
 }
 
+
+function parseCursor(string $cursor): ?array
+{
+    if (!preg_match('/^pub:(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)\|([A-Za-z0-9_\-]+)$/', $cursor, $m)) {
+        return null;
+    }
+
+    $ts = strtotime($m[1]);
+    if ($ts === false) {
+        return null;
+    }
+
+    return ['cursor' => $cursor, 'published_utc' => $m[1], 'timestamp' => $ts, 'item_id' => $m[2]];
+}
+
+function assertOlderCursor(array $newer, array $older): bool
+{
+    if ($older['timestamp'] < $newer['timestamp']) {
+        return true;
+    }
+
+    if ($older['timestamp'] === $newer['timestamp']) {
+        return strcmp($older['item_id'], $newer['item_id']) > 0;
+    }
+
+    return false;
+}
+
 $page1Cursor = 'next_cursor: "pub:2026-04-29T05:54:00Z|itm_003"';
 $page2InputCursor = 'input_cursor: "pub:2026-04-29T05:54:00Z|itm_003"';
 $page2NextCursor = 'next_cursor: "pub:2026-04-29T05:45:00Z|itm_005"';
@@ -111,9 +139,32 @@ foreach ([$page1Cursor => 'page1 next cursor', $page2InputCursor => 'page2 input
     }
 }
 
-if (!is_string($apiGuide) || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0053') === false || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0054') === false) {
+
+$page1Parsed = parseCursor('pub:2026-04-29T05:54:00Z|itm_003');
+$page2InputParsed = parseCursor('pub:2026-04-29T05:54:00Z|itm_003');
+$page2NextParsed = parseCursor('pub:2026-04-29T05:45:00Z|itm_005');
+
+if ($page1Parsed === null || $page2InputParsed === null || $page2NextParsed === null) {
+    fwrite(STDERR, "Failed to parse one or more feed cursor fixtures using required cursor grammar pub:<ISO8601>|<item_id>.
+");
+    exit(1);
+}
+
+if ($page1Parsed['cursor'] !== $page2InputParsed['cursor']) {
+    fwrite(STDERR, "Feed multipage fixtures violated cursor linkage: page2.input_cursor must equal page1.next_cursor.
+");
+    exit(1);
+}
+
+if (!assertOlderCursor($page1Parsed, $page2NextParsed)) {
+    fwrite(STDERR, "Feed multipage fixtures violated cursor monotonicity: page2.next_cursor must be strictly older than page1.next_cursor under published_utc_desc__item_id_asc.
+");
+    exit(1);
+}
+
+if (!is_string($apiGuide) || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0053') === false || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0054') === false || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0055') === false) {
     fwrite(STDERR, "Missing feed lifecycle/multipage requirements in API contract guide (CRE8-CONTRACT-REQ-0053/0054).\n");
     exit(1);
 }
 
-echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=6, metadata_fields=2, ordering_cursor=tiecase-multipage-validated, deny_catalog=validated)' . PHP_EOL;
+echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=6, metadata_fields=2, ordering_cursor=tiecase-multipage-parser-validated, deny_catalog=validated)' . PHP_EOL;
