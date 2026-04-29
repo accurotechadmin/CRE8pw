@@ -21,3 +21,6 @@ CRE8 MUST preserve an envelope-first HTTP contract and deterministic error seman
 - Every supported API action MUST have a UI parity path (first-party or owner-facing).
 - Contract edits MUST update canonical route/action inventories, examples, and verification artifacts in lockstep.
 - Runtime responses and audit/provenance emissions MUST share correlation identifiers to support end-to-end incident reconstruction.
+
+## Dependency anchoring for envelope/error determinism
+Envelope middleware and deterministic error mapping SHOULD be centralized in `slim/slim` middleware order. Request/response primitives SHOULD use `slim/psr7`; contract validation SHOULD use `respect/validation` with unified 422 details; JWT/key claims checks SHOULD use `firebase/php-jwt`; outbound key resolution (for example JWKS) SHOULD use `guzzlehttp/guzzle`; deterministic correlation logging SHOULD use `monolog/monolog`.

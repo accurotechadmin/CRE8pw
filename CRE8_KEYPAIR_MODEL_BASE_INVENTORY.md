@@ -126,3 +126,6 @@ This inventory is acceptable when it fully captures:
 - modular developer extensibility goals,
 - security and trust posture expectations,
 with no critical conceptual gaps for launching the next repository as the authoritative SSOT origin.
+
+## 13. Dependency binding baseline
+Implementation of this inventory SHOULD be dependency-bound as follows: routing/middleware boundaries via `slim/slim`; service composition via `php-di/php-di`; key proof/JWT workflows via `firebase/php-jwt`; cryptographic storage and comparisons via `ext-sodium`; policy data and lineage writes via `ext-pdo`; request shaping via `slim/psr7` + `respect/validation`; and traceability via `monolog/monolog` correlation-aware channels. Rate and abuse controls SHOULD use `symfony/rate-limiter` with `symfony/cache` backing.
