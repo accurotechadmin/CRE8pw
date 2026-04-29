@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1345.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1352.md`
 
 Summary:
-- Added route-family coverage policy enforcement with machine-checked high-priority minimum thresholds per family.
-- Added deterministic `parity_depth_status` enum enforcement to prevent unsupported depth-state drift.
-- Updated Phase 2 progress board for continuation from `SESSION_HANDOFF_20260429-1345.md`.
+- Enforced parity-row error-code governance against canonical `ERROR_CODE_CATALOG.md` and route inventory `error_code_set` bounds.
+- Resolved route-level error-code drift across inventory/parity/openapi-backed examples and added `SYSTEM_INTERNAL_ERROR` to canonical catalog.
+- Updated Phase 2 progress board with refreshed lane metrics and latest handoff chain.

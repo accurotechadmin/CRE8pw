@@ -6,14 +6,16 @@ $repoRoot = dirname(__DIR__);
 $routeInventoryPath = $repoRoot . '/docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md';
 $openApiPath = $repoRoot . '/docs/31_machine_contracts/openapi/cre8.v1.yaml';
 $proseParityPath = $repoRoot . '/docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md';
+$errorCatalogPath = $repoRoot . '/docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md';
 
 $routeInventory = file_get_contents($routeInventoryPath);
 $openApi = file_get_contents($openApiPath);
 $proseParity = file_get_contents($proseParityPath);
 $traceabilityMatrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
 $traceabilityMatrix = file_get_contents($traceabilityMatrixPath);
-if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false) {
-    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, or traceability matrix" . PHP_EOL);
+$errorCatalog = file_get_contents($errorCatalogPath);
+if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false || $errorCatalog === false) {
+    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, traceability matrix, or error catalog" . PHP_EOL);
     exit(1);
 }
 
@@ -49,6 +51,36 @@ foreach ($lines as $line) {
 }
 
 $errors = [];
+
+
+$inventoryErrorCodesByRoute = [];
+foreach (explode("\n", $routeInventory) as $line) {
+    if (!preg_match('/^\|\s*CRE8-ROUTE-[0-9]{4}\s*\|/i', trim($line))) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 8) {
+        continue;
+    }
+    $routeId = strtoupper($cols[0]);
+    $errorCodes = array_filter(array_map('trim', explode(',', $cols[7])), static fn(string $code): bool => $code !== '');
+    $inventoryErrorCodesByRoute[$routeId] = [];
+    foreach ($errorCodes as $code) {
+        $inventoryErrorCodesByRoute[$routeId][strtoupper($code)] = true;
+    }
+}
+
+$catalogCodes = [];
+foreach (explode("\n", $errorCatalog) as $line) {
+    if (!preg_match('/^\|\s*(AUTH|SYSTEM)_[A-Z0-9_]+\s*\|/', trim($line))) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 1) {
+        continue;
+    }
+    $catalogCodes[strtoupper($cols[0])] = true;
+}
 
 $traceRequirementIds = [];
 $traceHookIds = [];
@@ -317,6 +349,7 @@ foreach (explode("\n", $proseParity) as $line) {
         }
     }
     foreach ($declaredErrorCodes as $code) {
+        $code = strtoupper($code);
         if (!preg_match('/^[A-Z0-9_]+$/', $code)) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid error code format for {$routeId}: {$code}";
             continue;
@@ -324,10 +357,23 @@ foreach (explode("\n", $proseParity) as $line) {
         if (!isset($exampleCodes[$code])) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] declared error code missing from declared examples for {$routeId}: {$code}";
         }
+
+        if (!isset($catalogCodes[$code])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] declared error code not found in ERROR_CODE_CATALOG for {$routeId}: {$code}";
+        }
+        if (!isset($inventoryErrorCodesByRoute[$routeId][$code])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] declared error code not listed in route inventory error_code_set for {$routeId}: {$code}";
+        }
     }
     foreach (array_keys($exampleCodes) as $code) {
-        if (!in_array($code, $declaredErrorCodes, true)) {
+        $code = strtoupper($code);
+        if (!in_array($code, array_map('strtoupper', $declaredErrorCodes), true)) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] OpenAPI-derived error code missing from prose parity row for {$routeId}: {$code}";
+        }
+    }
+    foreach (array_keys($inventoryErrorCodesByRoute[$routeId] ?? []) as $inventoryCode) {
+        if (!in_array($inventoryCode, array_map('strtoupper', $declaredErrorCodes), true) && $inventoryCode !== 'AUTH_CREDENTIAL_INVALID' && $inventoryCode !== 'AUTH_PERMISSION_DENIED') {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] inventory error code missing from parity row (excluding baseline global auth denials) for {$routeId}: {$inventoryCode}";
         }
     }
     foreach ($errorStatuses as $status) {

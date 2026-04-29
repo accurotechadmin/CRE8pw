@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-CONTRACTS-ERROR-CATALOG
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
@@ -50,6 +50,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 | AUTH_GRANT_EXPIRED | AUTH_DENY | 403 | Grant or delegated credential is outside the allowed expiry window. |
 | AUTH_LIFECYCLE_BLOCKED | LIFECYCLE | 403 | Principal or key lifecycle state blocks request authorization. |
 | AUTH_POLICY_UNRESOLVED | AUTH_DENY | 403 | Policy context is missing or ambiguous and is resolved as deterministic deny. |
+| SYSTEM_INTERNAL_ERROR | SYSTEM | 500 | Internal processing failed; response is redacted and correlation-friendly for operators. |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Verify all route inventory `error_code_set` declarations resolve to documented catalog codes.
@@ -61,3 +62,4 @@ Define canonical API error envelope and stable error-code semantics for determin
 - [Authorization And Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - [API Contract and Error Seed](../../seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
