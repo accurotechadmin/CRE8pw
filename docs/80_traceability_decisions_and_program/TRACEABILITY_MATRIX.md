@@ -67,6 +67,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-TRACE-REQ-0095 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | automated | Program Traceability WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-TRACE-REQ-0096 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-MANUAL-BACKLOG-LINK | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0097 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PR-EVIDENCE-REQUIRED | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-TRACE-REQ-0098 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Program Traceability WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0060 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-INTEGRITY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0061 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINT-METADATA | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0062 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-TOPOLOGY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -80,6 +81,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-TRACE-EVIDENCE-PATH**: Validate `evidence_location` path exists.
 - **HOOK-SSOT-LINK-TOPOLOGY**: Automated validation hook for required vertical/lateral SSOT link topology invariants.
 - **HOOK-SSOT-ANTI-ORPHAN-CHECK**: Automated validation hook ensuring no requirement-bearing normative/provisional docs are orphaned from governance/domain entrypoints.
+- **HOOK-SSOT-PHASE1-GATE-CI**: Automated CI hook that executes all required `docs:ssot:*` commands as hard-fail checks.
 
 ## Drift and reconciliation policy
 - Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.

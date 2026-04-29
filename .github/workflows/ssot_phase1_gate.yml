@@ -1,0 +1,48 @@
+name: ssot_phase1_gate
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'reports/**'
+      - 'scripts/docs_ssot_*.php'
+      - 'composer.json'
+      - '.github/workflows/ssot_phase1_gate.yml'
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'docs/**'
+      - 'reports/**'
+      - 'scripts/docs_ssot_*.php'
+      - 'composer.json'
+      - '.github/workflows/ssot_phase1_gate.yml'
+
+jobs:
+  ssot_phase1_gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Validate composer config
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Run SSOT lint
+        run: composer docs:ssot:lint
+
+      - name: Run SSOT sync-check
+        run: composer docs:ssot:sync-check
+
+      - name: Run SSOT coverage report
+        run: composer docs:ssot:report

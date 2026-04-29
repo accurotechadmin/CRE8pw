@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T04:41:12Z
-- Current owner/session: Codex session `20260429-0441`
+- Last updated (UTC): 2026-04-29T04:45:29Z
+- Current owner/session: Codex session `20260429-0445`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -15,7 +15,7 @@
   - [x] Build promotion tracker (seed requirement -> target doc -> hook)
   - [x] Build unresolved-seed-gap register
   - [~] Populate tracker comprehensively across all seed docs (domain-level baseline complete; requirement-level anchors partially expanded)
-  - [~] Add traceability rows for promoted mappings (first promoted-row execution path now active)
+  - [~] Add traceability rows for promoted mappings (promoted-row path active with two validated promoted rows)
   - [x] Implement/define `docs:ssot:sync-check` executable contract
 - [~] Slice 3 — Cross-document linking architecture
   - [x] Centralize link topology and anti-orphan policy
@@ -33,17 +33,17 @@
 - [ ] Slice 6 — Contract domain hardening
 - [ ] Slice 7 — Machine contract synchronization
 - [ ] Slice 8 — Verification strategy and evidence binding
-- [~] Slice 9 — Programmatic quality gates
+- [x] Slice 9 — Programmatic quality gates
   - [x] Define normative command contracts for `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report`
   - [x] Implement executable local scripts for all `docs:ssot:*` hooks
   - [x] Reconcile traceability matrix modes with implemented automation hooks (`CRE8-TRACE-REQ-0090..0095`)
   - [x] Add trace rows for topology/anti-orphan hooks
-  - [ ] Wire CI group `ssot_phase1_gate` and enforce hard-fail merge behavior
+  - [x] Wire CI group `ssot_phase1_gate` and enforce hard-fail merge behavior
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0432.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0427.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0412.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0432.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0427.md`

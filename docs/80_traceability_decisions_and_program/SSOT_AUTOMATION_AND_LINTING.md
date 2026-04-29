@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SSOT-AUTOMATION
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -32,6 +32,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **CRE8-TRACE-REQ-0095**: Each automation command contract **MUST** declare deterministic exit semantics (`0=pass`, non-zero `=fail`) and **MUST** include reproducible local invocation instructions.
 - **CRE8-TRACE-REQ-0096**: For each hook listed in this document, `TRACEABILITY_MATRIX.md` **MUST** reflect the current verification mode (`automated` when implemented; `manual` only when automation is unavailable) with an explicit next automation action in `notes` for manual rows.
 - **CRE8-TRACE-REQ-0097**: Any PR that changes normative requirements **MUST** include evidence of running all currently-available `docs:ssot:*` commands and **MUST** document missing-automation gaps in the session handoff.
+- **CRE8-TRACE-REQ-0098**: The repository **MUST** provide a CI workflow group named `ssot_phase1_gate` that hard-fails on non-zero exit from `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report`.
 
 ## Command contracts (Phase 1 minimum)
 | Command | Required checks | Output contract | Owner |
@@ -39,6 +40,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | `docs:ssot:lint` | Metadata key completeness; link integrity; scaffold/prohibited phrase detection. | Line-oriented failures with file path + requirement/hook context. | Docs Governance WG |
 | `docs:ssot:sync-check` | Promotion tracker schema; promoted-row target existence; promoted-row traceability row existence. | Summary counts and explicit failing row IDs. | Program Traceability WG |
 | `docs:ssot:report` | Trace coverage summary; manual vs automated hook split; missing evidence path summary. | JSON artifact at `reports/ssot/coverage_latest.json`. | Program Traceability WG |
+| `ssot_phase1_gate` (CI) | Execute `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report` as merge-blocking checks. | Workflow status in CI provider; non-zero command exit fails gate. | Program Traceability WG |
 
 ## Hook registry
 - **HOOK-SSOT-LINT-METADATA**: Validate metadata headers and required keys.
