@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1314.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1320.md`
 
 Summary:
-- Enforced ADR-003 route-parity and review-gate evidence requirements inside `docs:ssot:pr-evidence-check`.
-- Added `docs:ssot:review-gate-check` and `docs:ssot:route-parity` as merge-blocking steps in `.github/workflows/ssot_phase1_gate.yml`.
-- Updated Phase 2 progress board and handoff chain for deterministic discoverability and next-session continuation.
+- Expanded prose↔OpenAPI parity matrix depth metadata for high-risk route families (auth lifecycle, feed, auth decision).
+- Extended `docs:ssot:route-parity` to validate parity-table route rows, requirement/hook ID formats, and depth metadata completeness.
+- Updated Phase 2 progress board and handoff chain for deterministic pickup continuity.
