@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0537.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0542.md`
 
 Summary:
-- Implemented reviewer-assignment lint enforcement in `docs:ssot:lint` with deterministic owner/reviewer separation checks.
-- Added executable automation enforcement in `docs:ssot:sync-check` for `HOOK-SEC-LIFECYCLE-PROPAGATION` and `HOOK-EXT-SEAM-COMPATIBILITY`.
-- Closed `GAP-003` and `GAP-006` in unresolved seed gap register after automation enforcement and traceability mode updates.
+- Implemented executable `docs:ssot:route-uniqueness` command and promoted `HOOK-CONTRACT-ROUTE-UNIQUENESS` to automated trace mode.
+- Implemented executable `docs:ssot:compat-declaration` command and bound `CRE8-CONTRACT-REQ-0012` to automated `HOOK-CONTRACT-COMPAT-DECLARATION`.
+- Reconciled verification strategy, traceability matrix, and SSOT automation command catalog for both newly automated hooks.
