@@ -68,6 +68,8 @@
     "docs:ssot:roadmap-schema-check": "@php scripts/docs_ssot_roadmap_schema_check.php",
     "docs:ssot:seed-promotion-schema": "@php scripts/docs_ssot_seed_promotion_schema.php",
     "docs:ssot:seed-gap-schema": "@php scripts/docs_ssot_seed_gap_schema.php",
-    "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php"
+    "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php",
+    "test:contract:identity-issuance": "@php scripts/test_contract_identity_issuance.php",
+    "test:contract:identity-context": "@php scripts/test_contract_identity_context.php"
   }
 }
