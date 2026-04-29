@@ -33,6 +33,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **CRE8-TRACE-REQ-0006**: A row with `status=normative` **MUST** have a non-empty `evidence_location` that resolves to an existing evidence artifact path or designated evidence template.
 - **CRE8-TRACE-REQ-0007**: If automated verification is unavailable, the row **MUST** set `verification_mode=manual` and include `manual_procedure_ref` with reproducible steps.
 - **CRE8-TRACE-REQ-0008**: Traceability rows **MUST** reference related ADR IDs and risk IDs when requirement semantics include architectural tradeoffs or security/control impact.
+- **CRE8-TRACE-REQ-0009**: Every row with `verification_mode=manual` **MUST** have a matching `hook_id` entry in `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` including owner, priority, and target automation command/script.
 
 ## Required matrix schema (minimum)
 | Field | Required | Description |
