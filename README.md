@@ -1,259 +1,177 @@
-# CRE8
+# CRE8 — Canonical Project SSOT
 
-**CRE8** is a policy-governed credential and content platform built around an **ID-Keypair + Utility-Keypair** architecture. It enables deterministic delegation, auditable governance, and dual-surface operation (Owner Console + API Gateway) while preserving strict contract-first behavior.
+CRE8 is a policy-governed credential and content platform with deterministic delegation, auditable authority lineage, and contract-first interface behavior. This `README.md` is the **current top-level SSOT anchor** for the repository and establishes mandatory platform direction, documentation governance expectations, and implementation-aligned architectural commitments.
 
-This repository currently serves as a **documentation-seed SSOT foundation**. The `/seed` canon is authoritative for present-state truths and defines how the full mature SSOT corpus will be expanded over time.
+CRE8 uses a two-layer key architecture:
+- **ID Keypairs** as identity anchors and lineage roots,
+- **Utility Keypairs** as scoped operational credentials for concrete contexts (service/app/device/tenant/use-case).
 
----
-
-## Table of contents
-
-1. [What CRE8 is (current iteration)](#what-cre8-is-current-iteration)
-2. [What changed from legacy CRE8](#what-changed-from-legacy-cre8)
-3. [Current repository layout](#current-repository-layout)
-4. [How to read this repository now](#how-to-read-this-repository-now)
-5. [Core architecture and invariants](#core-architecture-and-invariants)
-6. [Contracts, security, and operations commitments](#contracts-security-and-operations-commitments)
-7. [Proposed robust documentation scaffolding (target map)](#proposed-robust-documentation-scaffolding-target-map)
-8. [Document precedence and governance](#document-precedence-and-governance)
-9. [Build-forward plan for 100+ docs](#build-forward-plan-for-100-docs)
+All platform behavior, documentation growth, and implementation planning must remain consistent with this separation.
 
 ---
 
-## What CRE8 is (current iteration)
+## Table of Contents
 
-CRE8 is a **Credential Registry Engine** designed to support:
-- hierarchical, bounded delegation (Owner → Primary Author → Secondary Author → Use Key contexts),
-- deterministic permission envelopes and policy decisioning,
-- strong provenance and lifecycle governance,
-- first-party and third-party client interoperability via stable API contracts,
-- content, audience, and feed behaviors that remain policy-consistent across surfaces.
-
-The current architecture separates:
-- **ID Keypairs** as the internal identity anchor and lineage root, and
-- **Utility Keypairs** as context-scoped operational credentials (service/app/device/tenant specific).
-
-This split is central to revocation safety, blast-radius control, and long-term extensibility.
-
----
-
-## What changed from legacy CRE8
-
-`OLD_README.md` reflects a prior SSOT framing tied to an earlier single-key model and a previously broader docs tree. The current seed canon preserves the governance ethos while introducing a non-negotiable redesign:
-
-- all minted delegated principals must begin with an **ID Keypair**,
-- utility access is handled through one or more **Utility Keypairs**,
-- delegation remains bounded and subset-constrained at every depth,
-- contracts and deny semantics remain deterministic,
-- dual-surface parity remains mandatory (Console/API/Gateway behavior coherence).
-
-In short: same rigor, stronger key architecture.
+1. [Platform Purpose and Scope](#platform-purpose-and-scope)
+2. [Normative Architecture Commitments](#normative-architecture-commitments)
+3. [Authority, Delegation, and Governance Model](#authority-delegation-and-governance-model)
+4. [Surfaces and Boundary Contracts](#surfaces-and-boundary-contracts)
+5. [Contract and Error Determinism](#contract-and-error-determinism)
+6. [Security, Trust, and Lifecycle Expectations](#security-trust-and-lifecycle-expectations)
+7. [Repository Structure and Canon Ownership](#repository-structure-and-canon-ownership)
+8. [Documentation Program Scaffold (Current Required Map)](#documentation-program-scaffold-current-required-map)
+9. [Reports Policy for LLM/Automation Output](#reports-policy-for-llmautomation-output)
+10. [SSOT Precedence and Change Control Rules](#ssot-precedence-and-change-control-rules)
+11. [Execution Expectations for the Next Growth Phases](#execution-expectations-for-the-next-growth-phases)
 
 ---
 
-## Current repository layout
+## Platform Purpose and Scope
 
-| Path | Role |
+CRE8 exists to provide a reliable platform for credentialed identity, delegated authority, and governed interaction with protected content and workflows. The system is designed so authority is explicit, bounded, and auditable at every step: issuance, delegation, use, moderation, rotation, revocation, and evidence export.
+
+The immediate scope of this repository is documentation-driven platform maturation: turning seed truths into a robust, enforceable, machine-verifiable SSOT set that can safely direct implementation and operations. The long-range scope is a mature documentation corpus of 100+ tightly integrated artifacts spanning policy, contracts, data, security, observability, release, and program governance.
+
+---
+
+## Normative Architecture Commitments
+
+The following commitments are mandatory and non-optional:
+
+1. **ID-Keypair-first issuance model**
+   - Minted principals receive an initial ID Keypair.
+   - ID key lineage is the canonical authority root for descendant capabilities.
+
+2. **Utility key compartmentalization model**
+   - Utility Keypairs are context-scoped credentials.
+   - New contexts should be served by new utility keys rather than broadening existing credentials.
+
+3. **Deterministic policy and contract behavior**
+   - Policy decisions must be reproducible from explicit input/state.
+   - API success/error semantics must remain envelope-stable and machine-checkable.
+
+4. **Auditability and provenance continuity**
+   - Governance, lifecycle, and content actions must produce traceable records.
+   - Revocation/rotation intent and impact must be inspectable and explainable.
+
+5. **Documentation-to-implementation binding**
+   - SSOT statements are implementation directives once marked normative.
+   - Dependency and interface requirements must be explicit where behavior is specified.
+
+---
+
+## Authority, Delegation, and Governance Model
+
+CRE8 authority is hierarchical and bounded. Owners define policy envelopes and delegation limits for principals they mint. Descendants may delegate only within inherited limits and never exceed ancestor grants. Effective permission evaluation must account for granted permissions, explicit denies, scope boundaries, delegation depth constraints, lifecycle state, and expiry.
+
+Keychain composition and aggregated capability views are first-class governance concerns. Any composed capability must preserve provenance and remain derivable from constituent grants. The system must prioritize safe failure behavior and deterministic deny outcomes when ambiguity or policy conflict is encountered.
+
+---
+
+## Surfaces and Boundary Contracts
+
+CRE8 is a multi-surface platform with strict boundary semantics:
+
+- **Owner Console surface** for governance, lifecycle, moderation, and administrative control.
+- **API/Gateway surface** for operational client activity under delegated credentials.
+- **Public/bootstrap surface** for service entry and setup prerequisites.
+
+Boundary rule: authentication and authorization contexts are not interchangeable across surfaces unless explicitly specified by canonical contract. Cross-surface parity is mandatory for supported capabilities; functional divergence must be documented, justified, and test-gated.
+
+---
+
+## Contract and Error Determinism
+
+CRE8 interfaces are contract-first. Each route and operation must be backed by explicit request/response contracts, deterministic status and envelope behavior, and stable error coding semantics. Detail-level deny reasons must be machine-parseable and useful for both operator diagnostics and client handling logic.
+
+Machine artifacts (OpenAPI + JSON Schema) are required contract companions and must remain synchronized with prose specs. Contract changes require impact analysis and verification updates before acceptance.
+
+---
+
+## Security, Trust, and Lifecycle Expectations
+
+Security posture is layered and lifecycle-aware. Core expectations include proof-oriented request validation, anti-replay controls, secure key material handling, immediate enforcement for revoke/rotate transitions, and immutable governance/provenance event trails.
+
+Lifecycle governance is part of platform correctness, not an optional operations enhancement. Issuance, activation, suspension, expiry, revocation, and rekey/rotation flows must be explicitly defined and testable, with verifiable propagation of access impact.
+
+---
+
+## Repository Structure and Canon Ownership
+
+| Path | Purpose |
 |---|---|
-| `README.md` | This current root orientation and scaffolding roadmap |
-| `OLD_README.md` | Legacy README from previous CRE8 iteration (reference only) |
-| `seed/` | Authoritative seed canon and maturity reports for current iteration |
-| `composer.json` | PHP/runtime dependency contract baseline |
-| `dot.env` | Environment scaffold sample |
-| `.htaccess` | Apache routing entry configuration |
+| `README.md` | Root SSOT anchor and project direction contract |
+| `seed/` | Seed canon baseline used to mature full SSOT documents |
+| `docs/` | Structured SSOT corpus scaffold for mature normative artifacts |
+| `reports/` | Required destination for LLM/automation session reports and narrative outputs |
+| `composer.json` | Dependency and runtime contract baseline for implementation-binding specs |
+| `dot.env` | Environment scaffold reference |
+| `.htaccess` | Deployment routing scaffold for Apache environments |
 
 ---
 
-## How to read this repository now
-
-Recommended reading order for the current model:
-1. `README.md`
-2. `seed/seed-intro.md`
-3. `seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md`
-4. `seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md`
-5. `seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md`
-6. `seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md`
-7. `seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md`
-8. `seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md`
-9. `seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`
-10. `seed/CRE8_SEED_PRESERVATION_MATRIX.md`
-11. `seed/CRE8_SEED_CANON_ASSESSMENT_REPORT.md`
-12. `seed/CRE8_REPO_STUDY_REPORT.md`
-
-Reference indices:
-- `seed/seed-index.md`
-- `seed/CRE8_SEED_CANON_INDEX.md`
-
----
-
-## Core architecture and invariants
-
-### 1) Identity and delegation
-- Minted principals receive initial ID keypairs.
-- Descendant permissions must always be strict subsets of ancestor grants.
-- Delegation constraints include permission family, scope, depth, lifecycle, and expiry.
-
-### 2) Utility key compartmentalization
-- Utility keypairs are context-specific and intentionally numerous.
-- Rotation/revocation should limit impact to the targeted context, not global identity lineage.
-
-### 3) Surfaces and parity
-- Owner Console governs lifecycle, policy, moderation, and administrative operations.
-- API/Gateway supports operational client behavior for permitted key holders.
-- UI/API parity is a contract requirement, not an optional quality goal.
-
-### 4) Deterministic policy and envelopes
-- Policy Decision Point (PDP)-first enforcement.
-- Stable success/error envelope contracts.
-- Deterministic deny mapping and auditable request/provenance traces.
-
----
-
-## Contracts, security, and operations commitments
-
-The seed canon requires future SSOT maturity documents to remain implementation-binding to the dependency bedrock in `composer.json`, including routing/middleware, JWT verification, validation, cryptography, data access, observability, and test tooling.
-
-Key standing commitments:
-- proof-based request verification (`public_key_id`, timestamp, nonce, signature),
-- replay/skew defense and constant-time comparisons,
-- lifecycle immediacy for revoke/rotate actions,
-- immutable provenance events for key/policy/content actions,
-- verification and release gates expressed as explicit evidence-bearing checklists.
-
----
-
-## Proposed robust documentation scaffolding (target map)
-
-The following is the proposed root for the mature SSOT document program we will instantiate next.
+## Documentation Program Scaffold (Current Required Map)
 
 ```text
 docs/
-  README.md
-
   00_governance/
-    SSOT_INDEX.md
-    DOCUMENT_STATUS_AND_OWNERSHIP.md
-    CHANGE_CONTROL_POLICY.md
-    DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
-    CONTRIBUTION_WORKFLOW_SSOT.md
-    DEFINITION_OF_DONE.md
-
   10_product_and_architecture/
-    CRE8_PRODUCT_AND_SYSTEM_SPEC.md
-    CRE8_HUMAN_OPERATING_MODEL.md
-    CANONICAL_TERMINOLOGY.md
-    ARCHITECTURE_AND_SURFACES.md
-    ID_UTILITY_KEYPAIR_MODEL_SPEC.md
-    REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md
-    DEPENDENCY_BASELINE.md
-
   20_identity_delegation_and_policy/
-    AUTHORIZATION_AND_DELEGATION_SPEC.md
-    AUTHORIZATION_DECISION_TABLES.md
-    KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md
-    PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md
-    USAGE_SCENARIOS_AND_PERMISSION_STORIES.md
-
   30_contracts_and_interfaces/
-    API_CONTRACT_GUIDE.md
-    ROUTE_INVENTORY_REFERENCE.md
-    ERROR_CODE_CATALOG.md
-    UI_RUNTIME_CONTRACT.md
-    Endpoint_Examples_All_Routes.md
-    WEBHOOK_AND_INTEGRATION_CONTRACT.md
-
   31_machine_contracts/
-    openapi/
-      cre8.v1.yaml
-    schemas/
-      success-envelope.schema.json
-      error-envelope.schema.json
-      policy-decision.schema.json
-
   40_data_security_and_crypto/
-    DATA_MODEL_SPEC.md
-    DATA_MODEL_REFERENCE.md
-    ERD.md
-    KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md
-    SECURITY_CONTROLS_SPEC.md
-    SECURITY_THREAT_MODEL.md
-    SECURITY_HEADERS_AND_CSP_POLICY.md
-    SECURITY_VERIFICATION_ABUSE_CASES.md
-
   50_content_audience_and_feed/
-    CONTENT_MODEL_AND_TARGETING_SPEC.md
-    AUDIENCE_GROUP_SPEC.md
-    FEED_RANKING_AND_ORDERING_RULES.md
-    COMMENTING_AND_INTERACTION_POLICY.md
-
   60_operations_quality_and_release/
-    CONFIGURATION_ENVIRONMENT_CONTRACT.md
-    BOOT_AND_STARTUP_FAILURE_CONTRACT.md
-    HEALTH_ENDPOINT_CONTRACT.md
-    OBSERVABILITY_EVENT_CATALOG.md
-    SLO_SLI_SPEC.md
-    VERIFICATION_STRATEGY.md
-    ACCEPTANCE_CRITERIA_MATRIX.md
-    MIGRATION_AND_SEED_STRATEGY.md
-    OPERATIONAL_SMOKE_CHECK_CONTRACT.md
-    PRODUCTION_READINESS_GATES.md
-    RELEASE_CHECKLIST.md
-
   70_extensibility_and_module_patterns/
-    MODULE_BOUNDARIES_AND_OWNERSHIP.md
-    EXTENSIBILITY_PLAYBOOK.md
-    POST_TYPE_EXTENSION_SPEC.md
-    PRINCIPAL_TYPE_EXTENSION_SPEC.md
-    INTEGRATION_PROVIDER_PATTERN.md
-
   80_traceability_decisions_and_program/
-    TRACEABILITY_MATRIX.md
-    SSOT_AUTOMATION_AND_LINTING.md
-    CHANGE_IMPACT_MAP_TEMPLATES.md
-    ADR_INDEX.md
-    DECISIONS_LOG.md
-    DECISION_RECORD_TEMPLATE.md
-    records/
-      ADR-001-*.md
-      ADR-002-*.md
-      ...
-    ROADMAP_AND_MILESTONES.md
-    RISK_REGISTER.md
-
   evidence/
-    README.md
-    templates/
-    automation/
 ```
 
-This structure intentionally mirrors proven organization patterns from `OLD_README.md` while recentering around the ID/Utility keypair model and current seed truths.
+This structure is mandatory for the current documentation maturation plan. New canonical SSOT artifacts should be added within the correct domain folder and wired into governance/index/traceability documents as the set grows.
 
 ---
 
-## Document precedence and governance
+## Reports Policy for LLM/Automation Output
 
-When documents disagree, apply this precedence:
-1. Current mature SSOT canon (once instantiated under `docs/`),
-2. Seed canon (`seed/`) until mature SSOT replacement exists,
-3. Legacy references (`OLD_README.md`) for historical context only.
+All LLM-generated reports, working analyses, and session response artifacts must be placed under `reports/` unless a governance document explicitly requires a different destination. Do not create ad hoc report files in SSOT domain directories.
 
-Normative behavior must always favor the newest authoritative document set that is explicitly designated as SSOT.
+SSOT domain folders under `docs/` should remain reserved for canonical artifacts, templates, machine contracts, and formal evidence documents. This separation protects canon integrity, improves discoverability, and reduces accidental precedence confusion.
 
 ---
 
-## Build-forward plan for 100+ docs
+## SSOT Precedence and Change Control Rules
 
-Phase progression:
-1. **Scaffold phase**: establish folder map, templates, ownership, and indexing docs.
-2. **Core canon phase**: author product, policy, contract, and security pillar docs.
-3. **Machine-contract phase**: lock OpenAPI/schema artifacts and sync checks.
-4. **Operational-hardening phase**: verification, observability, abuse testing, release governance.
-5. **Expansion phase**: domain deep-dives (integrations, moderation workflows, developer SDK guidance, compliance/export, incident playbooks).
+Until superseded by more granular governance docs, precedence is:
 
-Success criteria for each phase:
-- deterministic language (MUST/SHOULD clarity),
-- explicit cross-references and traceability rows,
-- implementation-binding dependency mapping,
-- test/evidence obligations that can be executed and audited.
+1. `README.md` (root project-level SSOT direction and constraints),
+2. mature canonical documents under `docs/`,
+3. seed baseline documents under `seed/` where mature canon detail is not yet authored,
+4. generated session/report outputs under `reports/` (informational, non-normative unless promoted).
 
-CRE8’s documentation program is intentionally designed to scale to 100+ artifacts **without sacrificing coherence** by using layered indexing, strict ownership, and contract-first discipline.
+Any normative change must include: scope statement, impacted artifacts, compatibility notes, required verification updates, and explicit traceability consequences.
+
+---
+
+## Execution Expectations for the Next Growth Phases
+
+### Phase 1 — Canon hardening
+- Upgrade scaffold docs from descriptive placeholders to normative requirements.
+- Establish cross-document links, ownership metadata, and review workflow.
+- Define verification hooks for each major behavioral contract.
+
+### Phase 2 — Machine contract lock-in
+- Author and validate OpenAPI and JSON Schema artifacts.
+- Enforce prose ↔ machine-contract synchronization checks.
+- Require change-impact maps for all interface-affecting modifications.
+
+### Phase 3 — Operational readiness integration
+- Formalize security verification, abuse-case execution, and release gates.
+- Align observability events and SLO/SLI definitions with acceptance criteria.
+- Produce evidence templates and automation pathways for repeatable audits.
+
+### Phase 4 — Scaled domain expansion
+- Expand into richer capability families while preserving delegation determinism.
+- Add extension patterns for post types, principal classes, and integrations.
+- Maintain strict precedence, governance discipline, and policy coherence as document count scales beyond 100.
+
+This README is intentionally authoritative and action-directing. As the project evolves, updates to this file must remain precise, deterministic, and consistent with implemented platform intent.
