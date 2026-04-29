@@ -1,5 +1,5 @@
 # Phase 1 Manual Hook Automation Backlog
-- Last updated (UTC): 2026-04-29T12:57:00Z
+- Last updated (UTC): 2026-04-29T13:04:39Z
 - Owner/session: Codex session `20260429-1257`
 
 ## Objective
@@ -11,4 +11,3 @@ Gate-critical manual hooks are closed for Phase 1 acceptance scope. The followin
 |---|---|---|---|---|---|---|---|
 | HOOK-SSOT-LINT-METADATA | CRE8-GOV-REQ-0005 | Program Traceability WG | Medium | manual | HOOK-SSOT-LINT-METADATA | composer docs:ssot:lint | Transition matrix row mode to automated for this requirement binding so verification mode matches implemented command. |
 | HOOK-SSOT-PR-EVIDENCE-REQUIRED | CRE8-TRACE-REQ-0097 | Program Traceability WG | Medium | manual | HOOK-SSOT-PR-EVIDENCE-REQUIRED | .github/workflows/ssot_phase1_gate.yml | Add CI/PR template parser that fails when requirement-semantics changes lack evidence notes. |
-| HOOK-CONTRACT-SURFACE-PARITY | CRE8-CONTRACT-REQ-0030 | API Contracts WG | Medium | manual | HOOK-CONTRACT-SURFACE-PARITY | composer test:contract:surface-parity | Validate UI capability declarations map to route inventory or approved exception table. |
