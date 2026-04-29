@@ -1,7 +1,46 @@
+---
+doc_id: CRE8-EXT-MODULE-SEAMS
+version: 1.0.0
+status: provisional-normative
+owner: Platform Architecture WG
+reviewers:
+  - Security Engineering WG
+  - Docs Governance WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-20
+source_seed_refs:
+  - seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md
+normative_dependencies:
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+
 # Module Boundaries And Ownership
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **MODULE_BOUNDARIES_AND_OWNERSHIP.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define mandatory extension seam constraints so CRE8 modules can add capability without violating core delegation, contract, and lifecycle invariants.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-EXT-REQ-0001**: Feature additions **MUST** be implemented as modules with explicit ownership boundaries and **MUST NOT** require invasive rewrites of core authorization or lifecycle engines.
+- **CRE8-EXT-REQ-0002**: Module registration **MUST** occur through approved dependency injection/provider seams, and route/middleware binding **MUST** preserve core policy decision point (PDP) evaluation chains.
+- **CRE8-EXT-REQ-0003**: Module contracts **MUST** preserve deterministic request/response envelope behavior and **MUST** map module-specific deny outcomes to canonical error semantics.
+- **CRE8-EXT-REQ-0004**: Any new post/account/principal or interaction capability **MUST** inherit existing delegation ceilings, audience targeting controls, keychain aggregation semantics, and feed visibility constraints unless an approved ADR explicitly narrows or expands behavior.
+- **CRE8-EXT-REQ-0005**: Module data writes that impact permissions, visibility, or lifecycle state **MUST** include traceable provenance events suitable for audit and impact replay.
+- **CRE8-EXT-REQ-0006**: Compatibility changes at extension seams **MUST** declare backward compatibility posture (compatible, additive, breaking), migration expectations, and verification updates before merge.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Verification hooks
+- **HOOK-EXT-SEAM-COMPATIBILITY**: Validate extension modules against seam compatibility checklist (PDP preservation, contract envelope stability, lifecycle impact correctness).
+- **HOOK-EXT-PROVENANCE-BINDING**: Validate extension flows emit required provenance events for permission/visibility/lifecycle-affecting actions.
+- **HOOK-EXT-COMPAT-DECLARATION**: Validate extension seam changes include compatibility declaration and migration notes in change-impact artifacts.
+
+## Drift notes
+- Seed prose suggested baseline dependency choices with SHOULD-level phrasing; this canon converts seam invariants and compatibility declarations into merge-gating MUST requirements.
+
+## See also
+- [CRE8 Extensibility and Module Pattern Seed](../../seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md)
+- [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
+- [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

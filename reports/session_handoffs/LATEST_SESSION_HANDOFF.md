@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0523.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0531.md`
 
 Summary:
-- Promoted `SPR-001`, `SPR-002`, `SPR-006`, and `SPR-007` from candidate/TBD into concrete requirement IDs and normative target docs.
-- Closed corresponding unresolved gaps `GAP-001`, `GAP-002`, `GAP-004`, and `GAP-005`.
-- Expanded traceability matrix with new identity, surface parity, and feed-ordering requirement/hook rows.
+- Promoted `SPR-005` into concrete lifecycle requirement IDs in `CRE8-SEC-KEY-LIFECYCLE` and linked traceability hooks.
+- Promoted `SPR-013` into concrete module seam compatibility requirement IDs in `CRE8-EXT-MODULE-SEAMS` and linked traceability hooks.
+- Reclassified `GAP-003` and `GAP-006` as verification automation backlog (`verification_missing`) after requirement promotion completion.
