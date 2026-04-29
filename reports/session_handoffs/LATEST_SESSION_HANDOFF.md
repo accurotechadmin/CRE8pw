@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1257.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1304.md`
 
 Summary:
-- Converted `HOOK-IDENTITY-ID-FIRST-ISSUANCE` to executable contract automation via `composer test:contract:identity-issuance`.
-- Converted `HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION` to executable contract automation via `composer test:contract:identity-context`.
-- Updated traceability/manual-backlog/progress-board artifacts to keep Phase 2 ADR-003 residual tracking deterministic and discoverable.
+- Converted `HOOK-CONTRACT-SURFACE-PARITY` to executable automation via `composer test:contract:surface-parity`.
+- Added deterministic UI capability parity matrix + exception metadata in `UI_RUNTIME_CONTRACT.md` and bound it to route inventory checks.
+- Updated traceability/manual-backlog/progress-board artifacts so only remaining manual hooks are explicitly tracked under ADR-003 constraints.

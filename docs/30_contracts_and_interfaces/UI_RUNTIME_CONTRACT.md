@@ -28,9 +28,18 @@ Define deterministic cross-surface parity requirements between Owner Console and
 - **CRE8-CONTRACT-REQ-0032**: Any intentional parity exception **MUST** include `exception_class`, `justification`, `owner`, and `review_due_utc`, and **MUST** be listed in release-impact notes.
 - **CRE8-CONTRACT-REQ-0033**: UI-surfaced error states for parity-mapped capabilities **MUST** map to canonical API error codes from `ERROR_CODE_CATALOG.md`.
 
+
+## Surface capability parity matrix
+| capability_id | owner_console_status | route_id | route_method | route_path | parity_status | exception_class | justification | owner | review_due_utc |
+|---|---|---|---|---|---|---|---|---|---|
+| CAP-OWNER-HEALTH-VIEW | supported | CRE8-ROUTE-0001 | GET | /v1/system/health | parity_mapped | n/a | n/a | API Contracts WG | 2026-05-20 |
+| CAP-OWNER-AUTH-DECISION-SIMULATE | supported | CRE8-ROUTE-0002 | POST | /v1/authz/decide | parity_mapped | n/a | n/a | Identity & Policy WG | 2026-05-20 |
+| CAP-OWNER-FEED-BROWSE | supported | CRE8-ROUTE-0004 | GET | /v1/feed/items | parity_mapped | n/a | n/a | Product Policy WG | 2026-05-20 |
+| CAP-OWNER-AUDIT-EXPORT | ui_only | n/a | n/a | n/a | exception_documented | backend_not_exposed | Owner Console export wizard remains internal for Phase 2 and has no external API route by design. | Product Policy WG | 2026-05-20 |
+
 ## Verification hooks
 - **HOOK-CONTRACT-SURFACE-PARITY**: Validate parity matrix entries against route inventory and documented exception records.
-- **Next automation candidate**: Implement `docs:ssot:surface-parity-check` to compare parity table artifacts with route inventory IDs.
+- **Next automation candidate**: Implemented as `composer test:contract:surface-parity` to compare parity table artifacts with route inventory IDs.
 
 ## See also
 - [Architecture and Surfaces](../10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md)
