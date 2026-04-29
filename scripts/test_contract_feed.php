@@ -58,7 +58,8 @@ foreach ($expectedOptionalStabilityFields as $field) {
 $orderingSnippets = [
     'item_id: "itm_001", rank: 1, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:59:00Z"' => 'first feed item ordering fixture',
     'item_id: "itm_002", rank: 2, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z"' => 'second feed item ordering fixture',
-    'next_cursor: "pub:2026-04-29T05:54:00Z|itm_002"' => 'cursor fixture aligned to second item',
+    'item_id: "itm_003", rank: 3, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z"' => 'tie-case feed item ordering fixture',
+    'next_cursor: "pub:2026-04-29T05:54:00Z|itm_003"' => 'cursor fixture aligned to last returned item',
     'cursor_basis: "published_utc_desc__item_id_asc"' => 'cursor basis fixture',
 ];
 
@@ -69,4 +70,28 @@ foreach ($orderingSnippets as $snippet => $label) {
     }
 }
 
-echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=5, metadata_fields=2, ordering_cursor=fixtures-validated)' . PHP_EOL;
+
+$apiGuidePath = $root . '/docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md';
+$errorCatalogPath = $root . '/docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md';
+$apiGuide = is_file($apiGuidePath) ? file_get_contents($apiGuidePath) : false;
+$errorCatalog = is_file($errorCatalogPath) ? file_get_contents($errorCatalogPath) : false;
+
+if (!is_string($apiGuide) || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0051') === false || strpos($apiGuide, 'feed_metadata_schema_version') === false || strpos($apiGuide, 'compatibility classification') === false) {
+    fwrite(STDERR, "Missing feed metadata compatibility requirement in API contract guide (CRE8-CONTRACT-REQ-0051).\n");
+    exit(1);
+}
+
+if (!is_string($errorCatalog)) {
+    fwrite(STDERR, "Failed to load ERROR_CODE_CATALOG.md for feed deny mapping validation.\n");
+    exit(1);
+}
+
+$feedDenyCodes = ['AUTH_PERMISSION_DENIED','AUTH_SCOPE_DENIED','AUTH_DEPTH_EXCEEDED','AUTH_GRANT_EXPIRED'];
+foreach ($feedDenyCodes as $code) {
+    if (strpos($errorCatalog, $code) === false) {
+        fwrite(STDERR, "Feed deny code not found in canonical error catalog: {$code}\n");
+        exit(1);
+    }
+}
+
+echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=5, metadata_fields=2, ordering_cursor=tiecase-validated, deny_catalog=validated)' . PHP_EOL;
