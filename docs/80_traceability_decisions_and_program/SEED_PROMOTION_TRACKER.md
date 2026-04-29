@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SEED-PROMOTION-TRACKER
-version: 1.2.0
+version: 1.3.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -54,6 +54,13 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | CRE8-EXT-MODULE-SEAMS | TBD | candidate | HOOK-EXT-SEAM-COMPATIBILITY |  | Candidate for extension invariants and compatibility gates. |
 | seed/CRE8_SEED_PRESERVATION_MATRIX.md#preservation-obligations | CRE8-TRACE-SEED-PROMOTION-TRACKER | CRE8-TRACE-REQ-0070 | promoted | HOOK-SSOT-SYNC-PROMOTED-TRACE |  | Seed preservation obligation promoted into mandatory seed row mapping contract. |
 | seed/CRE8_SEED_PRESERVATION_MATRIX.md#unresolved-gap-accountability | CRE8-TRACE-SEED-GAP-REGISTER | CRE8-TRACE-REQ-0080 | promoted | HOOK-SSOT-SYNC-PROMOTED-TRACE |  | Seed gap accountability obligations promoted into canonical unresolved-gap register requirements. |
+
+| seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#permission-evaluation-order | CRE8-AUTH-DECISION-TABLES | CRE8-AUTH-REQ-0010 | promoted | HOOK-CONTRACT-POLICY-ORDER |  | Promoted into deterministic authorization gate ordering requirements. |
+| seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#deterministic-deny-reasoning | CRE8-AUTH-DECISION-TABLES | CRE8-AUTH-REQ-0015 | promoted | HOOK-AUTH-DECISION-REASON-MAPPING |  | Promoted into reason-to-error-code mapping requirements. |
+| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#contract-machine-parity | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0010 | promoted | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY |  | Promoted into route inventory and machine contract parity requirements. |
+| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#compatibility-and-migration-disclosure | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0014 | promoted | HOOK-CONTRACT-COMPAT-DECLARATION |  | Promoted into mandatory compatibility declaration obligations. |
+| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#route-inventory-determinism | CRE8-CONTRACTS-ROUTE-INVENTORY | CRE8-CONTRACT-REQ-0020 | promoted | HOOK-CONTRACT-ROUTE-UNIQUENESS |  | Promoted into unique route_id and method/path constraints. |
+| seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#route-deprecation-fields | CRE8-CONTRACTS-ROUTE-INVENTORY | CRE8-CONTRACT-REQ-0023 | promoted | HOOK-CONTRACT-DEPRECATION-SCHEMA |  | Promoted into deprecation schema completeness requirements. |
 
 ## Verification hooks
 - **HOOK-SEED-PROMOTION-SCHEMA**: Validate required columns and promotion status enums.

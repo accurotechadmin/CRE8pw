@@ -1,7 +1,81 @@
 openapi: 3.1.0
 info:
-  title: CRE8 API Placeholder
-  version: 0.0.0-scaffold
+  title: CRE8 API
+  version: 1.0.0-phase1-baseline
   description: >-
-    This placeholder OpenAPI file will mature into the authoritative machine contract for CRE8 endpoints, envelopes, errors, auth requirements, and compatibility policy.
-paths: {}
+    Phase 1 baseline machine contract for CRE8 route inventory parity.
+    This artifact establishes deterministic envelope and error schema references
+    for initial canonical placeholder routes and is intended to stay synchronized
+    with docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md.
+servers:
+  - url: https://api.cre8.local
+    description: Local development placeholder server
+paths:
+  /v1/system/health:
+    get:
+      operationId: getSystemHealth
+      summary: Retrieve service health status
+      tags: [system]
+      responses:
+        '200':
+          description: Service health payload wrapped in success envelope.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/success-envelope.schema.json
+        '401':
+          description: Unauthorized request.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+        '429':
+          description: Rate limited request.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+  /v1/authz/decide:
+    post:
+      operationId: postAuthorizationDecision
+      summary: Evaluate authorization decision using deterministic gate order
+      tags: [authorization]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/policy-decision.schema.json
+      responses:
+        '200':
+          description: Authorization decision generated.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/success-envelope.schema.json
+        '400':
+          description: Invalid request payload.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+        '409':
+          description: Lifecycle conflict prevents deterministic decision.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+components:
+  securitySchemes:
+    cre8Proof:
+      type: http
+      scheme: bearer
+      bearerFormat: CRE8-Proof
+security:
+  - cre8Proof: []
