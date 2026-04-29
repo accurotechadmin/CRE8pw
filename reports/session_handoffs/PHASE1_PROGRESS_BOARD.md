@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T05:37:07Z
-- Current owner/session: Codex session `20260429-0537`
+- Last updated (UTC): 2026-04-29T05:42:00Z
+- Current owner/session: Codex session `20260429-0542`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -41,10 +41,13 @@
   - [x] Promote initial OpenAPI baseline operations for route inventory parity
   - [x] Add explicit prose↔OpenAPI parity table artifact
   - [x] Implement route parity drift automation command
+  - [x] Implement route inventory uniqueness automation command
+  - [x] Implement compatibility declaration automation command
 - [~] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
   - [x] Enforce executable gap-tracker sync via `docs:ssot:sync-check`
   - [x] Close lifecycle/seam verification automation gaps (`GAP-003`, `GAP-006`) via sync-check automation enforcement
+  - [x] Convert route uniqueness and compatibility declaration hooks from manual to executable commands
   - [~] Expand runtime test coverage across lifecycle/feed/security families
 - [x] Slice 9 — Programmatic quality gates
   - [x] Define normative command contracts for `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report`
@@ -55,8 +58,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0537.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0531.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0523.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0519.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0514.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0542.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0537.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0531.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0523.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0519.md`
