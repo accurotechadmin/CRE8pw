@@ -216,3 +216,7 @@ Following further review, the repository direction should explicitly bind each f
 - Contract/lifecycle/security regression evidence: `phpunit/phpunit`.
 
 Each SSOT document should carry explicit dependency references so architectural intent and implementation mechanics remain intrinsically linked.
+
+## Repository caveat verification notes
+
+During direct filesystem review, the canonical seed overview is present as `seed/seed-intro.md` (titled "CRE8 Seed Canon README"). A repository-root `README.md` file is not currently present in this checkout, so references to `README.md` in seed navigation docs should be interpreted as pointing to `seed/seed-intro.md` unless/until a root README is added.
