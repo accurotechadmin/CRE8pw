@@ -50,6 +50,8 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 | HOOK-CONTRACT-ROUTE-UNIQUENESS | PR | Manual inventory scan for duplicate `route_id` and method/path pairs | No duplicate IDs or method/path collisions | docs/evidence/templates/README.md | Add `docs:ssot:route-uniqueness` checker |
 | HOOK-CONTRACT-COMPAT-DECLARATION | PR | Change review checklist against `API_CONTRACT_GUIDE.md` compatibility section | Every route-affecting change declares compatibility class and migration intent | docs/evidence/templates/README.md | Add `docs:ssot:compat-declaration` checker |
 | HOOK-AUTH-DECISION-REASON-MAPPING | PR | Manual cross-check: auth decision table deny reason -> `ERROR_CODE_CATALOG.md` code mapping | One-to-one reason/code mapping with no unmapped deny reason | docs/evidence/templates/README.md | Add `test:contract:auth-reasons` suite |
+| HOOK-SEC-LIFECYCLE-PROPAGATION | PR | `composer docs:ssot:sync-check` | Trace row for lifecycle propagation exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with runtime revoke/rotate propagation contract tests |
+| HOOK-EXT-SEAM-COMPATIBILITY | PR | `composer docs:ssot:sync-check` | Trace row for seam compatibility exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with module seam contract fixture suite |
 
 
 ## See also
