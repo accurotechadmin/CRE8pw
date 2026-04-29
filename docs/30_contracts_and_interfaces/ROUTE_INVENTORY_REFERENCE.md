@@ -44,11 +44,11 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | sunset_utc | conditional | Required if lifecycle is `deprecated` or `sunset`. |
 | replacement_route_id | conditional | Required if lifecycle is `deprecated` or `sunset`. |
 
-## Baseline route inventory (Phase 1 placeholder rows)
+## Baseline route inventory (Phase 1 promoted rows)
 | route_id | method | path | auth_model | required_permission | scope_type | success_status | error_code_set | lifecycle |
 |---|---|---|---|---|---|---|---|---|
-| CRE8-ROUTE-0001 | POST | /v1/auth/authorize | delegated | auth.evaluate | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY | active |
-| CRE8-ROUTE-0002 | GET | /v1/policy/grants/{grantId} | delegated | policy.read | resource | 200 | AUTH_SCOPE_DENIED,AUTH_GRANT_EXPIRED | active |
+| CRE8-ROUTE-0001 | GET | /v1/system/health | public | system.health.read | global | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |
+| CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_EXPLICIT_DENY,AUTH_SCOPE_DENIED | active |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.
@@ -56,10 +56,11 @@ Define the minimum authoritative route inventory schema and parity obligations f
 - **HOOK-CONTRACT-DEPRECATION-SCHEMA**: Validate presence of sunset and replacement fields for deprecated routes.
 
 ## Drift notes
-- Baseline inventory rows are provisional placeholders pending complete route promotion from seed canon and machine contracts.
+- Route inventory rows are synchronized with current OpenAPI baseline and MUST be updated in the same changeset when either source changes.
 
 ## See also
 - [API Contract Guide](./API_CONTRACT_GUIDE.md)
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
+- [Prose↔OpenAPI Parity Table](../31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md)
 - [Error Code Catalog](./ERROR_CODE_CATALOG.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
