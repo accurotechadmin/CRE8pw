@@ -1,3 +1,21 @@
 {
-  "_placeholder": "This schema file will define mature CRE8 machine-contract JSON Schema constraints for this domain, including required fields, validation semantics, and compatibility/versioning rules."
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/success-envelope.schema.json",
+  "title": "CRE8 Success Envelope",
+  "type": "object",
+  "required": ["data", "meta"],
+  "additionalProperties": false,
+  "properties": {
+    "data": {"type": ["object", "array", "string", "number", "boolean", "null"]},
+    "meta": {
+      "type": "object",
+      "required": ["request_id", "timestamp_utc", "contract_version"],
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {"type": "string", "minLength": 8},
+        "timestamp_utc": {"type": "string", "format": "date-time"},
+        "contract_version": {"type": "string", "minLength": 1}
+      }
+    }
+  }
 }

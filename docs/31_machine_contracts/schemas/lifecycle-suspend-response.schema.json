@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/lifecycle-suspend-response.schema.json",
+  "title": "Lifecycle Suspend Success Envelope",
+  "allOf": [
+    {"$ref": "./success-envelope.schema.json"},
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": ["key_id", "lifecycle_state", "effective_utc"],
+          "additionalProperties": false,
+          "properties": {
+            "key_id": {"type": "string", "minLength": 3},
+            "lifecycle_state": {"type": "string", "const": "suspended"},
+            "effective_utc": {"type": "string", "format": "date-time"}
+          }
+        }
+      }
+    }
+  ]
+}

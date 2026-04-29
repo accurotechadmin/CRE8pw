@@ -1,3 +1,43 @@
 {
-  "_placeholder": "This schema file will define mature CRE8 machine-contract JSON Schema constraints for this domain, including required fields, validation semantics, and compatibility/versioning rules."
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/error-envelope.schema.json",
+  "title": "CRE8 Error Envelope",
+  "type": "object",
+  "required": ["error", "meta"],
+  "additionalProperties": false,
+  "properties": {
+    "error": {
+      "type": "object",
+      "required": ["code", "message", "category", "request_id", "timestamp_utc"],
+      "additionalProperties": false,
+      "properties": {
+        "code": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+        "message": {"type": "string", "minLength": 1},
+        "category": {"type": "string", "pattern": "^[A-Z_]+$"},
+        "request_id": {"type": "string", "minLength": 8},
+        "timestamp_utc": {"type": "string", "format": "date-time"},
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "violation"],
+            "additionalProperties": false,
+            "properties": {
+              "field": {"type": "string"},
+              "violation": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["request_id", "contract_version"],
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {"type": "string", "minLength": 8},
+        "contract_version": {"type": "string", "minLength": 1}
+      }
+    }
+  }
 }

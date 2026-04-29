@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.local/schemas/authz-decision-response.schema.json",
+  "title": "Authorization Decision Success Envelope",
+  "allOf": [
+    {"$ref": "./success-envelope.schema.json"},
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": ["decision", "decision_reason_code", "evaluated_gate"],
+          "additionalProperties": false,
+          "properties": {
+            "decision": {"type": "string", "enum": ["allow", "deny"]},
+            "decision_reason_code": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+            "evaluated_gate": {"type": "integer", "minimum": 1, "maximum": 7}
+          }
+        }
+      }
+    }
+  ]
+}

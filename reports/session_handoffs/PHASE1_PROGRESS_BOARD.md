@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T05:51:12Z
-- Current owner/session: Codex session `20260429-0551`
+- Last updated (UTC): 2026-04-29T06:12:48Z
+- Current owner/session: Codex session `20260429-0612`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -34,6 +34,10 @@
   - [x] Harden `ROADMAP_AND_MILESTONES.md`
 - [~] Slice 6 — Contract domain hardening
   - [x] Harden `AUTHORIZATION_AND_DELEGATION_SPEC.md`
+  - [x] Implement executable `test:contract:error` hook for deterministic error-code/status mapping
+  - [x] Implement executable `test:contract:auth-reasons` hook for reason→error catalog mapping
+  - [x] Implement executable `test:contract:auth` hook for deterministic policy order and short-circuit semantics
+  - [x] Implement executable `test:contract:error-secrets` hook for redacted error contract checks
   - [x] Harden `ERROR_CODE_CATALOG.md`
   - [x] Harden decision tables and route-level contract corpus
   - [x] Promote remaining seed candidates (`SPR-001`, `SPR-002`, `SPR-006`, `SPR-007`)
@@ -45,6 +49,9 @@
   - [x] Implement compatibility declaration automation command
   - [x] Implement error-code coverage automation command
   - [x] Implement deprecation schema automation command
+  - [x] Expand baseline route/OpenAPI parity set from 2 to 4 routes
+  - [x] Expand OpenAPI component schema depth and route response examples
+  - [x] Deepen authz + lifecycle route payload schemas beyond envelope-only modeling
 - [~] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
   - [x] Enforce executable gap-tracker sync via `docs:ssot:sync-check`
@@ -61,8 +68,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0551.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0547.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0542.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0537.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0531.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0612.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0559.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0551.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0547.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0542.md`
