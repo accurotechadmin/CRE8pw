@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2320.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-2324.md`
 
 Summary:
-- Enforced Route Family Coverage Policy owner taxonomy resolution against traceability owner values.
-- Added `CRE8-MACHINE-REQ-0015` for parity policy owner-resolution governance.
-- Updated traceability mapping and refreshed Phase 2 progress-board/handoff chain.
+- Added executable parity governance check binding ADR-003 coverage-policy rows to deferred breadth rows in `PHASE2_PROGRESS_BOARD.md` by owner+hook.
+- Added `CRE8-MACHINE-REQ-0016` plus traceability mapping for deferred-breadth linkage enforcement.
+- Updated deferred breadth decomposition with key lifecycle owner-assigned row (`P2-DB-006`) and refreshed handoff chain.

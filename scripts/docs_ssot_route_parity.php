@@ -14,12 +14,14 @@ $proseParity = file_get_contents($proseParityPath);
 $traceabilityMatrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
 $adrIndexPath = $repoRoot . '/docs/80_traceability_decisions_and_program/ADR_INDEX.md';
 $decisionsLogPath = $repoRoot . '/docs/80_traceability_decisions_and_program/DECISIONS_LOG.md';
+$phase2ProgressBoardPath = $repoRoot . '/reports/session_handoffs/PHASE2_PROGRESS_BOARD.md';
 $traceabilityMatrix = file_get_contents($traceabilityMatrixPath);
 $adrIndex = file_get_contents($adrIndexPath);
 $decisionsLog = file_get_contents($decisionsLogPath);
+$phase2ProgressBoard = file_get_contents($phase2ProgressBoardPath);
 $errorCatalog = file_get_contents($errorCatalogPath);
-if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false || $adrIndex === false || $decisionsLog === false || $errorCatalog === false) {
-    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, traceability matrix, ADR index, decisions log, or error catalog" . PHP_EOL);
+if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false || $adrIndex === false || $decisionsLog === false || $phase2ProgressBoard === false || $errorCatalog === false) {
+    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, traceability matrix, ADR index, decisions log, Phase 2 progress board, or error catalog" . PHP_EOL);
     exit(1);
 }
 
@@ -470,6 +472,23 @@ foreach (explode("
     }
     $decisionEventIds[strtoupper($cols[0])] = true;
 }
+$deferredBreadthRows = [];
+foreach (explode("\n", $phase2ProgressBoard) as $line) {
+    if (preg_match('/^\|\s*P2-DB-[0-9]{3}\s*\|/i', trim($line)) !== 1) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 8) {
+        continue;
+    }
+    $deferredBreadthRows[] = [
+        'item_id' => strtoupper($cols[0]),
+        'owner' => $cols[3],
+        'hooks' => strtoupper($cols[5]),
+        'decision_ref' => strtoupper($cols[7]),
+    ];
+}
+
 foreach ($coveragePolicies as $family => $policy) {
     if (!preg_match('/^[a-z0-9_]+$/', $family)) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid route_family format in coverage policy: {$family}";
@@ -491,6 +510,25 @@ foreach ($coveragePolicies as $family => $policy) {
     }
     if (str_starts_with($policy['decision_ref'], 'DLOG-') && !isset($decisionEventIds[$policy['decision_ref']])) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy decision_ref event not found in DECISIONS_LOG for family {$family}: {$policy['decision_ref']}";
+    }
+    if ($policy['decision_ref'] === 'ADR-003') {
+        $hasLinkedDeferredRow = false;
+        foreach ($deferredBreadthRows as $deferredRow) {
+            if ($deferredRow['decision_ref'] !== 'ADR-003') {
+                continue;
+            }
+            if (strtoupper($deferredRow['owner']) !== strtoupper($policy['owner'])) {
+                continue;
+            }
+            if (!str_contains($deferredRow['hooks'], strtoupper($policy['hook_id']))) {
+                continue;
+            }
+            $hasLinkedDeferredRow = true;
+            break;
+        }
+        if (!$hasLinkedDeferredRow) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] ADR-003 coverage policy row lacks matching deferred-breadth linkage (owner + hook) in PHASE2_PROGRESS_BOARD for family {$family}";
+        }
     }
 }
 
