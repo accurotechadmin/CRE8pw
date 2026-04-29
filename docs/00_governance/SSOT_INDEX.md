@@ -16,6 +16,7 @@ normative_dependencies:
   - docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md
   - docs/00_governance/CHANGE_CONTROL_POLICY.md
   - docs/00_governance/DEFINITION_OF_DONE.md
+  - docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md
 ---
 
 # SSOT Index
@@ -56,4 +57,5 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Contribution Workflow SSOT](./CONTRIBUTION_WORKFLOW_SSOT.md)
 - [Change Control Policy](./CHANGE_CONTROL_POLICY.md)
 - [Definition of Done](./DEFINITION_OF_DONE.md)
+- [Cross-Document Linking Policy](./CROSS_DOCUMENT_LINKING_POLICY.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
