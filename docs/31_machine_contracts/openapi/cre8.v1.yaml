@@ -71,6 +71,60 @@ paths:
             application/json:
               schema:
                 $ref: ../schemas/error-envelope.schema.json
+  /v1/keys/{key_id}/lifecycle/suspend:
+    post:
+      operationId: postKeyLifecycleSuspend
+      summary: Suspend a key lifecycle state
+      tags: [lifecycle]
+      parameters:
+        - in: path
+          name: key_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Lifecycle transition accepted.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/success-envelope.schema.json
+        '401':
+          description: Unauthorized request.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+  /v1/feed/items:
+    get:
+      operationId: getFeedItems
+      summary: Retrieve authorized feed items in deterministic order
+      tags: [feed]
+      responses:
+        '200':
+          description: Authorized feed payload.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/success-envelope.schema.json
+        '401':
+          description: Unauthorized request.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
+        '403':
+          description: Policy denied.
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/error-envelope.schema.json
 components:
   securitySchemes:
     cre8Proof:

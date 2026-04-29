@@ -57,6 +57,8 @@
     "docs:ssot:route-uniqueness": "@php scripts/docs_ssot_route_uniqueness.php",
     "docs:ssot:compat-declaration": "@php scripts/docs_ssot_compat_declaration.php",
     "docs:ssot:error-code-coverage": "@php scripts/docs_ssot_error_code_coverage.php",
-    "docs:ssot:deprecation-schema": "@php scripts/docs_ssot_deprecation_schema.php"
+    "docs:ssot:deprecation-schema": "@php scripts/docs_ssot_deprecation_schema.php",
+    "test:contract:error": "@php scripts/test_contract_error.php",
+    "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php"
   }
 }
