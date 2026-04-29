@@ -86,7 +86,7 @@ if (!is_string($errorCatalog)) {
     exit(1);
 }
 
-$feedDenyCodes = ['AUTH_PERMISSION_DENIED','AUTH_SCOPE_DENIED','AUTH_DEPTH_EXCEEDED','AUTH_GRANT_EXPIRED'];
+$feedDenyCodes = ['AUTH_PERMISSION_DENIED','AUTH_SCOPE_DENIED','AUTH_DEPTH_EXCEEDED','AUTH_GRANT_EXPIRED','AUTH_LIFECYCLE_BLOCKED'];
 foreach ($feedDenyCodes as $code) {
     if (strpos($errorCatalog, $code) === false) {
         fwrite(STDERR, "Feed deny code not found in canonical error catalog: {$code}\n");
@@ -94,4 +94,26 @@ foreach ($feedDenyCodes as $code) {
     }
 }
 
-echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=5, metadata_fields=2, ordering_cursor=tiecase-validated, deny_catalog=validated)' . PHP_EOL;
+
+if (strpos($openapi, 'ErrorFeedLifecycleBlocked') === false) {
+    fwrite(STDERR, "Missing feed lifecycle deny fixture example in OpenAPI.\n");
+    exit(1);
+}
+
+$page1Cursor = 'next_cursor: "pub:2026-04-29T05:54:00Z|itm_003"';
+$page2InputCursor = 'input_cursor: "pub:2026-04-29T05:54:00Z|itm_003"';
+$page2NextCursor = 'next_cursor: "pub:2026-04-29T05:45:00Z|itm_005"';
+
+foreach ([$page1Cursor => 'page1 next cursor', $page2InputCursor => 'page2 input cursor', $page2NextCursor => 'page2 next cursor'] as $snippet => $label) {
+    if (strpos($openapi, $snippet) === false) {
+        fwrite(STDERR, "Missing {$label} fixture snippet in OpenAPI feed examples: {$snippet}\n");
+        exit(1);
+    }
+}
+
+if (!is_string($apiGuide) || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0053') === false || strpos($apiGuide, 'CRE8-CONTRACT-REQ-0054') === false) {
+    fwrite(STDERR, "Missing feed lifecycle/multipage requirements in API contract guide (CRE8-CONTRACT-REQ-0053/0054).\n");
+    exit(1);
+}
+
+echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=6, metadata_fields=2, ordering_cursor=tiecase-multipage-validated, deny_catalog=validated)' . PHP_EOL;

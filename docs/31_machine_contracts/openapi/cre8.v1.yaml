@@ -89,6 +89,8 @@ paths:
                   $ref: '#/components/examples/ErrorAuthDepthExceeded'
                 grantExpired:
                   $ref: '#/components/examples/ErrorGrantExpired'
+                lifecycleBlocked:
+                  $ref: '#/components/examples/ErrorFeedLifecycleBlocked'
                 interactionLifecycleBlocked:
                   $ref: '#/components/examples/ErrorInteractionLifecycleBlocked'
   /v1/keys/{key_id}/lifecycle/suspend:
@@ -151,6 +153,8 @@ paths:
                   $ref: '#/components/examples/ErrorAuthDepthExceeded'
                 grantExpired:
                   $ref: '#/components/examples/ErrorGrantExpired'
+                lifecycleBlocked:
+                  $ref: '#/components/examples/ErrorFeedLifecycleBlocked'
 components:
   schemas:
     SuccessEnvelope:
@@ -224,5 +228,15 @@ components:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Interaction blocked by lifecycle state.", category: LIFECYCLE, request_id: "req-interact-001", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-interact-001", contract_version: "1.0.0" }
+    FeedItemsSuccessPage2:
+      value:
+        data:
+          - { item_id: "itm_004", rank: 4, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:50:00Z", moderation_state: "none" }
+          - { item_id: "itm_005", rank: 5, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:45:00Z", moderation_state: "none" }
+        meta: { request_id: "req-feed-005", timestamp_utc: "2026-04-29T06:11:00Z", contract_version: "1.0.0", input_cursor: "pub:2026-04-29T05:54:00Z|itm_003", next_cursor: "pub:2026-04-29T05:45:00Z|itm_005", cursor_basis: "published_utc_desc__item_id_asc", feed_metadata_schema_version: "feed-meta-v1" }
+    ErrorFeedLifecycleBlocked:
+      value:
+        error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Lifecycle state blocked.", category: LIFECYCLE, request_id: "req-feed-006", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-feed-006", contract_version: "1.0.0" }
 security:
   - cre8Proof: []
