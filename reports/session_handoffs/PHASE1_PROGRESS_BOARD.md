@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T05:03:02Z
-- Current owner/session: Codex session `20260429-0503`
+- Last updated (UTC): 2026-04-29T05:09:00Z
+- Current owner/session: Codex session `20260429-0509`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -36,8 +36,8 @@
   - [x] Harden decision tables and route-level contract corpus
 - [~] Slice 7 — Machine contract synchronization
   - [x] Promote initial OpenAPI baseline operations for route inventory parity
-  - [ ] Add explicit prose↔OpenAPI parity table artifact
-  - [ ] Implement route parity drift automation command
+  - [x] Add explicit prose↔OpenAPI parity table artifact
+  - [x] Implement route parity drift automation command
 - [~] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
   - [~] Expand hook catalog coverage across lifecycle/feed/security families
@@ -50,8 +50,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0503.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0509.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0503.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`

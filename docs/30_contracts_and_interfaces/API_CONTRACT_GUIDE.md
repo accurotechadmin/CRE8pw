@@ -41,11 +41,12 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-COMPAT-DECLARATION**: Validate compatibility classification and migration note sections for contract-impacting changes.
 
 ## Drift notes
-- Current OpenAPI file remains placeholder and creates known parity debt. Next automation hook: implement `docs:ssot:contract-parity-check` with path+operation comparison and integrate into `ssot_phase1_gate`.
+- OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.
 
 ## See also
 - [Route Inventory Reference](./ROUTE_INVENTORY_REFERENCE.md)
 - [Error Code Catalog](./ERROR_CODE_CATALOG.md)
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
+- [Prose↔OpenAPI Parity Table](../31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
