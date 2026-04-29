@@ -66,29 +66,31 @@ if (!str_contains($delegationSpec, 'HOOK-AUTH-LIFECYCLE-ENFORCEMENT')) {
 if (!str_contains($openapi, '/v1/authz/decide:')) {
     $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing /v1/authz/decide route in OpenAPI contract';
 }
-if (!str_contains($openapi, 'interactionLifecycleBlocked:')) {
-    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] missing interaction lifecycle deny response fixture key in OpenAPI authz route';
-}
-if (!str_contains($openapi, '#/components/examples/ErrorInteractionLifecycleBlocked')) {
-    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] missing ErrorInteractionLifecycleBlocked deny fixture reference in OpenAPI authz route';
-}
-if (!str_contains($openapi, 'depthExceeded:')) {
-    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing depthExceeded deny response fixture key in OpenAPI authz route';
-}
-if (!str_contains($openapi, '#/components/examples/ErrorAuthDepthExceeded')) {
-    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ErrorAuthDepthExceeded deny fixture reference in OpenAPI authz route';
-}
-if (!str_contains($openapi, 'explicitDeny:')) {
-    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing explicitDeny response fixture key in OpenAPI authz route';
-}
-if (!str_contains($openapi, '#/components/examples/ErrorExplicitDeny')) {
-    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ErrorExplicitDeny fixture reference in OpenAPI authz route';
-}
-if (!str_contains($openapi, 'permissionDenied:')) {
-    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing permissionDenied response fixture key in OpenAPI authz route';
-}
-if (!str_contains($openapi, '#/components/examples/ErrorPermissionDenied')) {
-    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ErrorPermissionDenied fixture reference in OpenAPI authz route';
+
+
+$authzDenyExamples = [
+    'explicitDeny' => ['ref' => '#/components/examples/ErrorExplicitDeny', 'code' => 'AUTH_EXPLICIT_DENY', 'category' => 'AUTH_DENY'],
+    'permissionDenied' => ['ref' => '#/components/examples/ErrorPermissionDenied', 'code' => 'AUTH_PERMISSION_DENIED', 'category' => 'AUTH_DENY'],
+    'scopeDenied' => ['ref' => '#/components/examples/ErrorScopeDenied', 'code' => 'AUTH_SCOPE_DENIED', 'category' => 'AUTH_DENY'],
+    'depthExceeded' => ['ref' => '#/components/examples/ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY'],
+    'grantExpired' => ['ref' => '#/components/examples/ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED', 'category' => 'AUTH_DENY'],
+    'lifecycleBlocked' => ['ref' => '#/components/examples/ErrorFeedLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
+    'interactionLifecycleBlocked' => ['ref' => '#/components/examples/ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
+];
+
+foreach ($authzDenyExamples as $fixtureKey => $contract) {
+    if (!str_contains($openapi, $fixtureKey . ':')) {
+        $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ' . $fixtureKey . ' response fixture key in OpenAPI authz route';
+    }
+    if (!str_contains($openapi, $contract['ref'])) {
+        $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing ' . basename((string) $contract['ref']) . ' fixture reference in OpenAPI authz route';
+    }
+
+    $exampleName = str_replace('#/components/examples/', '', $contract['ref']);
+    $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*code:\s' . preg_quote($contract['code'], '/') . '[^\n]*category:\s' . preg_quote($contract['category'], '/') . '[^\n]*\}/m';
+    if (preg_match($pattern, $openapi) !== 1) {
+        $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] example ' . $exampleName . ' missing expected code/category contract (' . $contract['code'] . '/' . $contract['category'] . ')';
+    }
 }
 
 if ($errors !== []) {
