@@ -30,13 +30,13 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0003**: Parity validation **MUST** pass `composer docs:ssot:route-parity` before merge for contract-impacting changes.
 
 ## Parity matrix
-| route_id | inventory_method | inventory_path | openapi_method | openapi_path | parity_status | route_family | depth_priority | primary_requirement_id | primary_hook_id | parity_depth_status | success_schema_ref | error_schema_ref |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| CRE8-ROUTE-0001 | GET | /v1/system/health | GET | /v1/system/health | in_sync | system_health | baseline | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | baseline_complete | #/components/schemas/SuccessEnvelope | #/components/schemas/ErrorEnvelope |
-| CRE8-ROUTE-0002 | POST | /v1/authz/decide | POST | /v1/authz/decide | in_sync | auth_decision | high | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | depth_in_progress | #/components/schemas/AuthzDecisionSuccessEnvelope | #/components/schemas/ErrorEnvelope |
-| CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | POST | /v1/keys/{key_id}/lifecycle/suspend | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleSuspendSuccessEnvelope | #/components/schemas/ErrorEnvelope |
-| CRE8-ROUTE-0004 | GET | /v1/feed/items | GET | /v1/feed/items | in_sync | feed_audience | high | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | depth_in_progress | #/components/schemas/FeedItemsSuccessEnvelope | #/components/schemas/ErrorEnvelope |
-| CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | POST | /v1/keys/{key_id}/lifecycle/revoke | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleRevokeSuccessEnvelope | #/components/schemas/ErrorEnvelope |
+| route_id | inventory_method | inventory_path | openapi_method | openapi_path | parity_status | route_family | depth_priority | primary_requirement_id | primary_hook_id | parity_depth_status | success_schema_ref | error_schema_ref | success_status_codes | error_status_codes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CRE8-ROUTE-0001 | GET | /v1/system/health | GET | /v1/system/health | in_sync | system_health | baseline | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | baseline_complete | #/components/schemas/SuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 401,500 |
+| CRE8-ROUTE-0002 | POST | /v1/authz/decide | POST | /v1/authz/decide | in_sync | auth_decision | high | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | depth_in_progress | #/components/schemas/AuthzDecisionSuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 400,403 |
+| CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | POST | /v1/keys/{key_id}/lifecycle/suspend | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleSuspendSuccessEnvelope | #/components/schemas/ErrorEnvelope | 202 | 403 |
+| CRE8-ROUTE-0004 | GET | /v1/feed/items | GET | /v1/feed/items | in_sync | feed_audience | high | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | depth_in_progress | #/components/schemas/FeedItemsSuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 403 |
+| CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | POST | /v1/keys/{key_id}/lifecycle/revoke | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleRevokeSuccessEnvelope | #/components/schemas/ErrorEnvelope | 202 | 403 |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Execute `composer docs:ssot:route-parity` and block merge if drift is detected.

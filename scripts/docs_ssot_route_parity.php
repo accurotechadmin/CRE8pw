@@ -58,6 +58,60 @@ foreach (array_keys($openApiPairs) as $pair) {
     }
 }
 
+
+
+$openApiResponseSchemas = [];
+$currentPath = null;
+$currentMethod = null;
+$currentStatus = null;
+$inAppJson = false;
+$inSchema = false;
+foreach ($lines as $line) {
+    if (preg_match('/^\s{2}(\/[^:]+):\s*$/', $line, $m) === 1) {
+        $currentPath = trim($m[1]);
+        $currentMethod = null;
+        $currentStatus = null;
+        $inAppJson = false;
+        $inSchema = false;
+        continue;
+    }
+    if ($currentPath !== null && preg_match('/^\s{4}(get|post|put|patch|delete|options|head):\s*$/i', $line, $m) === 1) {
+        $currentMethod = strtoupper($m[1]);
+        $currentStatus = null;
+        $inAppJson = false;
+        $inSchema = false;
+        continue;
+    }
+    if ($currentMethod !== null && preg_match("/^\s{8}'([0-9]{3})':\s*$/", $line, $m) === 1) {
+        $currentStatus = $m[1];
+        $inAppJson = false;
+        $inSchema = false;
+        continue;
+    }
+    if ($currentStatus !== null && preg_match('/^\s{12}application\/json:\s*$/', $line) === 1) {
+        $inAppJson = true;
+        $inSchema = false;
+        continue;
+    }
+    if ($inAppJson && preg_match('/^\s{14}schema:\s*$/', $line) === 1) {
+        $inSchema = true;
+        continue;
+    }
+    if ($inSchema && preg_match('/^\s{16}/', $line) === 1 && str_contains(trim($line), '$ref:')) {
+        $trimmed = trim($line);
+        $ref = trim(substr($trimmed, strlen('$ref:')));
+        $ref = trim($ref, "'\"");
+        $pair = $currentMethod . ' ' . $currentPath;
+        $openApiResponseSchemas[$pair][$currentStatus] = $ref;
+        $inSchema = false;
+        $inAppJson = false;
+        continue;
+    }
+    if (trim($line) === '') {
+        continue;
+    }
+}
+
 // Validate prose parity table rows remain synchronized and contain Phase 2 depth metadata.
 $proseRows = [];
 foreach (explode("\n", $proseParity) as $line) {
@@ -65,12 +119,12 @@ foreach (explode("\n", $proseParity) as $line) {
         continue;
     }
     $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) < 13) {
+    if (count($cols) < 15) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] malformed prose parity row: {$line}";
         continue;
     }
 
-    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef] = $cols;
+    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef, $successStatusCodes, $errorStatusCodes] = $cols;
     $routeId = strtoupper($routeId);
     $pair = strtoupper($inventoryMethod) . ' ' . $inventoryPath;
     $openApiPair = strtoupper($openApiMethod) . ' ' . $openApiPath;
@@ -107,6 +161,41 @@ foreach (explode("\n", $proseParity) as $line) {
     } elseif (strpos($openApi, $errorSchemaRef) === false) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error_schema_ref not found in OpenAPI for {$routeId}: {$errorSchemaRef}";
     }
+
+    $successStatuses = array_filter(array_map('trim', explode(',', $successStatusCodes)), static fn(string $code): bool => $code !== '');
+    $errorStatuses = array_filter(array_map('trim', explode(',', $errorStatusCodes)), static fn(string $code): bool => $code !== '');
+    if ($successStatuses === [] || $errorStatuses === []) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing status-code metadata for {$routeId}";
+    }
+
+    foreach ($successStatuses as $status) {
+        if (!preg_match('/^[0-9]{3}$/', $status)) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid success status code for {$routeId}: {$status}";
+            continue;
+        }
+        if (!isset($openApiResponseSchemas[$openApiPair][$status])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] success status code not found in OpenAPI for {$routeId}: {$status}";
+            continue;
+        }
+        if ($openApiResponseSchemas[$openApiPair][$status] !== $successSchemaRef) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] success schema mismatch for {$routeId} status {$status}";
+        }
+    }
+
+    foreach ($errorStatuses as $status) {
+        if (!preg_match('/^[0-9]{3}$/', $status)) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid error status code for {$routeId}: {$status}";
+            continue;
+        }
+        if (!isset($openApiResponseSchemas[$openApiPair][$status])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error status code not found in OpenAPI for {$routeId}: {$status}";
+            continue;
+        }
+        if ($openApiResponseSchemas[$openApiPair][$status] !== $errorSchemaRef) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error schema mismatch for {$routeId} status {$status}";
+        }
+    }
+
 }
 
 foreach (array_keys($inventoryRouteIds) as $routeId) {
