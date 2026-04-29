@@ -2,10 +2,13 @@
 
 declare(strict_types=1);
 
-$path = dirname(__DIR__) . '/docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md';
-$content = file_get_contents($path);
-if ($content === false) {
-    fwrite(STDERR, "[HOOK-CONTRACT-POLICY-ORDER] unable to read authorization decision table" . PHP_EOL);
+$decisionTablePath = dirname(__DIR__) . '/docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md';
+$delegationSpecPath = dirname(__DIR__) . '/docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md';
+
+$decisionTable = file_get_contents($decisionTablePath);
+$delegationSpec = file_get_contents($delegationSpecPath);
+if ($decisionTable === false || $delegationSpec === false) {
+    fwrite(STDERR, "[HOOK-CONTRACT-POLICY-ORDER] unable to read authorization contract docs" . PHP_EOL);
     exit(1);
 }
 
@@ -20,7 +23,7 @@ $expected = [
 ];
 
 $found = [];
-foreach (explode("\n", $content) as $line) {
+foreach (explode("\n", $decisionTable) as $line) {
     if (preg_match('/^\|\s*([0-9]+)\s*\|[^|]*\|[^|]*\|[^|]*\|\s*`([A-Z0-9_]+)`\s*\|/', trim($line), $m) === 1) {
         $found[(int)$m[1]] = $m[2];
     }
@@ -41,9 +44,28 @@ if (count($found) !== count($expected)) {
     $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] decision-table step count drift detected';
 }
 
+$inheritanceClause = 'Descendant grants **MUST NOT** include permissions, scopes, lifecycle durations, or delegation depth beyond the effective limits of the delegating ancestor.';
+if (!str_contains($delegationSpec, $inheritanceClause)) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] CRE8-AUTH-REQ-0002 canonical inheritance-boundary clause drift detected';
+}
+
+$lifecycleClause = 'Credential lifecycle changes (`suspend`, `revoke`, `expire`) **MUST** be enforced on subsequent authorization decisions with no grace bypass path unless explicitly defined by normative emergency policy.';
+if (!str_contains($delegationSpec, $lifecycleClause)) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] CRE8-AUTH-REQ-0006 lifecycle-enforcement clause drift detected';
+}
+
+if (!str_contains($delegationSpec, 'HOOK-AUTH-INHERITANCE-BOUNDARY')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] verification hook declaration missing from authorization spec';
+}
+if (!str_contains($delegationSpec, 'HOOK-AUTH-LIFECYCLE-ENFORCEMENT')) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] verification hook declaration missing from authorization spec';
+}
+
 if ($errors !== []) {
-    foreach ($errors as $e) fwrite(STDERR, $e . PHP_EOL);
+    foreach ($errors as $e) {
+        fwrite(STDERR, $e . PHP_EOL);
+    }
     exit(1);
 }
 
-echo 'test:contract:auth PASS (steps=' . count($found) . ', short_circuit=deterministic_first_fail)' . PHP_EOL;
+echo 'test:contract:auth PASS (policy_steps=' . count($found) . ', inheritance_boundary=ok, lifecycle_enforcement=ok, short_circuit=deterministic_first_fail)' . PHP_EOL;

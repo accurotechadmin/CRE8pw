@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T12:40:35Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1240
+- Last updated (UTC): 2026-04-29T12:45:58Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1245
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -18,8 +18,8 @@
 ## Master checklist (Phase 2 lanes and key issues)
 
 ### Lane A — Residual manual-hook automation burn-down
-- [ ] `HOOK-AUTH-INHERITANCE-BOUNDARY` -> automate via `composer test:contract:auth` + targeted inheritance assertions.
-- [ ] `HOOK-AUTH-LIFECYCLE-ENFORCEMENT` -> automate via `composer test:contract:auth` + lifecycle transition deny matrix assertions.
+- [x] `HOOK-AUTH-INHERITANCE-BOUNDARY` -> automated in `composer test:contract:auth` with clause + hook declaration drift checks.
+- [x] `HOOK-AUTH-LIFECYCLE-ENFORCEMENT` -> automated in `composer test:contract:auth` with lifecycle clause + hook declaration drift checks.
 - [ ] `HOOK-IDENTITY-ID-FIRST-ISSUANCE` -> automate via new `scripts/test_contract_identity_issuance.php` + composer binding.
 - [ ] `HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION` -> automate via new `scripts/test_contract_identity_context.php` + composer binding.
 - [ ] `HOOK-CONTRACT-SURFACE-PARITY` -> automate via route inventory + UI runtime parity fixture check.
@@ -53,8 +53,8 @@
 ## Residual manual-hook burn-down table
 | hook_id | owner | priority | current mode | target command/script | due date (UTC) | status | evidence link/path | notes |
 |---|---|---|---|---|---|---|---|---|
-| HOOK-AUTH-INHERITANCE-BOUNDARY | Identity & Policy WG | High | manual | `composer test:contract:auth` (extend with inheritance-boundary assertions) | 2026-05-06 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Highest-risk residual from ADR-003 follow-through. |
-| HOOK-AUTH-LIFECYCLE-ENFORCEMENT | Identity & Policy WG | High | manual | `composer test:contract:auth` (extend with lifecycle enforcement assertions) | 2026-05-06 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Pair with inheritance automation in same batch. |
+| HOOK-AUTH-INHERITANCE-BOUNDARY | Identity & Policy WG | High | automated | `composer test:contract:auth` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md | Implemented via deterministic clause and hook declaration checks in `scripts/test_contract_auth.php`. |
+| HOOK-AUTH-LIFECYCLE-ENFORCEMENT | Identity & Policy WG | High | automated | `composer test:contract:auth` | 2026-04-29 | complete | reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md | Implemented via lifecycle enforcement clause and hook declaration drift checks in `scripts/test_contract_auth.php`. |
 | HOOK-IDENTITY-ID-FIRST-ISSUANCE | Platform Architecture WG | Medium | manual | `composer test:contract:identity-issuance` (to be added) | 2026-05-10 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Requires new command wiring in `composer.json`. |
 | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | Platform Architecture WG | Medium | manual | `composer test:contract:identity-context` (to be added) | 2026-05-10 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Keep scenario set deterministic and replay-safe. |
 | HOOK-CONTRACT-SURFACE-PARITY | API Contracts WG | Medium | manual | `composer docs:ssot:route-parity` + UI parity fixture checker (new) | 2026-05-13 | queued | reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md | Needs fixture source-of-truth decision. |
@@ -65,7 +65,7 @@
 ## Deferred breadth decomposition table (owner, due date, decision reference)
 | item_id | source | summary | owner | priority | hook_id(s) | due date (UTC) | decision_ref | status | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT | 2026-05-06 | ADR-003 | queued | Must produce deterministic pass/fail fixtures and explicit deny-code mapping.
+| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | queued | Include context-boundary negative cases.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | queued | Define canonical fixture source before implementation.
 | P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | queued | Validate deny catalog parity with route-specific outcomes.
@@ -74,18 +74,18 @@
 ## Status snapshot
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
-| Lane A — Manual-hook automation | in progress | 12% | Medium | Owners/due dates/target commands assigned; automation code not yet implemented. |
+| Lane A — Manual-hook automation | in progress | 28% | Medium | Two highest-risk auth hooks converted to automated checks; remaining hooks queued. |
 | Lane B — Deferred breadth decomposition | partially complete | 45% | Medium | Decomposition with owner/hook/due/decision_ref completed this session. |
 | Lane C — Parity expansion | not started | 0% | Medium | Awaiting first parity-depth implementation batch. |
-| Lane D — Traceability/evidence hardening | in progress | 20% | Medium | Governance planning controls hardened; executable enforcement pending. |
+| Lane D — Traceability/evidence hardening | in progress | 26% | Medium | Traceability matrix verification_mode and evidence paths updated for two auth hooks. |
 | Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1133.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1153.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1133.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1123.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`

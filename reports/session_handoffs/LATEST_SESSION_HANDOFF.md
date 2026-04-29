@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1240.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1245.md`
 
 Summary:
-- Activated Phase 2 execution tracking with explicit ADR-003 constraints.
-- Upgraded `PHASE2_PROGRESS_BOARD.md` from placeholder to actionable lane/checklist/burn-down/deferred decomposition state.
-- Assigned owners, due dates, hook mappings, and decision references for residual manual hooks and deferred Slice 6/7 breadth items.
+- Converted `HOOK-AUTH-INHERITANCE-BOUNDARY` and `HOOK-AUTH-LIFECYCLE-ENFORCEMENT` to deterministic automated checks in `composer test:contract:auth`.
+- Updated traceability matrix verification modes/evidence links and removed the two hooks from the Phase 1 manual backlog.
+- Updated the Phase 2 progress board burn-down/deferred tables to reflect partial closure of `P2-DB-001` under ADR-003 constraints.
