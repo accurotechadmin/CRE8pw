@@ -1,315 +1,377 @@
-# CRE8 Next-Model Base Inventory (ID/Utility Keypair-Centric)
+# CRE8 SSOT Seed Inventory: Keypair-Centric Platform Model
 
-_Status: draft working inventory for replacement docset authoring_  
-_Date (UTC): 2026-04-29_
+_Status: authoritative seed_  
+_Effective date (UTC): 2026-04-29_
 
-## 1) Purpose and scope
-This inventory is the **primary base model** for authoring a fresh SSOT-aligned CRE8 document set that preserves all critical canon constraints while shifting the core identity and access model to:
+## 1. Authority, role, and usage
+This document is the authoritative **seed inventory** for instantiating the keypair-centric CRE8 SSOT. It defines the complete capability and control baseline that downstream canonical artifacts (OpenAPI, schemas, contracts, data/security, operations, traceability, ADRs) MUST implement without semantic drift.
 
-- **Credential (ID) Keys**: minted as Private/Public keypairs and representing durable principal identity.
-- **Utility (Access) Keys**: additional Private/Public keypairs minted under a Credential Key for service/context-specific access.
-- **Audience Groups**: reusable collections of Public Use Keys for post-level access control.
-- **Keychains**: compositional aggregated-permission keys derived from other keys.
+### 1.1 Normative precedence
+When conflicts exist, apply this order:
+1. Machine contracts: `docs/ssot_canon/openapi/cre8.v1.yaml`, envelope schemas in `docs/ssot_canon/schemas/*.json`.
+2. Normative SSOT canon documents in `docs/ssot_canon/*`.
+3. Foundation and execution planning documents in `docs/01_foundation/*`, `docs/03_execution_planning/*`.
+4. Onboarding/audit/instructional artifacts in `docs/02_*`, `docs/04_*`.
 
-This inventory intentionally preserves the current system’s non-negotiables (envelope-first contracts, separated auth contexts, PDP determinism, traceability/evidence governance) and remaps them to the new keypair-first model.
-
----
-
-## 2) Canon invariants that must remain unchanged
-
-### 2.1 SSOT authority and precedence
-- OpenAPI + envelope schemas are top authority for interface behavior.
-- SSOT canon (`docs/ssot_canon/*`) remains normative over execution/onboarding narratives.
-- Any conflict must be resolved by precedence with explicit logged rationale.
-
-### 2.2 Runtime architecture invariants
-- Surface split remains strict:
-  - Public/bootstrap routes
-  - Gateway routes (`/api/*`)
-  - Console routes (`/console/api/*`)
-- Gateway and Console auth contexts remain non-interchangeable.
-- Route registration remains partitioned by surface.
-
-### 2.3 Contract and error invariants
-- Envelope-first response semantics remain mandatory for success and error.
-- Deterministic policy denies, stable detail codes, and correlation-ready failures remain mandatory.
-- Resource-specific `404` semantics remain distinct from route/template misses.
-
-### 2.4 Authorization invariants
-- PDP (policy decision path) remains canonical enforcement point.
-- No ad-hoc permission logic in handlers.
-- Delegation bounds (permission/scope/depth/expiry) remain hard constraints.
-- Existing use-key restrictions and owner-only governance constraints remain preserved unless explicitly changed in synchronized decision tables.
-
-### 2.5 Governance and evidence invariants
-- Verification-gated delivery remains required.
-- Traceability updates required alongside behavior changes.
-- Operational readiness and security-abuse verification remain release gates.
+### 1.2 Scope
+This seed defines platform behavior for:
+- identity/authentication/authorization,
+- key lifecycle and delegation,
+- audience access governance,
+- post/comment access enforcement,
+- deterministic denial/error semantics,
+- provenance/event logging,
+- verification and traceability obligations,
+while preserving CRE8’s envelope-first and governance-first operating model.
 
 ---
 
-## 3) New key model (central replacement)
+## 2. Non-negotiable platform invariants
 
-## 3.1 Key taxonomy
-1. **Credential Key (ID Key)**
-   - First minted key for `primary_author`, `secondary_author`, or `use` principal identity.
-   - Has Private/Public keypair.
-   - Serves as durable lineage root for descendant Utility Keys and policy provenance.
-   - Private/Public components rotatable with continuity controls.
+## 2.1 Surface boundaries
+- Public/bootstrap surface remains distinct from protected surfaces.
+- Gateway protected APIs (`/api/*`) and Console governance APIs (`/console/api/*`) remain non-interchangeable authentication/authorization contexts.
+- Route ownership and registration remain partitioned by surface.
 
-2. **Utility Key (Access Key)**
-   - Additional keypairs minted by Credential Keys for specific contexts/services/devices/clients.
-   - Treated as operational access credentials.
-   - Shorter lifecycle and higher turnover expected.
-   - Fully linked to parent Credential Key lineage for governance and blast-radius control.
+## 2.2 Contract invariants
+- Every API response remains envelope-first.
+- Error behavior remains deterministic with stable detail codes and request-correlation support.
+- Resource `404` behavior remains distinct from route-template `404` behavior.
 
-3. **Keychain Key**
-   - Aggregated-permission key derived by combining existing authorized keys (subject to constraints).
-   - Must preserve current anti-nesting and class-safety invariants unless canon explicitly revises them.
+## 2.3 Authorization invariants
+- PDP/middleware remains the sole policy decision authority.
+- Handlers/services MUST NOT implement ad-hoc permission/delegation/device/context policy branches.
+- Delegation remains bounded by permissions, scope, depth, expiry, lifecycle, and route obligations.
 
-4. **Master/SYSADMIN key domain**
-   - Remains console-governed with explicit restrictions and deny semantics.
-   - Must never become gateway-usable.
-
-## 3.2 Keypair representation strategy
-- Prefer asymmetric request signing model:
-  - Request includes public key id + nonce + timestamp + signature.
-  - Server verifies signature against stored public material.
-  - Replay prevention enforced via nonce/timestamp windows.
-- Transitional compatibility path can coexist for migration if explicitly versioned.
-
-## 3.3 Rotation model
-- Both Credential and Utility keypairs support rotate/suspend/revoke.
-- Rotation must preserve principal lineage/audit continuity.
-- Revocation must propagate deterministically to descendants according to policy mode (hard/soft inheritance rules to be specified in new authorization tables).
+## 2.4 Governance/quality invariants
+- No contract-shape changes without synchronized machine artifact and test updates.
+- No completion claims without verifiable evidence.
+- Traceability updates are mandatory for capability changes.
 
 ---
 
-## 4) Normative lifecycle/use-case model (to be encoded in new canon)
+## 3. Canonical identity and key model
 
-1. **Owner invitation and owner registration**
-   - Owner A invites Owner B.
-   - Owner B registers with username/email/password and enters console owner context.
+## 3.1 Key classes
+1. **Primary Author**
+2. **Secondary Author**
+3. **Use**
+4. **Keychain**
+5. **Master (console-governed only)**
 
-2. **Primary Author Credential Key minting**
-   - Owner B mints Primary Author Credential Keypair (private shown once + first public).
+## 3.2 Credential Key (ID Key)
+A Credential Key is the principal identity anchor for Primary Author, Secondary Author, or Use actors.
 
-3. **Credential sharing/delegation onboarding**
-   - Owner B can transfer key material to Person C through secure channel patterns (email utility optional but must include explicit security posture and provenance capture).
+Required properties:
+- minted as a Private/Public keypair,
+- private material shown exactly once at issuance,
+- public identifier used for actor identity and verification lookup,
+- lineage root for descendant Utility Keys,
+- supports rotate/suspend/revoke/reactivate under policy bounds,
+- carries immutable provenance identity.
 
-4. **Use Credential/Utility minting by delegated actors**
-   - Person C uses delegated authority to mint Use keys (Credential and/or Utility forms per policy).
+## 3.3 Utility Key (Access Key)
+A Utility Key is an operational access keypair minted under a Credential Key for a specific context (client/service/device/automation profile).
 
-5. **Post authoring with audience assignment**
-   - Person C creates post and grants access via:
-     - direct Public Use Keys,
-     - Audience Group(s),
-     - Keychain-derived entitlements.
+Required properties:
+- private/public keypair,
+- explicit parent Credential Key reference,
+- bounded permissions/scope/depth/expiry/lifecycle,
+- independently rotatable/revocable,
+- usage telemetry and policy events attributable to both utility key and credential root.
 
-6. **Comment/read access enforcement**
-   - Access to post/comments enforced by resolved entitlements from direct keys + audience groups + keychains under canonical PDP evaluation.
+## 3.4 Keypair proof model
+Gateway authentication uses keypair proof-based requests:
+- `public_key_id`
+- `timestamp`
+- `nonce`
+- `signature`
+
+Server obligations:
+- resolve active key by `public_key_id`,
+- verify signature against stored public material,
+- enforce nonce uniqueness + replay window,
+- enforce timestamp skew bounds,
+- normalize decision context and invoke PDP.
+
+## 3.5 Device binding compatibility
+For routes requiring device binding, keypair proof evaluation is conjunctive with device obligations:
+- required device claim/header presence,
+- claim/header format validation,
+- deterministic mismatch denial mapping.
 
 ---
 
-## 5) Audience Groups model (new core domain)
+## 4. Key lifecycle and delegation semantics
+
+## 4.1 Minting
+- Owner in Console may mint Credential Keys according to governance policy.
+- Authorized key actors may mint descendant keys within delegated envelope bounds.
+- Every minted key has lifecycle state (`active`, `suspended`, `revoked`, etc.) and immutable lineage links.
+
+## 4.2 Rotation
+- Credential and Utility keys support independent rotation.
+- Rotation produces successor linkage and explicit provenance records.
+- Rotation policies MUST define descendant impact modes:
+  - no-impact,
+  - soft-impact (grace period),
+  - hard-impact (immediate descendant disablement).
+
+## 4.3 Suspension/revocation
+- Suspension is reversible; revocation is terminal unless explicitly reissue-based policy allows replacement.
+- Descendant governance supports subtree actions within delegated authority bounds.
+- Owner override remains available in console governance context.
+
+## 4.4 Descendant governance controls
+Minter/governor capabilities:
+- enumerate descendants by depth/type/class/status/time,
+- inspect usage and policy decisions by descendant,
+- rotate/suspend/revoke descendant keys,
+- emergency freeze scoped subtree,
+- perform context-scoped remediation.
+
+Policy constraints:
+- actions constrained by ancestry, delegation depth, and permission envelope,
+- forbidden class actions deterministically denied,
+- all governance mutations audit-emitted.
+
+---
+
+## 5. Audience Group model
 
 ## 5.1 Definition
-Audience Group = named collection of Public Use Keys used as reusable ACL target for posts.
+Audience Group = named policy-governed collection of Public Use Keys used as a reusable post-access target.
 
-## 5.2 Group governance modes
-Each group declares a membership policy mode:
-- **Author-managed**: only group owner/author can add/remove members.
-- **Request-to-join**: external keys request membership; author/moderator approves.
-- **Open-join**: eligible keys auto-join based on policy constraints.
+## 5.2 Membership governance modes
+Each group declares exactly one mode:
+1. **Author-managed**: only authorized group governors can add/remove.
+2. **Request-to-join**: membership requests require explicit approval.
+3. **Open-join**: eligible keys are admitted automatically under policy filters.
 
-## 5.3 Group policy controls
-- Membership eligibility filters (key class, lifecycle state, scope constraints).
-- Rate limits/abuse controls on join requests.
-- Optional moderator/secondary-author delegated management.
-- Full audit trail on membership mutation.
+## 5.3 Membership policy controls
+- eligibility constraints (key class, lifecycle, scope qualifiers),
+- anti-abuse throttles for join/create operations,
+- moderation workflow hooks,
+- deterministic denial detail codes,
+- immutable membership change provenance.
 
-## 5.4 Post linkage
-- Posts can target one or more Audience Groups.
-- Effective access = union of explicit key ACL + linked group members + applicable keychain resolution, constrained by deny-overrides and lifecycle checks.
+## 5.4 Post linkage semantics
+A post may attach:
+- direct Public Use Keys,
+- Audience Group IDs,
+- Keychain entitlements.
 
----
-
-## 6) Keychains in the new model
-- Preserve concept as aggregated permission mechanism.
-- Reconcile with Credential vs Utility distinction:
-  - Keychains should aggregate Utility entitlements by default.
-  - Credential Keys may be included only if explicitly allowed by policy.
-- Keep explicit guardrails:
-  - no forbidden class composition,
-  - bounded membership cardinality,
-  - deterministic effective-permission resolution.
-- Add provenance snapshots for each keychain resolution outcome.
+Effective access = deterministic union of allowed principals from all attached targets, then constrained by deny-overrides, lifecycle state, and route obligations.
 
 ---
 
-## 7) Descendant governance and minter controls
+## 6. Keychain model
+Keychain represents aggregated permission/scope capabilities composed from eligible source keys.
 
-Key minters must be able to:
-- List descendant keys by depth/type/class/lifecycle.
-- View usage telemetry and access events by descendant key.
-- Suspend/revoke/rotate descendant keys within delegation bounds.
-- Apply emergency freeze to a subtree (Credential + attached Utility keys).
-- Execute scoped remediation (e.g., rotate Utility keys for one service context only).
+Mandatory constraints:
+- no forbidden class inclusion,
+- no prohibited nesting patterns,
+- bounded membership cardinality,
+- deterministic effective permission/scope resolution,
+- lifecycle-aware member filtering,
+- provenance snapshot on every resolve operation.
 
-Required constraints:
-- Actions bounded by lineage depth and permission envelope.
-- Owner override paths remain console-governed.
-- All destructive actions produce immutable provenance records.
-
----
-
-## 8) Provenance and event logging model (expanded)
-
-## 8.1 Event classes
-- Key minted (credential/utility/keychain)
-- Key shared/exported
-- Key rotated/suspended/revoked/reactivated
-- Audience group created/updated/deleted
-- Group join requested/approved/rejected/auto-admitted
-- Post ACL changed (direct keys/groups/keychains)
-- Access decisions (allow/deny with rule-family evidence)
-- Security anomalies (signature failure, replay detected, device mismatch, impossible lineage)
-
-## 8.2 Event envelope requirements
-Every event should include at minimum:
-- event_id, event_type, timestamp_utc
-- request_id/correlation_id
-- actor_public_key_id (or owner principal id)
-- target entity id(s)
-- lineage snapshot and delegation envelope snapshot
-- decision outcome + detail code
-- provenance hash/chain pointer (if chain integrity strategy adopted)
-
-## 8.3 Queryability and retention
-- High-cardinality search by actor/descendant/post/group/time.
-- Retention + archival policy with tamper-evidence guarantees.
-- Exportable evidence bundles for compliance/incident review.
+Keychain access cannot bypass console/gateway boundary rules or owner-only governance constraints.
 
 ---
 
-## 9) Capability inventory remap from existing canon
+## 7. Normative end-to-end user flows
 
-## 9.1 Foundation/governance docs to carry forward
-- Core identity and value proposition (reworded for keypair identity).
-- Technical foundation/dependency baseline (Composer stack unchanged unless explicitly revised).
-- SSOT governance, change control, doc templates.
+## 7.1 Owner onboarding by invitation
+1. Existing Owner A issues invitation to Person B.
+2. Person B registers owner account (username, email, password).
+3. Person B authenticates into Console owner context.
 
-## 9.2 Product/architecture docs to carry forward
-- Architecture and surfaces model.
-- Middleware pipeline and fail-closed ordering.
-- BFF-by-surface/CQRS-lite orchestration boundaries.
+## 7.2 Primary Author identity establishment
+1. Person B mints Primary Author Credential Key.
+2. System returns private key material once and associated public identifier.
+3. System emits minting provenance event.
 
-## 9.3 Contract docs to rewrite around keypairs
-- API contract guide + route inventory.
-- Authorization/delegation spec + decision tables.
-- Error catalog with new cryptographic and audience-group codes.
-- Endpoint examples and usage scenarios updated with Credential/Utility flows.
+## 7.3 Delegated handoff and operation
+1. Person B delegates key material to Person C through approved transfer method.
+2. Person C uses delegated authority to mint Use keys (Credential or Utility per policy).
+3. Person C authors posts and grants access via keys/groups/keychains.
 
-## 9.4 Data/security docs to evolve
-- Data model spec/reference/ERD for:
-  - Credential keys,
-  - Utility keys,
-  - keypair metadata,
-  - audience groups and memberships,
-  - key lineage graph,
-  - provenance events.
-- Security controls and threat model updates for key distribution, replay, credential leakage, group abuse, and descendant compromise.
-
-## 9.5 Operations/quality docs to evolve
-- Verification strategy extended with signature, nonce/replay, rotation, descendant governance, and audience-group authorization tests.
-- Health contracts include cryptographic verifier and provenance pipeline health checks.
-- SLO/SLI updates for authorization latency and key-event ingestion reliability.
-
-## 9.6 Traceability/automation docs to evolve
-- Traceability matrix rows for all new capabilities and controls.
-- SSOT automation checks expanded to validate keypair contract parity and audience-group rule tables.
-
-## 9.7 Decisions/program docs to evolve
-- ADRs for keypair-first identity, credential-vs-utility split, audience-group policy modes, descendant governance semantics, and event integrity strategy.
-- Workflow and definition-of-done criteria updated for cryptographic compatibility evidence.
+## 7.4 Audience-driven collaboration
+1. Primary/Secondary Author creates Audience Group.
+2. Group membership governed by selected mode.
+3. Author targets Audience Group(s) on post creation.
+4. Members with qualifying keys gain post/comment access according to effective entitlements.
 
 ---
 
-## 10) Required API/domain additions in the new docset
+## 8. Deterministic policy decision model
 
-## 10.1 Console governance route families (expected)
-- Credential key mint/rotate/revoke/suspend/resume
-- Utility key mint/rotate/revoke/suspend/resume
-- Descendant tree inspect/filter/manage
-- Audience group CRUD + mode config + moderation
-- Group membership requests/approvals/auto-join controls
-- Keychain compose/resolve/audit
+## 8.1 Decision inputs
+- actor identity (owner or key principal),
+- actor class/lifecycle,
+- route action classification,
+- delegation envelope,
+- keychain effective envelope (if applicable),
+- audience-group membership state (if applicable),
+- device obligations (if route-required),
+- resource visibility/lifecycle conditions.
 
-## 10.2 Gateway route impacts
-- Auth proof format for keypair-based requests
-- Post create/edit ACL extensions for key ids/group ids/keychain ids
-- Comment/read authorization based on resolved effective audience entitlements
+## 8.2 Decision outputs
+- allow with obligations,
+- deny with canonical HTTP status + detail code + correlation-ready error envelope.
 
-## 10.3 Compatibility and versioning
-- Explicit migration policy:
-  - legacy key support window,
-  - dual-mode auth behavior,
-  - deprecation and sunset dates,
-  - client upgrade requirements.
-
----
-
-## 11) Security control inventory for new model
-- One-time private key reveal with secure handling UX.
-- Optional secure handoff workflow replacing plain-text sharing patterns.
-- Mandatory replay protections (nonce + timestamp bounds).
-- Key compromise response workflows (subtree revocation + rapid reissue).
-- Audience group abuse controls (spam joins, malicious mass-add, privilege creep).
-- Device-binding compatibility with keypair auth where required by route policy.
+## 8.3 Prohibited implementation patterns
+- handler-local authorization branches,
+- implicit fallback allows,
+- non-deterministic detail-code selection,
+- bypass of middleware/PDP enforcement.
 
 ---
 
-## 12) Verification and evidence inventory (must be in new docs)
-- Contract parity tests (OpenAPI + schemas + examples).
-- PDP decision-table determinism tests for all actor/key/group scenarios.
-- Cryptographic verification tests (valid/invalid signatures, key rotation transitions).
-- Replay and timestamp skew tests.
-- Descendant governance permission-boundary tests.
-- Keychain resolution correctness tests.
-- Audience group membership mode tests.
-- End-to-end provenance completeness tests.
-- Operational smoke tests for health/degraded/fail states.
+## 9. Error taxonomy expansion requirements
+Existing deterministic catalog model is preserved and expanded for keypair/audience domains including (non-exhaustive families):
+- signature invalid,
+- nonce replay,
+- timestamp skew,
+- key lifecycle forbidden,
+- descendant governance forbidden,
+- audience membership forbidden,
+- audience join throttled,
+- keychain composition forbidden,
+- keychain resolve conflict.
+
+All new detail codes must be stable, documented, and test-covered.
 
 ---
 
-## 13) Known design decisions to formalize in new ADRs
-1. Credential vs Utility key semantic split and lifecycle.
-2. Whether Utility keys may mint further Utility keys and under what depth limits.
-3. Whether rotation of Credential key invalidates all attached Utility keys immediately or by policy mode.
-4. Audience group open-join anti-abuse controls and moderation semantics.
-5. Keychain composition boundaries with Credential keys.
-6. Provenance integrity implementation (hash-chain, signed logs, or external attestations).
+## 10. Provenance and event logging contract
+
+## 10.1 Event classes
+Required classes include:
+- key minted/rotated/suspended/revoked/reactivated,
+- key exported/transferred,
+- descendant governance action,
+- keychain composed/resolved/changed,
+- audience group created/updated/deleted,
+- audience membership requested/approved/rejected/auto-admitted/removed,
+- post access target attached/detached,
+- authorization allow/deny decision,
+- security anomaly detection.
+
+## 10.2 Required event fields
+- `event_id`, `event_type`, `event_time_utc`
+- `request_id`/correlation id
+- actor principal identifiers (owner id and/or public key id)
+- target entity identifiers
+- lineage/delegation snapshot
+- decision outcome + detail code (when applicable)
+- integrity linkage field(s) for tamper evidence
+
+## 10.3 Query, retention, export
+- queryable by actor, descendant tree, post, audience group, action, time,
+- defined retention tiers and archival policy,
+- exportable evidence bundles for incident/compliance workflows.
 
 ---
 
-## 14) Authoring checklist for the fresh docset
-1. Update machine artifacts first (OpenAPI + envelope/schema dependencies).
-2. Rewrite authorization spec + decision tables with keypair + audience-group + descendant governance paths.
-3. Update error catalog with new detail-code families.
-4. Update data/security docs and threat controls.
-5. Update operations/verification/acceptance docs.
-6. Update traceability matrix and impact maps.
-7. Add ADRs and migration/versioning policy.
-8. Attach evidence templates and validation outputs.
+## 11. Data model inventory requirements
+The canonical data model must include entities/relations for:
+- owners/principals,
+- credential keys,
+- utility keys,
+- key lineage edges,
+- lifecycle transitions,
+- delegation envelopes,
+- keychains + members + effective snapshots,
+- audience groups + membership + moderation state,
+- post access attachments (key/group/keychain links),
+- provenance/security events.
+
+Integrity requirements:
+- immutable lineage references,
+- uniqueness constraints for key identifiers/nonces,
+- lifecycle transition validity rules,
+- referential integrity for descendant and access-target links.
 
 ---
 
-## 15) Deliverable intent
-This inventory is the **base model** for generating the new canonical CRE8 documentation set around:
-- ID (Credential) Private/Public keypairs,
-- Utility (Access) Private/Public keypairs,
-- Audience Groups,
-- Keychains,
-- Descendant key governance,
-- Comprehensive provenance/event logging,
-while retaining all existing CRE8 governance, contract, and operational rigor.
+## 12. API surface inventory requirements
+
+## 12.1 Console governance families
+- owner invitations and owner registration governance
+- credential key mint/lifecycle management
+- utility key mint/lifecycle management
+- descendant tree browse/filter/actions
+- audience group CRUD and governance mode controls
+- audience membership workflows
+- keychain compose/member manage/resolve
+- provenance/usage inspection endpoints
+
+## 12.2 Gateway families
+- keypair-authenticated content read/write routes
+- post/comment routes with effective entitlement enforcement
+- deterministic access denials for key/group/keychain constraints
+
+## 12.3 Compatibility/versioning
+- explicit migration mode behavior for legacy vs keypair auth (if coexisting),
+- deprecation policy and sunset gates,
+- client capability signaling and fallback-denial behavior.
+
+---
+
+## 13. Security control inventory requirements
+- one-time private key reveal controls,
+- secure key transfer guidance and controls,
+- replay defense (nonce + skew window),
+- compromised-key incident workflow,
+- subtree revocation/remediation workflow,
+- audience-group abuse controls,
+- device-binding co-enforcement on required routes,
+- cryptographic material handling controls (at rest/in transit/log redaction).
+
+---
+
+## 14. Verification, readiness, and traceability requirements
+
+## 14.1 Verification classes
+- contract parity (OpenAPI/schema/examples),
+- authorization decision-table determinism,
+- cryptographic proof validation,
+- replay/skew/device obligation checks,
+- key lifecycle/descendant governance checks,
+- keychain composition/resolve correctness,
+- audience-group governance mode checks,
+- provenance completeness/integrity checks,
+- operational smoke and degraded-state checks.
+
+## 14.2 Evidence requirements
+Every capability change must include:
+- executed command evidence,
+- deterministic expected/actual outcomes,
+- traceability matrix row updates,
+- unresolved risk registration with owner and remediation target.
+
+---
+
+## 15. Canon rewrite instantiation map
+This seed SHALL be instantiated into authoritative artifacts in this order:
+1. OpenAPI and envelope schema parity updates.
+2. Authorization/delegation spec and decision tables.
+3. Error catalog updates.
+4. Data model and security controls/threat model updates.
+5. Operations/verification/readiness artifacts.
+6. Traceability and automation artifacts.
+7. ADR/program governance updates.
+
+No lower-level artifact may contradict higher-precedence definitions from this seed and machine contracts.
+
+---
+
+## 16. Acceptance criterion for this seed
+This seed is complete when downstream canonical artifacts can be generated with:
+- no ambiguity in actor/key semantics,
+- deterministic policy behavior,
+- explicit governance and lifecycle controls,
+- comprehensive provenance obligations,
+- testable and traceable contract alignment.
