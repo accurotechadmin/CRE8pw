@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1309.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1314.md`
 
 Summary:
-- Converted `HOOK-SSOT-PR-EVIDENCE-REQUIRED` to executable automation via `composer docs:ssot:pr-evidence-check`.
-- Bound the new hook into `.github/workflows/ssot_phase1_gate.yml` as a merge-blocking CI check.
-- Synchronized traceability matrix, manual backlog, and Phase 2 progress board so Lane A manual-hook burn-down is now complete under ADR-003 constraints.
+- Enforced ADR-003 route-parity and review-gate evidence requirements inside `docs:ssot:pr-evidence-check`.
+- Added `docs:ssot:review-gate-check` and `docs:ssot:route-parity` as merge-blocking steps in `.github/workflows/ssot_phase1_gate.yml`.
+- Updated Phase 2 progress board and handoff chain for deterministic discoverability and next-session continuation.

@@ -47,5 +47,11 @@ jobs:
       - name: Run SSOT coverage report
         run: composer docs:ssot:report
 
+      - name: Run SSOT review-gate check
+        run: composer docs:ssot:review-gate-check
+
+      - name: Run SSOT route parity check
+        run: composer docs:ssot:route-parity
+
       - name: Run SSOT PR evidence check
         run: composer docs:ssot:pr-evidence-check
