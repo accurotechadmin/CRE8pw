@@ -1,7 +1,75 @@
+---
+doc_id: CRE8-TRACE-MATRIX
+version: 1.0.0
+status: normative
+owner: Program Traceability WG
+reviewers:
+  - Docs Governance WG
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - seed/
+  - README.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+  - docs/00_governance/CHANGE_CONTROL_POLICY.md
+  - docs/00_governance/DEFINITION_OF_DONE.md
+  - docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md
+---
+
 # Traceability Matrix
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **TRACEABILITY_MATRIX.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define the mandatory requirement-to-verification traceability contract for all normative CRE8 documentation.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-TRACE-REQ-0001**: Every normative requirement statement **MUST** be represented by exactly one matrix row keyed by a unique `requirement_id`.
+- **CRE8-TRACE-REQ-0002**: Each matrix row **MUST** include, at minimum: `requirement_id`, `source_doc_id`, `source_path`, `verification_hook_id`, `owner`, `status`, and `evidence_location`.
+- **CRE8-TRACE-REQ-0003**: `requirement_id` values **MUST** use the pattern `CRE8-<DOMAIN>-REQ-####` where `<DOMAIN>` is uppercase alphanumeric and `####` is zero-padded numeric.
+- **CRE8-TRACE-REQ-0004**: Each `verification_hook_id` **MUST** map to one deterministic check (automated script or defined manual procedure) and **MUST NOT** be reused for semantically unrelated checks.
+- **CRE8-TRACE-REQ-0005**: Matrix rows for new or changed requirements **MUST** be updated in the same pull request as the originating doc change.
+- **CRE8-TRACE-REQ-0006**: A row with `status=normative` **MUST** have a non-empty `evidence_location` that resolves to an existing evidence artifact path or designated evidence template.
+- **CRE8-TRACE-REQ-0007**: If automated verification is unavailable, the row **MUST** set `verification_mode=manual` and include `manual_procedure_ref` with reproducible steps.
+- **CRE8-TRACE-REQ-0008**: Traceability rows **MUST** reference related ADR IDs and risk IDs when requirement semantics include architectural tradeoffs or security/control impact.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Required matrix schema (minimum)
+| Field | Required | Description |
+|---|---|---|
+| requirement_id | yes | Canonical requirement ID (`CRE8-<DOMAIN>-REQ-####`). |
+| source_doc_id | yes | `doc_id` from source document metadata header. |
+| source_path | yes | Repository-relative file path of normative source. |
+| source_anchor | no | Heading or section anchor for precise location. |
+| verification_hook_id | yes | Hook identifier (e.g., `HOOK-SSOT-LINT-METADATA`). |
+| verification_mode | yes | `automated` or `manual`. |
+| owner | yes | Team/role accountable for requirement verification. |
+| status | yes | `draft`, `provisional-normative`, `normative`, `deprecated`. |
+| evidence_location | yes | Repo path to evidence artifact or template. |
+| related_adr_ids | no | Comma-separated ADR references (`ADR-###`). |
+| related_risk_ids | no | Comma-separated risk IDs (`RISK-###`). |
+| last_verified_utc | no | Date of latest successful execution. |
+
+## Baseline matrix (Phase 1 seed rows)
+| requirement_id | source_doc_id | source_path | verification_hook_id | verification_mode | owner | status | evidence_location |
+|---|---|---|---|---|---|---|---|
+| CRE8-GOV-REQ-0005 | CRE8-GOV-SSOT-INDEX | docs/00_governance/SSOT_INDEX.md | HOOK-SSOT-LINT-METADATA | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
+| CRE8-GOV-REQ-0033 | CRE8-GOV-CONTRIBUTION-WORKFLOW | docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md | HOOK-REVIEW-GATE-CHECK | manual | Docs Governance WG | normative | docs/evidence/templates/README.md |
+| CRE8-GOV-REQ-0053 | CRE8-GOV-DEFINITION-OF-DONE | docs/00_governance/DEFINITION_OF_DONE.md | HOOK-DOD-TRACE-CHECK | manual | Program Traceability WG | normative | docs/evidence/templates/README.md |
+
+## Verification hooks
+- **HOOK-TRACE-MATRIX-SCHEMA**: Validate required columns and required non-empty values.
+- **HOOK-TRACE-ID-FORMAT**: Validate `requirement_id`, ADR ID, and risk ID formats.
+- **HOOK-TRACE-EVIDENCE-PATH**: Validate `evidence_location` path exists.
+
+## Drift and reconciliation policy
+- Prose requirement updates without matrix updates are classified as drift and **MUST** fail definition-of-done review.
+- Machine contracts added in `docs/31_machine_contracts/` **SHOULD** be represented as either source rows or verification-linked rows when they enforce normative requirements.
+
+## See also
+- [SSOT Index](../00_governance/SSOT_INDEX.md)
+- [Change Control Policy](../00_governance/CHANGE_CONTROL_POLICY.md)
+- [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
+- [Change Impact Map Templates](./CHANGE_IMPACT_MAP_TEMPLATES.md)
+- [ADR Index](./ADR_INDEX.md)
+- [Risk Register](./RISK_REGISTER.md)

@@ -1,7 +1,76 @@
+---
+doc_id: CRE8-TRACE-CHANGE-IMPACT-TEMPLATES
+version: 1.0.0
+status: normative
+owner: Program Traceability WG
+reviewers:
+  - Docs Governance WG
+  - Security WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-29
+source_seed_refs:
+  - README.md
+normative_dependencies:
+  - docs/00_governance/CHANGE_CONTROL_POLICY.md
+  - docs/00_governance/DEFINITION_OF_DONE.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+
 # Change Impact Map Templates
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **CHANGE_IMPACT_MAP_TEMPLATES.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define required templates for documenting impact of normative changes before merge approval.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-TRACE-REQ-0010**: Every change classified as contract-impacting, security-impacting, or policy-impacting **MUST** include a completed change impact map.
+- **CRE8-TRACE-REQ-0011**: Each impact map **MUST** enumerate impacted requirement IDs, affected documents, verification hooks, and evidence deltas.
+- **CRE8-TRACE-REQ-0012**: Impact maps **MUST** include backwards-compatibility classification: `compatible`, `conditionally-compatible`, or `breaking`.
+- **CRE8-TRACE-REQ-0013**: If classification is `breaking`, the map **MUST** include explicit migration notes, rollout gating, and rollback criteria.
+- **CRE8-TRACE-REQ-0014**: Impact maps **MUST** reference associated ADR and risk entries when change introduces new architectural or control tradeoffs.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Template A — Normative documentation change
+```markdown
+# Change Impact Map
+- Change ID:
+- Date (UTC):
+- Author:
+- Change class:
+- Compatibility class:
+
+## Impacted requirement IDs
+- CRE8-...:
+
+## Impacted artifacts
+- docs/...:
+- docs/31_machine_contracts/...:
+
+## Verification hooks impacted
+- HOOK-... (updated/new/removed):
+
+## Evidence updates required
+- docs/evidence/...:
+
+## ADR/risk linkage
+- ADR-...:
+- RISK-...:
+
+## Rollout and rollback notes
+- Rollout prerequisites:
+- Rollback trigger:
+```
+
+## Template B — Machine/prose contract sync change
+Use Template A and additionally include:
+- Route/schema inventory delta.
+- Prose-to-machine parity notes.
+- Drift detection changes (`docs:ssot:sync-check` readiness).
+
+## Verification
+- Manual check: reviewer verifies all required fields are present and non-empty for applicable change classes.
+- Future automation hook: `HOOK-IMPACT-MAP-COMPLETE` for required section presence and ID format checks.
+
+## See also
+- [Change Control Policy](../00_governance/CHANGE_CONTROL_POLICY.md)
+- [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
+- [Traceability Matrix](./TRACEABILITY_MATRIX.md)
+- [Decision Record Template](./DECISION_RECORD_TEMPLATE.md)
