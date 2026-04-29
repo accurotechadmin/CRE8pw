@@ -32,6 +32,26 @@ foreach ($it as $file) {
 $errors = [];
 
 
+function parseYamlList(string $contents, string $key): array
+{
+    $pattern = '/^' . preg_quote($key, '/') . ':\s*
+((?:\s{2,}-\s.*
+)+)/m';
+    if (preg_match($pattern, $contents, $matches) !== 1) {
+        return [];
+    }
+    $lines = preg_split('/
+/', trim($matches[1]));
+    $items = [];
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (preg_match('/^-\s*(.+)$/', $line, $m) === 1) {
+            $items[] = trim($m[1]);
+        }
+    }
+    return $items;
+}
+
 $ssotIndexPath = $docsRoot . '/00_governance/SSOT_INDEX.md';
 $readmePath = $repoRoot . '/README.md';
 $relativeDocSet = [];
@@ -79,6 +99,20 @@ foreach ($markdownFiles as $path) {
         continue;
     }
 
+    $domainRules = [
+        'docs/00_governance/' => ['owner' => 'Docs Governance WG', 'reviewers' => ['Platform Architecture WG'], 'security_optional' => 'Security WG'],
+        'docs/10_product_and_architecture/' => ['owner' => 'Platform Architecture WG', 'reviewers' => ['Docs Governance WG', 'Delivery Operations WG']],
+        'docs/20_identity_delegation_and_policy/' => ['owner' => 'Platform Architecture WG', 'reviewers' => ['Security WG', 'Docs Governance WG']],
+        'docs/30_contracts_and_interfaces/' => ['owner' => 'Platform Architecture WG', 'reviewers' => ['Delivery Operations WG', 'Docs Governance WG']],
+        'docs/31_machine_contracts/' => ['owner' => 'Platform Architecture WG', 'reviewers' => ['Delivery Operations WG', 'Security WG']],
+        'docs/40_data_security_and_crypto/' => ['owner' => 'Security WG', 'reviewers' => ['Platform Architecture WG', 'Docs Governance WG']],
+        'docs/50_content_audience_and_feed/' => ['owner' => 'Product Policy WG', 'reviewers' => ['Platform Architecture WG', 'Security WG']],
+        'docs/60_operations_quality_and_release/' => ['owner' => 'Operations Quality WG', 'reviewers' => ['Delivery Operations WG', 'Platform Architecture WG']],
+        'docs/70_extensibility_and_module_patterns/' => ['owner' => 'Platform Architecture WG', 'reviewers' => ['Security WG', 'Docs Governance WG']],
+        'docs/80_traceability_decisions_and_program/' => ['owner' => 'Program Traceability WG', 'reviewers' => ['Docs Governance WG', 'Delivery Operations WG']],
+        'docs/evidence/' => ['owner' => 'Operations Quality WG', 'reviewers' => ['Program Traceability WG', 'Docs Governance WG']],
+    ];
+
     $isNormative = preg_match('/^status:\s*normative$/m', $contents) === 1
         || preg_match('/^status:\s*provisional-normative$/m', $contents) === 1;
 
@@ -87,6 +121,30 @@ foreach ($markdownFiles as $path) {
             if (preg_match('/^' . preg_quote($key, '/') . ':/m', $contents) !== 1) {
                 $errors[] = "[HOOK-SSOT-LINT-METADATA] {$relativePath}: missing metadata key '{$key}'";
             }
+        }
+
+
+        $owner = '';
+        if (preg_match('/^owner:\s*(.+)$/m', $contents, $ownerMatch) === 1) {
+            $owner = trim($ownerMatch[1]);
+        }
+        $reviewers = parseYamlList($contents, 'reviewers');
+
+        foreach ($domainRules as $prefix => $rule) {
+            if (!str_starts_with($relativePath, $prefix)) {
+                continue;
+            }
+            $hasDistinctReviewer = false;
+            foreach ($reviewers as $reviewer) {
+                if ($reviewer !== '' && $reviewer !== $owner) {
+                    $hasDistinctReviewer = true;
+                    break;
+                }
+            }
+            if (!$hasDistinctReviewer) {
+                $errors[] = "[HOOK-SSOT-REVIEWER-ASSIGNMENT] {$relativePath}: must include at least one reviewer distinct from owner";
+            }
+            break;
         }
 
         foreach ($prohibitedPhrases as $phrase) {

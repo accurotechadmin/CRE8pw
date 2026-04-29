@@ -49,10 +49,10 @@ Define the canonical register for seed requirements that are not yet promoted in
 |---|---|---|---|---|---|---|---|---|
 | GAP-001 | seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md#id-keypair-first-principal-model | missing_requirement | S6 | Platform Architecture WG | closed | 2026-05-12 | SPR-001 | Closed after promotion to `CRE8-ARCH-REQ-0001`. |
 | GAP-002 | seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md#utility-key-context-compartmentalization | missing_requirement | S6 | Platform Architecture WG | closed | 2026-05-12 | SPR-002 | Closed after promotion to `CRE8-ARCH-REQ-0002`. |
-| GAP-003 | seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | verification_missing | S8 | Operations Quality WG | in_progress | 2026-05-17 | SPR-005 | Requirement promotion is complete; executable automation for lifecycle propagation remains pending. |
+| GAP-003 | seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | verification_missing | S8 | Operations Quality WG | closed | 2026-05-17 | SPR-005 | Closed after `docs:ssot:sync-check` automation enforcement for `HOOK-SEC-LIFECYCLE-PROPAGATION`. |
 | GAP-004 | seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md#cross-surface-parity | missing_requirement | S6 | Platform Architecture WG | closed | 2026-05-19 | SPR-006 | Closed after promotion to `CRE8-CONTRACT-REQ-0030`. |
 | GAP-005 | seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | missing_requirement | S6 | Product Policy WG | closed | 2026-05-19 | SPR-007 | Closed after promotion to `CRE8-FEED-REQ-0002`. |
-| GAP-006 | seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | verification_missing | S8 | Platform Architecture WG | in_progress | 2026-05-24 | SPR-013 | Requirement promotion is complete; executable seam compatibility automation remains pending. |
+| GAP-006 | seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md#module-seam-compatibility | verification_missing | S8 | Platform Architecture WG | closed | 2026-05-24 | SPR-013 | Closed after `docs:ssot:sync-check` automation enforcement for `HOOK-EXT-SEAM-COMPATIBILITY`. |
 
 ## Verification hooks
 - **HOOK-SEED-GAP-SCHEMA**: Validate required fields and enum values for all gap rows.

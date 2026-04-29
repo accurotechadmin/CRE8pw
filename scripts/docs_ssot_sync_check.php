@@ -141,6 +141,22 @@ foreach ($gapRows as $cols) {
     }
 }
 
+
+$requiredAutomatedHooks = [
+    'HOOK-SEC-LIFECYCLE-PROPAGATION',
+    'HOOK-EXT-SEAM-COMPATIBILITY',
+];
+foreach ($requiredAutomatedHooks as $hookId) {
+    $pattern = '/\|\s*[^|]+\s*\|\s*[^|]+\s*\|\s*[^|]+\s*\|\s*' . preg_quote($hookId, '/') . '\s*\|\s*([^|]+)\|/';
+    if (preg_match($pattern, $matrix, $m) !== 1) {
+        $errors[] = "[HOOK-SSOT-SYNC-AUTOMATION] {$hookId}: missing traceability matrix row";
+        continue;
+    }
+    if (trim($m[1]) !== 'automated') {
+        $errors[] = "[HOOK-SSOT-SYNC-AUTOMATION] {$hookId}: verification_mode must be automated";
+    }
+}
+
 if ($errors !== []) {
     foreach ($errors as $error) {
         fwrite(STDERR, $error . PHP_EOL);
