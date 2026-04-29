@@ -112,6 +112,58 @@ foreach ($lines as $line) {
     }
 }
 
+
+$openApiResponseExamples = [];
+$currentPath = null;
+$currentMethod = null;
+$currentStatus = null;
+$inExamples = false;
+foreach ($lines as $line) {
+    if (preg_match('/^\s{2}(\/[^:]+):\s*$/', $line, $m) === 1) {
+        $currentPath = trim($m[1]);
+        $currentMethod = null;
+        $currentStatus = null;
+        $inExamples = false;
+        continue;
+    }
+    if ($currentPath !== null && preg_match('/^\s{4}(get|post|put|patch|delete|options|head):\s*$/i', $line, $m) === 1) {
+        $currentMethod = strtoupper($m[1]);
+        $currentStatus = null;
+        $inExamples = false;
+        continue;
+    }
+    if ($currentMethod !== null && preg_match("/^\s{8}'([0-9]{3})':\s*$/", $line, $m) === 1) {
+        $currentStatus = $m[1];
+        $inExamples = false;
+        continue;
+    }
+    if ($currentStatus !== null && preg_match('/^\s{14}examples:\s*$/', $line) === 1) {
+        $inExamples = true;
+        continue;
+    }
+    if ($inExamples && preg_match('/^\s{16}[A-Za-z0-9_-]+:\s*$/', $line) === 1) {
+        continue;
+    }
+    if ($inExamples && preg_match('/^\s{18}\$ref:\s*(.+)\s*$/', $line, $m) === 1) {
+        $ref = trim($m[1], " '\"");
+        $pair = $currentMethod . ' ' . $currentPath;
+        $openApiResponseExamples[$pair][$currentStatus][] = $ref;
+        continue;
+    }
+}
+
+$exampleCodeMap = [];
+$currentExampleRef = null;
+foreach ($lines as $line) {
+    if (preg_match('/^\s{4}([A-Za-z0-9_-]+):\s*$/', $line, $m) === 1) {
+        $currentExampleRef = '#/components/examples/' . $m[1];
+        continue;
+    }
+    if ($currentExampleRef !== null && preg_match('/code:\s*([A-Z0-9_]+)/', $line, $m) === 1) {
+        $exampleCodeMap[$currentExampleRef] = trim($m[1]);
+        $currentExampleRef = null;
+    }
+}
 // Validate prose parity table rows remain synchronized and contain Phase 2 depth metadata.
 $proseRows = [];
 foreach (explode("\n", $proseParity) as $line) {
@@ -119,12 +171,12 @@ foreach (explode("\n", $proseParity) as $line) {
         continue;
     }
     $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) < 15) {
+    if (count($cols) < 17) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] malformed prose parity row: {$line}";
         continue;
     }
 
-    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef, $successStatusCodes, $errorStatusCodes] = $cols;
+    [$routeId, $inventoryMethod, $inventoryPath, $openApiMethod, $openApiPath, $parityStatus, $routeFamily, $depthPriority, $requirementId, $hookId, $depthStatus, $successSchemaRef, $errorSchemaRef, $successStatusCodes, $errorStatusCodes, $errorExampleRefs, $errorCodes] = $cols;
     $routeId = strtoupper($routeId);
     $pair = strtoupper($inventoryMethod) . ' ' . $inventoryPath;
     $openApiPair = strtoupper($openApiMethod) . ' ' . $openApiPath;
@@ -182,6 +234,40 @@ foreach (explode("\n", $proseParity) as $line) {
         }
     }
 
+    $declaredExampleRefs = array_filter(array_map('trim', explode(',', $errorExampleRefs)), static fn(string $ref): bool => $ref !== '');
+    $declaredErrorCodes = array_filter(array_map('trim', explode(',', $errorCodes)), static fn(string $code): bool => $code !== '');
+    if ($declaredExampleRefs === [] || $declaredErrorCodes === []) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing error example/code metadata for {$routeId}";
+    }
+    $openApiExampleRefs = [];
+    foreach ($errorStatuses as $status) {
+        foreach ($openApiResponseExamples[$openApiPair][$status] ?? [] as $ref) {
+            $openApiExampleRefs[$ref] = true;
+        }
+    }
+    foreach ($declaredExampleRefs as $ref) {
+        if (!isset($openApiExampleRefs[$ref])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error example ref not found in OpenAPI responses for {$routeId}: {$ref}";
+        }
+        if (!isset($exampleCodeMap[$ref])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] error example ref missing code mapping for {$routeId}: {$ref}";
+        }
+    }
+    $exampleCodes = [];
+    foreach ($declaredExampleRefs as $ref) {
+        if (isset($exampleCodeMap[$ref])) {
+            $exampleCodes[$exampleCodeMap[$ref]] = true;
+        }
+    }
+    foreach ($declaredErrorCodes as $code) {
+        if (!preg_match('/^[A-Z0-9_]+$/', $code)) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid error code format for {$routeId}: {$code}";
+            continue;
+        }
+        if (!isset($exampleCodes[$code])) {
+            $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] declared error code missing from declared examples for {$routeId}: {$code}";
+        }
+    }
     foreach ($errorStatuses as $status) {
         if (!preg_match('/^[0-9]{3}$/', $status)) {
             $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid error status code for {$routeId}: {$status}";

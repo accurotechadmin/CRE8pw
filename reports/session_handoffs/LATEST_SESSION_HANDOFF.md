@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1330.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1334.md`
 
 Summary:
-- Added status-code-specific parity metadata (`success_status_codes`/`error_status_codes`) for all active route rows in prose↔OpenAPI parity table.
-- Extended `docs:ssot:route-parity` to enforce status-code-to-schema response bindings against OpenAPI operations.
-- Updated Phase 2 progress board and handoff pointer for deterministic session pickup continuity.
+- Added route-level `error_example_refs` and `error_codes` metadata to prose↔OpenAPI parity table for all active routes.
+- Extended `docs:ssot:route-parity` to validate OpenAPI error example refs and extracted `error.code` values against declared canonical code sets.
+- Updated Phase 2 progress board and handoff chain for deterministic pickup continuity.
