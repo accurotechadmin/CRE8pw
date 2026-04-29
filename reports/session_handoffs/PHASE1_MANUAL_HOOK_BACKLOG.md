@@ -8,6 +8,3 @@ Track residual manual verification hooks with deterministic automation targets n
 
 | hook_id | source requirement(s) | owner | priority | current mode | target automation hook | target command/script | notes |
 |---|---|---|---|---|---|---|---|
-| HOOK-TRACE-ROADMAP-SCHEMA | CRE8-TRACE-REQ-0060 | Program Traceability WG | P2 | manual | HOOK-TRACE-ROADMAP-SCHEMA-AUTO | `composer docs:ssot:roadmap-schema-check` | Parse roadmap sections and required fields. |
-| HOOK-SEED-PROMOTION-SCHEMA | CRE8-TRACE-REQ-0070 | Program Traceability WG | P2 | manual | HOOK-SEED-PROMOTION-SCHEMA-AUTO | `composer docs:ssot:seed-promotion-schema` | Column/ID integrity and status checks. |
-| HOOK-SEED-GAP-REGISTER-SCHEMA | CRE8-TRACE-REQ-0080 | Program Traceability WG | P2 | manual | HOOK-SEED-GAP-REGISTER-SCHEMA-AUTO | `composer docs:ssot:seed-gap-schema` | Enforce tracker_ref existence and status semantics. |
