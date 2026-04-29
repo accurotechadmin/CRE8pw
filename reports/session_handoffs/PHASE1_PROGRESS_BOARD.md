@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T04:56:29Z
-- Current owner/session: Codex session `20260429-0456`
+- Last updated (UTC): 2026-04-29T05:03:02Z
+- Current owner/session: Codex session `20260429-0503`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -14,8 +14,8 @@
 - [~] Slice 2 — Seed-to-canon mapping lock
   - [x] Build promotion tracker (seed requirement -> target doc -> hook)
   - [x] Build unresolved-seed-gap register
-  - [~] Populate tracker comprehensively across all seed docs (domain-level baseline complete; requirement-level anchors partially expanded)
-  - [~] Add traceability rows for promoted mappings (promoted-row path active with two validated promoted rows)
+  - [~] Populate tracker comprehensively across all seed docs (requirement-level expansion in progress)
+  - [~] Add traceability rows for promoted mappings (promoted-row path active and expanded)
   - [x] Implement/define `docs:ssot:sync-check` executable contract
 - [~] Slice 3 — Cross-document linking architecture
   - [x] Centralize link topology and anti-orphan policy
@@ -34,10 +34,13 @@
   - [x] Harden `AUTHORIZATION_AND_DELEGATION_SPEC.md`
   - [x] Harden `ERROR_CODE_CATALOG.md`
   - [x] Harden decision tables and route-level contract corpus
-- [ ] Slice 7 — Machine contract synchronization
+- [~] Slice 7 — Machine contract synchronization
+  - [x] Promote initial OpenAPI baseline operations for route inventory parity
+  - [ ] Add explicit prose↔OpenAPI parity table artifact
+  - [ ] Implement route parity drift automation command
 - [~] Slice 8 — Verification strategy and evidence binding
   - [x] Harden `VERIFICATION_STRATEGY.md` baseline and hook schema
-  - [ ] Expand hook catalog coverage across lifecycle/feed/security families
+  - [~] Expand hook catalog coverage across lifecycle/feed/security families
 - [x] Slice 9 — Programmatic quality gates
   - [x] Define normative command contracts for `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report`
   - [x] Implement executable local scripts for all `docs:ssot:*` hooks
@@ -47,8 +50,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0503.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0456.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0450.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0445.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0441.md`
