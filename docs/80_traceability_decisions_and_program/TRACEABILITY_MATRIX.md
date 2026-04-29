@@ -69,6 +69,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-TRACE-REQ-0096 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-MANUAL-BACKLOG-LINK | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0097 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PR-EVIDENCE-REQUIRED | manual | Program Traceability WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-TRACE-REQ-0098 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-PHASE1-GATE-CI | automated | Program Traceability WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-TRACE-REQ-0099 | CRE8-TRACE-SSOT-AUTOMATION | docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md | HOOK-SSOT-SYNC-MANUAL-BACKLOG | automated | Program Traceability WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-AUTH-REQ-0001 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-CONTRACT-POLICY-ORDER | automated | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-AUTH-REQ-0002 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-INHERITANCE-BOUNDARY | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-AUTH-REQ-0006 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
@@ -115,6 +116,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-SSOT-LINK-TOPOLOGY**: Automated validation hook for required vertical/lateral SSOT link topology invariants.
 - **HOOK-SSOT-ANTI-ORPHAN-CHECK**: Automated validation hook ensuring no requirement-bearing normative/provisional docs are orphaned from governance/domain entrypoints.
 - **HOOK-SSOT-PHASE1-GATE-CI**: Automated CI hook that executes all required `docs:ssot:*` commands as hard-fail checks.
+- **HOOK-SSOT-SYNC-MANUAL-BACKLOG**: Automated sync-check hook ensuring every manual-mode matrix hook is represented in `PHASE1_MANUAL_HOOK_BACKLOG.md` with owner, priority, and target command metadata.
 - **HOOK-CONTRACT-POLICY-ORDER**: Manual/automated contract test hook for deterministic authorization evaluation order and deny precedence.
 - **HOOK-AUTH-INHERITANCE-BOUNDARY**: Manual/automated hook for descendant grant boundary constraints.
 - **HOOK-AUTH-LIFECYCLE-ENFORCEMENT**: Manual/automated hook for suspend/revoke/expire enforcement.

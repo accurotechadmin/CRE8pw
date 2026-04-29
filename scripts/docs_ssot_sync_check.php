@@ -6,12 +6,14 @@ $repoRoot = dirname(__DIR__);
 $trackerPath = $repoRoot . '/docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md';
 $gapPath = $repoRoot . '/docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md';
 $matrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
+$manualBacklogPath = $repoRoot . '/reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md';
 
 $tracker = file_get_contents($trackerPath);
 $gapRegister = file_get_contents($gapPath);
 $matrix = file_get_contents($matrixPath);
-if ($tracker === false || $gapRegister === false || $matrix === false) {
-    fwrite(STDERR, "[HOOK-SSOT-SYNC] unable to read tracker, gap register, or matrix" . PHP_EOL);
+$manualBacklog = file_get_contents($manualBacklogPath);
+if ($tracker === false || $gapRegister === false || $matrix === false || $manualBacklog === false) {
+    fwrite(STDERR, "[HOOK-SSOT-SYNC] unable to read tracker, gap register, matrix, or manual backlog" . PHP_EOL);
     exit(1);
 }
 
@@ -55,6 +57,7 @@ function parseMarkdownTableRows(string $markdown, string $headerToken): array
 
 $trackerRows = parseMarkdownTableRows($tracker, '| tracker_ref | seed_requirement_ref |');
 $gapRows = parseMarkdownTableRows($gapRegister, '| gap_id | seed_requirement_ref |');
+$manualBacklogRows = parseMarkdownTableRows($manualBacklog, '| hook_id | source requirement(s) |');
 
 $trackerRefs = [];
 $trackerByRef = [];
@@ -157,6 +160,56 @@ foreach ($requiredAutomatedHooks as $hookId) {
     }
 }
 
+$manualHooksInBacklog = [];
+foreach ($manualBacklogRows as $cols) {
+    if (count($cols) < 7) {
+        continue;
+    }
+
+    $hookId = $cols[0];
+    if ($hookId === '' || $hookId === 'hook_id') {
+        continue;
+    }
+
+    $owner = $cols[2] ?? '';
+    $priority = $cols[3] ?? '';
+    $currentMode = $cols[4] ?? '';
+    $targetCommand = $cols[6] ?? '';
+    if ($owner === '' || $priority === '' || $targetCommand === '') {
+        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$hookId}: backlog row must include owner, priority, and target command/script";
+    }
+    if ($currentMode !== 'manual') {
+        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$hookId}: current mode must be 'manual'";
+    }
+
+    $manualHooksInBacklog[$hookId] = true;
+}
+
+$matrixRows = parseMarkdownTableRows($matrix, '| requirement_id | source_doc_id | source_path | verification_hook_id | verification_mode | owner | status | evidence_location |');
+$manualRowsChecked = 0;
+foreach ($matrixRows as $cols) {
+    if (count($cols) < 8) {
+        continue;
+    }
+
+    $requirementId = $cols[0];
+    $hookId = $cols[3];
+    $verificationMode = $cols[4];
+
+    if ($requirementId === '' || $requirementId === 'requirement_id') {
+        continue;
+    }
+
+    if ($verificationMode !== 'manual') {
+        continue;
+    }
+
+    $manualRowsChecked++;
+    if (!isset($manualHooksInBacklog[$hookId])) {
+        $errors[] = "[HOOK-SSOT-SYNC-MANUAL-BACKLOG] {$requirementId}: manual hook '{$hookId}' missing from PHASE1_MANUAL_HOOK_BACKLOG.md";
+    }
+}
+
 if ($errors !== []) {
     foreach ($errors as $error) {
         fwrite(STDERR, $error . PHP_EOL);
@@ -164,5 +217,5 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo "docs:ssot:sync-check PASS (promoted_rows_checked={$promotedChecked}, gap_refs_checked={$gapRefsChecked})" . PHP_EOL;
+echo "docs:ssot:sync-check PASS (promoted_rows_checked={$promotedChecked}, gap_refs_checked={$gapRefsChecked}, manual_rows_checked={$manualRowsChecked})" . PHP_EOL;
 exit(0);
