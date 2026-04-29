@@ -35,8 +35,8 @@ Define deterministic, promotable identity-foundation requirements for ID-keypair
 - `CRE8-ARCH-REQ-0002` and `CRE8-ARCH-REQ-0004` promote seed obligation `#utility-key-context-compartmentalization`.
 
 ## Verification hooks
-- **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Manual/automated check that issuance flows cannot mint utility credentials before ID keypair creation.
-- **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated check that utility credentials are unique per context boundary.
+- **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Executable contract check (`composer test:contract:identity-issuance`) ensuring issuance flows cannot mint utility credentials before ID keypair creation.
+- **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Executable contract check (`composer test:contract:identity-context`) ensuring utility credentials are unique per context boundary and reject cross-context reuse.
 - **Next automation candidate**: Add fixture-driven lifecycle tests under `test:security` for prohibited in-place utility-scope widening.
 
 ## See also

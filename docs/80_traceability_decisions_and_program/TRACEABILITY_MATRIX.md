@@ -99,8 +99,8 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-GOV-REQ-0063 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-ANTI-ORPHAN-CHECK | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0064 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-LINK-TOPOLOGY | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-GOV-REQ-0065 | CRE8-GOV-CROSS-LINK-POLICY | docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md | HOOK-SSOT-SYNC-PROMOTED-TRACE | automated | Docs Governance WG | provisional-normative | reports/ssot/coverage_latest.json |
-| CRE8-ARCH-REQ-0001 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-ID-FIRST-ISSUANCE | manual | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
-| CRE8-ARCH-REQ-0002 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | manual | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-ARCH-REQ-0001 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-ID-FIRST-ISSUANCE | automated | Platform Architecture WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-ARCH-REQ-0002 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | automated | Platform Architecture WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-CONTRACT-REQ-0030 | CRE8-CONTRACTS-SURFACE-PARITY | docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md | HOOK-CONTRACT-SURFACE-PARITY | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-FEED-REQ-0002 | CRE8-FEED-AUDIENCE-CONTRACT | docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md | HOOK-CONTRACT-FEED-ORDER-CURSOR | automated | Product Policy WG | provisional-normative | reports/ssot/coverage_latest.json |
 | CRE8-FEED-REQ-0016 | CRE8-FEED-INTERACTION-POLICY | docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md | HOOK-CONTRACT-POLICY-ORDER | automated | Product Policy WG | provisional-normative | reports/ssot/coverage_latest.json |
@@ -133,8 +133,8 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-CONTRACT-FEED-DENY-CODE-CATALOG**: Automated hook validating feed deny examples resolve only to canonical error catalog codes, including lifecycle deny coverage.
 - **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Automated hook validating strict cursor monotonic progression across sequential feed page fixtures.
 - **HOOK-CONTRACT-FEED-CURSOR-GRAMMAR**: Automated hook validating feed cursor grammar (`pub:<ISO8601 UTC>|<item_id>`) plus executable cross-page cursor linkage checks.
-- **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Manual/automated hook validating that ID keypair issuance precedes all utility-key issuance.
-- **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated hook validating utility-key context isolation and no cross-context reuse.
+- **HOOK-IDENTITY-ID-FIRST-ISSUANCE**: Automated contract hook (`composer test:contract:identity-issuance`) validating that ID keypair issuance precedes all utility-key issuance.
+- **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Automated contract hook (`composer test:contract:identity-context`) validating utility-key context isolation and no cross-context reuse.
 - **HOOK-CONTRACT-SURFACE-PARITY**: Manual/automated hook validating supported UI capabilities map to canonical API route contracts or approved exceptions.
 - **HOOK-FEED-AUTH-ORDER**: Manual/automated hook validating authorized-only feed inclusion and deterministic newest-first ordering semantics.
 - **HOOK-FEED-INTERACTION-DENY-MAPPING**: Manual/automated hook validating one-to-one interaction deny-condition to canonical error-code mapping.
