@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0432.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-0436.md`
 
 Summary:
-- Promoted first seed mapping row to `promoted` with executable sync enforcement.
-- Reconciled traceability matrix automation modes with implemented `docs:ssot:*` hooks.
-- Fixed `docs:ssot:sync-check` promoted-row execution bug and validated local pass path.
+- Authored canonical Slice 3 cross-document linking + anti-orphan policy requirements.
+- Wired governance index dependencies/links to make the policy discoverable from SSOT entrypoints.
+- Added traceability matrix coverage for new linking requirements and manual topology/orphan hooks.
