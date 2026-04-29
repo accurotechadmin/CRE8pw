@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 $decisionTablePath = dirname(__DIR__) . '/docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md';
 $delegationSpecPath = dirname(__DIR__) . '/docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md';
+$openapiPath = dirname(__DIR__) . '/docs/31_machine_contracts/openapi/cre8.v1.yaml';
 
 $decisionTable = file_get_contents($decisionTablePath);
 $delegationSpec = file_get_contents($delegationSpecPath);
-if ($decisionTable === false || $delegationSpec === false) {
+$openapi = file_get_contents($openapiPath);
+if ($decisionTable === false || $delegationSpec === false || $openapi === false) {
     fwrite(STDERR, "[HOOK-CONTRACT-POLICY-ORDER] unable to read authorization contract docs" . PHP_EOL);
     exit(1);
 }
@@ -61,6 +63,22 @@ if (!str_contains($delegationSpec, 'HOOK-AUTH-LIFECYCLE-ENFORCEMENT')) {
     $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] verification hook declaration missing from authorization spec';
 }
 
+if (!str_contains($openapi, '/v1/authz/decide:')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing /v1/authz/decide route in OpenAPI contract';
+}
+if (!str_contains($openapi, 'interactionLifecycleBlocked:')) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] missing interaction lifecycle deny response fixture key in OpenAPI authz route';
+}
+if (!str_contains($openapi, '#/components/examples/ErrorInteractionLifecycleBlocked')) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] missing ErrorInteractionLifecycleBlocked deny fixture reference in OpenAPI authz route';
+}
+if (!str_contains($openapi, 'depthExceeded:')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing depthExceeded deny response fixture key in OpenAPI authz route';
+}
+if (!str_contains($openapi, '#/components/examples/ErrorAuthDepthExceeded')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ErrorAuthDepthExceeded deny fixture reference in OpenAPI authz route';
+}
+
 if ($errors !== []) {
     foreach ($errors as $e) {
         fwrite(STDERR, $e . PHP_EOL);
@@ -68,4 +86,4 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo 'test:contract:auth PASS (policy_steps=' . count($found) . ', inheritance_boundary=ok, lifecycle_enforcement=ok, short_circuit=deterministic_first_fail)' . PHP_EOL;
+echo 'test:contract:auth PASS (policy_steps=' . count($found) . ', inheritance_boundary=ok, lifecycle_enforcement=ok, openapi_authz_fixtures=validated, short_circuit=deterministic_first_fail)' . PHP_EOL;
