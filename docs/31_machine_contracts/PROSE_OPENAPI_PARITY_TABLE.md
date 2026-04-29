@@ -39,6 +39,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0012**: Route Family Coverage Policy rows **MUST** include every route family derivable from active route inventory permission namespaces; missing family policy rows **MUST** fail parity checks.
 - **CRE8-MACHINE-REQ-0013**: Every Route Family Coverage Policy row **MUST** declare accountable `owner` and `decision_ref`; `decision_ref` **MUST** reference `ADR-###` or `DLOG-YYYYMMDD-###` to preserve deferred-breadth governance linkage.
 - **CRE8-MACHINE-REQ-0014**: Every Route Family Coverage Policy `decision_ref` **MUST** resolve to an existing ADR in `ADR_INDEX.md` or decision event in `DECISIONS_LOG.md`; format-only references are insufficient.
+- **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
 
 ## Route Family Coverage Policy
 | route_family | minimum_high_priority_routes | primary_requirement_id | primary_hook_id | owner | decision_ref | notes |

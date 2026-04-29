@@ -443,6 +443,21 @@ foreach (explode("
     $adrIds[strtoupper($cols[0])] = true;
 }
 
+
+$approvedOwners = [];
+foreach (explode("\n", $traceabilityMatrix) as $line) {
+    if (!preg_match('/^\|\s*CRE8-[A-Z]+-REQ-[0-9]{4}\s*\|/i', trim($line))) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 6) {
+        continue;
+    }
+    if ($cols[5] !== '') {
+        $approvedOwners[strtoupper($cols[5])] = true;
+    }
+}
+
 $decisionEventIds = [];
 foreach (explode("
 ", $decisionsLog) as $line) {
@@ -464,6 +479,8 @@ foreach ($coveragePolicies as $family => $policy) {
     }
     if ($policy['owner'] === '') {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing owner in coverage policy for family {$family}";
+    } elseif (!isset($approvedOwners[strtoupper($policy['owner'])])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy owner not found in ownership matrix for family {$family}: {$policy['owner']}";
     }
     if (!preg_match('/^(ADR-[0-9]{3}|DLOG-[0-9]{8}-[0-9]{3})$/', $policy['decision_ref'])) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid decision_ref in coverage policy for family {$family}: {$policy['decision_ref']}";
