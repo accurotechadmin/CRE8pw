@@ -1,7 +1,49 @@
+---
+doc_id: CRE8-AUTH-DELEGATION-SPEC
+version: 1.0.0
+status: provisional-normative
+owner: Identity & Policy WG
+reviewers:
+  - Security WG
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-13
+source_seed_refs:
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+  - README.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+
 # Authorization And Delegation Spec
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **AUTHORIZATION_AND_DELEGATION_SPEC.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define deterministic authorization and delegation behavior for CRE8 policy evaluation, including inheritance boundaries, deny precedence, and failure semantics.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-AUTH-REQ-0001**: Authorization decisions **MUST** evaluate inputs in this order: (1) credential lifecycle validity, (2) ancestor grant existence, (3) explicit deny checks, (4) permission match, (5) scope boundary checks, (6) delegation depth checks, (7) expiry/time-window checks.
+- **CRE8-AUTH-REQ-0002**: Descendant grants **MUST NOT** include permissions, scopes, lifecycle durations, or delegation depth beyond the effective limits of the delegating ancestor.
+- **CRE8-AUTH-REQ-0003**: When policy inputs are ambiguous, incomplete, or contradictory, authorization evaluation **MUST** return a deterministic deny outcome and **MUST NOT** default to allow.
+- **CRE8-AUTH-REQ-0004**: Authorization denials **MUST** map to stable machine-readable error codes defined in `ERROR_CODE_CATALOG.md`.
+- **CRE8-AUTH-REQ-0005**: Delegation operations **MUST** emit provenance records containing delegator principal, delegate principal, inherited constraints, resulting effective constraints, and timestamp.
+- **CRE8-AUTH-REQ-0006**: Credential lifecycle changes (`suspend`, `revoke`, `expire`) **MUST** be enforced on subsequent authorization decisions with no grace bypass path unless explicitly defined by normative emergency policy.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Decision outputs
+- Allow/deny outputs MUST be reproducible from persisted policy state and request context.
+- Deny outputs SHOULD include a single primary reason code and MAY include secondary diagnostic details for operators.
+
+## Verification hooks
+- **HOOK-CONTRACT-POLICY-ORDER**: Verify evaluation order and deny precedence using contract tests.
+- **HOOK-AUTH-INHERITANCE-BOUNDARY**: Verify descendants cannot exceed ancestor authority.
+- **HOOK-AUTH-LIFECYCLE-ENFORCEMENT**: Verify suspend/revoke/expire states are enforced in policy decisions.
+
+## See also
+- [Authorization Decision Tables](./AUTHORIZATION_DECISION_TABLES.md)
+- [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- [Permission and Delegation Seed](../../seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md)

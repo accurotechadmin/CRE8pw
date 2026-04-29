@@ -1,7 +1,54 @@
+---
+doc_id: CRE8-OPS-VERIFICATION-STRATEGY
+version: 1.0.0
+status: provisional-normative
+owner: Operations Quality WG
+reviewers:
+  - Security WG
+  - Program Traceability WG
+last_reviewed_utc: 2026-04-29
+next_review_due_utc: 2026-05-13
+source_seed_refs:
+  - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+normative_dependencies:
+  - docs/00_governance/DEFINITION_OF_DONE.md
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+  - docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md
+---
+
 # Verification Strategy
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **VERIFICATION_STRATEGY.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define mandatory verification hook structure, execution policy, and evidence expectations for Phase 1 normative contracts.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-OPS-REQ-0001**: Every normative or provisional-normative requirement **MUST** map to at least one verification hook recorded in `TRACEABILITY_MATRIX.md`.
+- **CRE8-OPS-REQ-0002**: Each hook definition **MUST** declare `hook_id`, `trigger`, `tool_or_procedure`, `expected_result`, and `evidence_location`.
+- **CRE8-OPS-REQ-0003**: Pull requests that modify requirement semantics **MUST** include verification execution evidence or explicit manual verification notes with reproducible steps.
+- **CRE8-OPS-REQ-0004**: Hooks without automation **MUST** include a documented “next automation candidate” note to support Slice 8 backlog reduction.
+- **CRE8-OPS-REQ-0005**: Verification failures for `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report` **MUST** block merge under `ssot_phase1_gate`.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Hook catalog schema
+| Field | Required | Notes |
+|---|---|---|
+| hook_id | yes | Stable identifier (e.g., `HOOK-CONTRACT-POLICY-ORDER`). |
+| trigger | yes | PR, release, nightly, or manual. |
+| tool_or_procedure | yes | Command, script path, or step-by-step manual process. |
+| expected_result | yes | Deterministic pass criteria. |
+| evidence_location | yes | Artifact path or evidence template path. |
+| next_automation_candidate | conditional | Required when verification mode is manual. |
+
+## Phase 1 initial hooks
+| hook_id | trigger | tool_or_procedure | expected_result | evidence_location | next_automation_candidate |
+|---|---|---|---|---|---|
+| HOOK-CONTRACT-POLICY-ORDER | PR | Contract tests for policy order and deny precedence | Deterministic pass/fail on order invariants | docs/evidence/templates/README.md | Add `test:contract:auth` executable suite |
+| HOOK-CONTRACT-ERROR-DETERMINISM | PR | Contract tests for error envelope and code mapping | Stable envelope + code mapping | docs/evidence/templates/README.md | Add `test:contract:error` executable suite |
+| HOOK-SSOT-LINT-METADATA | PR | `composer docs:ssot:lint` | Exit code 0 with no metadata/link failures | reports/ssot/coverage_latest.json |  |
+
+## See also
+- [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
+- [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- [SSOT Automation and Linting](../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md)
