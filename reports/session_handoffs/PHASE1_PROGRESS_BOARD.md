@@ -1,7 +1,7 @@
 # CRE8 Phase 1 Progress Board
 
-- Last updated (UTC): 2026-04-29T05:23:00Z
-- Current owner/session: Codex session `20260429-0523`
+- Last updated (UTC): 2026-04-29T05:31:00Z
+- Current owner/session: Codex session `20260429-0531`
 
 ## Master checklist (slices and key issues)
 - [x] Slice 1 — Canon governance bootstrap
@@ -17,7 +17,7 @@
   - [x] Normalize stable row identifiers (`SPR-###`) across tracker and gap register
   - [x] Implement schema-aware `docs:ssot:sync-check` parser for promoted rows
   - [x] Enforce unresolved-gap `tracker_ref` existence against tracker rows
-  - [~] Populate tracker comprehensively across all seed docs (remaining focus: `SPR-005`, `SPR-013`).
+  - [x] Populate tracker comprehensively across all seed docs (all current rows promoted/non-TBD).
 - [x] Slice 3 — Cross-document linking architecture
   - [x] Centralize link topology and anti-orphan policy
   - [x] Automate topology + anti-orphan lint enforcement hooks
@@ -54,8 +54,8 @@
 - [ ] Slice 10 — Acceptance review + baseline freeze
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0523.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0519.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0514.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0509.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0503.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-0531.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-0523.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-0519.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-0514.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-0509.md`
