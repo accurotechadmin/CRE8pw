@@ -12,10 +12,14 @@ $routeInventory = file_get_contents($routeInventoryPath);
 $openApi = file_get_contents($openApiPath);
 $proseParity = file_get_contents($proseParityPath);
 $traceabilityMatrixPath = $repoRoot . '/docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md';
+$adrIndexPath = $repoRoot . '/docs/80_traceability_decisions_and_program/ADR_INDEX.md';
+$decisionsLogPath = $repoRoot . '/docs/80_traceability_decisions_and_program/DECISIONS_LOG.md';
 $traceabilityMatrix = file_get_contents($traceabilityMatrixPath);
+$adrIndex = file_get_contents($adrIndexPath);
+$decisionsLog = file_get_contents($decisionsLogPath);
 $errorCatalog = file_get_contents($errorCatalogPath);
-if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false || $errorCatalog === false) {
-    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, traceability matrix, or error catalog" . PHP_EOL);
+if ($routeInventory === false || $openApi === false || $proseParity === false || $traceabilityMatrix === false || $adrIndex === false || $decisionsLog === false || $errorCatalog === false) {
+    fwrite(STDERR, "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] unable to read route inventory, OpenAPI, prose parity file, traceability matrix, ADR index, decisions log, or error catalog" . PHP_EOL);
     exit(1);
 }
 
@@ -425,6 +429,32 @@ foreach (array_keys($inventoryFamilies) as $family) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] missing coverage policy row for inventory-derived family: {$family}";
     }
 }
+
+$adrIds = [];
+foreach (explode("
+", $adrIndex) as $line) {
+    if (preg_match('/^\|\s*ADR-[0-9]{3}\s*\|/i', trim($line)) !== 1) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if ($cols === []) {
+        continue;
+    }
+    $adrIds[strtoupper($cols[0])] = true;
+}
+
+$decisionEventIds = [];
+foreach (explode("
+", $decisionsLog) as $line) {
+    if (preg_match('/^\|\s*DLOG-[0-9]{8}-[0-9]{3}\s*\|/i', trim($line)) !== 1) {
+        continue;
+    }
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if ($cols === []) {
+        continue;
+    }
+    $decisionEventIds[strtoupper($cols[0])] = true;
+}
 foreach ($coveragePolicies as $family => $policy) {
     if (!preg_match('/^[a-z0-9_]+$/', $family)) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid route_family format in coverage policy: {$family}";
@@ -437,6 +467,13 @@ foreach ($coveragePolicies as $family => $policy) {
     }
     if (!preg_match('/^(ADR-[0-9]{3}|DLOG-[0-9]{8}-[0-9]{3})$/', $policy['decision_ref'])) {
         $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] invalid decision_ref in coverage policy for family {$family}: {$policy['decision_ref']}";
+        continue;
+    }
+    if (str_starts_with($policy['decision_ref'], 'ADR-') && !isset($adrIds[$policy['decision_ref']])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy decision_ref ADR not found in ADR_INDEX for family {$family}: {$policy['decision_ref']}";
+    }
+    if (str_starts_with($policy['decision_ref'], 'DLOG-') && !isset($decisionEventIds[$policy['decision_ref']])) {
+        $errors[] = "[HOOK-CONTRACT-ROUTE-INVENTORY-PARITY] coverage policy decision_ref event not found in DECISIONS_LOG for family {$family}: {$policy['decision_ref']}";
     }
 }
 
