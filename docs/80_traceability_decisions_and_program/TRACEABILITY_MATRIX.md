@@ -92,6 +92,9 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-ARCH-REQ-0002 | CRE8-ARCH-IDENTITY-FOUNDATIONS | docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md | HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | manual | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-CONTRACT-REQ-0030 | CRE8-CONTRACTS-SURFACE-PARITY | docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md | HOOK-CONTRACT-SURFACE-PARITY | manual | API Contracts WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-FEED-REQ-0002 | CRE8-FEED-AUDIENCE-CONTRACT | docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md | HOOK-FEED-AUTH-ORDER | manual | Product Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-FEED-REQ-0016 | CRE8-FEED-INTERACTION-POLICY | docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md | HOOK-CONTRACT-POLICY-ORDER | automated | Product Policy WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-FEED-REQ-0019 | CRE8-FEED-INTERACTION-POLICY | docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md | HOOK-CONTRACT-ERROR-CODE-COVERAGE | automated | Product Policy WG | provisional-normative | reports/ssot/coverage_latest.json |
+| CRE8-FEED-REQ-0021 | CRE8-FEED-INTERACTION-POLICY | docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md | HOOK-FEED-INTERACTION-DENY-MAPPING | manual | Product Policy WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-SEC-REQ-0006 | CRE8-SEC-KEY-LIFECYCLE | docs/40_data_security_and_crypto/KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md | HOOK-SEC-LIFECYCLE-PROPAGATION | automated | Security Engineering WG | provisional-normative | docs/evidence/templates/README.md |
 | CRE8-EXT-REQ-0002 | CRE8-EXT-MODULE-SEAMS | docs/70_extensibility_and_module_patterns/MODULE_BOUNDARIES_AND_OWNERSHIP.md | HOOK-EXT-SEAM-COMPATIBILITY | automated | Platform Architecture WG | provisional-normative | docs/evidence/templates/README.md |
 
@@ -117,6 +120,7 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - **HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION**: Manual/automated hook validating utility-key context isolation and no cross-context reuse.
 - **HOOK-CONTRACT-SURFACE-PARITY**: Manual/automated hook validating supported UI capabilities map to canonical API route contracts or approved exceptions.
 - **HOOK-FEED-AUTH-ORDER**: Manual/automated hook validating authorized-only feed inclusion and deterministic newest-first ordering semantics.
+- **HOOK-FEED-INTERACTION-DENY-MAPPING**: Manual/automated hook validating one-to-one interaction deny-condition to canonical error-code mapping.
 - **HOOK-SEC-LIFECYCLE-PROPAGATION**: Manual/automated hook validating immediate revoke/rotate propagation across direct and descendant credentials.
 - **HOOK-EXT-SEAM-COMPATIBILITY**: Manual/automated hook validating module seam compatibility, PDP-chain preservation, and envelope stability.
 

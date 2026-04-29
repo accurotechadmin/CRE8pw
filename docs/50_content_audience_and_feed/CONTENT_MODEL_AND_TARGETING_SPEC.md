@@ -16,6 +16,7 @@ normative_dependencies:
   - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
   - docs/31_machine_contracts/openapi/cre8.v1.yaml
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+  - docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md
 ---
 
 # Content Model and Targeting Spec
@@ -40,5 +41,6 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - [Feed Ranking and Ordering Rules](./FEED_RANKING_AND_ORDERING_RULES.md)
 - [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Commenting and Interaction Policy](./COMMENTING_AND_INTERACTION_POLICY.md)
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

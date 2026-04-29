@@ -15,6 +15,7 @@ normative_dependencies:
   - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
   - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+  - docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md
 ---
 
 # Feed Ranking and Ordering Rules
@@ -36,3 +37,4 @@ Define deterministic feed authorization and ordering behavior for CRE8 audience-
 - [Content Model and Targeting Spec](./CONTENT_MODEL_AND_TARGETING_SPEC.md)
 - [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Commenting and Interaction Policy](./COMMENTING_AND_INTERACTION_POLICY.md)
