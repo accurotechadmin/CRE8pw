@@ -55,4 +55,18 @@ foreach ($expectedOptionalStabilityFields as $field) {
     }
 }
 
-echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=5, metadata_fields=2)' . PHP_EOL;
+$orderingSnippets = [
+    'item_id: "itm_001", rank: 1, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:59:00Z"' => 'first feed item ordering fixture',
+    'item_id: "itm_002", rank: 2, visibility_scope: "group:g-123", published_utc: "2026-04-29T05:54:00Z"' => 'second feed item ordering fixture',
+    'next_cursor: "pub:2026-04-29T05:54:00Z|itm_002"' => 'cursor fixture aligned to second item',
+    'cursor_basis: "published_utc_desc__item_id_asc"' => 'cursor basis fixture',
+];
+
+foreach ($orderingSnippets as $snippet => $label) {
+    if (strpos($openapi, $snippet) === false) {
+        fwrite(STDERR, "Missing {$label} snippet in OpenAPI feed fixtures: {$snippet}\n");
+        exit(1);
+    }
+}
+
+echo 'test:contract:feed PASS (allow_fixture=comment.create, deny_mappings=5, metadata_fields=2, ordering_cursor=fixtures-validated)' . PHP_EOL;
