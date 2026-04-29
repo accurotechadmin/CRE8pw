@@ -42,18 +42,9 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 | Lifecycle blocked/suspended | `AUTH_LIFECYCLE_BLOCKED` |
 
 ## Verification hooks
-- **HOOK-FEED-INTERACTION-DENY-MAPPING** (manual, Phase 1): Confirm each interaction deny condition maps to one canonical code in route-facing examples and contract tests.
+- **HOOK-FEED-INTERACTION-DENY-MAPPING** (automated): Execute `composer test:contract:feed` to enforce deterministic one-to-one deny-condition to canonical code mapping in OpenAPI fixtures.
 - **HOOK-CONTRACT-POLICY-ORDER** (automated): Reuse existing authorization ordering test hook for interaction actions.
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE** (automated): Ensure interaction deny examples only use catalog-declared codes.
-
-## Manual verification procedure (until dedicated automation exists)
-1. Run `composer docs:ssot:lint` and confirm metadata/header/link checks pass.
-2. Run `composer docs:ssot:route-parity` and confirm route inventory parity remains valid.
-3. Run `composer test:contract:error-secrets` and confirm interaction deny examples remain redaction-safe.
-4. Inspect `docs/31_machine_contracts/openapi/cre8.v1.yaml` examples for interaction-scoped request/deny fixtures (`comment.create`).
-
-## Next automation hook candidate
-- Add `composer test:contract:feed` scenario for interaction decisions (`comment.create`) covering allow + each deny mapping listed above.
 
 ## See also
 - [Content Model and Targeting Spec](./CONTENT_MODEL_AND_TARGETING_SPEC.md)
