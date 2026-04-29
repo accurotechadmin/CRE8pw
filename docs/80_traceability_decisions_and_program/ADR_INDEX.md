@@ -46,8 +46,13 @@ This document defines the canonical index contract for Architecture Decision Rec
 ## Baseline index entries
 | ADR ID | Title | Status | Date (UTC) | Owner | Impacted Requirement IDs | Impacted Risk IDs | Link |
 |---|---|---|---|---|---|---|---|
-| ADR-001 | Requirement ID Normalization | accepted | 2026-04-29 | Docs Governance WG | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | RISK-001 | ./adrs/ADR-001-requirement-id-normalization.md |
-| ADR-002 | Traceability Matrix Minimum Schema | accepted | 2026-04-29 | Architecture Governance WG | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | RISK-002 | ./adrs/ADR-002-traceability-matrix-minimum-schema.md |
+| ADR-001 | Requirement ID Normalization | accepted | 2026-04-29 | Docs Governance WG | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | RISK-001 | ./records/ADR-001-placeholder.md |
+| ADR-002 | Traceability Matrix Minimum Schema | accepted | 2026-04-29 | Architecture Governance WG | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | RISK-002 | ./records/ADR-002-placeholder.md |
+
+
+## Published ADR records
+- [ADR-001: Requirement ID Normalization](./records/ADR-001-placeholder.md)
+- [ADR-002: Traceability Matrix Minimum Schema](./records/ADR-002-placeholder.md)
 
 ## Verification hooks
 - **HOOK-TRACE-ADR-INDEX-UNIQUE**: Validate ADR ID uniqueness and immutability in index history.

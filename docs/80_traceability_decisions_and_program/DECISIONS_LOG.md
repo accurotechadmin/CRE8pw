@@ -44,8 +44,8 @@ This document defines the append-only operational log for architecture and gover
 ## Baseline events
 | Event ID | Timestamp (UTC) | ADR ID | Event Type | Actor | Change Summary | Impacted Requirement IDs | Evidence Link |
 |---|---|---|---|---|---|---|---|
-| DLOG-20260429-001 | 2026-04-29T03:40:00Z | ADR-001 | status_changed | Docs Governance WG | proposed -> accepted for requirement ID normalization | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | ./adrs/ADR-001-requirement-id-normalization.md |
-| DLOG-20260429-002 | 2026-04-29T03:45:00Z | ADR-002 | status_changed | Architecture Governance WG | proposed -> accepted for traceability matrix schema | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | ./adrs/ADR-002-traceability-matrix-minimum-schema.md |
+| DLOG-20260429-001 | 2026-04-29T03:40:00Z | ADR-001 | status_changed | Docs Governance WG | proposed -> accepted for requirement ID normalization | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | ./records/ADR-001-placeholder.md |
+| DLOG-20260429-002 | 2026-04-29T03:45:00Z | ADR-002 | status_changed | Architecture Governance WG | proposed -> accepted for traceability matrix schema | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | ./records/ADR-002-placeholder.md |
 
 ## Verification hooks
 - **HOOK-TRACE-DECISION-APPENDONLY**: Assert stable hash for historical rows and detect non-tail edits.

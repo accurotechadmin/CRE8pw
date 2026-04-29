@@ -1,8 +1,8 @@
 # Latest Phase 1 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1109.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260429-1116.md`
 
 Summary:
-- Expanded Slice 7 machine/prose lifecycle parity with explicit revoke route and response schema.
-- Refreshed manual-hook backlog to explicit “none open” state with current session metadata.
-- Re-ran canonical acceptance bundle and updated progress board + latest handoff links.
+- Hardened ADR-001 and ADR-002 records from scaffold prose into metadata-backed normative decision artifacts.
+- Fixed ADR index/log reference drift (`./adrs` -> `./records`) and added anti-orphan-compliant inbound links.
+- Re-ran full acceptance bundle successfully and refreshed session discoverability pointers.
