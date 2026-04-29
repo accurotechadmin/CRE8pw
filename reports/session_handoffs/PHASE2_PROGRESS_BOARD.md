@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-29T13:52:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-1352
+- Last updated (UTC): 2026-04-29T22:52:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260429-2252
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -78,14 +78,14 @@
 | Lane B — Deferred breadth decomposition | partially complete | 86% | Medium | Governance evidence-gate residual closed; remaining depth-expansion items still partially complete. |
 | Lane C — Parity expansion | in progress | 76% | Medium | Route parity now enforces error-code catalog/inventory bounds in addition to family coverage and parity-depth determinism. |
 | Lane D — Traceability/evidence hardening | in progress | 94% | Medium | Route-level error code governance drift now machine-detected and hard-fail enforced. |
-| Lane E — Acceptance planning | not started | 0% | Low | Acceptance artifacts not yet drafted. |
+| Lane E — Acceptance planning | in progress | 30% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260429-1352.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1345.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1341.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1334.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1330.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260429-2252.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260429-1352.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-1345.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-1341.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-1334.md`
 
 ## Latest Phase status summary pointer
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
