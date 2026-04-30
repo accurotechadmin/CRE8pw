@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-GOV-SSOT-INDEX
-version: 1.0.3
+version: 1.0.4
 status: normative
 owner: Docs Governance WG
 reviewers:
@@ -77,3 +77,6 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Request Pipeline And Middleware Contract](../10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md)
 - [CRE8 Product And System Spec](../10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md)
 - [CRE8 Human Operating Model](../10_product_and_architecture/CRE8_HUMAN_OPERATING_MODEL.md)
+
+- [Endpoint Examples All Routes](../30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md)
+- [Webhook And Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)

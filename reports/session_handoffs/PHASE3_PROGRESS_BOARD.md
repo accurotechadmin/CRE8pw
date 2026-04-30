@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T07:15:00Z
+- Last updated (UTC): 2026-04-30T06:37:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -109,8 +109,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S5.1 | `Endpoint_Examples_All_Routes.md` | not_started | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | One success + one deny per declared error code. |
-| P3-S5.2 | `WEBHOOK_AND_INTEGRATION_CONTRACT.md` | not_started | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | Cites `firebase/php-jwt`, `guzzlehttp/guzzle`. |
+| P3-S5.1 | `Endpoint_Examples_All_Routes.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-EXAMPLE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with normative example coverage requirements and dependency-linked verification hooks. |
+| P3-S5.2 | `WEBHOOK_AND_INTEGRATION_CONTRACT.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-COMPAT-DECLARATION; HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with deterministic webhook signing/JWT/retry/schema/error/observability contract. |
 | P3-S5.3 | Route inventory expansion (≥ 20 routes) | not_started | API Contracts WG | 2026-05-27 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY; HOOK-CONTRACT-ROUTE-UNIQUENESS | ADR-004 | (TBD) | Adds principal/key/utility/delegation/audience/post/comment/audit/system routes. |
 | P3-S5.4 | `ERROR_CODE_CATALOG.md` expansion | not_started | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | (TBD) | New codes per route family expansion. |
 | P3-S5.5 | Parity table + Route Family Coverage Policy expansion | not_started | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | ADR-004 | (TBD) | Family rows for new families. |
@@ -194,7 +194,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0715.md`](SESSION_HANDOFF_20260430-0715.md) — P3-S4.1/P3-S4.2/P3-S4.3 complete; identity permission vocabulary, capability matrix, and deterministic keychain resolution canonized.
+1. [`SESSION_HANDOFF_20260430-0637.md`](SESSION_HANDOFF_20260430-0637.md) — P3-S5.1/P3-S5.2 complete; endpoint examples and webhook/integration contract hardened to normative.
+2. [`SESSION_HANDOFF_20260430-0715.md`](SESSION_HANDOFF_20260430-0715.md) — P3-S4.1/P3-S4.2/P3-S4.3 complete; identity permission vocabulary, capability matrix, and deterministic keychain resolution canonized.
 2. [`SESSION_HANDOFF_20260430-0538.md`](SESSION_HANDOFF_20260430-0538.md) — P3-S2.1/P3-S2.2 complete; scaffold README replacements ratified and root README promoted with document control metadata.
 2. [`SESSION_HANDOFF_20260430-0936.md`](SESSION_HANDOFF_20260430-0936.md) — P3-S2.4 complete; scaffold opener lint tightened.
 2. [`SESSION_HANDOFF_20260430-0835.md`](SESSION_HANDOFF_20260430-0835.md) — P3-S1.7/P3-S1.8/P3-S1.9 complete; script drift, CI drift, and dot.env sanitization resolved.
@@ -204,7 +205,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0715_RESPONSE.md`](../session_responses/20260430-0715_RESPONSE.md) — P3-S4.1/P3-S4.2/P3-S4.3 completion response.
+1. [`reports/session_responses/20260430-0637_RESPONSE.md`](../session_responses/20260430-0637_RESPONSE.md) — P3-S5.1/P3-S5.2 completion response.
+2. [`reports/session_responses/20260430-0715_RESPONSE.md`](../session_responses/20260430-0715_RESPONSE.md) — P3-S4.1/P3-S4.2/P3-S4.3 completion response.
 2. [`reports/session_responses/20260430-0538_RESPONSE.md`](../session_responses/20260430-0538_RESPONSE.md) — P3-S2.1/P3-S2.2 completion response.
 2. [`reports/session_responses/20260430-0936_RESPONSE.md`](../session_responses/20260430-0936_RESPONSE.md) — P3-S2.4 completion response.
 2. [`reports/session_responses/20260430-0835_RESPONSE.md`](../session_responses/20260430-0835_RESPONSE.md) — P3-S1.7/P3-S1.8/P3-S1.9 completion response.
