@@ -94,10 +94,36 @@ foreach ($runtimeIsolationFixture as $row) {
     $runtimeContextByPrincipal[$principal][$context] = true;
 }
 
+
+$runtimeCrossPrincipalFixture = [
+    ['utility_key_id' => 'uk_rt_a_002', 'principal_id' => 'p-root-001', 'context' => 'service:gateway', 'actor_id' => 'issuer-svc-a', 'request_id' => 'req-ident-ctx-rt-003', 'timestamp_utc' => '2026-04-30T00:11:02Z'],
+    ['utility_key_id' => 'uk_rt_b_002', 'principal_id' => 'p-root-002', 'context' => 'service:gateway', 'actor_id' => 'issuer-svc-b', 'request_id' => 'req-ident-ctx-rt-004', 'timestamp_utc' => '2026-04-30T00:11:03Z'],
+];
+
+$seenRuntimeContextPrincipalPairs = [];
+foreach ($runtimeCrossPrincipalFixture as $row) {
+    if (!str_starts_with($row['request_id'], 'req-ident-ctx-rt-')) {
+        fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] runtime cross-principal fixture request_id namespace drift detected" . PHP_EOL);
+        exit(1);
+    }
+    if (strtotime($row['timestamp_utc']) === false) {
+        fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] runtime cross-principal fixture timestamp_utc must be parseable ISO-8601" . PHP_EOL);
+        exit(1);
+    }
+
+    $pair = $row['context'] . '|' . $row['principal_id'];
+    $seenRuntimeContextPrincipalPairs[$pair] = true;
+}
+
+if (count($seenRuntimeContextPrincipalPairs) < 2) {
+    fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] expected runtime cross-principal fixture to model same-context issuance for at least two principals" . PHP_EOL);
+    exit(1);
+}
+
 foreach ($runtimeContextByPrincipal as $principal => $contexts) {
     if (count($contexts) < 2) {
         fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] expected runtime isolation fixture to model same-principal multi-context issuance for " . $principal . PHP_EOL);
         exit(1);
     }
 }
-echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', runtime_isolation_fixtures=' . count($runtimeIsolationFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*|req-ident-ctx-rt-*)' . PHP_EOL;
+echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', runtime_isolation_fixtures=' . count($runtimeIsolationFixture) . ', runtime_cross_principal_fixtures=' . count($runtimeCrossPrincipalFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*|req-ident-ctx-rt-*)' . PHP_EOL;

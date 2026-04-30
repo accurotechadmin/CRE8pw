@@ -75,6 +75,8 @@ foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
 
 $revokeEffectiveUtcPattern = '/LifecycleRevokeAccepted:\n\s{6}value:\n\s{8}data:\s\{[^\n]*effective_utc:\s"([^"]+)"/m';
 $descendantBlockedUtcPattern = '/ErrorDescendantLifecycleBlocked:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
+$suspendEffectiveUtcPattern = '/LifecycleSuspendAccepted:\n\s{6}value:\n\s{8}data:\s\{[^\n]*effective_utc:\s"([^"]+)"/m';
+$descendantSecondaryUtcPattern = '/ErrorDescendantLifecycleBlockedSecondary:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
 
 if (preg_match($revokeEffectiveUtcPattern, $openapi, $revokeMatch) !== 1) {
     fwrite(STDERR, "Lifecycle revoke fixture missing effective_utc for propagation chronology checks\n");
@@ -84,15 +86,29 @@ if (preg_match($descendantBlockedUtcPattern, $openapi, $descendantMatch) !== 1) 
     fwrite(STDERR, "Descendant lifecycle deny fixture missing timestamp_utc for propagation chronology checks\n");
     exit(1);
 }
+if (preg_match($suspendEffectiveUtcPattern, $openapi, $suspendMatch) !== 1) {
+    fwrite(STDERR, "Lifecycle suspend fixture missing effective_utc for propagation chronology checks\n");
+    exit(1);
+}
+if (preg_match($descendantSecondaryUtcPattern, $openapi, $descendantSecondaryMatch) !== 1) {
+    fwrite(STDERR, "Secondary descendant lifecycle deny fixture missing timestamp_utc for propagation chronology checks\n");
+    exit(1);
+}
 
 $revokeTs = strtotime($revokeMatch[1]);
 $descendantTs = strtotime($descendantMatch[1]);
-if ($revokeTs === false || $descendantTs === false) {
+$suspendTs = strtotime($suspendMatch[1]);
+$descendantSecondaryTs = strtotime($descendantSecondaryMatch[1]);
+if ($revokeTs === false || $descendantTs === false || $suspendTs === false || $descendantSecondaryTs === false) {
     fwrite(STDERR, "Lifecycle chronology timestamps are not parseable ISO-8601 values\n");
     exit(1);
 }
 if ($descendantTs < $revokeTs) {
     fwrite(STDERR, "Descendant lifecycle deny timestamp precedes revoke effective_utc (chronology drift)\n");
+    exit(1);
+}
+if ($descendantSecondaryTs < $suspendTs) {
+    fwrite(STDERR, "Secondary descendant lifecycle deny timestamp precedes suspend effective_utc (chronology drift)\n");
     exit(1);
 }
 
