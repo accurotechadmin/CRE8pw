@@ -55,11 +55,13 @@ paths:
           application/json:
             schema:
               $ref: ../schemas/policy-decision.schema.json
-            examples:
-              denyScope:
-                $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
-              commentCreate:
-                $ref: '#/components/examples/AuthDecisionRequestCommentCreate'
+              examples:
+                denyScope:
+                  $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
+                commentCreate:
+                  $ref: '#/components/examples/AuthDecisionRequestCommentCreate'
+                multiAncestorLifecycle:
+                  $ref: '#/components/examples/AuthDecisionRequestMultiAncestorLifecycle'
       responses:
         '200':
           description: Authorization decision generated.
@@ -93,6 +95,8 @@ paths:
                   $ref: '#/components/examples/ErrorAuthDepthExceeded'
                 grantExpired:
                   $ref: '#/components/examples/ErrorGrantExpired'
+                multiAncestorDepthExceeded:
+                  $ref: '#/components/examples/ErrorMultiAncestorDepthExceeded'
                 lifecycleBlocked:
                   $ref: '#/components/examples/ErrorFeedLifecycleBlocked'
                 interactionLifecycleBlocked:
@@ -225,6 +229,8 @@ components:
       value: { principal_id: "prn_001", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api" } }
     AuthDecisionRequestCommentCreate:
       value: { principal_id: "prn_004", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_001" } }
+    AuthDecisionRequestMultiAncestorLifecycle:
+      value: { principal_id: "prn_302", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_009", ancestor_chain_ref: "anc-root>anc-teamlead>anc-moderator>prn_302", lifecycle_state: "suspended" } }
     AuthDecisionAllow:
       value:
         data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7, ancestor_chain_ref: "anc-root>anc-mid>prn_001" }
@@ -268,6 +274,10 @@ components:
       value:
         error: { code: AUTH_GRANT_EXPIRED, message: "Delegated grant expired.", category: AUTH_DENY, request_id: "req-feed-004", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-feed-004", contract_version: "1.0.0" }
+    ErrorMultiAncestorDepthExceeded:
+      value:
+        error: { code: AUTH_DEPTH_EXCEEDED, message: "Delegation depth exceeded at ancestor boundary.", category: AUTH_DENY, request_id: "req-authz-multianc-001", timestamp_utc: "2026-04-29T06:10:00Z" }
+        meta: { request_id: "req-authz-multianc-001", contract_version: "1.0.0" }
     ErrorInteractionLifecycleBlocked:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Interaction blocked by lifecycle state.", category: LIFECYCLE, request_id: "req-interact-001", timestamp_utc: "2026-04-29T06:10:00Z" }
@@ -282,5 +292,9 @@ components:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Lifecycle state blocked.", category: LIFECYCLE, request_id: "req-feed-006", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-feed-006", contract_version: "1.0.0" }
+    ErrorDescendantLifecycleBlocked:
+      value:
+        error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Descendant blocked after ancestor revoke propagation.", category: LIFECYCLE, request_id: "req-desc-life-001", timestamp_utc: "2026-04-29T06:13:00Z" }
+        meta: { request_id: "req-desc-life-001", contract_version: "1.0.0" }
 security:
   - cre8Proof: []

@@ -20,6 +20,7 @@ $requiredOpenApiSnippets = [
     'AUTH_LIFECYCLE_BLOCKED' => 'canonical lifecycle deny code',
     'ErrorLifecycleBlocked' => 'key lifecycle deny example',
     'ErrorInteractionLifecycleBlocked' => 'interaction lifecycle deny example',
+    'ErrorDescendantLifecycleBlocked' => 'descendant lifecycle deny example',
     'action: "comment.create"' => 'interaction action fixture',
 ];
 
@@ -48,6 +49,7 @@ foreach ($requiredParityRows as $snippet) {
 $distinctLifecycleExamples = [
     'ErrorFeedLifecycleBlocked' => 'req-feed-',
     'ErrorInteractionLifecycleBlocked' => 'req-interact-',
+    'ErrorDescendantLifecycleBlocked' => 'req-desc-life-',
 ];
 
 foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
