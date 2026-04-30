@@ -157,13 +157,13 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S9.7 | `RELEASE_CHECKLIST.md` | complete | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Ordered gate hooks. |
 | P3-S9.8 | `PRODUCTION_READINESS_GATES.md` | complete | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Coverage thresholds + risk gates. |
 | P3-S9.9 | `SLO_SLI_SPEC.md` | complete | Operations Quality WG | 2026-06-17 | HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | SLIs/SLOs per surface. |
-| P3-S9.10 | `ACCEPTANCE_CRITERIA_MATRIX.md` | not_started | Operations Quality WG | 2026-06-18 | HOOK-RELEASE-CHECKLIST-PRESENT (target); HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | Per release type. |
+| P3-S9.10 | `ACCEPTANCE_CRITERIA_MATRIX.md` | complete | Operations Quality WG | 2026-06-18 | HOOK-RELEASE-CHECKLIST-PRESENT (target); HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | Per release type. |
 
 ### M10 — Extensibility and module patterns
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S10.1 | `EXTENSIBILITY_PLAYBOOK.md` | not_started | Platform Architecture WG | 2026-06-19 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | DI/Slim/registration playbook. |
+| P3-S10.1 | `EXTENSIBILITY_PLAYBOOK.md` | complete | Platform Architecture WG | 2026-06-19 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | DI/Slim/registration playbook. |
 | P3-S10.2 | `INTEGRATION_PROVIDER_PATTERN.md` | not_started | Platform Architecture WG | 2026-06-20 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | Outbound + inbound patterns. |
 | P3-S10.3 | `POST_TYPE_EXTENSION_SPEC.md` | not_started | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | Post-family inheritance. |
 | P3-S10.4 | `PRINCIPAL_TYPE_EXTENSION_SPEC.md` | not_started | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | Principal-type extension obligations. |
