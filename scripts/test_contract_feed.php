@@ -102,21 +102,22 @@ if (strpos($openapi, 'ErrorFeedLifecycleBlocked') === false) {
 
 
 $interactionDenyMatrix = [
-    ['example' => 'ErrorPermissionDenied', 'code' => 'AUTH_PERMISSION_DENIED'],
-    ['example' => 'ErrorScopeDenied', 'code' => 'AUTH_SCOPE_DENIED'],
-    ['example' => 'ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED'],
-    ['example' => 'ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED'],
-    ['example' => 'ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED'],
+    ['example' => 'ErrorPermissionDenied', 'code' => 'AUTH_PERMISSION_DENIED', 'category' => 'AUTH_DENY', 'request_id_prefix' => 'req-feed-'],
+    ['example' => 'ErrorScopeDenied', 'code' => 'AUTH_SCOPE_DENIED', 'category' => 'AUTH_DENY', 'request_id_prefix' => 'req-authz-'],
+    ['example' => 'ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY', 'request_id_prefix' => 'req-feed-'],
+    ['example' => 'ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED', 'category' => 'AUTH_DENY', 'request_id_prefix' => 'req-feed-'],
+    ['example' => 'ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE', 'request_id_prefix' => 'req-interact-'],
 ];
 
 $mappedInteractionCodes = [];
 foreach ($interactionDenyMatrix as $row) {
-    if (strpos($openapi, $row['example']) === false) {
+    $exampleBlockPattern = '/'.preg_quote($row['example'], '/').":\\n\\s+value:\\n\\s+error:\\s+\\{\\s*code:\\s*".$row['code'].",\\s*message:\\s*\"[^\"]+\",\\s*category:\\s*".$row['category'].",\\s*request_id:\\s*\"(".$row['request_id_prefix']."[A-Za-z0-9\\-_]+)\",\\s*timestamp_utc:\\s*\"(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z)\"\\s*\\}/m";
+    if (!preg_match($exampleBlockPattern, $openapi, $m)) {
         fwrite(STDERR, "Missing interaction deny example fixture in OpenAPI: {$row['example']}\n");
         exit(1);
     }
-    if (strpos($openapi, $row['code']) === false) {
-        fwrite(STDERR, "Missing interaction deny code fixture in OpenAPI: {$row['code']}\n");
+    if (strtotime($m[2]) === false) {
+        fwrite(STDERR, "Interaction deny fixture has invalid timestamp_utc for {$row['example']}.\n");
         exit(1);
     }
     $mappedInteractionCodes[] = $row['code'];
