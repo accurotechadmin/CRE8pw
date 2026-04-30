@@ -42,8 +42,10 @@ Track every Phase 3 exception that is retained between an authoring session and 
 
 | exception_id | slice | owner | status | due_utc | decision_ref | verification_hook_ids | next_command | evidence_paths | linked_slice_id | notes |
 |---|---|---|---|---|---|---|---|---|---|---|
+| P3-EXC-001 | P3-S0.4 | Program Traceability WG | open | 2026-05-07 | ADR-004 | HOOK-SSOT-LINK-INTEGRITY | `composer docs:ssot:lint` | `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md`; `reports/session_handoffs/SESSION_HANDOFF_20260430-0419.md` |  | Repo hygiene baseline deferred from initial M0 batch; tracked residual until completed. |
+| P3-EXC-002 | P3-S2.3 | Program Traceability WG | open | 2026-05-13 | ADR-004 | HOOK-TRACE-MATRIX-COVERAGE; HOOK-SSOT-REPORT-COVERAGE | `composer docs:ssot:report` | `reports/ssot/coverage_latest.json`; `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md` |  | Traceability backfill remains incomplete (`untraced_requirements` > 0). |
 
-(Empty initial state at Phase 3 entry. Rows appended as Phase 3 sessions identify deferrals.)
+
 
 ## Change-impact map reference
 
