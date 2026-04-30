@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 $specPath = dirname(__DIR__) . '/docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md';
+$openapiPath = dirname(__DIR__) . '/docs/31_machine_contracts/openapi/cre8.v1.yaml';
 $spec = file_get_contents($specPath);
-if ($spec === false) {
+$openapi = file_get_contents($openapiPath);
+if ($spec === false || $openapi === false) {
     fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] unable to read identity model spec" . PHP_EOL);
     exit(1);
 }
@@ -96,6 +98,7 @@ $multiActorRuntimeFixture = [
 
 $seenRequestIds = [];
 $issuedIdByPrincipal = [];
+$runtimeActorIds = [];
 foreach ($multiActorRuntimeFixture as $row) {
     if (!str_starts_with($row['request_id'], 'req-ident-issue-rt-')) {
         fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime issuance fixture request_id namespace drift detected" . PHP_EOL);
@@ -106,6 +109,7 @@ foreach ($multiActorRuntimeFixture as $row) {
         exit(1);
     }
     $seenRequestIds[$row['request_id']] = true;
+    $runtimeActorIds[$row['actor_id']] = true;
 
     if ($row['event'] === 'id_keypair.issued') {
         $issuedIdByPrincipal[$row['principal_id']] = true;
@@ -148,6 +152,22 @@ if (!$runtimeNegativeViolationDetected) {
 
 if (count($seenRequestIds) < 2) {
     fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] expected multi-actor runtime fixture to include at least two distinct replay-safe request ids" . PHP_EOL);
+    exit(1);
+}
+if (count($runtimeActorIds) < 3) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] expected runtime fixture to involve at least three actors (root + delegated issuers)" . PHP_EOL);
+    exit(1);
+}
+if (!str_contains($openapi, 'AuthDecisionRequestIdentityTransitionAllow') || !str_contains($openapi, 'AuthDecisionRequestIdentityTransitionDeny')) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] missing identity-to-authz transition fixtures in OpenAPI examples" . PHP_EOL);
+    exit(1);
+}
+if (!preg_match('/AuthDecisionRequestIdentityTransitionAllow:\n\s{6}value:\s\{[^\n]*identity_event_ref:\s"(req-ident-issue-rt-[0-9]{3})"/m', $openapi, $allowIssueRef)) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] missing replay-safe identity_event_ref in AuthDecisionRequestIdentityTransitionAllow" . PHP_EOL);
+    exit(1);
+}
+if (!isset($seenRequestIds[$allowIssueRef[1]])) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] OpenAPI identity transition allow fixture must reference a runtime issuance request_id fixture" . PHP_EOL);
     exit(1);
 }
 echo 'test:contract:identity-issuance PASS (hook=HOOK-IDENTITY-ID-FIRST-ISSUANCE, clauses=1, fixtures=6, deny_path=id_required_before_utility, replay_safe_namespace=req-ident-issue-*|req-ident-issue-rt-*)' . PHP_EOL;
