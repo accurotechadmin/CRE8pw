@@ -42,6 +42,9 @@ Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.m
 
 ## See also
 - [Extensibility Playbook](./EXTENSIBILITY_PLAYBOOK.md)
+- [Integration Provider Pattern](./INTEGRATION_PROVIDER_PATTERN.md)
+- [Post Type Extension Spec](./POST_TYPE_EXTENSION_SPEC.md)
+- [Principal Type Extension Spec](./PRINCIPAL_TYPE_EXTENSION_SPEC.md)
 - [CRE8 Extensibility and Module Pattern Seed](../../seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md)
 - [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
