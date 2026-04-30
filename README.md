@@ -13,6 +13,17 @@ Every behavior the platform exposes — authorization, lifecycle, content visibi
 
 ---
 
+## Document Control
+
+- Document ID: README-CRE8-ROOT
+- Version: 1.1.0
+- Status: normative
+- Owner: Platform Architecture WG
+- Reviewers: Docs Governance WG; Program Traceability WG
+- Last reviewed (UTC): 2026-04-30
+- Next review due (UTC): 2026-07-30
+- Canonical SSOT index: `docs/00_governance/SSOT_INDEX.md`
+
 ## Table of Contents
 
 1. [Platform Purpose and Scope](#1-platform-purpose-and-scope)

@@ -1,3 +1,19 @@
+---
+doc_id: DOCS-EVIDENCE-AUTOMATION-README
+version: 1.1.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Program Traceability WG
+  - Operations Quality WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-07-30
+source_seed_refs:
+  - seed/CRE8_SEED_CANON_INDEX.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+---
 # `docs/evidence/automation/` — Automation Evidence Linkage
 
 This folder records **how automated verification produces evidence** in the CRE8 SSOT corpus: which scripts run, where their outputs land, and how those outputs flow back into the traceability matrix and acceptance bundles.
@@ -60,6 +76,10 @@ Phase 3 milestone M11 introduces additional scripts (for example `composer docs:
 ## Status under Phase 3
 
 Phase 3 milestone M11 is the slice family that completes automation depth: it adds new hooks, scripts, evidence templates, and `composer phase3:final-acceptance-bundle`. Until M11, automation evidence stays at the Phase 2 baseline plus any incremental hooks added by intervening slices.
+
+## Change Impact Map linkage
+
+- Change Impact Map artifacts for machine-contract updates MUST be stored under `reports/change_impact_maps/` and referenced from session handoffs.
 
 ## See also
 

@@ -1,3 +1,19 @@
+---
+doc_id: DOCS-EVIDENCE-README
+version: 1.1.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Program Traceability WG
+  - Operations Quality WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-07-30
+source_seed_refs:
+  - seed/CRE8_SEED_CANON_INDEX.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+---
 # `docs/evidence/` — CRE8 Verification Evidence
 
 This folder is the canonical home of **verification evidence templates** and **automation linkage** for the CRE8 SSOT corpus. It is a peer of the other `docs/` domain folders; it is owned by Operations Quality WG with reviewers from Program Traceability WG and Docs Governance WG.

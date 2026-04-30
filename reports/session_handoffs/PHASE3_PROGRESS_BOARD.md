@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T09:36:00Z
+- Last updated (UTC): 2026-04-30T05:38:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -78,8 +78,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S2.1 | Replace scaffold READMEs | not_started | Docs Governance WG | 2026-05-10 | HOOK-SSOT-LINT-SCAFFOLD-TEXT | ADR-004 | (TBD) | Author real content for `docs/README.md` (already hardened), `docs/evidence/README.md`, `docs/evidence/automation/README.md`, `reports/README.md` (already hardened). |
-| P3-S2.2 | Promote `README.md` (root) to versioned, framework-aligned form | not_started | Docs Governance WG | 2026-05-10 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Add control block and SSOT_INDEX cross-reference. |
+| P3-S2.1 | Replace scaffold READMEs | complete | Docs Governance WG | 2026-05-10 | HOOK-SSOT-LINT-SCAFFOLD-TEXT | ADR-004 | (TBD) | Author real content for `docs/evidence/README.md`, `docs/evidence/automation/README.md` hardened with metadata frontmatter; `docs/README.md`/`reports/README.md` confirmed non-scaffold and compliant. |
+| P3-S2.2 | Promote `README.md` (root) to versioned, framework-aligned form | complete | Docs Governance WG | 2026-05-10 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Root `README.md` now includes explicit document-control block and `docs/00_governance/SSOT_INDEX.md` cross-reference. |
 | P3-S2.3 | Backfill the Traceability Matrix | partially_complete | Program Traceability WG | 2026-05-13 | HOOK-TRACE-MATRIX-COVERAGE; HOOK-SSOT-REPORT-COVERAGE-COVERAGE | ADR-004 | `reports/ssot/coverage_latest.json` | Started under P3-S0.2 (24 rows added; 130/238 still untraced). |
 | P3-S2.4 | Add scaffold-prose lint | complete | Docs Governance WG | 2026-05-12 | HOOK-SSOT-LINT-SCAFFOLD-TEXT | ADR-004 | `scripts/docs_ssot_lint.php`; `reports/session_handoffs/SESSION_HANDOFF_20260430-0936.md` | Lint now blocks exact scaffold opener phrase in docs markdown corpus. |
 | P3-S2.5 | Add a glossary lint hook | not_started | Docs Governance WG | 2026-05-13 | HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | (TBD) | New script `scripts/docs_ssot_glossary_check.php`; hard-fail after P3-S3.1. |
@@ -194,7 +194,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0936.md`](SESSION_HANDOFF_20260430-0936.md) — P3-S2.4 complete; scaffold opener lint tightened.
+1. [`SESSION_HANDOFF_20260430-0538.md`](SESSION_HANDOFF_20260430-0538.md) — P3-S2.1/P3-S2.2 complete; scaffold README replacements ratified and root README promoted with document control metadata.
+2. [`SESSION_HANDOFF_20260430-0936.md`](SESSION_HANDOFF_20260430-0936.md) — P3-S2.4 complete; scaffold opener lint tightened.
 2. [`SESSION_HANDOFF_20260430-0835.md`](SESSION_HANDOFF_20260430-0835.md) — P3-S1.7/P3-S1.8/P3-S1.9 complete; script drift, CI drift, and dot.env sanitization resolved.
 2. [`SESSION_HANDOFF_20260430-0600.md`](SESSION_HANDOFF_20260430-0600.md) — P3-S1.1 complete; authorization gate order reconciled and ADR-005 accepted.
 3. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
@@ -202,7 +203,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0936_RESPONSE.md`](../session_responses/20260430-0936_RESPONSE.md) — P3-S2.4 completion response.
+1. [`reports/session_responses/20260430-0538_RESPONSE.md`](../session_responses/20260430-0538_RESPONSE.md) — P3-S2.1/P3-S2.2 completion response.
+2. [`reports/session_responses/20260430-0936_RESPONSE.md`](../session_responses/20260430-0936_RESPONSE.md) — P3-S2.4 completion response.
 2. [`reports/session_responses/20260430-0835_RESPONSE.md`](../session_responses/20260430-0835_RESPONSE.md) — P3-S1.7/P3-S1.8/P3-S1.9 completion response.
 2. [`reports/session_responses/20260430-0600_RESPONSE.md`](../session_responses/20260430-0600_RESPONSE.md) — P3-S1.1 reconciliation completion response.
 3. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
