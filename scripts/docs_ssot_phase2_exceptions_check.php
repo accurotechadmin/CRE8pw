@@ -2,19 +2,28 @@
 
 declare(strict_types=1);
 
-$path = __DIR__ . '/../docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md';
-if (!is_file($path)) {
-    fwrite(STDERR, "[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] missing file: {$path}\n");
+$registerPath = __DIR__ . '/../docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md';
+$decisionsPath = __DIR__ . '/../docs/80_traceability_decisions_and_program/DECISIONS_LOG.md';
+$adrIndexPath = __DIR__ . '/../docs/80_traceability_decisions_and_program/ADR_INDEX.md';
+$progressBoardPath = __DIR__ . '/../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md';
+
+foreach ([$registerPath, $decisionsPath, $adrIndexPath, $progressBoardPath] as $requiredPath) {
+    if (!is_file($requiredPath)) {
+        fwrite(STDERR, "[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] missing file: {$requiredPath}\n");
+        exit(1);
+    }
+}
+
+$register = file_get_contents($registerPath);
+$decisions = file_get_contents($decisionsPath);
+$adrIndex = file_get_contents($adrIndexPath);
+$progressBoard = file_get_contents($progressBoardPath);
+if ($register === false || $decisions === false || $adrIndex === false || $progressBoard === false) {
+    fwrite(STDERR, "[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] failed to read one or more required artifacts.\n");
     exit(1);
 }
 
-$content = file_get_contents($path);
-if ($content === false) {
-    fwrite(STDERR, "[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] failed to read register.\n");
-    exit(1);
-}
-
-$lines = preg_split('/\R/', $content) ?: [];
+$lines = preg_split('/\R/', $register) ?: [];
 $rows = [];
 $inTable = false;
 foreach ($lines as $line) {
@@ -39,12 +48,12 @@ $errors = [];
 $allowedStatus = ['open', 'in_progress', 'blocked', 'closed'];
 foreach ($rows as $row) {
     $cells = array_map('trim', explode('|', trim($row, '|')));
-    if (count($cells) < 10) {
+    if (count($cells) < 11) {
         $errors[] = "malformed row: {$row}";
         continue;
     }
 
-    [$id, , , $status, $due, $decision, $hooks, $nextCommand, $evidence] = $cells;
+    [$id, , , $status, $due, $decision, $hooks, $nextCommand, $evidence, $linkedItemId] = $cells;
 
     if (!preg_match('/^P2-EXC-\d{3}$/', $id)) {
         $errors[] = "invalid exception_id {$id}";
@@ -67,6 +76,21 @@ foreach ($rows as $row) {
     if ($status === 'closed' && $evidence === '') {
         $errors[] = "closed row {$id} must include evidence_paths";
     }
+
+    if (str_starts_with($decision, 'ADR-') && !str_contains($adrIndex, "| {$decision} |")) {
+        $errors[] = "decision_ref {$decision} for {$id} not found in ADR_INDEX.md";
+    }
+    if (str_starts_with($decision, 'DECISION-') && !preg_match('/\|\s*' . preg_quote($decision, '/') . '\s*\|/', $decisions)) {
+        $errors[] = "decision_ref {$decision} for {$id} not found in DECISIONS_LOG.md";
+    }
+
+    if ($status === 'closed') {
+        if ($linkedItemId === '') {
+            $errors[] = "closed row {$id} must include linked_item_id";
+        } elseif (!preg_match('/\|\s*' . preg_quote($linkedItemId, '/') . '\s*\|.*\|\s*complete\s*\|/i', $progressBoard)) {
+            $errors[] = "closed row {$id} linked_item_id {$linkedItemId} not marked complete in PHASE2_PROGRESS_BOARD.md";
+        }
+    }
 }
 
 if ($errors !== []) {
@@ -76,4 +100,4 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo '[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] PASS: register schema validated.' . PHP_EOL;
+echo '[HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA] PASS: register schema and linkage validated.' . PHP_EOL;
