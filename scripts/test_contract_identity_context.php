@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 $specPath = dirname(__DIR__) . '/docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md';
+$openapiPath = dirname(__DIR__) . '/docs/31_machine_contracts/openapi/cre8.v1.yaml';
 $spec = file_get_contents($specPath);
-if ($spec === false) {
+$openapi = file_get_contents($openapiPath);
+if ($spec === false || $openapi === false) {
     fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] unable to read identity model spec" . PHP_EOL);
     exit(1);
 }
@@ -125,5 +127,17 @@ foreach ($runtimeContextByPrincipal as $principal => $contexts) {
         fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] expected runtime isolation fixture to model same-principal multi-context issuance for " . $principal . PHP_EOL);
         exit(1);
     }
+}
+if (!preg_match('/AuthDecisionRequestIdentityTransitionAllow:\n\s{6}value:\s\{[^\n]*utility_context_ref:\s"(req-ident-ctx-rt-[0-9]{3})"/m', $openapi, $allowContextRef)) {
+    fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] missing replay-safe utility_context_ref in AuthDecisionRequestIdentityTransitionAllow fixture" . PHP_EOL);
+    exit(1);
+}
+$runtimeContextRequestIds = [];
+foreach (array_merge($runtimeIsolationFixture, $runtimeCrossPrincipalFixture) as $row) {
+    $runtimeContextRequestIds[$row['request_id']] = true;
+}
+if (!isset($runtimeContextRequestIds[$allowContextRef[1]])) {
+    fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] OpenAPI identity transition allow fixture must reference runtime context request_id fixture" . PHP_EOL);
+    exit(1);
 }
 echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', runtime_isolation_fixtures=' . count($runtimeIsolationFixture) . ', runtime_cross_principal_fixtures=' . count($runtimeCrossPrincipalFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*|req-ident-ctx-rt-*)' . PHP_EOL;
