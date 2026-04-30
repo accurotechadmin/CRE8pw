@@ -1,7 +1,45 @@
+---
+doc_id: CRE8-OPS-CONFIGURATION-ENVIRONMENT-CONTRACT
+version: 1.0.0
+status: normative
+owner: Operations Quality WG
+reviewers:
+  - Security WG
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-06-15
+source_seed_refs:
+  - seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md
+  - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
+normative_dependencies:
+  - dot.env
+  - docs/60_operations_quality_and_release/BOOT_AND_STARTUP_FAILURE_CONTRACT.md
+  - docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md
+---
+
 # Configuration Environment Contract
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **CONFIGURATION_ENVIRONMENT_CONTRACT.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Normative requirements
+- **CRE8-OPS-REQ-0033**: Environment variable names and descriptions **MUST** be declared in `dot.env` using example-only values and **MUST NOT** include live secrets.
+- **CRE8-OPS-REQ-0034**: Required variables for startup, auth proof verification, persistence, and observability **MUST** be validated at boot with deterministic fail-closed behavior.
+- **CRE8-OPS-REQ-0035**: Configuration parsing **MUST** apply explicit type coercion and bounds checks for booleans, integers, durations, and URLs.
+- **CRE8-OPS-REQ-0036**: Secret-bearing variables **MUST** be redacted in errors, logs, and diagnostics.
+- **CRE8-OPS-REQ-0037**: Configuration contract changes **MUST** be reflected in both this document and `dot.env` in the same patch set.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Implementation-binding dependencies
+- `vlucas/phpdotenv` **MUST** provide environment loading and required-variable assertions.
+- `respect/validation` **MUST** provide deterministic type and bounds validation for configuration values.
+- `monolog/monolog` **MUST** provide redacted structured diagnostics.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Verification hooks
+| Hook ID | Enforcement |
+|---|---|
+| `HOOK-SSOT-LINT-METADATA` | Ensures metadata/schema consistency for configuration contract updates. |
+| `HOOK-CONTRACT-ERROR-SECRETS-REDACTION` | Guards against secret leakage in contract examples and deterministic error output. |
+
+Change Impact Map: `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`.
+
+## See also
+- [Boot and Startup Failure Contract](./BOOT_AND_STARTUP_FAILURE_CONTRACT.md)
+- [Health Endpoint Contract](./HEALTH_ENDPOINT_CONTRACT.md)
+- [Phase 2 Acceptance Criteria](./PHASE2_ACCEPTANCE_CRITERIA.md)
