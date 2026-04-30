@@ -1,7 +1,51 @@
+---
+doc_id: CRE8-IDPOL-KEYCHAIN-RESOLUTION
+version: 1.0.0
+status: normative
+owner: Identity & Policy WG
+reviewers:
+  - Platform Architecture WG
+  - Security WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-07-30
+source_seed_refs:
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+  - seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md
+normative_dependencies:
+  - docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md
+  - docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md
+---
+
 # Keychain Composition And Resolution Spec
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Normative requirements
+- **CRE8-IDPOL-REQ-0010**: Effective permission scope MUST be the intersection of (a) principal intrinsic matrix permissions, (b) active delegation grants, and (c) request context constraints (tenant, audience, lifecycle state). Enforcement dependency: `php-di/php-di` policy engine composition and `phpunit/phpunit` contract fixtures.
+- **CRE8-IDPOL-REQ-0011**: Keychain resolution MUST process grants in deterministic order: newest active grant first, then descending by `issued_at`, with stable tie-breaker on `grant_id`. Enforcement dependency: `ext-pdo` deterministic query ordering and `phpunit/phpunit` lifecycle tests.
+- **CRE8-IDPOL-REQ-0012**: Expired, revoked, or suspended grants MUST be excluded from effective scope before permission matching. Enforcement dependency: `ext-pdo` persistence filters and `phpunit/phpunit` lifecycle propagation fixtures.
+- **CRE8-IDPOL-REQ-0013**: Resolution MUST return both `effective_permissions` and `decision_path` (principal type, grant ids, deny reason if any) for auditability. Enforcement dependency: `monolog/monolog` structured logging and `phpunit/phpunit` auth-reason tests.
+- **CRE8-IDPOL-REQ-0014**: Where no eligible grants remain after filtering, the decision MUST be deny with reason `AUTH_DENY_DELEGATION_SCOPE`. Enforcement dependency: `slim/slim` middleware decision mapping and `phpunit/phpunit` auth-reasons contract tests.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Resolution algorithm
+1. Load principal type and base capabilities from `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`.
+2. Load candidate grants for request principal/context from persistence.
+3. Filter grants to `active` lifecycle state and unexpired window.
+4. Sort grants deterministically (`created_at DESC`, then `grant_id ASC`).
+5. Intersect grant tokens with base capabilities and request-context predicates.
+6. Return allow with `effective_permissions` if the requested token is present; otherwise deny with canonical reason.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Deterministic walkthrough (multi-grant)
+- Principal: `DELEGATEE`
+- Requested token: `principal.utility_keypair.rotate`
+- Grants (same subject):
+  - `G-102` active, unexpired, includes `principal.utility_keypair.rotate`
+  - `G-091` active, unexpired, includes `principal.utility_keypair.issue`
+  - `G-055` revoked, includes `principal.utility_keypair.rotate`
+- Resolution result:
+  - `G-055` excluded by lifecycle filter.
+  - Sorted active grants: `G-102`, `G-091`.
+  - Matrix row for `DELEGATEE` is `CONDITIONAL` for rotate; intersection with `G-102` yields token present.
+  - Decision: `ALLOW`, `effective_permissions=[principal.utility_keypair.rotate]`, `decision_path=[DELEGATEE,G-102]`.
+
+## Change history
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.3. Change Impact Map: [`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).
