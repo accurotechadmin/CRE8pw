@@ -84,4 +84,40 @@ if (!isset($badIndexByEvent['id_keypair.issued'], $badIndexByEvent['utility_keyp
     exit(1);
 }
 
-echo 'test:contract:identity-issuance PASS (hook=HOOK-IDENTITY-ID-FIRST-ISSUANCE, clauses=1, fixtures=4, deny_path=id_required_before_utility, replay_safe_namespace=req-ident-issue-*)' . PHP_EOL;
+
+$multiActorRuntimeFixture = [
+    ['principal_id' => 'p-root-001', 'actor_id' => 'issuer-root', 'event' => 'principal.minted', 'request_id' => 'req-ident-issue-rt-001', 'timestamp_utc' => '2026-04-30T00:10:00Z'],
+    ['principal_id' => 'p-root-001', 'actor_id' => 'issuer-root', 'event' => 'id_keypair.issued', 'request_id' => 'req-ident-issue-rt-001', 'timestamp_utc' => '2026-04-30T00:10:01Z'],
+    ['principal_id' => 'p-root-001', 'actor_id' => 'issuer-tenant-a', 'event' => 'utility_keypair.created', 'context' => 'tenant:t-a', 'request_id' => 'req-ident-issue-rt-001', 'timestamp_utc' => '2026-04-30T00:10:02Z'],
+    ['principal_id' => 'p-root-002', 'actor_id' => 'issuer-root', 'event' => 'principal.minted', 'request_id' => 'req-ident-issue-rt-002', 'timestamp_utc' => '2026-04-30T00:10:03Z'],
+    ['principal_id' => 'p-root-002', 'actor_id' => 'issuer-root', 'event' => 'id_keypair.issued', 'request_id' => 'req-ident-issue-rt-002', 'timestamp_utc' => '2026-04-30T00:10:04Z'],
+    ['principal_id' => 'p-root-002', 'actor_id' => 'issuer-tenant-b', 'event' => 'utility_keypair.created', 'context' => 'tenant:t-b', 'request_id' => 'req-ident-issue-rt-002', 'timestamp_utc' => '2026-04-30T00:10:05Z'],
+];
+
+$seenRequestIds = [];
+$issuedIdByPrincipal = [];
+foreach ($multiActorRuntimeFixture as $row) {
+    if (!str_starts_with($row['request_id'], 'req-ident-issue-rt-')) {
+        fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime issuance fixture request_id namespace drift detected" . PHP_EOL);
+        exit(1);
+    }
+    if (strtotime($row['timestamp_utc']) === false) {
+        fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime issuance fixture timestamp_utc must be parseable ISO-8601" . PHP_EOL);
+        exit(1);
+    }
+    $seenRequestIds[$row['request_id']] = true;
+
+    if ($row['event'] === 'id_keypair.issued') {
+        $issuedIdByPrincipal[$row['principal_id']] = true;
+    }
+    if ($row['event'] === 'utility_keypair.created' && !isset($issuedIdByPrincipal[$row['principal_id']])) {
+        fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime fixture violates ID-first rule for principal " . $row['principal_id'] . PHP_EOL);
+        exit(1);
+    }
+}
+
+if (count($seenRequestIds) < 2) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] expected multi-actor runtime fixture to include at least two distinct replay-safe request ids" . PHP_EOL);
+    exit(1);
+}
+echo 'test:contract:identity-issuance PASS (hook=HOOK-IDENTITY-ID-FIRST-ISSUANCE, clauses=1, fixtures=5, deny_path=id_required_before_utility, replay_safe_namespace=req-ident-issue-*|req-ident-issue-rt-*)' . PHP_EOL;
