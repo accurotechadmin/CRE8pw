@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T12:24:00Z
+- Last updated (UTC): 2026-04-30T12:46:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -148,10 +148,10 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S9.1 | `HEALTH_ENDPOINT_CONTRACT.md` | not_started | Operations Quality WG | 2026-06-11 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Liveness vs. readiness. |
-| P3-S9.2 | `BOOT_AND_STARTUP_FAILURE_CONTRACT.md` | not_started | Operations Quality WG | 2026-06-12 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Cites `vlucas/phpdotenv`. |
-| P3-S9.3 | `CONFIGURATION_ENVIRONMENT_CONTRACT.md` | not_started | Operations Quality WG | 2026-06-12 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Env-var contract; binds to `dot.env`. |
-| P3-S9.4 | `OPERATIONAL_SMOKE_CHECK_CONTRACT.md` | not_started | Operations Quality WG | 2026-06-13 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Smoke command suite. |
+| P3-S9.1 | `HEALTH_ENDPOINT_CONTRACT.md` | complete | Operations Quality WG | 2026-06-11 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Liveness vs. readiness. |
+| P3-S9.2 | `BOOT_AND_STARTUP_FAILURE_CONTRACT.md` | complete | Operations Quality WG | 2026-06-12 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Cites `vlucas/phpdotenv`. |
+| P3-S9.3 | `CONFIGURATION_ENVIRONMENT_CONTRACT.md` | complete | Operations Quality WG | 2026-06-12 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Env-var contract; binds to `dot.env`. |
+| P3-S9.4 | `OPERATIONAL_SMOKE_CHECK_CONTRACT.md` | complete | Operations Quality WG | 2026-06-13 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Smoke command suite. |
 | P3-S9.5 | `MIGRATION_AND_SEED_STRATEGY.md` | not_started | Operations Quality WG | 2026-06-14 | HOOK-SEC-LIFECYCLE-PROPAGATION | ADR-004 | (TBD) | Forward-only `ext-pdo` migrations. |
 | P3-S9.6 | `OBSERVABILITY_EVENT_CATALOG.md` | not_started | Operations Quality WG | 2026-06-15 | HOOK-OBS-EVENT-CATALOG-COVERAGE (target) | ADR-004 | (TBD) | `monolog/monolog` channels and provenance bindings. |
 | P3-S9.7 | `RELEASE_CHECKLIST.md` | not_started | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Ordered gate hooks. |
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260430-1246.md`](SESSION_HANDOFF_20260430-1246.md) — P3-S9.1/P3-S9.2/P3-S9.3/P3-S9.4 complete; operations contracts promoted from scaffold to normative.
 1. [`SESSION_HANDOFF_20260430-1224.md`](SESSION_HANDOFF_20260430-1224.md) — M6 attempt blocked by unresolved P3-S5.3/P3-S5.4/P3-S5.5 dependency chain; blocker report `PHASE3_BLOCKER_20260430-1224.md`.
 1. [`SESSION_HANDOFF_20260430-1142.md`](SESSION_HANDOFF_20260430-1142.md) — M6 attempt blocked by unresolved P3-S5.3/P3-S5.4/P3-S5.5 dependency chain; blocker report `PHASE3_BLOCKER_20260430-1142.md`.
 1. [`SESSION_HANDOFF_20260430-0702.md`](SESSION_HANDOFF_20260430-0702.md) — P3-S5.3/P3-S5.4/P3-S5.5 blocked; blocker report published for deterministic route expansion prerequisites.
