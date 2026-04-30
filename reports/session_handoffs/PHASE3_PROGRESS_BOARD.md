@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T06:37:00Z
+- Last updated (UTC): 2026-04-30T07:02:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -111,9 +111,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 |---|---|---|---|---|---|---|---|---|
 | P3-S5.1 | `Endpoint_Examples_All_Routes.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-EXAMPLE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with normative example coverage requirements and dependency-linked verification hooks. |
 | P3-S5.2 | `WEBHOOK_AND_INTEGRATION_CONTRACT.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-COMPAT-DECLARATION; HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with deterministic webhook signing/JWT/retry/schema/error/observability contract. |
-| P3-S5.3 | Route inventory expansion (≥ 20 routes) | not_started | API Contracts WG | 2026-05-27 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY; HOOK-CONTRACT-ROUTE-UNIQUENESS | ADR-004 | (TBD) | Adds principal/key/utility/delegation/audience/post/comment/audit/system routes. |
-| P3-S5.4 | `ERROR_CODE_CATALOG.md` expansion | not_started | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | (TBD) | New codes per route family expansion. |
-| P3-S5.5 | Parity table + Route Family Coverage Policy expansion | not_started | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | ADR-004 | (TBD) | Family rows for new families. |
+| P3-S5.3 | Route inventory expansion (≥ 20 routes) | blocked | API Contracts WG | 2026-05-27 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY; HOOK-CONTRACT-ROUTE-UNIQUENESS | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md` | Blocked pending approved deterministic route expansion seed/decision input; cannot author non-speculative routes. |
+| P3-S5.4 | `ERROR_CODE_CATALOG.md` expansion | blocked | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md` | Blocked pending P3-S5.3 canonical route inventory expansion inputs. |
+| P3-S5.5 | Parity table + Route Family Coverage Policy expansion | blocked | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md` | Blocked pending P3-S5.3 canonical route inventory expansion inputs. |
 
 ### M6 — Machine contracts depth
 
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260430-0702.md`](SESSION_HANDOFF_20260430-0702.md) — P3-S5.3/P3-S5.4/P3-S5.5 blocked; blocker report published for deterministic route expansion prerequisites.
 1. [`SESSION_HANDOFF_20260430-0637.md`](SESSION_HANDOFF_20260430-0637.md) — P3-S5.1/P3-S5.2 complete; endpoint examples and webhook/integration contract hardened to normative.
 2. [`SESSION_HANDOFF_20260430-0715.md`](SESSION_HANDOFF_20260430-0715.md) — P3-S4.1/P3-S4.2/P3-S4.3 complete; identity permission vocabulary, capability matrix, and deterministic keychain resolution canonized.
 2. [`SESSION_HANDOFF_20260430-0538.md`](SESSION_HANDOFF_20260430-0538.md) — P3-S2.1/P3-S2.2 complete; scaffold README replacements ratified and root README promoted with document control metadata.
