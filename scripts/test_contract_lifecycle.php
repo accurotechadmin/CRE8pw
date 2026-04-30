@@ -21,6 +21,8 @@ $requiredOpenApiSnippets = [
     'ErrorLifecycleBlocked' => 'key lifecycle deny example',
     'ErrorInteractionLifecycleBlocked' => 'interaction lifecycle deny example',
     'ErrorDescendantLifecycleBlocked' => 'descendant lifecycle deny example',
+    'ErrorDescendantLifecycleBlockedSecondary' => 'secondary descendant lifecycle deny example',
+    'AuthDecisionRequestDescendantPropagation' => 'descendant propagation action fixture',
     'action: "comment.create"' => 'interaction action fixture',
 ];
 
@@ -51,6 +53,17 @@ $distinctLifecycleExamples = [
     'ErrorInteractionLifecycleBlocked' => 'req-interact-',
     'ErrorDescendantLifecycleBlocked' => 'req-desc-life-',
 ];
+
+$descendantRequestIds = [];
+if (preg_match_all('/request_id:\s"(req-desc-life-[0-9]{3})"/', $openapi, $descendantIdMatches) === false) {
+    fwrite(STDERR, "Failed to parse descendant lifecycle request IDs for propagation breadth checks\n");
+    exit(1);
+}
+$descendantRequestIds = array_values(array_unique($descendantIdMatches[1] ?? []));
+if (count($descendantRequestIds) < 2) {
+    fwrite(STDERR, "Expected at least two distinct req-desc-life-* fixtures for multi-actor propagation depth\n");
+    exit(1);
+}
 
 foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
     $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*request_id:\s"' . preg_quote($requestPrefix, '/') . '[^"\n]*"[^\n]*\}/m';
@@ -83,4 +96,4 @@ if ($descendantTs < $revokeTs) {
     exit(1);
 }
 
-echo 'test:contract:lifecycle PASS (routes=2, deny_examples=3, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, descendant_chronology=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
+echo 'test:contract:lifecycle PASS (routes=2, deny_examples=3, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, descendant_chronology=validated, descendant_multi_actor=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
