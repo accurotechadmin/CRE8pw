@@ -1,7 +1,53 @@
+---
+doc_id: CRE8-FEED-AUDIENCE-GROUP-SPEC
+version: 1.0.0
+status: provisional-normative
+owner: Product Policy WG
+reviewers:
+  - Identity & Policy WG
+  - API Contracts WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
+source_seed_refs:
+  - seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+normative_dependencies:
+  - docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md
+  - docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md
+  - docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+change_impact_map: reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md
+---
+
 # Audience Group Spec
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **AUDIENCE_GROUP_SPEC.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define deterministic audience-group entity semantics, ownership authority, membership lifecycle, and enumeration behavior.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-FEED-REQ-0023**: `AudienceGroup` records **MUST** include immutable `group_id`, `tenant_id`, `scope_type`, `created_by_principal_id`, `created_at_utc`, and mutable `status` (`active`, `suspended`, `deleted`) fields aligned to the canonical data model.
+- **CRE8-FEED-REQ-0024**: `scope_type` **MUST** be one of `tenant`, `workspace`, `project`, or `custom`; values outside this set **MUST** be rejected with `VALIDATION_FAILED`.
+- **CRE8-FEED-REQ-0025**: Audience-group membership rows **MUST** bind `group_id` + `member_principal_id` + `membership_state` (`active`, `pending`, `revoked`) with UTC lifecycle stamps and **MUST NOT** permit duplicate active memberships for the same pair.
+- **CRE8-FEED-REQ-0026**: Only principals with owner authority over the target scope **MUST** be permitted to create, suspend, delete, or mutate membership for audience groups in that scope.
+- **CRE8-FEED-REQ-0027**: Membership changes **MUST** apply to authorization decisions no later than the next request evaluation cycle and **MUST NOT** rely on client refresh acknowledgments.
+- **CRE8-FEED-REQ-0028**: Audience-group hard size limits **MUST** be deterministic per `scope_type`; when a limit is reached, new membership inserts **MUST** be denied with `POLICY_LIMIT_EXCEEDED`.
+- **CRE8-FEED-REQ-0029**: Group enumeration endpoints **MUST** return stable ordering by `created_at_utc DESC, group_id ASC` and **MUST** include pagination cursors that reproduce the same order across retries.
+- **CRE8-FEED-REQ-0030**: Groups in `deleted` state **MUST NOT** be eligible for new membership changes and **MUST** be excluded from default enumeration unless explicit `include_deleted=true` is provided.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Verification hooks
+- **HOOK-CONTRACT-FEED-METADATA-STABILITY** (automated): Enforce stable feed and audience metadata fields and deterministic ordering/pagination semantics.
+- **HOOK-AUTH-LIFECYCLE-ENFORCEMENT** (automated): Validate lifecycle-state enforcement for group and membership mutation actions.
+- **HOOK-CAPABILITY-MATRIX-COMPLETE** (automated): Ensure owner-authority constraints remain aligned with principal capability matrix.
+- **HOOK-CONTRACT-ERROR-CODE-COVERAGE** (automated): Validate use of canonical deny/error codes for audience-group flows.
+
+## See also
+- [Content Model and Targeting Spec](./CONTENT_MODEL_AND_TARGETING_SPEC.md)
+- [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
+- [Data Model Spec](../40_data_security_and_crypto/DATA_MODEL_SPEC.md)
+- [Data Model Reference](../40_data_security_and_crypto/DATA_MODEL_REFERENCE.md)
+- [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+
+Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`.

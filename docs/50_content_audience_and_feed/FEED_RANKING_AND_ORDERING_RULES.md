@@ -30,6 +30,10 @@ Define deterministic feed authorization and ordering behavior for CRE8 audience-
 - **CRE8-FEED-REQ-0003**: Authorization revocation or audience-policy change **MUST** remove newly ineligible items from subsequent feed responses with no grace bypass unless an explicit emergency policy exception exists.
 - **CRE8-FEED-REQ-0004**: Feed response metadata **MUST** expose `ordering_basis` and pagination cursor semantics so clients can reproduce deterministic ordering.
 
+- **CRE8-FEED-REQ-0038**: Feed ordering **MUST** execute within tenant-isolated datasets; cross-tenant ordering or cursor reuse **MUST NOT** occur.
+- **CRE8-FEED-REQ-0039**: Refresh requests **MUST** be rate-limited per principal and per tenant using deterministic windows; throttled refresh responses **MUST** return canonical error code and retry guidance fields.
+- **CRE8-FEED-REQ-0040**: Ordering recomputation **MUST** remain stable under pagination so that replaying the same cursor during the same consistency window yields identical item order and metadata.
+
 ## Verification hooks
 - **HOOK-FEED-AUTH-ORDER**: Validate authorized-only inclusion and deterministic newest-first ordering semantics.
 - **Next automation candidate**: Add contract snapshots for mixed-visibility fixtures under `test:contract` to verify ordering and revocation behavior.

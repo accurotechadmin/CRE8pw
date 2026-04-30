@@ -35,6 +35,10 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - **CRE8-FEED-REQ-0021**: Phase 1 machine contract examples **MUST** include at least one interaction-scoped authorization request and one deterministic interaction deny example to prevent prose↔machine drift.
 - **CRE8-FEED-REQ-0022**: Every interaction deny example bound to `AUTH_PERMISSION_DENIED`, `AUTH_SCOPE_DENIED`, `AUTH_DEPTH_EXCEEDED`, `AUTH_GRANT_EXPIRED`, or `AUTH_LIFECYCLE_BLOCKED` **MUST** include an `error` payload with canonical `code`, deterministic `category`, `request_id` prefix (`req-feed-`, `req-authz-`, or `req-interact-`), and ISO-8601 `timestamp_utc` to preserve executable payload-shape parity.
 
+- **CRE8-FEED-REQ-0035**: Comment lifecycle **MUST** implement deterministic states `visible`, `edited`, `hidden_by_moderation`, `soft_deleted`, and `hard_deleted` with explicit allowed transitions.
+- **CRE8-FEED-REQ-0036**: Comment edits **MUST** preserve immutable edit history entries containing prior body hash, editor principal, edit reason, and `edited_at_utc`.
+- **CRE8-FEED-REQ-0037**: `soft_deleted` comments **MUST** be hidden from default client views while remaining retrievable for moderators and audit hooks according to authorization policy.
+
 ## Deterministic deny mapping baseline
 | Interaction deny condition | Required code |
 |---|---|
