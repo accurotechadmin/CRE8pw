@@ -70,3 +70,6 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 See also: [UI Runtime Contract](./UI_RUNTIME_CONTRACT.md).
 
 Change Impact Map: [`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
+
+
+- Contract versioning policy: `../31_machine_contracts/CONTRACT_VERSION_POLICY.md`
