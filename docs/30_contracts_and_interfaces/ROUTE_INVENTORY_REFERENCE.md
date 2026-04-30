@@ -52,6 +52,25 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | id-key | key.lifecycle.suspend | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
 | CRE8-ROUTE-0004 | GET | /v1/feed/items | utility-key | feed.items.read | group | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
 | CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | id-key | key.lifecycle.revoke | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED,AUTH_LIFECYCLE_BLOCKED | active |  |  |
+| CRE8-ROUTE-0006 | POST | /v1/principals | id-key | principal.create | tenant | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0007 | POST | /v1/keys/id | id-key | key.id.mint | tenant | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0008 | POST | /v1/keys/utility | id-key | key.utility.mint | resource | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0009 | POST | /v1/keys/{key_id}/lifecycle/rotate | id-key | key.lifecycle.rotate | resource | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0010 | POST | /v1/delegations | id-key | delegation.issue | resource | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0011 | DELETE | /v1/delegations/{delegation_id} | id-key | delegation.revoke | resource | 204 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0012 | GET | /v1/audience-groups | utility-key | audience.group.read | tenant | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0013 | POST | /v1/audience-groups | id-key | audience.group.create | tenant | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0014 | PATCH | /v1/audience-groups/{id} | id-key | audience.group.update | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0015 | DELETE | /v1/audience-groups/{id} | id-key | audience.group.delete | resource | 204 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0016 | POST | /v1/posts | utility-key | post.create | group | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0017 | GET | /v1/posts/{id} | utility-key | post.read | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0018 | PATCH | /v1/posts/{id} | utility-key | post.update | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0019 | DELETE | /v1/posts/{id} | utility-key | post.delete | resource | 204 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0020 | POST | /v1/posts/{id}/comments | utility-key | comment.create | resource | 201 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0021 | GET | /v1/posts/{id}/comments | utility-key | comment.read | resource | 200 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0022 | POST | /v1/audit/exports | id-key | audit.export.create | global | 202 | AUTH_CREDENTIAL_INVALID,AUTH_PERMISSION_DENIED | active |  |  |
+| CRE8-ROUTE-0023 | GET | /v1/system/version | public | system.version.read | global | 200 | SYSTEM_INTERNAL_ERROR | active |  |  |
+| CRE8-ROUTE-0024 | GET | /v1/system/info | public | system.info.read | global | 200 | SYSTEM_INTERNAL_ERROR | active |  |  |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ROUTE-INVENTORY-PARITY**: Validate method/path parity with OpenAPI entries.

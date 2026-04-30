@@ -51,6 +51,16 @@ Define canonical API error envelope and stable error-code semantics for determin
 | AUTH_LIFECYCLE_BLOCKED | LIFECYCLE | 403 | Principal or key lifecycle state blocks request authorization. |
 | AUTH_POLICY_UNRESOLVED | AUTH_DENY | 403 | Policy context is missing or ambiguous and is resolved as deterministic deny. |
 | SYSTEM_INTERNAL_ERROR | SYSTEM | 500 | Internal processing failed; response is redacted and correlation-friendly for operators. |
+| INPUT_VALIDATION_FAILED | INPUT | 400 | Request body or query payload failed schema or semantic validation checks. |
+| INPUT_FIELD_MISSING | INPUT | 400 | Required field missing from request payload. |
+| INPUT_FIELD_INVALID | INPUT | 400 | Provided field value violates format, range, or enum constraints. |
+| LIFECYCLE_TRANSITION_INVALID | LIFECYCLE | 409 | Requested lifecycle transition is not allowed from current state. |
+| LIFECYCLE_ALREADY_TERMINAL | LIFECYCLE | 409 | Requested lifecycle action targets an already terminal state. |
+| RESOURCE_NOT_FOUND | INPUT | 404 | Target resource identifier does not resolve to an accessible record. |
+| RESOURCE_CONFLICT | INPUT | 409 | Requested create/update conflicts with unique constraints or invariants. |
+| RATE_LIMITED | SYSTEM | 429 | Request exceeded per-scope rate limits and must be retried later. |
+| INTEGRATION_UPSTREAM_UNAVAILABLE | SYSTEM | 503 | Required upstream integration is unavailable or timing out. |
+| INTEGRATION_INVALID_SIGNATURE | AUTHN | 401 | Integration signature/JWT verification failed deterministic checks. |
 
 ## Verification hooks
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Verify all route inventory `error_code_set` declarations resolve to documented catalog codes.
