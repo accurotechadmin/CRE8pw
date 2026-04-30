@@ -57,6 +57,8 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.
 
 ## See also
+- [Endpoint Examples All Routes](./Endpoint_Examples_All_Routes.md)
+- [Webhook And Integration Contract](./WEBHOOK_AND_INTEGRATION_CONTRACT.md)
 - [Route Inventory Reference](./ROUTE_INVENTORY_REFERENCE.md)
 - [Error Code Catalog](./ERROR_CODE_CATALOG.md)
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
@@ -66,3 +68,5 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 
 
 See also: [UI Runtime Contract](./UI_RUNTIME_CONTRACT.md).
+
+Change Impact Map: [`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
