@@ -46,9 +46,27 @@ foreach ($crossContextReuseFixture as $row) {
     $contextByKey[$row['utility_key_id']] = $row['context'];
 }
 
+
+$multiContextFixture = [
+    ['utility_key_id' => 'uk_dev_001', 'context' => 'device:d-01', 'request_id' => 'req-ident-ctx-001', 'timestamp_utc' => '2026-04-30T00:05:00Z'],
+    ['utility_key_id' => 'uk_tnt_001', 'context' => 'tenant:t-01', 'request_id' => 'req-ident-ctx-002', 'timestamp_utc' => '2026-04-30T00:05:01Z'],
+    ['utility_key_id' => 'uk_srv_002', 'context' => 'service:worker', 'request_id' => 'req-ident-ctx-003', 'timestamp_utc' => '2026-04-30T00:05:02Z'],
+];
+
+foreach ($multiContextFixture as $row) {
+    if (!str_starts_with($row['request_id'], 'req-ident-ctx-')) {
+        fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] replay-safe request_id namespace drift in context fixture" . PHP_EOL);
+        exit(1);
+    }
+    if (strtotime($row['timestamp_utc']) === false) {
+        fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] timestamp_utc must be parseable ISO-8601 in context fixture" . PHP_EOL);
+        exit(1);
+    }
+}
+
 if (!$reuseDetected) {
     fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] expected cross-context key reuse deny-path fixture to be detected" . PHP_EOL);
     exit(1);
 }
 
-echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', deny_reuse_key=' . $reuseKey . ')' . PHP_EOL;
+echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*)' . PHP_EOL;
