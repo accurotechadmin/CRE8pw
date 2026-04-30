@@ -219,4 +219,4 @@ Each SSOT document should carry explicit dependency references so architectural 
 
 ## Repository caveat verification notes
 
-During direct filesystem review, the canonical seed overview is present as `seed/seed-intro.md` (titled "CRE8 Seed Canon README"). A repository-root `README.md` file is not currently present in this checkout, so references to `README.md` in seed navigation docs should be interpreted as pointing to `seed/seed-intro.md` unless/until a root README is added.
+During direct filesystem review (updated 2026-04-30), the canonical seed overview remains `seed/seed-intro.md` (titled "CRE8 Seed Canon README"). A repository-root `README.md` is present in this checkout and remains the top-level entrypoint, while `seed/seed-intro.md` is the seed-canon entrypoint for seed materials.
