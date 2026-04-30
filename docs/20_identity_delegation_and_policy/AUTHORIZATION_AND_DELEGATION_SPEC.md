@@ -46,6 +46,8 @@ Define deterministic authorization and delegation behavior for CRE8 policy evalu
 - [Permission Vocabulary](./PERMISSION_VOCABULARY.md)
 - [Principal Types And Capability Matrix](./PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md)
 - [Keychain Composition And Resolution Spec](./KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md)
+- [Usage Scenarios And Permission Stories](./USAGE_SCENARIOS_AND_PERMISSION_STORIES.md)
+- [Delegation State Machine](./DELEGATION_STATE_MACHINE.md)
 - [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
