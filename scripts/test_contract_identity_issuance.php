@@ -116,8 +116,38 @@ foreach ($multiActorRuntimeFixture as $row) {
     }
 }
 
+
+$runtimeNegativeFixture = [
+    ['principal_id' => 'p-root-003', 'actor_id' => 'issuer-tenant-c', 'event' => 'utility_keypair.created', 'context' => 'tenant:t-c', 'request_id' => 'req-ident-issue-rt-003', 'timestamp_utc' => '2026-04-30T00:10:06Z'],
+    ['principal_id' => 'p-root-003', 'actor_id' => 'issuer-root', 'event' => 'id_keypair.issued', 'request_id' => 'req-ident-issue-rt-003', 'timestamp_utc' => '2026-04-30T00:10:07Z'],
+];
+
+$runtimeNegativeViolationDetected = false;
+$runtimeNegativeIssued = [];
+foreach ($runtimeNegativeFixture as $row) {
+    if (!str_starts_with($row['request_id'], 'req-ident-issue-rt-')) {
+        fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime negative fixture request_id namespace drift detected" . PHP_EOL);
+        exit(1);
+    }
+    if (strtotime($row['timestamp_utc']) === false) {
+        fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] runtime negative fixture timestamp_utc must be parseable ISO-8601" . PHP_EOL);
+        exit(1);
+    }
+    if ($row['event'] === 'id_keypair.issued') {
+        $runtimeNegativeIssued[$row['principal_id']] = true;
+    }
+    if ($row['event'] === 'utility_keypair.created' && !isset($runtimeNegativeIssued[$row['principal_id']])) {
+        $runtimeNegativeViolationDetected = true;
+    }
+}
+
+if (!$runtimeNegativeViolationDetected) {
+    fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] expected runtime negative fixture to model utility issuance before ID issuance" . PHP_EOL);
+    exit(1);
+}
+
 if (count($seenRequestIds) < 2) {
     fwrite(STDERR, "[HOOK-IDENTITY-ID-FIRST-ISSUANCE] expected multi-actor runtime fixture to include at least two distinct replay-safe request ids" . PHP_EOL);
     exit(1);
 }
-echo 'test:contract:identity-issuance PASS (hook=HOOK-IDENTITY-ID-FIRST-ISSUANCE, clauses=1, fixtures=5, deny_path=id_required_before_utility, replay_safe_namespace=req-ident-issue-*|req-ident-issue-rt-*)' . PHP_EOL;
+echo 'test:contract:identity-issuance PASS (hook=HOOK-IDENTITY-ID-FIRST-ISSUANCE, clauses=1, fixtures=6, deny_path=id_required_before_utility, replay_safe_namespace=req-ident-issue-*|req-ident-issue-rt-*)' . PHP_EOL;
