@@ -1,4 +1,5 @@
 <?php
+// Deprecated for active gating in Phase 3; retained for historical reproducibility.
 
 declare(strict_types=1);
 

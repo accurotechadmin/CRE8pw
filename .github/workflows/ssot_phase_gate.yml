@@ -7,7 +7,7 @@ on:
       - 'reports/**'
       - 'scripts/docs_ssot_*.php'
       - 'composer.json'
-      - '.github/workflows/ssot_phase1_gate.yml'
+      - '.github/workflows/ssot_phase_gate.yml'
   push:
     branches:
       - main
@@ -17,7 +17,7 @@ on:
       - 'reports/**'
       - 'scripts/docs_ssot_*.php'
       - 'composer.json'
-      - '.github/workflows/ssot_phase1_gate.yml'
+      - '.github/workflows/ssot_phase_gate.yml'
 
 jobs:
   ssot_phase_gate:
@@ -55,6 +55,9 @@ jobs:
 
       - name: Run SSOT PR evidence check
         run: composer docs:ssot:pr-evidence-check
+      - name: Ordering anchor - acceptance bundle runs after SSOT checks
+        run: echo 'phase2 acceptance bundle is ordered after lint/sync/report/review/parity/pr-evidence checks'
+
       - name: Run Phase 2 acceptance bundle
         run: composer phase2:acceptance-bundle
 

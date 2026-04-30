@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T07:30:00Z
+- Last updated (UTC): 2026-04-30T08:35:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -70,9 +70,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S1.4 | Resolve hook-ID and casing drift | complete | Docs Governance WG | 2026-05-08 | HOOK-CONTRACT-ERROR-SECRETS-REDACTION | ADR-004 | `docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md`; `scripts/test_contract_error_secrets.php` | Canonical hook casing and alias resolution completed. |
 | P3-S1.5 | Resolve doc-id / filename / matrix mismatches | complete | Docs Governance WG | 2026-05-08 | HOOK-SSOT-LINT-METADATA | ADR-004 | `docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md`; `docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md`; `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md` | doc_id/matrix mismatches reconciled without requirement ID renames. |
 | P3-S1.6 | Repair stale references | complete | Docs Governance WG | 2026-05-09 | HOOK-SOURCE-REFS-INTEGRITY (target) | ADR-004 | `scripts/docs_ssot_source_refs_check.php`; `docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md` | Source seed refs repaired and executable integrity check added. |
-| P3-S1.7 | Repair `composer.json` ↔ scripts drift | not_started | Operations Quality WG | 2026-05-09 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Resolve `ops:health-smoke` / `ops:migrate-smoke` script drift; align `phase1_acceptance_bundle.php`. |
-| P3-S1.8 | Repair CI workflow drift | not_started | Operations Quality WG | 2026-05-09 | HOOK-SSOT-PHASE1-GATE-CI | ADR-004 | (TBD) | Self-reference workflow filename; align `CRE8-OPS-REQ-0005`. |
-| P3-S1.9 | Sanitize `dot.env` | not_started | Security WG | 2026-05-08 | HOOK-CONTRACT-ERROR-SECRETS-REDACTION | ADR-004 | (TBD) | Replace realistic-looking `DB_PASS` and JWT key paths with `__REPLACE_ME__` placeholders. |
+| P3-S1.7 | Repair `composer.json` ↔ scripts drift | complete | Operations Quality WG | 2026-05-09 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | `composer.json`; `scripts/health_smoke.php`; `scripts/migrate_smoke.php`; `scripts/phase1_acceptance_bundle.php` | Added minimal JSON diagnostic smoke scripts and retained phase1 acceptance script with explicit deprecation marker. |
+| P3-S1.8 | Repair CI workflow drift | complete | Operations Quality WG | 2026-05-09 | HOOK-SSOT-PHASE1-GATE-CI | ADR-004 | `.github/workflows/ssot_phase_gate.yml`; `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md` | Workflow path filters now self-reference `ssot_phase_gate.yml`; verification strategy requirement updated to matching workflow group name and acceptance-bundle ordering anchor added. |
+| P3-S1.9 | Sanitize `dot.env` | complete | Security WG | 2026-05-08 | HOOK-CONTRACT-ERROR-SECRETS-REDACTION | ADR-004 | `dot.env` | Added example-only notice and replaced realistic credentials/key paths with `__REPLACE_ME__` placeholders. |
 
 ### M2 — Governance and traceability completion
 
@@ -194,15 +194,17 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0600.md`](SESSION_HANDOFF_20260430-0600.md) — P3-S1.1 complete; authorization gate order reconciled and ADR-005 accepted.
-2. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
-3. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
+1. [`SESSION_HANDOFF_20260430-0835.md`](SESSION_HANDOFF_20260430-0835.md) — P3-S1.7/P3-S1.8/P3-S1.9 complete; script drift, CI drift, and dot.env sanitization resolved.
+2. [`SESSION_HANDOFF_20260430-0600.md`](SESSION_HANDOFF_20260430-0600.md) — P3-S1.1 complete; authorization gate order reconciled and ADR-005 accepted.
+3. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
+4. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0600_RESPONSE.md`](../session_responses/20260430-0600_RESPONSE.md) — P3-S1.1 reconciliation completion response.
-2. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
-3. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
+1. [`reports/session_responses/20260430-0835_RESPONSE.md`](../session_responses/20260430-0835_RESPONSE.md) — P3-S1.7/P3-S1.8/P3-S1.9 completion response.
+2. [`reports/session_responses/20260430-0600_RESPONSE.md`](../session_responses/20260430-0600_RESPONSE.md) — P3-S1.1 reconciliation completion response.
+3. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
+4. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
 
 ### Anchors
 
