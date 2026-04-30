@@ -14,6 +14,7 @@ if (!is_string($openapi) || !is_string($parity)) {
 }
 
 $requiredOpenApiSnippets = [
+    'action: "feed.items.read"' => 'feed action fixture',
     '/v1/keys/{key_id}/lifecycle/suspend' => 'lifecycle suspend path',
     '/v1/keys/{key_id}/lifecycle/revoke' => 'lifecycle revoke path',
     'AUTH_LIFECYCLE_BLOCKED' => 'canonical lifecycle deny code',
@@ -43,4 +44,18 @@ foreach ($requiredParityRows as $snippet) {
     }
 }
 
-echo 'test:contract:lifecycle PASS (routes=2, deny_examples=2, interaction_fixture=comment.create, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
+
+$distinctLifecycleExamples = [
+    'ErrorFeedLifecycleBlocked' => 'req-feed-',
+    'ErrorInteractionLifecycleBlocked' => 'req-interact-',
+];
+
+foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
+    $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*request_id:\s"' . preg_quote($requestPrefix, '/') . '[^"\n]*"[^\n]*\}/m';
+    if (preg_match($pattern, $openapi) !== 1) {
+        fwrite(STDERR, "Lifecycle deny example {$exampleName} missing expected request_id prefix {$requestPrefix}\n");
+        exit(1);
+    }
+}
+
+echo 'test:contract:lifecycle PASS (routes=2, deny_examples=2, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
