@@ -1,10 +1,58 @@
+---
+doc_id: CRE8-EXT-PLAYBOOK
+version: 1.0.0
+status: normative
+owner: Platform Architecture WG
+reviewers:
+  - Security Engineering WG
+  - Program Traceability WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-06-19
+source_seed_refs:
+  - seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md
+normative_dependencies:
+  - docs/70_extensibility_and_module_patterns/MODULE_BOUNDARIES_AND_OWNERSHIP.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+
 # Extensibility Playbook
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **EXTENSIBILITY_PLAYBOOK.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define the mandatory workflow for adding new CRE8 modules without violating delegation, contract, lifecycle, and traceability invariants.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-EXT-REQ-0007**: Every module proposal **MUST** include a seam-compatibility declaration covering PDP chain preservation, envelope compatibility, lifecycle impact, and provenance impact before implementation begins.
+- **CRE8-EXT-REQ-0008**: Module service registration **MUST** occur through `php-di/php-di` container bindings with deterministic lifecycle scope (`singleton`/`request`) declared in module docs.
+- **CRE8-EXT-REQ-0009**: Module routes **MUST** be bound through `slim/slim` route groups that preserve canonical middleware ordering and **MUST NOT** bypass authorization middleware.
+- **CRE8-EXT-REQ-0010**: Any new module API surface **MUST** add or update OpenAPI operations, JSON Schemas, route inventory rows, and prose parity rows in the same patch.
+- **CRE8-EXT-REQ-0011**: Each module change **MUST** register or reuse verification hooks and **MUST** add traceability rows for every new requirement in the same change set.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Required extension workflow
+| Step | Required artifact | Pass condition |
+|---|---|---|
+| 1. Proposal | Change-impact map + seam-compatibility declaration | Declares compatibility posture (`compatible`, `additive`, `breaking`) and target hooks. |
+| 2. Registration | DI registration spec and route binding plan | Container registrations and middleware order are explicit and deterministic. |
+| 3. Contract updates | OpenAPI + schema + route inventory + parity table | All changed routes have synchronized prose/machine artifacts. |
+| 4. Verification updates | Hook registration + executable command mapping | New or updated hooks appear in verification + automation docs and run in Composer commands. |
+| 5. Traceability closure | Trace matrix rows + evidence links + handoff entry | Every new requirement is trace-linked and evidence path is present. |
 
+## Implementation-binding dependencies
+- `php-di/php-di` **MUST** provide deterministic module service registration.
+- `slim/slim` **MUST** enforce route group and middleware ordering invariants.
+- `slim/psr7` **SHOULD** preserve canonical envelope handling behavior for extension request/response flows.
+- `phpunit/phpunit` **MUST** enforce extension seam compatibility checks through automated hooks.
 
-See also: [Module Boundaries and Ownership](./MODULE_BOUNDARIES_AND_OWNERSHIP.md).
+## Verification hooks
+| Hook ID | Enforcement |
+|---|---|
+| `HOOK-EXT-SEAM-COMPATIBILITY` | Validates seam declaration, DI registration, route binding order, and PDP-preservation assertions. |
+
+Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`.
+
+## See also
+- [Module Boundaries and Ownership](./MODULE_BOUNDARIES_AND_OWNERSHIP.md)
+- [Integration Provider Pattern](./INTEGRATION_PROVIDER_PATTERN.md)
+- [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
