@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-VERIFICATION-STRATEGY
-version: 1.5.0
+version: 1.6.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -34,6 +34,8 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 - **CRE8-OPS-REQ-0006**: Verification evidence for normative changes **MUST** include a reference to the applicable change-impact map artifact defined in `CHANGE_IMPACT_MAP_TEMPLATES.md`.
 - **CRE8-OPS-REQ-0007**: CI workflows enforcing SSOT gates **MUST** execute the current phase acceptance-bundle command as an explicit hard-fail step.
 
+- **CRE8-OPS-REQ-0008**: The repository **MUST** provide `composer docs:ssot:glossary-check` for glossary completeness and canonical-term presence checks bound to `HOOK-SSOT-GLOSSARY-COVERAGE`.
+
 ## Hook catalog schema
 | Field | Required | Notes |
 |---|---|---|
@@ -66,6 +68,8 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | PR | `composer phase2:acceptance-bundle` | Bundle hard-fails on any failed SSOT/contract command in Phase 2 acceptance command contract | reports/ssot/coverage_latest.json; reports/session_handoffs/LATEST_SESSION_HANDOFF.md | Implemented as `phase2:acceptance-bundle` |
 | HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA | PR | `composer docs:ssot:phase2-exceptions-check` | Unresolved exceptions register rows satisfy ID/status/due-date/decision-ref schema, decision-log/ADR existence checks, closed-row progress-board linkage, and open/blocked command obligations | reports/ssot/coverage_latest.json; docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md | Implemented as `docs:ssot:phase2-exceptions-check` |
 
+
+| HOOK-SSOT-GLOSSARY-COVERAGE | PR | `composer docs:ssot:glossary-check` | Glossary contains at least 50 canonical terms and required anchor terms for Phase 3 M3.1 | reports/ssot/coverage_latest.json; docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md | Implemented as `docs:ssot:glossary-check` |
 
 ## See also
 - [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)

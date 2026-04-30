@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T05:44:00Z
+- Last updated (UTC): 2026-04-30T05:51:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -82,13 +82,13 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S2.2 | Promote `README.md` (root) to versioned, framework-aligned form | complete | Docs Governance WG | 2026-05-10 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Root `README.md` now includes explicit document-control block and `docs/00_governance/SSOT_INDEX.md` cross-reference. |
 | P3-S2.3 | Backfill the Traceability Matrix | complete | Program Traceability WG | 2026-05-13 | HOOK-TRACE-MATRIX-COVERAGE; HOOK-SSOT-REPORT-COVERAGE-COVERAGE | ADR-004 | `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`; `reports/ssot/coverage_latest.json`; `reports/ssot/requirement_inventory_latest.json`; `scripts/docs_ssot_requirement_inventory.php` | Added 106 trace rows and requirement inventory script; coverage now reports 0 untraced requirements. |
 | P3-S2.4 | Add scaffold-prose lint | complete | Docs Governance WG | 2026-05-12 | HOOK-SSOT-LINT-SCAFFOLD-TEXT | ADR-004 | `scripts/docs_ssot_lint.php`; `reports/session_handoffs/SESSION_HANDOFF_20260430-0936.md` | Lint now blocks exact scaffold opener phrase in docs markdown corpus. |
-| P3-S2.5 | Add a glossary lint hook | not_started | Docs Governance WG | 2026-05-13 | HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | (TBD) | New script `scripts/docs_ssot_glossary_check.php`; hard-fail after P3-S3.1. |
+| P3-S2.5 | Add a glossary lint hook | complete | Docs Governance WG | 2026-05-13 | HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | `scripts/docs_ssot_glossary_check.php`; `composer.json`; `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`; `docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` | Glossary lint hook implemented and hard-pass active with 50+ term minimum and required-anchor set. |
 
 ### M3 — Product and architecture canon
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S3.1 | `CANONICAL_TERMINOLOGY.md` (full glossary) | not_started | Platform Architecture WG | 2026-05-15 | HOOK-GLOSSARY-COMPLETENESS (target); HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | (TBD) | ≥ 50 terms; binds P3-S2.5 glossary lint to hard-fail. |
+| P3-S3.1 | `CANONICAL_TERMINOLOGY.md` (full glossary) | complete | Platform Architecture WG | 2026-05-15 | HOOK-GLOSSARY-COMPLETENESS (target); HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | `docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`; `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md` | Canonical glossary authored with 88 terms and prohibited alias registry; lint hard-pass enabled. |
 | P3-S3.2 | `ARCHITECTURE_AND_SURFACES.md` | not_started | Platform Architecture WG | 2026-05-17 | HOOK-CONTRACT-SURFACE-PARITY | ADR-004 | (TBD) | CRE8-ARCH-REQ-0010..0030. |
 | P3-S3.3 | `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` | not_started | Platform Architecture WG | 2026-05-19 | HOOK-CONTRACT-ERROR-DETERMINISM; HOOK-CONTRACT-POLICY-ORDER | ADR-004 | (TBD) | Middleware order + handler-local-auth prohibition. |
 | P3-S3.4 | `DEPENDENCY_BASELINE.md` | not_started | Platform Architecture WG | 2026-05-17 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Composer baseline as MUST clauses. |
