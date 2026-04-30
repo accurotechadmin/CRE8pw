@@ -76,6 +76,10 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 
 | HOOK-SEC-THREAT-CONTROL-MATRIX | PR | Manual threat-control matrix review across SECURITY_CONTROLS_SPEC.md, SECURITY_HEADERS_AND_CSP_POLICY.md, and SECURITY_THREAT_MODEL.md | Every CRE8-SEC-REQ-0001..0010 row has mapped control evidence and no orphan threat rows | docs/evidence/templates/README.md | Implement automated `composer test:security:threat-controls` in P3-S11.2 |
 
+| HOOK-OBS-EVENT-CATALOG-COVERAGE | PR | Manual event catalog review against OBSERVABILITY_EVENT_CATALOG.md required events/schema/retention fields | Required authz, lifecycle, and release-gate events exist with deterministic field schemas and retention classes | docs/evidence/templates/README.md | Implement automated `composer test:ops:event-catalog` in P3-S11.2 |
+| HOOK-RELEASE-CHECKLIST-PRESENT | PR | Manual checklist/readiness alignment review across RELEASE_CHECKLIST.md and PRODUCTION_READINESS_GATES.md | Ordered gates, blocking semantics, and acceptance bundle references are present and internally consistent | docs/evidence/templates/README.md | Implement automated `composer docs:ssot:release-checklist-check` in P3-S11.2 |
+| HOOK-SLO-SLI-PRESENT | PR | Manual SLO/SLI review in SLO_SLI_SPEC.md | Required SLI set, per-surface targets, and error budget policy are present and deterministic | docs/evidence/templates/README.md | Implement automated `composer docs:ssot:slo-sli-check` in P3-S11.2 |
+
 ## See also
 - [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
