@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T12:55:00Z
+- Last updated (UTC): 2026-04-30T13:03:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -154,9 +154,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S9.4 | `OPERATIONAL_SMOKE_CHECK_CONTRACT.md` | complete | Operations Quality WG | 2026-06-13 | HOOK-SSOT-COMMAND-EXIT-SEMANTICS | ADR-004 | (TBD) | Smoke command suite. |
 | P3-S9.5 | `MIGRATION_AND_SEED_STRATEGY.md` | complete | Operations Quality WG | 2026-06-14 | HOOK-SEC-LIFECYCLE-PROPAGATION | ADR-004 | `docs/60_operations_quality_and_release/MIGRATION_AND_SEED_STRATEGY.md`; `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md` | Forward-only migration policy, seed class controls, and blue/green sequencing canonized. |
 | P3-S9.6 | `OBSERVABILITY_EVENT_CATALOG.md` | complete | Operations Quality WG | 2026-06-15 | HOOK-OBS-EVENT-CATALOG-COVERAGE (target) | ADR-004 | `docs/60_operations_quality_and_release/OBSERVABILITY_EVENT_CATALOG.md`; `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md` | Catalog of canonical events, schema fields, sampling rules, retention classes, and provenance bindings published. |
-| P3-S9.7 | `RELEASE_CHECKLIST.md` | not_started | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Ordered gate hooks. |
-| P3-S9.8 | `PRODUCTION_READINESS_GATES.md` | not_started | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Coverage thresholds + risk gates. |
-| P3-S9.9 | `SLO_SLI_SPEC.md` | not_started | Operations Quality WG | 2026-06-17 | HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | SLIs/SLOs per surface. |
+| P3-S9.7 | `RELEASE_CHECKLIST.md` | complete | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Ordered gate hooks. |
+| P3-S9.8 | `PRODUCTION_READINESS_GATES.md` | complete | Operations Quality WG | 2026-06-16 | HOOK-RELEASE-CHECKLIST-PRESENT (target) | ADR-004 | (TBD) | Coverage thresholds + risk gates. |
+| P3-S9.9 | `SLO_SLI_SPEC.md` | complete | Operations Quality WG | 2026-06-17 | HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | SLIs/SLOs per surface. |
 | P3-S9.10 | `ACCEPTANCE_CRITERIA_MATRIX.md` | not_started | Operations Quality WG | 2026-06-18 | HOOK-RELEASE-CHECKLIST-PRESENT (target); HOOK-SLO-SLI-PRESENT (target) | ADR-004 | (TBD) | Per release type. |
 
 ### M10 — Extensibility and module patterns
