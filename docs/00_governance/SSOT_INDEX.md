@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-GOV-SSOT-INDEX
-version: 1.0.0
+version: 1.0.1
 status: normative
 owner: Docs Governance WG
 reviewers:
   - Security WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-29
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
 source_seed_refs:
   - README.md
 normative_dependencies:
@@ -50,6 +50,10 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - **HOOK-SSOT-LINK-INTEGRITY**: Validate all internal markdown links and anti-orphan requirements.
 - **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between `README.md` and updated normative docs before merge.
 
+## Change history
+
+- 2026-04-30 (v1.0.1): Added ADR-004 (Phase 3 — Canon Completion Program Charter) cross-link in See also. Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+
 ## See also
 - [README.md](../../README.md)
 - [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
@@ -58,7 +62,9 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Change Control Policy](./CHANGE_CONTROL_POLICY.md)
 - [Definition of Done](./DEFINITION_OF_DONE.md)
 - [Cross-Document Linking Policy](./CROSS_DOCUMENT_LINKING_POLICY.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [ADR-001 Record](../80_traceability_decisions_and_program/records/ADR-001-placeholder.md)
 - [ADR-002 Record](../80_traceability_decisions_and_program/records/ADR-002-placeholder.md)
 - [ADR-003 Record](../80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md)
+- [ADR-004 Record](../80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)

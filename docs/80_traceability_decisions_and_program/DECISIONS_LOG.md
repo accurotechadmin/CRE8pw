@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-TRACE-DECISIONS-LOG
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Architecture Governance WG
 reviewers:
   - Platform Architecture WG
   - Docs Governance WG
-last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-29
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
 source_seed_refs:
   - README.md
 normative_dependencies:
@@ -44,6 +44,7 @@ This document defines the append-only operational log for architecture and gover
 ## Baseline events
 | Event ID | Timestamp (UTC) | ADR ID | Event Type | Actor | Change Summary | Impacted Requirement IDs | Evidence Link |
 |---|---|---|---|---|---|---|---|
+| DLOG-20260430-004 | 2026-04-30T04:30:00Z | ADR-004 | status_changed | Platform Architecture WG | proposed -> accepted for Phase 3 — Canon Completion program charter; binds program plan, sequencing, deferral discipline, dependency baseline, and acceptance bar; ADR-003 explicitly prohibited as a Phase 3 deferral mechanism | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0005, CRE8-OPS-REQ-0010 | ./records/ADR-004-phase3-program-charter.md |
 | DLOG-20260429-003 | 2026-04-29T12:05:00Z | ADR-003 | status_changed | Platform Architecture WG | proposed -> accepted for Phase 1 freeze closure and residual-breadth waiver policy | CRE8-ACCEPT-REQ-0001, CRE8-ACCEPT-REQ-0006 | ./records/ADR-003-phase1-freeze-waiver.md |
 | DLOG-20260429-001 | 2026-04-29T03:40:00Z | ADR-001 | status_changed | Docs Governance WG | proposed -> accepted for requirement ID normalization | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | ./records/ADR-001-placeholder.md |
 | DLOG-20260429-002 | 2026-04-29T03:45:00Z | ADR-002 | status_changed | Architecture Governance WG | proposed -> accepted for traceability matrix schema | CRE8-TRACE-REQ-0003, CRE8-TRACE-REQ-0004 | ./records/ADR-002-placeholder.md |
@@ -53,8 +54,13 @@ This document defines the append-only operational log for architecture and gover
 - **HOOK-TRACE-DECISION-EVENT-TYPE**: Validate event type taxonomy and required fields by event type.
 - **HOOK-TRACE-DECISION-ADR-LINK**: Validate ADR references exist in `ADR_INDEX.md` and target ADR file path resolves.
 
+## Change history
+
+- 2026-04-30 (v1.1.0): Appended `DLOG-20260430-004` event for ADR-004 acceptance (Phase 3 — Canon Completion program charter). Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+
 ## See also
 - [ADR Index](./ADR_INDEX.md)
 - [Decision Record Template](./DECISION_RECORD_TEMPLATE.md)
 - [Traceability Matrix](./TRACEABILITY_MATRIX.md)
 - [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
+- [Change Impact Map Templates](./CHANGE_IMPACT_MAP_TEMPLATES.md)

@@ -344,7 +344,7 @@ For a new contributor or a fresh authoring session, read in this order:
 1. **This file (`README.md`)**
 2. `reports/PHASE3_AUTHORING_PROGRAM_PLAN.md` — the authoring program (milestones, slices, dependencies, exit criteria, definition of done).
 3. `reports/PHASE3_AUTHORING_SESSION_PROMPT.md` — the reusable session prompt to drive each authoring session.
-4. `docs/00_governance/SSOT_INDEX.md` — governance topology and precedence model.
+4. [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md) — governance topology and precedence model.
 5. `docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` — required metadata header and authoring conventions.
 6. `docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md` — change classes, review gates, and approvals.
 7. `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md` — requirement → hook → owner → evidence linkage.
