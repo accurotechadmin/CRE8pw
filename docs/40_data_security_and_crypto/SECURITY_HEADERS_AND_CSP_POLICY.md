@@ -1,7 +1,39 @@
-# Security Headers And Csp Policy
+---
+doc_id: CRE8-SEC-HEADERS-CSP
+version: 1.0.0
+status: normative
+owner: Security WG
+reviewers:
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
+source_seed_refs:
+  - seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md
+normative_dependencies:
+  - docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md
+  - docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
+# Security Headers and CSP Policy
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **SECURITY_HEADERS_AND_CSP_POLICY.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Normative requirements
+- **CRE8-SECX-REQ-0005**: API responses **MUST** emit `Strict-Transport-Security`, `X-Content-Type-Options`, and `X-Frame-Options` headers.
+- **CRE8-SECX-REQ-0006**: Browser-rendered surfaces **MUST** emit a CSP that defaults to `default-src 'self'` and uses nonce-based script exceptions only.
+- **CRE8-SECX-REQ-0007**: CSP violation reports **MUST** be routed to an auditable endpoint/event channel.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Surface policy matrix
+| surface | required_headers | csp_profile |
+|---|---|---|
+| owner_console | HSTS, XCTO, XFO, Referrer-Policy | strict-ui |
+| partner_gateway | HSTS, XCTO | api-minimal |
+| public_meta | HSTS, XCTO | none |
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Implementation binding
+- `neomerx/cors-psr7` and Slim middleware ordering govern header injection for HTTP responses.
+
+## Change Impact Map
+- `reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md`
+
+## See also
+- [Security Controls Spec](./SECURITY_CONTROLS_SPEC.md)
+- [Architecture and Surfaces](../10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md)

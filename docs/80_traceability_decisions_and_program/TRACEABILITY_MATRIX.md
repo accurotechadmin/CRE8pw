@@ -409,3 +409,33 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-CONTRACT-REQ-0069 | CRE8-CONTRACTS-WEBHOOK-INTEGRATION | docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md | HOOK-CONTRACT-COMPAT-DECLARATION | automated | API Contracts WG | provisional-normative | composer docs:ssot:compat-declaration |
 | CRE8-CONTRACT-REQ-0070 | CRE8-CONTRACTS-WEBHOOK-INTEGRATION | docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md | HOOK-CONTRACT-ERROR-CODE-COVERAGE | automated | API Contracts WG | provisional-normative | composer docs:ssot:error-code-coverage |
 | CRE8-CONTRACT-REQ-0071 | CRE8-CONTRACTS-WEBHOOK-INTEGRATION | docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md | HOOK-CONTRACT-COMPAT-DECLARATION | automated | API Contracts WG | provisional-normative | composer docs:ssot:compat-declaration |
+
+| CRE8-DATA-REQ-0001 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0002 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0003 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0004 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0005 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0006 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0007 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0008 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0009 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0010 | CRE8-DATA-MODEL-SPEC | docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0011 | CRE8-DATA-MODEL-REFERENCE | docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0012 | CRE8-DATA-MODEL-REFERENCE | docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0013 | CRE8-DATA-MODEL-REFERENCE | docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0014 | CRE8-DATA-MODEL-REFERENCE | docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0015 | CRE8-DATA-MODEL-REFERENCE | docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0016 | CRE8-DATA-ERD | docs/40_data_security_and_crypto/ERD.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0017 | CRE8-DATA-ERD | docs/40_data_security_and_crypto/ERD.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-DATA-REQ-0018 | CRE8-DATA-ERD | docs/40_data_security_and_crypto/ERD.md | HOOK-DATA-MODEL-COVERAGE | manual | Security WG | normative | docs/evidence/templates/README.md |
+
+| CRE8-SECX-REQ-0001 | CRE8-SEC-CONTROLS-SPEC | docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0002 | CRE8-SEC-CONTROLS-SPEC | docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0003 | CRE8-SEC-CONTROLS-SPEC | docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0004 | CRE8-SEC-CONTROLS-SPEC | docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0005 | CRE8-SEC-HEADERS-CSP | docs/40_data_security_and_crypto/SECURITY_HEADERS_AND_CSP_POLICY.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0006 | CRE8-SEC-HEADERS-CSP | docs/40_data_security_and_crypto/SECURITY_HEADERS_AND_CSP_POLICY.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0007 | CRE8-SEC-HEADERS-CSP | docs/40_data_security_and_crypto/SECURITY_HEADERS_AND_CSP_POLICY.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0008 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0009 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0010 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
