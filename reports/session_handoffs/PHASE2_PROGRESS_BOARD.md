@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-30T00:34:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0034
+- Last updated (UTC): 2026-04-30T00:40:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0040
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -65,12 +65,12 @@
 ## Deferred breadth decomposition table (owner, due date, decision reference)
 | item_id | source | summary | owner | priority | hook_id(s) | due date (UTC) | decision_ref | status | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
+| P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | 2026-05-06 | ADR-003 | partially_complete | Auth contract automation now also enforces `ancestor_chain_ref` provenance and `decision_reason_code` presence in auth allow examples plus schema parity for optional `request_context.target_item_id`; deeper multi-ancestor runtime fixtures still pending. |
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | partially_complete | Expanded deterministic replay-safe fixture depth (`request_id` namespace + ISO-8601 `timestamp_utc` + event-order assertions); multi-actor runtime integration still pending.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | partially_complete | Deterministic capability matrix and parity checker delivered; deeper auth-prerequisite parity coverage pending.
 | P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | complete | Contract and prose parity now both enforce deny payload-shape semantics (`error.code/category`, approved `request_id` prefixes, ISO-8601 `timestamp_utc`) via `CRE8-FEED-REQ-0022` and `CRE8-MACHINE-REQ-0019`. |
 | P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-04-29 | ADR-003 | complete | Both governance hooks are executable and CI-bound. |
-| P2-DB-006 | ADR-003 / Slice 6 | Key lifecycle revoke/suspend propagation depth expansion for descendant/interaction deny-path coverage. | Security Engineering WG | High | HOOK-SEC-LIFECYCLE-PROPAGATION | 2026-05-12 | ADR-003 | partially_complete | `composer test:contract:lifecycle` now additionally enforces dual action fixtures (`feed.items.read`, `comment.create`) and distinct lifecycle deny request_id prefixes (`req-feed-*`, `req-interact-*`); multi-actor propagation fixtures still pending. |
+| P2-DB-006 | ADR-003 / Slice 6 | Key lifecycle revoke/suspend propagation depth expansion for descendant/interaction deny-path coverage. | Security Engineering WG | High | HOOK-SEC-LIFECYCLE-PROPAGATION | 2026-05-12 | ADR-003 | partially_complete | Lifecycle depth remains executable with dual-action fixtures and distinct lifecycle deny request_id prefixes; no regression after auth/schema parity hardening, but multi-actor propagation fixtures remain pending. |
 
 ## Status snapshot
 | Lane | Status | % (est.) | Confidence | Notes |
@@ -82,10 +82,10 @@
 | Lane E — Acceptance planning | in progress | 45% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0034.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260430-0032.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260430-0031.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260430-0026.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260430-0020.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0040.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260430-0034.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260430-0032.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260430-0031.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260430-0026.md`
 
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`

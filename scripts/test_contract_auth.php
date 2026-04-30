@@ -67,6 +67,26 @@ if (!str_contains($openapi, '/v1/authz/decide:')) {
     $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing /v1/authz/decide route in OpenAPI contract';
 }
 
+if (!str_contains($openapi, 'ancestor_chain_ref')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ancestor_chain_ref provenance field in auth decision examples';
+}
+if (!str_contains($openapi, 'decision_reason_code')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing decision_reason_code in auth decision success example';
+}
+
+$policyDecisionSchemaPath = dirname(__DIR__) . '/docs/31_machine_contracts/schemas/policy-decision.schema.json';
+$policyDecisionSchema = file_get_contents($policyDecisionSchemaPath);
+if ($policyDecisionSchema === false) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] unable to read policy decision schema';
+} else {
+    if (!str_contains($policyDecisionSchema, '"target_item_id"')) {
+        $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing target_item_id optional request_context field in policy decision schema';
+    }
+    if (!str_contains($policyDecisionSchema, '"additionalProperties": false')) {
+        $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] expected additionalProperties=false in policy decision schema';
+    }
+}
+
 
 $authzDenyExamples = [
     'explicitDeny' => ['ref' => '#/components/examples/ErrorExplicitDeny', 'code' => 'AUTH_EXPLICIT_DENY', 'category' => 'AUTH_DENY'],
