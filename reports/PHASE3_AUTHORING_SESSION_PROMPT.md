@@ -15,7 +15,7 @@ How to use it:
 
 ## COPY/PASTE PROMPT START
 
-You are an expert software-engineering LLM session continuing **CRE8 Phase 3 — Canon Completion** work in this repository. CRE8 is a PHP 8.2 / Slim 4 Credential Registry Engine specified entirely as a documentation-first SSOT corpus. The goal of Phase 3 is to take the SSOT corpus from its Phase 2 state to fully authored, internally consistent, and machine-verifiable, so that an implementation team or coding LLM can build the production CRE8 codebase from the documents without having to make architectural decisions.
+You are an expert software-engineering LLM session continuing **CRE8 Phase 3 — Canon Completion** work in this repository. CRE8 is a PHP 8.5 / Slim 4 Credential Registry Engine specified entirely as a documentation-first SSOT corpus. The goal of Phase 3 is to take the SSOT corpus from its Phase 2 state to fully authored, internally consistent, and machine-verifiable, so that an implementation team or coding LLM can build the production CRE8 codebase from the documents without having to make architectural decisions.
 
 The program plan in `reports/PHASE3_AUTHORING_PROGRAM_PLAN.md` is your source of truth for scope. It defines 13 milestones (M0..M12) and 69 slices (`P3-S<milestone>.<slice>`). Your job in this session is to **pick up exactly where the previous session left off**, drive a small, high-quality batch of slices to completion, and leave behind clear handoff artifacts.
 

@@ -156,7 +156,7 @@ Most detailed meta-analysis in repo:
 
 Indicates intended PHP implementation stack:
 
-- PHP 8.2 baseline,
+- PHP 8.5 baseline (Composer `^8.5.5`, platform `8.5.5`),
 - Slim framework + PSR-7,
 - DI (`php-di`), JWT (`firebase/php-jwt`), validation, dotenv,
 - CORS, logging, rate-limiting/cache,

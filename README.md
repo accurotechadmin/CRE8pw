@@ -1,6 +1,6 @@
 # CRE8 — Canonical Project SSOT
 
-CRE8 is a **Credential Registry Engine**: a policy-governed PHP 8.2 / Slim 4 platform for credentialed identity, bounded delegated authority, and governed interaction with protected content (posts, comments, audience-targeted feeds). Authority is explicit, hierarchical, monotonically bounded, and auditable at every step — issuance, delegation, use, moderation, rotation, revocation, and evidence export.
+CRE8 is a **Credential Registry Engine**: a policy-governed PHP 8.5 / Slim 4 platform for credentialed identity, bounded delegated authority, and governed interaction with protected content (posts, comments, audience-targeted feeds). Authority is explicit, hierarchical, monotonically bounded, and auditable at every step — issuance, delegation, use, moderation, rotation, revocation, and evidence export.
 
 This `README.md` is the **root project-level SSOT anchor**. It establishes mandatory platform direction, documentation governance, repository topology, and program execution status. Everything in this file is binding on subordinate documents under `docs/`, `seed/`, and `reports/`, subject to the precedence rules in §10.
 
@@ -134,7 +134,7 @@ Authoritative artifact today: `docs/40_data_security_and_crypto/KEY_LIFECYCLE_AN
 
 ## 7. Implementation Stack and Dependency Bedrock
 
-The runtime is **PHP 8.2** under **Slim 4**. The seed canon (`seed/seed-intro.md` §14) declares the Composer dependency set as architectural bedrock, not optional utilities. Every SSOT document that specifies behavior MUST cite the dependency that enforces it.
+The runtime is **PHP 8.5** (Composer constraint `^8.5.5`, platform pin `8.5.5`) under **Slim 4**. The seed canon (`seed/seed-intro.md` §14) declares the Composer dependency set as architectural bedrock, not optional utilities. Every SSOT document that specifies behavior MUST cite the dependency that enforces it.
 
 | Concern | Dependency |
 |---|---|
@@ -166,7 +166,7 @@ The runtime is **PHP 8.2** under **Slim 4**. The seed canon (`seed/seed-intro.md
 | `reports/` | Session reports, audits, plans, progress boards, archived responses | Informational unless explicitly promoted |
 | `scripts/` | PHP tooling for SSOT lint/sync/report and contract tests | Implementation of verification hooks |
 | `.github/workflows/` | CI gates, including `ssot_phase_gate.yml` | Enforces SSOT discipline |
-| `composer.json` | PHP 8.2 dependency baseline + script catalog | Runtime contract baseline |
+| `composer.json` | PHP 8.5 dependency baseline + script catalog | Runtime contract baseline |
 | `dot.env` | Environment-template example only — never use real secrets | Configuration scaffold |
 | `.htaccess` | Apache deployment routing scaffold | Deployment hint |
 
@@ -303,7 +303,7 @@ Repository git config is preserved (`user.name` / `user.email`); do not override
 
 ## 14. Verification and CI Posture
 
-The CI workflow `.github/workflows/ssot_phase_gate.yml` runs on PRs and pushes to `main` whenever `docs/`, `reports/`, `scripts/docs_ssot_*.php`, or `composer.json` changes. It executes the SSOT lint/sync/report family plus `composer phase2:acceptance-bundle` (which transitions to `composer phase3:final-acceptance-bundle` under Phase 3 milestone M11).
+The CI workflow `.github/workflows/ssot_phase_gate.yml` runs on PRs and pushes to `main` whenever `docs/`, `reports/`, `scripts/docs_ssot_*.php`, or `composer.json` changes. The workflow uses PHP 8.5 to align with the Composer platform pin in `composer.json`. It executes the SSOT lint/sync/report family plus `composer phase2:acceptance-bundle` (which transitions to `composer phase3:final-acceptance-bundle` under Phase 3 milestone M11).
 
 The minimum local verification command set every authoring session must run before commit (when implemented at the time):
 
