@@ -55,7 +55,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 ## Verification hooks
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE**: Verify all route inventory `error_code_set` declarations resolve to documented catalog codes.
 - **HOOK-CONTRACT-ERROR-DETERMINISM**: Verify stable envelope shape and code mapping behavior.
-- **HOOK-CONTRACT-ERROR-SECRETS-REDaction**: Verify sensitive data is absent from server error payloads.
+- **HOOK-CONTRACT-ERROR-SECRETS-REDACTION**: Verify sensitive data is absent from server error payloads.
 
 ## See also
 - [API Contract Guide](./API_CONTRACT_GUIDE.md)

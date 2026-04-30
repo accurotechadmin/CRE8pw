@@ -63,7 +63,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **HOOK-SSOT-LINT-SCAFFOLD-TEXT**: Validate prohibited placeholder prose patterns are absent in normative docs.
 - **HOOK-SSOT-SYNC-PROMOTED-TARGET**: Validate each promoted seed row maps to an existing target requirement in target doc.
 - **HOOK-SSOT-SYNC-PROMOTED-TRACE**: Validate each promoted seed row maps to an existing traceability matrix row.
-- **HOOK-SSOT-REPORT-COVERAGE**: Compute and publish requirement/hook coverage summary.
+- **HOOK-SSOT-REPORT-COVERAGE-COVERAGE**: Compute and publish requirement/hook coverage summary.
 - **HOOK-REVIEW-GATE-CHECK-AUTO**: Validate owner/reviewer metadata and change-impact-map references on changed normative docs.
 - **HOOK-DOD-TRACE-CHECK-AUTO**: Validate changed requirement IDs remain synchronized with `TRACEABILITY_MATRIX.md`.
 - **HOOK-TRACE-ROADMAP-SCHEMA-AUTO**: Validate roadmap baseline milestone table schema and enums.

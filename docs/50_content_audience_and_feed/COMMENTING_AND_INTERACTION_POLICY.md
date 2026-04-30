@@ -9,7 +9,8 @@ reviewers:
 last_reviewed_utc: 2026-04-30
 next_review_due_utc: 2026-05-30
 source_seed_refs:
-  - seed/cre8core-ownerauthORIGINAL.md
+  - seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
   - README.md
 normative_dependencies:
   - docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md
@@ -17,6 +18,7 @@ normative_dependencies:
   - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
   - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
   - docs/31_machine_contracts/openapi/cre8.v1.yaml
+change_impact_map: reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md
 ---
 
 # Commenting And Interaction Policy
@@ -54,3 +56,8 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
 - [OpenAPI Baseline](../31_machine_contracts/openapi/cre8.v1.yaml)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+
+
+Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+
+Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.

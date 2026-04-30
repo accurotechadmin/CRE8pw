@@ -77,6 +77,7 @@
     "docs:ssot:phase2-exceptions-check": "@php scripts/docs_ssot_phase2_exceptions_check.php",
     "test:contract:lifecycle": "@php scripts/test_contract_lifecycle.php",
     "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
-    "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php"
+    "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php",
+    "docs:ssot:source-refs-check": "php scripts/docs_ssot_source_refs_check.php"
   }
 }
