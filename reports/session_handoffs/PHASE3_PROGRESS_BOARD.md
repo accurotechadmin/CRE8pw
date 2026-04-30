@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T04:53:00Z
+- Last updated (UTC): 2026-04-30T06:00:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -64,7 +64,7 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S1.1 | Reconcile authorization gate order | not_started | Identity & Policy WG | 2026-05-08 | HOOK-CONTRACT-POLICY-ORDER; HOOK-AUTH-DECISION-REASON-MAPPING | ADR-005 (target) | (TBD) | Resolve CONF-AUTH-GATE-ORDER; reconcile `AUTHORIZATION_AND_DELEGATION_SPEC.md` and `AUTHORIZATION_DECISION_TABLES.md`; authors ADR-005. |
+| P3-S1.1 | Reconcile authorization gate order | complete | Identity & Policy WG | 2026-05-08 | HOOK-CONTRACT-POLICY-ORDER; HOOK-AUTH-DECISION-REASON-MAPPING | ADR-005 (target) | `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`; `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`; `docs/80_traceability_decisions_and_program/records/ADR-005-authz-gate-order-reconciliation.md` | CONF-AUTH-GATE-ORDER resolved and canonical sequence aligned across both docs with ADR-005 acceptance. |
 | P3-S1.2 | Reconcile policy-decision schema with OpenAPI examples | not_started | API Contracts WG | 2026-05-09 | HOOK-CONTRACT-SCHEMA-COVERAGE (target); HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | Adds `composer test:contract:request-schema`. |
 | P3-S1.3 | Fix OpenAPI structural defect | not_started | API Contracts WG | 2026-05-09 | HOOK-OPENAPI-LINT (target) | ADR-004 | (TBD) | Adds `composer docs:ssot:openapi-lint`. |
 | P3-S1.4 | Resolve hook-ID and casing drift | not_started | Docs Governance WG | 2026-05-08 | HOOK-CONTRACT-ERROR-SECRETS-REDACTION | ADR-004 | (TBD) | Rename mixed-case token; register or rename other unregistered hooks. |
@@ -194,13 +194,15 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
-2. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
+1. [`SESSION_HANDOFF_20260430-0600.md`](SESSION_HANDOFF_20260430-0600.md) — P3-S1.1 complete; authorization gate order reconciled and ADR-005 accepted.
+2. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
+3. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
-2. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
+1. [`reports/session_responses/20260430-0600_RESPONSE.md`](../session_responses/20260430-0600_RESPONSE.md) — P3-S1.1 reconciliation completion response.
+2. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
+3. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
 
 ### Anchors
 

@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-ADR-INDEX
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Architecture Governance WG
 reviewers:
@@ -46,6 +46,7 @@ This document defines the canonical index contract for Architecture Decision Rec
 ## Baseline index entries
 | ADR ID | Title | Status | Date (UTC) | Owner | Impacted Requirement IDs | Impacted Risk IDs | Link |
 |---|---|---|---|---|---|---|---|
+| ADR-005 | Authorization gate order reconciliation | accepted | 2026-04-30 | Identity & Policy WG | CRE8-AUTH-REQ-0001, CRE8-AUTH-REQ-0010, CRE8-AUTH-REQ-0011 | RISK-010 | ./records/ADR-005-authz-gate-order-reconciliation.md |
 | ADR-004 | Phase 3 — Canon Completion Program Charter | accepted | 2026-04-30 | Platform Architecture WG | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0005, CRE8-OPS-REQ-0010 | RISK-001, RISK-002, RISK-010, RISK-011, RISK-012, RISK-013, RISK-014 | ./records/ADR-004-phase3-program-charter.md |
 | ADR-003 | Phase 1 Freeze Closure with Explicit Residual-Breadth Waiver | accepted | 2026-04-29 | Platform Architecture WG | CRE8-ACCEPT-REQ-0001, CRE8-ACCEPT-REQ-0006 | RISK-004 | ./records/ADR-003-phase1-freeze-waiver.md |
 | ADR-001 | Requirement ID Normalization | accepted | 2026-04-29 | Docs Governance WG | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | RISK-001 | ./records/ADR-001-placeholder.md |
@@ -56,6 +57,7 @@ This document defines the canonical index contract for Architecture Decision Rec
 - [ADR-001: Requirement ID Normalization](./records/ADR-001-placeholder.md)
 - [ADR-002: Traceability Matrix Minimum Schema](./records/ADR-002-placeholder.md)
 - [ADR-003: Phase 1 Freeze Closure with Explicit Residual-Breadth Waiver](./records/ADR-003-phase1-freeze-waiver.md)
+- [ADR-005: Authorization gate order reconciliation](./records/ADR-005-authz-gate-order-reconciliation.md)
 - [ADR-004: Phase 3 — Canon Completion Program Charter](./records/ADR-004-phase3-program-charter.md)
 
 ## Verification hooks
