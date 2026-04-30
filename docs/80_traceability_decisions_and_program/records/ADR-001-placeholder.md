@@ -50,7 +50,7 @@ Normative decision requirements:
 ## Traceability linkage
 - Requirement IDs: CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002
 - Risk IDs: RISK-001
-- Verification hooks: HOOK-SSOT-LINT-METADATA, HOOK-SSOT-SYNC-CHECK
+- Verification hooks: HOOK-SSOT-LINT-METADATA, HOOK-SSOT-SYNC-PROMOTED-TRACE
 
 ## Supersession
 - Supersedes: none

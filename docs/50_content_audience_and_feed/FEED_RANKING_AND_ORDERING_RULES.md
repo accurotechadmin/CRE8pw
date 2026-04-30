@@ -1,5 +1,5 @@
 ---
-doc_id: CRE8-FEED-AUDIENCE-CONTRACT
+doc_id: CRE8-FEED-RANKING-ORDERING
 version: 1.0.0
 status: provisional-normative
 owner: Product Policy WG
@@ -16,6 +16,7 @@ normative_dependencies:
   - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
   - docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md
+change_impact_map: reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md
 ---
 
 # Feed Ranking and Ordering Rules
@@ -38,3 +39,8 @@ Define deterministic feed authorization and ordering behavior for CRE8 audience-
 - [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
 - [Commenting and Interaction Policy](./COMMENTING_AND_INTERACTION_POLICY.md)
+
+
+Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+
+Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.

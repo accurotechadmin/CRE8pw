@@ -15,6 +15,7 @@ normative_dependencies:
   - docs/00_governance/SSOT_INDEX.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
   - docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md
+change_impact_map: reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md
 ---
 
 # Seed Promotion Tracker
@@ -50,8 +51,8 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 | SPR-003 | seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#permission-evaluation-order | CRE8-AUTH-DECISION-TABLES | CRE8-AUTH-REQ-0010 | promoted | HOOK-CONTRACT-POLICY-ORDER |  | Promoted into deterministic authorization gate ordering requirements. |
 | SPR-004 | seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md#deterministic-deny-reasoning | CRE8-AUTH-DECISION-TABLES | CRE8-AUTH-REQ-0015 | promoted | HOOK-AUTH-DECISION-REASON-MAPPING |  | Promoted into reason-to-error-code mapping requirements. |
 | SPR-005 | seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md#revoke-rotate-propagation | CRE8-SEC-KEY-LIFECYCLE | CRE8-SEC-REQ-0006 | promoted | HOOK-SEC-LIFECYCLE-PROPAGATION |  | Promoted into immediate revoke/rotate propagation requirements with explicit hook coverage. |
-| SPR-006 | seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md#cross-surface-parity | CRE8-CONTRACTS-SURFACE-PARITY | CRE8-CONTRACT-REQ-0030 | promoted | HOOK-CONTRACT-SURFACE-PARITY |  | Promoted into Owner Console/API supported-capability parity requirements. |
-| SPR-007 | seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-AUDIENCE-CONTRACT | CRE8-FEED-REQ-0002 | promoted | HOOK-FEED-AUTH-ORDER |  | Promoted into deterministic authorized feed ordering rules. |
+| SPR-006 | seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md#cross-surface-parity | CRE8-CONTRACTS-UI-RUNTIME | CRE8-CONTRACT-REQ-0030 | promoted | HOOK-CONTRACT-SURFACE-PARITY |  | Promoted into Owner Console/API supported-capability parity requirements. |
+| SPR-007 | seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md#authorized-feed-ordering | CRE8-FEED-RANKING-ORDERING | CRE8-FEED-REQ-0002 | promoted | HOOK-FEED-AUTH-ORDER |  | Promoted into deterministic authorized feed ordering rules. |
 | SPR-008 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#error-envelope-determinism | CRE8-CONTRACTS-ERROR-CATALOG | CRE8-CONTRACT-REQ-0001 | promoted | HOOK-CONTRACT-ERROR-DETERMINISM |  | Promoted into deterministic error envelope and stable error code requirements. |
 | SPR-009 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#contract-machine-parity | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0010 | promoted | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY |  | Promoted into route inventory and machine contract parity requirements. |
 | SPR-010 | seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md#compatibility-and-migration-disclosure | CRE8-CONTRACTS-API-GUIDE | CRE8-CONTRACT-REQ-0014 | promoted | HOOK-CONTRACT-COMPAT-DECLARATION |  | Promoted into mandatory compatibility declaration obligations. |
@@ -72,3 +73,8 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - [Roadmap and Milestones](./ROADMAP_AND_MILESTONES.md)
 - [Unresolved Seed Gap Register](./UNRESOLVED_SEED_GAP_REGISTER.md)
 - [Seed Canon Index](../../seed/CRE8_SEED_CANON_INDEX.md)
+
+
+Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+
+Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
