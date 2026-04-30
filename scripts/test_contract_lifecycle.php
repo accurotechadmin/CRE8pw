@@ -60,4 +60,27 @@ foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
     }
 }
 
-echo 'test:contract:lifecycle PASS (routes=2, deny_examples=2, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
+$revokeEffectiveUtcPattern = '/LifecycleRevokeAccepted:\n\s{6}value:\n\s{8}data:\s\{[^\n]*effective_utc:\s"([^"]+)"/m';
+$descendantBlockedUtcPattern = '/ErrorDescendantLifecycleBlocked:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
+
+if (preg_match($revokeEffectiveUtcPattern, $openapi, $revokeMatch) !== 1) {
+    fwrite(STDERR, "Lifecycle revoke fixture missing effective_utc for propagation chronology checks\n");
+    exit(1);
+}
+if (preg_match($descendantBlockedUtcPattern, $openapi, $descendantMatch) !== 1) {
+    fwrite(STDERR, "Descendant lifecycle deny fixture missing timestamp_utc for propagation chronology checks\n");
+    exit(1);
+}
+
+$revokeTs = strtotime($revokeMatch[1]);
+$descendantTs = strtotime($descendantMatch[1]);
+if ($revokeTs === false || $descendantTs === false) {
+    fwrite(STDERR, "Lifecycle chronology timestamps are not parseable ISO-8601 values\n");
+    exit(1);
+}
+if ($descendantTs < $revokeTs) {
+    fwrite(STDERR, "Descendant lifecycle deny timestamp precedes revoke effective_utc (chronology drift)\n");
+    exit(1);
+}
+
+echo 'test:contract:lifecycle PASS (routes=2, deny_examples=3, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, descendant_chronology=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
