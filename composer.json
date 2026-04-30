@@ -90,6 +90,7 @@
     "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
     "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
     "test:security": "phpunit tests/Security",
-    "docs:ssot:phase3-drift-pack": "@php scripts/docs_ssot_phase3_drift_pack.php"
+    "docs:ssot:phase3-drift-pack": "@php scripts/docs_ssot_phase3_drift_pack.php",
+    "test:contract:response-schema": "@php scripts/test_contract_response_schema.php"
   }
 }

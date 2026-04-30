@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T23:25:00Z
+- Last updated (UTC): 2026-04-30T23:32:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -119,10 +119,10 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S6.1 | Schema completeness pass | not_started | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | Strict additionalProperties / unevaluatedProperties closures. |
-| P3-S6.2 | Cross-route schema coverage check | not_started | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | New script `scripts/docs_ssot_schema_coverage.php`. |
-| P3-S6.3 | Contract version policy | not_started | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | New `CONTRACT_VERSION_POLICY.md`. |
-| P3-S6.4 | Schema test fixtures | not_started | API Contracts WG | 2026-06-01 | HOOK-CONTRACT-SCHEMA-COVERAGE (target); HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | Adds `composer test:contract:request-schema`, `…response-schema`. |
+| P3-S6.1 | Schema completeness pass | partially_complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | Strict additionalProperties / unevaluatedProperties closures. Residual: broaden schema closure assertions from top-level to allOf-expanded envelopes. |
+| P3-S6.2 | Cross-route schema coverage check | complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | New script `scripts/docs_ssot_schema_coverage.php`. Hook validated in phase3 bundle. |
+| P3-S6.3 | Contract version policy | complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | New `CONTRACT_VERSION_POLICY.md` authored and cross-linked from API guide/parity table. |
+| P3-S6.4 | Schema test fixtures | complete | API Contracts WG | 2026-06-01 | HOOK-CONTRACT-SCHEMA-COVERAGE (target); HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | Adds `composer test:contract:request-schema`, `test:contract:response-schema` with positive/negative fixtures. |
 
 ### M7 — Data, security, and cryptography
 
