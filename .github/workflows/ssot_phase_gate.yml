@@ -55,9 +55,13 @@ jobs:
 
       - name: Run SSOT PR evidence check
         run: composer docs:ssot:pr-evidence-check
+
       - name: Ordering anchor - acceptance bundle runs after SSOT checks
-        run: echo 'phase2 acceptance bundle is ordered after lint/sync/report/review/parity/pr-evidence checks'
+        run: echo 'phase3 final acceptance bundle is ordered after lint/sync/report/review/parity/pr-evidence checks'
 
-      - name: Run Phase 2 acceptance bundle
-        run: composer phase2:acceptance-bundle
+      - name: Run Phase 3 final acceptance bundle
+        run: composer phase3:final-acceptance-bundle
 
+      - name: Assert untraced requirements are zero
+        run: |
+          php -r '$f="reports/ssot/coverage_latest.json"; $j=json_decode(file_get_contents($f), true, 512, JSON_THROW_ON_ERROR); $u=(int)($j["untraced_requirements"] ?? -1); if ($u !== 0) { fwrite(STDERR, "untraced_requirements must be 0; got {$u}" . PHP_EOL); exit(1);} echo "untraced_requirements=0" . PHP_EOL;'

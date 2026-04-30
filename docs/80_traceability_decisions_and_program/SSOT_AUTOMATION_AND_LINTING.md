@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-SSOT-AUTOMATION
-version: 1.3.0
+version: 1.4.0
 status: provisional-normative
 owner: Program Traceability WG
 reviewers:
@@ -55,6 +55,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 | `test:contract:auth-reasons` | Authorization decision reason-code mapping coverage against error catalog entries. | Missing-mapping failures and deterministic pass summary. | Identity & Policy WG |
 | `test:contract:auth` | Authorization decision-table gate order and deterministic short-circuit deny reason checks. | Step-order drift failures and deterministic pass summary. | Identity & Policy WG |
 | `test:contract:error-secrets` | Error redaction token scan and required redacted 5xx example verification in OpenAPI contract. | Secret-token or missing-redaction failures and deterministic pass summary. | API Contracts WG |
+| `docs:ssot:phase3-drift-pack` | Aggregate run of Phase 3 consistency checks (IDs/hooks parity, OpenAPI structure, schema/example coverage, glossary, source refs, security/data/event contracts). | First-failure exit with deterministic pass summary. | Program Traceability WG |
 | `ssot_phase1_gate` (CI) | Execute `docs:ssot:lint`, `docs:ssot:sync-check`, `docs:ssot:report`, `docs:ssot:glossary-check`, and `docs:ssot:pr-evidence-check` as merge-blocking checks. | Workflow status in CI provider; non-zero command exit fails gate. | Program Traceability WG |
 
 ## Hook registry
@@ -92,3 +93,6 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - [Seed Promotion Tracker](./SEED_PROMOTION_TRACKER.md)
 - [Unresolved Seed Gap Register](./UNRESOLVED_SEED_GAP_REGISTER.md)
 - [Change Impact Map Templates](./CHANGE_IMPACT_MAP_TEMPLATES.md)
+
+
+- **HOOK-SSOT-PHASE3-DRIFT-PACK**: Automated aggregate hook that executes the Phase 3 drift consistency pack and fails on first command regression.
