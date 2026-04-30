@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-30T01:12:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0112
+- Last updated (UTC): 2026-04-30T01:17:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0117
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -79,13 +79,13 @@
 | Lane B — Deferred breadth decomposition | partially complete | 98% | Medium | `P2-DB-003` and `P2-DB-004` are complete; `P2-DB-002` now includes multi-actor runtime fixture assertions while remaining residuals stay in broader `P2-DB-001/002/006` runtime intersections. |
 | Lane C — Parity expansion | in progress | 100% | High | Surface parity auth-prerequisite checks are now executable in addition to feed deny payload-shape semantics. |
 | Lane D — Traceability/evidence hardening | in progress | 99% | Medium | Governance evidence discipline preserved with parity automation pass/fail expansion and acceptance bundle validation. |
-| Lane E — Acceptance planning | in progress | 78% | Medium | Exception governance now validates decision-existence and closed-row linkage; first real closed-row exercise remains pending. |
+| Lane E — Acceptance planning | in progress | 82% | Medium | First real closed-row exception exercise completed (`P2-EXC-004` linked to complete `P2-DB-004`); broader closure cadence still pending. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0112.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260430-0105.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260430-0100.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260430-0054.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260430-0049.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0117.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260430-0112.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260430-0105.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260430-0100.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260430-0054.md`
 
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
