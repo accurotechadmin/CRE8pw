@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T13:03:00Z
+- Last updated (UTC): 2026-04-30T13:17:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -164,9 +164,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
 | P3-S10.1 | `EXTENSIBILITY_PLAYBOOK.md` | complete | Platform Architecture WG | 2026-06-19 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | DI/Slim/registration playbook. |
-| P3-S10.2 | `INTEGRATION_PROVIDER_PATTERN.md` | not_started | Platform Architecture WG | 2026-06-20 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | Outbound + inbound patterns. |
-| P3-S10.3 | `POST_TYPE_EXTENSION_SPEC.md` | not_started | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | Post-family inheritance. |
-| P3-S10.4 | `PRINCIPAL_TYPE_EXTENSION_SPEC.md` | not_started | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | (TBD) | Principal-type extension obligations. |
+| P3-S10.2 | `INTEGRATION_PROVIDER_PATTERN.md` | complete | Platform Architecture WG | 2026-06-20 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | `docs/70_extensibility_and_module_patterns/INTEGRATION_PROVIDER_PATTERN.md`; `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md` | Outbound/inbound integration provider pattern canonized with signing/retry/dead-letter and verification seam obligations. |
+| P3-S10.3 | `POST_TYPE_EXTENSION_SPEC.md` | complete | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | `docs/70_extensibility_and_module_patterns/POST_TYPE_EXTENSION_SPEC.md`; `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md` | Post-type extension contract canonized with lifecycle/audience/feed/parity invariants and manifest requirements. |
+| P3-S10.4 | `PRINCIPAL_TYPE_EXTENSION_SPEC.md` | complete | Platform Architecture WG | 2026-06-21 | HOOK-EXT-SEAM-COMPATIBILITY | ADR-004 | `docs/70_extensibility_and_module_patterns/PRINCIPAL_TYPE_EXTENSION_SPEC.md`; `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md` | Principal-type extension contract canonized with permission/matrix/state-machine/policy fixture obligations. |
 
 ### M11 — Verification, evidence, and final acceptance bundle
 
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260430-1317.md`](SESSION_HANDOFF_20260430-1317.md) — P3-S10.2/P3-S10.3/P3-S10.4 complete; extensibility integration/post/principal extension specs promoted to normative.
 1. [`SESSION_HANDOFF_20260430-1246.md`](SESSION_HANDOFF_20260430-1246.md) — P3-S9.1/P3-S9.2/P3-S9.3/P3-S9.4 complete; operations contracts promoted from scaffold to normative.
 1. [`SESSION_HANDOFF_20260430-1224.md`](SESSION_HANDOFF_20260430-1224.md) — M6 attempt blocked by unresolved P3-S5.3/P3-S5.4/P3-S5.5 dependency chain; blocker report `PHASE3_BLOCKER_20260430-1224.md`.
 1. [`SESSION_HANDOFF_20260430-1142.md`](SESSION_HANDOFF_20260430-1142.md) — M6 attempt blocked by unresolved P3-S5.3/P3-S5.4/P3-S5.5 dependency chain; blocker report `PHASE3_BLOCKER_20260430-1142.md`.

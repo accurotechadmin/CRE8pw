@@ -1,7 +1,58 @@
+---
+doc_id: CRE8-EXT-PRINCIPAL-TYPE-SPEC
+version: 1.0.0
+status: normative
+owner: Platform Architecture WG
+reviewers:
+  - Identity & Policy WG
+  - Security Engineering WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-06-21
+source_seed_refs:
+  - seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+normative_dependencies:
+  - docs/70_extensibility_and_module_patterns/EXTENSIBILITY_PLAYBOOK.md
+  - docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md
+  - docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md
+  - docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+---
+
 # Principal Type Extension Spec
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **PRINCIPAL_TYPE_EXTENSION_SPEC.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Purpose
+Define mandatory obligations for introducing a new principal type while preserving permission vocabulary integrity, capability-matrix determinism, delegation lifecycle semantics, and policy-decision enforcement.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Normative requirements
+- **CRE8-EXT-REQ-0022**: A new principal type **MUST** declare a unique canonical principal token and **MUST NOT** ship with implicit wildcard permissions.
+- **CRE8-EXT-REQ-0023**: Principal-type additions **MUST** extend `PERMISSION_VOCABULARY.md` and the capability matrix in the same patch, including explicit allow/deny/conditional posture for every relevant action family.
+- **CRE8-EXT-REQ-0024**: New principal types **MUST** define delegation lifecycle transitions (grant, suspend, revoke, expire) and cascade semantics consistent with `DELEGATION_STATE_MACHINE.md`.
+- **CRE8-EXT-REQ-0025**: Authorization fixtures for the new principal type **MUST** include deterministic allow and deny examples that exercise gate ordering and reason-code mapping.
+- **CRE8-EXT-REQ-0026**: Principal extension manifests **MUST** include backward-compatibility declaration, migration impact, and rollback constraints before release approval.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Required principal extension manifest
+| Field | Requirement |
+|---|---|
+| `principal_type` | Unique canonical token. |
+| `permission_tokens` | New/updated tokens and ownership namespace. |
+| `capability_matrix_deltas` | Explicit allow/deny/conditional deltas by action family. |
+| `delegation_transitions` | State transition additions and propagation semantics. |
+| `authz_fixtures` | Allow/deny fixtures with expected reason codes. |
+| `compatibility_declaration` | Additive vs breaking classification and rollback strategy. |
+
+## Verification hooks
+| Hook ID | Enforcement |
+|---|---|
+| `HOOK-PERMISSION-VOCAB-RESOLVE` | Verifies referenced permission tokens exist, remain canonical, and resolve without alias drift. |
+| `HOOK-CAPABILITY-MATRIX-COMPLETE` | Verifies matrix coverage for new principal type across action families. |
+| `HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY` | Verifies transition semantics remain valid and deterministic. |
+| `HOOK-CONTRACT-POLICY-ORDER` | Verifies allow/deny fixtures preserve canonical authorization gate order and reason mapping. |
+
+## See also
+- [Permission Vocabulary](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md)
+- [Principal Types and Capability Matrix](../20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md)
+- [Delegation State Machine](../20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md)
+
+
+Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.
