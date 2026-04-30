@@ -100,6 +100,7 @@ foreach ($runtimeIsolationFixture as $row) {
 $runtimeCrossPrincipalFixture = [
     ['utility_key_id' => 'uk_rt_a_002', 'principal_id' => 'p-root-001', 'context' => 'service:gateway', 'actor_id' => 'issuer-svc-a', 'request_id' => 'req-ident-ctx-rt-003', 'timestamp_utc' => '2026-04-30T00:11:02Z'],
     ['utility_key_id' => 'uk_rt_b_002', 'principal_id' => 'p-root-002', 'context' => 'service:gateway', 'actor_id' => 'issuer-svc-b', 'request_id' => 'req-ident-ctx-rt-004', 'timestamp_utc' => '2026-04-30T00:11:03Z'],
+    ['utility_key_id' => 'uk_rt_c_003', 'principal_id' => 'p-root-003', 'context' => 'tenant:t-c', 'actor_id' => 'issuer-tenant-c', 'request_id' => 'req-ident-ctx-rt-005', 'timestamp_utc' => '2026-04-30T00:11:04Z'],
 ];
 
 $seenRuntimeContextPrincipalPairs = [];
@@ -132,6 +133,10 @@ if (!preg_match('/AuthDecisionRequestIdentityTransitionAllow:\n\s{6}value:\s\{[^
     fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] missing replay-safe utility_context_ref in AuthDecisionRequestIdentityTransitionAllow fixture" . PHP_EOL);
     exit(1);
 }
+if (!preg_match('/AuthDecisionRequestIdentityTransitionDeny:\n\s{6}value:\s\{[^\n]*utility_context_ref:\s"(req-ident-ctx-rt-[0-9]{3})"/m', $openapi, $denyContextRef)) {
+    fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] missing replay-safe utility_context_ref in AuthDecisionRequestIdentityTransitionDeny fixture" . PHP_EOL);
+    exit(1);
+}
 $runtimeContextRequestIds = [];
 foreach (array_merge($runtimeIsolationFixture, $runtimeCrossPrincipalFixture) as $row) {
     $runtimeContextRequestIds[$row['request_id']] = true;
@@ -140,4 +145,8 @@ if (!isset($runtimeContextRequestIds[$allowContextRef[1]])) {
     fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] OpenAPI identity transition allow fixture must reference runtime context request_id fixture" . PHP_EOL);
     exit(1);
 }
-echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', runtime_isolation_fixtures=' . count($runtimeIsolationFixture) . ', runtime_cross_principal_fixtures=' . count($runtimeCrossPrincipalFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*|req-ident-ctx-rt-*)' . PHP_EOL;
+if (!isset($runtimeContextRequestIds[$denyContextRef[1]])) {
+    fwrite(STDERR, "[HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION] OpenAPI identity transition deny fixture must reference runtime context request_id fixture" . PHP_EOL);
+    exit(1);
+}
+echo 'test:contract:identity-context PASS (hook=HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION, clauses=1, allowed_fixtures=' . count($allowedFixtures) . ', extra_context_fixtures=' . count($multiContextFixture) . ', runtime_isolation_fixtures=' . count($runtimeIsolationFixture) . ', runtime_cross_principal_fixtures=' . count($runtimeCrossPrincipalFixture) . ', deny_reuse_key=' . $reuseKey . ', replay_safe_namespace=req-ident-ctx-*|req-ident-ctx-rt-*, openapi_transition_refs=allow+deny)' . PHP_EOL;
