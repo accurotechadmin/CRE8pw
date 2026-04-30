@@ -50,8 +50,22 @@ foreach (explode("\n", $routeInventory) as $line) {
             $family = 'key_lifecycle';
         } elseif (str_starts_with($requiredPermission, 'feed.')) {
             $family = 'feed_audience';
-        } elseif (str_starts_with($requiredPermission, 'system.')) {
+        } elseif (str_starts_with($requiredPermission, 'system.health.')) {
             $family = 'system_health';
+        } elseif (str_starts_with($requiredPermission, 'system.')) {
+            $family = 'system_meta';
+        } elseif (str_starts_with($requiredPermission, 'principal.') || str_starts_with($requiredPermission, 'key.id.') || str_starts_with($requiredPermission, 'key.utility.')) {
+            $family = 'principal_management';
+        } elseif (str_starts_with($requiredPermission, 'delegation.')) {
+            $family = 'delegation_management';
+        } elseif (str_starts_with($requiredPermission, 'audience.group.')) {
+            $family = 'audience_management';
+        } elseif (str_starts_with($requiredPermission, 'post.')) {
+            $family = 'post_management';
+        } elseif (str_starts_with($requiredPermission, 'comment.')) {
+            $family = 'comment_interaction';
+        } elseif (str_starts_with($requiredPermission, 'audit.')) {
+            $family = 'audit_export';
         }
         $inventoryFamilies[$family] = true;
     }
