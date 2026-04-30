@@ -70,6 +70,11 @@ if (!in_array('req-desc-life-003', $descendantRequestIds, true)) {
     exit(1);
 }
 
+if ($descendantRequestIds !== ['req-desc-life-001', 'req-desc-life-002', 'req-desc-life-003']) {
+    fwrite(STDERR, "Expected descendant lifecycle request_id set to remain contiguous req-desc-life-001..003 for deterministic timeline-matrix semantics\n");
+    exit(1);
+}
+
 foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
     $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*request_id:\s"' . preg_quote($requestPrefix, '/') . '[^"\n]*"[^\n]*\}/m';
     if (preg_match($pattern, $openapi) !== 1) {

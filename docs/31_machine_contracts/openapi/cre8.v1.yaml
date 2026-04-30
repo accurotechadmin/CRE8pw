@@ -97,6 +97,8 @@ paths:
                   $ref: '#/components/examples/ErrorGrantExpired'
                 multiAncestorDepthExceeded:
                   $ref: '#/components/examples/ErrorMultiAncestorDepthExceeded'
+                multiAncestorGrantExpired:
+                  $ref: '#/components/examples/ErrorMultiAncestorGrantExpired'
                 lifecycleBlocked:
                   $ref: '#/components/examples/ErrorFeedLifecycleBlocked'
                 interactionLifecycleBlocked:

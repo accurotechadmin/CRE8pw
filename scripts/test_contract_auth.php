@@ -132,6 +132,7 @@ $authzDenyExamples = [
     'depthExceeded' => ['ref' => '#/components/examples/ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY'],
     'grantExpired' => ['ref' => '#/components/examples/ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED', 'category' => 'AUTH_DENY'],
     'multiAncestorDepthExceeded' => ['ref' => '#/components/examples/ErrorMultiAncestorDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY'],
+    'multiAncestorGrantExpired' => ['ref' => '#/components/examples/ErrorMultiAncestorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED', 'category' => 'AUTH_DENY'],
     'lifecycleBlocked' => ['ref' => '#/components/examples/ErrorFeedLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
     'interactionLifecycleBlocked' => ['ref' => '#/components/examples/ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
 ];
@@ -151,6 +152,20 @@ foreach ($authzDenyExamples as $fixtureKey => $contract) {
     }
 }
 
+
+
+if (preg_match_all('/request_id:\s"(req-authz-multianc-[0-9]{3})"/', $openapi, $multiAncestorIds) === false) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] unable to parse req-authz-multianc-* fixture IDs';
+} else {
+    $ids = array_values(array_unique($multiAncestorIds[1] ?? []));
+    sort($ids);
+    $expectedIds = ['req-authz-multianc-001', 'req-authz-multianc-002'];
+    foreach ($expectedIds as $expectedId) {
+        if (!in_array($expectedId, $ids, true)) {
+            $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing expected multi-ancestor fixture request_id ' . $expectedId;
+        }
+    }
+}
 
 $lifecyclePrefixExpectations = [
     'ErrorFeedLifecycleBlocked' => 'req-feed-',
