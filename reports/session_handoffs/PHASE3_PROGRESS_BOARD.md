@@ -21,7 +21,7 @@
 
 ## Mission alignment (Phase 3)
 
-- Take 33 D-grade scaffold docs to A-grade with deterministic normative requirements.
+- Take all D-grade scaffold docs (33 tracked scaffold targets) to A-grade with deterministic normative requirements; quoted policy references to the scaffold opener phrase are exempt from this target count per ADR-004-REQ-0008.
 - Drive `untraced_requirements` to **0** in `reports/ssot/coverage_latest.json`.
 - Resolve all 9 cataloged conflicts (CONF-* in entry audit) under M1 before any new authoring.
 - Author the 14 missing canonical docs identified in the program plan (e.g., `PERMISSION_VOCABULARY.md`, `DELEGATION_STATE_MACHINE.md`, `CRYPTO_PROFILE.md`, `AUDIENCE_GROUP_SPEC.md` content body, full ops/release suite, full extensibility suite).
@@ -30,7 +30,7 @@
 
 ## Coverage snapshot (live)
 
-| Field | Phase 3 entry (2026-04-30T04:01) | Latest (2026-04-30T04:15) |
+| Field | Phase 3 entry (2026-04-30T04:01) | Latest (2026-04-30T04:23:01+00:00) |
 |---|---:|---:|
 | `total_normative_requirements` | 238 | 238 |
 | `traced_requirements` | 83 | 108 |
@@ -38,6 +38,12 @@
 | `manual_only_verification_hooks` | 1 | 22 |
 
 The increase in manual-only hooks reflects intentional matrix backfill under P3-S0.2 (registering existing manual hooks for Phase 3-tracked governance documents that had never been traced). Full backfill to `untraced_requirements: 0` is the deliverable of `P3-S2.3`. Manual-hook automation is the deliverable of `P3-S11.1` / `P3-S11.2`.
+
+
+## Session-end sync rule (operational hygiene)
+
+- Every session that updates Phase 3 state MUST update all of: `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`, one new `SESSION_HANDOFF_<UTC>.md`, one new `reports/session_responses/<UTC>_RESPONSE.md`, and the quick-link sections below in this board in the same commit set.
+- Historical handoff entries remain immutable; when branch/merge state changes after publication, the next handoff MUST record the updated merge/PR status rather than rewriting historical entries.
 
 ## Master checklist (M0..M12)
 
@@ -53,6 +59,8 @@ Status taxonomy: `not_started`, `in_progress`, `partially_complete`, `complete`,
 | P3-S0.4 | Repo hygiene baseline | not_started | Program Traceability WG | 2026-05-07 | HOOK-SSOT-LINK-INTEGRITY | ADR-004 | (TBD) | Move Phase 1/2 handoffs older than 7 days under `reports/session_handoffs/archive/<YYYY-MM>/`; correct stale `seed/CRE8_REPO_STUDY_REPORT.md` claim about absent root README. |
 
 ### M1 — Tier-1 correctness blockers (predecessors for everything else)
+
+M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `complete` with evidence paths before any M2+ slice can transition to `complete`; partial downstream drafting MAY occur only if explicitly marked `in_progress` and non-normative.
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
