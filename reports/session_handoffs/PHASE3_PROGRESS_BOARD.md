@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T06:00:00Z
+- Last updated (UTC): 2026-04-30T07:30:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -65,8 +65,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
 | P3-S1.1 | Reconcile authorization gate order | complete | Identity & Policy WG | 2026-05-08 | HOOK-CONTRACT-POLICY-ORDER; HOOK-AUTH-DECISION-REASON-MAPPING | ADR-005 (target) | `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`; `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`; `docs/80_traceability_decisions_and_program/records/ADR-005-authz-gate-order-reconciliation.md` | CONF-AUTH-GATE-ORDER resolved and canonical sequence aligned across both docs with ADR-005 acceptance. |
-| P3-S1.2 | Reconcile policy-decision schema with OpenAPI examples | not_started | API Contracts WG | 2026-05-09 | HOOK-CONTRACT-SCHEMA-COVERAGE (target); HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | Adds `composer test:contract:request-schema`. |
-| P3-S1.3 | Fix OpenAPI structural defect | not_started | API Contracts WG | 2026-05-09 | HOOK-OPENAPI-LINT (target) | ADR-004 | (TBD) | Adds `composer docs:ssot:openapi-lint`. |
+| P3-S1.2 | Reconcile policy-decision schema with OpenAPI examples | complete | API Contracts WG | 2026-05-09 | HOOK-CONTRACT-SCHEMA-COVERAGE; HOOK-CONTRACT-EXAMPLE-COVERAGE | ADR-004 | `scripts/test_contract_request_schema.php`; `docs/31_machine_contracts/openapi/cre8.v1.yaml` | Added `composer test:contract:request-schema`; authz request examples validated against required schema fields. |
+| P3-S1.3 | Fix OpenAPI structural defect | complete | API Contracts WG | 2026-05-09 | HOOK-OPENAPI-LINT | ADR-004 | `scripts/docs_ssot_openapi_lint.php`; `docs/31_machine_contracts/openapi/cre8.v1.yaml` | Added `composer docs:ssot:openapi-lint`; corrected `/v1/authz/decide` requestBody schema/examples node placement. |
 | P3-S1.4 | Resolve hook-ID and casing drift | not_started | Docs Governance WG | 2026-05-08 | HOOK-CONTRACT-ERROR-SECRETS-REDACTION | ADR-004 | (TBD) | Rename mixed-case token; register or rename other unregistered hooks. |
 | P3-S1.5 | Resolve doc-id / filename / matrix mismatches | not_started | Docs Governance WG | 2026-05-08 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | Update doc_ids and matrix references; preserve published requirement IDs. |
 | P3-S1.6 | Repair stale references | not_started | Docs Governance WG | 2026-05-09 | HOOK-SOURCE-REFS-INTEGRITY (target) | ADR-004 | (TBD) | Adds `composer docs:ssot:source-refs-check`. |
