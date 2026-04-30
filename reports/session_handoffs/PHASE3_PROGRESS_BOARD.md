@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T13:17:00Z
+- Last updated (UTC): 2026-04-30T13:31:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -175,8 +175,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S11.1 | New hooks and templates | complete | Program Traceability WG | 2026-06-22 | HOOK-DATA-MODEL-COVERAGE; HOOK-SEC-THREAT-CONTROL-MATRIX; HOOK-OBS-EVENT-CATALOG-COVERAGE; HOOK-CONTRACT-SCHEMA-COVERAGE; HOOK-CONTRACT-EXAMPLE-COVERAGE; HOOK-OPENAPI-LINT; HOOK-GLOSSARY-COMPLETENESS; HOOK-SOURCE-REFS-INTEGRITY; HOOK-PERMISSION-VOCAB-RESOLVE; HOOK-CAPABILITY-MATRIX-COMPLETE; HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY; HOOK-RELEASE-CHECKLIST-PRESENT; HOOK-SLO-SLI-PRESENT (all target) | ADR-004 | (TBD) | Register + templates. |
 | P3-S11.2 | Implement scripts for new hooks | complete | Program Traceability WG | 2026-06-23 | (above) | ADR-004 | (TBD) | All `scripts/docs_ssot_*.php` for the new hook set. |
 | P3-S11.3 | Author `composer phase3:final-acceptance-bundle` | complete | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE; (and all M11 hooks) | ADR-004 | (TBD) | Adds `scripts/phase3_acceptance_bundle.php`. |
-| P3-S11.4 | CI rewire | not_started | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE1-GATE-CI | ADR-004 | (TBD) | `untraced_requirements == 0` job assertion. |
-| P3-S11.5 | Drift-test pack | not_started | Program Traceability WG | 2026-06-25 | HOOK-SSOT-LINK-INTEGRITY (and all M11 hooks) | ADR-004 | (TBD) | New `scripts/docs_ssot_phase3_drift_pack.php`. |
+| P3-S11.4 | CI rewire | complete | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE1-GATE-CI | ADR-004 | `.github/workflows/ssot_phase_gate.yml` | CI merge gate rewired to run `composer phase3:final-acceptance-bundle` and asserts `untraced_requirements == 0` from fresh coverage artifact. |
+| P3-S11.5 | Drift-test pack | complete | Program Traceability WG | 2026-06-25 | HOOK-SSOT-PHASE3-DRIFT-PACK | ADR-004 | `scripts/docs_ssot_phase3_drift_pack.php`; `docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md` | Aggregate drift pack command authored and registered in automation registry. |
 
 ### M12 — Phase 3 freeze and implementation handoff
 
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260430-1331.md`](SESSION_HANDOFF_20260430-1331.md) — P3-S11.4/P3-S11.5 complete; CI rewired to phase3 gate and phase3 drift-pack command added.
 1. [`SESSION_HANDOFF_20260430-1317.md`](SESSION_HANDOFF_20260430-1317.md) — P3-S10.2/P3-S10.3/P3-S10.4 complete; extensibility integration/post/principal extension specs promoted to normative.
 1. [`SESSION_HANDOFF_20260430-1246.md`](SESSION_HANDOFF_20260430-1246.md) — P3-S9.1/P3-S9.2/P3-S9.3/P3-S9.4 complete; operations contracts promoted from scaffold to normative.
 1. [`SESSION_HANDOFF_20260430-1224.md`](SESSION_HANDOFF_20260430-1224.md) — M6 attempt blocked by unresolved P3-S5.3/P3-S5.4/P3-S5.5 dependency chain; blocker report `PHASE3_BLOCKER_20260430-1224.md`.
