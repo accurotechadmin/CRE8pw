@@ -5,7 +5,7 @@ declare(strict_types=1);
 $registerPath = __DIR__ . '/../docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md';
 $decisionsPath = __DIR__ . '/../docs/80_traceability_decisions_and_program/DECISIONS_LOG.md';
 $adrIndexPath = __DIR__ . '/../docs/80_traceability_decisions_and_program/ADR_INDEX.md';
-$progressBoardPath = __DIR__ . '/../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md';
+$progressBoardPath = __DIR__ . '/../reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md';
 
 foreach ([$registerPath, $decisionsPath, $adrIndexPath, $progressBoardPath] as $requiredPath) {
     if (!is_file($requiredPath)) {

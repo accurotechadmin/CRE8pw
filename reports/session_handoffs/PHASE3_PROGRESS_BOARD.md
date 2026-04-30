@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T13:31:00Z
+- Last updated (UTC): 2026-04-30T13:36:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -182,9 +182,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S12.1 | Implementation handoff package | not_started | Program Traceability WG | 2026-06-26 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | `reports/PHASE3_IMPLEMENTATION_HANDOFF.md`. |
-| P3-S12.2 | Phase 3 acceptance memo | not_started | Operations Quality WG | 2026-06-27 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | ADR-004 (closure) | (TBD) | `reports/PHASE3_ACCEPTANCE_MEMO.md`; appends `DLOG-<date>-005`. |
-| P3-S12.3 | Archive and cleanup | not_started | Docs Governance WG | 2026-06-28 | HOOK-SSOT-LINK-INTEGRITY | ADR-004 | (TBD) | Strip `placeholder` ADR filename suffix; archive Phase 1/2 boards. |
+| P3-S12.1 | Implementation handoff package | complete | Program Traceability WG | 2026-06-26 | HOOK-SSOT-LINT-METADATA | ADR-004 | (TBD) | `reports/PHASE3_IMPLEMENTATION_HANDOFF.md`. |
+| P3-S12.2 | Phase 3 acceptance memo | complete | Operations Quality WG | 2026-06-27 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | ADR-004 (closure) | (TBD) | `reports/PHASE3_ACCEPTANCE_MEMO.md`; appends `DLOG-<date>-005`. |
+| P3-S12.3 | Archive and cleanup | complete | Docs Governance WG | 2026-06-28 | HOOK-SSOT-LINK-INTEGRITY | ADR-004 | (TBD) | Strip `placeholder` ADR filename suffix; archive Phase 1/2 boards. |
 
 ## Open Phase 3 exceptions
 

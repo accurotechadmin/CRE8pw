@@ -13,7 +13,7 @@ source_seed_refs:
   - docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md
 normative_dependencies:
   - docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md
-  - reports/session_handoffs/PHASE2_PROGRESS_BOARD.md
+  - reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
   - docs/80_traceability_decisions_and_program/DECISIONS_LOG.md
 ---
@@ -53,7 +53,7 @@ Define the canonical register format for unresolved exceptions retained while Ph
 | P2-EXC-001 | Lane B / P2-DB-001 | Identity & Policy WG | in_progress | 2026-05-06 | ADR-003 | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | composer test:contract:auth |  |  | Multi-ancestor runtime matrix breadth still pending beyond fixture-depth checks. |
 | P2-EXC-002 | Lane B / P2-DB-002 | Platform Architecture WG | in_progress | 2026-05-10 | ADR-003 | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | composer test:contract:identity-issuance && composer test:contract:identity-context |  |  | Runtime-integrated multi-actor issuance/context breadth pending. |
 | P2-EXC-003 | Lane B / P2-DB-006 | Security Engineering WG | in_progress | 2026-05-12 | ADR-003 | HOOK-SEC-LIFECYCLE-PROPAGATION | composer test:contract:lifecycle |  |  | Multi-actor descendant lifecycle propagation coverage pending. |
-| P2-EXC-004 | Lane B / P2-DB-004 | Product Policy WG | closed | 2026-04-29 | ADR-003 | HOOK-FEED-INTERACTION-DENY-MAPPING |  | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md; reports/session_handoffs/PHASE2_PROGRESS_BOARD.md | P2-DB-004 | Closed after feed deny mapping parity hardening reached complete status with deterministic hook evidence. |
+| P2-EXC-004 | Lane B / P2-DB-004 | Product Policy WG | closed | 2026-04-29 | ADR-003 | HOOK-FEED-INTERACTION-DENY-MAPPING |  | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md; reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md | P2-DB-004 | Closed after feed deny mapping parity hardening reached complete status with deterministic hook evidence. |
 
 ## Change-impact map reference
 - Template: `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
@@ -64,6 +64,6 @@ Define the canonical register format for unresolved exceptions retained while Ph
 
 ## See also
 - [Phase 2 Acceptance Criteria](./PHASE2_ACCEPTANCE_CRITERIA.md)
-- [Phase 2 Progress Board](../../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md)
+- [Phase 2 Progress Board](../../reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [Decisions Log](../80_traceability_decisions_and_program/DECISIONS_LOG.md)

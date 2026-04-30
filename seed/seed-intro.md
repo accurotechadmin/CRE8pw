@@ -176,3 +176,8 @@ All future SSOT and implementation docs MUST treat the Composer dependencies as 
 - `phpunit/phpunit`: contract/middleware/security/lifecycle regression suites.
 
 Every domain document MUST be updated to reference these dependencies where behavior is specified.
+
+
+## Phase 3 freeze note
+
+The `seed/` canon is now **frozen-as-historical** and retained for provenance only. Live normative canon MUST be maintained in `docs/`.

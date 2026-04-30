@@ -13,7 +13,7 @@ source_seed_refs:
 normative_dependencies:
   - reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md
   - docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md
-  - reports/session_handoffs/PHASE1_PROGRESS_BOARD.md
+  - reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md
 ---
 
 # ADR-003: Phase 1 Freeze Closure with Explicit Residual-Breadth Waiver

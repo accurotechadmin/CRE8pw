@@ -262,7 +262,7 @@ Authoritative artifacts: `reports/PHASE1_CANON_HARDENING_ROADMAP.md`, `reports/P
 
 - OpenAPI 3.1 baseline and JSON Schema 2020-12 set established for the initial route family (`/v1/system/health`, `/v1/authz/decide`, `/v1/keys/{key_id}/lifecycle/suspend`, `/v1/keys/{key_id}/lifecycle/revoke`, `/v1/feed/items`).
 - Prose↔OpenAPI parity table (`docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md`) and `composer phase2:acceptance-bundle` enforced in CI.
-- Residual manual hooks burned down; deferred Slice 6/7 breadth decomposed in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` under ADR-003.
+- Residual manual hooks burned down; deferred Slice 6/7 breadth decomposed in `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md` under ADR-003.
 
 ADR-003 carry-over rule: **ADR-003 MUST NOT be reused as a generic deferral mechanism for Phase 3 work.** New deferrals require a new ADR.
 

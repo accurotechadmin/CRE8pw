@@ -15,7 +15,7 @@ normative_dependencies:
   - docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md
   - docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
-  - reports/session_handoffs/PHASE2_PROGRESS_BOARD.md
+  - reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md
 ---
 
 # Phase 2 Acceptance Criteria
@@ -60,7 +60,7 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 - [Verification Strategy](./VERIFICATION_STRATEGY.md)
 - [Prose↔OpenAPI Parity Table](../31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
-- [Phase 2 Progress Board](../../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md)
+- [Phase 2 Progress Board](../../reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md)
 - [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
 
 
