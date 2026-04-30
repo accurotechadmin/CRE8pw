@@ -1,7 +1,7 @@
 # CRE8 Phase 2 Progress Board
 
-- Last updated (UTC): 2026-04-30T00:20:00Z
-- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0020
+- Last updated (UTC): 2026-04-30T00:26:00Z
+- Current owner/session: GPT-5.3-Codex / SESSION_HANDOFF_20260430-0026
 - Phase status: **Phase 2 active** (initial execution session in progress under ADR-003 residual constraints).
 
 ## ADR-003 constraints (must remain true in Phase 2)
@@ -68,7 +68,7 @@
 | P2-DB-001 | ADR-003 / Slice 6 | Auth inheritance + lifecycle denial matrix depth expansion across delegated principals. | Identity & Policy WG | High | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | 2026-05-06 | ADR-003 | partially_complete | Clause/hook drift automation delivered; runtime fixture depth expansion still pending. |
 | P2-DB-002 | ADR-003 / Slice 6 | Identity issuance + utility context isolation runtime contract tests with replay-safe fixtures. | Platform Architecture WG | High | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | 2026-05-10 | ADR-003 | partially_complete | Executable contract-level checks delivered; future runtime-integrated fixture depth still pending.
 | P2-DB-003 | ADR-003 / Slice 7 | Surface parity automation across Owner Console/API supported capability sets. | API Contracts WG | Medium | HOOK-CONTRACT-SURFACE-PARITY | 2026-05-13 | ADR-003 | partially_complete | Deterministic capability matrix and parity checker delivered; deeper auth-prerequisite parity coverage pending.
-| P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | partially_complete | Contract-level deny mapping automation now enforces example payload-shape semantics (`code/category/request_id/timestamp_utc`); prose-level extension still pending. |
+| P2-DB-004 | ADR-003 / Slice 7 | Feed interaction deny mapping parity hardening in machine + prose artifacts. | Product Policy WG | Medium | HOOK-FEED-INTERACTION-DENY-MAPPING | 2026-05-13 | ADR-003 | complete | Contract and prose parity now both enforce deny payload-shape semantics (`error.code/category`, approved `request_id` prefixes, ISO-8601 `timestamp_utc`) via `CRE8-FEED-REQ-0022` and `CRE8-MACHINE-REQ-0019`. |
 | P2-DB-005 | Phase 2 governance hardening | Matrix↔manual-backlog link hard-fail plus PR evidence enforcement in CI. | Program Traceability WG | High | HOOK-SSOT-MANUAL-BACKLOG-LINK; HOOK-SSOT-PR-EVIDENCE-REQUIRED | 2026-04-29 | ADR-003 | complete | Both governance hooks are executable and CI-bound. |
 | P2-DB-006 | ADR-003 / Slice 6 | Key lifecycle revoke/suspend propagation depth expansion for descendant/interaction deny-path coverage. | Security Engineering WG | High | HOOK-SEC-LIFECYCLE-PROPAGATION | 2026-05-12 | ADR-003 | partially_complete | New executable `composer test:contract:lifecycle` enforces suspend/revoke + interaction lifecycle-deny fixture parity; multi-actor propagation fixtures still pending. |
 
@@ -76,16 +76,16 @@
 | Lane | Status | % (est.) | Confidence | Notes |
 |---|---|---:|---|---|
 | Lane A — Manual-hook automation | complete | 100% | High | All tracked residual manual hooks now automated with deterministic commands. |
-| Lane B — Deferred breadth decomposition | partially complete | 94% | Medium | P2-DB-006 advanced with executable lifecycle propagation contract command; multi-actor depth expansion remains pending. |
-| Lane C — Parity expansion | in progress | 99% | Medium | Added duplicate normative requirement-ID hard-fail checks and feed deny example payload-shape assertions to reduce semantic drift risk. |
+| Lane B — Deferred breadth decomposition | partially complete | 96% | Medium | `P2-DB-004` is complete; remaining depth residuals are concentrated in `P2-DB-001/002/003/006` runtime breadth. |
+| Lane C — Parity expansion | in progress | 100% | Medium | Feed deny payload-shape semantics are now codified in both parity and policy requirements; other deferred lanes still keep global Phase 2 open. |
 | Lane D — Traceability/evidence hardening | in progress | 99% | Medium | Governance evidence discipline preserved with parity automation pass/fail expansion and acceptance bundle validation. |
 | Lane E — Acceptance planning | in progress | 45% | Medium | Phase 2 acceptance criteria and executable acceptance-bundle command contract are now defined. |
 
 ## Latest handoff reports (most recent first)
-1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0020.md`
-2. `reports/session_handoffs/SESSION_HANDOFF_20260429-2357.md`
-3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2351.md`
-4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2346.md`
-5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2342.md`
+1. `reports/session_handoffs/SESSION_HANDOFF_20260430-0026.md`
+2. `reports/session_handoffs/SESSION_HANDOFF_20260430-0020.md`
+3. `reports/session_handoffs/SESSION_HANDOFF_20260429-2357.md`
+4. `reports/session_handoffs/SESSION_HANDOFF_20260429-2351.md`
+5. `reports/session_handoffs/SESSION_HANDOFF_20260429-2346.md`
 
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
