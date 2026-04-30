@@ -64,8 +64,8 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Cross-Document Linking Policy](./CROSS_DOCUMENT_LINKING_POLICY.md)
 - [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
-- [ADR-001 Record](../80_traceability_decisions_and_program/records/ADR-001-placeholder.md)
-- [ADR-002 Record](../80_traceability_decisions_and_program/records/ADR-002-placeholder.md)
+- [ADR-001 Record](../80_traceability_decisions_and_program/records/ADR-001-requirement-id-normalization.md)
+- [ADR-002 Record](../80_traceability_decisions_and_program/records/ADR-002-traceability-matrix-minimum-schema.md)
 - [ADR-003 Record](../80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md)
 - [ADR-004 Record](../80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
 
