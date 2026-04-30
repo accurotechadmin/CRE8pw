@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T06:06:00Z
+- Last updated (UTC): 2026-04-30T07:15:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -99,9 +99,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S4.1 | New: `PERMISSION_VOCABULARY.md` | not_started | Identity & Policy WG | 2026-05-20 | HOOK-PERMISSION-VOCAB-RESOLVE (target) | ADR-004 | (TBD) | Token namespace `<domain>.<resource>.<action>`. |
-| P3-S4.2 | `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md` | not_started | Identity & Policy WG | 2026-05-21 | HOOK-CAPABILITY-MATRIX-COMPLETE (target) | ADR-004 | (TBD) | Cell-level coverage with token bindings. |
-| P3-S4.3 | `KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md` | not_started | Identity & Policy WG | 2026-05-22 | HOOK-AUTH-INHERITANCE-BOUNDARY | ADR-004 | (TBD) | Aggregation rules; deterministic effective scope. |
+| P3-S4.1 | New: `PERMISSION_VOCABULARY.md` | complete | Identity & Policy WG | 2026-05-20 | HOOK-PERMISSION-VOCAB-RESOLVE (target) | ADR-004 | `docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md`; `reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md` | Canonical token registry authored with deterministic namespace and alias prohibitions. |
+| P3-S4.2 | `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md` | complete | Identity & Policy WG | 2026-05-21 | HOOK-CAPABILITY-MATRIX-COMPLETE (target) | ADR-004 | `docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`; `reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md` | Capability matrix completed with explicit allow/deny/conditional cells and token bindings. |
+| P3-S4.3 | `KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md` | complete | Identity & Policy WG | 2026-05-22 | HOOK-AUTH-INHERITANCE-BOUNDARY | ADR-004 | `docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md`; `reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md` | Deterministic keychain resolution algorithm and multi-grant walkthrough published. |
 | P3-S4.4 | `USAGE_SCENARIOS_AND_PERMISSION_STORIES.md` | not_started | Identity & Policy WG | 2026-05-23 | HOOK-CONTRACT-POLICY-ORDER; HOOK-AUTH-LIFECYCLE-ENFORCEMENT | ADR-004 | (TBD) | ≥ 12 scenarios with fixtures. |
 | P3-S4.5 | New: `DELEGATION_STATE_MACHINE.md` | not_started | Identity & Policy WG | 2026-05-24 | HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY (target) | ADR-004 | (TBD) | Transition table + cascade semantics. |
 
@@ -194,7 +194,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0538.md`](SESSION_HANDOFF_20260430-0538.md) — P3-S2.1/P3-S2.2 complete; scaffold README replacements ratified and root README promoted with document control metadata.
+1. [`SESSION_HANDOFF_20260430-0715.md`](SESSION_HANDOFF_20260430-0715.md) — P3-S4.1/P3-S4.2/P3-S4.3 complete; identity permission vocabulary, capability matrix, and deterministic keychain resolution canonized.
+2. [`SESSION_HANDOFF_20260430-0538.md`](SESSION_HANDOFF_20260430-0538.md) — P3-S2.1/P3-S2.2 complete; scaffold README replacements ratified and root README promoted with document control metadata.
 2. [`SESSION_HANDOFF_20260430-0936.md`](SESSION_HANDOFF_20260430-0936.md) — P3-S2.4 complete; scaffold opener lint tightened.
 2. [`SESSION_HANDOFF_20260430-0835.md`](SESSION_HANDOFF_20260430-0835.md) — P3-S1.7/P3-S1.8/P3-S1.9 complete; script drift, CI drift, and dot.env sanitization resolved.
 2. [`SESSION_HANDOFF_20260430-0600.md`](SESSION_HANDOFF_20260430-0600.md) — P3-S1.1 complete; authorization gate order reconciled and ADR-005 accepted.
@@ -203,7 +204,8 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0538_RESPONSE.md`](../session_responses/20260430-0538_RESPONSE.md) — P3-S2.1/P3-S2.2 completion response.
+1. [`reports/session_responses/20260430-0715_RESPONSE.md`](../session_responses/20260430-0715_RESPONSE.md) — P3-S4.1/P3-S4.2/P3-S4.3 completion response.
+2. [`reports/session_responses/20260430-0538_RESPONSE.md`](../session_responses/20260430-0538_RESPONSE.md) — P3-S2.1/P3-S2.2 completion response.
 2. [`reports/session_responses/20260430-0936_RESPONSE.md`](../session_responses/20260430-0936_RESPONSE.md) — P3-S2.4 completion response.
 2. [`reports/session_responses/20260430-0835_RESPONSE.md`](../session_responses/20260430-0835_RESPONSE.md) — P3-S1.7/P3-S1.8/P3-S1.9 completion response.
 2. [`reports/session_responses/20260430-0600_RESPONSE.md`](../session_responses/20260430-0600_RESPONSE.md) — P3-S1.1 reconciliation completion response.
