@@ -80,3 +80,5 @@ This document defines the authoritative SSOT topology, precedence model, and min
 
 - [Endpoint Examples All Routes](../30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md)
 - [Webhook And Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)
+
+- [Audience Group Spec](../50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md)

@@ -33,6 +33,11 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - **CRE8-FEED-REQ-0015**: Route-level contract examples **SHOULD** include at least one deny variant for permission and one deny variant for scope/lifecycle/expiry constraints.
 
 ## Verification hooks
+
+- **CRE8-FEED-REQ-0031**: Content lifecycle **MUST** implement deterministic states `draft`, `published`, `flagged`, `restricted`, `soft_deleted`, and `hard_deleted`; transitions outside the approved transition table **MUST** be rejected.
+- **CRE8-FEED-REQ-0032**: Moderation actions (`flag`, `restrict`, `restore`, `delete`) **MUST** record moderator principal, reason code, and UTC timestamp in immutable audit history for each affected content item.
+- **CRE8-FEED-REQ-0033**: `soft_deleted` content **MUST** be excluded from default feed retrieval while preserving audit metadata and reference integrity for policy/compliance review.
+- **CRE8-FEED-REQ-0034**: Retention rules **MUST** define minimum retention windows for moderation and deletion artifacts; purge before minimum retention **MUST NOT** occur unless an explicit legal hold override is recorded.
 - **HOOK-FEED-CONTRACT-CURSOR-SCHEMA**: Validate feed success schema contains required cursor metadata keys and approved ordering-basis enum.
 - **HOOK-FEED-CONTRACT-DENY-EXAMPLES**: Validate feed route OpenAPI examples include deterministic deny reason-code variants.
 - **Next automation candidate**: Add `composer test:contract:feed` fixture test for cursor monotonicity and deny-on-ambiguous-scope behavior.
@@ -44,3 +49,5 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - [Commenting and Interaction Policy](./COMMENTING_AND_INTERACTION_POLICY.md)
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+
+Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`.

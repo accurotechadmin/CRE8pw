@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T11:42:00Z
+- Last updated (UTC): 2026-04-30T13:50:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -141,8 +141,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S8.1 | `AUDIENCE_GROUP_SPEC.md` | not_started | Product Policy WG | 2026-06-09 | HOOK-CONTRACT-FEED-METADATA-STABILITY | ADR-004 | (TBD) | Membership semantics + lifecycle. |
-| P3-S8.2 | Content lifecycle and moderation expansion | not_started | Product Policy WG | 2026-06-10 | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG; HOOK-FEED-INTERACTION-DENY-MAPPING | ADR-004 | (TBD) | Extends content/comment/feed docs. |
+| P3-S8.1 | `AUDIENCE_GROUP_SPEC.md` | complete | Product Policy WG | 2026-06-09 | HOOK-CONTRACT-FEED-METADATA-STABILITY | ADR-004 | `docs/50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md`; `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md` | Audience group entity, lifecycle semantics, owner authority, bounds, and enumeration invariants canonized. | Membership semantics + lifecycle. |
+| P3-S8.2 | Content lifecycle and moderation expansion | complete | Product Policy WG | 2026-06-10 | HOOK-CONTRACT-FEED-DENY-CODE-CATALOG; HOOK-FEED-INTERACTION-DENY-MAPPING | ADR-004 | `docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md`; `docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md`; `docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md`; `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md` | Lifecycle states, moderation transitions/audit, soft-delete semantics, tenant ordering isolation, and refresh throttling rules added. | Extends content/comment/feed docs. |
 
 ### M9 — Operations, quality, and release
 
