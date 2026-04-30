@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T20:59:00Z
+- Last updated (UTC): 2026-04-30T23:25:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -111,9 +111,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 |---|---|---|---|---|---|---|---|---|
 | P3-S5.1 | `Endpoint_Examples_All_Routes.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-EXAMPLE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with normative example coverage requirements and dependency-linked verification hooks. |
 | P3-S5.2 | `WEBHOOK_AND_INTEGRATION_CONTRACT.md` | complete | API Contracts WG | 2026-05-25 | HOOK-CONTRACT-COMPAT-DECLARATION; HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md`; `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` | Scaffold replaced with deterministic webhook signing/JWT/retry/schema/error/observability contract. |
-| P3-S5.3 | Route inventory expansion (≥ 20 routes) | blocked | API Contracts WG | 2026-05-27 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY; HOOK-CONTRACT-ROUTE-UNIQUENESS | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md`; `reports/session_handoffs/PHASE3_BLOCKER_20260430-0707.md` | Blocked pending approved deterministic route expansion seed/decision input; cannot author non-speculative routes. |
-| P3-S5.4 | `ERROR_CODE_CATALOG.md` expansion | blocked | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md`; `reports/session_handoffs/PHASE3_BLOCKER_20260430-0707.md` | Blocked pending P3-S5.3 canonical route inventory expansion inputs. |
-| P3-S5.5 | Parity table + Route Family Coverage Policy expansion | blocked | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | ADR-004 | `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md`; `reports/session_handoffs/PHASE3_BLOCKER_20260430-0707.md` | Blocked pending P3-S5.3 canonical route inventory expansion inputs. |
+| P3-S5.3 | Route inventory expansion (≥ 20 routes) | complete | API Contracts WG | 2026-05-27 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY; HOOK-CONTRACT-ROUTE-UNIQUENESS | ADR-004 | `docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`; `docs/31_machine_contracts/openapi/cre8.v1.yaml` | Completed: canonical inventory now contains 24 active routes including required families and parity-aligned method/path rows. |
+| P3-S5.4 | `ERROR_CODE_CATALOG.md` expansion | complete | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ERROR-CODE-COVERAGE | ADR-004 | `docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md`; `scripts/docs_ssot_error_code_coverage.php` | Completed: expanded input/lifecycle/resource/rate-limit/integration code set and coverage enforcement in hook checks. |
+| P3-S5.5 | Parity table + Route Family Coverage Policy expansion | complete | API Contracts WG | 2026-05-28 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | ADR-004 | `docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md` | Completed: parity rows cover all 24 routes and policy includes required route families with owner/decision metadata. |
 
 ### M6 — Machine contracts depth
 
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260430-2325.md`](SESSION_HANDOFF_20260430-2325.md) — Unblocked P3-S5.3/P3-S5.4/P3-S5.5 status chain by reconciling progress board with already-completed canonical artifacts; M6 reopened for contiguous execution.
 1. [`SESSION_HANDOFF_20260430-2059.md`](SESSION_HANDOFF_20260430-2059.md) — No unblocked contiguous 2–5 slice batch available; blocker report `PHASE3_BLOCKER_20260430-2059.md` published and baseline acceptance revalidated.
 1. [`SESSION_HANDOFF_20260430-1355.md`](SESSION_HANDOFF_20260430-1355.md) — No unblocked contiguous 2–5 slice batch available; blocker report `PHASE3_BLOCKER_20260430-1355.md` published and baseline acceptance revalidated.
 1. [`SESSION_HANDOFF_20260430-1331.md`](SESSION_HANDOFF_20260430-1331.md) — P3-S11.4/P3-S11.5 complete; CI rewired to phase3 gate and phase3 drift-pack command added.
@@ -213,6 +214,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
+1. [`reports/session_responses/20260430-2325_RESPONSE.md`](../session_responses/20260430-2325_RESPONSE.md) — Unblock response archive for M5.3/M5.4/M5.5 dependency-chain resolution.
 1. [`reports/session_responses/20260430-2059_RESPONSE.md`](../session_responses/20260430-2059_RESPONSE.md) — Blocked-session response archive (no unblocked contiguous 2–5 slice batch).
 1. [`reports/session_responses/20260430-0637_RESPONSE.md`](../session_responses/20260430-0637_RESPONSE.md) — P3-S5.1/P3-S5.2 completion response.
 2. [`reports/session_responses/20260430-0715_RESPONSE.md`](../session_responses/20260430-0715_RESPONSE.md) — P3-S4.1/P3-S4.2/P3-S4.3 completion response.
