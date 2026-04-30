@@ -292,10 +292,10 @@ CRE8 authoring is currently driven by reusable LLM session prompts. Pick the pro
 
 Every authoring session MUST:
 
-1. Work on a feature branch named `cursor/<descriptive-name>-992b`.
+1. Use whatever git branch the operator’s session uses (`main` is fine), or any descriptive feature branch; no fixed branch naming pattern is required by this repository’s prompts.
 2. Update the SSOT discoverability artifacts: `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`, the relevant progress board, and a new `reports/session_responses/<UTC>_RESPONSE.md` archived response.
 3. Run the full verification command list in §14 before commit.
-4. Open a PR with the program-plan slice IDs in the title and a body that lists files changed by domain, requirement/hook IDs added, and verification outcomes.
+4. Use a PR when your workflow expects one—title includes program-plan slice IDs and the body lists files changed by domain, requirement/hook IDs added, and verification outcomes. Skip if you pushed directly to `main` without a PR model.
 
 Repository git config is preserved (`user.name` / `user.email`); do not override unless the operator explicitly says so. Branches and PRs are created normally; cloud agents are responsible for `git add` / `git commit` / `git push` on every iteration loop.
 
