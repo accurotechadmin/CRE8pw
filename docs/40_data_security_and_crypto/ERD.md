@@ -1,7 +1,47 @@
-# Erd
+---
+doc_id: CRE8-DATA-ERD
+version: 1.0.0
+status: normative
+owner: Security WG
+reviewers:
+  - Platform Architecture WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
+source_seed_refs:
+  - seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md
+normative_dependencies:
+  - docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md
+  - docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md
+  - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
+---
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **ERD.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+# ERD
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Purpose
+Define canonical relationship cardinality and foreign-key bindings for CRE8 persistence entities.
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+## Normative requirements
+- **CRE8-DATA-REQ-0016**: ERD relationship rows **MUST** define parent entity, child entity, cardinality, and FK column.
+- **CRE8-DATA-REQ-0017**: All FK columns **MUST** enforce delete/update behavior explicitly (`RESTRICT`, `CASCADE`, or `SET NULL`) and **MUST NOT** rely on engine defaults.
+- **CRE8-DATA-REQ-0018**: Grant hierarchy edges **MUST** support deterministic maximum-depth evaluation aligned with delegation policy contracts.
+
+## Relationship table
+| parent | child | cardinality | fk_column | on_delete | on_update |
+|---|---|---|---|---|---|
+| principal | keypair | 1:N | keypair.principal_id | RESTRICT | CASCADE |
+| principal | delegation_grant (issuer) | 1:N | delegation_grant.issuer_principal_id | RESTRICT | CASCADE |
+| principal | delegation_grant (subject) | 1:N | delegation_grant.subject_principal_id | RESTRICT | CASCADE |
+| delegation_grant | delegation_edge (parent) | 1:N | delegation_edge.parent_grant_id | CASCADE | CASCADE |
+| delegation_grant | delegation_edge (child) | 1:N | delegation_edge.child_grant_id | CASCADE | CASCADE |
+| principal | audit_event | 1:N | audit_event.actor_principal_id | SET NULL | CASCADE |
+
+## Implementation binding
+- Schema migrations executed through `ext-pdo` **MUST** materialize all FK constraints and reject schema drift that removes relationship rows defined above.
+
+## Change Impact Map
+- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`
+
+## See also
+- [Data Model Spec](./DATA_MODEL_SPEC.md)
+- [Data Model Reference](./DATA_MODEL_REFERENCE.md)
+- [Delegation State Machine](../20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md)
