@@ -227,7 +227,7 @@ components:
       value: { principal_id: "prn_004", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_001" } }
     AuthDecisionAllow:
       value:
-        data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7 }
+        data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7, ancestor_chain_ref: "anc-root>anc-mid>prn_001" }
         meta: { request_id: "req-authz-allow-001", timestamp_utc: "2026-04-29T06:10:00Z", contract_version: "1.0.0" }
     ErrorScopeDenied:
       value:
