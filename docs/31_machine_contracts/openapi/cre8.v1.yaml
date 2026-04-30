@@ -55,13 +55,13 @@ paths:
           application/json:
             schema:
               $ref: ../schemas/policy-decision.schema.json
-              examples:
-                denyScope:
-                  $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
-                commentCreate:
-                  $ref: '#/components/examples/AuthDecisionRequestCommentCreate'
-                multiAncestorLifecycle:
-                  $ref: '#/components/examples/AuthDecisionRequestMultiAncestorLifecycle'
+            examples:
+              denyScope:
+                $ref: '#/components/examples/AuthDecisionRequestScopeDeny'
+              commentCreate:
+                $ref: '#/components/examples/AuthDecisionRequestCommentCreate'
+              multiAncestorLifecycle:
+                $ref: '#/components/examples/AuthDecisionRequestMultiAncestorLifecycle'
       responses:
         '200':
           description: Authorization decision generated.
