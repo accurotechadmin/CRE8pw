@@ -60,7 +60,7 @@ A typical Phase 3 authoring session:
 4. Selects 2–5 unblocked slices from the program plan and authors them.
 5. Runs the SSOT lint/sync/report family + the contract test runners + `composer phase2:acceptance-bundle` (transitioning to `composer phase3:final-acceptance-bundle` under Phase 3 M11).
 6. Writes a session handoff at `session_handoffs/SESSION_HANDOFF_<UTC>.md`, updates `session_handoffs/LATEST_SESSION_HANDOFF.md`, updates the progress board, and archives the full final response at `session_responses/<UTC>_RESPONSE.md`.
-7. Pushes a feature branch named `cursor/<descriptive-name>-992b` and opens a PR.
+7. Pushes commits (to `main` or a feature branch per the operator’s workflow) and opens a PR when the workflow uses PRs.
 
 ---
 

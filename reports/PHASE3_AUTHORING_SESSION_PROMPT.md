@@ -294,12 +294,12 @@ At the end of the session, ensure all of the following are true:
 
 ### Branch, commit, and PR discipline
 
-- Work on a feature branch named `cursor/phase3-<batch-summary>-992b` (the suffix `-992b` is required by repository policy). Use kebab-case for the batch summary, for example `cursor/phase3-m0-entry-audit-992b`.
+- **No mandated branch name.** You may commit directly on `main` (for example after the operator pastes this prompt into a session that already works on `main`) or use any feature branch naming your environment uses. Do not block work on satisfying a repo-specific `cursor/...` prefix or numeric suffix from this prompt alone.
+- If you use isolation, pick a descriptive kebab-case branch name when your tools require one; otherwise follow the operator’s git policy.
 - Make one commit per logical change. Use messages of the form `phase3(P3-S<id>): <summary>`.
-- Push with `git push -u origin <branch>`.
-- Open a pull request titled `Phase 3 batch: <slices>` with a body that lists slices, predecessor status, files changed grouped by domain, requirement/hook IDs added, verification command summaries, open questions, and residual risks.
-- Do not merge yourself; leave it for the operator.
-- After pushing, link the PR URL in the handoff and in the archived response.
+- Push to the branch you used (`git push` / `git push -u origin <branch>` as appropriate).
+- If you use a pull request workflow, open a PR titled `Phase 3 batch: <slices>` with a body that lists slices, predecessor status, files changed grouped by domain, requirement/hook IDs added, verification command summaries, open questions, and residual risks. Do **not** merge an open PR yourself unless the operator explicitly asks; if you pushed commits to `main` directly, skip the PR step.
+- After pushing (or merging per operator instruction), record the PR URL when one exists—or note `main`/branch name—in the handoff and in the archived response.
 
 ### Output style for final response
 
