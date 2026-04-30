@@ -79,6 +79,7 @@
     "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
     "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php",
     "docs:ssot:source-refs-check": "php scripts/docs_ssot_source_refs_check.php",
-    "docs:ssot:requirement-inventory": "php scripts/docs_ssot_requirement_inventory.php"
+    "docs:ssot:requirement-inventory": "php scripts/docs_ssot_requirement_inventory.php",
+    "docs:ssot:glossary-check": "php scripts/docs_ssot_glossary_check.php"
   }
 }
