@@ -79,6 +79,14 @@ if (!str_contains($openapi, 'AuthDecisionRequestMultiAncestorLifecycle')) {
 if (!str_contains($openapi, 'req-authz-multianc-')) {
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing req-authz-multianc-* deny fixture namespace for multi-ancestor depth coverage';
 }
+if (!preg_match('/AuthDecisionRequestMultiAncestorLifecycle:\n\s{6}value:\s\{[^\n]*ancestor_chain_ref:\s"([^"]+)"/m', $openapi, $ancestorMatch)) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ancestor_chain_ref in AuthDecisionRequestMultiAncestorLifecycle fixture';
+} elseif (substr_count($ancestorMatch[1], '>') < 3) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] AuthDecisionRequestMultiAncestorLifecycle ancestor_chain_ref must encode multi-ancestor depth (>=4 principals)';
+}
+if (!preg_match('/AuthDecisionRequestMultiAncestorLifecycle:\n\s{6}value:\s\{[^\n]*lifecycle_state:\s"suspended"/m', $openapi)) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] AuthDecisionRequestMultiAncestorLifecycle must encode suspended lifecycle state';
+}
 
 $policyDecisionSchemaPath = dirname(__DIR__) . '/docs/31_machine_contracts/schemas/policy-decision.schema.json';
 $policyDecisionSchema = file_get_contents($policyDecisionSchemaPath);
