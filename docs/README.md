@@ -1,3 +1,19 @@
+---
+doc_id: DOCS-ROOT-README
+version: 1.1.0
+status: normative
+owner: Docs Governance WG
+reviewers:
+  - Program Traceability WG
+  - Operations Quality WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-07-30
+source_seed_refs:
+  - seed/CRE8_SEED_CANON_INDEX.md
+normative_dependencies:
+  - docs/00_governance/SSOT_INDEX.md
+  - docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md
+---
 # `docs/` — CRE8 Canonical SSOT Corpus
 
 This directory holds the **canonical, normative documentation set** for the CRE8 platform. Mature artifacts here are authoritative implementation directives; provisional artifacts are authoritative for bounded implementation while gaps are tracked openly.
