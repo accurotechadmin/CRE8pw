@@ -71,6 +71,8 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **HOOK-SEED-GAP-REGISTER-SCHEMA-AUTO**: Validate unresolved seed gap schema and tracker linkage integrity.
 - **HOOK-SSOT-GLOSSARY-COVERAGE**: Automated hook validating glossary completeness baseline for Phase 3 terminology canon.
 
+- **HOOK-DATA-MODEL-COVERAGE**: Manual/automation-candidate hook for schema, field, and ERD conformance across data-model canon.
+
 ## Manual verification procedure (until automation exists)
 1. Run `rg "^doc_id:|^version:|^status:|^owner:|^reviewers:|^last_reviewed_utc:|^next_review_due_utc:|^source_seed_refs:|^normative_dependencies:" docs` and verify each normative file has all required keys.
 2. Run `rg "This scaffold file defines|structured placeholder" docs` and confirm no normative doc contains scaffold placeholder phrases.
