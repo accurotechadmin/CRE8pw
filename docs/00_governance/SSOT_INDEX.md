@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-GOV-SSOT-INDEX
-version: 1.0.1
+version: 1.0.2
 status: normative
 owner: Docs Governance WG
 reviewers:
@@ -70,3 +70,6 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [ADR-004 Record](../80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
 
 - [Canonical Terminology](../10_product_and_architecture/CANONICAL_TERMINOLOGY.md)
+- [Architecture And Surfaces](../10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md)
+- [Dependency Baseline](../10_product_and_architecture/DEPENDENCY_BASELINE.md)
+- [ID / Utility Keypair Model Specification](../10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md)
