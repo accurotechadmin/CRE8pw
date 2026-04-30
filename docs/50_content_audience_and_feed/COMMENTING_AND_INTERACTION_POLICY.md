@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-FEED-INTERACTION-POLICY
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Product Policy WG
 reviewers:
   - API Contracts WG
   - Identity & Policy WG
-last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-29
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
 source_seed_refs:
   - seed/cre8core-ownerauthORIGINAL.md
   - README.md
@@ -31,6 +31,7 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - **CRE8-FEED-REQ-0019**: Interaction denies caused by permission, scope, delegation depth, or grant expiry **MUST** map one-to-one to existing `AUTH_*` deny codes and **MUST NOT** introduce ad hoc route-local deny codes.
 - **CRE8-FEED-REQ-0020**: Accepted interaction mutations **MUST** emit immutable provenance events with actor principal, effective credential, target item, action, and UTC timestamp fields.
 - **CRE8-FEED-REQ-0021**: Phase 1 machine contract examples **MUST** include at least one interaction-scoped authorization request and one deterministic interaction deny example to prevent prose↔machine drift.
+- **CRE8-FEED-REQ-0022**: Every interaction deny example bound to `AUTH_PERMISSION_DENIED`, `AUTH_SCOPE_DENIED`, `AUTH_DEPTH_EXCEEDED`, `AUTH_GRANT_EXPIRED`, or `AUTH_LIFECYCLE_BLOCKED` **MUST** include an `error` payload with canonical `code`, deterministic `category`, `request_id` prefix (`req-feed-`, `req-authz-`, or `req-interact-`), and ISO-8601 `timestamp_utc` to preserve executable payload-shape parity.
 
 ## Deterministic deny mapping baseline
 | Interaction deny condition | Required code |
@@ -42,7 +43,7 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 | Lifecycle blocked/suspended | `AUTH_LIFECYCLE_BLOCKED` |
 
 ## Verification hooks
-- **HOOK-FEED-INTERACTION-DENY-MAPPING** (automated): Execute `composer test:contract:feed` to enforce deterministic one-to-one deny-condition to canonical code mapping in OpenAPI fixtures.
+- **HOOK-FEED-INTERACTION-DENY-MAPPING** (automated): Execute `composer test:contract:feed` to enforce deterministic one-to-one deny-condition to canonical code mapping and deny-example payload-shape semantics (`error.code`, `error.category`, `request_id` prefix, `timestamp_utc`) in OpenAPI fixtures.
 - **HOOK-CONTRACT-POLICY-ORDER** (automated): Reuse existing authorization ordering test hook for interaction actions.
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE** (automated): Ensure interaction deny examples only use catalog-declared codes.
 

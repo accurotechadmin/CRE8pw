@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-MACHINE-PROSE-OPENAPI-PARITY
-version: 1.9.0
+version: 2.0.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
   - Platform Architecture WG
   - Docs Governance WG
-last_reviewed_utc: 2026-04-29
-next_review_due_utc: 2026-05-29
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-05-30
 source_seed_refs:
   - docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md
   - docs/31_machine_contracts/openapi/cre8.v1.yaml
@@ -43,6 +43,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
 - **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.
 - **CRE8-MACHINE-REQ-0018**: For every `decision_ref=ADR-003` route family, parity depth closure **MUST** be status-aligned with deferred breadth status in `PHASE2_PROGRESS_BOARD.md`: policy rows tied to deferred rows not marked `complete` **MUST NOT** set all family routes to `parity_depth_status=depth_complete`; parity checks **MUST** fail on premature closure drift.
+- **CRE8-MACHINE-REQ-0019**: For every parity row with `primary_hook_id=HOOK-FEED-INTERACTION-DENY-MAPPING`, declared `error_example_refs` **MUST** resolve to OpenAPI examples whose error payload shape enforces canonical `error.code`/`error.category`, approved `request_id` prefixes, and parseable ISO-8601 `timestamp_utc`; parity checks **MUST** fail when fixture payload-shape semantics drift.
 
 
 ## Route Family Coverage Policy
@@ -59,7 +60,7 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 | CRE8-ROUTE-0001 | GET | /v1/system/health | GET | /v1/system/health | in_sync | system_health | baseline | CRE8-CONTRACT-REQ-0020 | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | baseline_complete | #/components/schemas/SuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 401,500 | #/components/examples/ErrorCredentialInvalid,#/components/examples/ErrorSystemRedacted | AUTH_CREDENTIAL_INVALID,SYSTEM_INTERNAL_ERROR |
 | CRE8-ROUTE-0002 | POST | /v1/authz/decide | POST | /v1/authz/decide | in_sync | auth_decision | high | CRE8-AUTH-REQ-0010 | HOOK-CONTRACT-POLICY-ORDER | depth_in_progress | #/components/schemas/AuthzDecisionSuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 400,403 | #/components/examples/ErrorExplicitDeny,#/components/examples/ErrorPermissionDenied,#/components/examples/ErrorScopeDenied,#/components/examples/ErrorAuthDepthExceeded,#/components/examples/ErrorGrantExpired,#/components/examples/ErrorFeedLifecycleBlocked,#/components/examples/ErrorInteractionLifecycleBlocked | AUTH_EXPLICIT_DENY,AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED |
 | CRE8-ROUTE-0003 | POST | /v1/keys/{key_id}/lifecycle/suspend | POST | /v1/keys/{key_id}/lifecycle/suspend | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleSuspendSuccessEnvelope | #/components/schemas/ErrorEnvelope | 202 | 403 | #/components/examples/ErrorLifecycleBlocked | AUTH_LIFECYCLE_BLOCKED |
-| CRE8-ROUTE-0004 | GET | /v1/feed/items | GET | /v1/feed/items | in_sync | feed_audience | high | CRE8-FEED-REQ-0021 | HOOK-FEED-INTERACTION-DENY-MAPPING | depth_in_progress | #/components/schemas/FeedItemsSuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 403 | #/components/examples/ErrorPermissionDenied,#/components/examples/ErrorScopeDenied,#/components/examples/ErrorAuthDepthExceeded,#/components/examples/ErrorGrantExpired,#/components/examples/ErrorFeedLifecycleBlocked | AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED |
+| CRE8-ROUTE-0004 | GET | /v1/feed/items | GET | /v1/feed/items | in_sync | feed_audience | high | CRE8-FEED-REQ-0022 | HOOK-FEED-INTERACTION-DENY-MAPPING | depth_complete | #/components/schemas/FeedItemsSuccessEnvelope | #/components/schemas/ErrorEnvelope | 200 | 403 | #/components/examples/ErrorPermissionDenied,#/components/examples/ErrorScopeDenied,#/components/examples/ErrorAuthDepthExceeded,#/components/examples/ErrorGrantExpired,#/components/examples/ErrorFeedLifecycleBlocked | AUTH_PERMISSION_DENIED,AUTH_SCOPE_DENIED,AUTH_DEPTH_EXCEEDED,AUTH_GRANT_EXPIRED,AUTH_LIFECYCLE_BLOCKED |
 | CRE8-ROUTE-0005 | POST | /v1/keys/{key_id}/lifecycle/revoke | POST | /v1/keys/{key_id}/lifecycle/revoke | in_sync | key_lifecycle | high | CRE8-SEC-REQ-0006 | HOOK-SEC-LIFECYCLE-PROPAGATION | depth_in_progress | #/components/schemas/LifecycleRevokeSuccessEnvelope | #/components/schemas/ErrorEnvelope | 202 | 403 | #/components/examples/ErrorLifecycleBlocked | AUTH_LIFECYCLE_BLOCKED |
 
 ## Verification hooks

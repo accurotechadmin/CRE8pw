@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0020.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0026.md`
 
 Summary:
-- Expanded `composer test:contract:feed` with executable interaction deny payload-shape checks (`error.code/category`, `request_id` prefix, `timestamp_utc` parseability).
-- Updated verification strategy hook semantics to keep prose aligned with the strengthened feed deny automation contract.
-- Refreshed Phase 2 progress board status/links while preserving ADR-003 residual constraints and deferred owner+due+decision linkage.
+- Closed feed deny-mapping deferred breadth row `P2-DB-004` by promoting explicit payload-shape semantics into normative feed policy requirements (`CRE8-FEED-REQ-0022`).
+- Added machine parity requirement (`CRE8-MACHINE-REQ-0019`) binding feed parity rows to executable deny payload-shape checks and marked feed parity depth as complete.
+- Updated traceability rows and Phase 2 progress board status/evidence links while preserving ADR-003 constraints and remaining deferred owner+due+decision linkage.
