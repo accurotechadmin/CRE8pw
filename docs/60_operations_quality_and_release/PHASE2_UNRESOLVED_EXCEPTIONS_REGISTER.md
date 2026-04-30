@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-PHASE2-EXCEPTIONS-REGISTER
-version: 1.0.0
+version: 1.1.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -29,6 +29,8 @@ Define the canonical register format for unresolved exceptions retained while Ph
 - **CRE8-OPS-REQ-0017**: Rows with `status=open` or `status=blocked` **MUST** include at least one deterministic next verification command in `next_command`.
 - **CRE8-OPS-REQ-0018**: `decision_ref` **MUST** reference an ADR ID or a `DECISION-YYYYMMDD-###` event logged in `DECISIONS_LOG.md`.
 - **CRE8-OPS-REQ-0019**: A row **MUST NOT** transition to `closed` unless supporting evidence path(s) are populated and the related item is removed or marked complete in `PHASE2_PROGRESS_BOARD.md`.
+- **CRE8-OPS-REQ-0020**: `decision_ref` values used in register rows **MUST** exist in `docs/80_traceability_decisions_and_program/DECISIONS_LOG.md` unless prefixed `ADR-` and present in `ADR_INDEX.md`.
+- **CRE8-OPS-REQ-0021**: Rows with `status=closed` **MUST** reference matching `item_id` entry in `PHASE2_PROGRESS_BOARD.md` whose status is `complete`; otherwise validation **MUST** fail.
 
 ## Register schema
 | Field | Required | Description |
@@ -42,14 +44,19 @@ Define the canonical register format for unresolved exceptions retained while Ph
 | verification_hook_ids | yes | One or more hook IDs for closure verification. |
 | next_command | conditional | Required when `status` is `open` or `blocked`. |
 | evidence_paths | no | Semicolon-separated artifact paths used when closing. |
+| linked_item_id | conditional | Required for `status=closed`; must match `item_id` in deferred decomposition table. |
 | notes | no | Residual context. |
 
 ## Current unresolved exceptions
-| exception_id | lane_or_slice | owner | status | due_utc | decision_ref | verification_hook_ids | next_command | evidence_paths | notes |
+| exception_id | lane_or_slice | owner | status | due_utc | decision_ref | verification_hook_ids | next_command | evidence_paths | linked_item_id | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| P2-EXC-001 | Lane B / P2-DB-001 | Identity & Policy WG | in_progress | 2026-05-06 | ADR-003 | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | composer test:contract:auth |  | Multi-ancestor runtime matrix breadth still pending beyond fixture-depth checks. |
-| P2-EXC-002 | Lane B / P2-DB-002 | Platform Architecture WG | in_progress | 2026-05-10 | ADR-003 | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | composer test:contract:identity-issuance && composer test:contract:identity-context |  | Runtime-integrated multi-actor issuance/context breadth pending. |
-| P2-EXC-003 | Lane B / P2-DB-006 | Security Engineering WG | in_progress | 2026-05-12 | ADR-003 | HOOK-SEC-LIFECYCLE-PROPAGATION | composer test:contract:lifecycle |  | Multi-actor descendant lifecycle propagation coverage pending. |
+| P2-EXC-001 | Lane B / P2-DB-001 | Identity & Policy WG | in_progress | 2026-05-06 | ADR-003 | HOOK-AUTH-INHERITANCE-BOUNDARY; HOOK-AUTH-LIFECYCLE-ENFORCEMENT; HOOK-CONTRACT-POLICY-ORDER | composer test:contract:auth |  |  | Multi-ancestor runtime matrix breadth still pending beyond fixture-depth checks. |
+| P2-EXC-002 | Lane B / P2-DB-002 | Platform Architecture WG | in_progress | 2026-05-10 | ADR-003 | HOOK-IDENTITY-ID-FIRST-ISSUANCE; HOOK-IDENTITY-UTILITY-CONTEXT-ISOLATION | composer test:contract:identity-issuance && composer test:contract:identity-context |  |  | Runtime-integrated multi-actor issuance/context breadth pending. |
+| P2-EXC-003 | Lane B / P2-DB-006 | Security Engineering WG | in_progress | 2026-05-12 | ADR-003 | HOOK-SEC-LIFECYCLE-PROPAGATION | composer test:contract:lifecycle |  |  | Multi-actor descendant lifecycle propagation coverage pending. |
+
+## Change-impact map reference
+- Template: `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
+- Session artifact expectation: include a change-impact map when exception rows are added, removed, or status-shifted.
 
 ## Verification hooks
 - **HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA**: Validate register row schema, ID format, mandatory fields, and command requirement for open/blocked rows.

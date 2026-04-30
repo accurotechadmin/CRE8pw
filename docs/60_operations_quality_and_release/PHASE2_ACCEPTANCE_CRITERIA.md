@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-OPS-PHASE2-ACCEPTANCE
-version: 1.2.0
+version: 1.3.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
@@ -31,6 +31,7 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 - **CRE8-OPS-REQ-0014**: Pull-request and protected-branch CI that executes SSOT contract gates **MUST** invoke `composer phase2:acceptance-bundle` as a required hard-fail step.
 - **CRE8-OPS-REQ-0015**: Any unresolved Phase 2 exception retained after acceptance-bundle execution **MUST** be listed in `PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md` before merge.
 - **CRE8-OPS-REQ-0016**: `composer docs:ssot:phase2-exceptions-check` **MUST** run as a required command within the Phase 2 acceptance bundle and **MUST** fail on schema/ownership/deadline-reference violations in the unresolved exceptions register.
+- **CRE8-OPS-REQ-0022**: `phase2:acceptance-bundle` required command list **MUST** include `composer test:contract:lifecycle` so lifecycle-propagation regressions cannot bypass acceptance.
 
 ## Required acceptance bundle commands
 1. `composer docs:ssot:lint`
@@ -40,10 +41,11 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 5. `composer docs:ssot:review-gate-check`
 6. `composer docs:ssot:phase2-exceptions-check`
 7. `composer test:contract:auth`
-7. `composer test:contract:feed`
-8. `composer test:contract:identity-issuance`
-9. `composer test:contract:identity-context`
-10. `composer test:contract:surface-parity`
+8. `composer test:contract:feed`
+9. `composer test:contract:identity-issuance`
+10. `composer test:contract:identity-context`
+11. `composer test:contract:lifecycle`
+12. `composer test:contract:surface-parity`
 
 ## Change-impact map reference
 - Template: `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
