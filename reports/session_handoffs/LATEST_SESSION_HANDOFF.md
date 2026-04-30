@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0026.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0031.md`
 
 Summary:
-- Closed feed deny-mapping deferred breadth row `P2-DB-004` by promoting explicit payload-shape semantics into normative feed policy requirements (`CRE8-FEED-REQ-0022`).
-- Added machine parity requirement (`CRE8-MACHINE-REQ-0019`) binding feed parity rows to executable deny payload-shape checks and marked feed parity depth as complete.
-- Updated traceability rows and Phase 2 progress board status/evidence links while preserving ADR-003 constraints and remaining deferred owner+due+decision linkage.
+- Closed deferred breadth row `P2-DB-003` by making surface-parity auth prerequisites executable (auth model, required permission, scope type) in `composer test:contract:surface-parity`.
+- Updated UI runtime parity matrix schema to carry deterministic prerequisite expectation columns and added trace row coverage for `CRE8-CONTRACT-REQ-0031`.
+- Refreshed Phase 2 progress board lane/deferred status while preserving ADR-003 constraints and explicit owner+due+decision linkage on remaining deferred items.

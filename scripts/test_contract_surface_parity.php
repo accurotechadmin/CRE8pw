@@ -18,7 +18,17 @@ foreach (explode("\n", $inventory) as $line) {
     if (!preg_match('/^\|\s*(CRE8-ROUTE-\d{4})\s*\|\s*([A-Z]+)\s*\|\s*([^|]+)\|/', trim($line), $m)) {
         continue;
     }
-    $routeById[$m[1]] = ['method' => trim($m[2]), 'path' => trim($m[3])];
+    $cols = array_map('trim', explode('|', trim($line, '|')));
+    if (count($cols) < 11) {
+        continue;
+    }
+    $routeById[$m[1]] = [
+        'method' => trim($m[2]),
+        'path' => trim($m[3]),
+        'auth_model' => $cols[3],
+        'required_permission' => $cols[4],
+        'scope_type' => $cols[5],
+    ];
 }
 
 $rows = [];
@@ -27,7 +37,7 @@ foreach (explode("\n", $ui) as $line) {
         continue;
     }
     $cols = array_map('trim', explode('|', trim($line, '|')));
-    if (count($cols) !== 10) {
+    if (count($cols) !== 13) {
         fwrite(STDERR, "[HOOK-CONTRACT-SURFACE-PARITY] malformed parity row for capability: {$cols[0]}\n");
         exit(1);
     }
@@ -40,7 +50,7 @@ if ($rows === []) {
 }
 
 foreach ($rows as $row) {
-    [$cap, $status, $routeId, $method, $path, $parityStatus, $exceptionClass, $justification, $owner, $reviewDue] = $row;
+    [$cap, $status, $routeId, $method, $path, $expectedAuthModel, $expectedRequiredPermission, $expectedScopeType, $parityStatus, $exceptionClass, $justification, $owner, $reviewDue] = $row;
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $reviewDue)) {
         fwrite(STDERR, "[HOOK-CONTRACT-SURFACE-PARITY] invalid review_due_utc for {$cap}: {$reviewDue}\n");
         exit(1);
@@ -52,6 +62,10 @@ foreach ($rows as $row) {
         }
         if ($routeById[$routeId]['method'] !== $method || $routeById[$routeId]['path'] !== $path) {
             fwrite(STDERR, "[HOOK-CONTRACT-SURFACE-PARITY] route mismatch for {$cap} against {$routeId}\n");
+            exit(1);
+        }
+        if ($routeById[$routeId]['auth_model'] !== $expectedAuthModel || $routeById[$routeId]['required_permission'] !== $expectedRequiredPermission || $routeById[$routeId]['scope_type'] !== $expectedScopeType) {
+            fwrite(STDERR, "[HOOK-CONTRACT-SURFACE-PARITY] auth prerequisite mismatch for {$cap} against {$routeId}\n");
             exit(1);
         }
     }

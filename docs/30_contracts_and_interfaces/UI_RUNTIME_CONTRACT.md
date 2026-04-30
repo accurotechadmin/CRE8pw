@@ -30,15 +30,15 @@ Define deterministic cross-surface parity requirements between Owner Console and
 
 
 ## Surface capability parity matrix
-| capability_id | owner_console_status | route_id | route_method | route_path | parity_status | exception_class | justification | owner | review_due_utc |
-|---|---|---|---|---|---|---|---|---|---|
-| CAP-OWNER-HEALTH-VIEW | supported | CRE8-ROUTE-0001 | GET | /v1/system/health | parity_mapped | n/a | n/a | API Contracts WG | 2026-05-20 |
-| CAP-OWNER-AUTH-DECISION-SIMULATE | supported | CRE8-ROUTE-0002 | POST | /v1/authz/decide | parity_mapped | n/a | n/a | Identity & Policy WG | 2026-05-20 |
-| CAP-OWNER-FEED-BROWSE | supported | CRE8-ROUTE-0004 | GET | /v1/feed/items | parity_mapped | n/a | n/a | Product Policy WG | 2026-05-20 |
-| CAP-OWNER-AUDIT-EXPORT | ui_only | n/a | n/a | n/a | exception_documented | backend_not_exposed | Owner Console export wizard remains internal for Phase 2 and has no external API route by design. | Product Policy WG | 2026-05-20 |
+| capability_id | owner_console_status | route_id | route_method | route_path | expected_auth_model | expected_required_permission | expected_scope_type | parity_status | exception_class | justification | owner | review_due_utc |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CAP-OWNER-HEALTH-VIEW | supported | CRE8-ROUTE-0001 | GET | /v1/system/health | public | system.health.read | global | parity_mapped | n/a | n/a | API Contracts WG | 2026-05-20 |
+| CAP-OWNER-AUTH-DECISION-SIMULATE | supported | CRE8-ROUTE-0002 | POST | /v1/authz/decide | delegated | authz.decide | resource | parity_mapped | n/a | n/a | Identity & Policy WG | 2026-05-20 |
+| CAP-OWNER-FEED-BROWSE | supported | CRE8-ROUTE-0004 | GET | /v1/feed/items | utility-key | feed.items.read | group | parity_mapped | n/a | n/a | Product Policy WG | 2026-05-20 |
+| CAP-OWNER-AUDIT-EXPORT | ui_only | n/a | n/a | n/a | n/a | n/a | n/a | exception_documented | backend_not_exposed | Owner Console export wizard remains internal for Phase 2 and has no external API route by design. | Product Policy WG | 2026-05-20 |
 
 ## Verification hooks
-- **HOOK-CONTRACT-SURFACE-PARITY**: Validate parity matrix entries against route inventory and documented exception records.
+- **HOOK-CONTRACT-SURFACE-PARITY**: Validate parity matrix entries against route inventory and documented exception records, including auth model/permission/scope prerequisite alignment for supported capabilities.
 - **Next automation candidate**: Implemented as `composer test:contract:surface-parity` to compare parity table artifacts with route inventory IDs.
 
 ## See also
@@ -46,3 +46,4 @@ Define deterministic cross-surface parity requirements between Owner Console and
 - [API Contract Guide](./API_CONTRACT_GUIDE.md)
 - [Route Inventory Reference](./ROUTE_INVENTORY_REFERENCE.md)
 - [Error Code Catalog](./ERROR_CODE_CATALOG.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
