@@ -93,6 +93,18 @@ foreach ($authzDenyExamples as $fixtureKey => $contract) {
     }
 }
 
+
+$lifecyclePrefixExpectations = [
+    'ErrorFeedLifecycleBlocked' => 'req-feed-',
+    'ErrorInteractionLifecycleBlocked' => 'req-interact-',
+];
+foreach ($lifecyclePrefixExpectations as $exampleName => $requestPrefix) {
+    $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*request_id:\s"' . preg_quote($requestPrefix, '/') . '[^"\n]*"[^\n]*\}/m';
+    if (preg_match($pattern, $openapi) !== 1) {
+        $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] lifecycle deny example ' . $exampleName . ' missing expected request_id prefix ' . $requestPrefix;
+    }
+}
+
 if ($errors !== []) {
     foreach ($errors as $e) {
         fwrite(STDERR, $e . PHP_EOL);
@@ -100,4 +112,4 @@ if ($errors !== []) {
     exit(1);
 }
 
-echo 'test:contract:auth PASS (policy_steps=' . count($found) . ', inheritance_boundary=ok, lifecycle_enforcement=ok, openapi_authz_fixtures=validated, short_circuit=deterministic_first_fail)' . PHP_EOL;
+echo 'test:contract:auth PASS (policy_steps=' . count($found) . ', inheritance_boundary=ok, lifecycle_enforcement=ok, openapi_authz_fixtures=validated, lifecycle_prefixes=validated, short_circuit=deterministic_first_fail)' . PHP_EOL;
