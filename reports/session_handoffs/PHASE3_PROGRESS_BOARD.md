@@ -172,9 +172,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S11.1 | New hooks and templates | not_started | Program Traceability WG | 2026-06-22 | HOOK-DATA-MODEL-COVERAGE; HOOK-SEC-THREAT-CONTROL-MATRIX; HOOK-OBS-EVENT-CATALOG-COVERAGE; HOOK-CONTRACT-SCHEMA-COVERAGE; HOOK-CONTRACT-EXAMPLE-COVERAGE; HOOK-OPENAPI-LINT; HOOK-GLOSSARY-COMPLETENESS; HOOK-SOURCE-REFS-INTEGRITY; HOOK-PERMISSION-VOCAB-RESOLVE; HOOK-CAPABILITY-MATRIX-COMPLETE; HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY; HOOK-RELEASE-CHECKLIST-PRESENT; HOOK-SLO-SLI-PRESENT (all target) | ADR-004 | (TBD) | Register + templates. |
-| P3-S11.2 | Implement scripts for new hooks | not_started | Program Traceability WG | 2026-06-23 | (above) | ADR-004 | (TBD) | All `scripts/docs_ssot_*.php` for the new hook set. |
-| P3-S11.3 | Author `composer phase3:final-acceptance-bundle` | not_started | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE; (and all M11 hooks) | ADR-004 | (TBD) | Adds `scripts/phase3_acceptance_bundle.php`. |
+| P3-S11.1 | New hooks and templates | complete | Program Traceability WG | 2026-06-22 | HOOK-DATA-MODEL-COVERAGE; HOOK-SEC-THREAT-CONTROL-MATRIX; HOOK-OBS-EVENT-CATALOG-COVERAGE; HOOK-CONTRACT-SCHEMA-COVERAGE; HOOK-CONTRACT-EXAMPLE-COVERAGE; HOOK-OPENAPI-LINT; HOOK-GLOSSARY-COMPLETENESS; HOOK-SOURCE-REFS-INTEGRITY; HOOK-PERMISSION-VOCAB-RESOLVE; HOOK-CAPABILITY-MATRIX-COMPLETE; HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY; HOOK-RELEASE-CHECKLIST-PRESENT; HOOK-SLO-SLI-PRESENT (all target) | ADR-004 | (TBD) | Register + templates. |
+| P3-S11.2 | Implement scripts for new hooks | complete | Program Traceability WG | 2026-06-23 | (above) | ADR-004 | (TBD) | All `scripts/docs_ssot_*.php` for the new hook set. |
+| P3-S11.3 | Author `composer phase3:final-acceptance-bundle` | complete | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE; (and all M11 hooks) | ADR-004 | (TBD) | Adds `scripts/phase3_acceptance_bundle.php`. |
 | P3-S11.4 | CI rewire | not_started | Operations Quality WG | 2026-06-24 | HOOK-SSOT-PHASE1-GATE-CI | ADR-004 | (TBD) | `untraced_requirements == 0` job assertion. |
 | P3-S11.5 | Drift-test pack | not_started | Program Traceability WG | 2026-06-25 | HOOK-SSOT-LINK-INTEGRITY (and all M11 hooks) | ADR-004 | (TBD) | New `scripts/docs_ssot_phase3_drift_pack.php`. |
 
