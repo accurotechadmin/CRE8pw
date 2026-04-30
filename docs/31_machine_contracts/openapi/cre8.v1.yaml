@@ -195,6 +195,101 @@ paths:
                   $ref: '#/components/examples/ErrorGrantExpired'
                 lifecycleBlocked:
                   $ref: '#/components/examples/ErrorFeedLifecycleBlocked'
+  /v1/principals:
+    post:
+      summary: Create principal
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessEnvelope'
+  /v1/keys/id:
+    post:
+      summary: Mint ID keypair
+      responses:
+        '201': {description: Created}
+  /v1/keys/utility:
+    post:
+      summary: Mint utility keypair
+      responses:
+        '201': {description: Created}
+  /v1/keys/{key_id}/lifecycle/rotate:
+    post:
+      summary: Rotate key
+      responses:
+        '202': {description: Accepted}
+  /v1/delegations:
+    post:
+      summary: Create delegation
+      responses:
+        '201': {description: Created}
+  /v1/delegations/{delegation_id}:
+    delete:
+      summary: Revoke delegation
+      responses:
+        '204': {description: No Content}
+  /v1/audience-groups:
+    get:
+      summary: List audience groups
+      responses:
+        '200': {description: OK}
+    post:
+      summary: Create audience group
+      responses:
+        '201': {description: Created}
+  /v1/audience-groups/{id}:
+    patch:
+      summary: Update audience group
+      responses:
+        '200': {description: OK}
+    delete:
+      summary: Delete audience group
+      responses:
+        '204': {description: No Content}
+  /v1/posts:
+    post:
+      summary: Create post
+      responses:
+        '201': {description: Created}
+  /v1/posts/{id}:
+    get:
+      summary: Get post
+      responses:
+        '200': {description: OK}
+    patch:
+      summary: Update post
+      responses:
+        '200': {description: OK}
+    delete:
+      summary: Delete post
+      responses:
+        '204': {description: No Content}
+  /v1/posts/{id}/comments:
+    post:
+      summary: Create comment
+      responses:
+        '201': {description: Created}
+    get:
+      summary: List comments
+      responses:
+        '200': {description: OK}
+  /v1/audit/exports:
+    post:
+      summary: Create audit export
+      responses:
+        '202': {description: Accepted}
+  /v1/system/version:
+    get:
+      summary: System version
+      responses:
+        '200': {description: OK}
+  /v1/system/info:
+    get:
+      summary: System info
+      responses:
+        '200': {description: OK}
 components:
   schemas:
     SuccessEnvelope:
