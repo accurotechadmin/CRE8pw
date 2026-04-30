@@ -17,7 +17,7 @@ $requiredMetadataKeys = [
     'normative_dependencies',
 ];
 $prohibitedPhrases = [
-    'This scaffold file defines',
+    'This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for',
     'structured placeholder',
 ];
 
