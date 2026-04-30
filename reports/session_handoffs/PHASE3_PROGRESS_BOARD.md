@@ -134,8 +134,8 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S7.4 | `SECURITY_CONTROLS_SPEC.md` | complete | Security WG | 2026-06-04 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Control families with dependencies. |
 | P3-S7.5 | `SECURITY_HEADERS_AND_CSP_POLICY.md` | complete | Security WG | 2026-06-05 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | HSTS/CSP per surface. |
 | P3-S7.6 | `SECURITY_THREAT_MODEL.md` | complete | Security WG | 2026-06-06 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | THREAT-### per surface/data flow. |
-| P3-S7.7 | `SECURITY_VERIFICATION_ABUSE_CASES.md` | not_started | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Abuse case per threat with hook ID. |
-| P3-S7.8 | New: `CRYPTO_PROFILE.md` | not_started | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Algs + parameters + deprecation policy. |
+| P3-S7.7 | `SECURITY_VERIFICATION_ABUSE_CASES.md` | complete | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | `docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md`; `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md` | Abuse-case matrix authored and linked to THREAT-001..003 with deterministic expected responses. |
+| P3-S7.8 | New: `CRYPTO_PROFILE.md` | complete | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | `docs/40_data_security_and_crypto/CRYPTO_PROFILE.md`; `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md` | Cryptographic primitive/profile parameters and deprecation policy authored with normative thresholds. |
 
 ### M8 — Content, audience, and feed
 

@@ -40,9 +40,13 @@ Define deterministic lifecycle and cryptographic controls for CRE8 key material 
 ## Drift notes
 - Seed prose used SHOULD-level language for dependency anchoring; this canonical document promotes enforcement semantics to MUST-level lifecycle and proof controls while keeping dependency/tooling selection in verification strategy.
 
+## Change Impact Map
+- `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`
+
 ## See also
 - [CRE8 Key Lifecycle and Cryptography Seed](../../seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md)
 - [Authorization and Delegation Spec](../20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- [Crypto Profile](./CRYPTO_PROFILE.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

@@ -439,3 +439,17 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-SECX-REQ-0008 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
 | CRE8-SECX-REQ-0009 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
 | CRE8-SECX-REQ-0010 | CRE8-SEC-THREAT-MODEL | docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+
+| CRE8-SECX-REQ-0011 | CRE8-SEC-ABUSE-CASES | docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0012 | CRE8-SEC-ABUSE-CASES | docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0013 | CRE8-SEC-ABUSE-CASES | docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0014 | CRE8-SEC-ABUSE-CASES | docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0015 | CRE8-SEC-ABUSE-CASES | docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0016 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0017 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0018 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0019 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0020 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0021 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0022 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
+| CRE8-SECX-REQ-0023 | CRE8-SEC-CRYPTO-PROFILE | docs/40_data_security_and_crypto/CRYPTO_PROFILE.md | HOOK-SEC-THREAT-CONTROL-MATRIX | manual | Security WG | normative | docs/evidence/templates/README.md |
