@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0040.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0049.md`
 
 Summary:
-- Hardened `HOOK-CONTRACT-POLICY-ORDER` and `HOOK-AUTH-INHERITANCE-BOUNDARY` checks with explicit provenance (`ancestor_chain_ref`) and decision-field (`decision_reason_code`) assertions in auth decision examples.
-- Fixed machine-contract schema/prose parity for auth decision request context by formalizing optional `target_item_id` in `policy-decision.schema.json`.
-- Refreshed Phase 2 progress board and latest-5 handoff links while preserving ADR-003 deferred ownership and due-date constraints.
+- Expanded auth depth automation with multi-ancestor request/deny fixtures (`AuthDecisionRequestMultiAncestorLifecycle`, `ErrorMultiAncestorDepthExceeded`) and explicit `req-authz-multianc-*` namespace checks.
+- Expanded lifecycle propagation depth with descendant deny fixture (`ErrorDescendantLifecycleBlocked`) and `req-desc-life-*` namespace assertions.
+- Synchronized prose/OpenAPI parity row for `CRE8-ROUTE-0002` and refreshed Phase 2 tracking artifacts under ADR-003 constraints.

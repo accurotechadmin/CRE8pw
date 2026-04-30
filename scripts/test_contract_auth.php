@@ -73,6 +73,12 @@ if (!str_contains($openapi, 'ancestor_chain_ref')) {
 if (!str_contains($openapi, 'decision_reason_code')) {
     $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing decision_reason_code in auth decision success example';
 }
+if (!str_contains($openapi, 'AuthDecisionRequestMultiAncestorLifecycle')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing AuthDecisionRequestMultiAncestorLifecycle request fixture for multi-ancestor residual depth';
+}
+if (!str_contains($openapi, 'req-authz-multianc-')) {
+    $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing req-authz-multianc-* deny fixture namespace for multi-ancestor depth coverage';
+}
 
 $policyDecisionSchemaPath = dirname(__DIR__) . '/docs/31_machine_contracts/schemas/policy-decision.schema.json';
 $policyDecisionSchema = file_get_contents($policyDecisionSchemaPath);
@@ -94,6 +100,7 @@ $authzDenyExamples = [
     'scopeDenied' => ['ref' => '#/components/examples/ErrorScopeDenied', 'code' => 'AUTH_SCOPE_DENIED', 'category' => 'AUTH_DENY'],
     'depthExceeded' => ['ref' => '#/components/examples/ErrorAuthDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY'],
     'grantExpired' => ['ref' => '#/components/examples/ErrorGrantExpired', 'code' => 'AUTH_GRANT_EXPIRED', 'category' => 'AUTH_DENY'],
+    'multiAncestorDepthExceeded' => ['ref' => '#/components/examples/ErrorMultiAncestorDepthExceeded', 'code' => 'AUTH_DEPTH_EXCEEDED', 'category' => 'AUTH_DENY'],
     'lifecycleBlocked' => ['ref' => '#/components/examples/ErrorFeedLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
     'interactionLifecycleBlocked' => ['ref' => '#/components/examples/ErrorInteractionLifecycleBlocked', 'code' => 'AUTH_LIFECYCLE_BLOCKED', 'category' => 'LIFECYCLE'],
 ];
