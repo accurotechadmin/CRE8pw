@@ -1,7 +1,7 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T04:30:00Z
-- Current owner/session: cursor cloud agent / `cursor/phase3-m0-entry-audit-program-ratification-5e46`
+- Last updated (UTC): 2026-04-30T04:53:00Z
+- Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
 - Program plan: [`reports/PHASE3_AUTHORING_PROGRAM_PLAN.md`](../PHASE3_AUTHORING_PROGRAM_PLAN.md)
@@ -56,7 +56,7 @@ Status taxonomy: `not_started`, `in_progress`, `partially_complete`, `complete`,
 | P3-S0.1 | Capture entry-state audit | complete | Program Traceability WG | 2026-04-30 | HOOK-SSOT-REPORT-COVERAGE | ADR-004 | `reports/PHASE3_ENTRY_AUDIT_20260430-0356.md`; `reports/ssot/coverage_phase3_entry_20260430-0356.json` | Audit captured; full file inventory by maturity grade (38 A, 33 D, 4 N/A); 9 conflicts catalogued; trace-coverage snapshot 155/238 untraced. |
 | P3-S0.2 | Author ADR-004 — Phase 3 program charter | complete | Platform Architecture WG | 2026-04-30 | HOOK-TRACE-ADR-INDEX-UNIQUE; HOOK-TRACE-ADR-INDEX-STATUS; HOOK-TRACE-ADR-INDEX-BACKLINK; HOOK-TRACE-DECISION-APPENDONLY; HOOK-TRACE-DECISION-ADR-LINK; HOOK-TRACE-RISK-SCORE; HOOK-TRACE-RISK-HIGHCRIT-FIELDS | ADR-004 | `docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md`; `reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md` | ADR-004 accepted; ADR-004-REQ-0001..0015 published; RISK-010..014 added. |
 | P3-S0.3 | Author Phase 3 progress board + exceptions register | complete | Program Traceability WG | 2026-04-30 | HOOK-TRACE-MATRIX-COVERAGE | ADR-004 | `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md`; `reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md` | This board + register; LATEST_SESSION_HANDOFF.md retargets to Phase 3 handoff. |
-| P3-S0.4 | Repo hygiene baseline | not_started | Program Traceability WG | 2026-05-07 | HOOK-SSOT-LINK-INTEGRITY | ADR-004 | (TBD) | Move Phase 1/2 handoffs older than 7 days under `reports/session_handoffs/archive/<YYYY-MM>/`; correct stale `seed/CRE8_REPO_STUDY_REPORT.md` claim about absent root README. |
+| P3-S0.4 | Repo hygiene baseline | complete | Program Traceability WG | 2026-05-07 | HOOK-SSOT-LINK-INTEGRITY | ADR-004 | `reports/session_handoffs/archive/2026-04/`; `seed/CRE8_REPO_STUDY_REPORT.md` | Archived top-level timestamped handoffs down to most recent 10 and corrected stale repository caveat note (README now present). |
 
 ### M1 — Tier-1 correctness blockers (predecessors for everything else)
 
@@ -194,11 +194,13 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
-1. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
+1. [`SESSION_HANDOFF_20260430-0453.md`](SESSION_HANDOFF_20260430-0453.md) — P3-S0.4 complete; handoff archival baseline enforced; stale seed caveat corrected.
+2. [`SESSION_HANDOFF_20260430-0419.md`](SESSION_HANDOFF_20260430-0419.md) — M0 batch (P3-S0.1, P3-S0.2, P3-S0.3) complete; ADR-004 accepted; this board created.
 
 ### Latest 5 Phase 3 session response archives
 
-1. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
+1. [`reports/session_responses/20260430-0453_RESPONSE.md`](../session_responses/20260430-0453_RESPONSE.md) — P3-S0.4 repo hygiene baseline completion response.
+2. [`reports/session_responses/20260430-0419_RESPONSE.md`](../session_responses/20260430-0419_RESPONSE.md) — M0 batch session response.
 
 ### Anchors
 
