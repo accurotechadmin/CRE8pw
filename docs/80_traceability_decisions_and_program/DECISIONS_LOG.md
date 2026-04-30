@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-TRACE-DECISIONS-LOG
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Architecture Governance WG
 reviewers:
@@ -44,6 +44,7 @@ This document defines the append-only operational log for architecture and gover
 ## Baseline events
 | Event ID | Timestamp (UTC) | ADR ID | Event Type | Actor | Change Summary | Impacted Requirement IDs | Evidence Link |
 |---|---|---|---|---|---|---|---|
+| DLOG-20260430-005 | 2026-04-30T06:00:00Z | ADR-005 | status_changed | Identity & Policy WG | proposed -> accepted for canonical authorization gate order reconciliation across policy spec and decision tables | CRE8-AUTH-REQ-0001, CRE8-AUTH-REQ-0010, CRE8-AUTH-REQ-0011 | ./records/ADR-005-authz-gate-order-reconciliation.md |
 | DLOG-20260430-004 | 2026-04-30T04:30:00Z | ADR-004 | status_changed | Platform Architecture WG | proposed -> accepted for Phase 3 — Canon Completion program charter; binds program plan, sequencing, deferral discipline, dependency baseline, and acceptance bar; ADR-003 explicitly prohibited as a Phase 3 deferral mechanism | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0005, CRE8-OPS-REQ-0010 | ./records/ADR-004-phase3-program-charter.md |
 | DLOG-20260429-003 | 2026-04-29T12:05:00Z | ADR-003 | status_changed | Platform Architecture WG | proposed -> accepted for Phase 1 freeze closure and residual-breadth waiver policy | CRE8-ACCEPT-REQ-0001, CRE8-ACCEPT-REQ-0006 | ./records/ADR-003-phase1-freeze-waiver.md |
 | DLOG-20260429-001 | 2026-04-29T03:40:00Z | ADR-001 | status_changed | Docs Governance WG | proposed -> accepted for requirement ID normalization | CRE8-TRACE-REQ-0001, CRE8-TRACE-REQ-0002 | ./records/ADR-001-placeholder.md |

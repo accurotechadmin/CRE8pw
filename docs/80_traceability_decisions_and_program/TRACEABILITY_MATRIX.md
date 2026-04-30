@@ -200,3 +200,11 @@ Define the mandatory requirement-to-verification traceability contract for all n
 - [ADR Index](./ADR_INDEX.md)
 - [Risk Register](./RISK_REGISTER.md)
 - [SSOT Automation and Linting](./SSOT_AUTOMATION_AND_LINTING.md)
+
+| CRE8-AUTH-REQ-0003 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-CONTRACT-POLICY-ORDER | automated | Identity & Policy WG | provisional-normative | composer test:contract:auth |
+| CRE8-AUTH-REQ-0004 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | provisional-normative | composer test:contract:auth-reasons |
+| CRE8-AUTH-REQ-0005 | CRE8-AUTH-DELEGATION-SPEC | docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md | HOOK-AUTH-INHERITANCE-BOUNDARY | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0011 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-CONTRACT-POLICY-ORDER | automated | Identity & Policy WG | provisional-normative | composer test:contract:auth |
+| CRE8-AUTH-REQ-0012 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-AUTH-INHERITANCE-BOUNDARY | manual | Identity & Policy WG | provisional-normative | docs/evidence/templates/README.md |
+| CRE8-AUTH-REQ-0013 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | provisional-normative | composer test:contract:auth-reasons |
+| CRE8-AUTH-REQ-0014 | CRE8-AUTH-DECISION-TABLES | docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | provisional-normative | composer test:contract:auth-reasons |

@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Unresolved Exceptions Register
 
-- Last updated (UTC): 2026-04-30T04:30:00Z
+- Last updated (UTC): 2026-04-30T06:00:00Z
 - Current owner/session: cursor cloud agent / Phase 3 M0 batch (`P3-S0.3`)
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -42,7 +42,7 @@ Track every Phase 3 exception that is retained between an authoring session and 
 
 | exception_id | slice | owner | status | due_utc | decision_ref | verification_hook_ids | next_command | evidence_paths | linked_slice_id | notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| P3-EXC-001 | P3-S0.4 | Program Traceability WG | open | 2026-05-07 | ADR-004 | HOOK-SSOT-LINK-INTEGRITY | `composer docs:ssot:lint` | `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md`; `reports/session_handoffs/SESSION_HANDOFF_20260430-0419.md` |  | Repo hygiene baseline deferred from initial M0 batch; tracked residual until completed. |
+| P3-EXC-001 | P3-S0.4 | Program Traceability WG | closed | 2026-05-07 | ADR-004 | HOOK-SSOT-LINK-INTEGRITY |  | `reports/session_handoffs/SESSION_HANDOFF_20260430-0453.md` | P3-S0.4 | Closed by session 20260430-0453 evidence. |
 | P3-EXC-002 | P3-S2.3 | Program Traceability WG | open | 2026-05-13 | ADR-004 | HOOK-TRACE-MATRIX-COVERAGE; HOOK-SSOT-REPORT-COVERAGE | `composer docs:ssot:report` | `reports/ssot/coverage_latest.json`; `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md` |  | Traceability backfill remains incomplete (`untraced_requirements` > 0). |
 
 
