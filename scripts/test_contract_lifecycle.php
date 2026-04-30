@@ -22,6 +22,7 @@ $requiredOpenApiSnippets = [
     'ErrorInteractionLifecycleBlocked' => 'interaction lifecycle deny example',
     'ErrorDescendantLifecycleBlocked' => 'descendant lifecycle deny example',
     'ErrorDescendantLifecycleBlockedSecondary' => 'secondary descendant lifecycle deny example',
+    'ErrorDescendantLifecycleBlockedTertiary' => 'tertiary descendant lifecycle deny example',
     'AuthDecisionRequestDescendantPropagation' => 'descendant propagation action fixture',
     'action: "comment.create"' => 'interaction action fixture',
 ];
@@ -64,6 +65,10 @@ if (count($descendantRequestIds) < 2) {
     fwrite(STDERR, "Expected at least two distinct req-desc-life-* fixtures for multi-actor propagation depth\n");
     exit(1);
 }
+if (!in_array('req-desc-life-003', $descendantRequestIds, true)) {
+    fwrite(STDERR, "Expected tertiary req-desc-life-003 fixture for revoke/suspend timeline matrix depth\n");
+    exit(1);
+}
 
 foreach ($distinctLifecycleExamples as $exampleName => $requestPrefix) {
     $pattern = '/\n\s{4}' . preg_quote($exampleName, '/') . ':\n\s{6}value:\n\s{8}error:\s\{[^\n]*request_id:\s"' . preg_quote($requestPrefix, '/') . '[^"\n]*"[^\n]*\}/m';
@@ -77,6 +82,7 @@ $revokeEffectiveUtcPattern = '/LifecycleRevokeAccepted:\n\s{6}value:\n\s{8}data:
 $descendantBlockedUtcPattern = '/ErrorDescendantLifecycleBlocked:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
 $suspendEffectiveUtcPattern = '/LifecycleSuspendAccepted:\n\s{6}value:\n\s{8}data:\s\{[^\n]*effective_utc:\s"([^"]+)"/m';
 $descendantSecondaryUtcPattern = '/ErrorDescendantLifecycleBlockedSecondary:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
+$descendantTertiaryUtcPattern = '/ErrorDescendantLifecycleBlockedTertiary:\n\s{6}value:\n\s{8}error:\s\{[^\n]*timestamp_utc:\s"([^"]+)"/m';
 
 if (preg_match($revokeEffectiveUtcPattern, $openapi, $revokeMatch) !== 1) {
     fwrite(STDERR, "Lifecycle revoke fixture missing effective_utc for propagation chronology checks\n");
@@ -94,12 +100,17 @@ if (preg_match($descendantSecondaryUtcPattern, $openapi, $descendantSecondaryMat
     fwrite(STDERR, "Secondary descendant lifecycle deny fixture missing timestamp_utc for propagation chronology checks\n");
     exit(1);
 }
+if (preg_match($descendantTertiaryUtcPattern, $openapi, $descendantTertiaryMatch) !== 1) {
+    fwrite(STDERR, "Tertiary descendant lifecycle deny fixture missing timestamp_utc for propagation chronology checks\n");
+    exit(1);
+}
 
 $revokeTs = strtotime($revokeMatch[1]);
 $descendantTs = strtotime($descendantMatch[1]);
 $suspendTs = strtotime($suspendMatch[1]);
 $descendantSecondaryTs = strtotime($descendantSecondaryMatch[1]);
-if ($revokeTs === false || $descendantTs === false || $suspendTs === false || $descendantSecondaryTs === false) {
+$descendantTertiaryTs = strtotime($descendantTertiaryMatch[1]);
+if ($revokeTs === false || $descendantTs === false || $suspendTs === false || $descendantSecondaryTs === false || $descendantTertiaryTs === false) {
     fwrite(STDERR, "Lifecycle chronology timestamps are not parseable ISO-8601 values\n");
     exit(1);
 }
@@ -111,5 +122,9 @@ if ($descendantSecondaryTs < $suspendTs) {
     fwrite(STDERR, "Secondary descendant lifecycle deny timestamp precedes suspend effective_utc (chronology drift)\n");
     exit(1);
 }
+if ($descendantTertiaryTs < $descendantSecondaryTs) {
+    fwrite(STDERR, "Tertiary descendant lifecycle deny timestamp precedes secondary descendant deny timestamp (timeline matrix drift)\n");
+    exit(1);
+}
 
-echo 'test:contract:lifecycle PASS (routes=2, deny_examples=3, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, descendant_chronology=validated, descendant_multi_actor=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;
+echo 'test:contract:lifecycle PASS (routes=2, deny_examples=4, action_fixtures=feed.items.read+comment.create, lifecycle_example_prefixes=validated, descendant_chronology=validated, descendant_multi_actor=validated, revoke_suspend_timeline_matrix=validated, parity_hook=HOOK-SEC-LIFECYCLE-PROPAGATION)' . PHP_EOL;

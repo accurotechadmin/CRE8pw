@@ -235,6 +235,10 @@ components:
       value: { principal_id: "prn_401", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", ancestor_chain_ref: "anc-root>anc-teamlead>prn_401", lifecycle_state: "revoked" } }
     AuthDecisionRequestMultiAncestorExpired:
       value: { principal_id: "prn_305", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_010", ancestor_chain_ref: "anc-root>anc-teamlead>anc-moderator>prn_305", lifecycle_state: "active", grant_expiry_utc: "2026-04-29T06:09:59Z" } }
+    AuthDecisionRequestIdentityTransitionAllow:
+      value: { principal_id: "prn_501", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", identity_event_ref: "req-ident-issue-rt-001", utility_context_ref: "req-ident-ctx-rt-001", lifecycle_state: "active" } }
+    AuthDecisionRequestIdentityTransitionDeny:
+      value: { principal_id: "prn_503", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", identity_event_ref: "req-ident-issue-rt-003", utility_context_ref: "req-ident-ctx-rt-005", lifecycle_state: "suspended", ancestor_chain_ref: "anc-root>anc-teamlead>prn_503" } }
     AuthDecisionAllow:
       value:
         data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7, ancestor_chain_ref: "anc-root>anc-mid>prn_001" }
@@ -308,5 +312,9 @@ components:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Second descendant blocked after ancestor suspend propagation.", category: LIFECYCLE, request_id: "req-desc-life-002", timestamp_utc: "2026-04-29T06:14:00Z" }
         meta: { request_id: "req-desc-life-002", contract_version: "1.0.0" }
+    ErrorDescendantLifecycleBlockedTertiary:
+      value:
+        error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Third descendant blocked after revoke/suspend matrix propagation.", category: LIFECYCLE, request_id: "req-desc-life-003", timestamp_utc: "2026-04-29T06:15:00Z" }
+        meta: { request_id: "req-desc-life-003", contract_version: "1.0.0" }
 security:
   - cre8Proof: []
