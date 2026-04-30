@@ -73,6 +73,8 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 
 - **HOOK-DATA-MODEL-COVERAGE**: Manual/automation-candidate hook for schema, field, and ERD conformance across data-model canon.
 
+- **HOOK-SEC-THREAT-CONTROL-MATRIX**: Manual/automation-candidate hook validating threat-to-control mappings and header/control coverage across security canon docs.
+
 ## Manual verification procedure (until automation exists)
 1. Run `rg "^doc_id:|^version:|^status:|^owner:|^reviewers:|^last_reviewed_utc:|^next_review_due_utc:|^source_seed_refs:|^normative_dependencies:" docs` and verify each normative file has all required keys.
 2. Run `rg "This scaffold file defines|structured placeholder" docs` and confirm no normative doc contains scaffold placeholder phrases.

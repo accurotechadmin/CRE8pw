@@ -74,6 +74,8 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 
 | HOOK-DATA-MODEL-COVERAGE | PR | Manual schema/ERD conformance walkthrough against DATA_MODEL_SPEC.md, DATA_MODEL_REFERENCE.md, and ERD.md | All CRE8-DATA-REQ-0001..0018 rows verified with no schema/relationship drift | docs/evidence/templates/README.md | Implement automated `composer test:data:model` in P3-S7.4 |
 
+| HOOK-SEC-THREAT-CONTROL-MATRIX | PR | Manual threat-control matrix review across SECURITY_CONTROLS_SPEC.md, SECURITY_HEADERS_AND_CSP_POLICY.md, and SECURITY_THREAT_MODEL.md | Every CRE8-SEC-REQ-0001..0010 row has mapped control evidence and no orphan threat rows | docs/evidence/templates/README.md | Implement automated `composer test:security:threat-controls` in P3-S11.2 |
+
 ## See also
 - [Definition of Done](../00_governance/DEFINITION_OF_DONE.md)
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)

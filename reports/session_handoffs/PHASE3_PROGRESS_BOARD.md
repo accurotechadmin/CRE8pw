@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T07:17:00Z
+- Last updated (UTC): 2026-04-30T07:40:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -131,9 +131,9 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 | P3-S7.1 | `DATA_MODEL_SPEC.md` | complete | Security WG | 2026-06-02 | HOOK-DATA-MODEL-COVERAGE (target) | ADR-004 | (TBD) | Entities + types + indices + sensitivity. |
 | P3-S7.2 | `DATA_MODEL_REFERENCE.md` | complete | Security WG | 2026-06-03 | HOOK-DATA-MODEL-COVERAGE (target) | ADR-004 | (TBD) | PK/UK/FK index. |
 | P3-S7.3 | `ERD.md` | complete | Security WG | 2026-06-03 | HOOK-DATA-MODEL-COVERAGE (target) | ADR-004 | (TBD) | Mermaid ERD. |
-| P3-S7.4 | `SECURITY_CONTROLS_SPEC.md` | not_started | Security WG | 2026-06-04 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Control families with dependencies. |
-| P3-S7.5 | `SECURITY_HEADERS_AND_CSP_POLICY.md` | not_started | Security WG | 2026-06-05 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | HSTS/CSP per surface. |
-| P3-S7.6 | `SECURITY_THREAT_MODEL.md` | not_started | Security WG | 2026-06-06 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | THREAT-### per surface/data flow. |
+| P3-S7.4 | `SECURITY_CONTROLS_SPEC.md` | complete | Security WG | 2026-06-04 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Control families with dependencies. |
+| P3-S7.5 | `SECURITY_HEADERS_AND_CSP_POLICY.md` | complete | Security WG | 2026-06-05 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | HSTS/CSP per surface. |
+| P3-S7.6 | `SECURITY_THREAT_MODEL.md` | complete | Security WG | 2026-06-06 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | THREAT-### per surface/data flow. |
 | P3-S7.7 | `SECURITY_VERIFICATION_ABUSE_CASES.md` | not_started | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Abuse case per threat with hook ID. |
 | P3-S7.8 | New: `CRYPTO_PROFILE.md` | not_started | Security WG | 2026-06-07 | HOOK-SEC-THREAT-CONTROL-MATRIX (target) | ADR-004 | (TBD) | Algs + parameters + deprecation policy. |
 
