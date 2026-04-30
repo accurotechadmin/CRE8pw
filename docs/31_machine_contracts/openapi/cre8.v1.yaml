@@ -233,6 +233,8 @@ components:
       value: { principal_id: "prn_302", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_009", ancestor_chain_ref: "anc-root>anc-teamlead>anc-moderator>prn_302", lifecycle_state: "suspended" } }
     AuthDecisionRequestDescendantPropagation:
       value: { principal_id: "prn_401", action: "feed.items.read", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", ancestor_chain_ref: "anc-root>anc-teamlead>prn_401", lifecycle_state: "revoked" } }
+    AuthDecisionRequestMultiAncestorExpired:
+      value: { principal_id: "prn_305", action: "comment.create", resource_scope: "group:g-123", request_context: { tenant_id: "t-01", surface: "api", target_item_id: "itm_010", ancestor_chain_ref: "anc-root>anc-teamlead>anc-moderator>prn_305", lifecycle_state: "active", grant_expiry_utc: "2026-04-29T06:09:59Z" } }
     AuthDecisionAllow:
       value:
         data: { decision: "allow", decision_reason_code: "ALLOW", evaluated_gate: 7, ancestor_chain_ref: "anc-root>anc-mid>prn_001" }
@@ -280,6 +282,10 @@ components:
       value:
         error: { code: AUTH_DEPTH_EXCEEDED, message: "Delegation depth exceeded at ancestor boundary.", category: AUTH_DENY, request_id: "req-authz-multianc-001", timestamp_utc: "2026-04-29T06:10:00Z" }
         meta: { request_id: "req-authz-multianc-001", contract_version: "1.0.0" }
+    ErrorMultiAncestorGrantExpired:
+      value:
+        error: { code: AUTH_GRANT_EXPIRED, message: "Delegated grant expired at ancestor boundary.", category: AUTH_DENY, request_id: "req-authz-multianc-002", timestamp_utc: "2026-04-29T06:10:01Z" }
+        meta: { request_id: "req-authz-multianc-002", contract_version: "1.0.0" }
     ErrorInteractionLifecycleBlocked:
       value:
         error: { code: AUTH_LIFECYCLE_BLOCKED, message: "Interaction blocked by lifecycle state.", category: LIFECYCLE, request_id: "req-interact-001", timestamp_utc: "2026-04-29T06:10:00Z" }
