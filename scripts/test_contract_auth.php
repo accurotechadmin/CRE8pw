@@ -85,6 +85,12 @@ if (!str_contains($openapi, 'AuthDecisionRequestMultiAncestorExpired')) {
 if (!str_contains($openapi, 'ErrorMultiAncestorGrantExpired')) {
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ErrorMultiAncestorGrantExpired deny fixture for multi-ancestor expiry intersections';
 }
+if (!str_contains($openapi, 'AuthDecisionRequestIdentityTransitionAllow')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing AuthDecisionRequestIdentityTransitionAllow fixture for identity->authz transition parity';
+}
+if (!str_contains($openapi, 'AuthDecisionRequestIdentityTransitionDeny')) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] missing AuthDecisionRequestIdentityTransitionDeny fixture for identity->authz transition parity';
+}
 if (!preg_match('/AuthDecisionRequestMultiAncestorLifecycle:\n\s{6}value:\s\{[^\n]*ancestor_chain_ref:\s"([^"]+)"/m', $openapi, $ancestorMatch)) {
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] missing ancestor_chain_ref in AuthDecisionRequestMultiAncestorLifecycle fixture';
 } elseif (substr_count($ancestorMatch[1], '>') < 3) {
@@ -97,6 +103,12 @@ if (!preg_match('/AuthDecisionRequestMultiAncestorExpired:\n\s{6}value:\s\{[^\n]
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] AuthDecisionRequestMultiAncestorExpired must encode grant_expiry_utc for intersection checks';
 } elseif (strtotime($multiExpiryMatch[1]) === false) {
     $errors[] = '[HOOK-AUTH-INHERITANCE-BOUNDARY] AuthDecisionRequestMultiAncestorExpired grant_expiry_utc must be parseable ISO-8601';
+}
+if (!preg_match('/AuthDecisionRequestIdentityTransitionAllow:\n\s{6}value:\s\{[^\n]*identity_event_ref:\s"(req-ident-issue-rt-[0-9]{3})"[^\n]*utility_context_ref:\s"(req-ident-ctx-rt-[0-9]{3})"/m', $openapi)) {
+    $errors[] = '[HOOK-CONTRACT-POLICY-ORDER] AuthDecisionRequestIdentityTransitionAllow must reference replay-safe identity issuance/context fixtures';
+}
+if (!preg_match('/AuthDecisionRequestIdentityTransitionDeny:\n\s{6}value:\s\{[^\n]*identity_event_ref:\s"(req-ident-issue-rt-[0-9]{3})"[^\n]*lifecycle_state:\s"suspended"/m', $openapi)) {
+    $errors[] = '[HOOK-AUTH-LIFECYCLE-ENFORCEMENT] AuthDecisionRequestIdentityTransitionDeny must include suspended lifecycle transition fixture';
 }
 
 $policyDecisionSchemaPath = dirname(__DIR__) . '/docs/31_machine_contracts/schemas/policy-decision.schema.json';
