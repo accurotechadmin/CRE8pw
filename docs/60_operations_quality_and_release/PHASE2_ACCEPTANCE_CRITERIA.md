@@ -62,3 +62,8 @@ Define executable acceptance gates for Phase 2 machine-contract lock-in so closu
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [Phase 2 Progress Board](../../reports/session_handoffs/PHASE2_PROGRESS_BOARD.md)
 - [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
+
+
+## Phase 3 supersession path
+
+Upon completion of Phase 3 M11.3, `composer phase3:final-acceptance-bundle` MUST run as a superset gate over this Phase 2 bundle.
