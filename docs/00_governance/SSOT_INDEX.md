@@ -82,3 +82,6 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [Webhook And Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)
 
 - [Audience Group Spec](../50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md)
+
+- [Migration and Seed Strategy](../60_operations_quality_and_release/MIGRATION_AND_SEED_STRATEGY.md)
+- [Observability Event Catalog](../60_operations_quality_and_release/OBSERVABILITY_EVENT_CATALOG.md)
