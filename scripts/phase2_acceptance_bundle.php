@@ -8,6 +8,7 @@ $commands = [
     'composer docs:ssot:report',
     'composer docs:ssot:route-parity',
     'composer docs:ssot:review-gate-check',
+    'composer docs:ssot:phase2-exceptions-check',
     'composer test:contract:auth',
     'composer test:contract:feed',
     'composer test:contract:lifecycle',

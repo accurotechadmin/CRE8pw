@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-OPS-VERIFICATION-STRATEGY
-version: 1.4.0
+version: 1.5.0
 status: provisional-normative
 owner: Operations Quality WG
 reviewers:
   - Security WG
   - Program Traceability WG
-last_reviewed_utc: 2026-04-29
+last_reviewed_utc: 2026-04-30
 next_review_due_utc: 2026-05-29
 source_seed_refs:
   - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
@@ -64,6 +64,7 @@ Define mandatory verification hook structure, execution policy, and evidence exp
 | HOOK-SEC-LIFECYCLE-PROPAGATION | PR | `composer test:contract:lifecycle` | Runtime lifecycle propagation deny coverage requires lifecycle suspend/revoke route fixtures plus interaction lifecycle-blocked deny fixtures and parity hook linkage checks. | reports/ssot/coverage_latest.json; reports/session_handoffs/LATEST_SESSION_HANDOFF.md | Implemented as `test:contract:lifecycle` |
 | HOOK-EXT-SEAM-COMPATIBILITY | PR | `composer docs:ssot:sync-check` | Trace row for seam compatibility exists and verification mode is `automated` | reports/ssot/coverage_latest.json | Extend with module seam contract fixture suite |
 | HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE | PR | `composer phase2:acceptance-bundle` | Bundle hard-fails on any failed SSOT/contract command in Phase 2 acceptance command contract | reports/ssot/coverage_latest.json; reports/session_handoffs/LATEST_SESSION_HANDOFF.md | Implemented as `phase2:acceptance-bundle` |
+| HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA | PR | `composer docs:ssot:phase2-exceptions-check` | Unresolved exceptions register rows satisfy ID/status/due-date/decision-ref schema and open/blocked command obligations | reports/ssot/coverage_latest.json; docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md | Implemented as `docs:ssot:phase2-exceptions-check` |
 
 
 ## See also

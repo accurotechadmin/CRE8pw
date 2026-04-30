@@ -74,6 +74,7 @@
     "test:contract:identity-context": "@php scripts/test_contract_identity_context.php",
     "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
     "docs:ssot:pr-evidence-check": "@php scripts/docs_ssot_pr_evidence_check.php",
+    "docs:ssot:phase2-exceptions-check": "@php scripts/docs_ssot_phase2_exceptions_check.php",
     "test:contract:lifecycle": "@php scripts/test_contract_lifecycle.php"
   }
 }

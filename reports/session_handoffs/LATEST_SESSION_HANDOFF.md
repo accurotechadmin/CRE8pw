@@ -1,8 +1,8 @@
 # Latest Phase 2 Session Handoff
 
-Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0054.md`
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260430-0100.md`
 
 Summary:
-- Added deterministic lifecycle chronology assertions in `scripts/test_contract_lifecycle.php` to enforce descendant deny timing relative to revoke effective timestamps.
-- Added multi-ancestor fixture invariants in `scripts/test_contract_auth.php` (minimum ancestor depth encoding plus required suspended lifecycle state).
-- Refreshed Phase 2 discoverability artifacts while preserving ADR-003 constraints.
+- Added canonical Phase 2 unresolved-exceptions register with deterministic row schema and ADR-linked residual ownership.
+- Added executable hook `HOOK-SSOT-PHASE2-EXCEPTION-REGISTER-SCHEMA` via `composer docs:ssot:phase2-exceptions-check`, now enforced inside `composer phase2:acceptance-bundle`.
+- Updated acceptance/traceability strategy artifacts and refreshed discoverability pointers with passing bundle evidence.
