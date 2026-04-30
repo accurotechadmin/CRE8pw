@@ -1,7 +1,58 @@
+---
+doc_id: CRE8-ARCH-REQUEST-PIPELINE
+version: 1.0.0
+status: normative
+owner: Platform Architecture WG
+reviewers:
+  - API Contracts WG
+  - Identity & Policy WG
+last_reviewed_utc: 2026-04-30
+next_review_due_utc: 2026-07-30
+source_seed_refs:
+  - seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md
+  - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
+  - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
+normative_dependencies:
+  - docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md
+  - docs/10_product_and_architecture/DEPENDENCY_BASELINE.md
+  - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
+  - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+---
+
 # Request Pipeline And Middleware Contract
 
-This scaffold file defines the authoritative scope, boundaries, and eventual normative obligations for **REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md** within the CRE8 SSOT corpus. In its mature form, this document will move beyond placeholder prose into deterministic MUST/SHOULD requirements, explicit invariants, and versioned change history aligned to the ID-keypair and Utility-keypair architecture. It will also include tight cross-references to adjacent canon documents so that implementation teams, auditors, and automated validation routines can trace every requirement to a coherent system-level contract.
+## Normative requirements
+- **CRE8-ARCH-REQ-0031**: The runtime request pipeline **MUST** execute in this order: transport/security headers, request-id correlation, input parsing, authentication proof verification, authorization decision gate, handler execution, envelope rendering, and structured error mapping. This ordering is enforced by `slim/slim` middleware sequencing and `slim/psr7` immutable message flow.
+- **CRE8-ARCH-REQ-0032**: Protected routes **MUST** deny before handler invocation when authentication or authorization fails. Handlers **MUST NOT** perform independent allow/deny branching. This behavior is enforced by `slim/slim` middleware dispatch and policy evaluation contract binding.
+- **CRE8-ARCH-REQ-0033**: Authentication middleware **MUST** validate `public_key_id`, `timestamp`, `nonce`, and `signature` before authorization middleware executes. Validation logic is enforced by `ext-sodium` cryptographic primitives and `respect/validation` request validation constraints.
+- **CRE8-ARCH-REQ-0034**: Authorization middleware **MUST** call the centralized policy decision point once per protected request and **MUST** preserve the machine-readable deny reason for downstream error mapping. This behavior is enforced by `php-di/php-di` composition-root wiring and contract verification via `phpunit/phpunit`.
+- **CRE8-ARCH-REQ-0035**: Error mapping middleware **MUST** transform policy deny reasons into canonical error codes defined by `ERROR_CODE_CATALOG.md` without remapping in route handlers. This behavior is enforced by `slim/slim` global error middleware and `phpunit/phpunit` contract tests.
+- **CRE8-ARCH-REQ-0036**: Successful responses **MUST** emit the canonical `{data, meta}` envelope and denied/failed responses **MUST** emit `{error, meta}` with `meta.request_id` continuity. This behavior is enforced by `slim/psr7` response immutability and route-contract tests in `phpunit/phpunit`.
+- **CRE8-ARCH-REQ-0037**: Pipeline components **MUST** emit structured audit/application logs containing the shared correlation/request identifier at each security-significant stage. This behavior is enforced by `monolog/monolog`; no additional Composer dependency is required.
 
-When fully authored, this artifact will include concrete data structures, decision rules, and failure semantics where applicable, plus examples that demonstrate how policy and contract behavior must appear across console, gateway, and supporting machine interfaces. It will define how dependency baselines (routing, validation, crypto, persistence, observability, and tests) bind to this domain so the document is actionable for engineering, not merely descriptive. Maturity criteria will include testability, edge-case coverage, and explicit reconciliation with seed-canon truths and legacy assumptions that were intentionally retired.
+## Deterministic middleware contract
 
-This scaffold also reserves space for verification evidence links, operational notes, and change-impact traceability expected by the CRE8 documentation governance model. During expansion to the 100+ document target, this file will serve as a stable anchor for incremental hardening: first narrative intent, then enforceable contracts, then evidence-backed readiness gates. Until then, it should be treated as a structured placeholder that communicates purpose, expected depth, and integration points for the final canonical version.
+| Stage | Purpose | Failure class | Enforcing dependency |
+|---|---|---|---|
+| Transport/security headers | Apply baseline response hardening and CORS policy | `SYSTEM_*` | `neomerx/cors-psr7`, `slim/slim` |
+| Correlation setup | Ensure per-request stable `request_id` | `SYSTEM_*` | `slim/psr7`, `monolog/monolog` |
+| Input parsing/validation | Validate required fields and shapes | `INPUT_*` | `respect/validation`, `slim/psr7` |
+| Authentication proof verify | Verify signature/timestamp/nonce | `AUTHN_*` | `ext-sodium`, `firebase/php-jwt` |
+| Authorization decision | Resolve allow/deny from PDP | `AUTH_DENY_*` | `php-di/php-di`, `slim/slim` |
+| Handler execution | Apply business side-effects only | route-specific | `slim/slim` |
+| Envelope + error rendering | Emit canonical response contract | all | `slim/psr7`, `slim/slim` |
+
+## Prohibited behaviors
+- Handler-local authorization branching.
+- Handler-local remapping of canonical deny reasons.
+- Mutation of `request_id` between middleware stages.
+- Bypassing middleware chain for protected routes.
+
+## See also
+- `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
+- `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`
+- `docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`
+
+## Change history
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slices P3-S3.3/P3-S3.5/P3-S3.6. Change Impact Map: [`reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`](../../reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md).

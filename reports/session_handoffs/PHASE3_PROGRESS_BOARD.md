@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-04-30T05:58:00Z
+- Last updated (UTC): 2026-04-30T06:06:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -90,10 +90,10 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 |---|---|---|---|---|---|---|---|---|
 | P3-S3.1 | `CANONICAL_TERMINOLOGY.md` (full glossary) | complete | Platform Architecture WG | 2026-05-15 | HOOK-GLOSSARY-COMPLETENESS (target); HOOK-SSOT-GLOSSARY-COVERAGE (target) | ADR-004 | `docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`; `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md` | Canonical glossary authored with 88 terms and prohibited alias registry; lint hard-pass enabled. |
 | P3-S3.2 | `ARCHITECTURE_AND_SURFACES.md` | complete | Platform Architecture WG | 2026-05-17 | HOOK-CONTRACT-SURFACE-PARITY | ADR-004 | `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`; `reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md` | Normative surface contract authored with CRE8-ARCH-REQ-0010..0016 and trace rows. |
-| P3-S3.3 | `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` | not_started | Platform Architecture WG | 2026-05-19 | HOOK-CONTRACT-ERROR-DETERMINISM; HOOK-CONTRACT-POLICY-ORDER | ADR-004 | (TBD) | Middleware order + handler-local-auth prohibition. |
+| P3-S3.3 | `REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` | complete | Platform Architecture WG | 2026-05-19 | HOOK-CONTRACT-ERROR-DETERMINISM; HOOK-CONTRACT-POLICY-ORDER | ADR-004 | `docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`; `reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md` | Normative middleware ordering and handler prohibition authored. |
 | P3-S3.4 | `DEPENDENCY_BASELINE.md` | complete | Platform Architecture WG | 2026-05-17 | HOOK-SSOT-COMPAT-DECLARATION | ADR-004 | `docs/10_product_and_architecture/DEPENDENCY_BASELINE.md`; `reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md` | Normative dependency baseline authored with CRE8-ARCH-REQ-0020..0030 and trace rows. |
-| P3-S3.5 | `CRE8_PRODUCT_AND_SYSTEM_SPEC.md` | not_started | Platform Architecture WG | 2026-05-18 | HOOK-CONTRACT-SURFACE-PARITY | ADR-004 | (TBD) | CAP-* IDs from UI runtime contract. |
-| P3-S3.6 | `CRE8_HUMAN_OPERATING_MODEL.md` | not_started | Platform Architecture WG | 2026-05-18 | HOOK-SSOT-OWNER-PRESENCE | ADR-004 | (TBD) | WG ownership matrix. |
+| P3-S3.5 | `CRE8_PRODUCT_AND_SYSTEM_SPEC.md` | complete | Platform Architecture WG | 2026-05-18 | HOOK-CONTRACT-SURFACE-PARITY | ADR-004 | `docs/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`; `reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md` | Product/system invariants hardened from scaffold to normative requirements. |
+| P3-S3.6 | `CRE8_HUMAN_OPERATING_MODEL.md` | complete | Platform Architecture WG | 2026-05-18 | HOOK-SSOT-OWNER-PRESENCE | ADR-004 | `docs/10_product_and_architecture/CRE8_HUMAN_OPERATING_MODEL.md`; `reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md` | Human operating model published with ownership/traceability obligations. |
 
 ### M4 — Identity, delegation, and policy depth
 
