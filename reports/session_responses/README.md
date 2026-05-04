@@ -35,6 +35,13 @@ A response archive should include (as applicable):
 - Start from `reports/session_handoffs/LATEST_SESSION_HANDOFF.md` to locate the newest linked handoff.
 - Sort filenames lexicographically to get chronological order.
 
+
+## Indexed synthesized references
+
+- `20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
+  - Purpose: expands `seed/seed-intro.md` into an attribute map and cross-links each attribute to seed companions and live `docs/` SSOT coverage.
+  - Use case: fast traceability checks during seed-promotion and gap-review sessions.
+
 ## Related references
 
 - Reports root: `../README.md`

@@ -39,6 +39,12 @@ A complete session record usually consists of:
 - Treat historical session records as append-only.
 - Do not commit secrets or production credentials.
 
+
+## Reference updates
+
+- Master index: `../master_index.md`
+- Seed-intro attribute crosswalk (synthesized): `session_responses/20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
+
 ## Related references
 
 - Project root orientation: `../README.md`
