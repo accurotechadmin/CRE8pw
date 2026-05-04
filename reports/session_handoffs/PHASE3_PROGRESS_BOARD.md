@@ -201,6 +201,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260504-1816.md`](SESSION_HANDOFF_20260504-1816.md) — Phase 4 kickoff session executed P4-S1.1/P4-S1.2 contiguous batch; Phase 4 tracking artifacts initialized.
 1. [`SESSION_HANDOFF_20260504-1715.md`](SESSION_HANDOFF_20260504-1715.md) — Phase-state formally transitioned from active to closed maintenance cadence; closure artifacts only and periodic drift/acceptance revalidation cadence ratified.
 1. [`SESSION_HANDOFF_20260504-1659.md`](SESSION_HANDOFF_20260504-1659.md) — One-slice exception authorized; P3-S6.1 completed via schema-closure depth pass and traceability/evidence artifacts updated.
 1. [`SESSION_HANDOFF_20260501-1423.md`](SESSION_HANDOFF_20260501-1423.md) — Blocked per batch-size constraint: only one incomplete contiguous slice remains (`P3-S6.1`); blocker report `PHASE3_BLOCKER_20260501-1423.md` published and baseline acceptance revalidated.
@@ -225,6 +226,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
+1. [`reports/session_responses/20260504-1816_RESPONSE.md`](../session_responses/20260504-1816_RESPONSE.md) — Phase 4 kickoff session response archive.
 1. [`reports/session_responses/20260504-1715_RESPONSE.md`](../session_responses/20260504-1715_RESPONSE.md) — Closure/maintenance transition response archive.
 1. [`reports/session_responses/20260504-1659_RESPONSE.md`](../session_responses/20260504-1659_RESPONSE.md) — One-slice exception execution response archive for P3-S6.1 closure-depth completion.
 1. [`reports/session_responses/20260501-1423_RESPONSE.md`](../session_responses/20260501-1423_RESPONSE.md) — Blocked-session response archive (no unblocked contiguous 2–5 slice batch).
