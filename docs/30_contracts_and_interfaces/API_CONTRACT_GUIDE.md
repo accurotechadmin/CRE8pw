@@ -53,6 +53,8 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Validate multi-page feed fixtures preserve strict cursor monotonicity across sequential pages.
 - **HOOK-CONTRACT-FEED-CURSOR-GRAMMAR**: Validate feed cursor fixtures conform to `pub:<ISO8601 UTC>|<item_id>` grammar and executable page-link equality rules.
 
+- **CRE8-CONTRACT-REQ-0056**: Authorization decision and lifecycle endpoints MUST preserve deterministic deny semantics between prose examples, route inventory `error_code_set`, parity-table `error_codes`, and OpenAPI examples; drift in any surface MUST block merge until synchronized in the same patch.
+
 ## Drift notes
 - OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.
 
@@ -72,4 +74,4 @@ See also: [UI Runtime Contract](./UI_RUNTIME_CONTRACT.md).
 Change Impact Map: [`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
 
 
-- Contract versioning policy: `../31_machine_contracts/CONTRACT_VERSION_POLICY.md`
+- Contract versioning policy: [Contract Version Policy](../31_machine_contracts/CONTRACT_VERSION_POLICY.md)

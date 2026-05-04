@@ -78,3 +78,16 @@ Define canonical API error envelope and stable error-code semantics for determin
 ## Change history
 
 - 2026-05-04 (v1.2.0): Added `AUTH_DENY_PERMISSION_UNKNOWN` to align permission-vocabulary unknown-token deny semantics with canonical error catalog during Phase 4 slice P4-S2.2.
+
+
+## Envelope and endpoint-context mapping
+- **CRE8-CONTRACT-REQ-0007**: Every catalog code **MUST** map to `#/components/schemas/ErrorEnvelope` in OpenAPI and **MUST** be referenced by at least one endpoint context in `ROUTE_INVENTORY_REFERENCE.md` or `PROSE_OPENAPI_PARITY_TABLE.md`.
+- **CRE8-CONTRACT-REQ-0008**: Authorization deny codes (`AUTH_DENY_*`) **MUST** only appear on routes that declare delegated-policy evaluation and **MUST NOT** be emitted by unauthenticated bootstrap routes.
+
+| code family | openapi schema ref | endpoint context families |
+|---|---|---|
+| AUTH_DENY_* | `#/components/schemas/ErrorEnvelope` | `auth_decision`, `feed_audience`, `key_lifecycle`, `comment_interaction`, `post_management` |
+| AUTHN_* | `#/components/schemas/ErrorEnvelope` | all authenticated route families |
+| INPUT_* | `#/components/schemas/ErrorEnvelope` | all routes with request/query validation |
+| LIFECYCLE_* | `#/components/schemas/ErrorEnvelope` | `key_lifecycle`, delegated interaction routes |
+| SYSTEM_* | `#/components/schemas/ErrorEnvelope` | all route families |
