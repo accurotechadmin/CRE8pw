@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:46:00Z
+- Last updated (UTC): 2026-05-04T22:20:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -62,10 +62,10 @@
 | P4-S5.2 | complete | Feed ranking constraints aligned with canonical auth precedence and feed permission token requirements. |
 | P4-S5.3 | complete | Interaction/comment policy now covers full moderation and authorization branch ordering with deterministic deny code mapping. |
 | P4-S5.4 | complete | Feed-generation edge-case failure semantics for lifecycle, scope, and moderation branches now codified in interaction policy deny matrix. |
-| P4-S5.5 | not_started |  |
+| P4-S5.5 | complete | Feed/content rules now require explicit route-example and OpenAPI schema/example anchor linkage for feed and interaction families. |
 
 ### M6..M8
-- All slices not_started.
+- M6 started: P4-S6.1 complete; remaining slices not_started.
 
 ## Quick links
 - Latest handoff: [`SESSION_HANDOFF_20260504-2146.md`](SESSION_HANDOFF_20260504-2146.md)
