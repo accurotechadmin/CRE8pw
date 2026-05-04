@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:27:00Z
+- Last updated (UTC): 2026-05-04T21:33:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -52,12 +52,12 @@
 | P4-S4.2 | complete | Lifecycle-control operational verification chain requirement + hook mapping completed. |
 | P4-S4.3 | complete | Security headers/CSP requirements reconciled with runtime pipeline ordering and contract deny semantics. |
 | P4-S4.4 | complete | Security controls now require explicit error/observability cross-link closure for externally visible outcomes. |
-| P4-S4.5 | not_started | Pending. |
-| P4-S4.6 | not_started | Pending. |
+| P4-S4.5 | complete | Security controls cross-linked to API error behaviors and observability events now require explicit abuse-case mapping closure. |
+| P4-S4.6 | complete | Abuse-case matrix now includes mitigation ownership and evidence location fields; unmapped rows require bounded Phase 4 exceptions. |
 
 ### M5..M8
 - All slices not_started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2122.md`](SESSION_HANDOFF_20260504-2122.md)
-- Latest response archive: [`../session_responses/20260504-2122_RESPONSE.md`](../session_responses/20260504-2122_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2133.md`](SESSION_HANDOFF_20260504-2133.md)
+- Latest response archive: [`../session_responses/20260504-2133_RESPONSE.md`](../session_responses/20260504-2133_RESPONSE.md)
