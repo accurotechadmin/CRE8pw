@@ -1,13 +1,13 @@
 ---
 doc_id: CRE8-AUTH-DELEGATION-SPEC
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: Identity & Policy WG
 reviewers:
   - Security WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-04-30
-next_review_due_utc: 2026-05-13
+last_reviewed_utc: 2026-05-04
+next_review_due_utc: 2026-07-30
 source_seed_refs:
   - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
   - README.md
@@ -31,6 +31,7 @@ Define deterministic authorization and delegation behavior for CRE8 policy evalu
 - **CRE8-AUTH-REQ-0004**: Authorization denials **MUST** map to stable machine-readable error codes defined in `ERROR_CODE_CATALOG.md`. Runtime enforcement dependency: contract tests implemented via `phpunit/phpunit`; no additional Composer dependency applies to the mapping table itself.
 - **CRE8-AUTH-REQ-0005**: Delegation operations **MUST** emit provenance records containing delegator principal, delegate principal, inherited constraints, resulting effective constraints, and timestamp. Runtime enforcement dependency: persistence adapter (`ext-pdo`) for durable provenance storage and `phpunit/phpunit` verification.
 - **CRE8-AUTH-REQ-0006**: Credential lifecycle changes (`suspend`, `revoke`, `expire`) **MUST** be enforced on subsequent authorization decisions with no grace bypass path unless explicitly defined by normative emergency policy. Runtime enforcement dependency: `ext-pdo` for lifecycle state persistence, `slim/slim` middleware execution path, and `phpunit/phpunit` tests.
+- **CRE8-AUTH-REQ-0007**: Conflicting policy signals **MUST** resolve by precedence order `explicit_deny > scope_constraint_deny > permission_missing_deny > delegated_allow > direct_allow`; when both direct and delegated allows are present, the decision record **MUST** mark `allow_source=direct` and retain delegated context as supplemental provenance. Runtime enforcement dependency: `slim/slim` policy decision middleware and `phpunit/phpunit` precedence fixtures.
 
 ## Decision outputs
 - Allow/deny outputs MUST be reproducible from persisted policy state and request context.
@@ -56,4 +57,5 @@ Define deterministic authorization and delegation behavior for CRE8 policy evalu
 
 ## Change history
 
+- 2026-05-04 (v1.2.0): Completed Phase 4 slice P4-S2.5 by adding deterministic conflicting-signal precedence rules and direct-vs-delegated allow provenance requirements.
 - 2026-04-30 (v1.1.0): Reconciled canonical authorization gate order with decision tables for P3-S1.1 and added runtime dependency citations. Change Impact Map: [`reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md`](../../reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md).
