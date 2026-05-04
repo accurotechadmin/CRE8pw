@@ -29,6 +29,7 @@ Define deterministic migration and seed execution policy for CRE8 persistence st
 - **CRE8-OPS-REQ-0045**: Seed datasets **MUST** be partitioned into `baseline`, `test-fixture`, and `demo` classes, and production execution **MUST** allow only `baseline` seeds.
 - **CRE8-OPS-REQ-0046**: Every migration batch **MUST** emit immutable execution evidence (batch id, migration ids, checksum set, start/end UTC, actor, outcome) to release artifacts for audit linkage.
 - **CRE8-OPS-REQ-0047**: Blue/green or zero-downtime releases **MUST** apply expand-and-contract sequencing (additive schema first, code cutover second, cleanup last) and **MUST NOT** remove columns/tables until one stable release after cutover.
+- **CRE8-OPS-REQ-0078**: Migration plans **MUST** include a data-contract impact declaration that maps each schema mutation to affected OpenAPI operations, JSON Schemas, and route-parity rows; release promotion **MUST** fail closed when any affected contract artifact update is missing.
 
 ## Migration execution contract
 | Stage | Required action | Failure response |
@@ -51,6 +52,7 @@ Define deterministic migration and seed execution policy for CRE8 persistence st
 |---|---|
 | `HOOK-SEC-LIFECYCLE-PROPAGATION` | Verifies lifecycle state propagation remains deterministic across migrated datasets. |
 | `HOOK-SSOT-COMMAND-EXIT-SEMANTICS` | Verifies migration and seed smoke commands fail/exit deterministically under acceptance-bundle execution. |
+| `HOOK-CONTRACT-ROUTE-INVENTORY-PARITY` | Verifies migration-impact declarations map schema mutations to synchronized route inventory, OpenAPI, and parity artifacts. |
 
 Change Impact Map: `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`.
 

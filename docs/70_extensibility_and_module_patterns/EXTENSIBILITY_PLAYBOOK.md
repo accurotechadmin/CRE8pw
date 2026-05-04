@@ -28,6 +28,7 @@ Define the mandatory workflow for adding new CRE8 modules without violating dele
 - **CRE8-EXT-REQ-0009**: Module routes **MUST** be bound through `slim/slim` route groups that preserve canonical middleware ordering and **MUST NOT** bypass authorization middleware.
 - **CRE8-EXT-REQ-0010**: Any new module API surface **MUST** add or update OpenAPI operations, JSON Schemas, route inventory rows, and prose parity rows in the same patch.
 - **CRE8-EXT-REQ-0011**: Each module change **MUST** register or reuse verification hooks and **MUST** add traceability rows for every new requirement in the same change set.
+- **CRE8-EXT-REQ-0027**: Extension patches **MUST NOT** weaken canonical identity, delegation, lifecycle, data-classification, or cryptographic controls; any attempted override **MUST** be rejected unless an ADR-approved exception with explicit expiry is present.
 
 ## Required extension workflow
 | Step | Required artifact | Pass condition |
@@ -47,7 +48,7 @@ Define the mandatory workflow for adding new CRE8 modules without violating dele
 ## Verification hooks
 | Hook ID | Enforcement |
 |---|---|
-| `HOOK-EXT-SEAM-COMPATIBILITY` | Validates seam declaration, DI registration, route binding order, and PDP-preservation assertions. |
+| `HOOK-EXT-SEAM-COMPATIBILITY` | Validates seam declaration, DI registration, route binding order, PDP-preservation assertions, and non-overridable core-control enforcement. |
 
 Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`.
 
