@@ -38,7 +38,7 @@ normative_dependencies:
 | `HOOK-SSOT-COMMAND-EXIT-SEMANTICS` | Startup command chain returns non-zero on failure and zero only on fully ready completion. |
 | `HOOK-SSOT-LINT-METADATA` | Ensures this contract remains in normative metadata compliance. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`](reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md).
 
 ## See also
 - [Configuration Environment Contract](./CONFIGURATION_ENVIRONMENT_CONTRACT.md)

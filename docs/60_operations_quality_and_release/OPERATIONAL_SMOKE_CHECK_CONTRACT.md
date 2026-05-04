@@ -36,7 +36,7 @@ normative_dependencies:
 | `HOOK-SSOT-COMMAND-EXIT-SEMANTICS` | Validates deterministic zero/non-zero smoke command exits. |
 | `HOOK-SSOT-PHASE2-ACCEPTANCE-BUNDLE` | Ensures smoke semantics remain compatible with bundle-level gating. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`](reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md).
 
 ## See also
 - [Health Endpoint Contract](./HEALTH_ENDPOINT_CONTRACT.md)

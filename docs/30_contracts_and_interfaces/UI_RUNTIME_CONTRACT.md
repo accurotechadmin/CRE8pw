@@ -23,10 +23,10 @@ normative_dependencies:
 Define deterministic cross-surface parity requirements between Owner Console and API/Gateway for supported CRE8 capabilities.
 
 ## Normative requirements
-- **CRE8-CONTRACT-REQ-0030**: Every capability marked `supported` in Owner Console **MUST** declare a canonical API route mapping in `ROUTE_INVENTORY_REFERENCE.md`, unless explicitly classified `ui_only` with documented justification.
+- **CRE8-CONTRACT-REQ-0030**: Every capability marked `supported` in Owner Console **MUST** declare a canonical API route mapping in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md), unless explicitly classified `ui_only` with documented justification.
 - **CRE8-CONTRACT-REQ-0031**: Authorization prerequisites (permission, scope, lifecycle preconditions) for parity-mapped UI actions **MUST** match API contract declarations.
 - **CRE8-CONTRACT-REQ-0032**: Any intentional parity exception **MUST** include `exception_class`, `justification`, `owner`, and `review_due_utc`, and **MUST** be listed in release-impact notes.
-- **CRE8-CONTRACT-REQ-0033**: UI-surfaced error states for parity-mapped capabilities **MUST** map to canonical API error codes from `ERROR_CODE_CATALOG.md`.
+- **CRE8-CONTRACT-REQ-0033**: UI-surfaced error states for parity-mapped capabilities **MUST** map to canonical API error codes from [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md).
 
 
 ## Surface capability parity matrix

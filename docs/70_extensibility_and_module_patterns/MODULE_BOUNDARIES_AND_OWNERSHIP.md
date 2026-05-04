@@ -38,7 +38,7 @@ Define mandatory extension seam constraints so CRE8 modules can add capability w
 ## Drift notes
 - Seed prose suggested baseline dependency choices with SHOULD-level phrasing; this canon converts seam invariants and compatibility declarations into merge-gating MUST requirements.
 
-Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`](reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md).
 
 ## See also
 - [Extensibility Playbook](./EXTENSIBILITY_PLAYBOOK.md)

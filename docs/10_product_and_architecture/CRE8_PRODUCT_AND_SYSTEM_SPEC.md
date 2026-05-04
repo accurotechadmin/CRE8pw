@@ -37,9 +37,9 @@ normative_dependencies:
 5. Immutable provenance and verification-ready evidence production.
 
 ## See also
-- `docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
-- `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`
-- `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
+- [`docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`](docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md)
+- [`docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`](docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md)
+- [`docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 
 ## Change history
-- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slices P3-S3.3/P3-S3.5/P3-S3.6. Change Impact Map: [`reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`](../../reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md).
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slices P3-S3.3/P3-S3.5/P3-S3.6. Change Impact Map: [[`reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`](reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md)](../../reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md).

@@ -6,13 +6,13 @@ This directory contains reusable templates for capturing verification evidence i
 
 | Template | Typical scope |
 |---|---|
-| `CONTRACT_SCHEMA_EXAMPLE_EVIDENCE_TEMPLATE.md` | Schema coverage / example coverage and related contract checks |
-| `DATA_MODEL_EVIDENCE_TEMPLATE.md` | Data model verification evidence |
-| `EVENT_CATALOG_EVIDENCE_TEMPLATE.md` | Observability event catalog coverage |
-| `FEED_CONTRACT_EVIDENCE_TEMPLATE.md` | Feed behavior and contract verification |
-| `IDENTITY_POLICY_EVIDENCE_TEMPLATE.md` | Identity/delegation/policy hooks |
-| `RELEASE_GATES_EVIDENCE_TEMPLATE.md` | Release gate and operations readiness checks |
-| `SECURITY_THREAT_CONTROL_EVIDENCE_TEMPLATE.md` | Threat-to-control verification evidence |
+| [`CONTRACT_SCHEMA_EXAMPLE_EVIDENCE_TEMPLATE.md`](CONTRACT_SCHEMA_EXAMPLE_EVIDENCE_TEMPLATE.md) | Schema coverage / example coverage and related contract checks |
+| [`DATA_MODEL_EVIDENCE_TEMPLATE.md`](DATA_MODEL_EVIDENCE_TEMPLATE.md) | Data model verification evidence |
+| [`EVENT_CATALOG_EVIDENCE_TEMPLATE.md`](EVENT_CATALOG_EVIDENCE_TEMPLATE.md) | Observability event catalog coverage |
+| [`FEED_CONTRACT_EVIDENCE_TEMPLATE.md`](FEED_CONTRACT_EVIDENCE_TEMPLATE.md) | Feed behavior and contract verification |
+| [`IDENTITY_POLICY_EVIDENCE_TEMPLATE.md`](IDENTITY_POLICY_EVIDENCE_TEMPLATE.md) | Identity/delegation/policy hooks |
+| [`RELEASE_GATES_EVIDENCE_TEMPLATE.md`](RELEASE_GATES_EVIDENCE_TEMPLATE.md) | Release gate and operations readiness checks |
+| [`SECURITY_THREAT_CONTROL_EVIDENCE_TEMPLATE.md`](SECURITY_THREAT_CONTROL_EVIDENCE_TEMPLATE.md) | Threat-to-control verification evidence |
 
 ## What each filled template should capture
 
@@ -40,7 +40,7 @@ This directory contains reusable templates for capturing verification evidence i
 
 ## Related references
 
-- Evidence root: `../README.md`
-- Automation mapping: `../automation/README.md`
-- Verification strategy: `../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-- Traceability matrix: `../../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
+- Evidence root: [`../README.md`](../README.md)
+- Automation mapping: [`../automation/README.md`](../automation/README.md)
+- Verification strategy: [`../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- Traceability matrix: [`../../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`](../../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

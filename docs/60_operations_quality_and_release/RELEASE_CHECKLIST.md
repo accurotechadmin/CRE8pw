@@ -51,7 +51,7 @@ Define ordered release gates that MUST execute before canary, GA, or rollback re
 | `HOOK-SSOT-COMMAND-EXIT-SEMANTICS` | Verifies release commands enforce deterministic non-zero exit behavior on failure. |
 
 
-Change Impact Map: `reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`](reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md).
 
 ## See also
 - [Production Readiness Gates](./PRODUCTION_READINESS_GATES.md)

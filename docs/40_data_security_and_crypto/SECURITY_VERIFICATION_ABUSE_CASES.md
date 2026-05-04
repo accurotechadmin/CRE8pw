@@ -21,13 +21,13 @@ normative_dependencies:
 # Security Verification Abuse Cases
 
 ## Normative requirements
-- **CRE8-SECX-REQ-0011**: Every `THREAT-###` entry in `SECURITY_THREAT_MODEL.md` **MUST** map to at least one abuse-case row in this document with a unique `abuse_case_id`.
+- **CRE8-SECX-REQ-0011**: Every `THREAT-###` entry in [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) **MUST** map to at least one abuse-case row in this document with a unique `abuse_case_id`.
 - **CRE8-SECX-REQ-0012**: Every abuse-case row **MUST** include `setup`, deterministic `steps`, expected platform response, expected error code, and verification hook reference.
 - **CRE8-SECX-REQ-0013**: Abuse-case rows for replay and proof-validation threats **MUST** assert nonce/timestamp/signature fail-closed behavior before authorization policy evaluation.
-- **CRE8-SECX-REQ-0014**: Abuse-case rows **MUST** reference canonical error codes from `ERROR_CODE_CATALOG.md`; ad-hoc error identifiers **MUST NOT** be introduced.
-- **CRE8-SECX-REQ-0015**: Verification evidence for every abuse-case execution **MUST** be recorded under `docs/evidence/templates/README.md` using hook-linked artifacts.
+- **CRE8-SECX-REQ-0014**: Abuse-case rows **MUST** reference canonical error codes from [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md); ad-hoc error identifiers **MUST NOT** be introduced.
+- **CRE8-SECX-REQ-0015**: Verification evidence for every abuse-case execution **MUST** be recorded under [`docs/evidence/templates/README.md`](docs/evidence/templates/README.md) using hook-linked artifacts.
 - **CRE8-SECX-REQ-0029**: Every abuse-case row **MUST** declare `mitigation_owner` and `evidence_location` fields; `mitigation_owner` **MUST** reference the accountable working group and `evidence_location` **MUST** resolve to a template or concrete artifact path under `docs/evidence/`.
-- **CRE8-SECX-REQ-0030**: Every abuse-case row **MUST** map to at least one `control_id` from `SECURITY_CONTROLS_SPEC.md`; rows lacking mapped controls **MUST** be treated as unresolved security residuals and entered in the phase exceptions register before release.
+- **CRE8-SECX-REQ-0030**: Every abuse-case row **MUST** map to at least one `control_id` from [`SECURITY_CONTROLS_SPEC.md`](SECURITY_CONTROLS_SPEC.md); rows lacking mapped controls **MUST** be treated as unresolved security residuals and entered in the phase exceptions register before release.
 
 ## Abuse-case matrix
 | abuse_case_id | threat_id | control_id | setup | steps | expected_platform_response | expected_error_code | verification_hook | mitigation_owner | evidence_location |
@@ -43,7 +43,7 @@ normative_dependencies:
 - `monolog/monolog` **MUST** capture deterministic abuse-case verification evidence in structured logs.
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`
+- [`reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`](reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md)
 
 ## See also
 - [Security Threat Model](./SECURITY_THREAT_MODEL.md)

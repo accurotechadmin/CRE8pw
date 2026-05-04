@@ -27,10 +27,10 @@ Define the canonical register format for unresolved exceptions retained while Ph
 - **CRE8-OPS-REQ-0015**: Any unresolved Phase 2 exception retained after acceptance-bundle execution **MUST** be listed in this register before merge.
 - **CRE8-OPS-REQ-0016**: Each exception row **MUST** include `exception_id`, `lane_or_slice`, `owner`, `status`, `due_utc`, `decision_ref`, and `verification_hook_ids`.
 - **CRE8-OPS-REQ-0017**: Rows with `status=open` or `status=blocked` **MUST** include at least one deterministic next verification command in `next_command`.
-- **CRE8-OPS-REQ-0018**: `decision_ref` **MUST** reference an ADR ID or a `DECISION-YYYYMMDD-###` event logged in `DECISIONS_LOG.md`.
-- **CRE8-OPS-REQ-0019**: A row **MUST NOT** transition to `closed` unless supporting evidence path(s) are populated and the related item is removed or marked complete in `PHASE2_PROGRESS_BOARD.md`.
-- **CRE8-OPS-REQ-0020**: `decision_ref` values used in register rows **MUST** exist in `docs/80_traceability_decisions_and_program/DECISIONS_LOG.md` unless prefixed `ADR-` and present in `ADR_INDEX.md`.
-- **CRE8-OPS-REQ-0021**: Rows with `status=closed` **MUST** reference matching `item_id` entry in `PHASE2_PROGRESS_BOARD.md` whose status is `complete`; otherwise validation **MUST** fail.
+- **CRE8-OPS-REQ-0018**: `decision_ref` **MUST** reference an ADR ID or a `DECISION-YYYYMMDD-###` event logged in [`DECISIONS_LOG.md`](DECISIONS_LOG.md).
+- **CRE8-OPS-REQ-0019**: A row **MUST NOT** transition to `closed` unless supporting evidence path(s) are populated and the related item is removed or marked complete in [`PHASE2_PROGRESS_BOARD.md`](PHASE2_PROGRESS_BOARD.md).
+- **CRE8-OPS-REQ-0020**: `decision_ref` values used in register rows **MUST** exist in [`docs/80_traceability_decisions_and_program/DECISIONS_LOG.md`](docs/80_traceability_decisions_and_program/DECISIONS_LOG.md) unless prefixed `ADR-` and present in [`ADR_INDEX.md`](ADR_INDEX.md).
+- **CRE8-OPS-REQ-0021**: Rows with `status=closed` **MUST** reference matching `item_id` entry in [`PHASE2_PROGRESS_BOARD.md`](PHASE2_PROGRESS_BOARD.md) whose status is `complete`; otherwise validation **MUST** fail.
 
 ## Register schema
 | Field | Required | Description |
@@ -56,7 +56,7 @@ Define the canonical register format for unresolved exceptions retained while Ph
 | P2-EXC-004 | Lane B / P2-DB-004 | Product Policy WG | closed | 2026-04-29 | ADR-003 | HOOK-FEED-INTERACTION-DENY-MAPPING |  | reports/session_handoffs/SESSION_HANDOFF_20260429-1252.md; reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md | P2-DB-004 | Closed after feed deny mapping parity hardening reached complete status with deterministic hook evidence. |
 
 ## Change-impact map reference
-- Template: `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
+- Template: [`docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`](docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
 - Session artifact expectation: include a change-impact map when exception rows are added, removed, or status-shifted.
 
 ## Verification hooks

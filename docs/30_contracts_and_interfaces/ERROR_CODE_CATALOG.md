@@ -26,7 +26,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 ## Normative requirements
 - **CRE8-CONTRACT-REQ-0001**: Every non-2xx API response **MUST** use a stable JSON error envelope with fields: `error.code`, `error.message`, `error.category`, `error.request_id`, and `error.timestamp_utc`.
 - **CRE8-CONTRACT-REQ-0002**: Error `code` values **MUST** be globally unique, uppercase snake-case strings, and **MUST NOT** be repurposed with different semantics once published.
-- **CRE8-CONTRACT-REQ-0003**: Authorization and delegation failures **MUST** map to deterministic codes (`AUTH_DENY_*`) bound to policy-deny classes from `AUTHORIZATION_AND_DELEGATION_SPEC.md`.
+- **CRE8-CONTRACT-REQ-0003**: Authorization and delegation failures **MUST** map to deterministic codes (`AUTH_DENY_*`) bound to policy-deny classes from [`AUTHORIZATION_AND_DELEGATION_SPEC.md`](AUTHORIZATION_AND_DELEGATION_SPEC.md).
 - **CRE8-CONTRACT-REQ-0004**: 5xx responses **MUST NOT** expose secrets, key material, stack traces, or internal policy state in `error.message`.
 - **CRE8-CONTRACT-REQ-0005**: Validation failures **SHOULD** include machine-parseable `details[]` entries with field path and violation type.
 - **CRE8-CONTRACT-REQ-0006**: Error catalog updates **MUST** include contract test updates and traceability matrix updates in the same change.
@@ -81,7 +81,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 
 
 ## Envelope and endpoint-context mapping
-- **CRE8-CONTRACT-REQ-0007**: Every catalog code **MUST** map to `#/components/schemas/ErrorEnvelope` in OpenAPI and **MUST** be referenced by at least one endpoint context in `ROUTE_INVENTORY_REFERENCE.md` or `PROSE_OPENAPI_PARITY_TABLE.md`.
+- **CRE8-CONTRACT-REQ-0007**: Every catalog code **MUST** map to `#/components/schemas/ErrorEnvelope` in OpenAPI and **MUST** be referenced by at least one endpoint context in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md) or [`PROSE_OPENAPI_PARITY_TABLE.md`](PROSE_OPENAPI_PARITY_TABLE.md).
 - **CRE8-CONTRACT-REQ-0008**: Authorization deny codes (`AUTH_DENY_*`) **MUST** only appear on routes that declare delegated-policy evaluation and **MUST NOT** be emitted by unauthenticated bootstrap routes.
 
 | code family | openapi schema ref | endpoint context families |

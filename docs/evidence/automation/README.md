@@ -4,7 +4,7 @@ This directory documents how automated SSOT checks generate evidence artifacts a
 
 ## Automation sources
 
-Primary executables live in `scripts/` and are exposed via `composer.json` script aliases.
+Primary executables live in `scripts/` and are exposed via [`composer.json`](composer.json) script aliases.
 
 Key families include:
 
@@ -38,7 +38,7 @@ Key families include:
 
 ## Cross references
 
-- Evidence root: `../README.md`
-- Templates: `../templates/README.md`
-- Verification strategy: `../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-- Automation and linting registry: `../../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md`
+- Evidence root: [`../README.md`](../README.md)
+- Templates: [`../templates/README.md`](../templates/README.md)
+- Verification strategy: [`../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](../../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- Automation and linting registry: [`../../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md`](../../80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md)

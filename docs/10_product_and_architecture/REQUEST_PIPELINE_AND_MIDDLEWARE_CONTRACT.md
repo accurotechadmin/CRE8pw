@@ -27,7 +27,7 @@ normative_dependencies:
 - **CRE8-ARCH-REQ-0032**: Protected routes **MUST** deny before handler invocation when authentication or authorization fails. Handlers **MUST NOT** perform independent allow/deny branching. This behavior is enforced by `slim/slim` middleware dispatch and policy evaluation contract binding.
 - **CRE8-ARCH-REQ-0033**: Authentication middleware **MUST** validate `public_key_id`, `timestamp`, `nonce`, and `signature` before authorization middleware executes. Validation logic is enforced by `ext-sodium` cryptographic primitives and `respect/validation` request validation constraints.
 - **CRE8-ARCH-REQ-0034**: Authorization middleware **MUST** call the centralized policy decision point once per protected request and **MUST** preserve the machine-readable deny reason for downstream error mapping. This behavior is enforced by `php-di/php-di` composition-root wiring and contract verification via `phpunit/phpunit`.
-- **CRE8-ARCH-REQ-0035**: Error mapping middleware **MUST** transform policy deny reasons into canonical error codes defined by `ERROR_CODE_CATALOG.md` without remapping in route handlers. This behavior is enforced by `slim/slim` global error middleware and `phpunit/phpunit` contract tests.
+- **CRE8-ARCH-REQ-0035**: Error mapping middleware **MUST** transform policy deny reasons into canonical error codes defined by [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md) without remapping in route handlers. This behavior is enforced by `slim/slim` global error middleware and `phpunit/phpunit` contract tests.
 - **CRE8-ARCH-REQ-0036**: Successful responses **MUST** emit the canonical `{data, meta}` envelope and denied/failed responses **MUST** emit `{error, meta}` with `meta.request_id` continuity. This behavior is enforced by `slim/psr7` response immutability and route-contract tests in `phpunit/phpunit`.
 - **CRE8-ARCH-REQ-0037**: Pipeline components **MUST** emit structured audit/application logs containing the shared correlation/request identifier at each security-significant stage. This behavior is enforced by `monolog/monolog`; no additional Composer dependency is required.
 
@@ -62,9 +62,9 @@ normative_dependencies:
 | CRE8-ARCH-REQ-0037 | Pipeline logging components | Security-significant middleware stage executes | Correlation ID has been established | Runtime emits structured logs containing shared correlation/request identifier at each stage. |
 
 ## See also
-- `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
-- `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`
-- `docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`
+- [`docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`](docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md)
+- [`docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`](docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md)
+- [`docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`](docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
 
 ## Change history
-- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slices P3-S3.3/P3-S3.5/P3-S3.6. Change Impact Map: [`reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`](../../reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md).
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slices P3-S3.3/P3-S3.5/P3-S3.6. Change Impact Map: [[`reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`](reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md)](../../reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md).

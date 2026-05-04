@@ -25,7 +25,7 @@ Define deterministic outbound and inbound integration patterns for CRE8 extensio
 
 ## Normative requirements
 - **CRE8-EXT-REQ-0012**: Every outbound integration provider **MUST** publish a compatibility declaration that names transport protocol, signature profile, retry class, dead-letter destination, and contract version before traffic is enabled.
-- **CRE8-EXT-REQ-0013**: Outbound request signing **MUST** use the active profile declared in `CRYPTO_PROFILE.md` and **MUST NOT** permit unsigned delivery when the target route is classified `authenticated` in the webhook contract.
+- **CRE8-EXT-REQ-0013**: Outbound request signing **MUST** use the active profile declared in [`CRYPTO_PROFILE.md`](CRYPTO_PROFILE.md) and **MUST NOT** permit unsigned delivery when the target route is classified `authenticated` in the webhook contract.
 - **CRE8-EXT-REQ-0014**: Retry behavior **MUST** use bounded exponential backoff with deterministic max-attempt and max-age limits; terminal failure **MUST** emit a dead-letter event containing request id, provider id, error class, and replay disposition.
 - **CRE8-EXT-REQ-0015**: Inbound integrations **MUST** validate signature/JWKS material before payload parsing and **MUST** fail closed with canonical deny/error mapping on validation failure.
 - **CRE8-EXT-REQ-0016**: Every provider integration **MUST** define executable seam tests for: successful delivery, retryable failure, non-retryable failure, replay rejection, and signature-key rotation.
@@ -60,4 +60,4 @@ Define deterministic outbound and inbound integration patterns for CRE8 extensio
 - [Crypto Profile](../40_data_security_and_crypto/CRYPTO_PROFILE.md)
 
 
-Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`](reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md).

@@ -53,4 +53,4 @@ Define deterministic audience-group entity semantics, ownership authority, membe
 - [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 
-Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`](reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md).

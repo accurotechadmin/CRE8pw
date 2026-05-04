@@ -20,7 +20,7 @@ Phase 4 has advanced to milestone M8 and requires explicit lock conditions for t
 - Risk and seed-promotion trackers must align to active Phase 4 closure posture without references to legacy waiver mechanics.
 
 ## Verification and evidence
-- `docs/80_traceability_decisions_and_program/ADR_INDEX.md`
-- `docs/80_traceability_decisions_and_program/DECISIONS_LOG.md`
-- `docs/80_traceability_decisions_and_program/RISK_REGISTER.md`
-- `docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md`
+- [`docs/80_traceability_decisions_and_program/ADR_INDEX.md`](docs/80_traceability_decisions_and_program/ADR_INDEX.md)
+- [`docs/80_traceability_decisions_and_program/DECISIONS_LOG.md`](docs/80_traceability_decisions_and_program/DECISIONS_LOG.md)
+- [`docs/80_traceability_decisions_and_program/RISK_REGISTER.md`](docs/80_traceability_decisions_and_program/RISK_REGISTER.md)
+- [`docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md`](docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md)

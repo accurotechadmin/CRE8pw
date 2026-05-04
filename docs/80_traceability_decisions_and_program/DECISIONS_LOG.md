@@ -25,7 +25,7 @@ This document defines the append-only operational log for architecture and gover
 - **CRE8-TRACE-REQ-0040**: Decision events **MUST** be append-only; existing rows **MUST NOT** be modified except to correct typographical errors with a correction note.
 - **CRE8-TRACE-REQ-0041**: Every event row **MUST** include `Event ID`, `Timestamp (UTC)`, `ADR ID`, `Event Type`, `Actor`, `Change Summary`, `Impacted Requirement IDs`, and `Evidence Link`.
 - **CRE8-TRACE-REQ-0042**: `Event Type` **MUST** be one of `created`, `status_changed`, `superseded`, `deprecated`, `rollback_invoked`, or `editorial_correction`.
-- **CRE8-TRACE-REQ-0043**: Every `status_changed`, `superseded`, or `deprecated` event **MUST** reference a corresponding row in `ADR_INDEX.md` and **MUST** include prior and new status values in `Change Summary`.
+- **CRE8-TRACE-REQ-0043**: Every `status_changed`, `superseded`, or `deprecated` event **MUST** reference a corresponding row in [`ADR_INDEX.md`](ADR_INDEX.md) and **MUST** include prior and new status values in `Change Summary`.
 - **CRE8-TRACE-REQ-0044**: Events impacting requirements **MUST** include at least one `CRE8-*-REQ-####` identifier and **MUST** trigger traceability-matrix update before merge.
 - **CRE8-TRACE-REQ-0045**: `rollback_invoked` events **MUST** include rollback trigger, scope boundary, and restoration verification evidence path.
 
@@ -58,11 +58,11 @@ This document defines the append-only operational log for architecture and gover
 ## Verification hooks
 - **HOOK-TRACE-DECISION-APPENDONLY**: Assert stable hash for historical rows and detect non-tail edits.
 - **HOOK-TRACE-DECISION-EVENT-TYPE**: Validate event type taxonomy and required fields by event type.
-- **HOOK-TRACE-DECISION-ADR-LINK**: Validate ADR references exist in `ADR_INDEX.md` and target ADR file path resolves.
+- **HOOK-TRACE-DECISION-ADR-LINK**: Validate ADR references exist in [`ADR_INDEX.md`](ADR_INDEX.md) and target ADR file path resolves.
 
 ## Change history
 
-- 2026-04-30 (v1.1.0): Appended `DLOG-20260430-004` event for ADR-004 acceptance (Phase 3 — Canon Completion program charter). Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+- 2026-04-30 (v1.1.0): Appended `DLOG-20260430-004` event for ADR-004 acceptance (Phase 3 — Canon Completion program charter). Change Impact Map: [[`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md)](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
 
 ## See also
 - [ADR Index](./ADR_INDEX.md)

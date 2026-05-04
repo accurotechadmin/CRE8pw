@@ -20,7 +20,7 @@ normative_dependencies:
 
 ## Normative requirements
 - **CRE8-IDPOL-REQ-0006**: Every principal type MUST have an explicit allow/deny determination for every canonical capability row in the matrix; empty cells are prohibited. Enforcement dependency: no direct runtime dependency applies; completeness is governance-verified.
-- **CRE8-IDPOL-REQ-0007**: Every `ALLOW` matrix cell MUST bind to exactly one token from `PERMISSION_VOCABULARY.md`. Enforcement dependency: `phpunit/phpunit` authorization fixtures verify allow-token reachability.
+- **CRE8-IDPOL-REQ-0007**: Every `ALLOW` matrix cell MUST bind to exactly one token from [`PERMISSION_VOCABULARY.md`](PERMISSION_VOCABULARY.md). Enforcement dependency: `phpunit/phpunit` authorization fixtures verify allow-token reachability.
 - **CRE8-IDPOL-REQ-0008**: `UTILITY_AGENT` principals MUST NOT perform ID keypair issuance/rotation/revocation capabilities. Enforcement dependency: `slim/slim` authorization middleware and `phpunit/phpunit` deny fixtures.
 - **CRE8-IDPOL-REQ-0009**: `DELEGATEE` principals MUST be evaluated with grant scope intersection and expiry checks before matrix allow can apply. Enforcement dependency: `symfony/cache`/`symfony/rate-limiter` for grant lookup throttling and `phpunit/phpunit` lifecycle tests.
 
@@ -38,7 +38,7 @@ normative_dependencies:
 | Revoke delegation grant | ALLOW (`delegation.grant.revoke`) | ALLOW (`delegation.grant.revoke`) | ALLOW (`delegation.grant.revoke`) | DENY | CONDITIONAL (`delegation.grant.revoke`) |
 | Inspect delegation grants | ALLOW (`delegation.grant.inspect`) | ALLOW (`delegation.grant.inspect`) | ALLOW (`delegation.grant.inspect`) | DENY | CONDITIONAL (`delegation.grant.inspect`) |
 
-`CONDITIONAL` means allow only when delegation scope and lifecycle state permit the action per `AUTHORIZATION_DECISION_TABLES.md`.
+`CONDITIONAL` means allow only when delegation scope and lifecycle state permit the action per [`AUTHORIZATION_DECISION_TABLES.md`](AUTHORIZATION_DECISION_TABLES.md).
 
 ## Principal taxonomy alignment
 
@@ -52,4 +52,4 @@ Mapping guidance:
 
 ## Change history
 - 2026-05-04 (v1.1.0): Added canonical role-label to principal-token mapping rules to close Phase 4 taxonomy alignment slice P4-S2.1.
-- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.2. Change Impact Map: [`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.2. Change Impact Map: [[`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md)](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).

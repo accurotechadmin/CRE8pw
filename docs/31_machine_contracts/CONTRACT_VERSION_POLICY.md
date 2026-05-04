@@ -26,10 +26,10 @@ Define deterministic semantic-versioning, compatibility classification, and depr
 ## Normative requirements
 - **CRE8-MACHINE-REQ-0100**: Envelope `meta.contract_version` MUST follow `MAJOR.MINOR.PATCH` and MUST be emitted on every success and error response.
 - **CRE8-MACHINE-REQ-0101**: Additive backward-compatible changes (optional field additions, additive enum values, additive endpoints) MUST increment `MINOR` and MUST NOT increment `MAJOR`.
-- **CRE8-MACHINE-REQ-0102**: Breaking changes (required-field additions, field removals, type narrowing, enum value removal, status-code contract removal) MUST increment `MAJOR` and MUST include migration notes per `CHANGE_CONTROL_POLICY.md`.
+- **CRE8-MACHINE-REQ-0102**: Breaking changes (required-field additions, field removals, type narrowing, enum value removal, status-code contract removal) MUST increment `MAJOR` and MUST include migration notes per [`CHANGE_CONTROL_POLICY.md`](CHANGE_CONTROL_POLICY.md).
 - **CRE8-MACHINE-REQ-0103**: Editorial-only machine-artifact regeneration that does not alter request/response behavior SHOULD increment `PATCH`.
 - **CRE8-MACHINE-REQ-0104**: `feed_metadata_schema_version` MUST be versioned independently from `meta.contract_version` and MUST advance only when feed metadata shape changes.
-- **CRE8-MACHINE-REQ-0105**: Deprecation windows for externally consumed contract fields MUST be at least 90 calendar days before removal and MUST publish sunset details in release notes and `PROSE_OPENAPI_PARITY_TABLE.md` notes.
+- **CRE8-MACHINE-REQ-0105**: Deprecation windows for externally consumed contract fields MUST be at least 90 calendar days before removal and MUST publish sunset details in release notes and [`PROSE_OPENAPI_PARITY_TABLE.md`](PROSE_OPENAPI_PARITY_TABLE.md) notes.
 - **CRE8-MACHINE-REQ-0106**: Route-level compatibility declarations in contract-impacting changes MUST classify each affected route as `compatible`, `conditionally-compatible`, or `breaking` before merge.
 
 ## Compatibility trigger matrix
@@ -53,4 +53,4 @@ Define deterministic semantic-versioning, compatibility classification, and depr
 - [Change Control Policy](../00_governance/CHANGE_CONTROL_POLICY.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 
-Change Impact Map: [`reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md`](../../reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md)
+Change Impact Map: [[`reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md`](reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md)](../../reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md)

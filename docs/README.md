@@ -11,9 +11,9 @@ This directory contains the canonical SSOT corpus for CRE8. It is organized by n
 
 ## Start here
 
-1. `00_governance/SSOT_INDEX.md`
-2. `00_governance/CHANGE_CONTROL_POLICY.md`
-3. `00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
+1. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
+2. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
+3. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
 
 These define how every other document is authored, interpreted, and promoted.
 
@@ -44,14 +44,14 @@ These define how every other document is authored, interpreted, and promoted.
 
 1. Edit the target domain docs.
 2. Update dependent links and governance references if impacted.
-3. Run SSOT verification scripts from `composer.json`.
-4. Validate coverage output in `reports/ssot/coverage_latest.json`.
+3. Run SSOT verification scripts from [`composer.json`](composer.json).
+4. Validate coverage output in [`reports/ssot/coverage_latest.json`](reports/ssot/coverage_latest.json).
 5. Record evidence and session artifacts under `reports/` as required.
 
 ## High-value cross references
 
-- Root orientation: `../README.md`
-- Machine contracts guide: `31_machine_contracts/README.md`
-- Evidence guidance: `evidence/README.md`
-- Verification strategy: `60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-- Traceability matrix: `80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
+- Root orientation: [`../README.md`](../README.md)
+- Machine contracts guide: [`31_machine_contracts/README.md`](31_machine_contracts/README.md)
+- Evidence guidance: [`evidence/README.md`](evidence/README.md)
+- Verification strategy: [`60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- Traceability matrix: [`80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`](80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)

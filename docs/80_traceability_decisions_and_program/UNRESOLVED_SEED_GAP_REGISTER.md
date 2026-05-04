@@ -26,7 +26,7 @@ Define the canonical register for seed requirements that are not yet promoted in
 - **CRE8-TRACE-REQ-0080**: Any seed requirement lacking an approved target requirement ID **MUST** be recorded in this register within the same session where the gap is identified.
 - **CRE8-TRACE-REQ-0081**: Each gap record **MUST** include `gap_id`, `seed_requirement_ref`, `gap_class`, `proposed_target_slice`, `owner`, and `resolution_due_utc`.
 - **CRE8-TRACE-REQ-0082**: `gap_class` **MUST** be one of `missing_doc`, `missing_requirement`, `verification_missing`, `conflict`, or `deferred_scope`.
-- **CRE8-TRACE-REQ-0083**: Records older than `resolution_due_utc` **MUST** be reviewed and either resolved or escalated in `RISK_REGISTER.md`.
+- **CRE8-TRACE-REQ-0083**: Records older than `resolution_due_utc` **MUST** be reviewed and either resolved or escalated in [`RISK_REGISTER.md`](RISK_REGISTER.md).
 - **CRE8-TRACE-REQ-0084**: A gap **MUST NOT** be marked `closed` unless the associated promotion tracker row reaches `promoted`, `retired`, or `deferred` with decision reference.
 - **CRE8-TRACE-REQ-0085**: Gap records with `gap_class=conflict` **MUST** reference an ADR or decision event documenting precedence resolution.
 

@@ -54,7 +54,7 @@ Define deterministic migration and seed execution policy for CRE8 persistence st
 | `HOOK-SSOT-COMMAND-EXIT-SEMANTICS` | Verifies migration and seed smoke commands fail/exit deterministically under acceptance-bundle execution. |
 | `HOOK-CONTRACT-ROUTE-INVENTORY-PARITY` | Verifies migration-impact declarations map schema mutations to synchronized route inventory, OpenAPI, and parity artifacts. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`](reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md).
 
 ## See also
 - [Configuration Environment Contract](./CONFIGURATION_ENVIRONMENT_CONTRACT.md)

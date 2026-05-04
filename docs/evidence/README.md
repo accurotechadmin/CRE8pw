@@ -33,8 +33,8 @@ Evidence should connect these layers:
 
 ## Related documents
 
-- Automation index: `automation/README.md`
-- Template index: `templates/README.md`
-- Verification strategy: `../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-- Traceability matrix: `../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
-- Reports workspace: `../../reports/README.md`
+- Automation index: [`automation/README.md`](automation/README.md)
+- Template index: [`templates/README.md`](templates/README.md)
+- Verification strategy: [`../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- Traceability matrix: [`../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- Reports workspace: [`../../reports/README.md`](../../reports/README.md)

@@ -26,8 +26,8 @@ Define mandatory obligations for introducing a new principal type while preservi
 
 ## Normative requirements
 - **CRE8-EXT-REQ-0022**: A new principal type **MUST** declare a unique canonical principal token and **MUST NOT** ship with implicit wildcard permissions.
-- **CRE8-EXT-REQ-0023**: Principal-type additions **MUST** extend `PERMISSION_VOCABULARY.md` and the capability matrix in the same patch, including explicit allow/deny/conditional posture for every relevant action family.
-- **CRE8-EXT-REQ-0024**: New principal types **MUST** define delegation lifecycle transitions (grant, suspend, revoke, expire) and cascade semantics consistent with `DELEGATION_STATE_MACHINE.md`.
+- **CRE8-EXT-REQ-0023**: Principal-type additions **MUST** extend [`PERMISSION_VOCABULARY.md`](PERMISSION_VOCABULARY.md) and the capability matrix in the same patch, including explicit allow/deny/conditional posture for every relevant action family.
+- **CRE8-EXT-REQ-0024**: New principal types **MUST** define delegation lifecycle transitions (grant, suspend, revoke, expire) and cascade semantics consistent with [`DELEGATION_STATE_MACHINE.md`](DELEGATION_STATE_MACHINE.md).
 - **CRE8-EXT-REQ-0025**: Authorization fixtures for the new principal type **MUST** include deterministic allow and deny examples that exercise gate ordering and reason-code mapping.
 - **CRE8-EXT-REQ-0026**: Principal extension manifests **MUST** include backward-compatibility declaration, migration impact, and rollback constraints before release approval.
 - **CRE8-EXT-REQ-0030**: Principal-type extension manifests **MUST** declare validator coverage for permission-token resolution, capability-matrix completeness, delegation transition integrity, and authorization reason-code determinism; release approval **MUST** fail closed when required validator results are absent or non-passing.
@@ -63,4 +63,4 @@ Define mandatory obligations for introducing a new principal type while preservi
 - [Webhook and Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)
 
 
-Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`](reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md).

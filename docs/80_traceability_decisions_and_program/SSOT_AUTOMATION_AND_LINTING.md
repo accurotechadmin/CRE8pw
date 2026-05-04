@@ -26,12 +26,12 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 ## Normative requirements
 - **CRE8-TRACE-REQ-0090**: The repository **MUST** define an executable `docs:ssot:lint` command contract that runs metadata, link, and placeholder-prose checks against all normative docs under `docs/`.
 - **CRE8-TRACE-REQ-0091**: `docs:ssot:lint` **MUST** fail when required metadata keys are missing, when any relative markdown link is unresolved, or when prohibited scaffold text patterns are present.
-- **CRE8-TRACE-REQ-0092**: The repository **MUST** define an executable `docs:ssot:sync-check` command contract that validates `SEED_PROMOTION_TRACKER.md` rows against promoted requirement IDs and `TRACEABILITY_MATRIX.md` presence.
-- **CRE8-TRACE-REQ-0093**: `docs:ssot:sync-check` **MUST** fail if a row in `SEED_PROMOTION_TRACKER.md` has `promotion_status=promoted` and either `target_requirement_id` is missing in the target source doc or no matching `requirement_id` row exists in `TRACEABILITY_MATRIX.md`.
+- **CRE8-TRACE-REQ-0092**: The repository **MUST** define an executable `docs:ssot:sync-check` command contract that validates [`SEED_PROMOTION_TRACKER.md`](SEED_PROMOTION_TRACKER.md) rows against promoted requirement IDs and [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) presence.
+- **CRE8-TRACE-REQ-0093**: `docs:ssot:sync-check` **MUST** fail if a row in [`SEED_PROMOTION_TRACKER.md`](SEED_PROMOTION_TRACKER.md) has `promotion_status=promoted` and either `target_requirement_id` is missing in the target source doc or no matching `requirement_id` row exists in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 - **CRE8-TRACE-REQ-0094**: The repository **MUST** define a `docs:ssot:report` command contract that emits a machine-readable coverage summary containing, at minimum, total normative requirements, traced requirements, untraced requirements, and manual-only verification hooks.
 - **CRE8-TRACE-REQ-0095**: Each automation command contract **MUST** declare deterministic exit semantics (`0=pass`, non-zero `=fail`) and **MUST** include reproducible local invocation instructions.
-- **CRE8-TRACE-REQ-0096**: For each hook listed in this document, `TRACEABILITY_MATRIX.md` **MUST** reflect the current verification mode (`automated` when implemented; `manual` only when automation is unavailable) with an explicit next automation action in `notes` for manual rows.
-- **CRE8-TRACE-REQ-0099**: `docs:ssot:sync-check` **MUST** fail if any `TRACEABILITY_MATRIX.md` row uses `verification_mode=manual` and the corresponding `verification_hook_id` is missing in `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` or missing owner/priority/target-command fields.
+- **CRE8-TRACE-REQ-0096**: For each hook listed in this document, [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) **MUST** reflect the current verification mode (`automated` when implemented; `manual` only when automation is unavailable) with an explicit next automation action in `notes` for manual rows.
+- **CRE8-TRACE-REQ-0099**: `docs:ssot:sync-check` **MUST** fail if any [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) row uses `verification_mode=manual` and the corresponding `verification_hook_id` is missing in [`reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md`](reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md) or missing owner/priority/target-command fields.
 - **CRE8-TRACE-REQ-0097**: Any PR that changes normative requirements **MUST** include evidence of running all currently-available `docs:ssot:*` commands and **MUST** document missing-automation gaps in the session handoff.
 - **CRE8-TRACE-REQ-0098**: The repository **MUST** provide a CI workflow group named `ssot_phase1_gate` that hard-fails on non-zero exit from `docs:ssot:lint`, `docs:ssot:sync-check`, or `docs:ssot:report`.
 
@@ -40,14 +40,14 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 |---|---|---|---|
 | `docs:ssot:lint` | Metadata key completeness; link integrity; scaffold/prohibited phrase detection. | Line-oriented failures with file path + requirement/hook context. | Docs Governance WG |
 | `docs:ssot:sync-check` | Promotion tracker schema; promoted-row target existence; promoted-row traceability row existence; manual-mode matrix rows must reconcile with manual-hook backlog rows + required metadata. | Summary counts and explicit failing row IDs. | Program Traceability WG |
-| `docs:ssot:report` | Trace coverage summary; manual vs automated hook split; missing evidence path summary. | JSON artifact at `reports/ssot/coverage_latest.json`. | Program Traceability WG |
+| `docs:ssot:report` | Trace coverage summary; manual vs automated hook split; missing evidence path summary. | JSON artifact at [`reports/ssot/coverage_latest.json`](reports/ssot/coverage_latest.json). | Program Traceability WG |
 | `docs:ssot:route-parity` | Route inventory method/path parity with OpenAPI operations. | Line-oriented drift failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:route-uniqueness` | Duplicate `route_id` and method/path detection in route inventory. | Duplicate failures with deterministic pass summary. | API Contracts WG |
 | `docs:ssot:compat-declaration` | Presence checks for required compatibility/migration/deprecation clauses in API guide. | Missing-clause failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:error-code-coverage` | Route inventory `error_code_set` coverage against canonical error catalog code table. | Undocumented-code failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:deprecation-schema` | Route inventory deprecation schema checks (`sunset_utc` and `replacement_route_id` completeness + format). | Missing-field/format failures and deterministic pass summary. | API Contracts WG |
 | `docs:ssot:review-gate-check` | Owner/reviewer metadata and change-impact-map references for changed normative docs. | Hook-tagged failures and deterministic pass summary. | Docs Governance WG |
-| `docs:ssot:dod-trace-check` | Changed requirement IDs must exist in `TRACEABILITY_MATRIX.md` with matching `source_path`. | Hook-tagged failures and deterministic pass summary. | Program Traceability WG |
+| `docs:ssot:dod-trace-check` | Changed requirement IDs must exist in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) with matching `source_path`. | Hook-tagged failures and deterministic pass summary. | Program Traceability WG |
 | `docs:ssot:roadmap-schema-check` | Roadmap baseline table schema checks for status enum, date format, and required columns. | Schema failures with deterministic pass summary. | Program Traceability WG |
 | `docs:ssot:seed-promotion-schema` | Seed promotion tracker schema checks for row IDs, enum values, and promoted/deferred constraints. | Schema failures with deterministic pass summary. | Program Traceability WG |
 | `docs:ssot:seed-gap-schema` | Unresolved gap register schema checks, due-date format, and tracker_ref existence in seed tracker. | Schema and tracker-link failures with deterministic pass summary. | Program Traceability WG |
@@ -66,7 +66,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 - **HOOK-SSOT-SYNC-PROMOTED-TRACE**: Validate each promoted seed row maps to an existing traceability matrix row.
 - **HOOK-SSOT-REPORT-COVERAGE-COVERAGE**: Compute and publish requirement/hook coverage summary.
 - **HOOK-REVIEW-GATE-CHECK-AUTO**: Validate owner/reviewer metadata and change-impact-map references on changed normative docs.
-- **HOOK-DOD-TRACE-CHECK-AUTO**: Validate changed requirement IDs remain synchronized with `TRACEABILITY_MATRIX.md`.
+- **HOOK-DOD-TRACE-CHECK-AUTO**: Validate changed requirement IDs remain synchronized with [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 - **HOOK-TRACE-ROADMAP-SCHEMA-AUTO**: Validate roadmap baseline milestone table schema and enums.
 - **HOOK-SEED-PROMOTION-SCHEMA-AUTO**: Validate seed promotion tracker schema and status-transition constraints.
 - **HOOK-SEED-GAP-REGISTER-SCHEMA-AUTO**: Validate unresolved seed gap schema and tracker linkage integrity.
@@ -79,11 +79,11 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 ## Manual verification procedure (until automation exists)
 1. Run `rg "^doc_id:|^version:|^status:|^owner:|^reviewers:|^last_reviewed_utc:|^next_review_due_utc:|^source_seed_refs:|^normative_dependencies:" docs` and verify each normative file has all required keys.
 2. Run `rg "This scaffold file defines|structured placeholder" docs` and confirm no normative doc contains scaffold placeholder phrases.
-3. For each `promotion_status=promoted` row, confirm target requirement ID existence in target doc and matching row in `TRACEABILITY_MATRIX.md`.
+3. For each `promotion_status=promoted` row, confirm target requirement ID existence in target doc and matching row in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 4. Record findings in session handoff with pass/fail and unresolved automation gaps.
 
 ## Drift policy
-- Missing command implementations are permitted during Phase 1 only when manual verification evidence is included in the same PR and backlog entry remains open in `PHASE1_PROGRESS_BOARD.md`.
+- Missing command implementations are permitted during Phase 1 only when manual verification evidence is included in the same PR and backlog entry remains open in [`PHASE1_PROGRESS_BOARD.md`](PHASE1_PROGRESS_BOARD.md).
 - Once a command is implemented, manual fallback **SHOULD** be retained only as contingency guidance for environment failures.
 
 ## See also

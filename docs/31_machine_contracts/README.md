@@ -4,10 +4,10 @@ This folder is the machine-contract counterpart to the prose API contract docs.
 
 ## What lives here
 
-- `openapi/cre8.v1.yaml` — primary OpenAPI specification.
+- [`openapi/cre8.v1.yaml`](openapi/cre8.v1.yaml) — primary OpenAPI specification.
 - `schemas/*.schema.json` — JSON Schemas for response/envelope payloads and policy artifacts.
-- `PROSE_OPENAPI_PARITY_TABLE.md` — mapping table between prose requirements/routes and OpenAPI entries.
-- `CONTRACT_VERSION_POLICY.md` — contract versioning policy and compatibility expectations.
+- [`PROSE_OPENAPI_PARITY_TABLE.md`](PROSE_OPENAPI_PARITY_TABLE.md) — mapping table between prose requirements/routes and OpenAPI entries.
+- [`CONTRACT_VERSION_POLICY.md`](CONTRACT_VERSION_POLICY.md) — contract versioning policy and compatibility expectations.
 
 ## Why this folder matters
 
@@ -23,11 +23,11 @@ This folder is the machine-contract counterpart to the prose API contract docs.
 
 ## Adjacent authoritative docs
 
-- Prose API guide: `../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`
-- Route inventory: `../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`
-- Error catalog: `../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md`
-- Verification strategy: `../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
-- Traceability matrix: `../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
+- Prose API guide: [`../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- Route inventory: [`../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`](../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md)
+- Error catalog: [`../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md`](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
+- Verification strategy: [`../60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
+- Traceability matrix: [`../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 
 ## Practical review checklist
 

@@ -28,8 +28,8 @@ This document defines the canonical index contract for Architecture Decision Rec
 - **CRE8-TRACE-REQ-0032**: Index rows **MUST** include `ADR ID`, `Title`, `Status`, `Date (UTC)`, `Owner`, `Impacted Requirement IDs`, `Impacted Risk IDs`, and `Link`.
 - **CRE8-TRACE-REQ-0033**: `Status` **MUST** be one of `proposed`, `accepted`, `rejected`, `superseded`, or `deprecated`.
 - **CRE8-TRACE-REQ-0034**: ADR ordering **MUST** be descending by ADR numeric ID; ties are invalid and **MUST** fail review.
-- **CRE8-TRACE-REQ-0035**: Every `accepted`, `superseded`, or `deprecated` ADR **MUST** have a corresponding append-only event in `DECISIONS_LOG.md`.
-- **CRE8-TRACE-REQ-0036**: Every indexed ADR **MUST** backlink to at least one requirement in `TRACEABILITY_MATRIX.md` unless explicitly marked governance-editorial with justification.
+- **CRE8-TRACE-REQ-0035**: Every `accepted`, `superseded`, or `deprecated` ADR **MUST** have a corresponding append-only event in [`DECISIONS_LOG.md`](DECISIONS_LOG.md).
+- **CRE8-TRACE-REQ-0036**: Every indexed ADR **MUST** backlink to at least one requirement in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) unless explicitly marked governance-editorial with justification.
 
 ## ADR index schema
 | Field | Type | Required | Rule |
@@ -69,7 +69,7 @@ This document defines the canonical index contract for Architecture Decision Rec
 
 ## Change history
 
-- 2026-04-30 (v1.1.0): Added ADR-004 (Phase 3 — Canon Completion Program Charter) row at head and published-records bullet. Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+- 2026-04-30 (v1.1.0): Added ADR-004 (Phase 3 — Canon Completion Program Charter) row at head and published-records bullet. Change Impact Map: [[`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md)](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
 
 ## See also
 - [Decision Record Template](./DECISION_RECORD_TEMPLATE.md)
