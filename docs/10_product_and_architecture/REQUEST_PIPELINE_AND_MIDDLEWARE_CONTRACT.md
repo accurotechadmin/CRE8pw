@@ -49,6 +49,18 @@ normative_dependencies:
 - Mutation of `request_id` between middleware stages.
 - Bypassing middleware chain for protected routes.
 
+## Requirement triads (actor/trigger/precondition/outcome)
+
+| Requirement | Actor | Trigger | Preconditions | Required outcome |
+|---|---|---|---|---|
+| CRE8-ARCH-REQ-0031 | Runtime middleware orchestrator | Any HTTP request enters canonical API surface | Middleware stack initialized and route resolution succeeded | Runtime executes middleware stages in declared order before response emission. |
+| CRE8-ARCH-REQ-0032 | Authorization middleware + route handler runtime | Request targets a protected route | Authentication and authorization checks have executed | Runtime denies before handler invocation when auth fails; handlers MUST NOT perform independent allow/deny logic. |
+| CRE8-ARCH-REQ-0033 | Authentication middleware | Protected request reaches authentication stage | Request includes authn proof fields and parser stage completed | Middleware validates `public_key_id`, `timestamp`, `nonce`, and `signature` before any authorization decision stage. |
+| CRE8-ARCH-REQ-0034 | Authorization middleware | Protected request reaches authorization stage | Authentication stage succeeded and policy engine is available | Middleware performs exactly one centralized policy decision call and preserves deny reason for error mapping. |
+| CRE8-ARCH-REQ-0035 | Error mapping middleware | Middleware stack receives deny/failure result | Canonical deny reason code exists in catalog mapping | Runtime maps deny reason to canonical error code without handler remapping. |
+| CRE8-ARCH-REQ-0036 | Response envelope middleware | Handler or deny path completes | Request has stable `meta.request_id` context | Runtime emits canonical success/error envelope and preserves `meta.request_id` continuity. |
+| CRE8-ARCH-REQ-0037 | Pipeline logging components | Security-significant middleware stage executes | Correlation ID has been established | Runtime emits structured logs containing shared correlation/request identifier at each stage. |
+
 ## See also
 - `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
 - `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`
