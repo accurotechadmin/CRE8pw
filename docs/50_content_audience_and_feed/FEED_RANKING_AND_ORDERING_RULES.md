@@ -33,10 +33,13 @@ Define deterministic feed authorization and ordering behavior for CRE8 audience-
 - **CRE8-FEED-REQ-0038**: Feed ordering **MUST** execute within tenant-isolated datasets; cross-tenant ordering or cursor reuse **MUST NOT** occur.
 - **CRE8-FEED-REQ-0039**: Refresh requests **MUST** be rate-limited per principal and per tenant using deterministic windows; throttled refresh responses **MUST** return canonical error code and retry guidance fields.
 - **CRE8-FEED-REQ-0040**: Ordering recomputation **MUST** remain stable under pagination so that replaying the same cursor during the same consistency window yields identical item order and metadata.
+- **CRE8-FEED-REQ-0041**: During feed eligibility evaluation, the policy engine **MUST** apply canonical precedence in this order: explicit deny, lifecycle block, scope mismatch, missing permission grant, then allow; any earlier deny condition **MUST** short-circuit ranking and produce deterministic deny semantics.
+- **CRE8-FEED-REQ-0042**: Feed refresh and pagination requests **MUST** include `feed.stream.view`; curation operations that alter ranking controls **MUST** include `feed.stream.curate`, and missing permissions **MUST** map to `AUTH_PERMISSION_DENIED`.
 
 ## Verification hooks
 - **HOOK-FEED-AUTH-ORDER**: Validate authorized-only inclusion and deterministic newest-first ordering semantics.
-- **Next automation candidate**: Add contract snapshots for mixed-visibility fixtures under `test:contract` to verify ordering and revocation behavior.
+- **HOOK-CONTRACT-FEED-RATE-LIMITS**: Validate canonical throttling semantics and retry guidance fields for refresh traffic.
+- **HOOK-PERMISSION-VOCAB-RESOLVE**: Validate feed permission token usage against canonical vocabulary and deny semantics for unknown/missing grants.
 
 ## See also
 - [Content Model and Targeting Spec](./CONTENT_MODEL_AND_TARGETING_SPEC.md)
