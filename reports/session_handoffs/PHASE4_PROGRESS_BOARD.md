@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:59:00Z
+- Last updated (UTC): 2026-05-04T22:26:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -72,11 +72,20 @@
 | P4-S6.3 | complete | Readiness gates now require explicit contract-compatibility declaration with fail-closed handling for breaking deltas without ADR waiver. |
 | P4-S6.4 | complete | Release checklist normalized to deterministic pass/fail evidence fields per gate (`CRE8-OPS-REQ-0076`). |
 | P4-S6.5 | complete | Readiness gates now require Phase 4 exceptions register closure (or ADR-bounded waiver) before production promotion (`CRE8-OPS-REQ-0077`). |
-| P4-S6.6 | not_started | Pending. |
+| P4-S6.6 | complete | Migration/seed strategy now requires explicit schema-to-contract impact declarations and fail-closed promotion behavior when parity artifacts are missing. |
 
-### M7..M8
+### M7 — Extensibility Boundary Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S7.1 | complete | Extensibility playbook now codifies non-overridable identity/delegation/lifecycle/data/crypto controls with ADR-bounded exception expiry requirements. |
+| P4-S7.2 | not_started | Pending. |
+| P4-S7.3 | not_started | Pending. |
+| P4-S7.4 | not_started | Pending. |
+| P4-S7.5 | not_started | Pending. |
+
+### M8
 - Not started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2159.md`](SESSION_HANDOFF_20260504-2159.md)
-- Latest response archive: [`../session_responses/20260504-2159_RESPONSE.md`](../session_responses/20260504-2159_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2226.md`](SESSION_HANDOFF_20260504-2226.md)
+- Latest response archive: [`../session_responses/20260504-2226_RESPONSE.md`](../session_responses/20260504-2226_RESPONSE.md)

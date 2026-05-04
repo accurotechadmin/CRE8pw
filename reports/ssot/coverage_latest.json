@@ -1,7 +1,7 @@
 {
-    "generated_at_utc": "2026-05-04T21:59:44+00:00",
-    "total_normative_requirements": 475,
+    "generated_at_utc": "2026-05-04T22:26:46+00:00",
+    "total_normative_requirements": 477,
     "traced_requirements": 457,
-    "untraced_requirements": 18,
+    "untraced_requirements": 20,
     "manual_only_verification_hooks": 105
 }
