@@ -59,6 +59,8 @@ Define mandatory obligations for introducing a new principal type while preservi
 - [Permission Vocabulary](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md)
 - [Principal Types and Capability Matrix](../20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md)
 - [Delegation State Machine](../20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md)
+- [Route Inventory Reference](../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md)
+- [Webhook and Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)
 
 
 Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.

@@ -29,6 +29,7 @@ Define the mandatory workflow for adding new CRE8 modules without violating dele
 - **CRE8-EXT-REQ-0010**: Any new module API surface **MUST** add or update OpenAPI operations, JSON Schemas, route inventory rows, and prose parity rows in the same patch.
 - **CRE8-EXT-REQ-0011**: Each module change **MUST** register or reuse verification hooks and **MUST** add traceability rows for every new requirement in the same change set.
 - **CRE8-EXT-REQ-0027**: Extension patches **MUST NOT** weaken canonical identity, delegation, lifecycle, data-classification, or cryptographic controls; any attempted override **MUST** be rejected unless an ADR-approved exception with explicit expiry is present.
+- **CRE8-EXT-REQ-0032**: Extension proposals **MUST** include explicit cross-links to route/webhook contract anchors and permission-vocabulary anchors for every changed behavior surface; missing cross-links **MUST** block merge until resolved in prose and traceability artifacts.
 
 ## Required extension workflow
 | Step | Required artifact | Pass condition |

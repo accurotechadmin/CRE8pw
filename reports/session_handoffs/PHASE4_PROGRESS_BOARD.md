@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T22:32:00Z
+- Last updated (UTC): 2026-05-04T22:36:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -81,11 +81,18 @@
 | P4-S7.2 | complete | Post/principal extension specs now require validator-coverage declarations, fail-closed release semantics, and rollback requirements. |
 | P4-S7.3 | complete | Integration provider pattern now requires observability ownership, alert thresholds, and incident-escalation mappings before enablement. |
 | P4-S7.4 | complete | Explicit non-overridable core-controls sections now enforced across extension specs with ADR-bounded exceptions only. |
-| P4-S7.5 | not_started | Pending. |
+| P4-S7.5 | complete | Extensibility docs now require explicit route/webhook/permission-vocabulary cross-link closure before merge (`CRE8-EXT-REQ-0032`). |
 
-### M8
-- Not started.
+### M8 — Traceability and Evidence Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S8.1 | complete | Requirement inventory refreshed via `composer docs:ssot:requirement-inventory`; no orphan/duplicate regressions surfaced. |
+| P4-S8.2 | complete | Traceability matrix updated with extension cross-link requirement row (`CRE8-EXT-REQ-0032`) and source/hook/evidence linkage. |
+| P4-S8.3 | not_started | Pending. |
+| P4-S8.4 | not_started | Pending. |
+| P4-S8.5 | not_started | Pending. |
+| P4-S8.6 | not_started | Pending. |
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2232.md`](SESSION_HANDOFF_20260504-2232.md)
-- Latest response archive: [`../session_responses/20260504-2232_RESPONSE.md`](../session_responses/20260504-2232_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2236.md`](SESSION_HANDOFF_20260504-2236.md)
+- Latest response archive: [`../session_responses/20260504-2236_RESPONSE.md`](../session_responses/20260504-2236_RESPONSE.md)

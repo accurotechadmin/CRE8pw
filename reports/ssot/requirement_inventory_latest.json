@@ -1,6 +1,83 @@
 {
-    "generated_at_utc": "2026-05-04T17:01:27+00:00",
-    "total_requirements": 438,
-    "untraced_requirements": 0,
-    "untraced": []
+    "generated_at_utc": "2026-05-04T22:37:18+00:00",
+    "total_requirements": 482,
+    "untraced_requirements": 19,
+    "untraced": {
+        "CRE8-AUTH-REQ-0007": {
+            "doc_id": "CRE8-AUTH-DELEGATION-SPEC",
+            "path": "docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md"
+        },
+        "CRE8-AUTH-REQ-0016": {
+            "doc_id": "CRE8-AUTH-DECISION-TABLES",
+            "path": "docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md"
+        },
+        "CRE8-AUTH-REQ-0017": {
+            "doc_id": "CRE8-AUTH-DECISION-TABLES",
+            "path": "docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md"
+        },
+        "CRE8-CONTRACT-REQ-0007": {
+            "doc_id": "CRE8-CONTRACTS-ERROR-CATALOG",
+            "path": "docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md"
+        },
+        "CRE8-CONTRACT-REQ-0008": {
+            "doc_id": "CRE8-CONTRACTS-ERROR-CATALOG",
+            "path": "docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md"
+        },
+        "CRE8-CONTRACT-REQ-0056": {
+            "doc_id": "CRE8-CONTRACTS-API-GUIDE",
+            "path": "docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md"
+        },
+        "CRE8-IDPOL-REQ-0023": {
+            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
+            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
+        },
+        "CRE8-IDPOL-REQ-0024": {
+            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
+            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
+        },
+        "CRE8-IDPOL-REQ-0025": {
+            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
+            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
+        },
+        "CRE8-IDPOL-REQ-0026": {
+            "doc_id": "CRE8-IDPOL-KEYCHAIN-RESOLUTION",
+            "path": "docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md"
+        },
+        "CRE8-IDPOL-REQ-0027": {
+            "doc_id": "CRE8-IDPOL-KEYCHAIN-RESOLUTION",
+            "path": "docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md"
+        },
+        "CRE8-MACHINE-REQ-0100": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0101": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0102": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0103": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0104": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0105": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-MACHINE-REQ-0106": {
+            "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
+            "path": "docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md"
+        },
+        "CRE8-OPS-REQ-0078": {
+            "doc_id": "CRE8-OPS-MIGRATION-SEED-STRATEGY",
+            "path": "docs/60_operations_quality_and_release/MIGRATION_AND_SEED_STRATEGY.md"
+        }
+    }
 }
