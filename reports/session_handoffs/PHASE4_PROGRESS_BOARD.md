@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:33:00Z
+- Last updated (UTC): 2026-05-04T21:37:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -55,9 +55,18 @@
 | P4-S4.5 | complete | Security controls cross-linked to API error behaviors and observability events now require explicit abuse-case mapping closure. |
 | P4-S4.6 | complete | Abuse-case matrix now includes mitigation ownership and evidence location fields; unmapped rows require bounded Phase 4 exceptions. |
 
-### M5..M8
+### M5 — Feed/Content/Audience Behavioral Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S5.1 | complete | Audience-group semantics aligned with principal permission vocabulary and lifecycle-effectiveness deny behavior. |
+| P4-S5.2 | complete | Feed ranking constraints aligned with canonical auth precedence and feed permission token requirements. |
+| P4-S5.3 | not_started |  |
+| P4-S5.4 | not_started |  |
+| P4-S5.5 | not_started |  |
+
+### M6..M8
 - All slices not_started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2133.md`](SESSION_HANDOFF_20260504-2133.md)
-- Latest response archive: [`../session_responses/20260504-2133_RESPONSE.md`](../session_responses/20260504-2133_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2137.md`](SESSION_HANDOFF_20260504-2137.md)
+- Latest response archive: [`../session_responses/20260504-2137_RESPONSE.md`](../session_responses/20260504-2137_RESPONSE.md)

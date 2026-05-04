@@ -35,11 +35,14 @@ Define deterministic audience-group entity semantics, ownership authority, membe
 - **CRE8-FEED-REQ-0028**: Audience-group hard size limits **MUST** be deterministic per `scope_type`; when a limit is reached, new membership inserts **MUST** be denied with `POLICY_LIMIT_EXCEEDED`.
 - **CRE8-FEED-REQ-0029**: Group enumeration endpoints **MUST** return stable ordering by `created_at_utc DESC, group_id ASC` and **MUST** include pagination cursors that reproduce the same order across retries.
 - **CRE8-FEED-REQ-0030**: Groups in `deleted` state **MUST NOT** be eligible for new membership changes and **MUST** be excluded from default enumeration unless explicit `include_deleted=true` is provided.
+- **CRE8-FEED-REQ-0031**: When the system evaluates audience-targeted visibility, the authorization service **MUST** require `audience.group.view` for read/enumeration paths and **MUST** require `audience.group.manage` for create/update/delete/membership mutation paths; requests missing required token grants **MUST** be denied with `AUTH_PERMISSION_DENIED`.
+- **CRE8-FEED-REQ-0032**: When a membership row references a `member_principal_id` that is `suspended`, `revoked`, or `expired`, the authorization service **MUST** treat membership as non-effective for feed visibility and **MUST** return deny semantics consistent with canonical lifecycle enforcement.
 
 ## Verification hooks
 - **HOOK-CONTRACT-FEED-METADATA-STABILITY** (automated): Enforce stable feed and audience metadata fields and deterministic ordering/pagination semantics.
 - **HOOK-AUTH-LIFECYCLE-ENFORCEMENT** (automated): Validate lifecycle-state enforcement for group and membership mutation actions.
 - **HOOK-CAPABILITY-MATRIX-COMPLETE** (automated): Ensure owner-authority constraints remain aligned with principal capability matrix.
+- **HOOK-PERMISSION-VOCAB-RESOLVE** (automated): Ensure audience-group operations use registered permission tokens and deterministic unknown-token deny behavior.
 - **HOOK-CONTRACT-ERROR-CODE-COVERAGE** (automated): Validate use of canonical deny/error codes for audience-group flows.
 
 ## See also
