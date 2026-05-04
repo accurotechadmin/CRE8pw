@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:54:00Z
+- Last updated (UTC): 2026-05-04T21:59:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -70,13 +70,13 @@
 | P4-S6.1 | complete | Startup/health/smoke dependency-baseline and configuration-contract reconciliation complete. |
 | P4-S6.2 | complete | Observability event catalog coverage now explicitly bound to readiness gate evidence with verifier/timestamp requirements. |
 | P4-S6.3 | complete | Readiness gates now require explicit contract-compatibility declaration with fail-closed handling for breaking deltas without ADR waiver. |
-| P4-S6.4 | not_started | Pending. |
-| P4-S6.5 | not_started | Pending. |
+| P4-S6.4 | complete | Release checklist normalized to deterministic pass/fail evidence fields per gate (`CRE8-OPS-REQ-0076`). |
+| P4-S6.5 | complete | Readiness gates now require Phase 4 exceptions register closure (or ADR-bounded waiver) before production promotion (`CRE8-OPS-REQ-0077`). |
 | P4-S6.6 | not_started | Pending. |
 
 ### M7..M8
 - Not started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2154.md`](SESSION_HANDOFF_20260504-2154.md)
-- Latest response archive: [`../session_responses/20260504-2154_RESPONSE.md`](../session_responses/20260504-2154_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2159.md`](SESSION_HANDOFF_20260504-2159.md)
+- Latest response archive: [`../session_responses/20260504-2159_RESPONSE.md`](../session_responses/20260504-2159_RESPONSE.md)
