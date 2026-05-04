@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-CONTRACTS-ERROR-CATALOG
-version: 1.1.0
+version: 1.2.0
 status: provisional-normative
 owner: API Contracts WG
 reviewers:
   - Security WG
   - Identity & Policy WG
-last_reviewed_utc: 2026-04-29
+last_reviewed_utc: 2026-05-04
 next_review_due_utc: 2026-05-13
 source_seed_refs:
   - seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md
@@ -44,6 +44,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 |---|---|---:|---|
 | AUTH_CREDENTIAL_INVALID | AUTHN | 401 | Credential proof is missing, malformed, expired, or cryptographically invalid. |
 | AUTH_PERMISSION_DENIED | AUTH_DENY | 403 | Principal lacks required permission for requested operation. |
+| AUTH_DENY_PERMISSION_UNKNOWN | AUTH_DENY | 403 | One or more evaluated permission tokens are unknown to the canonical registry and are denied deterministically. |
 | AUTH_EXPLICIT_DENY | AUTH_DENY | 403 | Policy contains an explicit deny rule for the evaluated scope or action. |
 | AUTH_SCOPE_DENIED | AUTH_DENY | 403 | Principal permission exists but requested scope boundary is not satisfied. |
 | AUTH_DEPTH_EXCEEDED | AUTH_DENY | 403 | Delegation depth exceeds ancestor-defined maximum depth budget. |
@@ -73,3 +74,7 @@ Define canonical API error envelope and stable error-code semantics for determin
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - [API Contract and Error Seed](../../seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md)
 - [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
+
+## Change history
+
+- 2026-05-04 (v1.2.0): Added `AUTH_DENY_PERMISSION_UNKNOWN` to align permission-vocabulary unknown-token deny semantics with canonical error catalog during Phase 4 slice P4-S2.2.

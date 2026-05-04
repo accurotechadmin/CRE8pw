@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T18:39:00Z
+- Last updated (UTC): 2026-05-04T18:47:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -25,9 +25,19 @@
 | P4-S1.5 | complete | Residual placeholder/exception sweep recorded in `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md`; no unresolved placeholders in scoped domains. |
 | P4-S1.6 | complete | Duplicate/ambiguity reconciliation log recorded in `reports/phase4/P4-S1.6_DUPLICATE_NORMATIVE_RECONCILIATION.md`. |
 
-### M2..M8
+### M2 — Identity/Auth/Delegation Consistency Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S2.1 | complete | Principal taxonomy alignment log added and canonical token mapping rules added in principal matrix. |
+| P4-S2.2 | complete | Permission vocabulary reconciliation completed by adding missing unknown-token deny code to canonical error catalog. |
+| P4-S2.3 | not_started | Pending. |
+| P4-S2.4 | not_started | Pending. |
+| P4-S2.5 | not_started | Pending. |
+| P4-S2.6 | not_started | Pending. |
+
+### M3..M8
 - All slices not_started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-1839.md`](SESSION_HANDOFF_20260504-1839.md)
-- Latest response archive: [`../session_responses/20260504-1839_RESPONSE.md`](../session_responses/20260504-1839_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-1847.md`](SESSION_HANDOFF_20260504-1847.md)
+- Latest response archive: [`../session_responses/20260504-1847_RESPONSE.md`](../session_responses/20260504-1847_RESPONSE.md)
