@@ -47,7 +47,7 @@ Define deterministic acceptance criteria per release type so canary, GA, and rol
 | `HOOK-RELEASE-CHECKLIST-PRESENT` | Confirms acceptance matrix rows include release-checklist gate linkage and blocking semantics. |
 | `HOOK-SLO-SLI-PRESENT` | Confirms acceptance rows include explicit SLO/error-budget posture for canary/GA/rollback. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`](reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md).
 
 ## See also
 - [Release Checklist](./RELEASE_CHECKLIST.md)

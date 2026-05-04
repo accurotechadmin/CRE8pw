@@ -23,8 +23,8 @@ normative_dependencies:
 ## Normative requirements
 - **CRE8-ARCH-REQ-0010**: CRE8 **MUST** expose exactly three externally documented surfaces: HTTP API, operational command surface (Composer commands), and SSOT evidence/report surface; each surface **MUST** have a canonical owner and verification hook. Runtime enforcement dependency: none (documentation governance requirement).
 - **CRE8-ARCH-REQ-0011**: The HTTP API surface **MUST** be the only network-reachable application surface and **MUST** be routed through Slim middleware/route resolution (`slim/slim`, `slim/psr7`).
-- **CRE8-ARCH-REQ-0012**: The route set declared in `ROUTE_INVENTORY_REFERENCE.md` **MUST** remain parity-synchronized with `docs/31_machine_contracts/openapi/cre8.v1.yaml` (`slim/slim`; verification via route-parity tooling).
-- **CRE8-ARCH-REQ-0013**: Every HTTP surface deny outcome **MUST** resolve to a cataloged code in `ERROR_CODE_CATALOG.md` and return deterministic envelope semantics (`slim/psr7`; `phpunit/phpunit` contract tests).
+- **CRE8-ARCH-REQ-0012**: The route set declared in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md) **MUST** remain parity-synchronized with [`docs/31_machine_contracts/openapi/cre8.v1.yaml`](docs/31_machine_contracts/openapi/cre8.v1.yaml) (`slim/slim`; verification via route-parity tooling).
+- **CRE8-ARCH-REQ-0013**: Every HTTP surface deny outcome **MUST** resolve to a cataloged code in [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md) and return deterministic envelope semantics (`slim/psr7`; `phpunit/phpunit` contract tests).
 - **CRE8-ARCH-REQ-0014**: Surface behavior that depends on credential or delegation assertions **MUST** consume canonical policy outcomes produced by the authorization decision contract (`firebase/php-jwt`, `ext-sodium`, `respect/validation`).
 - **CRE8-ARCH-REQ-0015**: Operational command surface checks **MUST** be executable through Composer script entrypoints and **MUST** exit non-zero on contract violations (dependency: Composer runtime + `phpunit/phpunit`; no additional runtime dependency).
 - **CRE8-ARCH-REQ-0016**: Evidence/report surface artifacts under `reports/ssot/` **MUST** be treated as machine-readable acceptance evidence for merge gates (`symfony/cache` optional for performance only; enforcement is script logic, no strict package dependency).
@@ -42,4 +42,4 @@ normative_dependencies:
 
 
 ## Change history
-- 2026-04-30 (v1.0.0): Initial normative publication under Phase 3 slices P3-S3.2/P3-S3.4. Change Impact Map: [`reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md`](../../reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md).
+- 2026-04-30 (v1.0.0): Initial normative publication under Phase 3 slices P3-S3.2/P3-S3.4. Change Impact Map: [[`reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md`](reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md)](../../reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md).

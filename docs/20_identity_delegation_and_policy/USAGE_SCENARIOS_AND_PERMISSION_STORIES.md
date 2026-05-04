@@ -26,7 +26,7 @@ normative_dependencies:
 
 ## Purpose
 
-This document defines deterministic end-to-end authorization and lifecycle stories. PDP evaluation MUST execute the 7-gate sequence from `AUTHORIZATION_AND_DELEGATION_SPEC.md` and handlers MUST NOT remap authorization outcomes (`slim/slim`, `php-di/php-di`).
+This document defines deterministic end-to-end authorization and lifecycle stories. PDP evaluation MUST execute the 7-gate sequence from [`AUTHORIZATION_AND_DELEGATION_SPEC.md`](AUTHORIZATION_AND_DELEGATION_SPEC.md) and handlers MUST NOT remap authorization outcomes (`slim/slim`, `php-di/php-di`).
 
 ## Scenario contract format
 
@@ -58,4 +58,4 @@ Each scenario MUST define precondition, request, gate path (1..7), expected outc
 
 ## Change history
 
-- 2026-04-30 (v1.0.0): Authored normative scenario corpus/state machine for P3-S4.4/P3-S4.5. Change Impact Map: [`reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`](../../reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md).
+- 2026-04-30 (v1.0.0): Authored normative scenario corpus/state machine for P3-S4.4/P3-S4.5. Change Impact Map: [[`reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`](reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md)](../../reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md).

@@ -25,16 +25,16 @@ normative_dependencies:
 This document defines the authoritative SSOT topology, precedence model, and minimum governance linkage rules for the CRE8 repository.
 
 ## Normative requirements
-- **CRE8-GOV-REQ-0001**: The repository **MUST** treat `README.md` as the root project-level SSOT anchor.
+- **CRE8-GOV-REQ-0001**: The repository **MUST** treat [`README.md`](README.md) as the root project-level SSOT anchor.
 - **CRE8-GOV-REQ-0002**: Domain canonical requirements **MUST** be authored under `docs/` and **MUST** supersede `seed/` material where both define the same behavior.
 - **CRE8-GOV-REQ-0003**: `seed/` artifacts **MUST** be used as promotion input when corresponding mature normative domain documentation is incomplete.
 - **CRE8-GOV-REQ-0004**: `reports/` artifacts **MUST** be treated as informational and non-normative unless explicitly promoted by governance-controlled change.
-- **CRE8-GOV-REQ-0005**: Every normative document **MUST** include the metadata header defined by `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`.
+- **CRE8-GOV-REQ-0005**: Every normative document **MUST** include the metadata header defined by [`DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md).
 - **CRE8-GOV-REQ-0006**: Every normative document **MUST** declare `normative_dependencies` and **MUST** include at least one cross-domain or governance link when dependencies exist.
-- **CRE8-GOV-REQ-0007**: Changes that alter requirement semantics **MUST** follow `CHANGE_CONTROL_POLICY.md` and pass `DEFINITION_OF_DONE.md` gates before merge.
+- **CRE8-GOV-REQ-0007**: Changes that alter requirement semantics **MUST** follow [`CHANGE_CONTROL_POLICY.md`](CHANGE_CONTROL_POLICY.md) and pass [`DEFINITION_OF_DONE.md`](DEFINITION_OF_DONE.md) gates before merge.
 
 ## Canon precedence
-1. `README.md`
+1. [`README.md`](README.md)
 2. Normative docs under `docs/`
 3. `seed/` documents (fallback source for unpromoted requirements)
 4. `reports/` session and analysis outputs
@@ -48,11 +48,11 @@ This document defines the authoritative SSOT topology, precedence model, and min
 ## Verification hooks
 - **HOOK-SSOT-LINT-METADATA**: Validate metadata header presence and required keys across normative docs.
 - **HOOK-SSOT-LINK-INTEGRITY**: Validate all internal markdown links and anti-orphan requirements.
-- **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between `README.md` and updated normative docs before merge.
+- **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](README.md) and updated normative docs before merge.
 
 ## Change history
 
-- 2026-04-30 (v1.0.1): Added ADR-004 (Phase 3 — Canon Completion Program Charter) cross-link in See also. Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+- 2026-04-30 (v1.0.1): Added ADR-004 (Phase 3 — Canon Completion Program Charter) cross-link in See also. Change Impact Map: [[`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md)](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
 
 ## See also
 - [README.md](../../README.md)

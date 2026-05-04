@@ -27,9 +27,9 @@ This document defines how SSOT changes are proposed, reviewed, approved, and rec
 - **CRE8-GOV-REQ-0040**: Every normative SSOT change **MUST** include a change record containing scope, rationale, affected requirement IDs, and compatibility notes.
 - **CRE8-GOV-REQ-0041**: Change records **MUST** classify compatibility as one of `backward-compatible`, `conditionally-compatible`, or `breaking`.
 - **CRE8-GOV-REQ-0042**: `breaking` changes **MUST** include migration notes and explicit rollout sequencing requirements.
-- **CRE8-GOV-REQ-0043**: Changes that add or modify requirement IDs **MUST** update the traceability mapping location referenced by `TRACEABILITY_MATRIX.md`.
+- **CRE8-GOV-REQ-0043**: Changes that add or modify requirement IDs **MUST** update the traceability mapping location referenced by [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 - **CRE8-GOV-REQ-0044**: Deferred verification or deferred machine-contract sync **MUST** include a time-bounded follow-up item with named owner and due date.
-- **CRE8-GOV-REQ-0045**: A change **MUST NOT** be merged when required review gates defined by `CONTRIBUTION_WORKFLOW_SSOT.md` are incomplete.
+- **CRE8-GOV-REQ-0045**: A change **MUST NOT** be merged when required review gates defined by [`CONTRIBUTION_WORKFLOW_SSOT.md`](CONTRIBUTION_WORKFLOW_SSOT.md) are incomplete.
 - **CRE8-GOV-REQ-0046**: Post-merge discovery of semantic drift **MUST** trigger corrective change control within 2 business days.
 
 ## Required change artifacts

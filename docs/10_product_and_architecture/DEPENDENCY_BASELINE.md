@@ -39,4 +39,4 @@ normative_dependencies:
 
 
 ## Change history
-- 2026-04-30 (v1.0.0): Initial normative publication under Phase 3 slices P3-S3.2/P3-S3.4. Change Impact Map: [`reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md`](../../reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md).
+- 2026-04-30 (v1.0.0): Initial normative publication under Phase 3 slices P3-S3.2/P3-S3.4. Change Impact Map: [[`reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md`](reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md)](../../reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md).

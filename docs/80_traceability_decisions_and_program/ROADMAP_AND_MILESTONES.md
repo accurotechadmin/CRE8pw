@@ -28,7 +28,7 @@ Define the canonical roadmap control contract for SSOT maturation so milestones,
 ## Normative requirements
 - **CRE8-TRACE-REQ-0060**: The roadmap **MUST** enumerate Phase slices with, at minimum: `slice_id`, `objective`, `entry_criteria`, `exit_criteria`, `owner`, and `verification_hooks`.
 - **CRE8-TRACE-REQ-0061**: A slice **MUST NOT** be marked complete until all listed exit criteria are satisfied and linked evidence exists in the traceability matrix.
-- **CRE8-TRACE-REQ-0062**: Changes to slice objective, scope, or exit criteria **MUST** include a corresponding decision event in `DECISIONS_LOG.md` and reference at least one ADR ID when tradeoffs are architectural.
+- **CRE8-TRACE-REQ-0062**: Changes to slice objective, scope, or exit criteria **MUST** include a corresponding decision event in [`DECISIONS_LOG.md`](DECISIONS_LOG.md) and reference at least one ADR ID when tradeoffs are architectural.
 - **CRE8-TRACE-REQ-0063**: Roadmap milestone dates **MUST** be expressed in UTC ISO date format (`YYYY-MM-DD`) and **MUST** declare whether they are target or committed dates.
 - **CRE8-TRACE-REQ-0064**: For every blocked slice, the roadmap **MUST** record `blocking_reason`, `blocking_owner`, and `next_review_utc`.
 - **CRE8-TRACE-REQ-0065**: Each slice **MUST** map its top risks to `RISK-###` identifiers and define at least one mitigation checkpoint.

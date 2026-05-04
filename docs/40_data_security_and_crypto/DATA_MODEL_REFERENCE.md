@@ -44,7 +44,7 @@ Provide machine-readable field-level reference constraints for entities defined 
 - Validation runtimes using `respect/validation` **MUST** enforce regex and enum constraints in this document for API ingest and persistence writes.
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`
+- [`reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`](reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md)
 
 ## See also
 - [Data Model Spec](./DATA_MODEL_SPEC.md)

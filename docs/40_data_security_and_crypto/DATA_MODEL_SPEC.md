@@ -51,7 +51,7 @@ Define canonical entities, lifecycle semantics, relational invariants, and sensi
 - `ext-sodium` enforces authenticated encryption for sensitive fields (`CRE8-DATA-REQ-0007`).
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`
+- [`reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`](reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md)
 
 ## See also
 - [Data Model Reference](./DATA_MODEL_REFERENCE.md)

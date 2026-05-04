@@ -28,7 +28,7 @@ This document defines the canonical risk-to-control-to-evidence register for Pha
 - **CRE8-TRACE-REQ-0052**: Severity class **MUST** map as: `critical` (20-25), `high` (12-19), `medium` (6-11), `low` (1-5).
 - **CRE8-TRACE-REQ-0053**: `critical` and `high` risks **MUST** include mitigation due date, verification hook ID, and escalation target before normative change approval.
 - **CRE8-TRACE-REQ-0054**: Every risk row **MUST** reference impacted requirement IDs and at least one evidence path proving current control state.
-- **CRE8-TRACE-REQ-0055**: Risk status transitions (`open`, `mitigating`, `accepted`, `closed`) **MUST** be logged in `DECISIONS_LOG.md` when severity class is `high` or `critical`.
+- **CRE8-TRACE-REQ-0055**: Risk status transitions (`open`, `mitigating`, `accepted`, `closed`) **MUST** be logged in [`DECISIONS_LOG.md`](DECISIONS_LOG.md) when severity class is `high` or `critical`.
 
 ## Risk schema
 | Field | Type | Required | Rule |
@@ -66,7 +66,7 @@ This document defines the canonical risk-to-control-to-evidence register for Pha
 
 ## Change history
 
-- 2026-04-30 (v1.1.0): Added Phase 3 risks `RISK-010` (authoring drift), `RISK-011` (schema/example desync), `RISK-012` (glossary churn), `RISK-013` (threat model lag), `RISK-014` (trace coverage regression) per [Phase 3 program plan](../../reports/PHASE3_AUTHORING_PROGRAM_PLAN.md) §4. Change Impact Map: [`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
+- 2026-04-30 (v1.1.0): Added Phase 3 risks `RISK-010` (authoring drift), `RISK-011` (schema/example desync), `RISK-012` (glossary churn), `RISK-013` (threat model lag), `RISK-014` (trace coverage regression) per [Phase 3 program plan](../../reports/PHASE3_AUTHORING_PROGRAM_PLAN.md) §4. Change Impact Map: [[`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md)](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
 
 ## See also
 - [Traceability Matrix](./TRACEABILITY_MATRIX.md)

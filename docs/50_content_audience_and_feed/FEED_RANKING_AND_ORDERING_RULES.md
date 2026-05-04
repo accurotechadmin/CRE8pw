@@ -48,6 +48,6 @@ Define deterministic feed authorization and ordering behavior for CRE8 audience-
 - [Commenting and Interaction Policy](./COMMENTING_AND_INTERACTION_POLICY.md)
 
 
-Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change impact map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).
 
-Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).

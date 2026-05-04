@@ -37,7 +37,7 @@ normative_dependencies:
 | `HOOK-SSOT-LINT-METADATA` | Ensures metadata/schema consistency for configuration contract updates. |
 | `HOOK-CONTRACT-ERROR-SECRETS-REDACTION` | Guards against secret leakage in contract examples and deterministic error output. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`](reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md).
 
 ## See also
 - [Boot and Startup Failure Contract](./BOOT_AND_STARTUP_FAILURE_CONTRACT.md)

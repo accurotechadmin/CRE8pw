@@ -25,7 +25,7 @@ Define canonical CRE8 observability events, required schemas, retention/sensitiv
 ## Normative requirements
 - **CRE8-OPS-REQ-0048**: Every emitted observability event **MUST** declare `{event_name, event_version, severity, channel, timestamp_utc, request_id}` fields and **MUST** validate against the catalog schema row for that event name.
 - **CRE8-OPS-REQ-0049**: Each event type **MUST** declare a sampling rule (`always`, `rate:<n>`, or `error-only`) and runtime emitters **MUST NOT** use undeclared sampling behavior.
-- **CRE8-OPS-REQ-0050**: Event payloads in sensitivity class `restricted` or `secret-adjacent` **MUST NOT** include raw credentials, token material, or private keys; redaction semantics **MUST** align with `ERROR_CODE_CATALOG.md` leak-prevention rules.
+- **CRE8-OPS-REQ-0050**: Event payloads in sensitivity class `restricted` or `secret-adjacent` **MUST NOT** include raw credentials, token material, or private keys; redaction semantics **MUST** align with [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md) leak-prevention rules.
 - **CRE8-OPS-REQ-0051**: Every event **MUST** include at least one provenance binding (`principal_id`, `keypair_id`, `delegation_id`, `post_id`, or `comment_id`) sufficient to reconstruct actor/action lineage for audits.
 - **CRE8-OPS-REQ-0052**: Channel retention classes **MUST** be one of `ephemeral-7d`, `operational-30d`, or `audit-365d`; event routing **MUST** enforce the retention class specified by this catalog.
 - **CRE8-OPS-REQ-0075**: Event-catalog verification evidence **MUST** bind each required event family to the readiness gate matrix (`PRG-05`) and **MUST** include verifier identity plus execution timestamp.
@@ -53,7 +53,7 @@ Define canonical CRE8 observability events, required schemas, retention/sensitiv
 | `HOOK-OBS-EVENT-CATALOG-COVERAGE` | Manual gate in Phase 3 until automated script is delivered by `P3-S11.2`; verifies schema fields, sampling declarations, and retention classes are complete for each catalog row. |
 | `HOOK-CONTRACT-ERROR-SECRETS-REDACTION` | Automated verification that secret-bearing fields are redacted in error/observability outputs. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`](reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md).
 
 ## See also
 - [Migration and Seed Strategy](./MIGRATION_AND_SEED_STRATEGY.md)

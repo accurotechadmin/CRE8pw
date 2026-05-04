@@ -39,7 +39,7 @@ Define canonical relationship cardinality and foreign-key bindings for CRE8 pers
 - Schema migrations executed through `ext-pdo` **MUST** materialize all FK constraints and reject schema drift that removes relationship rows defined above.
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`
+- [`reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`](reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md)
 
 ## See also
 - [Data Model Spec](./DATA_MODEL_SPEC.md)

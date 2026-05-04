@@ -38,7 +38,7 @@ This document defines the mandatory contribution workflow for all normative SSOT
 - **CRE8-GOV-REQ-0034**: Any status promotion to `normative` **MUST** include owner approval and at least one reviewer approval distinct from owner.
 - **CRE8-GOV-REQ-0035**: If a change modifies machine-contract-bound behavior, the pull request **MUST** reference corresponding machine artifact updates or an approved deferred-work item.
 - **CRE8-GOV-REQ-0036**: Editorial changes **MUST NOT** alter requirement IDs, RFC keywords, or behavioral semantics.
-- **CRE8-GOV-REQ-0037**: All merged normative changes **MUST** satisfy `DEFINITION_OF_DONE.md` checks and record outcomes in the PR body.
+- **CRE8-GOV-REQ-0037**: All merged normative changes **MUST** satisfy [`DEFINITION_OF_DONE.md`](DEFINITION_OF_DONE.md) checks and record outcomes in the PR body.
 
 ## Workflow gates
 1. Author prepares change scope, class, and impacted requirements.

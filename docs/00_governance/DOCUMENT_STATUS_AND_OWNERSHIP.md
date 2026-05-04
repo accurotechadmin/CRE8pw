@@ -26,9 +26,9 @@ normative_dependencies:
 ## Normative requirements
 - **CRE8-GOV-REQ-0020**: Every document in `docs/` **MUST** have exactly one declared owner team.
 - **CRE8-GOV-REQ-0021**: Every normative or provisional-normative document **MUST** list at least one reviewer team distinct from the owner.
-- **CRE8-GOV-REQ-0022**: A document **MUST NOT** move to `normative` status without recorded review completion under `CONTRIBUTION_WORKFLOW_SSOT.md`.
+- **CRE8-GOV-REQ-0022**: A document **MUST NOT** move to `normative` status without recorded review completion under [`CONTRIBUTION_WORKFLOW_SSOT.md`](CONTRIBUTION_WORKFLOW_SSOT.md).
 - **CRE8-GOV-REQ-0023**: `next_review_due_utc` **MUST** be no later than 90 days after `last_reviewed_utc` for `normative` documents.
-- **CRE8-GOV-REQ-0024**: Changes to owner or status **MUST** be logged in the change artifact required by `CHANGE_CONTROL_POLICY.md`.
+- **CRE8-GOV-REQ-0024**: Changes to owner or status **MUST** be logged in the change artifact required by [`CHANGE_CONTROL_POLICY.md`](CHANGE_CONTROL_POLICY.md).
 - **CRE8-GOV-REQ-0025**: `deprecated` documents **MUST** include replacement references or explicit retirement rationale.
 - **CRE8-GOV-REQ-0026**: Documents **MUST** align owner/reviewer assignments with the domain matrix in this document unless an approved exception is recorded in the change artifact.
 - **CRE8-GOV-REQ-0027**: `security-impacting` changes **MUST** include Security WG in reviewers even when the matrix lists Security WG as optional-by-class.

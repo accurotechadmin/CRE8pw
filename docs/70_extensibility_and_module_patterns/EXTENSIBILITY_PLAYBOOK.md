@@ -51,7 +51,7 @@ Define the mandatory workflow for adding new CRE8 modules without violating dele
 |---|---|
 | `HOOK-EXT-SEAM-COMPATIBILITY` | Validates seam declaration, DI registration, route binding order, PDP-preservation assertions, and non-overridable core-control enforcement. |
 
-Change Impact Map: `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`](reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md).
 
 ## See also
 - [Module Boundaries and Ownership](./MODULE_BOUNDARIES_AND_OWNERSHIP.md)

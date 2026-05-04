@@ -25,24 +25,24 @@ normative_dependencies:
 Define the authoritative parity mapping between route inventory prose and OpenAPI operations for Phase 1 machine-contract synchronization.
 
 ## Normative requirements
-- **CRE8-MACHINE-REQ-0001**: Every active route in `ROUTE_INVENTORY_REFERENCE.md` **MUST** have exactly one matching OpenAPI `path` + `method` tuple.
+- **CRE8-MACHINE-REQ-0001**: Every active route in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md) **MUST** have exactly one matching OpenAPI `path` + `method` tuple.
 - **CRE8-MACHINE-REQ-0002**: The parity table **MUST** be updated in the same change set as any route addition, removal, or method/path change.
 - **CRE8-MACHINE-REQ-0003**: Parity validation **MUST** pass `composer docs:ssot:route-parity` before merge for contract-impacting changes.
-- **CRE8-MACHINE-REQ-0004**: Each parity row `primary_requirement_id` and `primary_hook_id` **MUST** resolve to active entries in `TRACEABILITY_MATRIX.md`.
+- **CRE8-MACHINE-REQ-0004**: Each parity row `primary_requirement_id` and `primary_hook_id` **MUST** resolve to active entries in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 - **CRE8-MACHINE-REQ-0005**: Each parity row **MUST** declare the complete error example and error code set exposed by OpenAPI error statuses (no omissions/additions).
 - **CRE8-MACHINE-REQ-0006**: The parity table **MUST NOT** contain duplicate `route_id` rows.
 - **CRE8-MACHINE-REQ-0007**: Every parity row `route_family` **MUST** be represented in a Route Family Coverage Policy table with explicit `minimum_high_priority_routes` threshold.
 - **CRE8-MACHINE-REQ-0008**: For each route family, the count of `depth_priority=high` rows in the parity matrix **MUST** be greater than or equal to the declared minimum threshold.
 - **CRE8-MACHINE-REQ-0009**: `parity_depth_status` values **MUST** use only `baseline_complete`, `depth_in_progress`, or `depth_complete`.
-- **CRE8-MACHINE-REQ-0010**: Each parity-row `error_codes` value **MUST** reference only canonical codes from `ERROR_CODE_CATALOG.md` and **MUST** be contained within the route `error_code_set` declared in `ROUTE_INVENTORY_REFERENCE.md`.
+- **CRE8-MACHINE-REQ-0010**: Each parity-row `error_codes` value **MUST** reference only canonical codes from [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md) and **MUST** be contained within the route `error_code_set` declared in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md).
 - **CRE8-MACHINE-REQ-0011**: For each route, every non-baseline deny code in `ROUTE_INVENTORY_REFERENCE.md#error_code_set` **MUST** be represented in parity-row `error_codes` to prevent deny-mapping undercoverage.
 - **CRE8-MACHINE-REQ-0012**: Route Family Coverage Policy rows **MUST** include every route family derivable from active route inventory permission namespaces; missing family policy rows **MUST** fail parity checks.
 - **CRE8-MACHINE-REQ-0013**: Every Route Family Coverage Policy row **MUST** declare accountable `owner` and `decision_ref`; `decision_ref` **MUST** reference `ADR-###` or `DLOG-YYYYMMDD-###` to preserve deferred-breadth governance linkage.
-- **CRE8-MACHINE-REQ-0014**: Every Route Family Coverage Policy `decision_ref` **MUST** resolve to an existing ADR in `ADR_INDEX.md` or decision event in `DECISIONS_LOG.md`; format-only references are insufficient.
-- **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in `TRACEABILITY_MATRIX.md` owner taxonomy (non-empty canonical owner column values).
-- **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md` whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
-- **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in `PHASE2_PROGRESS_BOARD.md`.
-- **CRE8-MACHINE-REQ-0018**: For every `decision_ref=ADR-003` route family, parity depth closure **MUST** be status-aligned with deferred breadth status in `PHASE2_PROGRESS_BOARD.md`: policy rows tied to deferred rows not marked `complete` **MUST NOT** set all family routes to `parity_depth_status=depth_complete`; parity checks **MUST** fail on premature closure drift.
+- **CRE8-MACHINE-REQ-0014**: Every Route Family Coverage Policy `decision_ref` **MUST** resolve to an existing ADR in [`ADR_INDEX.md`](ADR_INDEX.md) or decision event in [`DECISIONS_LOG.md`](DECISIONS_LOG.md); format-only references are insufficient.
+- **CRE8-MACHINE-REQ-0015**: Every Route Family Coverage Policy `owner` **MUST** resolve to an approved team present in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md) owner taxonomy (non-empty canonical owner column values).
+- **CRE8-MACHINE-REQ-0016**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** map to a `P2-DB-*` deferred breadth row in [`reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md`](reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md) whose owner matches the policy `owner` and whose hook set contains the policy `primary_hook_id`; parity checks **MUST** fail on missing/mismatched linkage.
+- **CRE8-MACHINE-REQ-0017**: Every Route Family Coverage Policy row with `decision_ref=ADR-003` **MUST** declare `phase2_due_date_utc` in `YYYY-MM-DD`; the date **MUST** equal the matching `P2-DB-*` row due date in [`PHASE2_PROGRESS_BOARD.md`](PHASE2_PROGRESS_BOARD.md).
+- **CRE8-MACHINE-REQ-0018**: For every `decision_ref=ADR-003` route family, parity depth closure **MUST** be status-aligned with deferred breadth status in [`PHASE2_PROGRESS_BOARD.md`](PHASE2_PROGRESS_BOARD.md): policy rows tied to deferred rows not marked `complete` **MUST NOT** set all family routes to `parity_depth_status=depth_complete`; parity checks **MUST** fail on premature closure drift.
 - **CRE8-MACHINE-REQ-0019**: For every parity row with `primary_hook_id=HOOK-FEED-INTERACTION-DENY-MAPPING`, declared `error_example_refs` **MUST** resolve to OpenAPI examples whose error payload shape enforces canonical `error.code`/`error.category`, approved `request_id` prefixes, and parseable ISO-8601 `timestamp_utc`; parity checks **MUST** fail when fixture payload-shape semantics drift.
 
 

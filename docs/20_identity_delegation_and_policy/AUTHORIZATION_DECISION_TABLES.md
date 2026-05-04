@@ -20,7 +20,7 @@ normative_dependencies:
 # Authorization Decision Tables
 
 ## Purpose
-Define deterministic authorization decision-table requirements that implement the evaluation order and inheritance rules specified in `AUTHORIZATION_AND_DELEGATION_SPEC.md`.
+Define deterministic authorization decision-table requirements that implement the evaluation order and inheritance rules specified in [`AUTHORIZATION_AND_DELEGATION_SPEC.md`](AUTHORIZATION_AND_DELEGATION_SPEC.md).
 
 ## Normative requirements
 - **CRE8-AUTH-REQ-0010**: Authorization checks **MUST** evaluate the gate sequence in this exact order: lifecycle state, credential validity, explicit deny, scope match, permission match, delegation depth, expiry window. Runtime enforcement dependency: `slim/slim` middleware chain order and `phpunit/phpunit` contract tests.
@@ -28,7 +28,7 @@ Define deterministic authorization decision-table requirements that implement th
 - **CRE8-AUTH-REQ-0012**: Descendant grants **MUST NOT** exceed ancestor permissions, scope set, expiry ceiling, or depth budget.
 - **CRE8-AUTH-REQ-0013**: Effective decision records **MUST** include `principal_id`, `resource_scope`, `action`, `ancestor_chain_ref`, `deny_or_allow`, and `decision_reason_code` for provenance export.
 - **CRE8-AUTH-REQ-0014**: Missing or ambiguous policy input **MUST** resolve to deny with reason code `AUTH_POLICY_UNRESOLVED`.
-- **CRE8-AUTH-REQ-0015**: Decision-table rows **MUST** map each deny reason code to one and only one API error code in `ERROR_CODE_CATALOG.md`.
+- **CRE8-AUTH-REQ-0015**: Decision-table rows **MUST** map each deny reason code to one and only one API error code in [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md).
 - **CRE8-AUTH-REQ-0016**: When conflicting policy signals exist, decision resolution **MUST** enforce precedence `explicit_deny > scope_constraint_deny > permission_missing_deny > delegated_allow > direct_allow` and **MUST** persist `winning_signal` in decision metadata for replayability.
 - **CRE8-AUTH-REQ-0017**: Decision-table rows **MUST** cross-link to contract surfaces by route id, example id, and schema node so every row is verifiable against machine response artifacts.
 
@@ -61,12 +61,12 @@ Define deterministic authorization decision-table requirements that implement th
 ## Change history
 
 - 2026-05-04 (v1.2.0): Completed Phase 4 slice P4-S2.6 by adding deterministic contract-linkage requirements and route/example/schema cross-link matrix for decision-table verification.
-- 2026-04-30 (v1.1.0): Reconciled canonical authorization gate order with decision tables for P3-S1.1 and added runtime dependency citations. Change Impact Map: [`reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md`](../../reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md).
+- 2026-04-30 (v1.1.0): Reconciled canonical authorization gate order with decision tables for P3-S1.1 and added runtime dependency citations. Change Impact Map: [[`reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md`](reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md)](../../reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md).
 
 ## Contract linkage matrix
 | Decision table step | Route / contract surface | Example IDs | Schema linkage |
 |---|---|---|---|
-| 1..7 gate sequence | `CRE8-ROUTE-0002` `POST /v1/authz/decide` (`ROUTE_INVENTORY_REFERENCE.md`) | `AuthDecisionRequestAllow`, `AuthDecisionRequestPermissionDeny`, `AuthDecisionRequestScopeDeny`, `AuthDecisionRequestLifecycleBlocked` | `#/components/schemas/AuthzDecisionSuccessEnvelope` and `docs/31_machine_contracts/schemas/authz-decision-response.schema.json` (`data.decision`, `data.decision_reason_code`, `data.evaluated_gate`) |
+| 1..7 gate sequence | `CRE8-ROUTE-0002` `POST /v1/authz/decide` ([`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md)) | `AuthDecisionRequestAllow`, `AuthDecisionRequestPermissionDeny`, `AuthDecisionRequestScopeDeny`, `AuthDecisionRequestLifecycleBlocked` | `#/components/schemas/AuthzDecisionSuccessEnvelope` and [`docs/31_machine_contracts/schemas/authz-decision-response.schema.json`](docs/31_machine_contracts/schemas/authz-decision-response.schema.json) (`data.decision`, `data.decision_reason_code`, `data.evaluated_gate`) |
 | Explicit deny precedence branch | `CRE8-ROUTE-0002` deny examples in OpenAPI | `ErrorExplicitDeny` | `#/components/schemas/ErrorEnvelope` with `error.code=AUTH_EXPLICIT_DENY` |
 | Delegation create/revoke depth boundary | `CRE8-ROUTE-0010` `POST /v1/delegations`; `CRE8-ROUTE-0011` `DELETE /v1/delegations/{delegation_id}` | `ErrorPermissionDenied` | `#/components/schemas/ErrorEnvelope` with `error.code=AUTH_PERMISSION_DENIED` |
 

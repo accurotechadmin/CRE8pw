@@ -49,7 +49,7 @@ normative_dependencies:
 - `vlucas/phpdotenv` carries skew/replay-horizon configuration values and MUST remain consistent with this profile.
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`
+- [`reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`](reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md)
 
 ## See also
 - [Key Lifecycle and Cryptography Spec](./KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md)

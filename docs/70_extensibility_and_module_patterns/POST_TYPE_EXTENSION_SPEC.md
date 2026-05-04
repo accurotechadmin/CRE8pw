@@ -65,4 +65,4 @@ Define mandatory obligations for adding a new CRE8 post family while preserving 
 - [Permission Vocabulary](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md)
 
 
-Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`](reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md).

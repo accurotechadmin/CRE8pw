@@ -26,11 +26,11 @@ normative_dependencies:
 - **CRE8-IDPOL-REQ-0013**: Resolution MUST return both `effective_permissions` and `decision_path` (principal type, grant ids, deny reason if any) for auditability. Enforcement dependency: `monolog/monolog` structured logging and `phpunit/phpunit` auth-reason tests.
 - **CRE8-IDPOL-REQ-0014**: Where no eligible grants remain after filtering, the decision MUST be deny with reason `AUTH_DENY_DELEGATION_SCOPE`. Enforcement dependency: `slim/slim` middleware decision mapping and `phpunit/phpunit` auth-reasons contract tests.
 
-- **CRE8-IDPOL-REQ-0026**: Keychain terminology **MUST** use `id_keypair` and `utility_keypair` labels exactly as defined in `PERMISSION_VOCABULARY.md`, and alias labels (`id_key`, `use_key`, `utility_key`) **MUST NOT** appear in normative decision outputs (`slim/slim`, `phpunit/phpunit`).
-- **CRE8-IDPOL-REQ-0027**: Keypair lifecycle terms consumed by resolution **MUST** align to canonical state names from `KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md` and `DATA_MODEL_REFERENCE.md`; non-canonical states **MUST** be treated as deterministic deny inputs. Enforcement dependency: `ext-pdo` query filters and `phpunit/phpunit` deny-path fixtures.
+- **CRE8-IDPOL-REQ-0026**: Keychain terminology **MUST** use `id_keypair` and `utility_keypair` labels exactly as defined in [`PERMISSION_VOCABULARY.md`](PERMISSION_VOCABULARY.md), and alias labels (`id_key`, `use_key`, `utility_key`) **MUST NOT** appear in normative decision outputs (`slim/slim`, `phpunit/phpunit`).
+- **CRE8-IDPOL-REQ-0027**: Keypair lifecycle terms consumed by resolution **MUST** align to canonical state names from [`KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md`](KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md) and [`DATA_MODEL_REFERENCE.md`](DATA_MODEL_REFERENCE.md); non-canonical states **MUST** be treated as deterministic deny inputs. Enforcement dependency: `ext-pdo` query filters and `phpunit/phpunit` deny-path fixtures.
 
 ## Resolution algorithm
-1. Load principal type and base capabilities from `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`.
+1. Load principal type and base capabilities from [`PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`](PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md).
 2. Load candidate grants for request principal/context from persistence.
 3. Filter grants to `active` lifecycle state and unexpired window.
 4. Sort grants deterministically (`created_at DESC`, then `grant_id ASC`).
@@ -52,4 +52,4 @@ normative_dependencies:
 
 ## Change history
 - 2026-05-04 (v1.1.0): Completed Phase 4 slice P4-S2.4 by aligning keychain and keypair lifecycle terminology with canonical crypto/data-state vocabulary.
-- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.3. Change Impact Map: [`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).
+- 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.3. Change Impact Map: [[`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md)](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).

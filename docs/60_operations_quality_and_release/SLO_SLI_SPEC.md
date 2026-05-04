@@ -27,7 +27,7 @@ Define service-level indicators and objectives that govern reliability and opera
 - **CRE8-OPS-REQ-0064**: The platform **MUST** define per-surface SLO targets for API gateway and policy decision point (PDP) surfaces.
 - **CRE8-OPS-REQ-0065**: Error budget consumption **MUST** be tracked weekly and **MUST** block feature release when budget is exhausted unless an ADR-bound exception exists.
 - **CRE8-OPS-REQ-0066**: Alerting thresholds **MUST** bind to SLO burn-rate rules and **MUST** emit deterministic incident events.
-- **CRE8-OPS-REQ-0067**: SLI measurements **MUST** rely on canonical event schemas from `OBSERVABILITY_EVENT_CATALOG.md` and **MUST NOT** use unversioned ad-hoc fields.
+- **CRE8-OPS-REQ-0067**: SLI measurements **MUST** rely on canonical event schemas from [`OBSERVABILITY_EVENT_CATALOG.md`](OBSERVABILITY_EVENT_CATALOG.md) and **MUST NOT** use unversioned ad-hoc fields.
 
 ## SLI/SLO targets
 | Surface | SLI | Measurement window | SLO target |
@@ -55,7 +55,7 @@ Define service-level indicators and objectives that govern reliability and opera
 | `HOOK-OBS-EVENT-CATALOG-COVERAGE` | Verifies SLI fields map to canonical observability event schemas. |
 
 
-Change Impact Map: `reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`](reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md).
 
 ## See also
 - [Observability Event Catalog](./OBSERVABILITY_EVENT_CATALOG.md)

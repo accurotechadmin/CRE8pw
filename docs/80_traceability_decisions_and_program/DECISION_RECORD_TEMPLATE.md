@@ -25,7 +25,7 @@ Provide the required ADR structure for decisions that alter normative behavior, 
 - **CRE8-TRACE-REQ-0020**: ADR identifiers **MUST** use `ADR-###` and be unique.
 - **CRE8-TRACE-REQ-0021**: Every ADR **MUST** include status, context, decision, consequences, and linked requirement IDs.
 - **CRE8-TRACE-REQ-0022**: ADRs impacting security/privacy/crypto controls **MUST** include explicit risk linkage to `RISK-###` entries.
-- **CRE8-TRACE-REQ-0023**: Accepted ADRs **MUST** be indexed in `ADR_INDEX.md` and logged in `DECISIONS_LOG.md` in the same pull request.
+- **CRE8-TRACE-REQ-0023**: Accepted ADRs **MUST** be indexed in [`ADR_INDEX.md`](ADR_INDEX.md) and logged in [`DECISIONS_LOG.md`](DECISIONS_LOG.md) in the same pull request.
 - **CRE8-TRACE-REQ-0024**: Superseded ADRs **MUST** declare successor ADR ID and rationale.
 
 ## Required ADR template

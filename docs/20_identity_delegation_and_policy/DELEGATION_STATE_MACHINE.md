@@ -57,4 +57,4 @@ This state machine is verified by `HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY` an
 ## Change history
 
 - 2026-05-04 (v1.1.0): Completed Phase 4 slice P4-S2.3 by adding deterministic transition outcome/failure-path requirements for delegation-state deny/allow closure.
-- 2026-04-30 (v1.0.0): Authored normative scenario corpus/state machine for P3-S4.4/P3-S4.5. Change Impact Map: [`reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`](../../reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md).
+- 2026-04-30 (v1.0.0): Authored normative scenario corpus/state machine for P3-S4.4/P3-S4.5. Change Impact Map: [[`reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`](reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md)](../../reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md).

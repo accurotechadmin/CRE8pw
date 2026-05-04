@@ -39,7 +39,7 @@ Define the minimum authoritative route inventory schema and parity obligations f
 | required_permission | yes | Permission token required to authorize request. |
 | scope_type | yes | Scope family (`tenant`, `group`, `resource`, `global`). |
 | success_status | yes | Deterministic success status code(s). |
-| error_code_set | yes | Comma-separated codes from `ERROR_CODE_CATALOG.md`. |
+| error_code_set | yes | Comma-separated codes from [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md). |
 | lifecycle | yes | `active`, `deprecated`, `sunset`. |
 | sunset_utc | conditional | Required if lifecycle is `deprecated` or `sunset`. |
 | replacement_route_id | conditional | Required if lifecycle is `deprecated` or `sunset`. |

@@ -27,10 +27,10 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - **CRE8-TRACE-REQ-0070**: Every seed requirement selected for Phase 1 promotion **MUST** have one tracker row keyed by a unique `seed_requirement_ref`.
 - **CRE8-TRACE-REQ-0071**: Each row **MUST** include: `seed_requirement_ref`, `target_doc_id`, `target_requirement_id`, `promotion_status`, and `verification_hook_id`.
 - **CRE8-TRACE-REQ-0072**: `promotion_status` **MUST** be one of: `candidate`, `drafted`, `reviewed`, `promoted`, `deferred`, `retired`.
-- **CRE8-TRACE-REQ-0073**: A row **MUST NOT** transition to `promoted` unless `target_requirement_id` exists in the target doc and is represented in `TRACEABILITY_MATRIX.md`.
+- **CRE8-TRACE-REQ-0073**: A row **MUST NOT** transition to `promoted` unless `target_requirement_id` exists in the target doc and is represented in [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 - **CRE8-TRACE-REQ-0074**: Rows marked `deferred` or `retired` **MUST** include `decision_ref` to either ADR ID or decision event ID.
 - **CRE8-TRACE-REQ-0075**: Multiple seed refs **MAY** map to one target requirement only when semantic consolidation is explicitly documented in `notes`.
-- **CRE8-TRACE-REQ-0076**: A row marked `promoted` **MUST** include a non-`TBD` `target_requirement_id` and **MUST** use a verification hook that exists in the authoritative hook registry within `TRACEABILITY_MATRIX.md`.
+- **CRE8-TRACE-REQ-0076**: A row marked `promoted` **MUST** include a non-`TBD` `target_requirement_id` and **MUST** use a verification hook that exists in the authoritative hook registry within [`TRACEABILITY_MATRIX.md`](TRACEABILITY_MATRIX.md).
 
 ## Tracker schema
 | Field | Required | Description |
@@ -79,6 +79,6 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - [Seed Canon Index](../../seed/CRE8_SEED_CANON_INDEX.md)
 
 
-Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change impact map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).
 
-Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).

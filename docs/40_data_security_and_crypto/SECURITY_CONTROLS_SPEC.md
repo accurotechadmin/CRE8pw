@@ -25,10 +25,10 @@ normative_dependencies:
 - **CRE8-SECX-REQ-0003**: Secret-bearing configuration values **MUST** load from environment only and **MUST NOT** be persisted to logs.
 - **CRE8-SECX-REQ-0004**: High-risk state transitions (`revoke`, `rotate`, `delegate`) **MUST** emit structured security audit events.
 
-- **CRE8-SECX-REQ-0021**: Each control row **MUST** declare at least one mapped `threat_id` from `SECURITY_THREAT_MODEL.md`; controls without mapped threats are prohibited in normative state.
-- **CRE8-SECX-REQ-0022**: Control verification evidence **MUST** identify a deterministic verification hook and evidence path in `VERIFICATION_STRATEGY.md` for each mapped threat/control pair.
-- **CRE8-SECX-REQ-0027**: Every transport or runtime control that can produce externally visible deny/error outcomes **MUST** declare cross-links to canonical API error semantics in `ERROR_CODE_CATALOG.md` and to observability event names in `OBSERVABILITY_EVENT_CATALOG.md`; missing linkages **MUST** block control promotion or modification.
-- **CRE8-SECX-REQ-0028**: Security controls that mitigate threat scenarios involving API-visible rejection behavior **MUST** include explicit references to corresponding abuse-case rows in `SECURITY_VERIFICATION_ABUSE_CASES.md`; unmapped mitigation controls **MUST** be treated as incomplete for release gating.
+- **CRE8-SECX-REQ-0021**: Each control row **MUST** declare at least one mapped `threat_id` from [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md); controls without mapped threats are prohibited in normative state.
+- **CRE8-SECX-REQ-0022**: Control verification evidence **MUST** identify a deterministic verification hook and evidence path in [`VERIFICATION_STRATEGY.md`](VERIFICATION_STRATEGY.md) for each mapped threat/control pair.
+- **CRE8-SECX-REQ-0027**: Every transport or runtime control that can produce externally visible deny/error outcomes **MUST** declare cross-links to canonical API error semantics in [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md) and to observability event names in [`OBSERVABILITY_EVENT_CATALOG.md`](OBSERVABILITY_EVENT_CATALOG.md); missing linkages **MUST** block control promotion or modification.
+- **CRE8-SECX-REQ-0028**: Security controls that mitigate threat scenarios involving API-visible rejection behavior **MUST** include explicit references to corresponding abuse-case rows in [`SECURITY_VERIFICATION_ABUSE_CASES.md`](SECURITY_VERIFICATION_ABUSE_CASES.md); unmapped mitigation controls **MUST** be treated as incomplete for release gating.
 
 ## Control matrix
 | control_id | family | control | owner | verification_hook_id | mapped_threat_ids |
@@ -43,7 +43,7 @@ normative_dependencies:
 - `ext-sodium`, `firebase/php-jwt`, and `monolog/monolog` provide enforcement surfaces for cryptography, token validation, and structured audit logging.
 
 ## Change Impact Map
-- `reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md`
+- [`reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md`](reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md)
 
 ## See also
 - [Security Threat Model](./SECURITY_THREAT_MODEL.md)

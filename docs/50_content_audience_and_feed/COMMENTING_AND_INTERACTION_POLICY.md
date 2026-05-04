@@ -78,6 +78,6 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 
 
-Change impact map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change impact map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).
 
-Change Impact Map: `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`.
+Change Impact Map: [`reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`](reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md).

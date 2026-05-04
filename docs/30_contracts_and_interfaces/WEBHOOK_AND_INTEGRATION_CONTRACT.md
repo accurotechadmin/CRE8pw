@@ -48,4 +48,4 @@ Specify deterministic outbound webhook and inbound integration obligations for C
 - [Extensibility Module Boundaries](../70_extensibility_and_module_patterns/MODULE_BOUNDARIES_AND_OWNERSHIP.md)
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 
-Change Impact Map: [`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
+Change Impact Map: [[`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
