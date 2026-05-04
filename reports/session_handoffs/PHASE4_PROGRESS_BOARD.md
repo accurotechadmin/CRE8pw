@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T22:20:00Z
+- Last updated (UTC): 2026-05-04T21:54:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -64,9 +64,19 @@
 | P4-S5.4 | complete | Feed-generation edge-case failure semantics for lifecycle, scope, and moderation branches now codified in interaction policy deny matrix. |
 | P4-S5.5 | complete | Feed/content rules now require explicit route-example and OpenAPI schema/example anchor linkage for feed and interaction families. |
 
-### M6..M8
-- M6 started: P4-S6.1 complete; remaining slices not_started.
+### M6 — Operations/Quality/Release Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S6.1 | complete | Startup/health/smoke dependency-baseline and configuration-contract reconciliation complete. |
+| P4-S6.2 | complete | Observability event catalog coverage now explicitly bound to readiness gate evidence with verifier/timestamp requirements. |
+| P4-S6.3 | complete | Readiness gates now require explicit contract-compatibility declaration with fail-closed handling for breaking deltas without ADR waiver. |
+| P4-S6.4 | not_started | Pending. |
+| P4-S6.5 | not_started | Pending. |
+| P4-S6.6 | not_started | Pending. |
+
+### M7..M8
+- Not started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2146.md`](SESSION_HANDOFF_20260504-2146.md)
-- Latest response archive: [`../session_responses/20260504-2146_RESPONSE.md`](../session_responses/20260504-2146_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2154.md`](SESSION_HANDOFF_20260504-2154.md)
+- Latest response archive: [`../session_responses/20260504-2154_RESPONSE.md`](../session_responses/20260504-2154_RESPONSE.md)

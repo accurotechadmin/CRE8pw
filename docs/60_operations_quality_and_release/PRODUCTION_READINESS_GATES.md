@@ -28,6 +28,8 @@ Define minimum non-negotiable gates that MUST pass before production deployment.
 - **CRE8-OPS-REQ-0060**: Threat-to-control coverage and abuse-case linkage **MUST** be complete for all in-scope routes before production promotion.
 - **CRE8-OPS-REQ-0061**: Contract schema and example coverage **MUST** be 100% for routes listed in `ROUTE_INVENTORY_REFERENCE.md` before production promotion.
 - **CRE8-OPS-REQ-0062**: Observability event coverage **MUST** include authz decision, lifecycle transition, and release gate events with deterministic field schemas.
+- **CRE8-OPS-REQ-0073**: Readiness gate evidence **MUST** include direct references to `OBSERVABILITY_EVENT_CATALOG.md` event rows for `authz.decision.evaluated.v1`, `authz.decision.denied.v1`, and `health.readiness.failed.v1` and **MUST** record verification timestamps for each event family.
+- **CRE8-OPS-REQ-0074**: Release-gate sign-off artifacts **MUST** include an explicit compatibility declaration outcome from `CONTRACT_VERSION_POLICY.md` and **MUST** fail closed when compatibility classification is `breaking` without an approved ADR waiver.
 
 ## Readiness gate matrix
 | Gate ID | Gate | Pass criteria | Evidence source |
@@ -37,6 +39,7 @@ Define minimum non-negotiable gates that MUST pass before production deployment.
 | PRG-03 | Threat/control completeness | Every `THREAT-###` row mapped to at least one control and one abuse case | Security threat and abuse-case docs |
 | PRG-04 | Contract completeness | Route × schema × example coverage at 100% | contract coverage hooks |
 | PRG-05 | Observability completeness | Required high-sensitivity events present with retention and sampling class | event catalog hook evidence |
+| PRG-06 | Contract compatibility gate | Current release delta classified per contract version policy and approved for target channel | contract version declaration + ADR index |
 
 ## Implementation-binding dependencies
 - `phpunit/phpunit` **MUST** execute acceptance and contract suites used as release gates.
