@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T22:26:00Z
+- Last updated (UTC): 2026-05-04T22:32:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -78,14 +78,14 @@
 | Slice | Status | Notes |
 |---|---|---|
 | P4-S7.1 | complete | Extensibility playbook now codifies non-overridable identity/delegation/lifecycle/data/crypto controls with ADR-bounded exception expiry requirements. |
-| P4-S7.2 | not_started | Pending. |
-| P4-S7.3 | not_started | Pending. |
-| P4-S7.4 | not_started | Pending. |
+| P4-S7.2 | complete | Post/principal extension specs now require validator-coverage declarations, fail-closed release semantics, and rollback requirements. |
+| P4-S7.3 | complete | Integration provider pattern now requires observability ownership, alert thresholds, and incident-escalation mappings before enablement. |
+| P4-S7.4 | complete | Explicit non-overridable core-controls sections now enforced across extension specs with ADR-bounded exceptions only. |
 | P4-S7.5 | not_started | Pending. |
 
 ### M8
 - Not started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2226.md`](SESSION_HANDOFF_20260504-2226.md)
-- Latest response archive: [`../session_responses/20260504-2226_RESPONSE.md`](../session_responses/20260504-2226_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2232.md`](SESSION_HANDOFF_20260504-2232.md)
+- Latest response archive: [`../session_responses/20260504-2232_RESPONSE.md`](../session_responses/20260504-2232_RESPONSE.md)

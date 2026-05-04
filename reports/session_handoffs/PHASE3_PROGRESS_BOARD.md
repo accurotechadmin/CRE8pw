@@ -201,6 +201,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260504-2232.md`](SESSION_HANDOFF_20260504-2232.md) — Phase 4 M7 contiguous batch executed for P4-S7.2/P4-S7.3/P4-S7.4; extension validator/rollback, provider incident-observability, and non-overridable core-controls closure completed.
 1. [`SESSION_HANDOFF_20260504-2154.md`](SESSION_HANDOFF_20260504-2154.md) — Phase 4 M6 contiguous batch executed for P4-S6.2/P4-S6.3; observability/readiness evidence closure and contract-compatibility gate fail-closed requirements completed.
 1. [`SESSION_HANDOFF_20260504-2151.md`](SESSION_HANDOFF_20260504-2151.md) — Phase 4 M5/M6 contiguous batch executed for P4-S5.5/P4-S6.1; feed/example linkage and startup/readiness dependency-baseline reconciliation completed.
 1. [`SESSION_HANDOFF_20260504-2146.md`](SESSION_HANDOFF_20260504-2146.md) — Phase 4 M5 contiguous batch executed for P4-S5.3/P4-S5.4; interaction/moderation branch completeness and edge-case deny semantics closure completed.

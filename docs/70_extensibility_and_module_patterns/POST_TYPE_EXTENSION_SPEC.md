@@ -30,6 +30,8 @@ Define mandatory obligations for adding a new CRE8 post family while preserving 
 - **CRE8-EXT-REQ-0019**: Audience-targeting semantics **MUST** map to canonical audience-group rules and **MUST NOT** bypass deny semantics for membership, suspension, or tenant isolation.
 - **CRE8-EXT-REQ-0020**: Feed visibility/ranking behavior **MUST** declare deterministic ordering fields and tie-breakers and **MUST** preserve tenant-isolated cursor determinism.
 - **CRE8-EXT-REQ-0021**: A post-family extension patch **MUST** update route inventory, OpenAPI/parity rows, and deny/error examples for all added or modified routes in the same change set.
+- **CRE8-EXT-REQ-0028**: Post-family extension manifests **MUST** declare validator coverage for payload schema, lifecycle transition guards, audience eligibility, and policy-token resolution; release approval **MUST** fail closed when any validator result is missing or non-passing.
+- **CRE8-EXT-REQ-0029**: Post-family extension patches **MUST** include a rollback plan with trigger thresholds, reversible migration scope, and required evidence artifacts; rollback execution **MUST** preserve canonical lifecycle and audience deny semantics.
 
 ## Required post-family manifest
 | Field | Requirement |
@@ -40,6 +42,8 @@ Define mandatory obligations for adding a new CRE8 post family while preserving 
 | `ranking_fields` | Primary ordering fields and deterministic tie-breakers. |
 | `policy_bindings` | Required PDP permissions and deny codes. |
 | `contract_refs` | Route inventory rows + OpenAPI ops + parity rows + example fixtures. |
+| `validator_coverage` | Required validator commands/results for schema, lifecycle, audience, and policy-token resolution checks. |
+| `rollback_plan` | Trigger thresholds, reversible steps, and evidence artifacts for rollback execution. |
 
 ## Verification hooks
 | Hook ID | Enforcement |
@@ -47,6 +51,10 @@ Define mandatory obligations for adding a new CRE8 post family while preserving 
 | `HOOK-EXT-SEAM-COMPATIBILITY` | Verifies post-family extension manifest completeness and inherited invariant coverage. |
 | `HOOK-CONTRACT-ROUTE-INVENTORY-PARITY` | Verifies route inventory and prose/machine parity updates for extension routes. |
 | `HOOK-CONTRACT-EXAMPLE-COVERAGE` | Verifies allow/deny examples are present for new post-type routes. |
+
+## Non-overridable core controls
+- Post-family extensions **MUST** preserve all controls declared by `CRE8-EXT-REQ-0027`, including identity/delegation gate ordering, lifecycle deny semantics, data-classification boundaries, and cryptographic verification profiles.
+- Any post-family behavior that conflicts with these controls **MUST** be rejected unless an ADR-approved bounded exception includes explicit expiry and rollback conditions.
 
 ## See also
 - [Extensibility Playbook](./EXTENSIBILITY_PLAYBOOK.md)
