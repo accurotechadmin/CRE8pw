@@ -26,14 +26,16 @@ normative_dependencies:
 - **CRE8-SECX-REQ-0013**: Abuse-case rows for replay and proof-validation threats **MUST** assert nonce/timestamp/signature fail-closed behavior before authorization policy evaluation.
 - **CRE8-SECX-REQ-0014**: Abuse-case rows **MUST** reference canonical error codes from `ERROR_CODE_CATALOG.md`; ad-hoc error identifiers **MUST NOT** be introduced.
 - **CRE8-SECX-REQ-0015**: Verification evidence for every abuse-case execution **MUST** be recorded under `docs/evidence/templates/README.md` using hook-linked artifacts.
+- **CRE8-SECX-REQ-0029**: Every abuse-case row **MUST** declare `mitigation_owner` and `evidence_location` fields; `mitigation_owner` **MUST** reference the accountable working group and `evidence_location` **MUST** resolve to a template or concrete artifact path under `docs/evidence/`.
+- **CRE8-SECX-REQ-0030**: Every abuse-case row **MUST** map to at least one `control_id` from `SECURITY_CONTROLS_SPEC.md`; rows lacking mapped controls **MUST** be treated as unresolved security residuals and entered in the phase exceptions register before release.
 
 ## Abuse-case matrix
-| abuse_case_id | threat_id | setup | steps | expected_platform_response | expected_error_code | verification_hook |
-|---|---|---|---|---|---|---|
-| ABUSE-001 | THREAT-001 | Active ID keypair, valid permission grant, replay cache enabled | Submit valid signed request; replay identical nonce+timestamp+signature | Request denied before policy gate evaluation; replay tuple written to security audit channel | auth.proof.replay_detected | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| ABUSE-002 | THREAT-001 | Active ID keypair, skew window ±120s | Submit request with timestamp outside accepted skew and otherwise valid signature | Request denied pre-policy; timestamp violation emitted with request correlation id | auth.proof.timestamp_invalid | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| ABUSE-003 | THREAT-002 | Owner Console response headers policy enabled | Inject unauthorized script source and inline execution attempt | Browser-side execution blocked by CSP; server emits structured deny telemetry | security.csp.violation | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| ABUSE-004 | THREAT-003 | Encrypted key storage enabled, restricted principal context | Attempt cross-principal utility-key retrieval with valid session but wrong scope | Retrieval denied; sensitive fields redacted from error payload and audit log | identity.utility.context_forbidden | HOOK-SEC-THREAT-CONTROL-MATRIX |
+| abuse_case_id | threat_id | control_id | setup | steps | expected_platform_response | expected_error_code | verification_hook | mitigation_owner | evidence_location |
+|---|---|---|---|---|---|---|---|---|---|
+| ABUSE-001 | THREAT-001 | SEC-CTRL-001,SEC-CTRL-004 | Active ID keypair, valid permission grant, replay cache enabled | Submit valid signed request; replay identical nonce+timestamp+signature | Request denied before policy gate evaluation; replay tuple written to security audit channel | auth.proof.replay_detected | HOOK-SEC-THREAT-CONTROL-MATRIX | Security WG | docs/evidence/templates/SECURITY_VERIFICATION_EVIDENCE_TEMPLATE.md |
+| ABUSE-002 | THREAT-001 | SEC-CTRL-001,SEC-CTRL-004 | Active ID keypair, skew window ±120s | Submit request with timestamp outside accepted skew and otherwise valid signature | Request denied pre-policy; timestamp violation emitted with request correlation id | auth.proof.timestamp_invalid | HOOK-SEC-THREAT-CONTROL-MATRIX | Security WG | docs/evidence/templates/SECURITY_VERIFICATION_EVIDENCE_TEMPLATE.md |
+| ABUSE-003 | THREAT-002 | SEC-CTRL-002,SEC-CTRL-005 | Owner Console response headers policy enabled | Inject unauthorized script source and inline execution attempt | Browser-side execution blocked by CSP; server emits structured deny telemetry | security.csp.violation | HOOK-SEC-THREAT-CONTROL-MATRIX | Security WG | docs/evidence/templates/SECURITY_VERIFICATION_EVIDENCE_TEMPLATE.md |
+| ABUSE-004 | THREAT-003 | SEC-CTRL-003,SEC-CTRL-005 | Encrypted key storage enabled, restricted principal context | Attempt cross-principal utility-key retrieval with valid session but wrong scope | Retrieval denied; sensitive fields redacted from error payload and audit log | identity.utility.context_forbidden | HOOK-SEC-THREAT-CONTROL-MATRIX | Security WG | docs/evidence/templates/SECURITY_VERIFICATION_EVIDENCE_TEMPLATE.md |
 
 ## Implementation binding
 - `ext-sodium` **MUST** provide signature validation primitives and constant-time comparison for abuse-case verification.

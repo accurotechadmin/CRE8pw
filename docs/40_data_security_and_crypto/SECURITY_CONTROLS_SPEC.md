@@ -28,6 +28,7 @@ normative_dependencies:
 - **CRE8-SECX-REQ-0021**: Each control row **MUST** declare at least one mapped `threat_id` from `SECURITY_THREAT_MODEL.md`; controls without mapped threats are prohibited in normative state.
 - **CRE8-SECX-REQ-0022**: Control verification evidence **MUST** identify a deterministic verification hook and evidence path in `VERIFICATION_STRATEGY.md` for each mapped threat/control pair.
 - **CRE8-SECX-REQ-0027**: Every transport or runtime control that can produce externally visible deny/error outcomes **MUST** declare cross-links to canonical API error semantics in `ERROR_CODE_CATALOG.md` and to observability event names in `OBSERVABILITY_EVENT_CATALOG.md`; missing linkages **MUST** block control promotion or modification.
+- **CRE8-SECX-REQ-0028**: Security controls that mitigate threat scenarios involving API-visible rejection behavior **MUST** include explicit references to corresponding abuse-case rows in `SECURITY_VERIFICATION_ABUSE_CASES.md`; unmapped mitigation controls **MUST** be treated as incomplete for release gating.
 
 ## Control matrix
 | control_id | family | control | owner | verification_hook_id | mapped_threat_ids |
