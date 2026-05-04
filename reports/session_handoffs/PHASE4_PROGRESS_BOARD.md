@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T19:10:00Z
+- Last updated (UTC): 2026-05-04T19:17:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -35,9 +35,19 @@
 | P4-S2.5 | complete | Conflicting policy-signal precedence rules added to `AUTHORIZATION_AND_DELEGATION_SPEC.md`. |
 | P4-S2.6 | complete | Identity decision tables cross-linked to route examples and machine response schema surfaces. |
 
-### M3..M8
+### M3 — Contract and Schema Parity Completion
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S3.1 | complete | Route inventory ↔ OpenAPI parity revalidated; evidence logged in `reports/phase4/P4-S3.1_ROUTE_OPENAPI_PARITY_CHECK.md`. |
+| P4-S3.2 | complete | Example/schema validation reverified across relevant contract suites; evidence logged in `reports/phase4/P4-S3.2_EXAMPLE_SCHEMA_VALIDATION.md`. |
+| P4-S3.3 | not_started | Pending. |
+| P4-S3.4 | not_started | Pending. |
+| P4-S3.5 | not_started | Pending. |
+| P4-S3.6 | not_started | Pending. |
+
+### M4..M8
 - All slices not_started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-1910.md`](SESSION_HANDOFF_20260504-1910.md)
-- Latest response archive: [`../session_responses/20260504-1910_RESPONSE.md`](../session_responses/20260504-1910_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-1917.md`](SESSION_HANDOFF_20260504-1917.md)
+- Latest response archive: [`../session_responses/20260504-1917_RESPONSE.md`](../session_responses/20260504-1917_RESPONSE.md)
