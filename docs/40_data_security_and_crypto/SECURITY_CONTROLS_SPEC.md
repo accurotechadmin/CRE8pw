@@ -25,14 +25,17 @@ normative_dependencies:
 - **CRE8-SECX-REQ-0003**: Secret-bearing configuration values **MUST** load from environment only and **MUST NOT** be persisted to logs.
 - **CRE8-SECX-REQ-0004**: High-risk state transitions (`revoke`, `rotate`, `delegate`) **MUST** emit structured security audit events.
 
+- **CRE8-SECX-REQ-0021**: Each control row **MUST** declare at least one mapped `threat_id` from `SECURITY_THREAT_MODEL.md`; controls without mapped threats are prohibited in normative state.
+- **CRE8-SECX-REQ-0022**: Control verification evidence **MUST** identify a deterministic verification hook and evidence path in `VERIFICATION_STRATEGY.md` for each mapped threat/control pair.
+
 ## Control matrix
-| control_id | family | control | owner | verification_hook_id |
-|---|---|---|---|---|
-| SEC-CTRL-001 | identity | key lineage and lifecycle checks | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| SEC-CTRL-002 | transport | TLS-only ingress and strict security headers | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| SEC-CTRL-003 | data | encrypted-at-rest sensitive fields | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| SEC-CTRL-004 | runtime | deny-by-default on validation/policy failures | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX |
-| SEC-CTRL-005 | audit | immutable event trail for privileged actions | Operations Quality WG | HOOK-SEC-THREAT-CONTROL-MATRIX |
+| control_id | family | control | owner | verification_hook_id | mapped_threat_ids |
+|---|---|---|---|---|---|
+| SEC-CTRL-001 | identity | key lineage and lifecycle checks | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX | THREAT-001,THREAT-003 |
+| SEC-CTRL-002 | transport | TLS-only ingress and strict security headers | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX | THREAT-002 |
+| SEC-CTRL-003 | data | encrypted-at-rest sensitive fields | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX | THREAT-003 |
+| SEC-CTRL-004 | runtime | deny-by-default on validation/policy failures | Security WG | HOOK-SEC-THREAT-CONTROL-MATRIX | THREAT-001 |
+| SEC-CTRL-005 | audit | immutable event trail for privileged actions | Operations Quality WG | HOOK-SEC-THREAT-CONTROL-MATRIX | THREAT-001,THREAT-002,THREAT-003 |
 
 ## Implementation binding
 - `ext-sodium`, `firebase/php-jwt`, and `monolog/monolog` provide enforcement surfaces for cryptography, token validation, and structured audit logging.

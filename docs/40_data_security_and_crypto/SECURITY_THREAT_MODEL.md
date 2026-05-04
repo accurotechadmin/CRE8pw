@@ -22,6 +22,8 @@ normative_dependencies:
 - **CRE8-SECX-REQ-0008**: Threat model entries **MUST** include `threat_id`, `surface`, `attack_path`, `impact`, and `mapped_controls`.
 - **CRE8-SECX-REQ-0009**: Every threat with high or critical impact **MUST** map to at least one preventive control and one detective control.
 - **CRE8-SECX-REQ-0010**: Threat-model updates **MUST** include explicit change-log entries whenever new public routes or principal types are introduced.
+- **CRE8-SECX-REQ-0023**: Every threat row **MUST** resolve to one or more `control_id` values in `SECURITY_CONTROLS_SPEC.md` and one operational verification hook row in `VERIFICATION_STRATEGY.md`; unresolved threat-control-hook chains MUST block merge.
+- **CRE8-SECX-REQ-0024**: Threats that include lifecycle attack paths **MUST** map to lifecycle operational controls and lifecycle contract verification (`composer test:contract:lifecycle`) evidence before release gate finalization.
 
 ## Threat table
 | threat_id | surface | attack_path | impact | mapped_controls |
