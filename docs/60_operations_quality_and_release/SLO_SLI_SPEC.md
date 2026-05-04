@@ -45,7 +45,7 @@ Define service-level indicators and objectives that govern reliability and opera
 
 ## Implementation-binding dependencies
 - `monolog/monolog` **MUST** emit structured events used to compute SLIs.
-- `symfony/cache` **SHOULD** stabilize metric aggregation windows where in-process aggregation is required.
+- `symfony/cache` **MUST** stabilize metric aggregation windows when the runtime performs in-process aggregation for SLI evaluation windows.
 - `phpunit/phpunit` **SHOULD** enforce SLI calculator fixture tests as part of acceptance suites.
 
 ## Verification hooks
