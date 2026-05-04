@@ -91,6 +91,17 @@ normative_dependencies:
 | `Exception` | Explicitly approved deferral item with owner/due/decision reference in register. | Program Exception | Deferral Row | Silent Debt | `PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md` |
 | `SSOT` | Single source of truth corpus that governs implementation and verification behavior. | Canon | Authoritative Spec | Suggestion Docs | `SSOT_INDEX.md` |
 
+## Canonical actor vocabulary (Phase 4 normalization)
+
+| Actor | Canonical meaning | Required usage boundary | Prohibited aliases |
+|---|---|---|---|
+| `System` | Server-side CRE8 runtime that enforces contracts and emits deterministic envelopes/events. | MUST be used for normative behavior executed by application code or middleware pipeline. | Platform, Backend Service |
+| `Issuer` | Principal authorized to mint or delegate credentials/capabilities to another principal. | MUST be used for issuance/delegation actions and provenance lineage statements. | Grantor, Admin Issuer |
+| `Principal` | Authenticated identity subject represented in policy evaluation and capability matrices. | MUST be used for actor identity in authorization, lifecycle, and audience policy semantics. | User, Account Actor |
+| `Moderator` | Principal acting under moderation permissions and moderation-state transitions. | MUST be used for moderation outcomes, holds, review, and interaction controls. | Reviewer, Content Admin |
+| `Integration Provider` | External or modular integration component bound by webhook/provider contracts. | MUST be used for third-party or extension integration obligations and retry/signature semantics. | Provider Adapter (actor), Third-party Service |
+| `Operator` | Human or automation actor executing operational runbooks, release gates, and verification hooks. | MUST be used for deployment/operations/verification actions outside request-serving runtime. | DevOps, SRE User |
+
 ## See also
 - [SSOT Index](../00_governance/SSOT_INDEX.md)
 - [Document Template and Style Guide](../00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
