@@ -1,6 +1,6 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-05-01T14:23:00Z
+- Last updated (UTC): 2026-05-04T16:59:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 3 active — Canon Completion**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
@@ -119,7 +119,7 @@ M1 completion gate: all 9 entry-audit conflicts (CONF-*) MUST be resolved to `co
 
 | Slice | Title | Status | Owner WG | Due (UTC) | Hook IDs | decision_ref | Evidence path | Notes |
 |---|---|---|---|---|---|---|---|---|
-| P3-S6.1 | Schema completeness pass | partially_complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | Strict additionalProperties / unevaluatedProperties closures. Residual: broaden schema closure assertions from top-level to allOf-expanded envelopes. |
+| P3-S6.1 | Schema completeness pass | complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | `scripts/docs_ssot_schema_coverage.php`; `docs/31_machine_contracts/schemas/*.schema.json`; `reports/change_impact_maps/20260504-1659-P3-S6.1-schema-closure-depth.md` | Closure-depth pass completed: all object envelopes require explicit closure and all object-typed `data` payload schemas require `additionalProperties:false` or `unevaluatedProperties:false`, including allOf-expanded schemas. |
 | P3-S6.2 | Cross-route schema coverage check | complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-SCHEMA-COVERAGE (target) | ADR-004 | (TBD) | New script `scripts/docs_ssot_schema_coverage.php`. Hook validated in phase3 bundle. |
 | P3-S6.3 | Contract version policy | complete | API Contracts WG | 2026-05-30 | HOOK-CONTRACT-COMPAT-DECLARATION | ADR-004 | (TBD) | New `CONTRACT_VERSION_POLICY.md` authored and cross-linked from API guide/parity table. |
 | P3-S6.4 | Schema test fixtures | complete | API Contracts WG | 2026-06-01 | HOOK-CONTRACT-SCHEMA-COVERAGE (target); HOOK-CONTRACT-EXAMPLE-COVERAGE (target) | ADR-004 | (TBD) | Adds `composer test:contract:request-schema`, `test:contract:response-schema` with positive/negative fixtures. |
@@ -194,6 +194,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260504-1659.md`](SESSION_HANDOFF_20260504-1659.md) — One-slice exception authorized; P3-S6.1 completed via schema-closure depth pass and traceability/evidence artifacts updated.
 1. [`SESSION_HANDOFF_20260501-1423.md`](SESSION_HANDOFF_20260501-1423.md) — Blocked per batch-size constraint: only one incomplete contiguous slice remains (`P3-S6.1`); blocker report `PHASE3_BLOCKER_20260501-1423.md` published and baseline acceptance revalidated.
 1. [`SESSION_HANDOFF_20260430-2338.md`](SESSION_HANDOFF_20260430-2338.md) — Blocked per batch-size constraint: only one incomplete contiguous slice remains (`P3-S6.1`); blocker report `PHASE3_BLOCKER_20260430-2338.md` published.
 1. [`SESSION_HANDOFF_20260430-2325.md`](SESSION_HANDOFF_20260430-2325.md) — Unblocked P3-S5.3/P3-S5.4/P3-S5.5 status chain by reconciling progress board with already-completed canonical artifacts; M6 reopened for contiguous execution.
@@ -216,6 +217,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
+1. [`reports/session_responses/20260504-1659_RESPONSE.md`](../session_responses/20260504-1659_RESPONSE.md) — One-slice exception execution response archive for P3-S6.1 closure-depth completion.
 1. [`reports/session_responses/20260501-1423_RESPONSE.md`](../session_responses/20260501-1423_RESPONSE.md) — Blocked-session response archive (no unblocked contiguous 2–5 slice batch).
 1. [`reports/session_responses/20260430-2325_RESPONSE.md`](../session_responses/20260430-2325_RESPONSE.md) — Unblock response archive for M5.3/M5.4/M5.5 dependency-chain resolution.
 1. [`reports/session_responses/20260430-2059_RESPONSE.md`](../session_responses/20260430-2059_RESPONSE.md) — Blocked-session response archive (no unblocked contiguous 2–5 slice batch).
