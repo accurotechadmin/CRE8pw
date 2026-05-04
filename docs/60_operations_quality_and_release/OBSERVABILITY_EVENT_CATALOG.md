@@ -28,6 +28,7 @@ Define canonical CRE8 observability events, required schemas, retention/sensitiv
 - **CRE8-OPS-REQ-0050**: Event payloads in sensitivity class `restricted` or `secret-adjacent` **MUST NOT** include raw credentials, token material, or private keys; redaction semantics **MUST** align with `ERROR_CODE_CATALOG.md` leak-prevention rules.
 - **CRE8-OPS-REQ-0051**: Every event **MUST** include at least one provenance binding (`principal_id`, `keypair_id`, `delegation_id`, `post_id`, or `comment_id`) sufficient to reconstruct actor/action lineage for audits.
 - **CRE8-OPS-REQ-0052**: Channel retention classes **MUST** be one of `ephemeral-7d`, `operational-30d`, or `audit-365d`; event routing **MUST** enforce the retention class specified by this catalog.
+- **CRE8-OPS-REQ-0075**: Event-catalog verification evidence **MUST** bind each required event family to the readiness gate matrix (`PRG-05`) and **MUST** include verifier identity plus execution timestamp.
 
 ## Event catalog
 | Event name | Channel | Severity | Sampling | Retention | Sensitivity | Required provenance fields |
