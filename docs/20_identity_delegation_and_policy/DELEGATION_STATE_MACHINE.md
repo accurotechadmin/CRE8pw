@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-IDPOL-DELEGATION-STATE-MACHINE
-version: 1.0.0
+version: 1.1.0
 status: normative
 owner: Identity & Policy WG
 reviewers:
   - Security WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-04-30
+last_reviewed_utc: 2026-05-04
 next_review_due_utc: 2026-07-30
 source_seed_refs:
   - seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md
@@ -44,10 +44,17 @@ Events: `grant, accept, suspend, resume, revoke, rotate, expire, retire`.
 - **CRE8-IDPOL-REQ-0021**: Lifecycle chronology used for propagation verification MUST preserve contiguous descendant request-id fixture sequence `req-desc-life-001..003` (`phpunit/phpunit`).
 - **CRE8-IDPOL-REQ-0022**: Illegal transitions MUST fail closed and map to the deny code declared in the transition table; handlers MUST NOT rewrite lifecycle deny codes (`slim/slim`).
 
+## Decision outcome and failure-path mapping
+
+- **CRE8-IDPOL-REQ-0023**: Transition evaluation **MUST** return exactly one terminal outcome per request: `ALLOW_TRANSITION` when guard checks pass or `DENY_TRANSITION` when any guard check fails; mixed or retry-without-state-refresh outcomes are prohibited (`slim/slim`, `phpunit/phpunit`).
+- **CRE8-IDPOL-REQ-0024**: Failure-path evaluation **MUST** execute in deterministic order `(a) from-state validity, (b) actor authority, (c) lifecycle guard, (d) expiry/time guard)` and **MUST** short-circuit on first failure with the transition-table deny code for that failed gate (`phpunit/phpunit`).
+- **CRE8-IDPOL-REQ-0025**: A denied transition **MUST NOT** mutate delegation state and **MUST** emit an audit record containing `requested_event`, `from_state`, `failure_gate`, and canonical deny code for post-incident replay (`ext-pdo`).
+
 ## Verification hook alignment
 
 This state machine is verified by `HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY` and `HOOK-AUTH-LIFECYCLE-ENFORCEMENT` through lifecycle/auth contract suites.
 
 ## Change history
 
+- 2026-05-04 (v1.1.0): Completed Phase 4 slice P4-S2.3 by adding deterministic transition outcome/failure-path requirements for delegation-state deny/allow closure.
 - 2026-04-30 (v1.0.0): Authored normative scenario corpus/state machine for P3-S4.4/P3-S4.5. Change Impact Map: [`reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`](../../reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md).
