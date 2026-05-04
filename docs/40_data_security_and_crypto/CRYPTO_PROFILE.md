@@ -21,7 +21,7 @@ normative_dependencies:
 ## Normative requirements
 - **CRE8-SECX-REQ-0016**: Request-signature verification **MUST** use Ed25519 (`EdDSA`) implemented via `ext-sodium`; non-approved algorithms **MUST NOT** be accepted.
 - **CRE8-SECX-REQ-0017**: Password/secret derivation workflows **MUST** use Argon2id with parameters `memory_cost >= 65536`, `time_cost >= 3`, and `threads >= 1`; weaker profiles **MUST NOT** be used for new material.
-- **CRE8-SECX-REQ-0018**: Random nonce and key material generation **MUST** use `random_bytes` and/or sodium CSPRNG primitives; pseudo-random generators **MUST NOT** be used.
+- **CRE8-SECX-REQ-0018**: Random nonce and key material generation **MUST** use `random_bytes` or sodium CSPRNG primitives; pseudo-random generators **MUST NOT** be used.
 - **CRE8-SECX-REQ-0019**: Signature and token comparisons **MUST** use constant-time compare primitives (`sodium_memcmp` or equivalent) to prevent timing leakage.
 - **CRE8-SECX-REQ-0020**: Signed request nonces **MUST** be 24 bytes minimum entropy and unique per `(principal_id, key_id, request_surface)` within the replay retention horizon.
 - **CRE8-SECX-REQ-0021**: Clock skew tolerance for signed requests **MUST** be bounded to ±120 seconds unless a documented ADR exception exists; rejected skew events **MUST** emit audit evidence.

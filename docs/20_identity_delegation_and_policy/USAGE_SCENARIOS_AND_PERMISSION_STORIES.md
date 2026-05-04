@@ -51,7 +51,7 @@ Each scenario MUST define precondition, request, gate path (1..7), expected outc
 
 ## Normative requirements
 
-- **CRE8-IDPOL-REQ-0015**: The 12 scenarios in this document MUST remain represented by executable fixtures consumed by `composer test:contract:auth` and/or `composer test:contract:lifecycle` (`phpunit/phpunit`).
+- **CRE8-IDPOL-REQ-0015**: The 12 scenarios in this document MUST remain represented by executable fixtures consumed by at least one of `composer test:contract:auth` or `composer test:contract:lifecycle` (`phpunit/phpunit`).
 - **CRE8-IDPOL-REQ-0016**: Scenario gate-path notation MUST align to the canonical 7-gate PDP order and MUST fail closed on missing gates (`slim/slim`).
 - **CRE8-IDPOL-REQ-0017**: Any scenario involving lifecycle-state propagation MUST map denies to `AUTH_LIFECYCLE_BLOCKED` and use descendant request-id namespace `req-desc-life-*` (`ext-pdo`, `phpunit/phpunit`).
 - **CRE8-IDPOL-REQ-0018**: Identity transition scenarios MUST reference replay-safe issuance/context fixtures (`req-ident-issue-rt-*`, `req-ident-ctx-rt-*`) in request context (`ext-sodium`, `firebase/php-jwt`).
