@@ -29,6 +29,7 @@ Define deterministic outbound and inbound integration patterns for CRE8 extensio
 - **CRE8-EXT-REQ-0014**: Retry behavior **MUST** use bounded exponential backoff with deterministic max-attempt and max-age limits; terminal failure **MUST** emit a dead-letter event containing request id, provider id, error class, and replay disposition.
 - **CRE8-EXT-REQ-0015**: Inbound integrations **MUST** validate signature/JWKS material before payload parsing and **MUST** fail closed with canonical deny/error mapping on validation failure.
 - **CRE8-EXT-REQ-0016**: Every provider integration **MUST** define executable seam tests for: successful delivery, retryable failure, non-retryable failure, replay rejection, and signature-key rotation.
+- **CRE8-EXT-REQ-0031**: Provider manifests **MUST** define observability ownership, alert thresholds, and incident-escalation contacts for signature failures, retry saturation, dead-letter growth, and replay rejections; unresolved ownership or threshold definitions **MUST** block production enablement.
 
 ## Outbound provider pattern
 | Stage | Required control | Failure semantics |
@@ -51,6 +52,7 @@ Define deterministic outbound and inbound integration patterns for CRE8 extensio
 |---|---|
 | `HOOK-CONTRACT-COMPAT-DECLARATION` | Verifies compatibility declaration presence and version semantics for provider manifests and contracts. |
 | `HOOK-EXT-SEAM-COMPATIBILITY` | Verifies integration seam tests cover success/failure/replay/rotation paths. |
+| `HOOK-OBS-EVENT-CATALOG-COVERAGE` | Verifies required provider observability events, alert thresholds, and owner mappings are present. |
 
 ## See also
 - [Extensibility Playbook](./EXTENSIBILITY_PLAYBOOK.md)

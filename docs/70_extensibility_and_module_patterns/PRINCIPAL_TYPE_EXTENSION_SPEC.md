@@ -30,6 +30,7 @@ Define mandatory obligations for introducing a new principal type while preservi
 - **CRE8-EXT-REQ-0024**: New principal types **MUST** define delegation lifecycle transitions (grant, suspend, revoke, expire) and cascade semantics consistent with `DELEGATION_STATE_MACHINE.md`.
 - **CRE8-EXT-REQ-0025**: Authorization fixtures for the new principal type **MUST** include deterministic allow and deny examples that exercise gate ordering and reason-code mapping.
 - **CRE8-EXT-REQ-0026**: Principal extension manifests **MUST** include backward-compatibility declaration, migration impact, and rollback constraints before release approval.
+- **CRE8-EXT-REQ-0030**: Principal-type extension manifests **MUST** declare validator coverage for permission-token resolution, capability-matrix completeness, delegation transition integrity, and authorization reason-code determinism; release approval **MUST** fail closed when required validator results are absent or non-passing.
 
 ## Required principal extension manifest
 | Field | Requirement |
@@ -40,6 +41,7 @@ Define mandatory obligations for introducing a new principal type while preservi
 | `delegation_transitions` | State transition additions and propagation semantics. |
 | `authz_fixtures` | Allow/deny fixtures with expected reason codes. |
 | `compatibility_declaration` | Additive vs breaking classification and rollback strategy. |
+| `validator_coverage` | Required validator commands/results for token, matrix, delegation, and reason-code checks. |
 
 ## Verification hooks
 | Hook ID | Enforcement |
@@ -48,6 +50,10 @@ Define mandatory obligations for introducing a new principal type while preservi
 | `HOOK-CAPABILITY-MATRIX-COMPLETE` | Verifies matrix coverage for new principal type across action families. |
 | `HOOK-DELEGATION-STATE-MACHINE-CONSISTENCY` | Verifies transition semantics remain valid and deterministic. |
 | `HOOK-CONTRACT-POLICY-ORDER` | Verifies allow/deny fixtures preserve canonical authorization gate order and reason mapping. |
+
+## Non-overridable core controls
+- Principal-type extensions **MUST** preserve all controls declared by `CRE8-EXT-REQ-0027`, including identity/delegation invariants, lifecycle deny propagation, data-classification enforcement, and cryptographic verification controls.
+- Any principal-type behavior that conflicts with these controls **MUST** be rejected unless an ADR-approved bounded exception includes explicit expiry and rollback conditions.
 
 ## See also
 - [Permission Vocabulary](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md)
