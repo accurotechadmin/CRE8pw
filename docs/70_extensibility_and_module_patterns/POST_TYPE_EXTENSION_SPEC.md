@@ -60,6 +60,9 @@ Define mandatory obligations for adding a new CRE8 post family while preserving 
 - [Extensibility Playbook](./EXTENSIBILITY_PLAYBOOK.md)
 - [Content Model and Targeting Spec](../50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md)
 - [Feed Ranking and Ordering Rules](../50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md)
+- [Route Inventory Reference](../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md)
+- [Webhook and Integration Contract](../30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md)
+- [Permission Vocabulary](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md)
 
 
 Change Impact Map: `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`.
