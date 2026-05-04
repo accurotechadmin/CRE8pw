@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-OPS-PRODUCTION-READINESS-GATES
-version: 1.0.0
+version: 1.1.0
 status: normative
 owner: Operations Quality WG
 reviewers:
   - Security WG
   - Program Traceability WG
-last_reviewed_utc: 2026-04-30
+last_reviewed_utc: 2026-05-04
 next_review_due_utc: 2026-06-16
 source_seed_refs:
   - seed/CRE8_REPO_STUDY_REPORT.md
@@ -30,6 +30,7 @@ Define minimum non-negotiable gates that MUST pass before production deployment.
 - **CRE8-OPS-REQ-0062**: Observability event coverage **MUST** include authz decision, lifecycle transition, and release gate events with deterministic field schemas.
 - **CRE8-OPS-REQ-0073**: Readiness gate evidence **MUST** include direct references to `OBSERVABILITY_EVENT_CATALOG.md` event rows for `authz.decision.evaluated.v1`, `authz.decision.denied.v1`, and `health.readiness.failed.v1` and **MUST** record verification timestamps for each event family.
 - **CRE8-OPS-REQ-0074**: Release-gate sign-off artifacts **MUST** include an explicit compatibility declaration outcome from `CONTRACT_VERSION_POLICY.md` and **MUST** fail closed when compatibility classification is `breaking` without an approved ADR waiver.
+- **CRE8-OPS-REQ-0077**: All entries in `reports/session_handoffs/PHASE4_UNRESOLVED_EXCEPTIONS_REGISTER.md` **MUST** be resolved (`open exceptions: 0`) or ADR-waived with explicit expiry before production promotion; unresolved non-waived entries **MUST** block PRG-02 and PRG-06 sign-off.
 
 ## Readiness gate matrix
 | Gate ID | Gate | Pass criteria | Evidence source |
