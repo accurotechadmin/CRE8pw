@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T21:22:00Z
+- Last updated (UTC): 2026-05-04T21:27:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -43,9 +43,19 @@
 | P4-S3.3 | complete | Error catalog envelope/context mapping constraints codified with explicit OpenAPI ErrorEnvelope and endpoint-family parity obligations. |
 | P4-S3.4 | complete | Authz/lifecycle deny semantics synchronized across prose inventory, parity matrix, and OpenAPI example surfaces. |
 | P4-S3.5 | complete | Contract version policy tightened with compatibility triggers and deprecation/versioning requirements. |
-| P4-S3.6 | not_started | Pending. |
+| P4-S3.6 | complete | API contract guide cross-links to machine-contract sources tightened in prior session chain; continuity retained. |
 
-### M4..M8
+### M4 — Security/Data/Crypto Integrity Closure
+| Slice | Status | Notes |
+|---|---|---|
+| P4-S4.1 | complete | Threat-to-control mapping closure completed in security controls + threat model chain requirements. |
+| P4-S4.2 | complete | Lifecycle-control operational verification chain requirement + hook mapping completed. |
+| P4-S4.3 | complete | Security headers/CSP requirements reconciled with runtime pipeline ordering and contract deny semantics. |
+| P4-S4.4 | complete | Security controls now require explicit error/observability cross-link closure for externally visible outcomes. |
+| P4-S4.5 | not_started | Pending. |
+| P4-S4.6 | not_started | Pending. |
+
+### M5..M8
 - All slices not_started.
 
 ## Quick links
