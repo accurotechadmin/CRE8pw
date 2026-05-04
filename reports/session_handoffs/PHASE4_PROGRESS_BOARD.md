@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T22:36:00Z
+- Last updated (UTC): 2026-05-04T22:44:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -88,11 +88,11 @@
 |---|---|---|
 | P4-S8.1 | complete | Requirement inventory refreshed via `composer docs:ssot:requirement-inventory`; no orphan/duplicate regressions surfaced. |
 | P4-S8.2 | complete | Traceability matrix updated with extension cross-link requirement row (`CRE8-EXT-REQ-0032`) and source/hook/evidence linkage. |
-| P4-S8.3 | not_started | Pending. |
-| P4-S8.4 | not_started | Pending. |
-| P4-S8.5 | not_started | Pending. |
+| P4-S8.3 | complete | ADR corpus reconciled via ADR-006; ADR-003 marked deprecated and ADR-004 marked superseded with append-only decision events. |
+| P4-S8.4 | complete | Risk mapping reconciled: high delivery risks re-bound to active Phase 4 controls and mitigating status with decision-log status events. |
+| P4-S8.5 | complete | Seed promotion tracker now declares M8 closure posture and retires legacy waiver usage for deferred/retired handling. |
 | P4-S8.6 | not_started | Pending. |
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-2236.md`](SESSION_HANDOFF_20260504-2236.md)
-- Latest response archive: [`../session_responses/20260504-2236_RESPONSE.md`](../session_responses/20260504-2236_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2244.md`](SESSION_HANDOFF_20260504-2244.md)
+- Latest response archive: [`../session_responses/20260504-2244_RESPONSE.md`](../session_responses/20260504-2244_RESPONSE.md)

@@ -68,6 +68,8 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - [ADR-002 Record](../80_traceability_decisions_and_program/records/ADR-002-traceability-matrix-minimum-schema.md)
 - [ADR-003 Record](../80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md)
 - [ADR-004 Record](../80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
+- [ADR-005 Record](../80_traceability_decisions_and_program/records/ADR-005-authz-gate-order-reconciliation.md)
+- [ADR-006 Record](../80_traceability_decisions_and_program/records/ADR-006-phase4-program-lock-and-legacy-waiver-retirement.md)
 
 - [Canonical Terminology](../10_product_and_architecture/CANONICAL_TERMINOLOGY.md)
 - [Architecture And Surfaces](../10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md)
