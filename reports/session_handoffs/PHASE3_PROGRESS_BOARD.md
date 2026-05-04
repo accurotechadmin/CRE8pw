@@ -201,6 +201,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session handoffs
 
+1. [`SESSION_HANDOFF_20260504-1847.md`](SESSION_HANDOFF_20260504-1847.md) — Phase 4 M2 contiguous batch executed for P4-S2.1/P4-S2.2; principal taxonomy and permission-vocabulary/code reconciliation completed.
 1. [`SESSION_HANDOFF_20260504-1839.md`](SESSION_HANDOFF_20260504-1839.md) — Phase 4 M1 contiguous batch executed for P4-S1.5/P4-S1.6; placeholder/exception closure and duplicate-ambiguity reconciliation completed.
 1. [`SESSION_HANDOFF_20260504-1823.md`](SESSION_HANDOFF_20260504-1823.md) — Phase 4 M1 contiguous batch executed for P4-S1.3/P4-S1.4; modal normalization + request-pipeline triad hardening completed.
 1. [`SESSION_HANDOFF_20260504-1816.md`](SESSION_HANDOFF_20260504-1816.md) — Phase 4 kickoff session executed P4-S1.1/P4-S1.2 contiguous batch; Phase 4 tracking artifacts initialized.
@@ -228,6 +229,7 @@ See [`reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE3
 
 ### Latest 5 Phase 3 session response archives
 
+1. [`reports/session_responses/20260504-1847_RESPONSE.md`](../session_responses/20260504-1847_RESPONSE.md) — Phase 4 M2 taxonomy/vocabulary reconciliation response archive.
 1. [`reports/session_responses/20260504-1816_RESPONSE.md`](../session_responses/20260504-1816_RESPONSE.md) — Phase 4 kickoff session response archive.
 1. [`reports/session_responses/20260504-1715_RESPONSE.md`](../session_responses/20260504-1715_RESPONSE.md) — Closure/maintenance transition response archive.
 1. [`reports/session_responses/20260504-1659_RESPONSE.md`](../session_responses/20260504-1659_RESPONSE.md) — One-slice exception execution response archive for P3-S6.1 closure-depth completion.
