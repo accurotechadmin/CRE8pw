@@ -6,6 +6,7 @@
     {"$ref": "./success-envelope.schema.json"},
     {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "data": {
           "type": "object",

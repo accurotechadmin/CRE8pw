@@ -94,7 +94,7 @@
           "pattern": "^feed-meta-v[0-9]+$"
         }
       },
-      "additionalProperties": true
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
