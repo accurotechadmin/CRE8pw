@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-04T19:17:00Z
+- Last updated (UTC): 2026-05-04T21:13:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -40,14 +40,14 @@
 |---|---|---|
 | P4-S3.1 | complete | Route inventory ↔ OpenAPI parity revalidated; evidence logged in `reports/phase4/P4-S3.1_ROUTE_OPENAPI_PARITY_CHECK.md`. |
 | P4-S3.2 | complete | Example/schema validation reverified across relevant contract suites; evidence logged in `reports/phase4/P4-S3.2_EXAMPLE_SCHEMA_VALIDATION.md`. |
-| P4-S3.3 | not_started | Pending. |
-| P4-S3.4 | not_started | Pending. |
-| P4-S3.5 | not_started | Pending. |
+| P4-S3.3 | complete | Error catalog envelope/context mapping constraints codified with explicit OpenAPI ErrorEnvelope and endpoint-family parity obligations. |
+| P4-S3.4 | complete | Authz/lifecycle deny semantics synchronized across prose inventory, parity matrix, and OpenAPI example surfaces. |
+| P4-S3.5 | complete | Contract version policy tightened with compatibility triggers and deprecation/versioning requirements. |
 | P4-S3.6 | not_started | Pending. |
 
 ### M4..M8
 - All slices not_started.
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260504-1917.md`](SESSION_HANDOFF_20260504-1917.md)
-- Latest response archive: [`../session_responses/20260504-1917_RESPONSE.md`](../session_responses/20260504-1917_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260504-2113.md`](SESSION_HANDOFF_20260504-2113.md)
+- Latest response archive: [`../session_responses/20260504-2113_RESPONSE.md`](../session_responses/20260504-2113_RESPONSE.md)

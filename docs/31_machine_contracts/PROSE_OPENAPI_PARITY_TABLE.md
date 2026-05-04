@@ -99,4 +99,4 @@ Define the authoritative parity mapping between route inventory prose and OpenAP
 - [Verification Strategy](../60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 - [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
-- Version policy authority: `CONTRACT_VERSION_POLICY.md`
+- Version policy authority: [Contract Version Policy](./CONTRACT_VERSION_POLICY.md)
