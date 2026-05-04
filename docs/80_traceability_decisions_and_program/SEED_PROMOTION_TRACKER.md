@@ -68,6 +68,10 @@ Define the mandatory mapping contract from seed requirements to promoted canonic
 - **HOOK-SEED-PROMOTION-DECISION-REF**: Validate deferred/retired rows include decision references.
 - **HOOK-SSOT-SYNC-PROMOTED-TARGET**: Validate every `promoted` tracker row has non-`TBD` target requirement and doc presence.
 
+## Phase 4 closure status (M8)
+- As of 2026-05-04, all tracker rows remain in `promoted` state with no `deferred` or `retired` exceptions requiring active waiver handling.
+- Legacy Phase 1 waiver references are retired for active promotions per `ADR-006`; any future deferred/retired entry MUST reference a current ADR or decision-log event under active governance.
+
 ## See also
 - [Traceability Matrix](./TRACEABILITY_MATRIX.md)
 - [Roadmap and Milestones](./ROADMAP_AND_MILESTONES.md)
