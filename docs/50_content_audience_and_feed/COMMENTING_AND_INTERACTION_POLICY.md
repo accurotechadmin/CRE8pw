@@ -43,6 +43,8 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - **CRE8-FEED-REQ-0044**: For comment create/reply actions on moderated or deleted targets, the platform **MUST** return `LIFECYCLE_COMMENT_TARGET_UNAVAILABLE`; for hidden-by-policy audience mismatches it **MUST** return `AUTH_SCOPE_DENIED`.
 - **CRE8-FEED-REQ-0045**: Moderator actions (`comment.hide`, `comment.restore`, `comment.delete`) **MUST** require `comment.moderate`, **MUST** record moderation reason code, and **MUST** emit provenance events linked to the affected comment lifecycle transition.
 
+- **CRE8-FEED-REQ-0047**: Interaction deny and moderation requirements in this document **MUST** map to explicit OpenAPI example anchors and endpoint examples for `/v1/feed/items`, `/v1/posts/{id}/comments` (GET/POST); each mapped example **MUST** demonstrate canonical envelope and deny-code parity.
+
 ## Deterministic deny mapping baseline
 | Interaction deny condition | Required code |
 |---|---|

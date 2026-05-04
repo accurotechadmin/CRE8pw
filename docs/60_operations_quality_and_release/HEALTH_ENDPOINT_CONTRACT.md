@@ -29,6 +29,8 @@ Define deterministic liveness/readiness semantics and response contract obligati
 - **CRE8-OPS-REQ-0026**: Any failed readiness check **MUST** return deterministic error envelope `{error, meta}` with a stable `SYSTEM_*` code and **MUST NOT** leak secret values or connection strings.
 - **CRE8-OPS-REQ-0027**: Readiness probe outcomes **MUST** be logged with correlation-ready request identifiers through `monolog/monolog` and **MUST** be linkable to operator triage evidence.
 
+- **CRE8-OPS-REQ-0044**: Readiness dependency checks **MUST** be reconciled with dependency inventory in `docs/10_product_and_architecture/DEPENDENCY_BASELINE.md` and required configuration variables in `CONFIGURATION_ENVIRONMENT_CONTRACT.md`; unsupported or undocumented readiness dependencies **MUST NOT** be introduced.
+
 ## Endpoint behavior table
 | Endpoint | Method | Scope | Success condition | Failure class |
 |---|---|---|---|---|

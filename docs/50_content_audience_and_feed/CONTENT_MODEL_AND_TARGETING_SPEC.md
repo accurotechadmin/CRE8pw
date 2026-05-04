@@ -32,6 +32,7 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - **CRE8-FEED-REQ-0014**: `cursor_basis` **MUST** be stable and reproducible from ordering inputs; Phase 1 baseline **MUST** use `published_utc_desc__item_id_asc`.
 - **CRE8-FEED-REQ-0015**: Route-level contract examples **SHOULD** include at least one deny variant for permission and one deny variant for scope/lifecycle/expiry constraints.
 
+- **CRE8-FEED-REQ-0046**: Feed/content normative rules in this document **MUST** be cross-linked to route-level examples in `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md` and to machine-contract schema/example anchors in `docs/31_machine_contracts/openapi/cre8.v1.yaml`; link drift **MUST** fail `HOOK-CONTRACT-EXAMPLE-COVERAGE` or `HOOK-CONTRACT-SCHEMA-COVERAGE`.
 ## Verification hooks
 
 - **CRE8-FEED-REQ-0031**: Content lifecycle **MUST** implement deterministic states `draft`, `published`, `flagged`, `restricted`, `soft_deleted`, and `hard_deleted`; transitions outside the approved transition table **MUST** be rejected.
