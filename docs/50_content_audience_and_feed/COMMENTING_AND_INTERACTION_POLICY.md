@@ -39,6 +39,10 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 - **CRE8-FEED-REQ-0036**: Comment edits **MUST** preserve immutable edit history entries containing prior body hash, editor principal, edit reason, and `edited_at_utc`.
 - **CRE8-FEED-REQ-0037**: `soft_deleted` comments **MUST** be hidden from default client views while remaining retrievable for moderators and audit hooks according to authorization policy.
 
+- **CRE8-FEED-REQ-0043**: The interaction policy engine **MUST** evaluate branches in deterministic order for each request: credential authenticity, credential lifecycle, target-content lifecycle, permission grant, audience scope, and moderation lock; the first failing branch **MUST** terminate evaluation and return its canonical deny code.
+- **CRE8-FEED-REQ-0044**: For comment create/reply actions on moderated or deleted targets, the platform **MUST** return `LIFECYCLE_COMMENT_TARGET_UNAVAILABLE`; for hidden-by-policy audience mismatches it **MUST** return `AUTH_SCOPE_DENIED`.
+- **CRE8-FEED-REQ-0045**: Moderator actions (`comment.hide`, `comment.restore`, `comment.delete`) **MUST** require `comment.moderate`, **MUST** record moderation reason code, and **MUST** emit provenance events linked to the affected comment lifecycle transition.
+
 ## Deterministic deny mapping baseline
 | Interaction deny condition | Required code |
 |---|---|
@@ -47,6 +51,16 @@ Define deterministic authorization, lifecycle, and error-contract rules for comm
 | Delegation depth exceeded | `AUTH_DEPTH_EXCEEDED` |
 | Delegated grant expired | `AUTH_GRANT_EXPIRED` |
 | Lifecycle blocked/suspended | `AUTH_LIFECYCLE_BLOCKED` |
+
+## Interaction branch-to-deny mapping
+| Branch failure | Required deny code |
+|---|---|
+| Credential authenticity/signature invalid | `AUTHN_SIGNATURE_INVALID` |
+| Credential lifecycle not active | `AUTH_LIFECYCLE_BLOCKED` |
+| Target comment/content unavailable by lifecycle | `LIFECYCLE_COMMENT_TARGET_UNAVAILABLE` |
+| Required permission missing | `AUTH_PERMISSION_DENIED` |
+| Audience scope mismatch | `AUTH_SCOPE_DENIED` |
+| Moderation lock active | `AUTH_LIFECYCLE_BLOCKED` |
 
 ## Verification hooks
 - **HOOK-FEED-INTERACTION-DENY-MAPPING** (automated): Execute `composer test:contract:feed` to enforce deterministic one-to-one deny-condition to canonical code mapping and deny-example payload-shape semantics (`error.code`, `error.category`, `request_id` prefix, `timestamp_utc`) in OpenAPI fixtures.
