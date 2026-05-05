@@ -6,6 +6,8 @@ namespace Cre8\Application;
 
 final class CryptoPolicy
 {
+    /** @var array<string,int> */
+    private static array $replayCache = [];
     public const ARGON2ID_MIN_MEMORY_COST = 65536;
     public const ARGON2ID_MIN_TIME_COST = 3;
     public const ARGON2ID_MIN_THREADS = 1;
@@ -30,6 +32,18 @@ final class CryptoPolicy
         if ($ts === false || abs(time() - $ts) > self::CLOCK_SKEW_SECONDS) {
             return 'AUTHN_PROOF_INVALID_TIMESTAMP';
         }
+
+        $replayTuple = implode('|', [(string) $request['public_key_id'], (string) $request['timestamp'], $nonce, (string) $request['signature']]);
+        $now = time();
+        foreach (self::$replayCache as $tuple => $seenAt) {
+            if (($now - $seenAt) > self::REPLAY_RETENTION_SECONDS) {
+                unset(self::$replayCache[$tuple]);
+            }
+        }
+        if (isset(self::$replayCache[$replayTuple])) {
+            return 'AUTHN_PROOF_REPLAY_DETECTED';
+        }
+        self::$replayCache[$replayTuple] = $now;
 
         return null;
     }
