@@ -8,7 +8,10 @@ use Cre8\Policy\PolicyDecisionPointInterface;
 
 final class PipelineRuntime
 {
-    public function __construct(private readonly PolicyDecisionPointInterface $pdp) {}
+    public function __construct(
+        private readonly PolicyDecisionPointInterface $pdp,
+        private readonly ?SecurityEventEmitter $eventEmitter = null
+    ) {}
 
     /** @param array<string,mixed> $request */
     public function handleProtected(array $request): array
@@ -19,6 +22,7 @@ final class PipelineRuntime
 
         $proofValidationError = CryptoPolicy::validateProof($request);
         if ($proofValidationError !== null) {
+            $this->emitForProofFailure($proofValidationError, $requestId, (string) ($request['public_key_id'] ?? 'unknown'));
             return $this->errorEnvelope($proofValidationError, $requestId);
         }
 
@@ -37,4 +41,20 @@ final class PipelineRuntime
     {
         return ['error' => ['code' => $code], 'meta' => ['request_id' => $requestId]];
     }
+
+    private function emitForProofFailure(string $errorCode, string $requestId, string $keypairId): void
+    {
+        if ($this->eventEmitter === null) {
+            return;
+        }
+
+        $eventName = match ($errorCode) {
+            'AUTHN_PROOF_REPLAY_DETECTED' => 'auth.proof.replay_detected.v1',
+            'AUTHN_PROOF_INVALID_TIMESTAMP' => 'auth.proof.timestamp_invalid.v1',
+            default => 'auth.proof.invalid.v1',
+        };
+
+        $this->eventEmitter->emit($eventName, $requestId, ['keypair_id' => $keypairId]);
+    }
 }
+
