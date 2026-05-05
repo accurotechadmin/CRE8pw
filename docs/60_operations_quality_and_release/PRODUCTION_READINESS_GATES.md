@@ -30,12 +30,11 @@ Define minimum non-negotiable gates that MUST pass before production deployment.
 - **CRE8-OPS-REQ-0062**: Observability event coverage **MUST** include authz decision, lifecycle transition, and release gate events with deterministic field schemas.
 - **CRE8-OPS-REQ-0073**: Readiness gate evidence **MUST** include direct references to [`OBSERVABILITY_EVENT_CATALOG.md`](OBSERVABILITY_EVENT_CATALOG.md) event rows for `authz.decision.evaluated.v1`, `authz.decision.denied.v1`, and `health.readiness.failed.v1` and **MUST** record verification timestamps for each event family.
 - **CRE8-OPS-REQ-0074**: Release-gate sign-off artifacts **MUST** include an explicit compatibility declaration outcome from [`CONTRACT_VERSION_POLICY.md`](CONTRACT_VERSION_POLICY.md) and **MUST** fail closed when compatibility classification is `breaking` without an approved ADR waiver.
-- **CRE8-OPS-REQ-0077**: All entries in [`reports/session_handoffs/PHASE4_UNRESOLVED_EXCEPTIONS_REGISTER.md`](reports/session_handoffs/PHASE4_UNRESOLVED_EXCEPTIONS_REGISTER.md) **MUST** be resolved (`open exceptions: 0`) or ADR-waived with explicit expiry before production promotion; unresolved non-waived entries **MUST** block PRG-02 and PRG-06 sign-off.
 
 ## Readiness gate matrix
 | Gate ID | Gate | Pass criteria | Evidence source |
 |---|---|---|---|
-| PRG-01 | Acceptance suite | `composer phase2:acceptance-bundle` pass (and Phase 3 bundle once available) | CI job logs |
+| PRG-01 | Acceptance suite | `composer test:acceptance-bundle` passes completely | CI job logs |
 | PRG-02 | Security risk closure | No unresolved high/critical risk without ADR-bound deferral | [`RISK_REGISTER.md`](RISK_REGISTER.md), ADR index |
 | PRG-03 | Threat/control completeness | Every `THREAT-###` row mapped to at least one control and one abuse case | Security threat and abuse-case docs |
 | PRG-04 | Contract completeness | Route × schema × example coverage at 100% | contract coverage hooks |
@@ -55,7 +54,6 @@ Define minimum non-negotiable gates that MUST pass before production deployment.
 | `HOOK-CONTRACT-SCHEMA-COVERAGE` | Verifies schema coverage completeness against inventory and OpenAPI surface. |
 
 
-Change Impact Map: [`reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`](reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md).
 
 ## See also
 - [Release Checklist](./RELEASE_CHECKLIST.md)

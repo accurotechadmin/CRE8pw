@@ -1,7 +1,7 @@
 ---
 doc_id: CRE8-FEED-CONTENT-MODEL
 version: 1.0.0
-status: provisional-normative
+status: normative
 owner: Product Policy WG
 reviewers:
   - API Contracts WG
@@ -41,7 +41,6 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - **CRE8-FEED-REQ-0034**: Retention rules **MUST** define minimum retention windows for moderation and deletion artifacts; purge before minimum retention **MUST NOT** occur unless an explicit legal hold override is recorded.
 - **HOOK-FEED-CONTRACT-CURSOR-SCHEMA**: Validate feed success schema contains required cursor metadata keys and approved ordering-basis enum.
 - **HOOK-FEED-CONTRACT-DENY-EXAMPLES**: Validate feed route OpenAPI examples include deterministic deny reason-code variants.
-- **Next automation candidate**: Add `composer test:contract:feed` fixture test for cursor monotonicity and deny-on-ambiguous-scope behavior.
 
 ## See also
 - [Feed Ranking and Ordering Rules](./FEED_RANKING_AND_ORDERING_RULES.md)
@@ -51,4 +50,3 @@ Define deterministic content-targeting semantics, feed-read eligibility constrai
 - [OpenAPI Contract](../31_machine_contracts/openapi/cre8.v1.yaml)
 - [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
 
-Change Impact Map: [`reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`](reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md).

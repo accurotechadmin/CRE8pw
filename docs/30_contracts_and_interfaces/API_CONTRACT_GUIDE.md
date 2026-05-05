@@ -1,7 +1,7 @@
 ---
 doc_id: CRE8-CONTRACTS-API-GUIDE
 version: 1.1.0
-status: provisional-normative
+status: normative
 owner: API Contracts WG
 reviewers:
   - Platform Architecture WG
@@ -25,7 +25,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 ## Normative requirements
 - **CRE8-CONTRACT-REQ-0010**: Every externally callable CRE8 route **MUST** have one canonical entry in [`ROUTE_INVENTORY_REFERENCE.md`](ROUTE_INVENTORY_REFERENCE.md) and one corresponding OpenAPI path+operation in [`docs/31_machine_contracts/openapi/cre8.v1.yaml`](docs/31_machine_contracts/openapi/cre8.v1.yaml).
 - **CRE8-CONTRACT-REQ-0011**: Request and response bodies **MUST** use stable envelope fields with explicit required/optional semantics documented in prose and OpenAPI.
-- **CRE8-CONTRACT-REQ-0012**: Contract-affecting changes **MUST** include backward-compatibility classification (`compatible`, `conditionally-compatible`, `breaking`) and migration notes before merge.
+- **CRE8-CONTRACT-REQ-0012**: Contract-affecting changes **MUST** include backward-compatibility classification (`compatible`, `conditionally-compatible`, `breaking`) and migration notes.
 - **CRE8-CONTRACT-REQ-0013**: Routes requiring delegated authority **MUST** declare required permission, scope boundary, and lifecycle prerequisites.
 - **CRE8-CONTRACT-REQ-0014**: Error responses **MUST** use codes defined in [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md); undocumented codes are prohibited.
 - **CRE8-CONTRACT-REQ-0015**: Route deprecation **MUST** include a documented sunset date, replacement route reference, and a verification-plan update.
@@ -33,7 +33,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **CRE8-CONTRACT-REQ-0017**: Route `/v1/feed/items` response `meta` **MUST** include `feed_metadata_schema_version`; version changes **MUST** be declared as compatibility-impacting changes under this guide.
 - **CRE8-CONTRACT-REQ-0018**: Route `/v1/feed/items` fixture examples **MUST** encode deterministic cursor semantics where `next_cursor` references the last item in the returned page using `pub:<published_utc>|<item_id>` and `cursor_basis=published_utc_desc__item_id_asc`.
 - **CRE8-CONTRACT-REQ-0050**: Route `/v1/feed/items` fixtures **MUST** encode a deterministic tie-break rule for identical `published_utc` values by ordering ascending `item_id` values within the same timestamp bucket.
-- **CRE8-CONTRACT-REQ-0051**: Route `/v1/feed/items` contract changes that modify `feed_metadata_schema_version` **MUST** include explicit compatibility classification and migration notes documenting consumer-impact and rollback expectations in this guide before merge.
+- **CRE8-CONTRACT-REQ-0051**: Route `/v1/feed/items` contract changes that modify `feed_metadata_schema_version` **MUST** include explicit compatibility classification and migration notes documenting consumer-impact and rollback expectations in this guide.
 - **CRE8-CONTRACT-REQ-0052**: Route `/v1/feed/items` deny examples **MUST** map only to canonical codes declared in [`ERROR_CODE_CATALOG.md`](ERROR_CODE_CATALOG.md); non-catalog feed deny codes are prohibited.
 - **CRE8-CONTRACT-REQ-0053**: Route `/v1/feed/items` **MUST** include a lifecycle-deny example using canonical code `AUTH_LIFECYCLE_BLOCKED` and this example **MUST** remain synchronized between prose and OpenAPI fixtures.
 - **CRE8-CONTRACT-REQ-0054**: Feed cursor fixtures **MUST** demonstrate monotonic multi-page progression where each page `next_cursor` is strictly older than the prior page cursor under `published_utc_desc__item_id_asc`.
@@ -53,10 +53,7 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 - **HOOK-CONTRACT-FEED-CURSOR-MULTIPAGE-MONOTONIC**: Validate multi-page feed fixtures preserve strict cursor monotonicity across sequential pages.
 - **HOOK-CONTRACT-FEED-CURSOR-GRAMMAR**: Validate feed cursor fixtures conform to `pub:<ISO8601 UTC>|<item_id>` grammar and executable page-link equality rules.
 
-- **CRE8-CONTRACT-REQ-0056**: Authorization decision and lifecycle endpoints MUST preserve deterministic deny semantics between prose examples, route inventory `error_code_set`, parity-table `error_codes`, and OpenAPI examples; drift in any surface MUST block merge until synchronized in the same patch.
-
-## Drift notes
-- OpenAPI baseline routes are now synchronized with the route inventory baseline; remaining debt is breadth coverage beyond initial two routes.
+- **CRE8-CONTRACT-REQ-0056**: Authorization decision and lifecycle endpoints MUST preserve deterministic deny semantics between prose examples, route inventory `error_code_set`, parity-table `error_codes`, and OpenAPI examples; drift in any surface MUST be treated as invalid until synchronized.
 
 ## See also
 - [Endpoint Examples All Routes](./Endpoint_Examples_All_Routes.md)
@@ -71,7 +68,6 @@ Define normative API contract obligations, route lifecycle rules, and prose-to-m
 
 See also: [UI Runtime Contract](./UI_RUNTIME_CONTRACT.md).
 
-Change Impact Map: [[`reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`](reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)](../../reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md)
 
 
 - Contract versioning policy: [Contract Version Policy](../31_machine_contracts/CONTRACT_VERSION_POLICY.md)
