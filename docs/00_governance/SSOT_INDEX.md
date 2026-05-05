@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-GOV-SSOT-INDEX
-version: 1.0.5
+version: 1.0.6
 status: normative
 owner: Docs Governance WG
 reviewers:
@@ -38,6 +38,7 @@ This document defines the authoritative SSOT topology, precedence model, and min
 3. `reports/` session and analysis outputs
 
 ## Required SSOT map
+- **`dev/`**: developer-facing onboarding, **`dev/`** README, SSOT syllabus reading list, expert boot prompt, and **implementation milestones** (engineering planning keyed to canon; **`docs/`** remains authoritative where behavior diverges unless governance promotes **`dev/`** material).
 - `docs/00_governance/`: governance policy, templates, workflow, and acceptance gates.
 - `docs/10_*` through `docs/80_*`: domain contracts and program controls.
 - `docs/31_machine_contracts/`: machine-readable contract artifacts (OpenAPI/schemas).
@@ -49,6 +50,8 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](README.md) and updated normative docs before merge.
 
 ## See also
+- [`dev/` README (developer workspace index)](../../dev/README.md)
+- [Implementation milestones & slices roadmap](../../dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md)
 - [Expert coding LLM boot prompt](../../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md)
 - [Developer SSOT canon reading list](../../dev/SSOT_CANON_READING_LIST.md)
 - [README.md](../../README.md)

@@ -8,7 +8,7 @@ Define mandatory procedures so every new, moved, renamed, or removed repository 
 ## Scope
 This SOP governs updates to:
 - Root references: `FILE_INVENTORY.md`, `master_index.md`, `README.md`
-- Developer orientation: `dev/SSOT_CANON_READING_LIST.md`
+- **Developer workspace (`dev/`)**: `dev/README.md` (local index), `dev/SSOT_CANON_READING_LIST.md`, `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`, **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`**, and other development planning artifacts; **normative specification SSOT remains under `docs/`**
 - Canon indexes/readmes under `docs/`
 - Seed indexes under `seed/`
 - Report indexes and continuity references under `reports/`
@@ -49,7 +49,8 @@ Run this SOP whenever any file is:
 
 ### Step 3 — Update nearest local index/readme files
 For any changed file, update all relevant local references, including but not limited to:
-- `dev/SSOT_CANON_READING_LIST.md` (when normative doc set or developer reading scope changes)
+- `dev/README.md` (when any `dev/` planning or onboarding artifact is added/moved/deleted or its role summary changes)
+- `dev/SSOT_CANON_READING_LIST.md` (when SSOT syllabus scope or numbering changes — **milestones roadmap** stays in sync when reading-path dependencies change materially)
 - `docs/README.md`
 - `docs/00_governance/SSOT_INDEX.md`
 - `seed/seed-index.md`

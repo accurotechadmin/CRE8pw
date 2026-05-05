@@ -21,6 +21,7 @@ This list is the **sequential developer-facing reading path** through every repo
 | 1.1 | [`README.md`](../README.md) | Project SSOT anchor; repository map and shortest canonical reading order. |
 | 1.2 | [`docs/README.md`](../docs/README.md) | Hub for the numbered domain layout under `docs/`. |
 | 1.3 | [`CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](CRE8_EXPERT_SSOT_BOOT_PROMPT.md) | Optional paste-first message for expert coding LLM sessions; orients the model to this list and `REFERENCE_MAINTENANCE_SOP.md`. |
+| 1.4 | [`SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md) | Primary phased milestones (**M0**–**M12**) and delivery slices for engineering work keyed to this reading list (**development planning**, not normative SSOT under `docs/`). |
 
 ---
 

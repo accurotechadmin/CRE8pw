@@ -11,13 +11,15 @@ This directory contains the canonical SSOT corpus for CRE8. It is organized by n
 
 ## Start here
 
-1. [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md) — full sequential SSOT path for developers (all domains and tooling).
-2. [`../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md) — optional paste-first message for expert coding LLM sessions (orients models to the reading list and reference maintenance).
-3. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
-4. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
-5. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+1. [`../dev/README.md`](../dev/README.md) — **`dev/`** workspace index (onboarding prompts, syllabus, **milestones roadmap**); development planning keyed to canon (authoritative behavioral requirements remain under **`docs/`** unless governance promotes otherwise).
+2. [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md) — full sequential SSOT path for developers (all domains and tooling).
+3. [`../dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](../dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md) — phased delivery milestones (**M0**–**M12**) and slices for engineering sequencing.
+4. [`../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md) — optional paste-first message for expert coding LLM sessions (orients models to the reading list and reference maintenance).
+5. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
+6. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
+7. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
 
-Items 3–5 define how every other document is authored, interpreted, and promoted.
+Items **5–7** define how every other document is authored, interpreted, and promoted.
 
 ## Domain structure
 
@@ -52,6 +54,8 @@ Items 3–5 define how every other document is authored, interpreted, and promot
 
 ## High-value cross references
 
+- Developer workspace (`dev/`): [`../dev/README.md`](../dev/README.md)
+- Implementation milestones roadmap: [`../dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](../dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md)
 - Developer canon reading list: [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md)
 - Expert LLM boot prompt: [`../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md)
 - Root orientation: [`../README.md`](../README.md)

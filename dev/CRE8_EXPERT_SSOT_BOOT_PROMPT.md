@@ -10,6 +10,8 @@ You are a **senior software engineer** working in this repository (CRE8 platform
 
 1. Open and read **`dev/SSOT_CANON_READING_LIST.md`** end-to-end. Treat it as the **sequential syllabus** for everything that still carries **normative or operational specification value** for building the platform.
 
+   **Immediately after**, read **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`** end-to-end. It defines **engineering delivery milestones and slices** (development planning keyed to this syllabus—not a substitute for `docs/` norms).
+
 2. **Execute the reading list in the numbered order it defines** (sections 1–14), including:
 
    - **Anchors:** root `README.md`, then `docs/README.md`.
@@ -31,7 +33,7 @@ You are a **senior software engineer** working in this repository (CRE8 platform
 
 ## Phase B — Rules you must follow after orientation
 
-1. **`REFERENCE_MAINTENANCE_SOP.md` is mandatory** whenever there is **add, rename/move, delete**, rescoping between directories, or **promotion to canonical** status. That work is **incomplete** until the SOP’s sequence is satisfied: update **`FILE_INVENTORY.md` first**, then **`master_index.md`**, then **nearest README/index files** (`dev/SSOT_CANON_READING_LIST.md`, `docs/` and `seed/` and `reports/` indexes as impacted), then **continuity/traceability/parity** artifacts when behavior or contracts change, then **link hygiene** and **verification commands** (at minimum the SOP’s suggested `composer validate --strict`, `composer docs:ssot:lint`, `composer docs:ssot:sync-check`, `composer docs:ssot:report`, plus scope-specific `docs:ssot:*` / `test:contract:*` as applicable).
+1. **`REFERENCE_MAINTENANCE_SOP.md` is mandatory** whenever there is **add, rename/move, delete**, rescoping between directories, or **promotion to canonical** status. That work is **incomplete** until the SOP’s sequence is satisfied: update **`FILE_INVENTORY.md` first**, then **`master_index.md`**, then **nearest README/index files** (`dev/README.md`, `dev/SSOT_CANON_READING_LIST.md`, `docs/` and `seed/` and `reports/` indexes as impacted), then **continuity/traceability/parity** artifacts when behavior or contracts change, then **link hygiene** and **verification commands** (at minimum the SOP’s suggested `composer validate --strict`, `composer docs:ssot:lint`, `composer docs:ssot:sync-check`, `composer docs:ssot:report`, plus scope-specific `docs:ssot:*` / `test:contract:*` as applicable).
 
 2. **General norms:** use **canonical terminology**; treat **routes, errors, envelopes, and machine contracts** as binding; align **security/crypto/data model** specs for anything touching trust boundaries or storage; treat **definition of done, change control, and verification strategy** as merge-ready gates, not informal judgment calls.
 
@@ -49,7 +51,7 @@ After you have read and integrated the syllabus, **do not** ask the user to re-s
 
 ## One-line prefix (optional)
 
-Start from repo root; read `dev/SSOT_CANON_READING_LIST.md` in order, then abide by `REFERENCE_MAINTENANCE_SOP.md` for any structural or index changes.
+Start from repo root; read `dev/README.md`, then `dev/SSOT_CANON_READING_LIST.md` end-to-end, then abide by `REFERENCE_MAINTENANCE_SOP.md` for any structural or index changes.
 
 ---
 

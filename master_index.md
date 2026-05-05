@@ -8,7 +8,9 @@ This index is the operational map for all canonical specs, machine contracts, se
 ## 1) Global navigation anchors
 - Repository onboarding: `README.md`
 - Expert coding LLM boot prompt (paste-first session message): `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`
+- Development planning index (`dev/`): `dev/README.md`
 - Sequential SSOT canon reading list (developers): `dev/SSOT_CANON_READING_LIST.md`
+- Implementation milestones & slices roadmap: `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
 - Reference maintenance SOP: `REFERENCE_MAINTENANCE_SOP.md`
@@ -53,7 +55,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 
 ## 4) Reports, continuity, and session artifacts (`reports/`)
 - Reports root index: `reports/README.md`
-- SSOT-guided implementation roadmap (milestones and slices): `reports/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
+- Implementation milestones relocation notice (canonical roadmap under `dev/`): `reports/IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md`
 - Program-level phase references:
   - `PHASE1_*`, `PHASE2_*`, `PHASE3_*`, `PHASE4_*`
 - Session continuity controls:
@@ -77,6 +79,7 @@ When adding/renaming/removing documentation, schema, report, seed, or workflow f
 2. `master_index.md` (navigation + role-level placement)
 3. `REFERENCE_MAINTENANCE_SOP.md` (if process or ownership scope changes)
 4. Relevant local indexes/readmes (examples):
+   - `dev/README.md` (when developer workspace composition changes)
    - `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md` (when LLM/developer boot artifacts change)
    - `dev/SSOT_CANON_READING_LIST.md` (when SSOT developer reading scope changes)
    - `docs/README.md`

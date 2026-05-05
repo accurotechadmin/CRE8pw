@@ -2,11 +2,15 @@
 
 _Last updated (UTC): 2026-05-05_
 
-## Purpose
+## Purpose & location
 
-This document is a phased milestone and slice plan for engineering delivery, keyed to **`dev/SSOT_CANON_READING_LIST.md`**, governance and traceability contracts (including **`docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md`** slice concepts), **`docs/60_operations_quality_and_release/RELEASE_CHECKLIST.md`** gates (RG-01..RG-05), and **ADR-006** (Phase 4 program-lock posture—legacy Phase 1 freeze waivers must not be used as generic deferrals).
+This is the primary **engineering delivery roadmap** for the platform: phased milestones (**M0**–**M12**) and workable **slices**. It belongs under **`dev/`** alongside other developer-facing planning artifacts. It is keyed to **`dev/SSOT_CANON_READING_LIST.md`**, governance and traceability slice concepts in **`docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md`**, **`docs/60_operations_quality_and_release/RELEASE_CHECKLIST.md`** gates (RG-01..RG-05), and **ADR-006** (Phase 4 program-lock posture—legacy Phase 1 freeze waivers must not be used as generic deferrals).
+
+Normative requirements remain in **`docs/`**; this file is **development planning**, not product SSOT.
 
 **Note:** Milestones are outcomes; slices are contiguous work units suited to “2–5 batch” authoring or implementation sessions.
+
+Relocation record (informational): [`reports/IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md`](../reports/IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md).
 
 ---
 
@@ -209,6 +213,7 @@ Treat Phase 4 as nested **documentation-completion** lanes that close **ahead of
 
 ## See also
 
-- [`dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md)
-- [`PHASE4_CANON_COMPLETION_MILESTONES.md`](./PHASE4_CANON_COMPLETION_MILESTONES.md)
-- [`REFERENCE_MAINTENANCE_SOP.md`](../REFERENCE_MAINTENANCE_SOP.md)
+- [`SSOT_CANON_READING_LIST.md`](./SSOT_CANON_READING_LIST.md)
+- [`README.md`](./README.md) (development workspace index under `dev/`)
+- [`../reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../reports/PHASE4_CANON_COMPLETION_MILESTONES.md)
+- [`../REFERENCE_MAINTENANCE_SOP.md`](../REFERENCE_MAINTENANCE_SOP.md)

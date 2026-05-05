@@ -19,7 +19,7 @@ If you are starting fresh, read this file, then [`dev/SSOT_CANON_READING_LIST.md
 
 | Path | Role | Notes |
 |---|---|---|
-| `dev/` | Developer orientation | SSOT canon reading list, expert LLM boot prompt, and related developer entry artifacts. |
+| `dev/` | Developer orientation and implementation planning | [`dev/README.md`](dev/README.md); SSOT reading list; expert boot prompt; **milestones roadmap** [`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md). |
 | `docs/` | Canonical SSOT corpus | Domain-organized normative/provisional documentation. |
 | `seed/` | Seed canon | Origin references and baseline source material. |
 | `reports/` | Program records and session artifacts | Non-normative by default unless explicitly promoted. |
@@ -135,7 +135,9 @@ Then inspect:
 ## README index in this repository
 
 - Root: [`README.md`](README.md) (this file)
+- Developer planning index (`dev/`): [`dev/README.md`](dev/README.md)
 - Developer SSOT reading list: [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md)
+- Implementation milestones & slices roadmap: [`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md)
 - Docs root: [`docs/README.md`](docs/README.md)
 - Machine contracts: [`docs/31_machine_contracts/README.md`](docs/31_machine_contracts/README.md)
 - Evidence root: [`docs/evidence/README.md`](docs/evidence/README.md)
