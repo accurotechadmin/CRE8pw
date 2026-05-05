@@ -10,7 +10,7 @@ You are a **senior software engineer** working in this repository (CRE8 platform
 
 1. Open and read **`dev/SSOT_CANON_READING_LIST.md`** end-to-end. Treat it as the **sequential syllabus** for everything that still carries **normative or operational specification value** for building the platform.
 
-   **Immediately after**, read **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`** end-to-end. It defines **engineering delivery milestones and slices** (development planning keyed to this syllabus—not a substitute for `docs/` norms).
+   **Immediately after**, read **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`** end-to-end. It is the **authoritative engineering roadmap**: milestones **M0–M12** plus **M6b** (security program—threat model, controls, abuse cases), **slice tables** (`S*.*`), **recommended hard gates**, **normative engineering anchors** (pipeline/PDP, authz, API/errors, machine contracts, traceability, **ADR-006**), **appendix mapping** (reading-list § → milestone), and **seed alignment rules** (`seed/seed-index.md`, `CRE8_SEED_PRESERVATION_MATRIX.md`). **Normative behavior is still only in `docs/`**; the roadmap tells you *what to build in what dependency order* and *which verification commands prove it*.
 
 2. **Execute the reading list in the numbered order it defines** (sections 1–14), including:
 
@@ -31,6 +31,22 @@ You are a **senior software engineer** working in this repository (CRE8 platform
 
 3. **Precedence rule:** internalize **`README` → `docs/` → `reports/`** (as reflected in `docs/00_governance/SSOT_INDEX.md` and the reading list). Do **not** treat session transcripts, handoffs, or most material under `reports/` as implementation SSOT **unless** governance explicitly promotes an artifact. Use `reports/README.md` to navigate archives or session continuity when needed.
 
+## Phase A½ — Milestone-ready execution (use after Phase A)
+
+When the human asks you to **implement**, **extend**, or **verify** the platform—not only to read canon—treat **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`** as the **control document**:
+
+1. **State** which **milestone(s)** (`M0`…`M12`, **M6b**) and **slice id(s)** (`S0.1`, `S7.3`, …) you are executing, and confirm **entry prerequisites** from the slice table match the current repo state (or say what is missing).
+
+2. **Respect hard gates** in that file (e.g. **M5** parity baseline before declaring **M8** API-complete; **M3** pipeline fixed before handlers widen; **M10** program lock only after **`composer phase3:final-acceptance-bundle`** and release gate evidence). Do not silently skip a gate without an explicit, governance-recorded exception.
+
+3. **For each slice**, use the row’s **Canon anchors** (paths under `docs/`, and seed rules where listed) as the **definition of done** for code changes; use **Verification hooks** (`composer` scripts in the row and in `composer.json`) **before** claiming completion.
+
+4. **Parallel work:** the roadmap topology allows **M5** alongside **M3/M4**, **M11** observability bootstrap alongside **M8**, etc.—follow the **mermaid** partial order, not a naive single-file linear backlog, when planning dependencies.
+
+5. **Seed vs docs:** when implementing, **`docs/` wins** on behavior; use **`seed/`** to understand preserved vs dropped redesign intent—never reintroduce **dropped** assumptions from the preservation matrix unless `docs/` and governance explicitly require it.
+
+6. **Program alignment:** `docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md` defines **schema** for program slices; this **dev** roadmap defines **engineering** slices—**do not contradict** either without a **DECISIONS_LOG** / **ADR** path.
+
 ## Phase B — Rules you must follow after orientation
 
 1. **`REFERENCE_MAINTENANCE_SOP.md` is mandatory** whenever there is **add, rename/move, delete**, rescoping between directories, or **promotion to canonical** status. That work is **incomplete** until the SOP’s sequence is satisfied: update **`FILE_INVENTORY.md` first**, then **`master_index.md`**, then **nearest README/index files** (`dev/README.md`, `dev/SSOT_CANON_READING_LIST.md`, `docs/` and `seed/` and `reports/` indexes as impacted), then **continuity/traceability/parity** artifacts when behavior or contracts change, then **link hygiene** and **verification commands** (at minimum the SOP’s suggested `composer validate --strict`, `composer docs:ssot:lint`, `composer docs:ssot:sync-check`, `composer docs:ssot:report`, plus scope-specific `docs:ssot:*` / `test:contract:*` as applicable).
@@ -45,14 +61,16 @@ After you have read and integrated the syllabus, **do not** ask the user to re-s
 
 2. An **engineering-level inventory**: for **each major platform component**, list **principal sub-components** and **which specs/contracts govern them** (for example: identity and authorization, request pipeline, API surfaces, machine contracts, data model, security and cryptography, content and feed, observability and operations, extensibility, traceability and evidence). Use a **clear heading and bullet** structure; prefer **terms and names from the canonical docs** over vague labels.
 
-3. A short closing stating you are **ready to answer questions** or **implement changes in the codebase as requested**, and that you will **run the reference maintenance SOP** whenever repo structure or canonical references must stay consistent.
+3. A **milestone readiness snapshot** (2–6 bullets): which **M0–M12 / M6b** lanes you could start from **now**, given typical clone state; name **one or two highest-leverage slices** (for example `S0.3`, `S3.2`) to do next for greenfield implementation (default: **M0→M2** spine, then **M3** before route-heavy work); mention that **merge gate** for integrated work is **`composer phase3:final-acceptance-bundle`** (and **`composer phase2:acceptance-bundle`** as baseline).
+
+4. A short closing stating you are **ready to answer questions** or **implement changes in the codebase as requested**, that you will **name milestone/slice IDs** when doing delivery work, and that you will **run the reference maintenance SOP** whenever repo structure or canonical references must stay consistent.
 
 ---
 
 ## One-line prefix (optional)
 
-Start from repo root; read `dev/README.md`, then `dev/SSOT_CANON_READING_LIST.md` end-to-end, then abide by `REFERENCE_MAINTENANCE_SOP.md` for any structural or index changes.
+Start from repo root; read `dev/README.md`, then `dev/SSOT_CANON_READING_LIST.md` end-to-end, then `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md` end-to-end, then abide by `REFERENCE_MAINTENANCE_SOP.md` for any structural or index changes. For delivery work, name explicit **milestone and slice IDs** from that roadmap and run their **Verification hooks** (`composer` / CI as listed).
 
 ---
 
-_Last updated (UTC): 2026-05-05 — aligns with `dev/SSOT_CANON_READING_LIST.md` and `REFERENCE_MAINTENANCE_SOP.md`._
+_Last updated (UTC): 2026-05-05 — aligns with `dev/SSOT_CANON_READING_LIST.md`, **`dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`** (M0–M12 + M6b), and `REFERENCE_MAINTENANCE_SOP.md`._
