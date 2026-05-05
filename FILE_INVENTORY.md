@@ -524,4 +524,6 @@ Total tracked repository files (excluding `.git` internals): **501**.
 
 - `scripts/test_contract_operations.php`
 - `src/Application/OperationalReadiness.php`
-- `src/Application/StartupConfiguration.php`
+- `src/Application/StartupConfiguration.php`- `scripts/docs_ssot_release_checklist_check.php`
+- `scripts/docs_ssot_slo_sli_check.php`
+- `scripts/test_contract_observability.php`

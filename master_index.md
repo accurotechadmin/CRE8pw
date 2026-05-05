@@ -111,3 +111,5 @@ Before merge, verify:
 ## 8) Session delta notes (2026-05-05 07:54 UTC)
 - Runtime pipeline contract scaffold expanded under `src/Application/` with protected-route envelope/error/request-id continuity logic.
 - Added contract command `composer test:contract:runtime-pipeline` (`scripts/test_contract_runtime_pipeline.php`) for middleware/PDP deny mapping and canonical envelope checks.
+
+- Added ops/observability automation commands: `docs:ssot:release-checklist-check`, `docs:ssot:slo-sli-check`, `test:contract:observability`.
