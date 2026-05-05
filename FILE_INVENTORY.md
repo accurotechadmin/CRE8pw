@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **492**.
+Total tracked repository files (excluding `.git` internals): **493**.
 
 ## Inventory by scope
 
@@ -489,6 +489,7 @@ Total tracked repository files (excluding `.git` internals): **492**.
 - `scripts/docs_ssot_seed_gap_schema.php`
 - `scripts/docs_ssot_seed_promotion_schema.php`
 - `scripts/docs_ssot_source_refs_check.php`
+- `scripts/docs_ssot_reference_chain_check.php`
 - `scripts/docs_ssot_sync_check.php`
 - `scripts/docs_ssot_threat_control_matrix.php`
 - `scripts/health_smoke.php`
