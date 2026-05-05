@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-IDPOL-PERMISSION-VOCAB
-version: 1.3.0
+version: 1.3.1
 status: normative
 owner: Identity & Policy WG
 reviewers:
@@ -390,6 +390,19 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 
 Tokens ending in `_own` (for example `content.post.update_own`) are narrowing grants: PDP intersections enforce them; they MUST NOT alias the broader verbs.
 
+**Alias candidates for v1.3.x additions** (**introduce only when migration evidence exists**):
+
+| legacy_alias | successor_token | Compatibility | Routing / notes |
+|---|---|---|---|
+| `principal.lineage.permissions.read` | `principal.lineage.node_effective_permissions_read` | **`conditionally-compatible`** | Candidate for dashboard/debug payload migration only.
+| `principal.lineage.grants.summary.read` | `principal.lineage.node_grant_summary_read` | **`conditionally-compatible`** | Candidate for lineage governance views; avoid auto-widening scope.
+| `template.clone` | `permission.template.clone` | **`backward-compatible`** | Candidate for template tooling prototypes.
+| `template.archive` | `permission.template.archive` | **`backward-compatible`** | Candidate for template lifecycle UIs.
+| `delegation.grants.list` | `delegation.grant.list` | **`backward-compatible`** | Candidate where pluralized noun was used in early clients.
+| `integration.webhook.secret.rotate` | `integration.webhook.rotate_secret` | **`backward-compatible`** | Candidate for webhook admin UX migrations.
+| `audit.events.verify_integrity` | `audit.event.integrity_verify` | **`backward-compatible`** | Candidate for forensic tooling migration.
+| `system.maintenance.cancel_window` | `system.maintenance.window_cancel` | **`backward-compatible`** | Candidate for ops console route literal cleanup.
+
 ---
 
 ## Route inventory parity checklist (automatable target)
@@ -423,6 +436,19 @@ Implementations SHOULD migrate each `CRE8-ROUTE-*` `required_permission` cell to
 | CRE8-ROUTE-0023 | system.version.read | `system.version.read` | **aligned** |
 | CRE8-ROUTE-0024 | system.info.read | `system.diagnostics.info_read` | **migrate** |
 
+### v1.3.x token route-parity planning (policy-context-only vs route-level)
+
+| Token | Intended exposure | Route-level plan |
+|---|---|---|
+| `principal.lineage.node_effective_permissions_read` | **Policy context + dashboard read models** | **Policy-context-only (now)**; MAY move to route-level when lineage diagnostics endpoint family is canonized. |
+| `principal.lineage.node_grant_summary_read` | **Policy context + dashboard read models** | **Policy-context-only (now)**; MAY move to route-level with delegation observability endpoints. |
+| `permission.template.clone` | **Route-level candidate** | SHOULD become route-level `required_permission` when template cloning endpoint is promoted. |
+| `permission.template.archive` | **Route-level candidate** | SHOULD become route-level `required_permission` when template archive endpoint is promoted. |
+| `delegation.grant.list` | **Route-level candidate** | SHOULD become route-level `required_permission` for grant-list APIs and export helpers. |
+| `integration.webhook.rotate_secret` | **Route-level candidate** | SHOULD become route-level `required_permission` for webhook secret rotation endpoint(s). |
+| `audit.event.integrity_verify` | **Route-level candidate** | MAY stay policy-context-only unless audit integrity verification receives API surface; if surfaced, MUST declare route IDs + OpenAPI examples in same batch. |
+| `system.maintenance.window_cancel` | **Route-level candidate** | SHOULD become route-level `required_permission` for maintenance-window cancellation endpoint(s). |
+
 ---
 
 ## Verification hooks
@@ -440,6 +466,7 @@ Implementations SHOULD migrate each `CRE8-ROUTE-*` `required_permission` cell to
 
 ## Change history
 
+- **2026-05-05 (v1.3.1)**: Added alias candidates for newly introduced v1.3.x tokens (only where migration need is plausible) and added a focused route-parity planning table classifying those tokens as policy-context-only vs route-level candidates.
 - **2026-05-05 (v1.3.0)**: Expanded canonical registry for governance-operability closure by adding lineage effective-permission/grant-summary read tokens, template clone/archive actions, delegation grant listing, webhook secret rotation, audit-event integrity verification, and maintenance-window cancellation.
 
 - **2026-05-05 (v1.2.0)**: Restructured registry into operational vs provisioning strata; documented Owner dashboard mint posture (**Primary issuance only**) with lineage navigation tokens, template-lock / issuance-cap knobs, delegation width + transferable subsets, Owner settings API credentials complements, **`content.link.preview_fetch`**, **`audit.retention.configure`**, **`system.maintenance.window_schedule`**, and issuance cap **`issuance.cap.primary_author.active_max_per_owner_scope`**; introduced **`CRE8-IDPOL-REQ-0030`** (**provisioning envelope intersection**) and **`CRE8-IDPOL-REQ-0031`** (routing guidance for provisioning-only tokens). Change Impact Map: [`reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md`](../../reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md).
