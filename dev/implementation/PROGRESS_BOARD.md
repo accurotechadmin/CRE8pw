@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-05 07:46_
+_Last updated (UTC): 2026-05-05 07:54_
 
 ## Purpose
 
@@ -16,24 +16,24 @@ Rolling status for **production codebase** work driven by **`dev/SSOT_IMPLEMENTA
 
 | Field | Value |
 |-------|--------|
-| **Last milestone/slice completed** | **M0:** S0.1, S0.2, S0.3; **M1:** S1.1, S1.2, S1.3, S1.4; **M2:** S2.1, S2.2, S2.3, S2.4; **M3:** S3.1 (runtime scaffold baseline) |
-| **In progress** | **M3:** S3.2 (full middleware-chain runtime integration pending) |
-| **Next recommended slices** | **M3:** S3.2 completion -> S3.3 -> S3.4 |
-| **Blockers** | No formal blocker; runtime Slim bootstrap and route topology are still absent and required to finish M3. |
+| **Last milestone/slice completed** | **M0:** S0.1, S0.2, S0.3; **M1:** S1.1, S1.2, S1.3, S1.4; **M2:** S2.1, S2.2, S2.3, S2.4; **M3:** S3.1, S3.2, S3.3, S3.4 |
+| **In progress** | **M4:** S4.1 (data model implementation start pending) |
+| **Next recommended slices** | **M4:** S4.1 -> S4.2 -> S4.3 |
+| **Blockers** | No formal blocker. |
 
 ## Gate status snapshot
 
 - **G0 Program boot:** complete.
-- **G1 Architecture lock:** in progress (M3 underway).
+- **G1 Architecture lock:** complete (M3 runtime spine slices complete).
 - **G2 Contract lock:** not started.
 - **G3 Security lock:** not started.
 - **G4 Release lock:** not started.
 
 ## Latest verification summary
 
-All required verification commands in this session passed, including baseline SSOT checks, slice-relevant pipeline-order contract check, and both phase acceptance bundles.
+All required verification commands in this session passed, including baseline SSOT checks, pipeline-order contract checks, runtime-pipeline contract check, and both phase acceptance bundles.
 
 ## Quick links
 
-- Active handoff: `dev/implementation/session_handoffs/SESSION_HANDOFF_20260505-0746.md`
-- Session response archive: `dev/implementation/session_responses/20260505-0746_RESPONSE.md`
+- Active handoff: `dev/implementation/session_handoffs/SESSION_HANDOFF_20260505-0754.md`
+- Session response archive: `dev/implementation/session_responses/20260505-0754_RESPONSE.md`

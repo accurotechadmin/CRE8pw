@@ -96,6 +96,7 @@
         "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
         "test:contract:response-schema": "@php scripts/test_contract_response_schema.php",
         "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
-        "test:security": "phpunit tests/Security"
+        "test:security": "phpunit tests/Security",
+        "test:contract:runtime-pipeline": "@php scripts/test_contract_runtime_pipeline.php"
     }
 }

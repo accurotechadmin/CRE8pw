@@ -104,3 +104,8 @@ Before merge, verify:
 - inventory totals and paths are exact,
 - continuity docs still point to existing files,
 - machine-contract changes include corresponding parity/impact references.
+
+
+## 8) Session delta notes (2026-05-05 07:54 UTC)
+- Runtime pipeline contract scaffold expanded under `src/Application/` with protected-route envelope/error/request-id continuity logic.
+- Added contract command `composer test:contract:runtime-pipeline` (`scripts/test_contract_runtime_pipeline.php`) for middleware/PDP deny mapping and canonical envelope checks.
