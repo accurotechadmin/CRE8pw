@@ -10,6 +10,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
 - Reference maintenance SOP: `REFERENCE_MAINTENANCE_SOP.md`
+- Reference refresh executor prompt: `reports/REFERENCE_REFRESH_SESSION_PROMPT.md`
 
 ## 2) Canonical SSOT corpus (`docs/`)
 - Canon root map: `docs/README.md`
