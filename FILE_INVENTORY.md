@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **497**.
+Total tracked repository files (excluding `.git` internals): **501**.
 
 ## Inventory by scope
 
@@ -514,3 +514,10 @@ Total tracked repository files (excluding `.git` internals): **497**.
 - `scripts/test_contract_surface_parity.php`
 - `tests/contract/fixtures/negative/lifecycle_suspend_response.json`
 - `tests/contract/fixtures/positive/lifecycle_suspend_response.json`
+
+
+### Session-added runtime files (2026-05-05)
+- `src/Application/PipelineRuntime.php`
+- `src/Application/RequestContext.php`
+- `src/Application/RuntimeTerms.php`
+- `scripts/test_contract_runtime_pipeline.php`
