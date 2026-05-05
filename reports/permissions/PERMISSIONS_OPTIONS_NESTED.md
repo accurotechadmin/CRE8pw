@@ -1,0 +1,334 @@
+# CRE8 Permissions Options (Nested)
+
+Source: `docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md`.
+
+## Canonical permission tokens
+
+- `audience`
+  - `audience.group`
+    - `audience.group.manage`
+      - alias: `audience.group.create`
+      - alias: `audience.group.delete`
+      - alias: `audience.group.update`
+    - `audience.group.view`
+      - alias: `audience.group.read`
+  - `audience.group_membership`
+    - `audience.group_membership.add`
+    - `audience.group_membership.remove`
+  - `audience.label`
+    - `audience.label.assign`
+  - `audience.targeting`
+    - `audience.targeting.restrict`
+- `audit`
+  - `audit.event`
+    - `audit.event.read`
+  - `audit.export_job`
+    - `audit.export_job.request`
+      - alias: `audit.export.create`
+  - `audit.retention`
+    - `audit.retention.configure`
+- `authz`
+  - `authz.decision`
+    - `authz.decision.invoke`
+      - alias: `authz.decide`
+    - `authz.decision.simulate`
+      - alias: `authz.simulate`
+- `content`
+  - `content.attachment`
+    - `content.attachment.delete`
+    - `content.attachment.upload`
+  - `content.comment`
+    - `content.comment.create`
+      - alias: `comment.create`
+    - `content.comment.delete`
+    - `content.comment.moderate`
+    - `content.comment.read`
+      - alias: `comment.read`
+    - `content.comment.update`
+  - `content.crosspost`
+    - `content.crosspost.create`
+  - `content.link`
+    - `content.link.preview_fetch`
+  - `content.post`
+    - `content.post.create`
+      - alias: `post.create`
+    - `content.post.delete`
+      - alias: `post.delete`
+    - `content.post.delete_own`
+    - `content.post.lock`
+    - `content.post.pin`
+    - `content.post.read`
+      - alias: `post.read`
+    - `content.post.read_own`
+    - `content.post.update`
+      - alias: `post.update`
+    - `content.post.update_own`
+  - `content.reaction`
+    - `content.reaction.create`
+    - `content.reaction.delete`
+- `credential`
+  - `credential.device`
+    - `credential.device.register`
+    - `credential.device.revoke`
+  - `credential.invite`
+    - `credential.invite.issue`
+    - `credential.invite.revoke`
+  - `credential.key`
+    - `credential.key.lifecycle.revoke`
+      - alias: `key.lifecycle.revoke`
+    - `credential.key.lifecycle.rotate`
+      - alias: `key.lifecycle.rotate`
+    - `credential.key.lifecycle.suspend`
+      - alias: `key.lifecycle.suspend`
+- `delegation`
+  - `delegation.grant`
+    - `delegation.grant.create`
+      - alias: `delegation.issue`
+    - `delegation.grant.inspect`
+    - `delegation.grant.revoke`
+      - alias: `delegation.revoke`
+  - `delegation.scope`
+    - `delegation.scope.transferable_subset_define`
+  - `delegation.topology`
+    - `delegation.topology.depth_set_max`
+      - alias: `delegation.depth.set_max`
+    - `delegation.topology.expiry_set_max`
+      - alias: `delegation.expiry.set_max`
+    - `delegation.topology.width_set_max`
+- `feed`
+  - `feed.snapshot`
+    - `feed.snapshot.export`
+      - alias: `feed.export`
+  - `feed.stream`
+    - `feed.stream.curate`
+    - `feed.stream.view`
+      - alias: `feed.items.read`
+  - `feed.subscription`
+    - `feed.subscription.manage`
+- `integration`
+  - `integration.api_rate_limit`
+    - `integration.api_rate_limit.exempt`
+  - `integration.webhook`
+    - `integration.webhook.manage`
+    - `integration.webhook.read`
+- `issuance`
+  - `issuance.cap`
+    - `issuance.cap.primary_author.active_max_per_owner_scope`
+    - `issuance.cap.secondary_author.active_max_per_primary`
+    - `issuance.cap.secondary_author.nested_active_max_per_secondary`
+    - `issuance.cap.secondary_author.nested_depth_max_below_primary`
+    - `issuance.cap.secondary_author.nested_depth_max_global`
+    - `issuance.cap.use_key.active_max_per_primary_author`
+    - `issuance.cap.use_key.active_max_per_secondary_author`
+- `keychain`
+  - `keychain.api_credential`
+    - `keychain.api_credential.issue`
+      - alias: `keychain.api_key.issue`
+    - `keychain.api_credential.restrict_permissions`
+      - alias: `keychain.api_key.restrict_permissions`
+    - `keychain.api_credential.revoke`
+      - alias: `keychain.api_key.revoke`
+    - `keychain.api_credential.rotate`
+      - alias: `keychain.api_key.rotate`
+  - `keychain.collection`
+    - `keychain.collection.create`
+      - alias: `keychain.create`
+    - `keychain.collection.delete`
+      - alias: `keychain.delete`
+    - `keychain.collection.read`
+      - alias: `keychain.read`
+    - `keychain.collection.update`
+      - alias: `keychain.update`
+- `moderation`
+  - `moderation.actor`
+    - `moderation.actor.restrict`
+      - alias: `moderation.user.restrict`
+  - `moderation.content`
+    - `moderation.content.visibility_hide`
+      - alias: `moderation.content.hide`
+    - `moderation.content.visibility_restore`
+      - alias: `moderation.content.restore`
+  - `moderation.queue`
+    - `moderation.queue.resolve`
+      - alias: `moderation.report.resolve`
+  - `moderation.report`
+    - `moderation.report.submit`
+      - alias: `moderation.report.create`
+- `notification`
+  - `notification.inbox`
+    - `notification.inbox.read`
+      - alias: `notification.read`
+  - `notification.preference`
+    - `notification.preference.manage`
+      - alias: `notification.manage_preferences`
+- `owner`
+  - `owner.api_credentials`
+    - `owner.api_credentials.manage`
+  - `owner.billing`
+    - `owner.billing.manage`
+    - `owner.billing.read`
+  - `owner.console`
+    - `owner.console.access`
+  - `owner.credential`
+    - `owner.credential.manage`
+  - `owner.lineage`
+    - `owner.lineage.provision_policy_publish`
+  - `owner.settings`
+    - `owner.settings.read`
+    - `owner.settings.update`
+- `permission`
+  - `permission.provisioning`
+    - `permission.provisioning.keychain_aggregate.issue_locked_template`
+    - `permission.provisioning.mint_meta_grant`
+      - alias: `permission.grant.set_meta_on_child`
+    - `permission.provisioning.mint_mode_curated`
+      - alias: `permission.grant.curate_on_mint`
+    - `permission.provisioning.mint_mode_full`
+      - alias: `permission.grant.full_on_mint`
+    - `permission.provisioning.primary_author.issue_locked_template`
+    - `permission.provisioning.secondary_author.issue_locked_template`
+    - `permission.provisioning.use_key.issue_locked_template`
+  - `permission.template`
+    - `permission.template.apply`
+    - `permission.template.create`
+    - `permission.template.delete`
+    - `permission.template.promote`
+    - `permission.template.read`
+    - `permission.template.update`
+- `principal`
+  - `principal.actor`
+    - `principal.actor.create`
+      - alias: `principal.create`
+    - `principal.actor.delete`
+  - `principal.id_keypair`
+    - `principal.id_keypair.issue`
+      - alias: `key.id.mint`
+    - `principal.id_keypair.revoke`
+    - `principal.id_keypair.rotate`
+  - `principal.inventory`
+    - `principal.inventory.search`
+      - alias: `principal.search`
+  - `principal.lifecycle`
+    - `principal.lifecycle.resume`
+    - `principal.lifecycle.suspend`
+  - `principal.lineage`
+    - `principal.lineage.node_policy_read_masked`
+    - `principal.lineage.node_profile_read`
+    - `principal.lineage.node_relationship_graph_read`
+    - `principal.lineage.tree_navigate_dashboard`
+  - `principal.primary_author`
+    - `principal.primary_author.mint`
+  - `principal.profile`
+    - `principal.profile.read`
+    - `principal.profile.update`
+  - `principal.secondary_author`
+    - `principal.secondary_author.mint`
+    - `principal.secondary_author.mint_nested_secondary`
+  - `principal.use_key`
+    - `principal.use_key.mint`
+  - `principal.utility_keypair`
+    - `principal.utility_keypair.issue`
+      - alias: `key.utility.mint`
+    - `principal.utility_keypair.revoke`
+    - `principal.utility_keypair.rotate`
+- `system`
+  - `system.diagnostics`
+    - `system.diagnostics.info_read`
+      - alias: `system.info.read`
+  - `system.health`
+    - `system.health.read`
+  - `system.maintenance`
+    - `system.maintenance.window_schedule`
+  - `system.version`
+    - `system.version.read`
+
+## Legacy aliases (grouped by canonical successor)
+
+- `audience.group.manage`
+  - `audience.group.create`
+  - `audience.group.delete`
+  - `audience.group.update`
+- `audience.group.view`
+  - `audience.group.read`
+- `audit.export_job.request`
+  - `audit.export.create`
+- `authz.decision.invoke`
+  - `authz.decide`
+- `authz.decision.simulate`
+  - `authz.simulate`
+- `content.comment.create`
+  - `comment.create`
+- `content.comment.read`
+  - `comment.read`
+- `content.post.create`
+  - `post.create`
+- `content.post.delete`
+  - `post.delete`
+- `content.post.read`
+  - `post.read`
+- `content.post.update`
+  - `post.update`
+- `credential.key.lifecycle.revoke`
+  - `key.lifecycle.revoke`
+- `credential.key.lifecycle.rotate`
+  - `key.lifecycle.rotate`
+- `credential.key.lifecycle.suspend`
+  - `key.lifecycle.suspend`
+- `delegation.grant.create`
+  - `delegation.issue`
+- `delegation.grant.revoke`
+  - `delegation.revoke`
+- `delegation.topology.depth_set_max`
+  - `delegation.depth.set_max`
+- `delegation.topology.expiry_set_max`
+  - `delegation.expiry.set_max`
+- `feed.snapshot.export`
+  - `feed.export`
+- `feed.stream.view`
+  - `feed.items.read`
+- `keychain.api_credential.issue`
+  - `keychain.api_key.issue`
+- `keychain.api_credential.restrict_permissions`
+  - `keychain.api_key.restrict_permissions`
+- `keychain.api_credential.revoke`
+  - `keychain.api_key.revoke`
+- `keychain.api_credential.rotate`
+  - `keychain.api_key.rotate`
+- `keychain.collection.create`
+  - `keychain.create`
+- `keychain.collection.delete`
+  - `keychain.delete`
+- `keychain.collection.read`
+  - `keychain.read`
+- `keychain.collection.update`
+  - `keychain.update`
+- `moderation.actor.restrict`
+  - `moderation.user.restrict`
+- `moderation.content.visibility_hide`
+  - `moderation.content.hide`
+- `moderation.content.visibility_restore`
+  - `moderation.content.restore`
+- `moderation.queue.resolve`
+  - `moderation.report.resolve`
+- `moderation.report.submit`
+  - `moderation.report.create`
+- `notification.inbox.read`
+  - `notification.read`
+- `notification.preference.manage`
+  - `notification.manage_preferences`
+- `permission.provisioning.mint_meta_grant`
+  - `permission.grant.set_meta_on_child`
+- `permission.provisioning.mint_mode_curated`
+  - `permission.grant.curate_on_mint`
+- `permission.provisioning.mint_mode_full`
+  - `permission.grant.full_on_mint`
+- `principal.actor.create`
+  - `principal.create`
+- `principal.id_keypair.issue`
+  - `key.id.mint`
+- `principal.inventory.search`
+  - `principal.search`
+- `principal.utility_keypair.issue`
+  - `key.utility.mint`
+- `system.diagnostics.info_read`
+  - `system.info.read`
