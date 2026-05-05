@@ -51,6 +51,7 @@ A complete session record usually consists of:
 ## Related references
 
 - Project root orientation: `../README.md`
+- Developer SSOT reading list: `../dev/SSOT_CANON_READING_LIST.md`
 - Canonical docs index: `../docs/README.md`
 - Session response archive details: `session_responses/README.md`
 - Verification strategy: `../docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`

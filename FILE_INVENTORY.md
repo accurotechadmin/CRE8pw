@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **450**.
+Total tracked repository files (excluding `.git` internals): **451**.
 
 ## Inventory by scope
 
@@ -14,6 +14,9 @@ Total tracked repository files (excluding `.git` internals): **450**.
 - `composer.json`
 - `dot.env`
 - `master_index.md`
+
+### Developer orientation (dev/) (1 file)
+- `dev/SSOT_CANON_READING_LIST.md`
 
 ### Documentation corpus (docs/) (96 files)
 - `docs/00_governance/CHANGE_CONTROL_POLICY.md`

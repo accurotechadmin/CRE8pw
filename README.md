@@ -2,7 +2,7 @@
 
 CRE8 is a **Single Source of Truth (SSOT) repository** for a credentialed identity, delegation, policy, contract, security, and operations platform. This repo is intentionally documentation-first: it captures the architecture, rules, contracts, and verification hooks required to build and operate CRE8 consistently.
 
-If you are starting fresh, read this file, then [`docs/README.md`](docs/README.md), then [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md).
+If you are starting fresh, read this file, then [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md) for the full sequential canon path, or use the shorter ladder via [`docs/README.md`](docs/README.md) and [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md).
 
 ---
 
@@ -19,6 +19,7 @@ If you are starting fresh, read this file, then [`docs/README.md`](docs/README.m
 
 | Path | Role | Notes |
 |---|---|---|
+| `dev/` | Developer orientation | Sequential SSOT canon reading list for implementation work. |
 | `docs/` | Canonical SSOT corpus | Domain-organized normative/provisional documentation. |
 | `seed/` | Seed canon | Origin references and baseline source material. |
 | `reports/` | Program records and session artifacts | Non-normative by default unless explicitly promoted. |
@@ -34,6 +35,10 @@ If you are starting fresh, read this file, then [`docs/README.md`](docs/README.m
 ---
 
 ## Canonical reading order
+
+For the **complete sequential path** through every developer-relevant SSOT document (including all domains, machine contracts, evidence, and tooling), use [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md).
+
+Short ladder:
 
 1. [`docs/README.md`](docs/README.md)
 2. [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md)
@@ -130,6 +135,7 @@ Then inspect:
 ## README index in this repository
 
 - Root: [`README.md`](README.md) (this file)
+- Developer SSOT reading list: [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md)
 - Docs root: [`docs/README.md`](docs/README.md)
 - Machine contracts: [`docs/31_machine_contracts/README.md`](docs/31_machine_contracts/README.md)
 - Evidence root: [`docs/evidence/README.md`](docs/evidence/README.md)
