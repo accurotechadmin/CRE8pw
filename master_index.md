@@ -53,6 +53,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 
 ## 4) Reports, continuity, and session artifacts (`reports/`)
 - Reports root index: `reports/README.md`
+- SSOT-guided implementation roadmap (milestones and slices): `reports/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 - Program-level phase references:
   - `PHASE1_*`, `PHASE2_*`, `PHASE3_*`, `PHASE4_*`
 - Session continuity controls:

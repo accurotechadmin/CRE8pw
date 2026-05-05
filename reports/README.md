@@ -21,6 +21,7 @@ Content in `reports/` is generally **informational/non-normative** unless explic
 
 This folder also includes phase plans, acceptance memos, audits, and repo study reports used for program continuity and governance context.
 
+- SSOT-guided engineering milestones & slices (`dev/SSOT_CANON_READING_LIST`–aligned roadmap): [`SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`](./SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md)
 - Reference refresh executor prompt (full repository reference reconciliation): `REFERENCE_REFRESH_SESSION_PROMPT.md`
 - Governing procedure for inventories and indexes (repository root): `../REFERENCE_MAINTENANCE_SOP.md`
 

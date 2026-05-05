@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **452**.
+Total tracked repository files (excluding `.git` internals): **453**.
 
 ## Inventory by scope
 
@@ -147,6 +147,7 @@ Total tracked repository files (excluding `.git` internals): **452**.
 - `reports/PHASE4_AUTHORING_SESSION_PROMPT.md`
 - `reports/PHASE4_CANON_COMPLETION_MILESTONES.md`
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
+- `reports/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 - `reports/README.md`
 - `reports/REFERENCE_REFRESH_SESSION_PROMPT.md`
 - `reports/REPO_FULL_STUDY_2026-04-29.md`
