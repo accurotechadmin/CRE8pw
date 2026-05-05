@@ -1,0 +1,16 @@
+{
+  "provider_id": "provider.mail.v1",
+  "transport_protocol": "https",
+  "signature_profile": "ed25519-detached-v1",
+  "retry_class": "bounded-exponential",
+  "dead_letter_destination": "dlq.integration.mail",
+  "contract_version": "v1",
+  "signature_required_for_authenticated_routes": true,
+  "seam_tests": [
+    "successful_delivery",
+    "retryable_failure",
+    "non_retryable_failure",
+    "replay_rejection",
+    "signature_key_rotation"
+  ]
+}

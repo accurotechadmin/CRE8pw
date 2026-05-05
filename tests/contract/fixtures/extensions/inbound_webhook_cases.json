@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"name":"valid_signed_payload","expected":"allow"},
+    {"name":"invalid_signature","expected":"deny_signature"},
+    {"name":"replay_nonce","expected":"deny_replay"},
+    {"name":"duplicate_idempotency_key","expected":"deny_idempotency"},
+    {"name":"schema_invalid_payload","expected":"deny_schema"}
+  ]
+}

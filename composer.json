@@ -52,6 +52,7 @@
         "docs:ssot:example-coverage": "@php scripts/docs_ssot_example_coverage.php",
         "docs:ssot:extension-seam-compatibility": "@php scripts/docs_ssot_extension_seam_compatibility.php",
         "docs:ssot:glossary-check": "php scripts/docs_ssot_glossary_check.php",
+        "docs:ssot:integration-provider-guarantees": "@php scripts/docs_ssot_integration_provider_guarantees.php",
         "docs:ssot:lint": "@php scripts/docs_ssot_lint.php",
         "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php",
         "docs:ssot:permission-vocab-resolve": "@php scripts/docs_ssot_permission_vocab_resolve.php",
@@ -74,6 +75,7 @@
         "docs:ssot:sync-check": "@php scripts/docs_ssot_sync_check.php",
         "docs:ssot:threat-control-matrix": "@php scripts/docs_ssot_threat_control_matrix.php",
         "docs:ssot:trace-convention-check": "@php scripts/docs_ssot_trace_convention_check.php",
+        "docs:ssot:untraced-requirements-check": "@php scripts/docs_ssot_untraced_requirements_check.php",
         "ops:health-smoke": "@php scripts/health_smoke.php",
         "ops:migrate-smoke": "@php scripts/migrate_smoke.php",
         "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php",
@@ -109,6 +111,7 @@
         "test:contract:security-abuse": "@php scripts/test_contract_security_abuse.php",
         "test:contract:security-controls": "@php scripts/test_contract_security_controls.php",
         "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
+        "test:contract:webhook-inbound": "@php scripts/test_contract_webhook_inbound.php",
         "test:security": "phpunit tests/Security"
     }
 }

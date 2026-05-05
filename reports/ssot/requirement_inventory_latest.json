@@ -1,7 +1,7 @@
 {
-    "generated_at_utc": "2026-05-05T01:35:22+00:00",
-    "total_requirements": 482,
-    "untraced_requirements": 19,
+    "generated_at_utc": "2026-05-05T08:59:42+00:00",
+    "total_requirements": 486,
+    "untraced_requirements": 14,
     "untraced": {
         "CRE8-AUTH-REQ-0007": {
             "doc_id": "CRE8-AUTH-DELEGATION-SPEC",
@@ -26,26 +26,6 @@
         "CRE8-CONTRACT-REQ-0056": {
             "doc_id": "CRE8-CONTRACTS-API-GUIDE",
             "path": "docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md"
-        },
-        "CRE8-IDPOL-REQ-0023": {
-            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
-            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
-        },
-        "CRE8-IDPOL-REQ-0024": {
-            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
-            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
-        },
-        "CRE8-IDPOL-REQ-0025": {
-            "doc_id": "CRE8-IDPOL-DELEGATION-STATE-MACHINE",
-            "path": "docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md"
-        },
-        "CRE8-IDPOL-REQ-0026": {
-            "doc_id": "CRE8-IDPOL-KEYCHAIN-RESOLUTION",
-            "path": "docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md"
-        },
-        "CRE8-IDPOL-REQ-0027": {
-            "doc_id": "CRE8-IDPOL-KEYCHAIN-RESOLUTION",
-            "path": "docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md"
         },
         "CRE8-MACHINE-REQ-0100": {
             "doc_id": "CRE8-MACHINE-CONTRACT-VERSION-POLICY",
