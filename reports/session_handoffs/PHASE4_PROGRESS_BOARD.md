@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-05T01:30:00Z
+- Last updated (UTC): 2026-05-05T05:20:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -94,5 +94,12 @@
 | P4-S8.6 | complete | Completion evidence-bundle index published at `reports/phase4/P4-S8.6_COMPLETION_EVIDENCE_BUNDLE_INDEX.md`; prior batch-size blocker retired. |
 
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260505-0130.md`](SESSION_HANDOFF_20260505-0130.md)
-- Latest response archive: [`../session_responses/20260505-0130_RESPONSE.md`](../session_responses/20260505-0130_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260505-0520.md`](SESSION_HANDOFF_20260505-0520.md)
+- Latest response archive: [`../session_responses/20260505-0520_RESPONSE.md`](../session_responses/20260505-0520_RESPONSE.md)
+
+## Permissions / delegation follow-up lane (post-program closure refinements)
+
+| Item | Status | Notes |
+|---|---|---|
+| Route inventory literals vs centralized registry | **in_progress** | New [`PERMISSION_VOCABULARY.md`](../../docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md) + alias map; migrate `required_permission`, OpenAPI `action`, fixtures in follow-up batches. Evidence: [`reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md`](../change_impact_maps/20260505-0515-permission-vocabulary-expansion.md). |
+

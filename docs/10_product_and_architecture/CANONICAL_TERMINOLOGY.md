@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-ARCH-CANONICAL-TERMINOLOGY
-version: 1.0.0
+version: 1.0.1
 status: normative
 owner: Platform Architecture WG
 reviewers:
   - Identity & Policy WG
   - API Contracts WG
-last_reviewed_utc: 2026-04-30
+last_reviewed_utc: 2026-05-05
 next_review_due_utc: 2026-07-30
 source_seed_refs:
   - seed/CRE8_SEED_CANON_INDEX.md
@@ -16,6 +16,7 @@ source_seed_refs:
 normative_dependencies:
   - README.md
   - docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md
+  - docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md
   - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
 ---
@@ -91,6 +92,9 @@ normative_dependencies:
 | `Exception` | Explicitly approved deferral item with owner/due/decision reference in register. | Program Exception | Deferral Row | Silent Debt | [`PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md`](PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md) |
 | `SSOT` | Single source of truth corpus that governs implementation and verification behavior. | Canon | Authoritative Spec | Suggestion Docs | [`SSOT_INDEX.md`](SSOT_INDEX.md) |
 
+| `Legacy Permission Alias` | Historical permission literal carried on routes or grants that MUST normalize to exactly one successor token before PDP gate evaluation (`CRE8-IDPOL-REQ-0028`). | Deprecated permission string | Alternate permission label | Implicit synonym expansion | [`PERMISSION_VOCABULARY.md`](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md) |
+| `Successor Permission Token` | Canonical replacement token emitted after deterministic alias normalization; MUST remain registered in [`PERMISSION_VOCABULARY.md`](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md). | Canonical successor | Replacement permission | Ungoverned synonym | [`PERMISSION_VOCABULARY.md`](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md) |
+
 ## Canonical actor vocabulary (Phase 4 normalization)
 
 | Actor | Canonical meaning | Required usage boundary | Prohibited aliases |
@@ -101,6 +105,9 @@ normative_dependencies:
 | `Moderator` | Principal acting under moderation permissions and moderation-state transitions. | MUST be used for moderation outcomes, holds, review, and interaction controls. | Reviewer, Content Admin |
 | `Integration Provider` | External or modular integration component bound by webhook/provider contracts. | MUST be used for third-party or extension integration obligations and retry/signature semantics. | Provider Adapter (actor), Third-party Service |
 | `Operator` | Human or automation actor executing operational runbooks, release gates, and verification hooks. | MUST be used for deployment/operations/verification actions outside request-serving runtime. | DevOps, SRE User |
+
+## Change history
+- **2026-05-05 (v1.0.1)**: Added glossary entries for legacy permission aliases and successor tokens to align PDP normalization language with expanded [`PERMISSION_VOCABULARY.md`](../20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md).
 
 ## See also
 - [SSOT Index](../00_governance/SSOT_INDEX.md)

@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-TRACE-MATRIX
-version: 1.2.0
+version: 1.3.0
 status: normative
 owner: Program Traceability WG
 reviewers:
   - Docs Governance WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-04-30
+last_reviewed_utc: 2026-05-05
 next_review_due_utc: 2026-05-29
 source_seed_refs:
   - seed/
@@ -441,6 +441,13 @@ Define the mandatory requirement-to-verification traceability contract for all n
 | CRE8-IDPOL-REQ-0020 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | automated | Identity & Policy WG | normative | composer test:contract:lifecycle |
 | CRE8-IDPOL-REQ-0021 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | automated | Identity & Policy WG | normative | composer test:contract:lifecycle |
 | CRE8-IDPOL-REQ-0022 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | normative | composer test:contract:auth-reasons |
+| CRE8-IDPOL-REQ-0023 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | normative | composer test:contract:auth-reasons |
+| CRE8-IDPOL-REQ-0024 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | normative | composer test:contract:auth-reasons |
+| CRE8-IDPOL-REQ-0025 | CRE8-IDPOL-DELEGATION-STATE-MACHINE | docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | normative | composer test:contract:auth-reasons |
+| CRE8-IDPOL-REQ-0026 | CRE8-IDPOL-KEYCHAIN-RESOLUTION | docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | Identity & Policy WG | normative | composer test:contract:auth-reasons |
+| CRE8-IDPOL-REQ-0027 | CRE8-IDPOL-KEYCHAIN-RESOLUTION | docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md | HOOK-AUTH-LIFECYCLE-ENFORCEMENT | automated | Identity & Policy WG | normative | composer test:contract:lifecycle |
+| CRE8-IDPOL-REQ-0028 | CRE8-IDPOL-PERMISSION-VOCAB | docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md | HOOK-CONTRACT-POLICY-ORDER | automated | Identity & Policy WG | normative | composer test:contract:auth |
+| CRE8-IDPOL-REQ-0029 | CRE8-IDPOL-PERMISSION-VOCAB | docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md | HOOK-CONTRACT-ROUTE-INVENTORY-PARITY | automated | Identity & Policy WG | normative | composer docs:ssot:route-parity |
 | CRE8-CONTRACT-REQ-0060 | CRE8-CONTRACTS-ENDPOINT-EXAMPLES | docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md | HOOK-CONTRACT-EXAMPLE-COVERAGE | automated | API Contracts WG | provisional-normative | composer test:contract:request-schema |
 | CRE8-CONTRACT-REQ-0061 | CRE8-CONTRACTS-ENDPOINT-EXAMPLES | docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md | HOOK-CONTRACT-EXAMPLE-COVERAGE | automated | API Contracts WG | provisional-normative | composer test:contract:request-schema |
 | CRE8-CONTRACT-REQ-0062 | CRE8-CONTRACTS-ENDPOINT-EXAMPLES | docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md | HOOK-AUTH-DECISION-REASON-MAPPING | automated | API Contracts WG | provisional-normative | composer test:contract:auth-reasons |
