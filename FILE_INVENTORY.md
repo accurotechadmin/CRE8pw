@@ -1,6 +1,6 @@
 # Repository File Inventory
 
-Generated on 2026-05-05 (UTC).
+Generated on 2026-05-05 (UTC). Reconciled against `git ls-files` in the same session (471 paths; no additions or removals vs prior inventory).
 
 Total tracked repository files (excluding `.git` internals): **471**.
 

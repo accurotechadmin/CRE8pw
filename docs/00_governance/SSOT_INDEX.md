@@ -6,7 +6,7 @@ owner: Docs Governance WG
 reviewers:
   - Security WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-05-06
+last_reviewed_utc: 2026-05-05
 next_review_due_utc: 2026-05-30
 source_seed_refs:
   - README.md
@@ -25,7 +25,7 @@ normative_dependencies:
 This document defines the authoritative SSOT topology, precedence model, and minimum governance linkage rules for the CRE8 repository.
 
 ## Normative requirements
-- **CRE8-GOV-REQ-0001**: The repository **MUST** treat [`README.md`](README.md) as the root project-level SSOT anchor.
+- **CRE8-GOV-REQ-0001**: The repository **MUST** treat [`README.md`](../../README.md) as the root project-level SSOT anchor.
 - **CRE8-GOV-REQ-0002**: Domain canonical requirements **MUST** be authored under `docs/` and **MUST** supersede `seed/` material where both define the same behavior.
 - **CRE8-GOV-REQ-0004**: `reports/` artifacts **MUST** be treated as informational and non-normative unless explicitly promoted by governance-controlled change.
 - **CRE8-GOV-REQ-0005**: Every normative document **MUST** include the metadata header defined by [`DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md).
@@ -33,7 +33,7 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - **CRE8-GOV-REQ-0007**: Changes that alter requirement semantics **MUST** follow [`CHANGE_CONTROL_POLICY.md`](CHANGE_CONTROL_POLICY.md) and pass [`DEFINITION_OF_DONE.md`](DEFINITION_OF_DONE.md) gates before merge.
 
 ## Canon precedence
-1. [`README.md`](README.md)
+1. [`README.md`](../../README.md)
 2. Normative docs under `docs/`
 3. `reports/` session and analysis outputs
 
@@ -47,7 +47,7 @@ This document defines the authoritative SSOT topology, precedence model, and min
 ## Verification hooks
 - **HOOK-SSOT-LINT-METADATA**: Validate metadata header presence and required keys across normative docs.
 - **HOOK-SSOT-LINK-INTEGRITY**: Validate all internal markdown links and anti-orphan requirements.
-- **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](README.md) and updated normative docs before merge.
+- **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](../../README.md) and updated normative docs before merge.
 
 ## See also
 - [`dev/` README (developer workspace index)](../../dev/README.md)

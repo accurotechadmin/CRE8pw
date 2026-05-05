@@ -48,8 +48,8 @@ Items **5–7** define how every other document is authored, interpreted, and pr
 
 1. Edit the target domain docs.
 2. Update dependent links and governance references if impacted.
-3. Run SSOT verification scripts from [`composer.json`](composer.json).
-4. Validate coverage output in [`reports/ssot/coverage_latest.json`](reports/ssot/coverage_latest.json).
+3. Run SSOT verification scripts from [`composer.json`](../composer.json).
+4. Validate coverage output in [`reports/ssot/coverage_latest.json`](../reports/ssot/coverage_latest.json).
 5. Record evidence and session artifacts under `reports/` as required.
 
 ## High-value cross references
