@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **458**.
+Total tracked repository files (excluding `.git` internals): **463**.
 
 ## Inventory by scope
 
@@ -15,11 +15,16 @@ Total tracked repository files (excluding `.git` internals): **458**.
 - `dot.env`
 - `master_index.md`
 
-### Developer orientation (dev/) (4 files)
-- `dev/README.md`
+### Developer orientation (dev/) (9 files)
 - `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`
+- `dev/CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md`
+- `dev/README.md`
 - `dev/SSOT_CANON_READING_LIST.md`
 - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
+- `dev/implementation/LATEST_SESSION_HANDOFF.md`
+- `dev/implementation/PROGRESS_BOARD.md`
+- `dev/implementation/session_handoffs/README.md`
+- `dev/implementation/session_responses/README.md`
 
 ### Documentation corpus (docs/) (96 files)
 - `docs/00_governance/CHANGE_CONTROL_POLICY.md`

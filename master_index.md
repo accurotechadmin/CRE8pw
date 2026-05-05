@@ -8,9 +8,11 @@ This index is the operational map for all canonical specs, machine contracts, se
 ## 1) Global navigation anchors
 - Repository onboarding: `README.md`
 - Expert coding LLM boot prompt (paste-first session message): `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`
+- **Production codebase session driver** (paste-first for `src/`/`tests/` work; `docs/`/`seed/` read-only): `dev/CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md`
 - Development planning index (`dev/`): `dev/README.md`
 - Sequential SSOT canon reading list (developers): `dev/SSOT_CANON_READING_LIST.md`
 - Implementation milestones & slices roadmap (full `docs/`/`seed/` alignment, **M6b** security-program lane): `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
+- **Production implementation continuity** (handoffs, responses, progress board): `dev/implementation/` (`LATEST_SESSION_HANDOFF.md`, `PROGRESS_BOARD.md`, `session_handoffs/`, `session_responses/`)
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
 - Reference maintenance SOP: `REFERENCE_MAINTENANCE_SOP.md`
@@ -81,6 +83,8 @@ When adding/renaming/removing documentation, schema, report, seed, or workflow f
 4. Relevant local indexes/readmes (examples):
    - `dev/README.md` (when developer workspace composition changes)
    - `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md` (when LLM/developer boot artifacts change)
+   - `dev/CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md` (when production session driver changes)
+   - `dev/implementation/LATEST_SESSION_HANDOFF.md` (when production continuity pointer changes)
    - `dev/SSOT_CANON_READING_LIST.md` (when SSOT developer reading scope changes)
    - `docs/README.md`
    - `docs/00_governance/SSOT_INDEX.md`
