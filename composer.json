@@ -94,6 +94,7 @@
     "test:contract:response-schema": "@php scripts/test_contract_response_schema.php",
     "docs:ssot:reference-chain-check": "@php scripts/docs_ssot_reference_chain_check.php",
     "docs:ssot:trace-convention-check": "@php scripts/docs_ssot_trace_convention_check.php",
-    "docs:ssot:command-registry-audit": "@php scripts/docs_ssot_command_registry_audit.php"
+    "docs:ssot:command-registry-audit": "@php scripts/docs_ssot_command_registry_audit.php",
+    "docs:ssot:ci-gate-policy": "@php scripts/docs_ssot_ci_gate_policy.php"
   }
 }

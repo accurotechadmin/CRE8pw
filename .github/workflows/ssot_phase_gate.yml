@@ -6,6 +6,7 @@ on:
       - 'docs/**'
       - 'reports/**'
       - 'scripts/docs_ssot_*.php'
+      - 'scripts/test_contract_*.php'
       - 'composer.json'
       - '.github/workflows/ssot_phase_gate.yml'
   push:
@@ -16,6 +17,7 @@ on:
       - 'docs/**'
       - 'reports/**'
       - 'scripts/docs_ssot_*.php'
+      - 'scripts/test_contract_*.php'
       - 'composer.json'
       - '.github/workflows/ssot_phase_gate.yml'
 
@@ -53,11 +55,23 @@ jobs:
       - name: Run SSOT route parity check
         run: composer docs:ssot:route-parity
 
+      - name: Run SSOT trace convention check
+        run: composer docs:ssot:trace-convention-check
+
+      - name: Run SSOT command registry audit
+        run: composer docs:ssot:command-registry-audit
+
+      - name: Run SSOT CI gate policy check
+        run: composer docs:ssot:ci-gate-policy
+
       - name: Run SSOT PR evidence check
         run: composer docs:ssot:pr-evidence-check
 
+      - name: Run Phase 2 acceptance bundle
+        run: composer phase2:acceptance-bundle
+
       - name: Ordering anchor - acceptance bundle runs after SSOT checks
-        run: echo 'phase3 final acceptance bundle is ordered after lint/sync/report/review/parity/pr-evidence checks'
+        run: echo 'phase2 then phase3 acceptance bundles are ordered after SSOT checks'
 
       - name: Run Phase 3 final acceptance bundle
         run: composer phase3:final-acceptance-bundle
