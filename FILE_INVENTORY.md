@@ -2,14 +2,15 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **447**.
+Total tracked repository files (excluding `.git` internals): **449**.
 
 ## Inventory by scope
 
-### Root-level governance and entry files (6 files)
+### Root-level governance and entry files (8 files)
 - `.htaccess`
 - `FILE_INVENTORY.md`
 - `README.md`
+- `REFERENCE_MAINTENANCE_SOP.md`
 - `composer.json`
 - `dot.env`
 - `master_index.md`
@@ -127,7 +128,7 @@ Total tracked repository files (excluding `.git` internals): **447**.
 - `seed/seed-index.md`
 - `seed/seed-intro.md`
 
-### Reports and continuity artifacts (reports/) (285 files)
+### Reports and continuity artifacts (reports/) (286 files)
 - `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md`
 - `reports/PHASE1_CANON_HARDENING_ROADMAP.md`
 - `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`
@@ -143,6 +144,7 @@ Total tracked repository files (excluding `.git` internals): **447**.
 - `reports/PHASE4_CANON_COMPLETION_MILESTONES.md`
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
 - `reports/README.md`
+- `reports/REFERENCE_REFRESH_SESSION_PROMPT.md`
 - `reports/REPO_FULL_STUDY_2026-04-29.md`
 - `reports/REPO_STUDY_HIGH_LEVEL_REPORT_2026-04-29.md`
 - `reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`

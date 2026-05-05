@@ -26,6 +26,10 @@ If you are starting fresh, read this file, then [`docs/README.md`](docs/README.m
 | `tests/` | Contract fixtures | Request/response fixtures used by contract checks. |
 | [`composer.json`](composer.json) | Tool/runtime manifest | Composer scripts are the authoritative command catalog. |
 | `dot.env` | Environment scaffold | Placeholder file only; never commit secrets. |
+| [`REFERENCE_MAINTENANCE_SOP.md`](REFERENCE_MAINTENANCE_SOP.md) | Reference maintenance procedure | Inventory, indexes, and link hygiene when the repo tree changes. |
+| [`reports/REFERENCE_REFRESH_SESSION_PROMPT.md`](reports/REFERENCE_REFRESH_SESSION_PROMPT.md) | Reference refresh prompt | Structured executor prompt aligned with the maintenance SOP. |
+| [`FILE_INVENTORY.md`](FILE_INVENTORY.md) | Tracked-file inventory | Complete path list of all version-controlled files. |
+| [`master_index.md`](master_index.md) | Operational index | Global map of docs, seeds, reports, and the mandatory update chain. |
 
 ---
 
