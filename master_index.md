@@ -10,7 +10,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 - Expert coding LLM boot prompt (paste-first session message): `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`
 - Development planning index (`dev/`): `dev/README.md`
 - Sequential SSOT canon reading list (developers): `dev/SSOT_CANON_READING_LIST.md`
-- Implementation milestones & slices roadmap: `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
+- Implementation milestones & slices roadmap (full `docs/`/`seed/` alignment, **M6b** security-program lane): `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
 - Reference maintenance SOP: `REFERENCE_MAINTENANCE_SOP.md`

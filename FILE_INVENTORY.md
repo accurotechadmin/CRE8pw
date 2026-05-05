@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **455**.
+Total tracked repository files (excluding `.git` internals): **458**.
 
 ## Inventory by scope
 
@@ -175,6 +175,7 @@ Total tracked repository files (excluding `.git` internals): **455**.
 - `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`
 - `reports/change_impact_maps/20260504-1659-P3-S6.1-schema-closure-depth.md`
 - `reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md`
+- `reports/change_impact_maps/20260505-0130-link-integrity-adr-index.md`
 - `reports/phase4/P4-S1.1_NORMATIVE_INVENTORY.md`
 - `reports/phase4/P4-S1.3_MODAL_CONSISTENCY_LOG.md`
 - `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md`
@@ -279,6 +280,7 @@ Total tracked repository files (excluding `.git` internals): **455**.
 - `reports/session_handoffs/SESSION_HANDOFF_20260504-2244.md`
 - `reports/session_handoffs/SESSION_HANDOFF_20260504-2247.md`
 - `reports/session_handoffs/SESSION_HANDOFF_20260504-2252.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0130.md`
 - `reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md`
 - `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md`
 - `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0343.md`
@@ -418,6 +420,7 @@ Total tracked repository files (excluding `.git` internals): **455**.
 - `reports/session_responses/20260504-2247_RESPONSE.md`
 - `reports/session_responses/20260504-2252_RESPONSE.md`
 - `reports/session_responses/20260505-0046_RESPONSE.md`
+- `reports/session_responses/20260505-0130_RESPONSE.md`
 - `reports/session_responses/20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
 - `reports/session_responses/README.md`
 - `reports/ssot/coverage_latest.json`
