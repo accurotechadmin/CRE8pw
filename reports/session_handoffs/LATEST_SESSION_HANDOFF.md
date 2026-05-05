@@ -1,4 +1,1 @@
-# Latest Session Handoff
-
-- Current: [`SESSION_HANDOFF_20260505-0548.md`](SESSION_HANDOFF_20260505-0548.md)
-- Previous: [`SESSION_HANDOFF_20260505-0542.md`](SESSION_HANDOFF_20260505-0542.md)
+Latest handoff: `reports/session_handoffs/SESSION_HANDOFF_20260505-0605.md`
