@@ -14,6 +14,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 - Sequential SSOT canon reading list (developers): `dev/SSOT_CANON_READING_LIST.md`
 - Implementation milestones & slices roadmap (full `docs/`/`seed/` alignment, **M6b** security-program lane): `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 - **Production implementation continuity** (handoffs, responses, progress board): `dev/implementation/` (`LATEST_SESSION_HANDOFF.md`, `PROGRESS_BOARD.md`, `session_handoffs/`, `session_responses/`)
+  - Latest archived session pair currently present: `dev/implementation/session_handoffs/SESSION_HANDOFF_20260505-0723.md` and `dev/implementation/session_responses/20260505-0723_RESPONSE.md`
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
 - Reference maintenance SOP: `REFERENCE_MAINTENANCE_SOP.md`
