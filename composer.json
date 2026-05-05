@@ -1,100 +1,101 @@
 {
-  "name": "cre8/platform",
-  "description": "CRE8 PHP runtime",
-  "type": "project",
-  "license": "proprietary",
-  "require": {
-    "php": "^8.5.5",
-    "slim/slim": "^4.15.1",
-    "slim/psr7": "^1.8.0",
-    "php-di/php-di": "^7.1.1",
-    "firebase/php-jwt": "^7.0.5",
-    "ext-pdo": "*",
-    "ext-sodium": "*",
-    "respect/validation": "^3.1.1",
-    "vlucas/phpdotenv": "^5.6.3",
-    "guzzlehttp/guzzle": "^7.10.0",
-    "neomerx/cors-psr7": "^3.0.2",
-    "monolog/monolog": "^3.10.0",
-    "symfony/rate-limiter": "^8.0.8",
-    "symfony/cache": "^8.0.8"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^13.1.7"
-  },
-  "autoload": {
-    "psr-4": {
-      "Cre8\\": "src/"
+    "name": "cre8/platform",
+    "description": "CRE8 PHP runtime",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.5.5",
+        "slim/slim": "^4.15.1",
+        "slim/psr7": "^1.8.0",
+        "php-di/php-di": "^7.1.1",
+        "firebase/php-jwt": "^7.0.5",
+        "ext-pdo": "*",
+        "ext-sodium": "*",
+        "respect/validation": "^3.1.1",
+        "vlucas/phpdotenv": "^5.6.3",
+        "guzzlehttp/guzzle": "^7.10.0",
+        "neomerx/cors-psr7": "^3.0.2",
+        "monolog/monolog": "^3.10.0",
+        "symfony/rate-limiter": "^8.0.8",
+        "symfony/cache": "^8.0.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cre8\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cre8\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.5.5"
+        }
+    },
+    "scripts": {
+        "docs:ssot:capability-matrix-complete": "@php scripts/docs_ssot_capability_matrix_complete.php",
+        "docs:ssot:ci-gate-policy": "@php scripts/docs_ssot_ci_gate_policy.php",
+        "docs:ssot:command-registry-audit": "@php scripts/docs_ssot_command_registry_audit.php",
+        "docs:ssot:compat-declaration": "@php scripts/docs_ssot_compat_declaration.php",
+        "docs:ssot:data-model-coverage": "@php scripts/docs_ssot_data_model_coverage.php",
+        "docs:ssot:delegation-sm-consistency": "@php scripts/docs_ssot_delegation_sm_consistency.php",
+        "docs:ssot:deprecation-schema": "@php scripts/docs_ssot_deprecation_schema.php",
+        "docs:ssot:dod-trace-check": "@php scripts/docs_ssot_dod_trace_check.php",
+        "docs:ssot:error-code-coverage": "@php scripts/docs_ssot_error_code_coverage.php",
+        "docs:ssot:event-catalog-coverage": "@php scripts/docs_ssot_event_catalog_coverage.php",
+        "docs:ssot:example-coverage": "@php scripts/docs_ssot_example_coverage.php",
+        "docs:ssot:glossary-check": "php scripts/docs_ssot_glossary_check.php",
+        "docs:ssot:lint": "@php scripts/docs_ssot_lint.php",
+        "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php",
+        "docs:ssot:permission-vocab-resolve": "@php scripts/docs_ssot_permission_vocab_resolve.php",
+        "docs:ssot:phase2-exceptions-check": "@php scripts/docs_ssot_phase2_exceptions_check.php",
+        "docs:ssot:phase3-drift-pack": "@php scripts/docs_ssot_phase3_drift_pack.php",
+        "docs:ssot:pr-evidence-check": "@php scripts/docs_ssot_pr_evidence_check.php",
+        "docs:ssot:reference-chain-check": "@php scripts/docs_ssot_reference_chain_check.php",
+        "docs:ssot:report": "@php scripts/docs_ssot_report.php",
+        "docs:ssot:requirement-inventory": "php scripts/docs_ssot_requirement_inventory.php",
+        "docs:ssot:review-gate-check": "@php scripts/docs_ssot_review_gate_check.php",
+        "docs:ssot:roadmap-schema-check": "@php scripts/docs_ssot_roadmap_schema_check.php",
+        "docs:ssot:route-parity": "@php scripts/docs_ssot_route_parity.php",
+        "docs:ssot:route-uniqueness": "@php scripts/docs_ssot_route_uniqueness.php",
+        "docs:ssot:schema-coverage": "@php scripts/docs_ssot_schema_coverage.php",
+        "docs:ssot:seed-gap-schema": "@php scripts/docs_ssot_seed_gap_schema.php",
+        "docs:ssot:seed-promotion-schema": "@php scripts/docs_ssot_seed_promotion_schema.php",
+        "docs:ssot:source-refs-check": "php scripts/docs_ssot_source_refs_check.php",
+        "docs:ssot:sync-check": "@php scripts/docs_ssot_sync_check.php",
+        "docs:ssot:threat-control-matrix": "@php scripts/docs_ssot_threat_control_matrix.php",
+        "docs:ssot:trace-convention-check": "@php scripts/docs_ssot_trace_convention_check.php",
+        "ops:health-smoke": "@php scripts/health_smoke.php",
+        "ops:migrate-smoke": "@php scripts/migrate_smoke.php",
+        "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php",
+        "phase2:acceptance-bundle": "@php scripts/phase2_acceptance_bundle.php",
+        "phase3:final-acceptance-bundle": "@php scripts/phase3_acceptance_bundle.php",
+        "qa": [
+            "@php -v",
+            "@composer validate --strict",
+            "@composer check-platform-reqs",
+            "@composer test"
+        ],
+        "test": "phpunit",
+        "test:contract": "phpunit tests/Contract",
+        "test:contract:auth": "@php scripts/test_contract_auth.php",
+        "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php",
+        "test:contract:error": "@php scripts/test_contract_error.php",
+        "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php",
+        "test:contract:feed": "@php scripts/test_contract_feed.php",
+        "test:contract:identity-context": "@php scripts/test_contract_identity_context.php",
+        "test:contract:identity-issuance": "@php scripts/test_contract_identity_issuance.php",
+        "test:contract:lifecycle": "@php scripts/test_contract_lifecycle.php",
+        "test:contract:pipeline-order": "@php scripts/test_contract_pipeline_order.php",
+        "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
+        "test:contract:response-schema": "@php scripts/test_contract_response_schema.php",
+        "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
+        "test:security": "phpunit tests/Security"
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Cre8\\Tests\\": "tests/"
-    }
-  },
-  "config": {
-    "sort-packages": true,
-    "platform": {
-      "php": "8.5.5"
-    }
-  },
-  "scripts": {
-    "docs:ssot:capability-matrix-complete": "@php scripts/docs_ssot_capability_matrix_complete.php",
-    "docs:ssot:compat-declaration": "@php scripts/docs_ssot_compat_declaration.php",
-    "docs:ssot:data-model-coverage": "@php scripts/docs_ssot_data_model_coverage.php",
-    "docs:ssot:delegation-sm-consistency": "@php scripts/docs_ssot_delegation_sm_consistency.php",
-    "docs:ssot:deprecation-schema": "@php scripts/docs_ssot_deprecation_schema.php",
-    "docs:ssot:dod-trace-check": "@php scripts/docs_ssot_dod_trace_check.php",
-    "docs:ssot:error-code-coverage": "@php scripts/docs_ssot_error_code_coverage.php",
-    "docs:ssot:event-catalog-coverage": "@php scripts/docs_ssot_event_catalog_coverage.php",
-    "docs:ssot:example-coverage": "@php scripts/docs_ssot_example_coverage.php",
-    "docs:ssot:glossary-check": "php scripts/docs_ssot_glossary_check.php",
-    "docs:ssot:lint": "@php scripts/docs_ssot_lint.php",
-    "docs:ssot:openapi-lint": "@php scripts/docs_ssot_openapi_lint.php",
-    "docs:ssot:permission-vocab-resolve": "@php scripts/docs_ssot_permission_vocab_resolve.php",
-    "docs:ssot:phase2-exceptions-check": "@php scripts/docs_ssot_phase2_exceptions_check.php",
-    "docs:ssot:pr-evidence-check": "@php scripts/docs_ssot_pr_evidence_check.php",
-    "docs:ssot:report": "@php scripts/docs_ssot_report.php",
-    "docs:ssot:requirement-inventory": "php scripts/docs_ssot_requirement_inventory.php",
-    "docs:ssot:review-gate-check": "@php scripts/docs_ssot_review_gate_check.php",
-    "docs:ssot:roadmap-schema-check": "@php scripts/docs_ssot_roadmap_schema_check.php",
-    "docs:ssot:route-parity": "@php scripts/docs_ssot_route_parity.php",
-    "docs:ssot:route-uniqueness": "@php scripts/docs_ssot_route_uniqueness.php",
-    "docs:ssot:schema-coverage": "@php scripts/docs_ssot_schema_coverage.php",
-    "docs:ssot:seed-gap-schema": "@php scripts/docs_ssot_seed_gap_schema.php",
-    "docs:ssot:seed-promotion-schema": "@php scripts/docs_ssot_seed_promotion_schema.php",
-    "docs:ssot:source-refs-check": "php scripts/docs_ssot_source_refs_check.php",
-    "docs:ssot:sync-check": "@php scripts/docs_ssot_sync_check.php",
-    "docs:ssot:threat-control-matrix": "@php scripts/docs_ssot_threat_control_matrix.php",
-    "ops:health-smoke": "@php scripts/health_smoke.php",
-    "ops:migrate-smoke": "@php scripts/migrate_smoke.php",
-    "phase1:acceptance-bundle": "@php scripts/phase1_acceptance_bundle.php",
-    "phase2:acceptance-bundle": "@php scripts/phase2_acceptance_bundle.php",
-    "phase3:final-acceptance-bundle": "@php scripts/phase3_acceptance_bundle.php",
-    "qa": [
-      "@php -v",
-      "@composer validate --strict",
-      "@composer check-platform-reqs",
-      "@composer test"
-    ],
-    "test": "phpunit",
-    "test:contract": "phpunit tests/Contract",
-    "test:contract:auth": "@php scripts/test_contract_auth.php",
-    "test:contract:auth-reasons": "@php scripts/test_contract_auth_reasons.php",
-    "test:contract:error": "@php scripts/test_contract_error.php",
-    "test:contract:error-secrets": "@php scripts/test_contract_error_secrets.php",
-    "test:contract:feed": "@php scripts/test_contract_feed.php",
-    "test:contract:identity-context": "@php scripts/test_contract_identity_context.php",
-    "test:contract:identity-issuance": "@php scripts/test_contract_identity_issuance.php",
-    "test:contract:lifecycle": "@php scripts/test_contract_lifecycle.php",
-    "test:contract:request-schema": "@php scripts/test_contract_request_schema.php",
-    "test:contract:surface-parity": "@php scripts/test_contract_surface_parity.php",
-    "test:security": "phpunit tests/Security",
-    "docs:ssot:phase3-drift-pack": "@php scripts/docs_ssot_phase3_drift_pack.php",
-    "test:contract:response-schema": "@php scripts/test_contract_response_schema.php",
-    "docs:ssot:reference-chain-check": "@php scripts/docs_ssot_reference_chain_check.php",
-    "docs:ssot:trace-convention-check": "@php scripts/docs_ssot_trace_convention_check.php",
-    "docs:ssot:command-registry-audit": "@php scripts/docs_ssot_command_registry_audit.php",
-    "docs:ssot:ci-gate-policy": "@php scripts/docs_ssot_ci_gate_policy.php"
-  }
 }
