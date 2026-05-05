@@ -1,6 +1,6 @@
 # `dev/` — Development planning and onboarding
 
-_Last updated (UTC): 2026-05-05_
+_Last updated (UTC): 2026-05-06_
 
 ## Purpose
 
@@ -15,6 +15,7 @@ The **`dev/`** directory holds **development-facing** artifacts: onboarding, exp
 | [`CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](./CRE8_EXPERT_SSOT_BOOT_PROMPT.md) | Paste-first message for coding LLM sessions (canon-first boot) |
 | [`CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md`](./CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md) | Paste-first **production codebase** session driver: read **`docs/`**/**`seed/`** only, implement under **`src/`**/**`tests/`**, logs under **`dev/implementation/`**, slice batches from the milestones doc |
 | **`dev/implementation/`** | Production build continuity: [`LATEST_SESSION_HANDOFF.md`](./implementation/LATEST_SESSION_HANDOFF.md), [`PROGRESS_BOARD.md`](./implementation/PROGRESS_BOARD.md), `session_handoffs/`, `session_responses/` |
+| [`DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](../docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md) | **Draft** (non-normative): permission templates, minting hierarchy, candidate tokens pending promotion into [`PERMISSION_VOCABULARY.md`](../docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md) |
 
 ## Parent references
 

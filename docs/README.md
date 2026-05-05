@@ -27,7 +27,7 @@ Items **5–7** define how every other document is authored, interpreted, and pr
 |---|---|
 | `00_governance/` | SSOT index, style, ownership, contribution workflow, change control, DoD |
 | `10_product_and_architecture/` | Product model, architectural boundaries, terminology, dependency baseline |
-| `20_identity_delegation_and_policy/` | Principals, permissions, authorization/delegation behavior |
+| `20_identity_delegation_and_policy/` | Principals, permissions, authorization/delegation behavior; **draft** [`DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md) (pre-promotion permission lattice brainstorm, non-normative) |
 | `30_contracts_and_interfaces/` | Route and API contracts, error catalog, UI/runtime expectations |
 | `31_machine_contracts/` | OpenAPI and JSON Schema machine artifacts + parity table |
 | `40_data_security_and_crypto/` | Lifecycle/crypto, controls, threat model, security data model |
@@ -63,3 +63,4 @@ Items **5–7** define how every other document is authored, interpreted, and pr
 - Evidence guidance: [`evidence/README.md`](evidence/README.md)
 - Verification strategy: [`60_operations_quality_and_release/VERIFICATION_STRATEGY.md`](60_operations_quality_and_release/VERIFICATION_STRATEGY.md)
 - Traceability matrix: [`80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`](80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- Draft permission lattice (non-normative brainstorm): [`20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md)

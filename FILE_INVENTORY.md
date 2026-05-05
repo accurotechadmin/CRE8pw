@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **463**.
+Total tracked repository files (excluding `.git` internals): **464**.
 
 ## Inventory by scope
 
@@ -26,7 +26,7 @@ Total tracked repository files (excluding `.git` internals): **463**.
 - `dev/implementation/session_handoffs/README.md`
 - `dev/implementation/session_responses/README.md`
 
-### Documentation corpus (docs/) (96 files)
+### Documentation corpus (docs/) (97 files)
 - `docs/00_governance/CHANGE_CONTROL_POLICY.md`
 - `docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md`
 - `docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md`
@@ -44,6 +44,7 @@ Total tracked repository files (excluding `.git` internals): **463**.
 - `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`
 - `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`
 - `docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md`
+- `docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`
 - `docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md`
 - `docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md`
 - `docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`

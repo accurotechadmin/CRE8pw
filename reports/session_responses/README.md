@@ -47,3 +47,4 @@ A response archive should include (as applicable):
 - Reports root: `../README.md`
 - Latest handoff pointer: `../session_handoffs/LATEST_SESSION_HANDOFF.md`
 - Program plan: `../PHASE3_AUTHORING_PROGRAM_PLAN.md`
+- Draft permission lattice (non-normative): [`../../docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](../../docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md)

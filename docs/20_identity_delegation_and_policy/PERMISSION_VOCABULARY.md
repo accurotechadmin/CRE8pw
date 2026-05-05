@@ -57,5 +57,8 @@ normative_dependencies:
 - `key.rotate` is prohibited; use one of `principal.id_keypair.rotate` or `principal.utility_keypair.rotate`.
 - `authz.grant` is prohibited; use `delegation.grant.create`.
 
+## See also
+- [Draft: Key Minting Permission Lattice](./DRAFT_KEY_MINTING_PERMISSION_LATTICE.md) — non-normative exhaustive candidate token list and minting-hierarchy UX model; reconcile with this vocabulary before promotion ([`REFERENCE_MAINTENANCE_SOP.md`](../../REFERENCE_MAINTENANCE_SOP.md)).
+
 ## Change history
 - 2026-04-30 (v1.0.0): Initial normative publication for Phase 3 slice P3-S4.1. Change Impact Map: [[`reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`](reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md)](../../reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md).

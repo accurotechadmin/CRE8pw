@@ -1,6 +1,6 @@
 # Master Index (Operational)
 
-_Last updated (UTC): 2026-05-05_
+_Last updated (UTC): 2026-05-06_
 
 ## Purpose
 This index is the operational map for all canonical specs, machine contracts, seeds, reports, evidence, and update-control references in this repository.
@@ -31,7 +31,7 @@ This index is the operational map for all canonical specs, machine contracts, se
     - `DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
 - Domain specs:
   - Product/architecture: `docs/10_product_and_architecture/`
-  - Identity/delegation/policy: `docs/20_identity_delegation_and_policy/`
+  - Identity/delegation/policy: `docs/20_identity_delegation_and_policy/` (includes non-normative draft [`DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md) for permission-lattice brainstorming prior to vocabulary promotion)
   - Contracts/interfaces: `docs/30_contracts_and_interfaces/`
   - Machine contracts + schemas + OpenAPI: `docs/31_machine_contracts/`
   - Data/security/crypto: `docs/40_data_security_and_crypto/`

@@ -25,6 +25,7 @@ This folder also includes phase plans, acceptance memos, audits, and repo study 
 - Relocation notice (milestones canonical path recorded): [`IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md`](./IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md)
 - Reference refresh executor prompt (full repository reference reconciliation): `REFERENCE_REFRESH_SESSION_PROMPT.md`
 - Governing procedure for inventories and indexes (repository root): `../REFERENCE_MAINTENANCE_SOP.md`
+- Draft permission-lattice brainstorm (under `docs/`, pending promotion): [`docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](../docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md)
 
 ## Session continuity model
 

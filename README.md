@@ -145,4 +145,5 @@ Then inspect:
 - Evidence templates: [`docs/evidence/templates/README.md`](docs/evidence/templates/README.md)
 - Reports root: [`reports/README.md`](reports/README.md)
 - Session response archive: [`reports/session_responses/README.md`](reports/session_responses/README.md)
+- Draft permission lattice (brainstorm, non-normative): [`docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md`](docs/20_identity_delegation_and_policy/DRAFT_KEY_MINTING_PERMISSION_LATTICE.md)
 
