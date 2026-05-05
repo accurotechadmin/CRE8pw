@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **470**.
+Total tracked repository files (excluding `.git` internals): **472**.
 
 ## Inventory by scope
 
@@ -141,7 +141,7 @@ Total tracked repository files (excluding `.git` internals): **470**.
 - `seed/seed-index.md`
 - `seed/seed-intro.md`
 
-### Reports and continuity artifacts (reports/) (296 files)
+### Reports and continuity artifacts (reports/) (298 files)
 - `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md`
 - `reports/PHASE1_CANON_HARDENING_ROADMAP.md`
 - `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`
@@ -183,6 +183,7 @@ Total tracked repository files (excluding `.git` internals): **470**.
 - `reports/change_impact_maps/20260504-1659-P3-S6.1-schema-closure-depth.md`
 - `reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md`
 - `reports/change_impact_maps/20260505-0130-link-integrity-adr-index.md`
+- `reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md`
 - `reports/phase4/P4-S1.1_NORMATIVE_INVENTORY.md`
 - `reports/phase4/P4-S1.3_MODAL_CONSISTENCY_LOG.md`
 - `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md`
