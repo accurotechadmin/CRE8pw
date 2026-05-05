@@ -1,6 +1,6 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-05T01:30:00Z
+- Last updated (UTC): 2026-05-05T03:02:00Z
 - Current owner/session: GPT-5.3-Codex / current branch
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
@@ -93,6 +93,13 @@
 | P4-S8.5 | complete | Seed promotion tracker now declares M8 closure posture and retires legacy waiver usage for deferred/retired handling. |
 | P4-S8.6 | complete | Completion evidence-bundle index published at `reports/phase4/P4-S8.6_COMPLETION_EVIDENCE_BUNDLE_INDEX.md`; prior batch-size blocker retired. |
 
+## Permissions / delegation follow-up lane (post–Phase 4 closure)
+
+| Item | Status | Notes |
+|---|---|---|
+| Route inventory ↔ `PERMISSION_VOCABULARY.md` reconciliation (machine + prose parity) | **queued** | Many `required_permission` strings in `ROUTE_INVENTORY_REFERENCE.md` are absent from the vocabulary registry; reconcile in small batches with OpenAPI/schemas/parity table/tests; use draft lattice only as candidate input, not normative source. |
+| Toolchain verification on fresh agents | **blocked** until Composer/PHP available | Prior handoff PASS evidence in `SESSION_HANDOFF_20260505-0130.md`; rerun before any substantive merge from environments without Composer. |
+
 ## Quick links
-- Latest handoff: [`SESSION_HANDOFF_20260505-0130.md`](SESSION_HANDOFF_20260505-0130.md)
-- Latest response archive: [`../session_responses/20260505-0130_RESPONSE.md`](../session_responses/20260505-0130_RESPONSE.md)
+- Latest handoff: [`SESSION_HANDOFF_20260505-0302.md`](SESSION_HANDOFF_20260505-0302.md)
+- Latest response archive: [`../session_responses/20260505-0302_RESPONSE.md`](../session_responses/20260505-0302_RESPONSE.md)
