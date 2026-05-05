@@ -100,6 +100,7 @@
         "test:contract:runtime-pipeline": "@php scripts/test_contract_runtime_pipeline.php",
         "test:contract:data-model": "@php scripts/test_contract_data_model.php",
         "test:contract:security-controls": "@php scripts/test_contract_security_controls.php",
-        "test:contract:security-abuse": "@php scripts/test_contract_security_abuse.php"
+        "test:contract:security-abuse": "@php scripts/test_contract_security_abuse.php",
+        "test:contract:auth-pdp": "@php scripts/test_contract_auth_pdp.php"
     }
 }
