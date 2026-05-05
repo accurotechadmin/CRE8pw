@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-IDPOL-PERMISSION-VOCAB
-version: 1.2.0
+version: 1.3.1
 status: normative
 owner: Identity & Policy WG
 reviewers:
@@ -97,6 +97,8 @@ Human product strata (**Owner**, **Primary Author**, **Secondary Author**, **Use
 | principal | lineage | node_profile_read | `principal.lineage.node_profile_read` | resource | Inspect non-secret lineage node attributes (titles, statuses, ancestry pointers) beneath authorized roots.
 | principal | lineage | node_policy_read_masked | `principal.lineage.node_policy_read_masked` | resource | Inspect **effective provisioning policy previews** (**redacted** fields per operator policy **and** descendant privacy tiers).
 | principal | lineage | node_relationship_graph_read | `principal.lineage.node_relationship_graph_read` | tenant/resource | Read DAG edges (**parent ⇄ child principal classes**) needed for accordion/tree rendering (**no private key payloads**).
+| principal | lineage | node_effective_permissions_read | `principal.lineage.node_effective_permissions_read` | resource | Inspect normalized effective permission sets resolved for a lineage node (**debug/governance** without secret material).
+| principal | lineage | node_grant_summary_read | `principal.lineage.node_grant_summary_read` | tenant/resource | Inspect aggregated descendant grant posture (**counts, depth usage, expiry bands**) for governance workflows.
 
 ---
 
@@ -135,6 +137,8 @@ Implementations **MUST** materialize envelope fields keyed by stable identifiers
 | permission | template | read | `permission.template.read` | tenant | Inspect template bodies permitted to caller (**may be masked** downstream).
 | permission | template | update | `permission.template.update` | tenant | Modify template definitions subject to tenancy governance.
 | permission | template | delete | `permission.template.delete` | tenant | Retire unused templates (**must not resurrect revoked principals** implicitly).
+| permission | template | clone | `permission.template.clone` | tenant | Fork an existing template into a new draft while preserving source provenance references.
+| permission | template | archive | `permission.template.archive` | tenant | Mark template inactive for new issuance while retaining audit/history references.
 | permission | template | apply | `permission.template.apply` | tenant | Permit template application during descendant issuance (**mutually exclusive subsets** enforced by PDP intersections).
 | permission | template | promote | `permission.template.promote` | tenant | Publish template revisions as tenant-default bundles (**elevated issuance governance**).
 
@@ -157,6 +161,7 @@ Delegation hop caps remain distinct from Secondary nesting depth (**two enforcem
 | delegation | grant | create | `delegation.grant.create` | resource | Establish bounded delegation envelopes.
 | delegation | grant | revoke | `delegation.grant.revoke` | resource | Revoke active grants (**HTTP alias `delegation.revoke`** maps here).
 | delegation | grant | inspect | `delegation.grant.inspect` | tenant/resource | Read delegation graph / metadata (**HTTP inspect surfaces** reuse same PDP checks).
+| delegation | grant | list | `delegation.grant.list` | tenant/resource | Enumerate grants with lifecycle/scope filters for operational governance and incident response.
 | delegation | topology | depth_set_max | `delegation.topology.depth_set_max` | tenant/resource | Caps **delegation-grant descendant hops** (**alias `delegation.depth.set_max`**).
 | delegation | topology | expiry_set_max | `delegation.topology.expiry_set_max` | tenant/resource | Caps latest expiry for descendant grants (**alias `delegation.expiry.set_max`**).
 | delegation | topology | width_set_max | `delegation.topology.width_set_max` | tenant/resource | Caps **maximum parallel active descendant grants** a principal may stand up (**orthogonal to issuance caps**).
@@ -271,6 +276,7 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 |---|---|---|---|---|---|
 | integration | webhook | manage | `integration.webhook.manage` | tenant | Register webhook endpoints/transformers.
 | integration | webhook | read | `integration.webhook.read` | tenant | Inspect deliveries/logs.
+| integration | webhook | rotate_secret | `integration.webhook.rotate_secret` | tenant/resource | Rotate webhook signing material without deleting endpoint metadata.
 | integration | api_rate_limit | exempt | `integration.api_rate_limit.exempt` | tenant | Bypass standard API rate envelopes (**high risk**; **`security-impacting`** default posture).
 | credential | invite | issue | `credential.invite.issue` | tenant | Invite links/codes for bounded onboarding.
 | credential | invite | revoke | `credential.invite.revoke` | tenant/resource | Invalidate outstanding invites.
@@ -292,6 +298,7 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 | Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
 |---|---|---|---|---|---|
 | audit | event | read | `audit.event.read` | global | Interactive audit querying (**privileged** consumption).
+| audit | event | integrity_verify | `audit.event.integrity_verify` | global | Verify hash/signature integrity of audit events for forensic and compliance workflows.
 | audit | export_job | request | `audit.export_job.request` | global | Async CSV/NDJSON egress jobs (**heavy compliance**).
 | audit | retention | configure | `audit.retention.configure` | tenant/global | Adjust retention horizons / legal hold interplay (**elevated posture**).
 
@@ -305,6 +312,7 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 | system | version | read | `system.version.read` | global | Semantic/API baseline metadata (**bootstrap minimal**).
 | system | diagnostics | info_read | `system.diagnostics.info_read` | global | Expanded build/config metadata (**separate from bare version reads**).
 | system | maintenance | window_schedule | `system.maintenance.window_schedule` | global | Declare maintenance announcements affecting availability semantics (**operators** typical holder).
+| system | maintenance | window_cancel | `system.maintenance.window_cancel` | global | Cancel scheduled maintenance windows while preserving immutable audit history.
 
 ---
 
@@ -382,6 +390,19 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 
 Tokens ending in `_own` (for example `content.post.update_own`) are narrowing grants: PDP intersections enforce them; they MUST NOT alias the broader verbs.
 
+**Alias candidates for v1.3.x additions** (**introduce only when migration evidence exists**):
+
+| legacy_alias | successor_token | Compatibility | Routing / notes |
+|---|---|---|---|
+| `principal.lineage.permissions.read` | `principal.lineage.node_effective_permissions_read` | **`conditionally-compatible`** | Candidate for dashboard/debug payload migration only.
+| `principal.lineage.grants.summary.read` | `principal.lineage.node_grant_summary_read` | **`conditionally-compatible`** | Candidate for lineage governance views; avoid auto-widening scope.
+| `template.clone` | `permission.template.clone` | **`backward-compatible`** | Candidate for template tooling prototypes.
+| `template.archive` | `permission.template.archive` | **`backward-compatible`** | Candidate for template lifecycle UIs.
+| `delegation.grants.list` | `delegation.grant.list` | **`backward-compatible`** | Candidate where pluralized noun was used in early clients.
+| `integration.webhook.secret.rotate` | `integration.webhook.rotate_secret` | **`backward-compatible`** | Candidate for webhook admin UX migrations.
+| `audit.events.verify_integrity` | `audit.event.integrity_verify` | **`backward-compatible`** | Candidate for forensic tooling migration.
+| `system.maintenance.cancel_window` | `system.maintenance.window_cancel` | **`backward-compatible`** | Candidate for ops console route literal cleanup.
+
 ---
 
 ## Route inventory parity checklist (automatable target)
@@ -415,6 +436,19 @@ Implementations SHOULD migrate each `CRE8-ROUTE-*` `required_permission` cell to
 | CRE8-ROUTE-0023 | system.version.read | `system.version.read` | **aligned** |
 | CRE8-ROUTE-0024 | system.info.read | `system.diagnostics.info_read` | **migrate** |
 
+### v1.3.x token route-parity planning (policy-context-only vs route-level)
+
+| Token | Intended exposure | Route-level plan |
+|---|---|---|
+| `principal.lineage.node_effective_permissions_read` | **Policy context + dashboard read models** | **Policy-context-only (now)**; MAY move to route-level when lineage diagnostics endpoint family is canonized. |
+| `principal.lineage.node_grant_summary_read` | **Policy context + dashboard read models** | **Policy-context-only (now)**; MAY move to route-level with delegation observability endpoints. |
+| `permission.template.clone` | **Route-level candidate** | SHOULD become route-level `required_permission` when template cloning endpoint is promoted. |
+| `permission.template.archive` | **Route-level candidate** | SHOULD become route-level `required_permission` when template archive endpoint is promoted. |
+| `delegation.grant.list` | **Route-level candidate** | SHOULD become route-level `required_permission` for grant-list APIs and export helpers. |
+| `integration.webhook.rotate_secret` | **Route-level candidate** | SHOULD become route-level `required_permission` for webhook secret rotation endpoint(s). |
+| `audit.event.integrity_verify` | **Route-level candidate** | MAY stay policy-context-only unless audit integrity verification receives API surface; if surfaced, MUST declare route IDs + OpenAPI examples in same batch. |
+| `system.maintenance.window_cancel` | **Route-level candidate** | SHOULD become route-level `required_permission` for maintenance-window cancellation endpoint(s). |
+
 ---
 
 ## Verification hooks
@@ -431,6 +465,9 @@ Implementations SHOULD migrate each `CRE8-ROUTE-*` `required_permission` cell to
 - [`REFERENCE_MAINTENANCE_SOP.md`](../../REFERENCE_MAINTENANCE_SOP.md)
 
 ## Change history
+
+- **2026-05-05 (v1.3.1)**: Added alias candidates for newly introduced v1.3.x tokens (only where migration need is plausible) and added a focused route-parity planning table classifying those tokens as policy-context-only vs route-level candidates.
+- **2026-05-05 (v1.3.0)**: Expanded canonical registry for governance-operability closure by adding lineage effective-permission/grant-summary read tokens, template clone/archive actions, delegation grant listing, webhook secret rotation, audit-event integrity verification, and maintenance-window cancellation.
 
 - **2026-05-05 (v1.2.0)**: Restructured registry into operational vs provisioning strata; documented Owner dashboard mint posture (**Primary issuance only**) with lineage navigation tokens, template-lock / issuance-cap knobs, delegation width + transferable subsets, Owner settings API credentials complements, **`content.link.preview_fetch`**, **`audit.retention.configure`**, **`system.maintenance.window_schedule`**, and issuance cap **`issuance.cap.primary_author.active_max_per_owner_scope`**; introduced **`CRE8-IDPOL-REQ-0030`** (**provisioning envelope intersection**) and **`CRE8-IDPOL-REQ-0031`** (routing guidance for provisioning-only tokens). Change Impact Map: [`reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md`](../../reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md).
 
