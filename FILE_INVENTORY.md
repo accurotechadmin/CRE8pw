@@ -521,3 +521,7 @@ Total tracked repository files (excluding `.git` internals): **501**.
 - `src/Application/RequestContext.php`
 - `src/Application/RuntimeTerms.php`
 - `scripts/test_contract_runtime_pipeline.php`
+
+- `scripts/test_contract_operations.php`
+- `src/Application/OperationalReadiness.php`
+- `src/Application/StartupConfiguration.php`

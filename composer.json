@@ -103,6 +103,7 @@
         "test:contract:security-abuse": "@php scripts/test_contract_security_abuse.php",
         "test:contract:auth-pdp": "@php scripts/test_contract_auth_pdp.php",
         "test:contract:keychain-resolution": "@php scripts/test_contract_keychain_resolution.php",
-        "test:contract:delegation-sm": "@php scripts/test_contract_delegation_state_machine.php"
+        "test:contract:delegation-sm": "@php scripts/test_contract_delegation_state_machine.php",
+        "test:contract:operations": "@php scripts/test_contract_operations.php"
     }
 }
