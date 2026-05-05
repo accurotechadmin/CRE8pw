@@ -1,6 +1,6 @@
 ---
 doc_id: CRE8-IDPOL-PERMISSION-VOCAB
-version: 1.1.0
+version: 1.2.0
 status: normative
 owner: Identity & Policy WG
 reviewers:
@@ -28,6 +28,10 @@ Define the **canonical permission token registry** for CRE8 PDP evaluation and d
 
 **CRE8-IDPOL-REQ-0029**: Every externally declared `required_permission` token in [`ROUTE_INVENTORY_REFERENCE.md`](../30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md) **MUST** appear either as a `token` in §Canonical permission registry or as a `legacy_alias` in §Deprecated and legacy alias registry. Drift toward canonical successor labels **MUST** be coordinated with routes, machine contracts, and [`TRACEABILITY_MATRIX.md`](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md) per [`CHANGE_CONTROL_POLICY.md`](../00_governance/CHANGE_CONTROL_POLICY.md).
 
+**CRE8-IDPOL-REQ-0030**: Every **effective mint or delegation envelope** (including envelopes attached to **`principal.primary_author`**, **`principal.secondary_author`**, and **`principal.use_key`** principals) **MUST** expose a **deterministic provisioning policy surface** modeled as structured fields—not as ad hoc literals—whose allowed keys and numeric bounds **MUST** be constrained by **the intersection** of (a) the minter's held capability tokens under §Lineage issuance, navigation, provisioning policy templates, descendant caps, delegation topology, §Permission templates / provisioning meta, §Delegation grants, §Keychains, §Owner console, and sibling domains, (b) any **mandatory-lock** provisioning tokens the ancestor bound (for example **`permission.provisioning.secondary_author.issue_locked_template`**), and (c) platform invariants (**“cannot grant beyond envelope”**, **explicit deny precedence** per [`AUTHORIZATION_AND_DELEGATION_SPEC.md`](./AUTHORIZATION_AND_DELEGATION_SPEC.md)). PDP **MUST** reject issuance or delegation mutations whose policy surface would violate that intersection. Enforcement dependency: `php-di/php-di` composition and **`composer test:contract:lifecycle`** / **`composer test:contract:auth`** as extended for provisioning fixtures (**target automation**).
+
+**CRE8-IDPOL-REQ-0031**: Operators **SHOULD NOT** overload HTTP `required_permission` route entries with provisioning-only tokens; lineage navigation, descendant caps, and template-lock semantics **SHOULD** be enforced via PDP evaluation of the **Policy Evaluation Context** ([`CANONICAL_TERMINOLOGY.md`](../10_product_and_architecture/CANONICAL_TERMINOLOGY.md); see also [`AUTHORIZATION_DECISION_TABLES.md`](./AUTHORIZATION_DECISION_TABLES.md)) and persisted envelope/policy fields keyed by identifiers registered in §Canonical permission registry **when** lineage metadata schemas are normative (`docs/40_*` data model family). When a provisioning token **is** surfaced on routes, **`CRE8-IDPOL-REQ-0029`** still applies (**token or `legacy_alias`**).
+
 ## Normative requirements
 
 - **CRE8-IDPOL-REQ-0001**: Every permission token used by CRE8 policy evaluation **MUST** use `<segment>.<segment>.<action>` lower-case dot notation with **at least three** dot-separated segments and **MUST** be registered in §Canonical permission registry (or reachable only via §Deprecated and legacy alias registry normalization into a successor token). Enforcement dependency: `respect/validation` token-shape validation and contract coverage (`phpunit/phpunit` suites as wired).
@@ -46,44 +50,161 @@ Intrinsic (non-delegated-only) posture for principal taxonomy rows stays enumera
 
 ## Canonical permission registry
 
+The tables below augment the Phase 1 registry without removing prior identifiers. **Operational permission tokens** (HTTP route `required_permission` candidates) occupy the first domains; **provisioning-policy tokens** constrain what may appear inside mint/delegation envelopes and **typically SHOULD NOT** appear on route ACL rows (**`CRE8-IDPOL-REQ-0031`**).
+
+### Human-visible principal strata vs PDP modeling
+
+Human product strata (**Owner**, **Primary Author**, **Secondary Author**, **Use Principal**) correspond to PDP actor classes per [`PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`](./PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md): **Owner** governance maps to **`ROOT_ADMIN`**/**`TENANT_ADMIN`**, authoring keys map to **`IDENTITY_OPERATOR`** and **`DELEGATEE`** postures depending on delegated envelope, Utility agents remain **`UTILITY_AGENT`**.
+
+| Stratum | UI mint posture (typical) | Normative PDP note |
+|---|---|---|
+| **Owner console** | Mints **`principal.primary_author.*`** lineage roots only | Owner **SHOULD NOT** receive direct UI affordances to mint **`principal.secondary_author`** or **`principal.use_key`** children bypassing Primaries (**product constraint**); lineage expansion for Secondaries and Uses **occurs beneath issued Primaries**. |
+| **Primary Author Key** | May mint **`principal.secondary_author`**, **`principal.use_key`**, and **additional `principal.primary_author`** when envelope includes `principal.primary_author.mint` | Envelope depth, caps (**§Issuance topology caps vs delegation depth**) and forbidden-class rules still apply (**cannot grant beyond ancestor**).
+| **Secondary Author Key** | May mint **`principal.use_key`** and optionally nested **`principal.secondary_author`** when `principal.secondary_author.mint_nested_secondary` is granted | Narrower provisioning surface than Primary by default (**`CRE8-IDPOL-REQ-0030`**).
+| **Use Principal / Use Key** | **MUST NOT** mint Primary/Secondary/Use principals; MAY operate **`keychain.*`** aggregates | Capability matrix + envelope intersection enforce class boundaries.
+
+---
+
+### Principals — identity material, lifecycle, routing inventory carry-over
+
 | Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
 |---|---|---|---|---|---|
-| principal | actor | create | `principal.actor.create` | tenant | Create or register a descendant principal (Use Key, Secondary Author, etc.) under authorized lineage; consolidates fragmented `principal.create` naming from route inventory drafts.
-| principal | actor | delete | `principal.actor.delete` | tenant | Tombstone/delete principals within policy (**high privilege**).
+| principal | actor | create | `principal.actor.create` | tenant | Create or register a descendant principal (**generic** lineage registration; aligns with **`POST /v1/principals`** inventory alias `principal.create`).
+| principal | actor | delete | `principal.actor.delete` | tenant | Tombstone/delete principals (**high privilege**).
 | principal | primary_author | mint | `principal.primary_author.mint` | tenant | Mint a Primary Author-capable descendant key line.
-| principal | secondary_author | mint | `principal.secondary_author.mint` | tenant | Mint a Secondary Author key.
-| principal | secondary_author | mint_nested_secondary | `principal.secondary_author.mint_nested_secondary` | tenant | Permit a Secondary Author to mint nested Secondaries (**off by default**).
-| principal | use_key | mint | `principal.use_key.mint` | tenant | Mint a runtime Use principal for apps/friends (**non-authoring** surface).
+| principal | secondary_author | mint | `principal.secondary_author.mint` | tenant | Mint a Secondary Author beneath an authorized authoring principal.
+| principal | secondary_author | mint_nested_secondary | `principal.secondary_author.mint_nested_secondary` | tenant | Permit Secondary Authors to mint **additional** Secondary Authors (**default deny** absent token).
+| principal | use_key | mint | `principal.use_key.mint` | tenant | Mint a runtime Use Principal / Use Key (**non-authoring automation surface**).
 | principal | profile | read | `principal.profile.read` | tenant/resource | Inspect principal profile metadata.
 | principal | profile | update | `principal.profile.update` | tenant/resource | Update principal profile metadata.
 | principal | lifecycle | suspend | `principal.lifecycle.suspend` | tenant/resource | Suspends principal lineage subject to ancestry rules.
 | principal | lifecycle | resume | `principal.lifecycle.resume` | tenant/resource | Resumes suspended principal.
 | principal | inventory | search | `principal.inventory.search` | tenant | Enumerate/query principals (**replaces ambiguous `principal.search`** noun).
-| principal | id_keypair | issue | `principal.id_keypair.issue` | tenant/resource | Attach lineage-root ID material (HTTP:`POST /v1/keys/id`).
-| principal | id_keypair | rotate | `principal.id_keypair.rotate` | resource | Rotate ID key material (**may require route-specific pairing with lifecycle endpoints**).
-| principal | id_keypair | revoke | `principal.id_keypair.revoke` | resource | Revoke ID lineage anchor; operation is destructive within lifecycle policy bounds.
-| principal | utility_keypair | issue | `principal.utility_keypair.issue` | resource | Mint utility/proxy credential for client apps.
-| principal | utility_keypair | rotate | `principal.utility_keypair.rotate` | resource | Rotate utility key material.
-| principal | utility_keypair | revoke | `principal.utility_keypair.revoke` | resource | Revoke utility key material.
-| credential | key | lifecycle_suspend | `credential.key.lifecycle.suspend` | resource | Applies `suspend` to key material via **`/v1/keys/{key_id}/lifecycle/suspend`** family.
-| credential | key | lifecycle_revoke | `credential.key.lifecycle.revoke` | resource | Applies `revoke` via lifecycle route family.
-| credential | key | lifecycle_rotate | `credential.key.lifecycle.rotate` | resource | Applies `rotate` via lifecycle route family.
+| principal | id_keypair | issue | `principal.id_keypair.issue` | tenant/resource | Attach lineage-root ID material (HTTP `POST /v1/keys/id`).
+| principal | id_keypair | rotate | `principal.id_keypair.rotate` | resource | Rotate ID key material (**paired with lifecycle routes**).
+| principal | id_keypair | revoke | `principal.id_keypair.revoke` | resource | Revoke ID lineage anchor when policy permits destructive collapse.
+| principal | utility_keypair | issue | `principal.utility_keypair.issue` | resource | Mint utility/proxy credential for client apps (**HTTP `/v1/keys/utility`**).
+| principal | utility_keypair | rotate | `principal.utility_keypair.rotate` | resource | Rotate utility key material within authorized scope.
+| principal | utility_keypair | revoke | `principal.utility_keypair.revoke` | resource | Revoke utility credentials.
+
+---
+
+### Principals — lineage navigation (dashboard/tree)
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| principal | lineage | tree_navigate_dashboard | `principal.lineage.tree_navigate_dashboard` | tenant | Owner / operator dashboards: expand nested lineage views for roots the actor governs (**read-only lineage navigation** minus secret-bearing surfaces).
+| principal | lineage | node_profile_read | `principal.lineage.node_profile_read` | resource | Inspect non-secret lineage node attributes (titles, statuses, ancestry pointers) beneath authorized roots.
+| principal | lineage | node_policy_read_masked | `principal.lineage.node_policy_read_masked` | resource | Inspect **effective provisioning policy previews** (**redacted** fields per operator policy **and** descendant privacy tiers).
+| principal | lineage | node_relationship_graph_read | `principal.lineage.node_relationship_graph_read` | tenant/resource | Read DAG edges (**parent ⇄ child principal classes**) needed for accordion/tree rendering (**no private key payloads**).
+
+---
+
+### Lineage issuance — policy templates locks (per descendant class)
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| permission | provisioning | primary_author_issue_locked_template | `permission.provisioning.primary_author.issue_locked_template` | tenant/resource | Permit binding **incoming Primary Author issuance** exclusively to enumerated template IDs (**prevents curator free-hand** overrides below owner caps).
+| permission | provisioning | secondary_author_issue_locked_template | `permission.provisioning.secondary_author.issue_locked_template` | tenant/resource | Lock Secondary mint paths to curated templates (**Owner → Primary ergonomics example**).
+| permission | provisioning | use_key_issue_locked_template | `permission.provisioning.use_key.issue_locked_template` | tenant/resource | Lock Use Principal mint outcomes to enumerated templates (**per Secondary cap example** rides alongside numeric caps §Issuance topology caps).
+| permission | provisioning | keychain_aggregate_issue_locked_template | `permission.provisioning.keychain_aggregate.issue_locked_template` | resource | Force Keychain / Keychain API credential bundles to originate from enumerated templates (**Use strata** knob).
+
+---
+
+### Lineage issuance — topology caps (**active counts** vs **principal-depth** ceilings)
+
+Implementations **MUST** materialize envelope fields keyed by stable identifiers derived from these tokens (see **`CRE8-IDPOL-REQ-0030`**). **`active`** principals **exclude** revoked/tombstone states per [`DATA_MODEL_SPEC.md`](../40_data_security_and_crypto/DATA_MODEL_SPEC.md); suspended principals **SHOULD NOT** increment active counts unless product policy explicitly says otherwise (**document envelope field semantics** separately).
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| issuance | cap | primary_author_active_max_per_owner_scope | `issuance.cap.primary_author.active_max_per_owner_scope` | tenant/global | Bounds **simultaneously active Primary Author lineage roots** the Owner governance actor may sponsor (**dashboard-only mint posture** aligns with provisioning surface **`CRE8-IDPOL-REQ-0030`**).
+| issuance | cap | secondary_active_max_per_primary | `issuance.cap.secondary_author.active_max_per_primary` | tenant/resource | Caps **simultaneously active Secondary Authors** spawned **directly** under **each Primary** lineage segment (counts reset only via lifecycle transitions).
+| issuance | cap | use_active_max_per_secondary | `issuance.cap.use_key.active_max_per_secondary_author` | tenant/resource | Example: **≤ 2 Use Keys active per Secondary Author** (**owner-configured** ceiling).
+| issuance | cap | use_active_max_per_primary | `issuance.cap.use_key.active_max_per_primary_author` | tenant/resource | Bounds Use Principals summed across descendants when policy requires aggregated throttles (**optional** choke).
+| issuance | cap | nested_secondary_active_max_per_secondary | `issuance.cap.secondary_author.nested_active_max_per_secondary` | tenant/resource | Secondary→Secondary nested fan-out throttle when `principal.secondary_author.mint_nested_secondary` is honored.
+| issuance | cap | nested_secondary_depth_max_below_primary | `issuance.cap.secondary_author.nested_depth_max_below_primary` | tenant/resource | Maximum Secondary-on-Secondary hop depth below a Primary lineage root (**distinct from delegation grant hops** §Delegation topology complements).
+| issuance | cap | nested_secondary_depth_max_global | `issuance.cap.secondary_author.nested_depth_max_global` | tenant | Tenant-wide Secondary nesting depth (**operator safety**) intersecting descendant envelopes.
+
+---
+
+### Permission templates — CRUD plus promotion
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| permission | template | create | `permission.template.create` | tenant | Persist named issuance/delegation templates referenced by provisioning locks (**§Lineage issuance — policy templates locks**).
+| permission | template | read | `permission.template.read` | tenant | Inspect template bodies permitted to caller (**may be masked** downstream).
+| permission | template | update | `permission.template.update` | tenant | Modify template definitions subject to tenancy governance.
+| permission | template | delete | `permission.template.delete` | tenant | Retire unused templates (**must not resurrect revoked principals** implicitly).
+| permission | template | apply | `permission.template.apply` | tenant | Permit template application during descendant issuance (**mutually exclusive subsets** enforced by PDP intersections).
+| permission | template | promote | `permission.template.promote` | tenant | Publish template revisions as tenant-default bundles (**elevated issuance governance**).
+
+### Permission provisioning meta (mint modes plus envelope meta editors)
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| permission | provisioning | mint_mode_curated | `permission.provisioning.mint_mode_curated` | tenant/resource | Permit **curated** issuance (explicit allow subsets) respecting ancestor envelope ceilings.
+| permission | provisioning | mint_mode_full | `permission.provisioning.mint_mode_full` | tenant/resource | Permit **bounded full envelope** issuance (still subset of ancestor **and** issuance caps §Lineage issuance — topology caps).
+| permission | provisioning | mint_meta_grant | `permission.provisioning.mint_meta_grant` | tenant/resource | Permit editing descendant **meta-fields** (**caps**, template locks, additional mint permissions) during issuance (**high privilege subset**).
+
+---
+
+### Delegation topology complements (**grant hop budgets** intersect lineage depth)
+
+Delegation hop caps remain distinct from Secondary nesting depth (**two enforcement planes** intersect per **`CRE8-IDPOL-REQ-0030`**).
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
 | delegation | grant | create | `delegation.grant.create` | resource | Establish bounded delegation envelopes.
-| delegation | grant | revoke | `delegation.grant.revoke` | resource | Revoke active grants (**may include DELETE semantics on HTTP surface**).
-| delegation | grant | inspect | `delegation.grant.inspect` | tenant/resource | Read delegation graph / metadata.
-| delegation | topology | depth_set_max | `delegation.topology.depth_set_max` | tenant/resource | Caps remaining delegation hops issuable beneath actor (**draft lattice §7.3 normalization**).
-| delegation | topology | expiry_set_max | `delegation.topology.expiry_set_max` | tenant/resource | Caps latest expiry descendant grants may carry.
-| authz | decision | simulate | `authz.decision.simulate` | resource | Evaluate hypothetical PDP context (**paired with PDP endpoint** separation from live `decide`).
-| authz | decision | invoke | `authz.decision.invoke` | resource | Caller may request centralized PDP adjudication (**HTTP authz/decide permission**).
-| permission | template | create | `permission.template.create` | tenant | Persist named mint templates (**Owner/Primary ergonomics**).
-| permission | template | read | `permission.template.read` | tenant | Read stored templates / presets.
-| permission | template | update | `permission.template.update` | tenant | Modify template definitions.
-| permission | template | delete | `permission.template.delete` | tenant | Remove templates.
-| permission | template | apply | `permission.template.apply` | tenant | Permit applying template-derived bundles at issuance.
-| permission | provisioning | mint_mode_curated | `permission.provisioning.mint_mode_curated` | tenant | Permit curated allow-list issuance to descendants (**meta entitlement**).
-| permission | provisioning | mint_mode_full | `permission.provisioning.mint_mode_full` | tenant | Permit full-functional bounded issuance (**within envelope**) to descendants (**meta entitlement**).
-| permission | provisioning | mint_meta_grant | `permission.provisioning.mint_meta_grant` | tenant | Permit configuring descendant meta-fields (delegation knobs/mint knobs).
-| content | post | create | `content.post.create` | group/resource | Publish posts.
+| delegation | grant | revoke | `delegation.grant.revoke` | resource | Revoke active grants (**HTTP alias `delegation.revoke`** maps here).
+| delegation | grant | inspect | `delegation.grant.inspect` | tenant/resource | Read delegation graph / metadata (**HTTP inspect surfaces** reuse same PDP checks).
+| delegation | topology | depth_set_max | `delegation.topology.depth_set_max` | tenant/resource | Caps **delegation-grant descendant hops** (**alias `delegation.depth.set_max`**).
+| delegation | topology | expiry_set_max | `delegation.topology.expiry_set_max` | tenant/resource | Caps latest expiry for descendant grants (**alias `delegation.expiry.set_max`**).
+| delegation | topology | width_set_max | `delegation.topology.width_set_max` | tenant/resource | Caps **maximum parallel active descendant grants** a principal may stand up (**orthogonal to issuance caps**).
+| delegation | scope | transferable_subset_define | `delegation.scope.transferable_subset_define` | resource | Permit shaping which capability tokens survive delegation replication (**narrowing-only** invariant).
+
+---
+
+### Credentials — key lifecycle (HTTP-aligned)
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| credential | key | lifecycle_suspend | `credential.key.lifecycle.suspend` | resource | Applies `suspend` via `/v1/keys/{key_id}/lifecycle/suspend` (**legacy `key.lifecycle.suspend`**).
+| credential | key | lifecycle_revoke | `credential.key.lifecycle.revoke` | resource | Applies `revoke` via lifecycle revoke routes (**legacy `key.lifecycle.revoke`**).
+| credential | key | lifecycle_rotate | `credential.key.lifecycle.rotate` | resource | Applies `rotate` (**legacy `key.lifecycle.rotate`**).
+
+---
+
+### Policy decision endpoints
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| authz | decision | simulate | `authz.decision.simulate` | resource | Hypothetical PDP evaluation (**legacy `authz.simulate`**).
+| authz | decision | invoke | `authz.decision.invoke` | resource | Calls live PDP endpoint (**legacy `authz.decide`** / route inventory alignment).
+
+---
+
+### Owner console complements — settings, lineage governance, integrations
+
+These tokens tighten **tenant-level governance** surfaced inside Owner dashboards (distinct from PDP route ACLs **`CRE8-IDPOL-REQ-0031`**).
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| owner | settings | read | `owner.settings.read` | tenant | Inspect tenant-visible configuration payloads Owners may review before minting constrained Primaries.
+| owner | settings | update | `owner.settings.update` | tenant | Mutate bounded tenant knobs governing issuance defaults (**must remain subset of ROOT/TENANT admin envelope**).
+| owner | lineage | provision_policy_publish | `owner.lineage.provision_policy_publish` | tenant | Publish owner-authored provisioning bundles (often template + cap combos) destined for descendant Primaries.
+| owner | api_credentials | manage | `owner.api_credentials.manage` | tenant | Manage operator integration credentials surfaced in drafts (**distinct label from credential bootstrap path** **`owner.credential.manage`** remains).
+| owner | billing | read | `owner.billing.read` | global | Inspect billing artefacts (**commercial optional surface**).
+| owner | billing | manage | `owner.billing.manage` | global | Modify billing artefacts (**elevated finance posture**).
+| owner | console | access | `owner.console.access` | global | Admit actor to Owner Console shell routing bundle.
+| owner | credential | manage | `owner.credential.manage` | tenant | Manage bootstrap / break-glass credentials separate from authoring keys issued to Primaries.
+
+---
+
+### Content domain
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| content | post | create | `content.post.create` | group/resource | Publish posts subject to delegated visibility.
 | content | post | read | `content.post.read` | group/resource | Read posts subject to targeting and visibility.
 | content | post | read_own | `content.post.read_own` | resource | Read posts constrained to author's own corpus (**narrow mint preset**).
 | content | post | update | `content.post.update` | resource | Mutate arbitrary in-scope posts (moderator-style when policy allows broad scope).
@@ -93,56 +214,97 @@ Intrinsic (non-delegated-only) posture for principal taxonomy rows stays enumera
 | content | post | pin | `content.post.pin` | resource | Featured/pinned placement (**product optional**).
 | content | post | lock | `content.post.lock` | resource | Freeze thread / disable comments (**product optional**).
 | content | crosspost | create | `content.crosspost.create` | group/resource | Duplicate content across scopes (**optional product**).
+
+---
+
+### Content — comments, reactions, attachments, link previews
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
 | content | comment | create | `content.comment.create` | resource | Attach comments/interactions where feed policy allows.
 | content | comment | read | `content.comment.read` | resource | Enumerate/read comment threads (**HTTP GET comments** symmetry).
 | content | comment | update | `content.comment.update` | resource | Edit existing comment bodies when policy binds author-edit vs moderator-edit obligations to this token scope.
-| content | comment | delete | `content.comment.delete` | resource | Delete or tombstone comment bodies without moderator queue semantics (narrow friend/client revoke path).
-| content | comment | moderate | `content.comment.moderate` | resource | Holds,visibility,interaction enforcement (**moderators**).
+| content | comment | delete | `content.comment.delete` | resource | Delete or tombstone comment bodies (**narrow revoke path where applicable**).
+| content | comment | moderate | `content.comment.moderate` | resource | Holds, visibility, interaction enforcement (**moderators**).
 | content | reaction | create | `content.reaction.create` | resource | Add lightweight reactions (**optional social layer**).
 | content | reaction | delete | `content.reaction.delete` | resource | Remove reactions authored by caller context.
 | content | attachment | upload | `content.attachment.upload` | resource | Upload binary attachments tied to posts/comments.
-| content | attachment | delete | `content.attachment.delete` | resource | Remove attachments in scope (**safe client sharing** knob).
+| content | attachment | delete | `content.attachment.delete` | resource | Remove attachments in scope.
+| content | link | preview_fetch | `content.link.preview_fetch` | resource | Server-side link preview harvesting (**supply abuse-controls at integration layer**).
+
+---
+
+### Audience and feed domains
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
 | audience | group | manage | `audience.group.manage` | tenant/resource | Audience group CRUD plus membership mutations; aligns with [`AUDIENCE_GROUP_SPEC.md`](../50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md).
-| audience | group | view | `audience.group.view` | tenant/group | Read audience metadata and enumerated membership surfaces consistent with FEED/read routes.
-| audience | group_membership | add | `audience.group_membership.add` | resource | Narrow grant: add principals to curated groups (**friend lists** sharing).
-| audience | group_membership | remove | `audience.group_membership.remove` | resource | Remove members from curated groups to revoke collaborator access without full group deletion.
-| audience | label | assign | `audience.label.assign` | resource | Attach audience taxonomy labels/content targeting metadata.
-| audience | targeting | restrict | `audience.targeting.restrict` | tenant/resource | Inverse guard capability (limit targeting dimensions delegated keys may use (**operator safety knob**)).
+| audience | group | view | `audience.group.view` | tenant/group | Read audience metadata and enumerated membership surfaces.
+| audience | group_membership | add | `audience.group_membership.add` | resource | Add principals to curated groups (**narrow grant**).
+| audience | group_membership | remove | `audience.group_membership.remove` | resource | Remove members from curated groups.
+| audience | label | assign | `audience.label.assign` | resource | Attach audience taxonomy labels / targeting metadata.
+| audience | targeting | restrict | `audience.targeting.restrict` | tenant/resource | Limit targeting dimensions delegated keys may invoke (**operator safety**).
 | feed | stream | view | `feed.stream.view` | group | Page authorized feed timelines.
-| feed | stream | curate | `feed.stream.curate` | group | Ranking/curation overlays (**elevated** entitlement surface).
-| feed | subscription | manage | `feed.subscription.manage` | tenant/group | Follow/unfollow/regenerate feed memberships (**nice client UX entitlement**).
-| feed | snapshot | export | `feed.snapshot.export` | tenant/group | Export feed snapshots for portability/compliance (**optional**).
-| notification | inbox | read | `notification.inbox.read` | tenant/resource | Read notification inbox/stream (**friendly keys** minimal surface).
-| notification | preference | manage | `notification.preference.manage` | tenant/resource | Control delivery categories and interruption policies for client-connected principals.
-| moderation | report | submit | `moderation.report.submit` | resource | Submit abuse/policy reports (**friends/community safety**).
-| moderation | queue | resolve | `moderation.queue.resolve` | tenant/global | Trusted resolver workflow (**elevated** operator entitlement).
-| moderation | actor | restrict | `moderation.actor.restrict` | tenant/resource | Apply temporary interaction restrictions ("soft bans") without invoking full principal suspension.
-| moderation | content | visibility_hide | `moderation.content.visibility_hide` | resource | Restrict visibility without deleting underlying content (“hide” path for moderators/operators).
-| moderation | content | visibility_restore | `moderation.content.visibility_restore` | resource | Reverse visibility restrictions issued under `moderation.content.visibility_hide` or equivalent tooling.
-| owner | billing | read | `owner.billing.read` | global | Inspect billing artefacts (**tenant owner surface** optional).
-| owner | billing | manage | `owner.billing.manage` | global | Modify billing artefacts (**elevated** commercial controls).
-| owner | console | access | `owner.console.access` | global | Admit actor to Owner Console capabilities bundle (**paired with routing rules**).
-| owner | credential | manage | `owner.credential.manage` | tenant | Manage owner-issued bootstrap/service credentials (**separate from end-user minted keys**).
+| feed | stream | curate | `feed.stream.curate` | group | Ranking / curation overlays (**elevated**).
+| feed | subscription | manage | `feed.subscription.manage` | tenant/group | Follow/unfollow / regenerate memberships.
+| feed | snapshot | export | `feed.snapshot.export` | tenant/group | Export feed snapshots (**compliance portability** optional).
+
+---
+
+### Notifications and moderation domains
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| notification | inbox | read | `notification.inbox.read` | tenant/resource | Read notification inbox / stream (**friendly keys minimal surface**).
+| notification | preference | manage | `notification.preference.manage` | tenant/resource | Control delivery categories and interruption policies.
+| moderation | report | submit | `moderation.report.submit` | resource | Submit abuse/policy reports (**community safety**).
+| moderation | queue | resolve | `moderation.queue.resolve` | tenant/global | Trusted resolver workflow (**elevated**).
+| moderation | actor | restrict | `moderation.actor.restrict` | tenant/resource | Temporary interaction restrictions without full suspension.
+| moderation | content | visibility_hide | `moderation.content.visibility_hide` | resource | Restrict visibility without deleting underlying content.
+| moderation | content | visibility_restore | `moderation.content.visibility_restore` | resource | Reverse visibility_hide outcomes.
+
+---
+
+### Integration, onboarding, device, and keychain domains
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
 | integration | webhook | manage | `integration.webhook.manage` | tenant | Register webhook endpoints/transformers.
-| integration | webhook | read | `integration.webhook.read` | tenant | Inspect deliveries/logs (**least privilege integrations**).
-| integration | api_rate_limit | exempt | `integration.api_rate_limit.exempt` | tenant | Bypass standard API rate envelopes (carry **`breaking`**/`security-impacting` classification when granted; Owner-only default posture).
-| credential | invite | issue | `credential.invite.issue` | tenant | Create invite links/codes granting bounded onboarding (**sharing with associates** UX).
-| credential | invite | revoke | `credential.invite.revoke` | tenant/resource | Invalidate outstanding invites (**safety/recall**).
-| credential | device | register | `credential.device.register` | tenant | Register named devices or hardware-bound tokens tied to delegated principals (**multi-device** ergonomics).
-| credential | device | revoke | `credential.device.revoke` | resource | Remote wipe device/session binding (**lost phone scenario**).
-| keychain | collection | create | `keychain.collection.create` | resource | Compose multi-key aggregates (**personal power user** ergonomics).
+| integration | webhook | read | `integration.webhook.read` | tenant | Inspect deliveries/logs.
+| integration | api_rate_limit | exempt | `integration.api_rate_limit.exempt` | tenant | Bypass standard API rate envelopes (**high risk**; **`security-impacting`** default posture).
+| credential | invite | issue | `credential.invite.issue` | tenant | Invite links/codes for bounded onboarding.
+| credential | invite | revoke | `credential.invite.revoke` | tenant/resource | Invalidate outstanding invites.
+| credential | device | register | `credential.device.register` | tenant | Register devices/hardware-bound bindings.
+| credential | device | revoke | `credential.device.revoke` | resource | Remote wipe / detach device binding.
+| keychain | collection | create | `keychain.collection.create` | resource | Compose multi-key aggregates (**Use Principals typical**).
 | keychain | collection | read | `keychain.collection.read` | resource | Inspect membership/metadata.
-| keychain | collection | update | `keychain.collection.update` | resource | Attach/detach constituent keys respecting lineage rules.
-| keychain | collection | delete | `keychain.collection.delete` | resource | Delete aggregate + revoke derivatives.
-| keychain | api_credential | issue | `keychain.api_credential.issue` | resource | Derived API credential representing union projection (**preferred canonical label over historical `api_key` noun fragmentation**—alias below preserves compatibility).
+| keychain | collection | update | `keychain.collection.update` | resource | Attach/detach member keys respecting lineage rules.
+| keychain | collection | delete | `keychain.collection.delete` | resource | Delete aggregate plus revoke derivatives.
+| keychain | api_credential | issue | `keychain.api_credential.issue` | resource | Derived credential (**union projection** within policy bindings).
 | keychain | api_credential | rotate | `keychain.api_credential.rotate` | resource | Rotate derived credential.
 | keychain | api_credential | revoke | `keychain.api_credential.revoke` | resource | Revoke derived credential.
-| keychain | api_credential | restrict_permissions | `keychain.api_credential.restrict_permissions` | resource | Permit subset tightening on derived credential issuance (**supply optional least privilege** sharing).
-| audit | event | read | `audit.event.read` | global | Interactive audit querying (**privileged** observability consumption).
-| audit | export_job | request | `audit.export_job.request` | global | Submit asynchronous CSV/NDJSON bundles (**heavy compliance** egress).
+| keychain | api_credential | restrict_permissions | `keychain.api_credential.restrict_permissions` | resource | Subset tightening on issuance (**least privilege companion**).
+
+---
+
+### Audit compliance and observability domain
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
+| audit | event | read | `audit.event.read` | global | Interactive audit querying (**privileged** consumption).
+| audit | export_job | request | `audit.export_job.request` | global | Async CSV/NDJSON egress jobs (**heavy compliance**).
+| audit | retention | configure | `audit.retention.configure` | tenant/global | Adjust retention horizons / legal hold interplay (**elevated posture**).
+
+---
+
+### System probes and operational maintenance hints
+
+| Domain | Resource | Action | Token | Scope notes | Mint / delegation notes |
+|---|---|---|---|---|---|
 | system | health | read | `system.health.read` | global | Public health probes.
-| system | version | read | `system.version.read` | global | Read semantic/API version (**bootstrap clients** minimal).
-| system | diagnostics | info_read | `system.diagnostics.info_read` | global | Expanded build/config metadata (**replaces simplistic `system.info`** label drift).
+| system | version | read | `system.version.read` | global | Semantic/API baseline metadata (**bootstrap minimal**).
+| system | diagnostics | info_read | `system.diagnostics.info_read` | global | Expanded build/config metadata (**separate from bare version reads**).
+| system | maintenance | window_schedule | `system.maintenance.window_schedule` | global | Declare maintenance announcements affecting availability semantics (**operators** typical holder).
 
 ---
 
@@ -269,5 +431,7 @@ Implementations SHOULD migrate each `CRE8-ROUTE-*` `required_permission` cell to
 - [`REFERENCE_MAINTENANCE_SOP.md`](../../REFERENCE_MAINTENANCE_SOP.md)
 
 ## Change history
+
+- **2026-05-05 (v1.2.0)**: Restructured registry into operational vs provisioning strata; documented Owner dashboard mint posture (**Primary issuance only**) with lineage navigation tokens, template-lock / issuance-cap knobs, delegation width + transferable subsets, Owner settings API credentials complements, **`content.link.preview_fetch`**, **`audit.retention.configure`**, **`system.maintenance.window_schedule`**, and issuance cap **`issuance.cap.primary_author.active_max_per_owner_scope`**; introduced **`CRE8-IDPOL-REQ-0030`** (**provisioning envelope intersection**) and **`CRE8-IDPOL-REQ-0031`** (routing guidance for provisioning-only tokens). Change Impact Map: [`reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md`](../../reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md).
 
 - **2026-05-05 (v1.1.0)**: Expanded registry with route inventory, draft lattice, and mint ergonomics tokens (invite, device pairing, notifications, integrations, moderation split, keychain API credentials); introduced **`CRE8-IDPOL-REQ-0028`** (alias normalization) and **`CRE8-IDPOL-REQ-0029`** (route completeness). Captured deprecation map plus parity checklist. Change Impact Map:[`reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md`](../../reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md).
