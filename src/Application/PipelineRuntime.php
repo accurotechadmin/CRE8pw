@@ -17,11 +17,9 @@ final class PipelineRuntime
             ? $request['request_id']
             : 'req-' . bin2hex(random_bytes(8));
 
-        $requiredProofFields = ['public_key_id', 'timestamp', 'nonce', 'signature'];
-        foreach ($requiredProofFields as $field) {
-            if (!is_string($request[$field] ?? null) || $request[$field] === '') {
-                return $this->errorEnvelope('AUTHN_PROOF_INVALID', $requestId);
-            }
+        $proofValidationError = CryptoPolicy::validateProof($request);
+        if ($proofValidationError !== null) {
+            return $this->errorEnvelope($proofValidationError, $requestId);
         }
 
         $decision = $this->pdp->decide($request);
