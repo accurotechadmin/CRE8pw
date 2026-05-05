@@ -253,3 +253,20 @@ Each transition modal MUST contain:
 - PDP gate-order preview renders in canonical sequence.
 - ID and Utility mint flows both produce receipt-style confirmation states.
 - Vault supports lifecycle action affordances and provenance drawer drilldown.
+
+## Persona-specific CSV exports for Figma Make
+The following pre-filtered CSV files are provided to simplify tab-specific ingestion:
+- `reports/phase4/P4-UX1C_FIGMA_OWNER_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1D_FIGMA_PRIMARY_AUTHOR_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1E_FIGMA_SECONDARY_AUTHOR_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1F_FIGMA_USE_KEY_PERMISSION_TREE.csv`
+
+### `figma_variant_id` convention
+Each row includes a stable `figma_variant_id` with pattern:
+`<persona>__<page_surface_slug>__<item_key>__<default_state>`
+
+Examples:
+- `owner__home__issue_id_keypair__allow`
+- `primary__delegation_and_permissions__create_delegation_grant__allow`
+- `secondary__id_keypair_minting__mint_nested_secondary__optional`
+- `use__credentials_vault__revoke_key__conditional`
