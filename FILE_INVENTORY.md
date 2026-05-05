@@ -1,474 +1,466 @@
 # Repository File Inventory
 
-Generated on 2026-05-04 (UTC).
+Generated on 2026-05-05 (UTC).
 
-## Canonical docs (97 files)
+Total tracked repository files (excluding `.git` internals): **447**.
 
-- `README.md` — README. Completion: **Very High (5/5)**.
-- `docs/00_governance/CHANGE_CONTROL_POLICY.md` — CHANGE CONTROL POLICY. Completion: **High (4/5)**.
-- `docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md` — CONTRIBUTION WORKFLOW SSOT. Completion: **High (4/5)**.
-- `docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md` — CROSS DOCUMENT LINKING POLICY. Completion: **High (4/5)**.
-- `docs/00_governance/DEFINITION_OF_DONE.md` — DEFINITION OF DONE. Completion: **Medium (3/5)**.
-- `docs/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md` — DOCUMENT STATUS AND OWNERSHIP. Completion: **High (4/5)**.
-- `docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md` — DOCUMENT TEMPLATE AND STYLE GUIDE. Completion: **Medium (3/5)**.
-- `docs/00_governance/SSOT_INDEX.md` — SSOT INDEX. Completion: **Very High (5/5)**.
-- `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md` — ARCHITECTURE AND SURFACES. Completion: **High (4/5)**.
-- `docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md` — CANONICAL TERMINOLOGY. Completion: **Very High (5/5)**.
-- `docs/10_product_and_architecture/CRE8_HUMAN_OPERATING_MODEL.md` — CRE8 HUMAN OPERATING MODEL. Completion: **High (4/5)**.
-- `docs/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md` — CRE8 PRODUCT AND SYSTEM SPEC. Completion: **High (4/5)**.
-- `docs/10_product_and_architecture/DEPENDENCY_BASELINE.md` — DEPENDENCY BASELINE. Completion: **High (4/5)**.
-- `docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md` — ID UTILITY KEYPAIR MODEL SPEC. Completion: **High (4/5)**.
-- `docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md` — REQUEST PIPELINE AND MIDDLEWARE CONTRACT. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md` — AUTHORIZATION AND DELEGATION SPEC. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md` — AUTHORIZATION DECISION TABLES. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md` — DELEGATION STATE MACHINE. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md` — KEYCHAIN COMPOSITION AND RESOLUTION SPEC. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md` — PERMISSION VOCABULARY. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md` — PRINCIPAL TYPES AND CAPABILITY MATRIX. Completion: **High (4/5)**.
-- `docs/20_identity_delegation_and_policy/USAGE_SCENARIOS_AND_PERMISSION_STORIES.md` — USAGE SCENARIOS AND PERMISSION STORIES. Completion: **High (4/5)**.
-- `docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md` — API CONTRACT GUIDE. Completion: **High (4/5)**.
-- `docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md` — ERROR CODE CATALOG. Completion: **Very High (5/5)**.
-- `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md` — Endpoint Examples All Routes. Completion: **Medium (3/5)**.
-- `docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md` — ROUTE INVENTORY REFERENCE. Completion: **Very High (5/5)**.
-- `docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md` — UI RUNTIME CONTRACT. Completion: **High (4/5)**.
-- `docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md` — WEBHOOK AND INTEGRATION CONTRACT. Completion: **High (4/5)**.
-- `docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md` — CONTRACT VERSION POLICY. Completion: **High (4/5)**.
-- `docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md` — PROSE OPENAPI PARITY TABLE. Completion: **Very High (5/5)**.
-- `docs/31_machine_contracts/README.md` — README. Completion: **Very High (5/5)**.
-- `docs/31_machine_contracts/openapi/cre8.v1.yaml` — cre8.v1 YAML file. Completion: **Medium (3/5)**.
-- `docs/31_machine_contracts/schemas/authz-decision-response.schema.json` — authz decision response.schema JSON file. Completion: **Medium (3/5)**.
-- `docs/31_machine_contracts/schemas/error-envelope.schema.json` — error envelope.schema JSON file. Completion: **High (4/5)**.
-- `docs/31_machine_contracts/schemas/feed-items-response.schema.json` — feed items response.schema JSON file. Completion: **Very High (5/5)**.
-- `docs/31_machine_contracts/schemas/lifecycle-revoke-response.schema.json` — lifecycle revoke response.schema JSON file. Completion: **Medium (3/5)**.
-- `docs/31_machine_contracts/schemas/lifecycle-suspend-response.schema.json` — lifecycle suspend response.schema JSON file. Completion: **Medium (3/5)**.
-- `docs/31_machine_contracts/schemas/policy-decision.schema.json` — policy decision.schema JSON file. Completion: **Medium (3/5)**.
-- `docs/31_machine_contracts/schemas/success-envelope.schema.json` — success envelope.schema JSON file. Completion: **Medium (3/5)**.
-- `docs/40_data_security_and_crypto/CRYPTO_PROFILE.md` — CRYPTO PROFILE. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md` — DATA MODEL REFERENCE. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md` — DATA MODEL SPEC. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/ERD.md` — ERD. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md` — KEY LIFECYCLE AND CRYPTOGRAPHY SPEC. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md` — SECURITY CONTROLS SPEC. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/SECURITY_HEADERS_AND_CSP_POLICY.md` — SECURITY HEADERS AND CSP POLICY. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md` — SECURITY THREAT MODEL. Completion: **High (4/5)**.
-- `docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md` — SECURITY VERIFICATION ABUSE CASES. Completion: **High (4/5)**.
-- `docs/50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md` — AUDIENCE GROUP SPEC. Completion: **High (4/5)**.
-- `docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md` — COMMENTING AND INTERACTION POLICY. Completion: **Very High (5/5)**.
-- `docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md` — CONTENT MODEL AND TARGETING SPEC. Completion: **High (4/5)**.
-- `docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md` — FEED RANKING AND ORDERING RULES. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/ACCEPTANCE_CRITERIA_MATRIX.md` — ACCEPTANCE CRITERIA MATRIX. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/BOOT_AND_STARTUP_FAILURE_CONTRACT.md` — BOOT AND STARTUP FAILURE CONTRACT. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/CONFIGURATION_ENVIRONMENT_CONTRACT.md` — CONFIGURATION ENVIRONMENT CONTRACT. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/HEALTH_ENDPOINT_CONTRACT.md` — HEALTH ENDPOINT CONTRACT. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/MIGRATION_AND_SEED_STRATEGY.md` — MIGRATION AND SEED STRATEGY. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/OBSERVABILITY_EVENT_CATALOG.md` — OBSERVABILITY EVENT CATALOG. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/OPERATIONAL_SMOKE_CHECK_CONTRACT.md` — OPERATIONAL SMOKE CHECK CONTRACT. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md` — PHASE2 ACCEPTANCE CRITERIA. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md` — PHASE2 UNRESOLVED EXCEPTIONS REGISTER. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/PRODUCTION_READINESS_GATES.md` — PRODUCTION READINESS GATES. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/RELEASE_CHECKLIST.md` — RELEASE CHECKLIST. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/SLO_SLI_SPEC.md` — SLO SLI SPEC. Completion: **High (4/5)**.
-- `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md` — VERIFICATION STRATEGY. Completion: **Very High (5/5)**.
-- `docs/70_extensibility_and_module_patterns/EXTENSIBILITY_PLAYBOOK.md` — EXTENSIBILITY PLAYBOOK. Completion: **High (4/5)**.
-- `docs/70_extensibility_and_module_patterns/INTEGRATION_PROVIDER_PATTERN.md` — INTEGRATION PROVIDER PATTERN. Completion: **High (4/5)**.
-- `docs/70_extensibility_and_module_patterns/MODULE_BOUNDARIES_AND_OWNERSHIP.md` — MODULE BOUNDARIES AND OWNERSHIP. Completion: **High (4/5)**.
-- `docs/70_extensibility_and_module_patterns/POST_TYPE_EXTENSION_SPEC.md` — POST TYPE EXTENSION SPEC. Completion: **High (4/5)**.
-- `docs/70_extensibility_and_module_patterns/PRINCIPAL_TYPE_EXTENSION_SPEC.md` — PRINCIPAL TYPE EXTENSION SPEC. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/ADR_INDEX.md` — ADR INDEX. Completion: **Very High (5/5)**.
-- `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md` — CHANGE IMPACT MAP TEMPLATES. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/DECISIONS_LOG.md` — DECISIONS LOG. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/DECISION_RECORD_TEMPLATE.md` — DECISION RECORD TEMPLATE. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/RISK_REGISTER.md` — RISK REGISTER. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md` — ROADMAP AND MILESTONES. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md` — SEED PROMOTION TRACKER. Completion: **Medium (3/5)**.
-- `docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md` — SSOT AUTOMATION AND LINTING. Completion: **Medium (3/5)**.
-- `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md` — TRACEABILITY MATRIX. Completion: **Very High (5/5)**.
-- `docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md` — UNRESOLVED SEED GAP REGISTER. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-001-requirement-id-normalization.md` — ADR 001 requirement id normalization. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-002-traceability-matrix-minimum-schema.md` — ADR 002 traceability matrix minimum schema. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md` — ADR 003 phase1 freeze waiver. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md` — ADR 004 phase3 program charter. Completion: **Medium (3/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-005-authz-gate-order-reconciliation.md` — ADR 005 authz gate order reconciliation. Completion: **High (4/5)**.
-- `docs/80_traceability_decisions_and_program/records/ADR-006-phase4-program-lock-and-legacy-waiver-retirement.md` — ADR 006 phase4 program lock and legacy waiver retirement. Completion: **High (4/5)**.
-- `docs/README.md` — README. Completion: **Very High (5/5)**.
-- `docs/evidence/README.md` — README. Completion: **Very High (5/5)**.
-- `docs/evidence/automation/README.md` — README. Completion: **Very High (5/5)**.
-- `docs/evidence/templates/CONTRACT_SCHEMA_EXAMPLE_EVIDENCE_TEMPLATE.md` — CONTRACT SCHEMA EXAMPLE EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/DATA_MODEL_EVIDENCE_TEMPLATE.md` — DATA MODEL EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/EVENT_CATALOG_EVIDENCE_TEMPLATE.md` — EVENT CATALOG EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md` — FEED CONTRACT EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/IDENTITY_POLICY_EVIDENCE_TEMPLATE.md` — IDENTITY POLICY EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/README.md` — README. Completion: **High (4/5)**.
-- `docs/evidence/templates/RELEASE_GATES_EVIDENCE_TEMPLATE.md` — RELEASE GATES EVIDENCE TEMPLATE. Completion: **High (4/5)**.
-- `docs/evidence/templates/SECURITY_THREAT_CONTROL_EVIDENCE_TEMPLATE.md` — SECURITY THREAT CONTROL EVIDENCE TEMPLATE. Completion: **High (4/5)**.
+## Inventory by scope
 
-## Logs, records, and decision events (284 files)
+### Root-level governance and entry files (6 files)
+- `.htaccess`
+- `FILE_INVENTORY.md`
+- `README.md`
+- `composer.json`
+- `dot.env`
+- `master_index.md`
 
-- `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md` — PHASE1 ACCEPTANCE REVIEW DRAFT. Completion: **High (4/5)**.
-- `reports/PHASE1_CANON_HARDENING_ROADMAP.md` — PHASE1 CANON HARDENING ROADMAP. Completion: **Medium (3/5)**.
-- `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md` — PHASE1 COMPLETION AUDIT 20260429 1133. Completion: **High (4/5)**.
-- `reports/PHASE1_SESSION_PROMPT_TEMPLATE.md` — PHASE1 SESSION PROMPT TEMPLATE. Completion: **Very High (5/5)**.
-- `reports/PHASE1_TRUE_COMPLETION_EXECUTION_20260429-1153.md` — PHASE1 TRUE COMPLETION EXECUTION 20260429 1153. Completion: **Medium (3/5)**.
-- `reports/PHASE2_SESSION_PROMPT_TEMPLATE.md` — PHASE2 SESSION PROMPT TEMPLATE. Completion: **Very High (5/5)**.
-- `reports/PHASE3_ACCEPTANCE_MEMO.md` — PHASE3 ACCEPTANCE MEMO. Completion: **High (4/5)**.
-- `reports/PHASE3_AUTHORING_PROGRAM_PLAN.md` — PHASE3 AUTHORING PROGRAM PLAN. Completion: **Medium (3/5)**.
-- `reports/PHASE3_AUTHORING_SESSION_PROMPT.md` — PHASE3 AUTHORING SESSION PROMPT. Completion: **Medium (3/5)**.
-- `reports/PHASE3_ENTRY_AUDIT_20260430-0356.md` — PHASE3 ENTRY AUDIT 20260430 0356. Completion: **Medium (3/5)**.
-- `reports/PHASE3_IMPLEMENTATION_HANDOFF.md` — PHASE3 IMPLEMENTATION HANDOFF. Completion: **High (4/5)**.
-- `reports/PHASE4_AUTHORING_SESSION_PROMPT.md` — PHASE4 AUTHORING SESSION PROMPT. Completion: **Medium (3/5)**.
-- `reports/PHASE4_CANON_COMPLETION_MILESTONES.md` — PHASE4 CANON COMPLETION MILESTONES. Completion: **Medium (3/5)**.
-- `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md` — PHASE PLAN AND RECORDS STATUS SUMMARY 2026 04 29. Completion: **High (4/5)**.
-- `reports/README.md` — README. Completion: **Medium (3/5)**.
-- `reports/REPO_FULL_STUDY_2026-04-29.md` — REPO FULL STUDY 2026 04 29. Completion: **Medium (3/5)**.
-- `reports/REPO_STUDY_HIGH_LEVEL_REPORT_2026-04-29.md` — REPO STUDY HIGH LEVEL REPORT 2026 04 29. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md` — 20260430 0400 P3 S0.2 adr 004 program charter. Completion: **High (4/5)**.
-- `reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md` — 20260430 0600 P3 S1.1 authz gate order. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md` — 20260430 0700 P3 S4.1 P3 S4.2 P3 S4.3. Completion: **High (4/5)**.
-- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md` — 20260430 0717 P3 S7.1 P3 S7.2 P3 S7.3. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-0730-P3-S1.2-P3-S1.3-openapi-schema-lint.md` — 20260430 0730 P3 S1.2 P3 S1.3 openapi schema lint. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md` — 20260430 0740 P3 S7.4 P3 S7.5 P3 S7.6. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md` — 20260430 0900 P3 S1.4 P3 S1.6. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md` — 20260430 1030 P3 S4.4 P3 S4.5. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md` — 20260430 1135 P3 S5.1 P3 S5.2. Completion: **High (4/5)**.
-- `reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md` — 20260430 1200 P3 S3.2 P3 S3.4. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md` — 20260430 1246 P3 S9.1 P3 S9.4. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md` — 20260430 1300 P3 S7.7 P3 S7.8. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md` — 20260430 1303 P3 S9.7 P3 S9.9. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md` — 20260430 1305 P3 S3.3 P3 S3.5 P3 S3.6. Completion: **High (4/5)**.
-- `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md` — 20260430 1317 P3 S10.2 P3 S10.3 P3 S10.4. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md` — 20260430 1335 P3 S8.1 P3 S8.2. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md` — 20260430 1335 P3 S9.10 P3 S10.1. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1430-P3-S5.3-P3-S5.4-P3-S5.5.md` — 20260430 1430 P3 S5.3 P3 S5.4 P3 S5.5. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md` — 20260430 1505 P3 S9.5 P3 S9.6. Completion: **Medium (3/5)**.
-- `reports/change_impact_maps/20260504-1659-P3-S6.1-schema-closure-depth.md` — 20260504 1659 P3 S6.1 schema closure depth. Completion: **High (4/5)**.
-- `reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md` — 20260504 2113 P4 S3.3 P4 S3.5 contract parity. Completion: **High (4/5)**.
-- `reports/phase4/P4-S1.1_NORMATIVE_INVENTORY.md` — P4 S1.1 NORMATIVE INVENTORY. Completion: **High (4/5)**.
-- `reports/phase4/P4-S1.3_MODAL_CONSISTENCY_LOG.md` — P4 S1.3 MODAL CONSISTENCY LOG. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md` — P4 S1.5 PLACEHOLDER EXCEPTION LOG. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S1.6_DUPLICATE_NORMATIVE_RECONCILIATION.md` — P4 S1.6 DUPLICATE NORMATIVE RECONCILIATION. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S2.1_PRINCIPAL_TAXONOMY_ALIGNMENT.md` — P4 S2.1 PRINCIPAL TAXONOMY ALIGNMENT. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S2.2_PERMISSION_VOCAB_RECONCILIATION.md` — P4 S2.2 PERMISSION VOCAB RECONCILIATION. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S2.3_DELEGATION_STATE_TRANSITIONS_DENY_ALLOW.md` — P4 S2.3 DELEGATION STATE TRANSITIONS DENY ALLOW. Completion: **Low (2/5)**.
-- `reports/phase4/P4-S2.4_KEYCHAIN_KEYPAIR_LIFECYCLE_TERMINOLOGY_ALIGNMENT.md` — P4 S2.4 KEYCHAIN KEYPAIR LIFECYCLE TERMINOLOGY ALIGNMENT. Completion: **Low (2/5)**.
-- `reports/phase4/P4-S2.5_POLICY_SIGNAL_PRECEDENCE.md` — P4 S2.5 POLICY SIGNAL PRECEDENCE. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S2.6_DECISION_TABLE_CONTRACT_CROSSLINKS.md` — P4 S2.6 DECISION TABLE CONTRACT CROSSLINKS. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S3.1_ROUTE_OPENAPI_PARITY_CHECK.md` — P4 S3.1 ROUTE OPENAPI PARITY CHECK. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S3.2_EXAMPLE_SCHEMA_VALIDATION.md` — P4 S3.2 EXAMPLE SCHEMA VALIDATION. Completion: **Medium (3/5)**.
-- `reports/phase4/P4-S3.3_ERROR_CATALOG_ENVELOPE_CONTEXT_PARITY.md` — P4 S3.3 ERROR CATALOG ENVELOPE CONTEXT PARITY. Completion: **Low (2/5)**.
-- `reports/phase4/P4-S3.4_AUTHZ_LIFECYCLE_SEMANTIC_RECONCILIATION.md` — P4 S3.4 AUTHZ LIFECYCLE SEMANTIC RECONCILIATION. Completion: **Low (2/5)**.
-- `reports/phase4/P4-S3.5_CONTRACT_VERSION_POLICY_TIGHTENING.md` — P4 S3.5 CONTRACT VERSION POLICY TIGHTENING. Completion: **Low (2/5)**.
-- `reports/phase4/P4-S8.6_COMPLETION_EVIDENCE_BUNDLE_INDEX.md` — P4 S8.6 COMPLETION EVIDENCE BUNDLE INDEX. Completion: **High (4/5)**.
-- `reports/session_handoffs/LATEST_SESSION_HANDOFF.md` — LATEST SESSION HANDOFF. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md` — PHASE1 MANUAL HOOK BACKLOG. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0513.md` — PHASE3 BLOCKER 20260430 0513. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0643.md` — PHASE3 BLOCKER 20260430 0643. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md` — PHASE3 BLOCKER 20260430 0702. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0707.md` — PHASE3 BLOCKER 20260430 0707. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1142.md` — PHASE3 BLOCKER 20260430 1142. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1224.md` — PHASE3 BLOCKER 20260430 1224. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1355.md` — PHASE3 BLOCKER 20260430 1355. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-2059.md` — PHASE3 BLOCKER 20260430 2059. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260430-2338.md` — PHASE3 BLOCKER 20260430 2338. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_BLOCKER_20260501-1423.md` — PHASE3 BLOCKER 20260501 1423. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md` — PHASE3 PROGRESS BOARD. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md` — PHASE3 UNRESOLVED EXCEPTIONS REGISTER. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE4_BLOCKER_20260504-2247.md` — PHASE4 BLOCKER 20260504 2247. Completion: **High (4/5)**.
-- `reports/session_handoffs/PHASE4_OPEN_QUESTIONS.md` — PHASE4 OPEN QUESTIONS. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE4_PROGRESS_BOARD.md` — PHASE4 PROGRESS BOARD. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/PHASE4_UNRESOLVED_EXCEPTIONS_REGISTER.md` — PHASE4 UNRESOLVED EXCEPTIONS REGISTER. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0117.md` — SESSION HANDOFF 20260430 0117. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0121.md` — SESSION HANDOFF 20260430 0121. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0125.md` — SESSION HANDOFF 20260430 0125. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0129.md` — SESSION HANDOFF 20260430 0129. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0134.md` — SESSION HANDOFF 20260430 0134. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0140.md` — SESSION HANDOFF 20260430 0140. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0145.md` — SESSION HANDOFF 20260430 0145. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0151.md` — SESSION HANDOFF 20260430 0151. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0156.md` — SESSION HANDOFF 20260430 0156. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0419.md` — SESSION HANDOFF 20260430 0419. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0453.md` — SESSION HANDOFF 20260430 0453. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0521.md` — SESSION HANDOFF 20260430 0521. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0538.md` — SESSION HANDOFF 20260430 0538. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0544.md` — SESSION HANDOFF 20260430 0544. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0551.md` — SESSION HANDOFF 20260430 0551. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0558.md` — SESSION HANDOFF 20260430 0558. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0600.md` — SESSION HANDOFF 20260430 0600. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0606.md` — SESSION HANDOFF 20260430 0606. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0637.md` — SESSION HANDOFF 20260430 0637. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0702.md` — SESSION HANDOFF 20260430 0702. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0707.md` — SESSION HANDOFF 20260430 0707. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0715.md` — SESSION HANDOFF 20260430 0715. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0717.md` — SESSION HANDOFF 20260430 0717. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0730.md` — SESSION HANDOFF 20260430 0730. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0740.md` — SESSION HANDOFF 20260430 0740. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0835.md` — SESSION HANDOFF 20260430 0835. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-0936.md` — SESSION HANDOFF 20260430 0936. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1035.md` — SESSION HANDOFF 20260430 1035. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1142.md` — SESSION HANDOFF 20260430 1142. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1150.md` — SESSION HANDOFF 20260430 1150. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1202.md` — SESSION HANDOFF 20260430 1202. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1224.md` — SESSION HANDOFF 20260430 1224. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1246.md` — SESSION HANDOFF 20260430 1246. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1255.md` — SESSION HANDOFF 20260430 1255. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1303.md` — SESSION HANDOFF 20260430 1303. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1317.md` — SESSION HANDOFF 20260430 1317. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1325.md` — SESSION HANDOFF 20260430 1325. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1331.md` — SESSION HANDOFF 20260430 1331. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1335.md` — SESSION HANDOFF 20260430 1335. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1336.md` — SESSION HANDOFF 20260430 1336. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-1355.md` — SESSION HANDOFF 20260430 1355. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-2059.md` — SESSION HANDOFF 20260430 2059. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-2325.md` — SESSION HANDOFF 20260430 2325. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-2332.md` — SESSION HANDOFF 20260430 2332. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260430-2338.md` — SESSION HANDOFF 20260430 2338. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260501-1423.md` — SESSION HANDOFF 20260501 1423. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1659.md` — SESSION HANDOFF 20260504 1659. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1715.md` — SESSION HANDOFF 20260504 1715. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1816.md` — SESSION HANDOFF 20260504 1816. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1823.md` — SESSION HANDOFF 20260504 1823. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1839.md` — SESSION HANDOFF 20260504 1839. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1847.md` — SESSION HANDOFF 20260504 1847. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1853.md` — SESSION HANDOFF 20260504 1853. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1910.md` — SESSION HANDOFF 20260504 1910. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-1917.md` — SESSION HANDOFF 20260504 1917. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2113.md` — SESSION HANDOFF 20260504 2113. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2122.md` — SESSION HANDOFF 20260504 2122. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2127.md` — SESSION HANDOFF 20260504 2127. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2133.md` — SESSION HANDOFF 20260504 2133. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2137.md` — SESSION HANDOFF 20260504 2137. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2146.md` — SESSION HANDOFF 20260504 2146. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2151.md` — SESSION HANDOFF 20260504 2151. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2154.md` — SESSION HANDOFF 20260504 2154. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2159.md` — SESSION HANDOFF 20260504 2159. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2226.md` — SESSION HANDOFF 20260504 2226. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2232.md` — SESSION HANDOFF 20260504 2232. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2236.md` — SESSION HANDOFF 20260504 2236. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2244.md` — SESSION HANDOFF 20260504 2244. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2247.md` — SESSION HANDOFF 20260504 2247. Completion: **High (4/5)**.
-- `reports/session_handoffs/SESSION_HANDOFF_20260504-2252.md` — SESSION HANDOFF 20260504 2252. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md` — PHASE1 PROGRESS BOARD. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md` — PHASE2 PROGRESS BOARD. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0343.md` — SESSION HANDOFF 20260429 0343. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0347.md` — SESSION HANDOFF 20260429 0347. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0352.md` — SESSION HANDOFF 20260429 0352. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0356.md` — SESSION HANDOFF 20260429 0356. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0402.md` — SESSION HANDOFF 20260429 0402. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0407.md` — SESSION HANDOFF 20260429 0407. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0412.md` — SESSION HANDOFF 20260429 0412. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0427.md` — SESSION HANDOFF 20260429 0427. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0432.md` — SESSION HANDOFF 20260429 0432. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0436.md` — SESSION HANDOFF 20260429 0436. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0441.md` — SESSION HANDOFF 20260429 0441. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0445.md` — SESSION HANDOFF 20260429 0445. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0450.md` — SESSION HANDOFF 20260429 0450. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0456.md` — SESSION HANDOFF 20260429 0456. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0503.md` — SESSION HANDOFF 20260429 0503. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0509.md` — SESSION HANDOFF 20260429 0509. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0514.md` — SESSION HANDOFF 20260429 0514. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0519.md` — SESSION HANDOFF 20260429 0519. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0523.md` — SESSION HANDOFF 20260429 0523. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0531.md` — SESSION HANDOFF 20260429 0531. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0537.md` — SESSION HANDOFF 20260429 0537. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0542.md` — SESSION HANDOFF 20260429 0542. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0547.md` — SESSION HANDOFF 20260429 0547. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0551.md` — SESSION HANDOFF 20260429 0551. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0559.md` — SESSION HANDOFF 20260429 0559. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0607.md` — SESSION HANDOFF 20260429 0607. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0612.md` — SESSION HANDOFF 20260429 0612. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0618.md` — SESSION HANDOFF 20260429 0618. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0623.md` — SESSION HANDOFF 20260429 0623. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0628.md` — SESSION HANDOFF 20260429 0628. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0632.md` — SESSION HANDOFF 20260429 0632. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0638.md` — SESSION HANDOFF 20260429 0638. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0643.md` — SESSION HANDOFF 20260429 0643. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0649.md` — SESSION HANDOFF 20260429 0649. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0653.md` — SESSION HANDOFF 20260429 0653. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0657.md` — SESSION HANDOFF 20260429 0657. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0703.md` — SESSION HANDOFF 20260429 0703. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0709.md` — SESSION HANDOFF 20260429 0709. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0714.md` — SESSION HANDOFF 20260429 0714. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1109.md` — SESSION HANDOFF 20260429 1109. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1116.md` — SESSION HANDOFF 20260429 1116. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1123.md` — SESSION HANDOFF 20260429 1123. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1133.md` — SESSION HANDOFF 20260429 1133. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1153.md` — SESSION HANDOFF 20260429 1153. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1240.md` — SESSION HANDOFF 20260429 1240. Completion: **Medium (3/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1245.md` — SESSION HANDOFF 20260429 1245. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1252.md` — SESSION HANDOFF 20260429 1252. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1257.md` — SESSION HANDOFF 20260429 1257. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1304.md` — SESSION HANDOFF 20260429 1304. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1309.md` — SESSION HANDOFF 20260429 1309. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1314.md` — SESSION HANDOFF 20260429 1314. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1320.md` — SESSION HANDOFF 20260429 1320. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1324.md` — SESSION HANDOFF 20260429 1324. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1330.md` — SESSION HANDOFF 20260429 1330. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1334.md` — SESSION HANDOFF 20260429 1334. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1341.md` — SESSION HANDOFF 20260429 1341. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1345.md` — SESSION HANDOFF 20260429 1345. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1352.md` — SESSION HANDOFF 20260429 1352. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2252.md` — SESSION HANDOFF 20260429 2252. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2257.md` — SESSION HANDOFF 20260429 2257. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2301.md` — SESSION HANDOFF 20260429 2301. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2306.md` — SESSION HANDOFF 20260429 2306. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2310.md` — SESSION HANDOFF 20260429 2310. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2315.md` — SESSION HANDOFF 20260429 2315. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2320.md` — SESSION HANDOFF 20260429 2320. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2324.md` — SESSION HANDOFF 20260429 2324. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2331.md` — SESSION HANDOFF 20260429 2331. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2337.md` — SESSION HANDOFF 20260429 2337. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2342.md` — SESSION HANDOFF 20260429 2342. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2346.md` — SESSION HANDOFF 20260429 2346. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2351.md` — SESSION HANDOFF 20260429 2351. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2357.md` — SESSION HANDOFF 20260429 2357. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0020.md` — SESSION HANDOFF 20260430 0020. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0026.md` — SESSION HANDOFF 20260430 0026. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0031.md` — SESSION HANDOFF 20260430 0031. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0032.md` — SESSION HANDOFF 20260430 0032. Completion: **High (4/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0034.md` — SESSION HANDOFF 20260430 0034. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0040.md` — SESSION HANDOFF 20260430 0040. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0049.md` — SESSION HANDOFF 20260430 0049. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0054.md` — SESSION HANDOFF 20260430 0054. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0100.md` — SESSION HANDOFF 20260430 0100. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0105.md` — SESSION HANDOFF 20260430 0105. Completion: **Very High (5/5)**.
-- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0112.md` — SESSION HANDOFF 20260430 0112. Completion: **Very High (5/5)**.
-- `reports/session_prompts/PHASE1_PROMPT_RECORD_20260429-1140.md` — PHASE1 PROMPT RECORD 20260429 1140. Completion: **Medium (3/5)**.
-- `reports/session_prompts/PHASE1_TRUE_COMPLETION_EXECUTION_PROMPT_20260429-1140.md` — PHASE1 TRUE COMPLETION EXECUTION PROMPT 20260429 1140. Completion: **Very High (5/5)**.
-- `reports/session_responses/20260430-0345_RESPONSE.md` — 20260430 0345 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0419_RESPONSE.md` — 20260430 0419 RESPONSE. Completion: **Very High (5/5)**.
-- `reports/session_responses/20260430-0453_RESPONSE.md` — 20260430 0453 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0544_RESPONSE.md` — 20260430 0544 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0558_RESPONSE.md` — 20260430 0558 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0606_RESPONSE.md` — 20260430 0606 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0702_RESPONSE.md` — 20260430 0702 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260430-0707_RESPONSE.md` — 20260430 0707 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0715_RESPONSE.md` — 20260430 0715 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-0835_RESPONSE.md` — 20260430 0835 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260430-0936_RESPONSE.md` — 20260430 0936 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1035_RESPONSE.md` — 20260430 1035 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1142_RESPONSE.md` — 20260430 1142 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1202_RESPONSE.md` — 20260430 1202 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1224_RESPONSE.md` — 20260430 1224 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1246_RESPONSE.md` — 20260430 1246 RESPONSE. Completion: **Very High (5/5)**.
-- `reports/session_responses/20260430-1255_RESPONSE.md` — 20260430 1255 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1303_RESPONSE.md` — 20260430 1303 RESPONSE. Completion: **Very High (5/5)**.
-- `reports/session_responses/20260430-1325_RESPONSE.md` — 20260430 1325 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260430-1331_RESPONSE.md` — 20260430 1331 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1335_RESPONSE.md` — 20260430 1335 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-1336_RESPONSE.md` — 20260430 1336 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260430-1355_RESPONSE.md` — 20260430 1355 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-2059_RESPONSE.md` — 20260430 2059 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-2325_RESPONSE.md` — 20260430 2325 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-2332_RESPONSE.md` — 20260430 2332 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260430-2338_RESPONSE.md` — 20260430 2338 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260501-1423_RESPONSE.md` — 20260501 1423 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260504-1659_RESPONSE.md` — 20260504 1659 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260504-1715_RESPONSE.md` — 20260504 1715 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-1816_RESPONSE.md` — 20260504 1816 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-1823_RESPONSE.md` — 20260504 1823 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-1839_RESPONSE.md` — 20260504 1839 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-1847_RESPONSE.md` — 20260504 1847 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-1853_RESPONSE.md` — 20260504 1853 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-1910_RESPONSE.md` — 20260504 1910 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-1917_RESPONSE.md` — 20260504 1917 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2113_RESPONSE.md` — 20260504 2113 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2122_RESPONSE.md` — 20260504 2122 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2127_RESPONSE.md` — 20260504 2127 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2137_RESPONSE.md` — 20260504 2137 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2146_RESPONSE.md` — 20260504 2146 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260504-2151_RESPONSE.md` — 20260504 2151 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2154_RESPONSE.md` — 20260504 2154 RESPONSE. Completion: **Medium (3/5)**.
-- `reports/session_responses/20260504-2159_RESPONSE.md` — 20260504 2159 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2226_RESPONSE.md` — 20260504 2226 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2232_RESPONSE.md` — 20260504 2232 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2236_RESPONSE.md` — 20260504 2236 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2244_RESPONSE.md` — 20260504 2244 RESPONSE. Completion: **Low (2/5)**.
-- `reports/session_responses/20260504-2247_RESPONSE.md` — 20260504 2247 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/20260504-2252_RESPONSE.md` — 20260504 2252 RESPONSE. Completion: **High (4/5)**.
-- `reports/session_responses/README.md` — README. Completion: **High (4/5)**.
-- `reports/ssot/coverage_latest.json` — coverage latest JSON file. Completion: **Medium (3/5)**.
-- `reports/ssot/coverage_phase3_entry_20260430-0356.json` — coverage phase3 entry 20260430 0356 JSON file. Completion: **Medium (3/5)**.
-- `reports/ssot/requirement_inventory_latest.json` — requirement inventory latest JSON file. Completion: **Very High (5/5)**.
+### Documentation corpus (docs/) (96 files)
+- `docs/00_governance/CHANGE_CONTROL_POLICY.md`
+- `docs/00_governance/CONTRIBUTION_WORKFLOW_SSOT.md`
+- `docs/00_governance/CROSS_DOCUMENT_LINKING_POLICY.md`
+- `docs/00_governance/DEFINITION_OF_DONE.md`
+- `docs/00_governance/DOCUMENT_STATUS_AND_OWNERSHIP.md`
+- `docs/00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`
+- `docs/00_governance/SSOT_INDEX.md`
+- `docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md`
+- `docs/10_product_and_architecture/CANONICAL_TERMINOLOGY.md`
+- `docs/10_product_and_architecture/CRE8_HUMAN_OPERATING_MODEL.md`
+- `docs/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md`
+- `docs/10_product_and_architecture/DEPENDENCY_BASELINE.md`
+- `docs/10_product_and_architecture/ID_UTILITY_KEYPAIR_MODEL_SPEC.md`
+- `docs/10_product_and_architecture/REQUEST_PIPELINE_AND_MIDDLEWARE_CONTRACT.md`
+- `docs/20_identity_delegation_and_policy/AUTHORIZATION_AND_DELEGATION_SPEC.md`
+- `docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md`
+- `docs/20_identity_delegation_and_policy/DELEGATION_STATE_MACHINE.md`
+- `docs/20_identity_delegation_and_policy/KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md`
+- `docs/20_identity_delegation_and_policy/PERMISSION_VOCABULARY.md`
+- `docs/20_identity_delegation_and_policy/PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md`
+- `docs/20_identity_delegation_and_policy/USAGE_SCENARIOS_AND_PERMISSION_STORIES.md`
+- `docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md`
+- `docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md`
+- `docs/30_contracts_and_interfaces/Endpoint_Examples_All_Routes.md`
+- `docs/30_contracts_and_interfaces/ROUTE_INVENTORY_REFERENCE.md`
+- `docs/30_contracts_and_interfaces/UI_RUNTIME_CONTRACT.md`
+- `docs/30_contracts_and_interfaces/WEBHOOK_AND_INTEGRATION_CONTRACT.md`
+- `docs/31_machine_contracts/CONTRACT_VERSION_POLICY.md`
+- `docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md`
+- `docs/31_machine_contracts/README.md`
+- `docs/31_machine_contracts/openapi/cre8.v1.yaml`
+- `docs/31_machine_contracts/schemas/authz-decision-response.schema.json`
+- `docs/31_machine_contracts/schemas/error-envelope.schema.json`
+- `docs/31_machine_contracts/schemas/feed-items-response.schema.json`
+- `docs/31_machine_contracts/schemas/lifecycle-revoke-response.schema.json`
+- `docs/31_machine_contracts/schemas/lifecycle-suspend-response.schema.json`
+- `docs/31_machine_contracts/schemas/policy-decision.schema.json`
+- `docs/31_machine_contracts/schemas/success-envelope.schema.json`
+- `docs/40_data_security_and_crypto/CRYPTO_PROFILE.md`
+- `docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md`
+- `docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md`
+- `docs/40_data_security_and_crypto/ERD.md`
+- `docs/40_data_security_and_crypto/KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md`
+- `docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md`
+- `docs/40_data_security_and_crypto/SECURITY_HEADERS_AND_CSP_POLICY.md`
+- `docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md`
+- `docs/40_data_security_and_crypto/SECURITY_VERIFICATION_ABUSE_CASES.md`
+- `docs/50_content_audience_and_feed/AUDIENCE_GROUP_SPEC.md`
+- `docs/50_content_audience_and_feed/COMMENTING_AND_INTERACTION_POLICY.md`
+- `docs/50_content_audience_and_feed/CONTENT_MODEL_AND_TARGETING_SPEC.md`
+- `docs/50_content_audience_and_feed/FEED_RANKING_AND_ORDERING_RULES.md`
+- `docs/60_operations_quality_and_release/ACCEPTANCE_CRITERIA_MATRIX.md`
+- `docs/60_operations_quality_and_release/BOOT_AND_STARTUP_FAILURE_CONTRACT.md`
+- `docs/60_operations_quality_and_release/CONFIGURATION_ENVIRONMENT_CONTRACT.md`
+- `docs/60_operations_quality_and_release/HEALTH_ENDPOINT_CONTRACT.md`
+- `docs/60_operations_quality_and_release/MIGRATION_AND_SEED_STRATEGY.md`
+- `docs/60_operations_quality_and_release/OBSERVABILITY_EVENT_CATALOG.md`
+- `docs/60_operations_quality_and_release/OPERATIONAL_SMOKE_CHECK_CONTRACT.md`
+- `docs/60_operations_quality_and_release/PHASE2_ACCEPTANCE_CRITERIA.md`
+- `docs/60_operations_quality_and_release/PHASE2_UNRESOLVED_EXCEPTIONS_REGISTER.md`
+- `docs/60_operations_quality_and_release/PRODUCTION_READINESS_GATES.md`
+- `docs/60_operations_quality_and_release/RELEASE_CHECKLIST.md`
+- `docs/60_operations_quality_and_release/SLO_SLI_SPEC.md`
+- `docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md`
+- `docs/70_extensibility_and_module_patterns/EXTENSIBILITY_PLAYBOOK.md`
+- `docs/70_extensibility_and_module_patterns/INTEGRATION_PROVIDER_PATTERN.md`
+- `docs/70_extensibility_and_module_patterns/MODULE_BOUNDARIES_AND_OWNERSHIP.md`
+- `docs/70_extensibility_and_module_patterns/POST_TYPE_EXTENSION_SPEC.md`
+- `docs/70_extensibility_and_module_patterns/PRINCIPAL_TYPE_EXTENSION_SPEC.md`
+- `docs/80_traceability_decisions_and_program/ADR_INDEX.md`
+- `docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md`
+- `docs/80_traceability_decisions_and_program/DECISIONS_LOG.md`
+- `docs/80_traceability_decisions_and_program/DECISION_RECORD_TEMPLATE.md`
+- `docs/80_traceability_decisions_and_program/RISK_REGISTER.md`
+- `docs/80_traceability_decisions_and_program/ROADMAP_AND_MILESTONES.md`
+- `docs/80_traceability_decisions_and_program/SEED_PROMOTION_TRACKER.md`
+- `docs/80_traceability_decisions_and_program/SSOT_AUTOMATION_AND_LINTING.md`
+- `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
+- `docs/80_traceability_decisions_and_program/UNRESOLVED_SEED_GAP_REGISTER.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-001-requirement-id-normalization.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-002-traceability-matrix-minimum-schema.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-003-phase1-freeze-waiver.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-005-authz-gate-order-reconciliation.md`
+- `docs/80_traceability_decisions_and_program/records/ADR-006-phase4-program-lock-and-legacy-waiver-retirement.md`
+- `docs/README.md`
+- `docs/evidence/README.md`
+- `docs/evidence/automation/README.md`
+- `docs/evidence/templates/CONTRACT_SCHEMA_EXAMPLE_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/DATA_MODEL_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/EVENT_CATALOG_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/FEED_CONTRACT_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/IDENTITY_POLICY_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/README.md`
+- `docs/evidence/templates/RELEASE_GATES_EVIDENCE_TEMPLATE.md`
+- `docs/evidence/templates/SECURITY_THREAT_CONTROL_EVIDENCE_TEMPLATE.md`
 
-## Seed and source scaffolding (13 files)
+### Seed corpus (seed/) (13 files)
+- `seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md`
+- `seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md`
+- `seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md`
+- `seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md`
+- `seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md`
+- `seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md`
+- `seed/CRE8_REPO_STUDY_REPORT.md`
+- `seed/CRE8_SEED_CANON_ASSESSMENT_REPORT.md`
+- `seed/CRE8_SEED_CANON_INDEX.md`
+- `seed/CRE8_SEED_PRESERVATION_MATRIX.md`
+- `seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md`
+- `seed/seed-index.md`
+- `seed/seed-intro.md`
 
-- `seed/CRE8_API_CONTRACT_AND_ERROR_SEED.md` — CRE8 API CONTRACT AND ERROR SEED. Completion: **High (4/5)**.
-- `seed/CRE8_CONTENT_AUDIENCE_AND_FEED_SEED.md` — CRE8 CONTENT AUDIENCE AND FEED SEED. Completion: **High (4/5)**.
-- `seed/CRE8_EXTENSIBILITY_AND_MODULE_PATTERN_SEED.md` — CRE8 EXTENSIBILITY AND MODULE PATTERN SEED. Completion: **Medium (3/5)**.
-- `seed/CRE8_KEYPAIR_MODEL_BASE_INVENTORY.md` — CRE8 KEYPAIR MODEL BASE INVENTORY. Completion: **Very High (5/5)**.
-- `seed/CRE8_KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SEED.md` — CRE8 KEY LIFECYCLE AND CRYPTOGRAPHY SEED. Completion: **Medium (3/5)**.
-- `seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md` — CRE8 PERMISSION AND DELEGATION SEED. Completion: **Medium (3/5)**.
-- `seed/CRE8_REPO_STUDY_REPORT.md` — CRE8 REPO STUDY REPORT. Completion: **Medium (3/5)**.
-- `seed/CRE8_SEED_CANON_ASSESSMENT_REPORT.md` — CRE8 SEED CANON ASSESSMENT REPORT. Completion: **Very High (5/5)**.
-- `seed/CRE8_SEED_CANON_INDEX.md` — CRE8 SEED CANON INDEX. Completion: **High (4/5)**.
-- `seed/CRE8_SEED_PRESERVATION_MATRIX.md` — CRE8 SEED PRESERVATION MATRIX. Completion: **High (4/5)**.
-- `seed/CRE8_SURFACES_AND_CLIENT_PARITY_SEED.md` — CRE8 SURFACES AND CLIENT PARITY SEED. Completion: **Medium (3/5)**.
-- `seed/seed-index.md` — seed index. Completion: **Medium (3/5)**.
-- `seed/seed-intro.md` — seed intro. Completion: **Very High (5/5)**.
+### Reports and continuity artifacts (reports/) (285 files)
+- `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md`
+- `reports/PHASE1_CANON_HARDENING_ROADMAP.md`
+- `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`
+- `reports/PHASE1_SESSION_PROMPT_TEMPLATE.md`
+- `reports/PHASE1_TRUE_COMPLETION_EXECUTION_20260429-1153.md`
+- `reports/PHASE2_SESSION_PROMPT_TEMPLATE.md`
+- `reports/PHASE3_ACCEPTANCE_MEMO.md`
+- `reports/PHASE3_AUTHORING_PROGRAM_PLAN.md`
+- `reports/PHASE3_AUTHORING_SESSION_PROMPT.md`
+- `reports/PHASE3_ENTRY_AUDIT_20260430-0356.md`
+- `reports/PHASE3_IMPLEMENTATION_HANDOFF.md`
+- `reports/PHASE4_AUTHORING_SESSION_PROMPT.md`
+- `reports/PHASE4_CANON_COMPLETION_MILESTONES.md`
+- `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
+- `reports/README.md`
+- `reports/REPO_FULL_STUDY_2026-04-29.md`
+- `reports/REPO_STUDY_HIGH_LEVEL_REPORT_2026-04-29.md`
+- `reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`
+- `reports/change_impact_maps/20260430-0600-P3-S1.1-authz-gate-order.md`
+- `reports/change_impact_maps/20260430-0700-P3-S4.1-P3-S4.2-P3-S4.3.md`
+- `reports/change_impact_maps/20260430-0717-P3-S7.1-P3-S7.2-P3-S7.3.md`
+- `reports/change_impact_maps/20260430-0730-P3-S1.2-P3-S1.3-openapi-schema-lint.md`
+- `reports/change_impact_maps/20260430-0740-P3-S7.4-P3-S7.5-P3-S7.6.md`
+- `reports/change_impact_maps/20260430-0900-P3-S1.4-P3-S1.6.md`
+- `reports/change_impact_maps/20260430-1030-P3-S4.4-P3-S4.5.md`
+- `reports/change_impact_maps/20260430-1135-P3-S5.1-P3-S5.2.md`
+- `reports/change_impact_maps/20260430-1200-P3-S3.2-P3-S3.4.md`
+- `reports/change_impact_maps/20260430-1246-P3-S9.1-P3-S9.4.md`
+- `reports/change_impact_maps/20260430-1300-P3-S7.7-P3-S7.8.md`
+- `reports/change_impact_maps/20260430-1303-P3-S9.7-P3-S9.9.md`
+- `reports/change_impact_maps/20260430-1305-P3-S3.3-P3-S3.5-P3-S3.6.md`
+- `reports/change_impact_maps/20260430-1317-P3-S10.2-P3-S10.3-P3-S10.4.md`
+- `reports/change_impact_maps/20260430-1335-P3-S8.1-P3-S8.2.md`
+- `reports/change_impact_maps/20260430-1335-P3-S9.10-P3-S10.1.md`
+- `reports/change_impact_maps/20260430-1430-P3-S5.3-P3-S5.4-P3-S5.5.md`
+- `reports/change_impact_maps/20260430-1505-P3-S9.5-P3-S9.6.md`
+- `reports/change_impact_maps/20260504-1659-P3-S6.1-schema-closure-depth.md`
+- `reports/change_impact_maps/20260504-2113-P4-S3.3-P4-S3.5-contract-parity.md`
+- `reports/phase4/P4-S1.1_NORMATIVE_INVENTORY.md`
+- `reports/phase4/P4-S1.3_MODAL_CONSISTENCY_LOG.md`
+- `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md`
+- `reports/phase4/P4-S1.6_DUPLICATE_NORMATIVE_RECONCILIATION.md`
+- `reports/phase4/P4-S2.1_PRINCIPAL_TAXONOMY_ALIGNMENT.md`
+- `reports/phase4/P4-S2.2_PERMISSION_VOCAB_RECONCILIATION.md`
+- `reports/phase4/P4-S2.3_DELEGATION_STATE_TRANSITIONS_DENY_ALLOW.md`
+- `reports/phase4/P4-S2.4_KEYCHAIN_KEYPAIR_LIFECYCLE_TERMINOLOGY_ALIGNMENT.md`
+- `reports/phase4/P4-S2.5_POLICY_SIGNAL_PRECEDENCE.md`
+- `reports/phase4/P4-S2.6_DECISION_TABLE_CONTRACT_CROSSLINKS.md`
+- `reports/phase4/P4-S3.1_ROUTE_OPENAPI_PARITY_CHECK.md`
+- `reports/phase4/P4-S3.2_EXAMPLE_SCHEMA_VALIDATION.md`
+- `reports/phase4/P4-S3.3_ERROR_CATALOG_ENVELOPE_CONTEXT_PARITY.md`
+- `reports/phase4/P4-S3.4_AUTHZ_LIFECYCLE_SEMANTIC_RECONCILIATION.md`
+- `reports/phase4/P4-S3.5_CONTRACT_VERSION_POLICY_TIGHTENING.md`
+- `reports/phase4/P4-S8.6_COMPLETION_EVIDENCE_BUNDLE_INDEX.md`
+- `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
+- `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0513.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0643.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0702.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-0707.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1142.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1224.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-1355.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-2059.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260430-2338.md`
+- `reports/session_handoffs/PHASE3_BLOCKER_20260501-1423.md`
+- `reports/session_handoffs/PHASE3_PROGRESS_BOARD.md`
+- `reports/session_handoffs/PHASE3_UNRESOLVED_EXCEPTIONS_REGISTER.md`
+- `reports/session_handoffs/PHASE4_BLOCKER_20260504-2247.md`
+- `reports/session_handoffs/PHASE4_OPEN_QUESTIONS.md`
+- `reports/session_handoffs/PHASE4_PROGRESS_BOARD.md`
+- `reports/session_handoffs/PHASE4_UNRESOLVED_EXCEPTIONS_REGISTER.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0117.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0121.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0125.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0129.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0134.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0140.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0145.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0151.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0156.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0419.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0453.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0521.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0538.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0544.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0551.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0558.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0600.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0606.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0637.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0702.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0707.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0715.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0717.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0730.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0740.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0835.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-0936.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1035.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1142.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1150.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1202.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1224.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1246.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1255.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1303.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1317.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1325.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1331.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1335.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1336.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-1355.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-2059.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-2325.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-2332.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260430-2338.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260501-1423.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1659.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1715.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1816.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1823.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1839.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1847.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1853.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1910.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-1917.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2113.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2122.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2127.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2133.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2137.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2146.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2151.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2154.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2159.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2226.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2232.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2236.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2244.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2247.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260504-2252.md`
+- `reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md`
+- `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0343.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0347.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0352.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0356.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0402.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0407.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0412.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0427.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0432.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0436.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0441.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0445.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0450.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0456.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0503.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0509.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0514.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0519.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0523.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0531.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0537.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0542.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0547.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0551.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0559.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0607.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0612.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0618.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0623.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0628.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0632.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0638.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0643.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0649.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0653.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0657.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0703.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0709.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0714.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1109.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1116.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1123.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1133.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1153.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1240.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1245.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1252.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1257.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1304.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1309.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1314.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1320.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1324.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1330.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1334.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1341.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1345.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-1352.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2252.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2257.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2301.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2306.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2310.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2315.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2320.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2324.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2331.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2337.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2342.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2346.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2351.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-2357.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0020.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0026.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0031.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0032.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0034.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0040.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0049.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0054.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0100.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0105.md`
+- `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260430-0112.md`
+- `reports/session_prompts/PHASE1_PROMPT_RECORD_20260429-1140.md`
+- `reports/session_prompts/PHASE1_TRUE_COMPLETION_EXECUTION_PROMPT_20260429-1140.md`
+- `reports/session_responses/20260430-0345_RESPONSE.md`
+- `reports/session_responses/20260430-0419_RESPONSE.md`
+- `reports/session_responses/20260430-0453_RESPONSE.md`
+- `reports/session_responses/20260430-0544_RESPONSE.md`
+- `reports/session_responses/20260430-0558_RESPONSE.md`
+- `reports/session_responses/20260430-0606_RESPONSE.md`
+- `reports/session_responses/20260430-0702_RESPONSE.md`
+- `reports/session_responses/20260430-0707_RESPONSE.md`
+- `reports/session_responses/20260430-0715_RESPONSE.md`
+- `reports/session_responses/20260430-0835_RESPONSE.md`
+- `reports/session_responses/20260430-0936_RESPONSE.md`
+- `reports/session_responses/20260430-1035_RESPONSE.md`
+- `reports/session_responses/20260430-1142_RESPONSE.md`
+- `reports/session_responses/20260430-1202_RESPONSE.md`
+- `reports/session_responses/20260430-1224_RESPONSE.md`
+- `reports/session_responses/20260430-1246_RESPONSE.md`
+- `reports/session_responses/20260430-1255_RESPONSE.md`
+- `reports/session_responses/20260430-1303_RESPONSE.md`
+- `reports/session_responses/20260430-1325_RESPONSE.md`
+- `reports/session_responses/20260430-1331_RESPONSE.md`
+- `reports/session_responses/20260430-1335_RESPONSE.md`
+- `reports/session_responses/20260430-1336_RESPONSE.md`
+- `reports/session_responses/20260430-1355_RESPONSE.md`
+- `reports/session_responses/20260430-2059_RESPONSE.md`
+- `reports/session_responses/20260430-2325_RESPONSE.md`
+- `reports/session_responses/20260430-2332_RESPONSE.md`
+- `reports/session_responses/20260430-2338_RESPONSE.md`
+- `reports/session_responses/20260501-1423_RESPONSE.md`
+- `reports/session_responses/20260504-1659_RESPONSE.md`
+- `reports/session_responses/20260504-1715_RESPONSE.md`
+- `reports/session_responses/20260504-1816_RESPONSE.md`
+- `reports/session_responses/20260504-1823_RESPONSE.md`
+- `reports/session_responses/20260504-1839_RESPONSE.md`
+- `reports/session_responses/20260504-1847_RESPONSE.md`
+- `reports/session_responses/20260504-1853_RESPONSE.md`
+- `reports/session_responses/20260504-1910_RESPONSE.md`
+- `reports/session_responses/20260504-1917_RESPONSE.md`
+- `reports/session_responses/20260504-2113_RESPONSE.md`
+- `reports/session_responses/20260504-2122_RESPONSE.md`
+- `reports/session_responses/20260504-2127_RESPONSE.md`
+- `reports/session_responses/20260504-2137_RESPONSE.md`
+- `reports/session_responses/20260504-2146_RESPONSE.md`
+- `reports/session_responses/20260504-2151_RESPONSE.md`
+- `reports/session_responses/20260504-2154_RESPONSE.md`
+- `reports/session_responses/20260504-2159_RESPONSE.md`
+- `reports/session_responses/20260504-2226_RESPONSE.md`
+- `reports/session_responses/20260504-2232_RESPONSE.md`
+- `reports/session_responses/20260504-2236_RESPONSE.md`
+- `reports/session_responses/20260504-2244_RESPONSE.md`
+- `reports/session_responses/20260504-2247_RESPONSE.md`
+- `reports/session_responses/20260504-2252_RESPONSE.md`
+- `reports/session_responses/20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
+- `reports/session_responses/README.md`
+- `reports/ssot/coverage_latest.json`
+- `reports/ssot/coverage_phase3_entry_20260430-0356.json`
+- `reports/ssot/requirement_inventory_latest.json`
 
-## Automation and validation scripts (44 files)
+### Automation and validation scripts (scripts/) (44 files)
+- `scripts/docs_ssot_capability_matrix_complete.php`
+- `scripts/docs_ssot_compat_declaration.php`
+- `scripts/docs_ssot_data_model_coverage.php`
+- `scripts/docs_ssot_delegation_sm_consistency.php`
+- `scripts/docs_ssot_deprecation_schema.php`
+- `scripts/docs_ssot_dod_trace_check.php`
+- `scripts/docs_ssot_error_code_coverage.php`
+- `scripts/docs_ssot_event_catalog_coverage.php`
+- `scripts/docs_ssot_example_coverage.php`
+- `scripts/docs_ssot_glossary_check.php`
+- `scripts/docs_ssot_lint.php`
+- `scripts/docs_ssot_openapi_lint.php`
+- `scripts/docs_ssot_permission_vocab_resolve.php`
+- `scripts/docs_ssot_phase2_exceptions_check.php`
+- `scripts/docs_ssot_phase3_drift_pack.php`
+- `scripts/docs_ssot_pr_evidence_check.php`
+- `scripts/docs_ssot_report.php`
+- `scripts/docs_ssot_requirement_inventory.php`
+- `scripts/docs_ssot_review_gate_check.php`
+- `scripts/docs_ssot_roadmap_schema_check.php`
+- `scripts/docs_ssot_route_parity.php`
+- `scripts/docs_ssot_route_uniqueness.php`
+- `scripts/docs_ssot_schema_coverage.php`
+- `scripts/docs_ssot_seed_gap_schema.php`
+- `scripts/docs_ssot_seed_promotion_schema.php`
+- `scripts/docs_ssot_source_refs_check.php`
+- `scripts/docs_ssot_sync_check.php`
+- `scripts/docs_ssot_threat_control_matrix.php`
+- `scripts/health_smoke.php`
+- `scripts/migrate_smoke.php`
+- `scripts/phase1_acceptance_bundle.php`
+- `scripts/phase2_acceptance_bundle.php`
+- `scripts/phase3_acceptance_bundle.php`
+- `scripts/test_contract_auth.php`
+- `scripts/test_contract_auth_reasons.php`
+- `scripts/test_contract_error.php`
+- `scripts/test_contract_error_secrets.php`
+- `scripts/test_contract_feed.php`
+- `scripts/test_contract_identity_context.php`
+- `scripts/test_contract_identity_issuance.php`
+- `scripts/test_contract_lifecycle.php`
+- `scripts/test_contract_request_schema.php`
+- `scripts/test_contract_response_schema.php`
+- `scripts/test_contract_surface_parity.php`
 
-- `scripts/docs_ssot_capability_matrix_complete.php` — docs ssot capability matrix complete PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_compat_declaration.php` — docs ssot compat declaration PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_data_model_coverage.php` — docs ssot data model coverage PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_delegation_sm_consistency.php` — docs ssot delegation sm consistency PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_deprecation_schema.php` — docs ssot deprecation schema PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_dod_trace_check.php` — docs ssot dod trace check PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_error_code_coverage.php` — docs ssot error code coverage PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_event_catalog_coverage.php` — docs ssot event catalog coverage PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_example_coverage.php` — docs ssot example coverage PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_glossary_check.php` — docs ssot glossary check PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_lint.php` — docs ssot lint PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_openapi_lint.php` — docs ssot openapi lint PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_permission_vocab_resolve.php` — docs ssot permission vocab resolve PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_phase2_exceptions_check.php` — docs ssot phase2 exceptions check PHP script. Completion: **Very High (5/5)**.
-- `scripts/docs_ssot_phase3_drift_pack.php` — docs ssot phase3 drift pack PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_pr_evidence_check.php` — docs ssot pr evidence check PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_report.php` — docs ssot report PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_requirement_inventory.php` — docs ssot requirement inventory PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_review_gate_check.php` — docs ssot review gate check PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_roadmap_schema_check.php` — docs ssot roadmap schema check PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_route_parity.php` — docs ssot route parity PHP script. Completion: **Very High (5/5)**.
-- `scripts/docs_ssot_route_uniqueness.php` — docs ssot route uniqueness PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_schema_coverage.php` — docs ssot schema coverage PHP script. Completion: **High (4/5)**.
-- `scripts/docs_ssot_seed_gap_schema.php` — docs ssot seed gap schema PHP script. Completion: **Very High (5/5)**.
-- `scripts/docs_ssot_seed_promotion_schema.php` — docs ssot seed promotion schema PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_source_refs_check.php` — docs ssot source refs check PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_sync_check.php` — docs ssot sync check PHP script. Completion: **Medium (3/5)**.
-- `scripts/docs_ssot_threat_control_matrix.php` — docs ssot threat control matrix PHP script. Completion: **Medium (3/5)**.
-- `scripts/health_smoke.php` — health smoke PHP script. Completion: **High (4/5)**.
-- `scripts/migrate_smoke.php` — migrate smoke PHP script. Completion: **High (4/5)**.
-- `scripts/phase1_acceptance_bundle.php` — phase1 acceptance bundle PHP script. Completion: **High (4/5)**.
-- `scripts/phase2_acceptance_bundle.php` — phase2 acceptance bundle PHP script. Completion: **High (4/5)**.
-- `scripts/phase3_acceptance_bundle.php` — phase3 acceptance bundle PHP script. Completion: **Medium (3/5)**.
-- `scripts/test_contract_auth.php` — test contract auth PHP script. Completion: **Very High (5/5)**.
-- `scripts/test_contract_auth_reasons.php` — test contract auth reasons PHP script. Completion: **High (4/5)**.
-- `scripts/test_contract_error.php` — test contract error PHP script. Completion: **High (4/5)**.
-- `scripts/test_contract_error_secrets.php` — test contract error secrets PHP script. Completion: **High (4/5)**.
-- `scripts/test_contract_feed.php` — test contract feed PHP script. Completion: **Very High (5/5)**.
-- `scripts/test_contract_identity_context.php` — test contract identity context PHP script. Completion: **Very High (5/5)**.
-- `scripts/test_contract_identity_issuance.php` — test contract identity issuance PHP script. Completion: **Very High (5/5)**.
-- `scripts/test_contract_lifecycle.php` — test contract lifecycle PHP script. Completion: **Very High (5/5)**.
-- `scripts/test_contract_request_schema.php` — test contract request schema PHP script. Completion: **Medium (3/5)**.
-- `scripts/test_contract_response_schema.php` — test contract response schema PHP script. Completion: **Medium (3/5)**.
-- `scripts/test_contract_surface_parity.php` — test contract surface parity PHP script. Completion: **Very High (5/5)**.
-
-## Contract test fixtures (2 files)
-
-- `tests/contract/fixtures/negative/lifecycle_suspend_response.json` — lifecycle suspend response JSON file. Completion: **Low (2/5)**.
-- `tests/contract/fixtures/positive/lifecycle_suspend_response.json` — lifecycle suspend response JSON file. Completion: **Low (2/5)**.
-
-## Project scaffolding and config (2 files)
-
-- `composer.json` — composer JSON file. Completion: **Very High (5/5)**.
-- `dot.env` — dot.env. Completion: **Medium (3/5)**.
-
-## Totals and Overall Summary
-
-- **Total files inventoried:** 442.
-- **Canonical docs:** 97 files.
-- **Logs, records, and decision events:** 284 files.
-- **Seed and source scaffolding:** 13 files.
-- **Automation and validation scripts:** 44 files.
-- **Contract test fixtures:** 2 files.
-- **Project scaffolding and config:** 2 files.
-- **Overall assessment:** The repository is documentation-heavy with strong traceability artifacts and broad automation coverage; completion is generally high, with a small subset of short/bootstrap files rated medium or low due to brevity.
+### CI/workflow and config (3 files)
+- `.github/workflows/ssot_phase_gate.yml`
+- `tests/contract/fixtures/negative/lifecycle_suspend_response.json`
+- `tests/contract/fixtures/positive/lifecycle_suspend_response.json`
