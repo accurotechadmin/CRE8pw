@@ -1,0 +1,14 @@
+{
+  "principal_type": "integration_operator",
+  "permission_tokens": ["integration.read", "integration.write"],
+  "capability_matrix_deltas": "allow/deny/conditional rows present",
+  "delegation_transitions": ["grant", "suspend", "revoke", "expire"],
+  "authz_fixtures": ["allow_integration_read", "deny_integration_write"],
+  "compatibility_declaration": "additive",
+  "validator_coverage": {
+    "permission_token_resolution": "pass",
+    "capability_matrix_completeness": "pass",
+    "delegation_transition_integrity": "pass",
+    "reason_code_determinism": "pass"
+  }
+}
