@@ -1,0 +1,19 @@
+{
+  "post_type": "story.note",
+  "lifecycle_states": ["draft", "published", "archived", "deleted"],
+  "audience_constraints": "canonical deny mapping",
+  "ranking_fields": ["published_at", "post_id"],
+  "policy_bindings": ["post.create", "post.publish"],
+  "contract_refs": ["CRE8-ROUTE-0012", "createPost", "PARITY-POST-001"],
+  "validator_coverage": {
+    "payload_schema": "pass",
+    "lifecycle_transition_guards": "pass",
+    "audience_eligibility": "pass",
+    "policy_token_resolution": "pass"
+  },
+  "rollback_plan": {
+    "trigger_thresholds": ">=2% deny drift",
+    "reversible_steps": ["disable route", "revert migration"],
+    "evidence_artifacts": ["reports/ssot/coverage_latest.json"]
+  }
+}
