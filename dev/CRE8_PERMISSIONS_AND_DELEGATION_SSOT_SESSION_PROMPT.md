@@ -6,6 +6,9 @@ _Use this as the **first message** in a fresh expert coding LLM session when the
 
 **Continuity model:** This prompt inherits the **Phase 3 / Phase 4** expectations in [`reports/PHASE3_AUTHORING_SESSION_PROMPT.md`](../reports/PHASE3_AUTHORING_SESSION_PROMPT.md) and [`reports/PHASE4_AUTHORING_SESSION_PROMPT.md`](../reports/PHASE4_AUTHORING_SESSION_PROMPT.md): mandatory boot reads, small batches, verification before merge, handoffs, progress board lines, archived final response, and change-impact maps when semantics shift.
 
+
+**Boot diagnostics first (new):** The fresh session MUST emit a **permissions bootstrap diagnostic** before planning edits: execution context (branch, clean/dirty tree), available verification scripts, permission-vocabulary/route/OpenAPI parity status, and principal-mapping sanity (human labels ↔ canonical principal types). This diagnostic SHOULD be copy-pastable for the user and SHOULD name concrete blocker classes (missing docs, failing linters, contract drift, unresolved seed gaps).
+
 ---
 
 ## Why this session exists (mental model)
@@ -82,6 +85,14 @@ Persistence and lifecycle
 docs/40_data_security_and_crypto/DATA_MODEL_SPEC.md
 docs/40_data_security_and_crypto/DATA_MODEL_REFERENCE.md
 docs/40_data_security_and_crypto/KEY_LIFECYCLE_AND_CRYPTOGRAPHY_SPEC.md
+docs/40_data_security_and_crypto/SECURITY_CONTROLS_SPEC.md — permission/delegation control obligations
+docs/40_data_security_and_crypto/SECURITY_THREAT_MODEL.md — abuse paths around delegated credentials
+Runtime and startup diagnostics
+
+docs/60_operations_quality_and_release/CONFIGURATION_ENVIRONMENT_CONTRACT.md — env knobs affecting authz/PDP behavior
+docs/60_operations_quality_and_release/BOOT_AND_STARTUP_FAILURE_CONTRACT.md — startup failure classes for authz dependencies
+docs/60_operations_quality_and_release/HEALTH_ENDPOINT_CONTRACT.md — health signals relevant to permission subsystems
+docs/60_operations_quality_and_release/OBSERVABILITY_EVENT_CATALOG.md — canonical authz/delegation event vocabulary
 Traceability, decisions, automation (targeted)
 
 docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md — when adding/changing requirement IDs
@@ -125,7 +136,17 @@ docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md (and DECISIONS
 docs/31_machine_contracts/openapi/cre8.v1.yaml, docs/31_machine_contracts/schemas/, docs/31_machine_contracts/PROSE_OPENAPI_PARITY_TABLE.md if HTTP/machine surfaces shift
 docs/60_operations_quality_and_release/VERIFICATION_STRATEGY.md if hooks change
 reports/change_impact_maps/<UTC>-<topic-or-slice>.md for cross-cutting or machine-contract semantic changes (Phase 3/4 convention)
-4) Verification discipline (run before commit; document skips)
+4) Permissions bootstrap diagnostic (run immediately after orientation reads)
+Before proposing edits, produce a concise “Permissions Boot Diagnostic” with:
+- Repo state: current branch, HEAD commit, clean/dirty status, and whether scope implies docs-only vs code+docs edits.
+- Canon readiness: confirm mandatory-read paths found; list any missing canon/seed docs explicitly.
+- Principal mapping sanity: Owner/Primary/Secondary/Use labels mapped to canonical principal types and any ambiguities.
+- Contract alignment snapshot: quick status of permission vocabulary ↔ route inventory ↔ OpenAPI/schemas parity for the targeted slice.
+- Gate semantics sanity: restate fixed PDP gate order and deny precedence chain; flag any conflicting prose discovered.
+- Verification availability: list applicable composer docs:ssot:* and test:contract:* commands for the slice.
+- Blocker classification: pre-existing repo drift vs introduced change risk vs environment/tooling limitation.
+The diagnostic MUST be written for both machine execution planning and human operator situational awareness.
+5) Verification discipline (run before commit; document skips)
 Run in order or record why a command is unavailable:
 
 composer validate --strict
@@ -147,7 +168,7 @@ Program bundles: run phase acceptance bundles when current CI/docs mandate them 
 
 Classify failures: introduced vs pre-existing vs environment. Fix introduced failures in-session; for hard blockers, write a blocker note in the handoff and stop.
 
-5) Continuity and records (Phase 3 / Phase 4 style — mandatory every session)
+6) Continuity and records (Phase 3 / Phase 4 style — mandatory every session)
 Mirror reports/PHASE4_AUTHORING_SESSION_PROMPT.md §7 and reports/PHASE3_AUTHORING_SESSION_PROMPT.md §6.
 
 Always create/update:
@@ -158,7 +179,7 @@ reports/session_handoffs/PHASE3_PROGRESS_BOARD.md or reports/session_handoffs/PH
 reports/session_responses/<UTC-YYYYMMDD-HHMM>_RESPONSE.md — verbatim copy of your final user-facing summary before sending the reply
 If the lane needs dedicated tracking, add focused registers under reports/session_handoffs/—do not scatter informal state elsewhere.
 
-6) End-of-session response format (exact order)
+7) End-of-session response format (exact order)
 Session summary (completed / partial / blocked)
 Verification commands + outcomes (pass/fail/skip + reason)
 Files changed grouped by domain (docs/, src/, tests/, reports/, …)
@@ -168,7 +189,7 @@ Handoff + response artifact paths
 Branch / PR reference (if applicable)
 Open questions and suggested ADRs or promotions (draft → canon)
 “Next session should start with…” — 3–7 prioritized items + dependencies
-7) Guardrails
+8) Guardrails
 No out-of-scope edits; no drive-by refactors unrelated to permissions/delegation/key lifecycle alignment.
 No speculative normative requirements without traceability and verification path.
 No silent breaking OpenAPI or permission-token changes.
