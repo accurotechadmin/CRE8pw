@@ -1,9 +1,9 @@
-# Session handoff — production implementation (bootstrap)
+# Session handoff — production implementation
 
 This pointer tracks the most recent **production codebase** session handoff under **`dev/implementation/`**.
 
-- **Active handoff:** *(none yet — run `dev/CRE8_PRODUCTION_CODEBASE_SESSION_PROMPT.md` and create `session_handoffs/SESSION_HANDOFF_<UTC>.md`)*
+- **Active handoff:** `dev/implementation/session_handoffs/SESSION_HANDOFF_20260505-0500.md`
 - **Progress board:** `dev/implementation/PROGRESS_BOARD.md`
 - **Roadmap:** `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 
-_Last initialized (UTC): 2026-05-05_
+_Last updated (UTC): 2026-05-05 05:00_

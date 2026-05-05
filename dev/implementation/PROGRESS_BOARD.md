@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-05_
+_Last updated (UTC): 2026-05-05 05:00_
 
 ## Purpose
 
@@ -16,8 +16,8 @@ Rolling status for **production codebase** work driven by **`dev/SSOT_IMPLEMENTA
 
 | Field | Value |
 |-------|--------|
-| **Last milestone/slice completed** | *(none yet — board initialized)* |
-| **In progress** | *(none)* |
+| **Last milestone/slice completed** | orientation boot completed (`SESSION_HANDOFF_20260505-0500.md`), no implementation slice completed yet |
+| **In progress** | orientation complete; implementation slice selection pending (M0 start recommended) |
 | **Next recommended slices** | **M0:** S0.1–S0.4 → **M1:** S1.1–S1.4 → **M2:** S2.1–S2.4 (cold start per roadmap) |
 | **Blockers** | *(none)* |
 
