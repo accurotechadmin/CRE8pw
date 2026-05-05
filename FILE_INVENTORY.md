@@ -6,7 +6,7 @@ Total tracked repository files (excluding `.git` internals): **463**.
 
 ## Inventory by scope
 
-### Root-level governance and entry files (8 files)
+### Root-level governance and entry files (7 files)
 - `.htaccess`
 - `FILE_INVENTORY.md`
 - `README.md`
@@ -139,7 +139,7 @@ Total tracked repository files (excluding `.git` internals): **463**.
 - `seed/seed-index.md`
 - `seed/seed-intro.md`
 
-### Reports and continuity artifacts (reports/) (287 files)
+### Reports and continuity artifacts (reports/) (291 files)
 - `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md`
 - `reports/PHASE1_CANON_HARDENING_ROADMAP.md`
 - `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`
