@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-05_
+_Last updated (UTC): 2026-05-05 07:18_
 
 ## Purpose
 
@@ -16,11 +16,24 @@ Rolling status for **production codebase** work driven by **`dev/SSOT_IMPLEMENTA
 
 | Field | Value |
 |-------|--------|
-| **Last milestone/slice completed** | *(none yet — board initialized)* |
-| **In progress** | *(none)* |
-| **Next recommended slices** | **M0:** S0.1–S0.4 → **M1:** S1.1–S1.4 → **M2:** S2.1–S2.4 (cold start per roadmap) |
+| **Last milestone/slice completed** | **M0:** S0.1, S0.2, S0.3; **M1:** S1.1, S1.2 |
+| **In progress** | **M1:** S1.3 (next) |
+| **Next recommended slices** | **M1:** S1.3–S1.4 → **M2:** S2.1–S2.3 |
 | **Blockers** | *(none)* |
+
+## Gate status snapshot
+
+- **G0 Program boot:** complete (read path + verification rehearsal + operating contract artifacts active).
+- **G1 Architecture lock:** not started.
+- **G2 Contract lock:** not started.
+- **G3 Security lock:** not started.
+- **G4 Release lock:** not started.
+
+## Latest verification summary
+
+All required baseline and acceptance commands passed in this session (`validate`, `docs:ssot:*` core checks, `phase3:final-acceptance-bundle`, and `phase2:acceptance-bundle`). See active handoff for full command log.
 
 ## Quick links
 
-- First session should create: `dev/implementation/session_handoffs/SESSION_HANDOFF_<UTC>.md` with chosen **S*.*`** batch and verification results.
+- Active handoff: `dev/implementation/session_handoffs/SESSION_HANDOFF_20260505-0718.md`
+- Session response archive: `dev/implementation/session_responses/20260505-0718_RESPONSE.md`
