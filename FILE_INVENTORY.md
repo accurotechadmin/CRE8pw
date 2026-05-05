@@ -2,7 +2,7 @@
 
 Generated on 2026-05-05 (UTC).
 
-Total tracked repository files (excluding `.git` internals): **471**.
+Total tracked repository files (excluding `.git` internals): **492**.
 
 ## Inventory by scope
 
@@ -141,7 +141,8 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `seed/seed-index.md`
 - `seed/seed-intro.md`
 
-### Reports and continuity artifacts (reports/) (297 files)
+### Reports and continuity artifacts (reports/) (318 files)
+- `reports/IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md`
 - `reports/PHASE1_ACCEPTANCE_REVIEW_DRAFT.md`
 - `reports/PHASE1_CANON_HARDENING_ROADMAP.md`
 - `reports/PHASE1_COMPLETION_AUDIT_20260429-1133.md`
@@ -156,7 +157,6 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `reports/PHASE4_AUTHORING_SESSION_PROMPT.md`
 - `reports/PHASE4_CANON_COMPLETION_MILESTONES.md`
 - `reports/PHASE_PLAN_AND_RECORDS_STATUS_SUMMARY_2026-04-29.md`
-- `reports/IMPLEMENTATION_MILESTONES_DEV_RELOCATION_NOTE_2026-05-05.md`
 - `reports/README.md`
 - `reports/REFERENCE_REFRESH_SESSION_PROMPT.md`
 - `reports/REPO_FULL_STUDY_2026-04-29.md`
@@ -185,6 +185,8 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `reports/change_impact_maps/20260505-0130-link-integrity-adr-index.md`
 - `reports/change_impact_maps/20260505-0435-permission-vocabulary-lineage-provisioning-expansion.md`
 - `reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md`
+- `reports/permissions/PERMISSIONS_OPTIONS_BY_PRINCIPAL.md`
+- `reports/permissions/PERMISSIONS_OPTIONS_NESTED.md`
 - `reports/phase4/P4-S1.1_NORMATIVE_INVENTORY.md`
 - `reports/phase4/P4-S1.3_MODAL_CONSISTENCY_LOG.md`
 - `reports/phase4/P4-S1.5_PLACEHOLDER_EXCEPTION_LOG.md`
@@ -201,6 +203,13 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `reports/phase4/P4-S3.4_AUTHZ_LIFECYCLE_SEMANTIC_RECONCILIATION.md`
 - `reports/phase4/P4-S3.5_CONTRACT_VERSION_POLICY_TIGHTENING.md`
 - `reports/phase4/P4-S8.6_COMPLETION_EVIDENCE_BUNDLE_INDEX.md`
+- `reports/phase4/P4-UX1A_FIGMA_PRINCIPAL_PAGES_DETAILED_SPEC.md`
+- `reports/phase4/P4-UX1B_FIGMA_PRINCIPAL_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1C_FIGMA_OWNER_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1D_FIGMA_PRIMARY_AUTHOR_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1E_FIGMA_SECONDARY_AUTHOR_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1F_FIGMA_USE_KEY_PERMISSION_TREE.csv`
+- `reports/phase4/P4-UX1_PRINCIPAL_KEY_MINTING_AND_PERMISSION_UI_BLUEPRINT.md`
 - `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
 - `reports/session_handoffs/PHASE1_MANUAL_HOOK_BACKLOG.md`
 - `reports/session_handoffs/PHASE3_BLOCKER_20260430-0513.md`
@@ -291,7 +300,13 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `reports/session_handoffs/SESSION_HANDOFF_20260504-2252.md`
 - `reports/session_handoffs/SESSION_HANDOFF_20260505-0130.md`
 - `reports/session_handoffs/SESSION_HANDOFF_20260505-0328.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0518.md`
 - `reports/session_handoffs/SESSION_HANDOFF_20260505-0520.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0542.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0548.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0552.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0600.md`
+- `reports/session_handoffs/SESSION_HANDOFF_20260505-0605.md`
 - `reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md`
 - `reports/session_handoffs/archive/2026-04/PHASE2_PROGRESS_BOARD.md`
 - `reports/session_handoffs/archive/2026-04/SESSION_HANDOFF_20260429-0343.md`
@@ -430,17 +445,24 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `reports/session_responses/20260504-2244_RESPONSE.md`
 - `reports/session_responses/20260504-2247_RESPONSE.md`
 - `reports/session_responses/20260504-2252_RESPONSE.md`
+- `reports/session_responses/20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
 - `reports/session_responses/20260505-0046_RESPONSE.md`
 - `reports/session_responses/20260505-0130_RESPONSE.md`
 - `reports/session_responses/20260505-0328_RESPONSE.md`
+- `reports/session_responses/20260505-0518_RESPONSE.md`
 - `reports/session_responses/20260505-0520_RESPONSE.md`
-- `reports/session_responses/20260504-EXPAND_SEED_INTRO_ATTRIBUTE_MAP.md`
+- `reports/session_responses/20260505-0542_RESPONSE.md`
+- `reports/session_responses/20260505-0548_RESPONSE.md`
+- `reports/session_responses/20260505-0552_RESPONSE.md`
+- `reports/session_responses/20260505-0600_RESPONSE.md`
+- `reports/session_responses/20260505-0605_RESPONSE.md`
 - `reports/session_responses/README.md`
 - `reports/ssot/coverage_latest.json`
 - `reports/ssot/coverage_phase3_entry_20260430-0356.json`
 - `reports/ssot/requirement_inventory_latest.json`
 
-### Automation and validation scripts (scripts/) (44 files)
+### Automation, CI, and test harness (scripts/, tests/, .github/) (47 files)
+- `.github/workflows/ssot_phase_gate.yml`
 - `scripts/docs_ssot_capability_matrix_complete.php`
 - `scripts/docs_ssot_compat_declaration.php`
 - `scripts/docs_ssot_data_model_coverage.php`
@@ -485,8 +507,5 @@ Total tracked repository files (excluding `.git` internals): **471**.
 - `scripts/test_contract_request_schema.php`
 - `scripts/test_contract_response_schema.php`
 - `scripts/test_contract_surface_parity.php`
-
-### CI/workflow and config (3 files)
-- `.github/workflows/ssot_phase_gate.yml`
 - `tests/contract/fixtures/negative/lifecycle_suspend_response.json`
 - `tests/contract/fixtures/positive/lifecycle_suspend_response.json`

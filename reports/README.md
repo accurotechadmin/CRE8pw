@@ -16,6 +16,7 @@ Content in `reports/` is generally **informational/non-normative** unless explic
 | `ssot/` | Generated SSOT outputs (e.g., coverage JSON) |
 | `change_impact_maps/` | Change-impact artifacts for significant contract/spec changes |
 | `phase4/` | Historical phase-specific reports and completion artifacts |
+| `permissions/` | Permission option matrices and nested-permission reference artifacts |
 
 ## Common top-level artifacts
 
