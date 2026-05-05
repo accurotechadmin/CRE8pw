@@ -2,7 +2,7 @@
 
 CRE8 is a **Single Source of Truth (SSOT) repository** for a credentialed identity, delegation, policy, contract, security, and operations platform. This repo is intentionally documentation-first: it captures the architecture, rules, contracts, and verification hooks required to build and operate CRE8 consistently.
 
-If you are starting fresh, read this file, then [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md) for the full sequential canon path, or use the shorter ladder via [`docs/README.md`](docs/README.md) and [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md).
+If you are starting fresh, read this file, then [`dev/SSOT_CANON_READING_LIST.md`](dev/SSOT_CANON_READING_LIST.md) for the full sequential canon path, or use the shorter ladder via [`docs/README.md`](docs/README.md) and [`docs/00_governance/SSOT_INDEX.md`](docs/00_governance/SSOT_INDEX.md). For a **fresh expert coding LLM session**, use [`dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md) as the first message so the model reads the canon list and follows reference maintenance rules before building.
 
 ---
 
@@ -19,7 +19,7 @@ If you are starting fresh, read this file, then [`dev/SSOT_CANON_READING_LIST.md
 
 | Path | Role | Notes |
 |---|---|---|
-| `dev/` | Developer orientation | Sequential SSOT canon reading list for implementation work. |
+| `dev/` | Developer orientation | SSOT canon reading list, expert LLM boot prompt, and related developer entry artifacts. |
 | `docs/` | Canonical SSOT corpus | Domain-organized normative/provisional documentation. |
 | `seed/` | Seed canon | Origin references and baseline source material. |
 | `reports/` | Program records and session artifacts | Non-normative by default unless explicitly promoted. |

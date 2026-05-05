@@ -12,11 +12,12 @@ This directory contains the canonical SSOT corpus for CRE8. It is organized by n
 ## Start here
 
 1. [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md) — full sequential SSOT path for developers (all domains and tooling).
-2. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
-3. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
-4. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+2. [`../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md) — optional paste-first message for expert coding LLM sessions (orients models to the reading list and reference maintenance).
+3. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
+4. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
+5. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
 
-Items 2–4 define how every other document is authored, interpreted, and promoted.
+Items 3–5 define how every other document is authored, interpreted, and promoted.
 
 ## Domain structure
 
@@ -52,6 +53,7 @@ Items 2–4 define how every other document is authored, interpreted, and promot
 ## High-value cross references
 
 - Developer canon reading list: [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md)
+- Expert LLM boot prompt: [`../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`](../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md)
 - Root orientation: [`../README.md`](../README.md)
 - Machine contracts guide: [`31_machine_contracts/README.md`](31_machine_contracts/README.md)
 - Evidence guidance: [`evidence/README.md`](evidence/README.md)

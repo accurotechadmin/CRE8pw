@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-GOV-SSOT-INDEX
-version: 1.0.4
+version: 1.0.5
 status: normative
 owner: Docs Governance WG
 reviewers:
   - Security WG
   - Platform Architecture WG
-last_reviewed_utc: 2026-04-30
+last_reviewed_utc: 2026-05-05
 next_review_due_utc: 2026-05-30
 source_seed_refs:
   - README.md
@@ -49,6 +49,7 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](README.md) and updated normative docs before merge.
 
 ## See also
+- [Expert coding LLM boot prompt](../../dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md)
 - [Developer SSOT canon reading list](../../dev/SSOT_CANON_READING_LIST.md)
 - [README.md](../../README.md)
 - [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)

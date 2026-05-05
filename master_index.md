@@ -7,6 +7,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 
 ## 1) Global navigation anchors
 - Repository onboarding: `README.md`
+- Expert coding LLM boot prompt (paste-first session message): `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md`
 - Sequential SSOT canon reading list (developers): `dev/SSOT_CANON_READING_LIST.md`
 - Full file inventory: `FILE_INVENTORY.md`
 - This operations index: `master_index.md`
@@ -75,6 +76,7 @@ When adding/renaming/removing documentation, schema, report, seed, or workflow f
 2. `master_index.md` (navigation + role-level placement)
 3. `REFERENCE_MAINTENANCE_SOP.md` (if process or ownership scope changes)
 4. Relevant local indexes/readmes (examples):
+   - `dev/CRE8_EXPERT_SSOT_BOOT_PROMPT.md` (when LLM/developer boot artifacts change)
    - `dev/SSOT_CANON_READING_LIST.md` (when SSOT developer reading scope changes)
    - `docs/README.md`
    - `docs/00_governance/SSOT_INDEX.md`
