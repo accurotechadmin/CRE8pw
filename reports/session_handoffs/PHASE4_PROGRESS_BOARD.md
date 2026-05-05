@@ -1,13 +1,14 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-05T03:28:00Z
+- Last updated (UTC): 2026-05-05T03:40:00Z
 - Current owner/session: Cursor Cloud Agent / permissions-orientation pass (read-only)
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
 
 ## Permissions / delegation lane (session notes)
 
-- **2026-05-05T03:28Z:** Completed mandated SSOT orientation reads for hierarchical keys, delegation envelopes, PDP gate order (lifecycle → credential → explicit deny → scope → permission → depth → expiry), vocabulary vs route-inventory drift, and keychain resolution; logged toolchain gap (Composer absent in session environment). Handoff: [`SESSION_HANDOFF_20260505-0328.md`](SESSION_HANDOFF_20260505-0328.md). **Queued:** route-orchestrated migration of legacy `required_permission` strings; optional reconciliation of delegation grant state naming (`proposed` vs `pending`) across data model and state machine.
+- **2026-05-05T03:40Z:** Completed full mandatory orientation read list (governance, identity/delegation canon, vocabulary + route parity checklist, draft lattice full doc, contracts/prose parity intros, traceability/automation, data/crypto, extension spec, seeds, dev anchors); `openapi/cre8.v1.yaml` not deep-read until a route/OpenAPI slice. Composer still unavailable on PATH — verification skipped; logged in [`SESSION_HANDOFF_20260505-0340.md`](SESSION_HANDOFF_20260505-0340.md). **Queued:** user-selected implementation slice; route-orchestrated migration of legacy `required_permission` strings; optional reconciliation of delegation grant state naming (`proposed` vs `pending`) across data model and state machine.
+- **2026-05-05T03:28Z:** Earlier orientation pass; superseded notes retained in [`SESSION_HANDOFF_20260505-0328.md`](SESSION_HANDOFF_20260505-0328.md).
 
 ## Gate model (authoritative)
 - Sequence: **M1 → M2/M3/M4 → M5/M6/M7 → M8**.
