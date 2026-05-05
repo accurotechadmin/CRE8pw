@@ -1,7 +1,7 @@
 # CRE8 Phase 3 Progress Board
 
-- Last updated (UTC): 2026-05-05T05:20:00Z
-- Current owner/session: GPT-5.3-Codex / current branch
+- Last updated (UTC): 2026-05-05T04:18:00Z
+- Current owner/session: GPT-5.3-Codex / current branch; Cursor Cloud Agent / permissions continuity (2026-05-05T04:18Z handoff appended)
 - Phase status: **Phase 3 closed — Maintenance/Revalidation Cadence**
 - Charter ADR: [`ADR-004`](../../docs/80_traceability_decisions_and_program/records/ADR-004-phase3-program-charter.md)
 - Program plan: [`reports/PHASE3_AUTHORING_PROGRAM_PLAN.md`](../PHASE3_AUTHORING_PROGRAM_PLAN.md)
@@ -38,6 +38,10 @@
 | `manual_only_verification_hooks` | 1 | 22 |
 
 The increase in manual-only hooks reflects intentional matrix backfill under P3-S0.2 (registering existing manual hooks for Phase 3-tracked governance documents that had never been traced). Full backfill to `untraced_requirements: 0` is the deliverable of `P3-S2.3`. Manual-hook automation is the deliverable of `P3-S11.1` / `P3-S11.2`.
+
+## Permissions / delegation continuity notes (cross-phase)
+
+- **2026-05-05T04:18Z** (orientation + maintenance hygiene): SSO review of PDP gate order (**ADR-005** alignment), permission vocabulary/route parity checklist, delegation vs persistence enum drift note; **`FILE_INVENTORY.md`** reconciled with previously tracked **`reports/session_handoffs/SESSION_HANDOFF_20260505-{0328,0520}.md`** and **`reports/session_responses/20260505-{0328,0520}_RESPONSE.md`**. Detailed log: [`SESSION_HANDOFF_20260505-0418.md`](SESSION_HANDOFF_20260505-0418.md). **Composer verification** unavailable in that environment (**`composer` not on PATH**).
 
 
 ## Session-end sync rule (operational hygiene)
