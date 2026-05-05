@@ -75,7 +75,7 @@ This index is the operational map for all canonical specs, machine contracts, se
 ## 5) Automation and verification references
 - Package command registry: `composer.json`
 - CI gate workflow: `.github/workflows/ssot_phase_gate.yml`
-- SSOT + verification script corpus: `scripts/`
+- SSOT + verification script corpus: `scripts/` (includes `docs:ssot:reference-chain-check` for mandatory `FILE_INVENTORY` → `master_index` chain enforcement).
 
 ## 6) Mandatory update chain (when repo content changes)
 When adding/renaming/removing documentation, schema, report, seed, or workflow files, update in this order:

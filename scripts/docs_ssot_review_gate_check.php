@@ -49,9 +49,12 @@ foreach ($targets as $relativePath) {
         $errors[] = "[HOOK-REVIEW-GATE-CHECK-AUTO] {$relativePath}: reviewers must include at least one entry distinct from owner";
     }
 
-    $hasImpactMapRef = str_contains($contents, 'CHANGE_IMPACT_MAP_TEMPLATES.md') || str_contains($contents, 'Change Impact Map');
-    if (!$hasImpactMapRef) {
-        $errors[] = "[HOOK-REVIEW-GATE-CHECK-AUTO] {$relativePath}: missing change-impact map reference";
+    $isImpactingClass = preg_match('/^change_class:\s*(contract-impacting|security-impacting|policy-impacting)\s*$/mi', $contents) === 1;
+    if ($isImpactingClass) {
+        $hasImpactMapRef = str_contains($contents, 'CHANGE_IMPACT_MAP_TEMPLATES.md') || str_contains($contents, 'Change Impact Map');
+        if (!$hasImpactMapRef) {
+            $errors[] = "[HOOK-REVIEW-GATE-CHECK-AUTO] {$relativePath}: impacting change_class requires change-impact map reference";
+        }
     }
 }
 
