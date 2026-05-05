@@ -1,0 +1,11 @@
+{
+  "compatibility_posture": "additive",
+  "pdp_chain_preserved": true,
+  "envelope_compatibility": "preserved",
+  "lifecycle_impact": "none",
+  "provenance_impact": "events_emitted",
+  "di_registration": "php-di singleton",
+  "route_binding": "slim route group",
+  "middleware_order": "canonical",
+  "core_controls_preserved": true
+}
