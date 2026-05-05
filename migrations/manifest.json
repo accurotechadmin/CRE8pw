@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "generated_utc": "2026-05-05T08:30:00Z",
+  "migrations": [
+    {
+      "id": "20260505_0001_create_core_tables",
+      "checksum": "sha256:core-schema-placeholder",
+      "classification": "expand"
+    }
+  ]
+}
