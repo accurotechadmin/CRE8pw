@@ -70,6 +70,7 @@ This index is the operational map for all canonical specs, machine contracts, se
   - `reports/session_prompts/`
   - `reports/change_impact_maps/`
   - `reports/phase4/`
+  - `reports/permissions/`
 
 ## 5) Automation and verification references
 - Package command registry: `composer.json`
