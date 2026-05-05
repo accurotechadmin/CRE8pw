@@ -1,12 +1,12 @@
 ---
 doc_id: CRE8-TRACE-DECISIONS-LOG
-version: 1.3.0
+version: 1.4.0
 status: provisional-normative
 owner: Architecture Governance WG
 reviewers:
   - Platform Architecture WG
   - Docs Governance WG
-last_reviewed_utc: 2026-05-05
+last_reviewed_utc: 2026-05-06
 next_review_due_utc: 2026-05-30
 source_seed_refs:
   - README.md
@@ -45,6 +45,7 @@ This document defines the append-only operational log for architecture and gover
 | Event ID | Timestamp (UTC) | ADR ID | Event Type | Actor | Change Summary | Impacted Requirement IDs | Evidence Link |
 |---|---|---|---|---|---|---|---|
 | DLOG-20260505-011 | 2026-05-05T01:30:00Z | ADR-006 | editorial_correction | Program Traceability WG | Restored ADR-003 (deprecated) and ADR-004 (superseded) rows in ADR_INDEX baseline table to match decisions-log history; required for ADR reference validation, route-family coverage policy checks, and Phase 2 exception register schema | CRE8-TRACE-REQ-0030, CRE8-TRACE-REQ-0035 | ./ADR_INDEX.md |
+| DLOG-20260505-017 | 2026-05-05T05:17:00Z | ADR-006 | created | Identity & Policy WG | Permission vocabulary expansion: deterministic legacy alias normalization (**CRE8-IDPOL-REQ-0028**) plus route-registry completeness (**CRE8-IDPOL-REQ-0029**); aligns route inventory literals with centralized registry classifications | CRE8-IDPOL-REQ-0028, CRE8-IDPOL-REQ-0029, CRE8-GOV-REQ-0043 | ../../reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md |
 | DLOG-20260504-010 | 2026-05-04T22:42:00Z | ADR-006 | status_changed | Program Traceability WG | RISK-014 status open -> mitigating during M8 traceability-closure execution | CRE8-TRACE-REQ-0054, CRE8-TRACE-REQ-0055 | ./RISK_REGISTER.md |
 | DLOG-20260504-009 | 2026-05-04T22:42:00Z | ADR-006 | status_changed | Program Traceability WG | RISK-010 status open -> mitigating under Phase 4 program-lock controls | CRE8-TRACE-REQ-0054, CRE8-TRACE-REQ-0055 | ./RISK_REGISTER.md |
 | DLOG-20260504-008 | 2026-05-04T22:42:00Z | ADR-006 | created | Program Traceability WG | created -> accepted for Phase 4 program lock; supersedes ADR-004 execution scope and retires ADR-003 waiver usage | CRE8-TRACE-REQ-0005, CRE8-TRACE-REQ-0043, CRE8-TRACE-REQ-0054, CRE8-TRACE-REQ-0074 | ./records/ADR-006-phase4-program-lock-and-legacy-waiver-retirement.md |
@@ -62,6 +63,8 @@ This document defines the append-only operational log for architecture and gover
 - **HOOK-TRACE-DECISION-ADR-LINK**: Validate ADR references exist in [`ADR_INDEX.md`](ADR_INDEX.md) and target ADR file path resolves.
 
 ## Change history
+
+- 2026-05-05 (v1.4.0): Appended `DLOG-20260505-017` event recording permission vocabulary expansion governance decision; evidence via change impact map `reports/change_impact_maps/20260505-0515-permission-vocabulary-expansion.md`.
 
 - 2026-04-30 (v1.1.0): Appended `DLOG-20260430-004` event for ADR-004 acceptance (Phase 3 — Canon Completion program charter). Change Impact Map: [[`reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md`](reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md)](../../reports/change_impact_maps/20260430-0400-P3-S0.2-adr-004-program-charter.md).
 

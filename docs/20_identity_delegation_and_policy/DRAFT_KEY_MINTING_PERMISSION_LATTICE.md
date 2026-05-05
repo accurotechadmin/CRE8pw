@@ -338,7 +338,7 @@ When minting a child, the minter may configure:
 
 ## 9. Consolidation checklist (before canon promotion)
 
-1. **Deduplicate** §7: pick **one** token per capability (remove `[route]` aliases or mark deprecated).
+1. **Deduplicate** §7: pick **one** token per capability (remove `[route]` aliases into [`PERMISSION_VOCABULARY.md`](./PERMISSION_VOCABULARY.md) §Deprecated and legacy alias registry; avoid duplicating authoritative tables solely in this draft).
 2. **Align** every `CRE8-ROUTE-*` `required_permission` with the surviving registry.
 3. **Update** `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md` for new tokens (especially mint + template + keychain).
 4. **Add** decision tables for nested Secondary mint and Keychain permission projection.
