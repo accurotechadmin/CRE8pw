@@ -1,9 +1,13 @@
 # CRE8 Phase 4 Progress Board
 
-- Last updated (UTC): 2026-05-05T05:20:00Z
-- Current owner/session: GPT-5.3-Codex / current branch
+- Last updated (UTC): 2026-05-05T03:28:00Z
+- Current owner/session: Cursor Cloud Agent / permissions-orientation pass (read-only)
 - Phase status: **Phase 4 active — Canonical Spec Corpus Completion**
 - Program plan: [`reports/PHASE4_CANON_COMPLETION_MILESTONES.md`](../PHASE4_CANON_COMPLETION_MILESTONES.md)
+
+## Permissions / delegation lane (session notes)
+
+- **2026-05-05T03:28Z:** Completed mandated SSOT orientation reads for hierarchical keys, delegation envelopes, PDP gate order (lifecycle → credential → explicit deny → scope → permission → depth → expiry), vocabulary vs route-inventory drift, and keychain resolution; logged toolchain gap (Composer absent in session environment). Handoff: [`SESSION_HANDOFF_20260505-0328.md`](SESSION_HANDOFF_20260505-0328.md). **Queued:** route-orchestrated migration of legacy `required_permission` strings; optional reconciliation of delegation grant state naming (`proposed` vs `pending`) across data model and state machine.
 
 ## Gate model (authoritative)
 - Sequence: **M1 → M2/M3/M4 → M5/M6/M7 → M8**.
