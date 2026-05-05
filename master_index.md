@@ -1,6 +1,6 @@
 # Master Index (Operational)
 
-_Last updated (UTC): 2026-05-06_
+_Last updated (UTC): 2026-05-05_
 
 ## Purpose
 This index is the operational map for all canonical specs, machine contracts, seeds, reports, evidence, and update-control references in this repository.
