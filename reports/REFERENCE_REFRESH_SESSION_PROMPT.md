@@ -22,13 +22,14 @@ Do not edit anything until this read sequence is complete:
 2. `FILE_INVENTORY.md` (last recorded inventory baseline)
 3. `master_index.md` (global navigation baseline)
 4. `README.md` (repo entry context)
-5. `docs/README.md`
-6. `docs/00_governance/SSOT_INDEX.md`
-7. `seed/seed-index.md`
-8. `reports/README.md`
-9. `reports/session_responses/README.md`
-10. `reports/PHASE3_AUTHORING_SESSION_PROMPT.md`
-11. `reports/PHASE4_AUTHORING_SESSION_PROMPT.md`
+5. `dev/SSOT_CANON_READING_LIST.md` (developer sequential SSOT path)
+6. `docs/README.md`
+7. `docs/00_governance/SSOT_INDEX.md`
+8. `seed/seed-index.md`
+9. `reports/README.md`
+10. `reports/session_responses/README.md`
+11. `reports/PHASE3_AUTHORING_SESSION_PROMPT.md`
+12. `reports/PHASE4_AUTHORING_SESSION_PROMPT.md`
 
 If any file is missing, log it explicitly in your final report.
 

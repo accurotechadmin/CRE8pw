@@ -49,6 +49,7 @@ This document defines the authoritative SSOT topology, precedence model, and min
 - **HOOK-SSOT-PRECEDENCE-CHECK**: Detect explicit contradictions between [`README.md`](README.md) and updated normative docs before merge.
 
 ## See also
+- [Developer SSOT canon reading list](../../dev/SSOT_CANON_READING_LIST.md)
 - [README.md](../../README.md)
 - [Document Template and Style Guide](./DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
 - [Document Status and Ownership](./DOCUMENT_STATUS_AND_OWNERSHIP.md)

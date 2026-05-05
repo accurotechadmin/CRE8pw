@@ -11,11 +11,12 @@ This directory contains the canonical SSOT corpus for CRE8. It is organized by n
 
 ## Start here
 
-1. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
-2. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
-3. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
+1. [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md) — full sequential SSOT path for developers (all domains and tooling).
+2. [`00_governance/SSOT_INDEX.md`](00_governance/SSOT_INDEX.md)
+3. [`00_governance/CHANGE_CONTROL_POLICY.md`](00_governance/CHANGE_CONTROL_POLICY.md)
+4. [`00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md`](00_governance/DOCUMENT_TEMPLATE_AND_STYLE_GUIDE.md)
 
-These define how every other document is authored, interpreted, and promoted.
+Items 2–4 define how every other document is authored, interpreted, and promoted.
 
 ## Domain structure
 
@@ -50,6 +51,7 @@ These define how every other document is authored, interpreted, and promoted.
 
 ## High-value cross references
 
+- Developer canon reading list: [`../dev/SSOT_CANON_READING_LIST.md`](../dev/SSOT_CANON_READING_LIST.md)
 - Root orientation: [`../README.md`](../README.md)
 - Machine contracts guide: [`31_machine_contracts/README.md`](31_machine_contracts/README.md)
 - Evidence guidance: [`evidence/README.md`](evidence/README.md)
