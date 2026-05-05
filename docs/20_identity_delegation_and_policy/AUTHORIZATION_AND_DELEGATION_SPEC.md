@@ -16,6 +16,7 @@ normative_dependencies:
   - docs/20_identity_delegation_and_policy/AUTHORIZATION_DECISION_TABLES.md
   - docs/30_contracts_and_interfaces/API_CONTRACT_GUIDE.md
   - docs/30_contracts_and_interfaces/ERROR_CODE_CATALOG.md
+  - docs/80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md
   - docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md
 ---
 
@@ -49,9 +50,10 @@ Define deterministic authorization and delegation behavior for CRE8 policy evalu
 - [Keychain Composition And Resolution Spec](./KEYCHAIN_COMPOSITION_AND_RESOLUTION_SPEC.md)
 - [Usage Scenarios And Permission Stories](./USAGE_SCENARIOS_AND_PERMISSION_STORIES.md)
 - [Delegation State Machine](./DELEGATION_STATE_MACHINE.md)
-- [API Contract Guide](./30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
-- [Error Code Catalog](./30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
-- [Traceability Matrix](./80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
-- [Permission and Delegation Seed](././seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md)
+- [API Contract Guide](../30_contracts_and_interfaces/API_CONTRACT_GUIDE.md)
+- [Error Code Catalog](../30_contracts_and_interfaces/ERROR_CODE_CATALOG.md)
+- [Traceability Matrix](../80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md)
+- [Change Impact Map Templates](../80_traceability_decisions_and_program/CHANGE_IMPACT_MAP_TEMPLATES.md)
+- [Permission and Delegation Seed](../../seed/CRE8_PERMISSION_AND_DELEGATION_SEED.md)
 
 

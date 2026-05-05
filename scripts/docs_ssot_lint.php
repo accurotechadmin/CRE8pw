@@ -59,6 +59,59 @@ foreach ($markdownFiles as $docPath) {
     $relativeDocSet[] = ltrim(str_replace($repoRoot, '', $docPath), '/');
 }
 
+/**
+ * Resolve a markdown link target path to an absolute filesystem path.
+ * Tries resolution relative to the source file directory first, then relative to the repository root.
+ * For bare `*.md` filenames, resolves a unique path under `docs/` when exactly one match exists.
+ */
+function resolveMarkdownLinkTarget(string $repoRoot, string $sourcePath, string $link): ?string
+{
+    $linkNoAnchor = explode('#', $link)[0];
+    if ($linkNoAnchor === '') {
+        return null;
+    }
+
+    $relativeBaseCandidates = [dirname($sourcePath), $repoRoot];
+    foreach ($relativeBaseCandidates as $base) {
+        $candidate = realpath($base . '/' . $linkNoAnchor);
+        if ($candidate !== false && file_exists($candidate)) {
+            return $candidate;
+        }
+    }
+
+    if (str_contains($linkNoAnchor, '/') || str_contains($linkNoAnchor, '\\')) {
+        return null;
+    }
+    if (!str_ends_with(strtolower($linkNoAnchor), '.md')) {
+        return null;
+    }
+
+    $docsRoot = $repoRoot . '/docs';
+    if (!is_dir($docsRoot)) {
+        return null;
+    }
+
+    $matches = [];
+    $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($docsRoot));
+    /** @var SplFileInfo $file */
+    foreach ($it as $file) {
+        if (!$file->isFile()) {
+            continue;
+        }
+        if (strcasecmp($file->getFilename(), $linkNoAnchor) !== 0) {
+            continue;
+        }
+        $matches[] = $file->getPathname();
+    }
+
+    if (count($matches) !== 1) {
+        return null;
+    }
+
+    $resolved = realpath($matches[0]);
+    return $resolved !== false ? $resolved : null;
+}
+
 $linkGraph = [];
 foreach ($markdownFiles as $path) {
     $relativeSourcePath = ltrim(str_replace($repoRoot, '', $path), '/');
@@ -76,8 +129,8 @@ foreach ($markdownFiles as $path) {
         if ($linkNoAnchor === '') {
             continue;
         }
-        $target = realpath(dirname($path) . '/' . $linkNoAnchor);
-        if ($target === false || !file_exists($target)) {
+        $target = resolveMarkdownLinkTarget($repoRoot, $path, $link);
+        if ($target === null || !file_exists($target)) {
             continue;
         }
         $relativeTargetPath = ltrim(str_replace($repoRoot, '', $target), '/');
@@ -169,13 +222,8 @@ foreach ($markdownFiles as $path) {
             continue;
         }
 
-        $linkNoAnchor = explode('#', $link)[0];
-        if ($linkNoAnchor === '') {
-            continue;
-        }
-
-        $target = realpath(dirname($path) . '/' . $linkNoAnchor);
-        if ($target === false || !file_exists($target)) {
+        $target = resolveMarkdownLinkTarget($repoRoot, $path, $link);
+        if ($target === null || !file_exists($target)) {
             $errors[] = "[HOOK-SSOT-LINK-INTEGRITY] {$relativePath}: unresolved link '{$link}'";
         }
     }

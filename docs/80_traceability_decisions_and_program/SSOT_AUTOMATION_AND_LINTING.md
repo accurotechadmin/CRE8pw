@@ -83,7 +83,7 @@ Define the minimum executable automation contract that Phase 1 uses to enforce m
 4. Record findings in session handoff with pass/fail and unresolved automation gaps.
 
 ## Drift policy
-- Missing command implementations are permitted during Phase 1 only when manual verification evidence is included in the same PR and backlog entry remains open in [`PHASE1_PROGRESS_BOARD.md`](PHASE1_PROGRESS_BOARD.md).
+- Missing command implementations are permitted during Phase 1 only when manual verification evidence is included in the same PR and backlog entry remains open in [`PHASE1_PROGRESS_BOARD.md`](../../reports/session_handoffs/archive/2026-04/PHASE1_PROGRESS_BOARD.md).
 - Once a command is implemented, manual fallback **SHOULD** be retained only as contingency guidance for environment failures.
 
 ## See also
