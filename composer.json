@@ -104,6 +104,9 @@
         "test:contract:auth-pdp": "@php scripts/test_contract_auth_pdp.php",
         "test:contract:keychain-resolution": "@php scripts/test_contract_keychain_resolution.php",
         "test:contract:delegation-sm": "@php scripts/test_contract_delegation_state_machine.php",
-        "test:contract:operations": "@php scripts/test_contract_operations.php"
+        "test:contract:operations": "@php scripts/test_contract_operations.php",
+        "test:contract:observability": "@php scripts/test_contract_observability.php",
+        "docs:ssot:release-checklist-check": "@php scripts/docs_ssot_release_checklist_check.php",
+        "docs:ssot:slo-sli-check": "@php scripts/docs_ssot_slo_sli_check.php"
     }
 }
