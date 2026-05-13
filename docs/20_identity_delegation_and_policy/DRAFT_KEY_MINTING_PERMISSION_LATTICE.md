@@ -90,7 +90,7 @@ The following restates the product intent; normative wording would later live in
 ### 4.6 Use Key → no key minting
 
 - Use Keys **must not** mint Primary, Secondary, or Use keys.
-- Use Keys **may** create and manage **Keychains** and **Keychain API Keys** (credentials aggregating multiple keys), with **subset** or **full inherited** permission projection (see §6).
+- Use Keys **may** create and manage **Keychains** and **Keychain API Keys** (credentials aggregating multiple keys), with **subset** or **full inherited** permission aggregation (see §6).
 
 ### 4.7 Keychain API Key
 
@@ -341,7 +341,7 @@ When minting a child, the minter may configure:
 1. **Deduplicate** §7: pick **one** token per capability (remove `[route]` aliases into [`PERMISSION_VOCABULARY.md`](./PERMISSION_VOCABULARY.md) §Deprecated and legacy alias registry; avoid duplicating authoritative tables solely in this draft).
 2. **Align** every `CRE8-ROUTE-*` `required_permission` with the surviving registry.
 3. **Update** `PRINCIPAL_TYPES_AND_CAPABILITY_MATRIX.md` for new tokens (especially mint + template + keychain).
-4. **Add** decision tables for nested Secondary mint and Keychain permission projection.
+4. **Add** decision tables for nested Secondary mint and Keychain permission aggregation.
 5. **Add** provenance events for template CRUD and “grant mode” at mint (full vs curated).
 
 ## 10. Change log
