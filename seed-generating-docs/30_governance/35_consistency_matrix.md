@@ -11,3 +11,5 @@
 | Continuity pointer integrity (LATEST -> concrete handoff file) | aligned | aligned | n/a | n/a | n/a | aligned | aligned | aligned | aligned | consistent | Source inventory now explicitly includes concrete latest handoff source (SRC-010) to reduce resume ambiguity. |
 | Source inventory QA completeness (M1.5) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Added SRC-011 and corrected inventory table structure to keep continuity authority chain deterministic. |
 
+
+| M1.6/M2.6 coverage audit anchors (ethos + dependencies + surfaces) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Added canonical source anchors SRC-012..SRC-014 and preservation rows CPL-011..CPL-013 to support full-corpus audit progression. |

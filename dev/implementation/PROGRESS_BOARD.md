@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-13 17:00_
+_Last updated (UTC): 2026-05-13 18:05_
 
 ## Current status
 
@@ -32,3 +32,5 @@ _Last updated (UTC): 2026-05-13 17:00_
 - Seed-generating continuity inventory now includes latest concrete handoff source (SRC-010) plus preservation mapping (CPL-009), improving deterministic resume fidelity for coupled implementation sessions.
 
 - Seed program M1.5/S1.5 and targeted M2.5 coverage advanced by adding current concrete continuity source (SRC-011) and preservation mapping (CPL-010), improving deterministic startup replay.
+
+- Seed program M1.6/S1.6 and M2.6/S2.6 advanced with canonical source anchors for product ethos, dependency baseline, and architecture/surface doctrine (SRC-012..SRC-014; CPL-011..CPL-013), improving scope-lock and implementation-coupling trace determinism.
