@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-05 09:04_
+_Last updated (UTC): 2026-05-13 12:20_
 
 ## Current status
 
@@ -18,3 +18,10 @@ _Last updated (UTC): 2026-05-05 09:04_
 - **G2 Contract lock:** complete.
 - **G3 Security lock:** complete for defined acceptance bundles.
 - **G4 Release lock:** complete.
+
+
+## Seed-generating program alignment (2026-05-13)
+
+- Startup/governance pass re-established deterministic resume discipline for seed-program execution.
+- Scope-lock evidence now tracked in `seed-generating-docs/30_governance/36_scope_lock_register.md`.
+- `/fresh/seed-generating-docs` export root created, reducing ambiguity for future generated guidance portability.
