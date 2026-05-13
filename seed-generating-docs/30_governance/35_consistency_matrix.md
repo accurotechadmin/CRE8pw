@@ -13,3 +13,4 @@
 
 
 | M1.6/M2.6 coverage audit anchors (ethos + dependencies + surfaces) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Added canonical source anchors SRC-012..SRC-014 and preservation rows CPL-011..CPL-013 to support full-corpus audit progression. |
+| `/fresh` output contract vs required in-place governance artifact updates | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Conflict CONF-002 resolved by DEC-002: net-new docs under `/fresh`, required continuity/governance artifacts updated in place. |
