@@ -7,3 +7,5 @@
 | SLR-2026-05-13-03 | 2026-05-13 | /fresh export contract | expansion_risk_scan | Pre-existing gap: `/fresh/seed-generating-docs` did not exist before this session. | resolved | Created `/fresh/seed-generating-docs` root subtree for export-ready outputs. | fresh/seed-generating-docs |
 
 | SLR-2026-05-13-04 | 2026-05-13 | startup governance source expansion (SRC-006..SRC-009) | expansion_risk_scan | No net-new product domain, principal type, interface surface, or dependency family introduced; updates are process-traceability only. | pass | Continue M1/M2 completion using locked ethos/dependency canon as constraints. | seed-generating-docs/00_control/01_source_inventory.md |
+
+| SLR-2026-05-13-05 | 2026-05-13 | continuity-source completion pass (SRC-010/CPL-009) | ethos_coverage | Added continuity trace rows only; no behavioral or domain expansion introduced. | pass | Continue M1/M2 closure with same scope constraints. | seed-generating-docs/00_control/01_source_inventory.md; seed-generating-docs/00_control/02_content_preservation_ledger.md |

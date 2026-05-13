@@ -15,3 +15,5 @@
 
 ## Hard gate
 Fresh doc set is incomplete until every meaningful source item has a ledger row.
+
+| CPL-009 | reports/session_handoffs/SESSION_HANDOFF_20260513-1354.md | Completed slices + open blockers | previous session continuity must deterministically encode partial completion and next slices | continuity_resume_determinism | reports/session_handoffs/LATEST_SESSION_HANDOFF.md | handoff pointer chain | preserved | none | none | Preserves deterministic resume semantics required by M0/M9 and validation checklist closure logic. |
