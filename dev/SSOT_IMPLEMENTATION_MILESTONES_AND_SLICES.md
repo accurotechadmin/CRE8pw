@@ -60,6 +60,9 @@ Every implementation session touching coupled slices must update continuity arti
 - whether reliance was blocked by unresolved seed gaps,
 - which next seed slices should be prioritized.
 
+### SC-6: Fresh exportability requirement
+When implementation sessions produce new seed-derived authored/generated documentation artifacts, place them under repository-root `/fresh` so outputs remain portable to a new repository without reconstruction.
+
 ---
 
 ## Milestone topology (critical path + parallel lanes)
@@ -116,7 +119,7 @@ Required before production launch:
 - operational gates (RG-01..RG-05) complete,
 - traceability closure at required threshold,
 - decisions/risks/evidence artifacts complete and link-valid,
-- seed-program artifacts demonstrate no unresolved critical ambiguity impacting released behavior.
+- seed-program artifacts demonstrate no unresolved critical ambiguity impacting released behavior, and any new seed-derived authored/generated docs are exportable from `/fresh`.
 
 ---
 
@@ -405,6 +408,7 @@ If this roadmap is changed, update in order:
 2. `master_index.md`,
 3. `dev/README.md` and any impacted local indexes,
 4. continuity artifacts in `reports/` if sequencing or release expectations changed,
-5. seed-program prompt/docs if coupling expectations changed.
+5. seed-program prompt/docs if coupling expectations changed,
+6. `/fresh` structure notes if export layout changed.
 
 Follow `REFERENCE_MAINTENANCE_SOP.md` for every structural/reference change.

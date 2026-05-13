@@ -1,7 +1,7 @@
 # Seed-Generating Program — Comprehensive Milestones and Slices
 
 ## Purpose
-Define the complete execution roadmap for authoring and validating the full `seed-generating-docs` system and producing a fresh, normalized production-guidance doc set.
+Define the complete execution roadmap for authoring and validating the full `seed-generating-docs` system and producing a fresh, normalized production-guidance doc set. All newly authored/generated program outputs are rooted under `/fresh` for repository-portable export.
 
 ## Status model
 - `not_started`
@@ -20,6 +20,12 @@ Define the complete execution roadmap for authoring and validating the full `see
 - M7: Validation and consistency closure
 - M8: Final corpus generation dry run
 - M9: Release handoff and operationalization
+
+## Output root contract (`/fresh`)
+- Create all **new** seed-authored and generated corpus documents under repository-root `/fresh`.
+- Use `/fresh/seed-generating-docs/` as the canonical subtree for authored controls/seeds/final outputs created by this program.
+- Legacy in-place governance/continuity artifacts outside `/fresh` may still be updated when explicitly required by session protocol.
+- Any slice that creates documents must list the exact `/fresh/...` paths in-session and in handoff notes.
 
 ---
 
@@ -106,16 +112,16 @@ Define the complete execution roadmap for authoring and validating the full `see
 **Goal:** fully author complete seed docs for each domain.
 
 ### Slices
-- S5.1 Author `10_architecture_seed.md`.
-- S5.2 Author `11_product_functional_seed.md`.
-- S5.3 Author `12_implementation_seed.md`.
-- S5.4 Author `13_domain_data_model_seed.md`.
-- S5.5 Author `14_workflows_seed.md`.
-- S5.6 Author `15_api_interface_seed.md`.
-- S5.7 Author `16_ui_ux_seed.md`.
-- S5.8 Author `17_testing_quality_seed.md`.
-- S5.9 Author `18_security_privacy_reliability_seed.md`.
-- S5.10 Author `19_operations_deployment_seed.md`.
+- S5.1 Author `/fresh/seed-generating-docs/10_seeds/10_architecture_seed.md`.
+- S5.2 Author `/fresh/seed-generating-docs/10_seeds/11_product_functional_seed.md`.
+- S5.3 Author `/fresh/seed-generating-docs/10_seeds/12_implementation_seed.md`.
+- S5.4 Author `/fresh/seed-generating-docs/10_seeds/13_domain_data_model_seed.md`.
+- S5.5 Author `/fresh/seed-generating-docs/10_seeds/14_workflows_seed.md`.
+- S5.6 Author `/fresh/seed-generating-docs/10_seeds/15_api_interface_seed.md`.
+- S5.7 Author `/fresh/seed-generating-docs/10_seeds/16_ui_ux_seed.md`.
+- S5.8 Author `/fresh/seed-generating-docs/10_seeds/17_testing_quality_seed.md`.
+- S5.9 Author `/fresh/seed-generating-docs/10_seeds/18_security_privacy_reliability_seed.md`.
+- S5.10 Author `/fresh/seed-generating-docs/10_seeds/19_operations_deployment_seed.md`.
 - S5.11 Cross-seed alignment pass (entities/roles/flows/contracts/controls).
 
 ### Exit criteria
@@ -130,7 +136,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 ### Slices
 - S6.1 Populate `20_final_document_blueprint.md` with final file map.
 - S6.2 Expand `30_llm_generation_instructions.md` with strict step-by-step ops.
-- S6.3 Define output folder conventions and naming policy.
+- S6.3 Define and enforce output folder conventions rooted at `/fresh` (including final corpus export paths) and naming policy.
 - S6.4 Define minimum content thresholds for generated docs.
 - S6.5 Define regeneration idempotency checks.
 
@@ -190,7 +196,7 @@ Define the complete execution roadmap for authoring and validating the full `see
    - `docs(seed-gen): Mx Sy.y <short action>`
 
 ## Definition of done for a slice
-- Required files updated.
+- Required files updated, with any newly created authored/generated docs placed under `/fresh`.
 - No placeholder-only completion claims.
 - Traceability and continuity artifacts updated.
 - Blockers explicitly logged if incomplete.

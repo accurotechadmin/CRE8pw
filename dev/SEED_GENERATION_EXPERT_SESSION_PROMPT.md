@@ -21,6 +21,16 @@ Primary execution plan:
 Program-level alignment and production relevance cross-check:
 - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 
+
+## Fresh-output location contract (mandatory)
+All newly authored seed documents and generated final corpus documents MUST be created under the repository-root folder:
+- `/fresh`
+
+Operational rules:
+- Do not create new authored/generated documents outside `/fresh` unless the file is explicitly a required continuity/governance artifact listed in this prompt.
+- Mirror stable structure under `/fresh` (for example `/fresh/seed-generating-docs/...`) so the full output can be copied to a new repository intact.
+- Treat `/fresh` as the export-ready artifact root for this program.
+
 ## Required control documents (runtime instructions)
 - `seed-generating-docs/00_control/00_master_readme.md`
 - `seed-generating-docs/00_control/01_source_inventory.md`
@@ -75,7 +85,7 @@ Program-level alignment and production relevance cross-check:
 
 ## Slice-level working protocol (required)
 For each selected slice:
-1. Declare scope boundaries and expected updated files.
+1. Declare scope boundaries and expected updated files (including exact `/fresh/...` target paths for any new authored/generated docs).
 2. Execute changes while maintaining preservation/trace links.
 3. Record conflicts, open questions, and decisions as they occur (not only at end).
 4. Run applicable validation checks.
@@ -85,7 +95,7 @@ For each selected slice:
 1. Execute selected slices fully (or mark partial with blockers).
 2. Update logs/boards/handoff with:
    - completed slices,
-   - changed files,
+   - changed files (explicitly identify new `/fresh/...` artifacts),
    - open blockers,
    - next-slice recommendation,
    - explicit implementation-readiness impact (which future production slices now have better guidance).
