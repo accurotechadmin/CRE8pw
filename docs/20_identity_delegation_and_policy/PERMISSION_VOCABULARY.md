@@ -286,7 +286,7 @@ These tokens tighten **tenant-level governance** surfaced inside Owner dashboard
 | keychain | collection | read | `keychain.collection.read` | resource | Inspect membership/metadata.
 | keychain | collection | update | `keychain.collection.update` | resource | Attach/detach member keys respecting lineage rules.
 | keychain | collection | delete | `keychain.collection.delete` | resource | Delete aggregate plus revoke derivatives.
-| keychain | api_credential | issue | `keychain.api_credential.issue` | resource | Derived credential (**union projection** within policy bindings).
+| keychain | api_credential | issue | `keychain.api_credential.issue` | resource | Derived credential (**union aggregation** within policy bindings).
 | keychain | api_credential | rotate | `keychain.api_credential.rotate` | resource | Rotate derived credential.
 | keychain | api_credential | revoke | `keychain.api_credential.revoke` | resource | Revoke derived credential.
 | keychain | api_credential | restrict_permissions | `keychain.api_credential.restrict_permissions` | resource | Subset tightening on issuance (**least privilege companion**).
