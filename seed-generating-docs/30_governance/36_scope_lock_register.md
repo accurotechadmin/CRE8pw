@@ -9,3 +9,5 @@
 | SLR-2026-05-13-04 | 2026-05-13 | startup governance source expansion (SRC-006..SRC-009) | expansion_risk_scan | No net-new product domain, principal type, interface surface, or dependency family introduced; updates are process-traceability only. | pass | Continue M1/M2 completion using locked ethos/dependency canon as constraints. | seed-generating-docs/00_control/01_source_inventory.md |
 
 | SLR-2026-05-13-05 | 2026-05-13 | continuity-source completion pass (SRC-010/CPL-009) | ethos_coverage | Added continuity trace rows only; no behavioral or domain expansion introduced. | pass | Continue M1/M2 closure with same scope constraints. | seed-generating-docs/00_control/01_source_inventory.md; seed-generating-docs/00_control/02_content_preservation_ledger.md |
+| SLR-2026-05-13-06 | 2026-05-13 | M1.5/M2.5 inventory+preservation QA pass | expansion_risk_scan | Documentation updates add no new product domains/dependencies; changes are continuity-trace only. | pass | Proceed to M1.6/M2.6 broader coverage audit in next slice batch. | seed-generating-docs/00_control/01_source_inventory.md; seed-generating-docs/00_control/02_content_preservation_ledger.md |
+
