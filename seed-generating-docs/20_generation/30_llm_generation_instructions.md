@@ -27,3 +27,14 @@ You are generating a complete fresh production-guidance document set from the se
 - Implicit conflict resolution.
 - Requirement changes without traceability row updates.
 - Omitting hook/evidence mapping for normative behavior.
+## Deterministic rerun protocol
+- Pin execution context at startup: record UTC timestamp, active handoff path, selected slices, and scope-lock expectation rows before authoring begins.
+- For each touched concept, maintain chain: `source -> normalized_concept -> target_seed_section -> implementation_implication` in the preservation ledger.
+- Treat `/fresh` as the net-new artifact root; if protocol requires in-place continuity/governance updates, mirror equivalent export artifacts under `/fresh` when practical.
+- Run scope-lock checks after each slice and record findings in `30_governance/36_scope_lock_register.md` (including explicit `scope_expansion_candidate` entries when detected).
+- End each run by executing `31_validation_checklist.md` with PASS/PARTIAL/FAIL evidence and updating latest handoff pointers.
+
+## Deterministic output contract
+- Every generated document must declare: purpose, audience, canonical dependency anchors, source traceability rows, unresolved-conflict references, and implementation implications.
+- If ambiguity remains after conflict processing, preserve both interpretations and mark status `deferred` with explicit reviewer action; do not collapse meaning implicitly.
+- Generation is not implementation-ready unless preservation, conflict, consistency, and scope-lock gates are all explicitly reported.
