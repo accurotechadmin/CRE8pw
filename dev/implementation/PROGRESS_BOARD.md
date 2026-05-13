@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-13 12:20_
+_Last updated (UTC): 2026-05-13 13:54_
 
 ## Current status
 
@@ -25,3 +25,5 @@ _Last updated (UTC): 2026-05-13 12:20_
 - Startup/governance pass re-established deterministic resume discipline for seed-program execution.
 - Scope-lock evidence now tracked in `seed-generating-docs/30_governance/36_scope_lock_register.md`.
 - `/fresh/seed-generating-docs` export root created, reducing ambiguity for future generated guidance portability.
+
+- Seed source inventory expanded to include onboarding/governance/traceability authority inputs (SRC-006..SRC-009) with preservation rows CPL-005..CPL-008 for deterministic replay.
