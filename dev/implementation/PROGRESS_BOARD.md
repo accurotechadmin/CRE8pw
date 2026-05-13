@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-13 19:05_
+_Last updated (UTC): 2026-05-13 20:15_
 
 ## Current status
 
@@ -35,3 +35,4 @@ _Last updated (UTC): 2026-05-13 19:05_
 
 - Seed program M1.6/S1.6 and M2.6/S2.6 advanced with canonical source anchors for product ethos, dependency baseline, and architecture/surface doctrine (SRC-012..SRC-014; CPL-011..CPL-013), improving scope-lock and implementation-coupling trace determinism.
 - Seed program M4/S4.1 contradiction scan started with explicit `/fresh` contract interpretation conflict capture (CONF-002) and approved reconciliation decision (DEC-002), reducing generation-path ambiguity for future implementation-coupled sessions.
+- `/fresh` export alignment hardening applied by mirroring touched conflict/decision/consistency/scope-lock and continuity artifacts under `/fresh/seed-generating-docs` and `/fresh/reports/session_handoffs`, while preserving required in-place governance updates.
