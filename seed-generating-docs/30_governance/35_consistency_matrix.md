@@ -7,3 +7,5 @@
 | Seed-to-implementation coupling (SC-1..SC-6) | aligned | aligned | n/a | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Current session selected slices improve implementation continuity and readiness signaling. |
 
 | Startup authority hierarchy (onboarding→SSOT→continuity→milestones) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Startup sequence artifacts were re-inventoried and mapped in preservation ledger rows CPL-005..CPL-008. |
+
+| Governance control-plane completeness (inventory/preservation/conflict/decision/legacy registers) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | M1.3-M1.6 and M2.3-M2.6 updates synchronized across required control artifacts with explicit trace and decisions. |
