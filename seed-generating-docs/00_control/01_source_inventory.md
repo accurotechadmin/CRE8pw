@@ -19,3 +19,7 @@
 - One row per source document (no omissions within selected-slice scope).
 - If unknown, use `TBD` with note.
 - Add conflict refs when discovered.
+
+| SRC-012 | docs/10_product_and_architecture/CRE8_PRODUCT_AND_SYSTEM_SPEC.md | CRE8 Product and System Spec | normative_spec | ssot_canon | product_architecture_scope | seed_and_implementation_operators | canonical | high | modular authn/authz foundation; adoption modes; dual-surface runtime; extensibility anchor | product behavior must remain within approved principal/key/content/audience/surface model | none | seed docs 10/11/14/16 and consistency matrix | Added for M1.6 ethos-domain coverage audit baseline. |
+| SRC-013 | docs/10_product_and_architecture/DEPENDENCY_BASELINE.md | Dependency Baseline | normative_spec | ssot_canon | runtime_dependency_contract | seed_and_implementation_operators | canonical | high | required runtime + verification dependency families | dependency family drift prohibited without governance change | none | seed docs 12/18/19 and scope-lock register | Added for M1.6 dependency-baseline coverage audit baseline. |
+| SRC-014 | docs/10_product_and_architecture/ARCHITECTURE_AND_SURFACES.md | Architecture and Surfaces | normative_spec | ssot_canon | dual_surface_runtime_model | seed_and_implementation_operators | canonical | high | owner UI console + API gateway parity; surface boundaries | interface parity doctrine and surface constraints | none | seed docs 10/15/16 and consistency matrix | Added for M1.6 surface-model coverage audit baseline. |
