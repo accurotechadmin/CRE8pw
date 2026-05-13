@@ -29,6 +29,43 @@ Define the complete execution roadmap for authoring and validating the full `see
 
 ---
 
+
+## Foundational scope lock (CRE8 ethos and dependency baseline)
+The seed-generating program MUST treat the CRE8 project spec/product brief as in-scope foundation, and MUST NOT create net-new product scope outside that foundation unless explicitly approved through governance change control.
+
+### Scope-locked ethos domains (must be intrinsically represented across seeds and controls)
+- Credentialing/authn/authz foundation for PHP applications, with modular adoption modes (full platform, hybrid owner+API-key, API-only engine).
+- Dual-surface operating model: Owner HTML UI Console + API Gateway key-driven access.
+- Hierarchical key model and minting/delegation semantics: Owner, Primary Author, Secondary Author, Use.
+- Granular permissioning at mint time and downstream delegation constraints.
+- Content/audience/feed model: post visibility classes, audience targeting, comment permissions, active-key(active-keychain)-driven access context.
+- Keychain aggregation model (public/private keychains; aggregate permissions; lifecycle parity with regular keys).
+- Owner/admin oversight: lineage/provenance visibility, suspend/cancel/revoke with optional cascading behavior.
+- Interface parity doctrine: API actions must have parity HTML interfaces where defined by canon.
+- Extensibility model: post/audience/key/domain extension patterns for downstream applications.
+- First-use-case anchor: XtraType annotation workflow as concrete extensibility reference.
+
+### Dependency baseline lock (must be preserved in source inventory, preservation, and seed outputs)
+- `slim/slim`: HTTP kernel/routing/middleware composition and per-surface route mounts.
+- `slim/psr7`: PSR-7 request/response primitives and immutable response handling.
+- `php-di/php-di`: centralized DI wiring and service factories.
+- `firebase/php-jwt`: JWT issuance/verification and JWKS-compatible validation.
+- `ext-pdo`: prepared statements, transactions, and migration-safe DB access.
+- `ext-sodium`: Argon2id hashing, secure randomness, constant-time comparison.
+- `respect/validation`: composable input/schema validation and normalized 422 detail mapping.
+- `vlucas/phpdotenv`: env bootstrap with required-key and typed startup validation.
+- `guzzlehttp/guzzle`: outbound HTTP integration substrate (timeouts/retries/webhooks/JWKS fetch where applicable).
+- `neomerx/cors-psr7`: policy-driven CORS enforcement.
+- `monolog/monolog`: structured/channelized app/security/audit logging.
+- `symfony/rate-limiter`: rate-limit policy enforcement for owner/gateway/auth traffic.
+- `symfony/cache`: limiter/cache state persistence and operational memoization.
+- `phpunit/phpunit`: unit/integration/contract/regression verification suites.
+
+### Scope-expansion guardrail
+- Any proposal that introduces product behaviors, principal/key categories, interface surfaces, or runtime dependencies outside the above ethos/baseline MUST be logged as `scope_expansion_candidate` in conflict/decision artifacts and treated as blocked until governance disposition is recorded.
+- Seed authoring/generation slices MUST prefer canonical alignment, normalization, and completeness of the above scope over introducing new conceptual domains.
+
+
 ## M0 — Session boot and continuity alignment
 **Goal:** deterministic startup, exact resume point, no continuity drift.
 
@@ -53,6 +90,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 - S1.3 Classify each source as canonical/partial/legacy/duplicate/deprecated/unresolved.
 - S1.4 Add downstream-target mapping hints for each source.
 - S1.5 QA pass for omissions and duplicate rows.
+- S1.6 Scope-lock audit: verify ethos domains + dependency baseline are fully represented in inventory rows.
 
 ### Exit criteria
 - 100% inventoried source list.
@@ -69,6 +107,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 - S2.3 Mark per-row status: preserved/merged/split/renamed/deprecated/superseded/conflict_unresolved.
 - S2.4 Link decisions/conflicts where status requires justification.
 - S2.5 Coverage audit: every meaningful source item has ledger row.
+- S2.6 Dependency/ethos preservation audit: each baseline dependency + ethos domain maps to preserved ledger concepts and target seeds.
 
 ### Exit criteria
 - No-loss gate satisfied.
@@ -85,6 +124,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 - S3.3 Normalize style-standard details for final docs.
 - S3.4 Populate best-practices registry with source anchors and target docs.
 - S3.5 Terminology drift scan and remediation entries.
+- S3.6 Canonicalize ethos/dependency vocabulary (no uncontrolled synonym drift for principal/key/surface/dependency terms).
 
 ### Exit criteria
 - Vocabulary table materially complete for all core domains.
@@ -123,6 +163,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 - S5.9 Author `/fresh/seed-generating-docs/10_seeds/18_security_privacy_reliability_seed.md`.
 - S5.10 Author `/fresh/seed-generating-docs/10_seeds/19_operations_deployment_seed.md`.
 - S5.11 Cross-seed alignment pass (entities/roles/flows/contracts/controls).
+- S5.12 Scope-lock conformance pass: confirm all seeds reflect only approved ethos domains and dependency baseline.
 
 ### Exit criteria
 - Each seed document fully populated beyond template placeholders.
@@ -153,6 +194,7 @@ Define the complete execution roadmap for authoring and validating the full `see
 - S7.2 Populate `35_consistency_matrix.md` across major concept axes.
 - S7.3 Resolve/flag residual inconsistency rows.
 - S7.4 Confirm traceability, conflict, and decision artifacts are synchronized.
+- S7.5 Run explicit scope-lock gate checks (ethos completeness, dependency baseline coverage, no unauthorized scope expansion).
 
 ### Exit criteria
 - Validation checklist at PASS or PASS-with-explicit-waivers.
@@ -194,6 +236,11 @@ Define the complete execution roadmap for authoring and validating the full `see
 4. Update progress board and latest handoff.
 5. Commit with message format:
    - `docs(seed-gen): Mx Sy.y <short action>`
+
+## Mandatory scope-lock gates (apply to every substantive slice)
+- **Ethos completeness gate:** touched artifacts preserve and reinforce the defined CRE8 product ethos domains.
+- **Dependency baseline gate:** touched artifacts preserve the stated runtime/tooling dependency roles and constraints.
+- **No-expansion gate:** no new out-of-scope domains/surfaces/dependency families introduced without governance-recorded approval.
 
 ## Definition of done for a slice
 - Required files updated, with any newly created authored/generated docs placed under `/fresh`.
