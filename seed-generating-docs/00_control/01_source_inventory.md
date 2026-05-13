@@ -18,3 +18,5 @@
 - One row per source document (no omissions).
 - If unknown, use `TBD` with note.
 - Add conflict refs when discovered.
+
+| SRC-010 | reports/session_handoffs/SESSION_HANDOFF_20260513-1354.md | Session Handoff — 2026-05-13 13:54 UTC | continuity | seed_program | resume_state | follow_on_seed_sessions | canonical | high | completed/partial slices + blockers + next recommendations | continuity artifact must carry explicit resume instructions and validation status | none | reports/session_handoffs/LATEST_SESSION_HANDOFF.md; dev/implementation/PROGRESS_BOARD.md | Added to close continuity-source gap for M1 classification and downstream mapping QA. |

@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-13 13:54_
+_Last updated (UTC): 2026-05-13 16:20_
 
 ## Current status
 
@@ -27,3 +27,6 @@ _Last updated (UTC): 2026-05-13 13:54_
 - `/fresh/seed-generating-docs` export root created, reducing ambiguity for future generated guidance portability.
 
 - Seed source inventory expanded to include onboarding/governance/traceability authority inputs (SRC-006..SRC-009) with preservation rows CPL-005..CPL-008 for deterministic replay.
+
+
+- Seed-generating continuity inventory now includes latest concrete handoff source (SRC-010) plus preservation mapping (CPL-009), improving deterministic resume fidelity for coupled implementation sessions.

@@ -7,3 +7,5 @@
 | Seed-to-implementation coupling (SC-1..SC-6) | aligned | aligned | n/a | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Current session selected slices improve implementation continuity and readiness signaling. |
 
 | Startup authority hierarchy (onboarding→SSOT→continuity→milestones) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Startup sequence artifacts were re-inventoried and mapped in preservation ledger rows CPL-005..CPL-008. |
+
+| Continuity pointer integrity (LATEST -> concrete handoff file) | aligned | aligned | n/a | n/a | n/a | aligned | aligned | aligned | aligned | consistent | Source inventory now explicitly includes concrete latest handoff source (SRC-010) to reduce resume ambiguity. |
