@@ -22,6 +22,42 @@ Program-level alignment and production relevance cross-check:
 - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 
 
+
+
+## Foundational scope lock (must be enforced before and during all work)
+You MUST treat the following CRE8 product brief as foundational scope. Your mission is to normalize, preserve, and operationalize this scope — not to expand beyond it without explicit governance disposition.
+
+### Locked CRE8 ethos (intrinsic requirements)
+- CRE8 is a modular credentialing/authentication/authorization foundation for PHP apps (full platform, hybrid owner+API-key, or API-only adoption modes).
+- Runtime model is dual-surface: Owner HTML UI Console + API Gateway key-based access.
+- Principal/key chain includes Owner, Primary Author, Secondary Author, Use keys with hierarchical mint/delegation controls.
+- Content/audience/access model includes post visibility controls, audience targeting, comments permissions, and active-key(active-keychain)-driven feed/access behavior.
+- Keychain model supports aggregate permissions, personal/public usage modes, and lifecycle parity with regular keys.
+- Owner/admin operations include lineage/provenance visibility and suspend/cancel/revoke/cascade controls.
+- Interface doctrine includes parity HTML interfaces for API actions where canon requires parity.
+- Extensibility is deliberate: downstream apps extend post/audience/key/domain patterns without rewriting platform foundations.
+- XtraType-style annotation workflow is a first-use-case anchor for extensibility reasoning.
+
+### Locked dependency baseline (runtime + verification)
+- `slim/slim` (HTTP kernel/routing/middleware composition)
+- `slim/psr7` (PSR-7 request/response primitives)
+- `php-di/php-di` (DI container/service wiring)
+- `firebase/php-jwt` (JWT issuance/verification + JWKS compatibility)
+- `ext-pdo` (prepared SQL + transactions + migration-safe persistence)
+- `ext-sodium` (Argon2id, secure random, constant-time compare)
+- `respect/validation` (composable payload validation and 422 mapping)
+- `vlucas/phpdotenv` (startup env loading + required key validation)
+- `guzzlehttp/guzzle` (outbound HTTP/webhook/JWKS integrations where applicable)
+- `neomerx/cors-psr7` (policy-based CORS enforcement)
+- `monolog/monolog` (structured app/security/audit logging)
+- `symfony/rate-limiter` (traffic bucket/rate policy enforcement)
+- `symfony/cache` (cache/limiter persistence)
+- `phpunit/phpunit` (unit/integration/contract/regression tests)
+
+### Scope expansion prohibition
+- Do NOT introduce net-new product domains, principal types, key families, interface surfaces, or dependency families outside the locked scope.
+- If you detect a potential expansion need, log it as a blocked `scope_expansion_candidate` in conflict/decision artifacts and continue only with in-scope work.
+
 ## Fresh-output location contract (mandatory)
 All newly authored seed documents and generated final corpus documents MUST be created under the repository-root folder:
 - `/fresh`
@@ -57,12 +93,18 @@ Operational rules:
    - `dev/SEED_GENERATING_MILESTONES_AND_SLICES.md`
    - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 4. Determine where prior session stopped and which next slices are eligible.
-5. Publish startup output (mandatory):
+5. Run scope-lock startup checks:
+   - confirm ethos-domain coverage expectations for selected slices,
+   - confirm dependency-baseline coverage expectations for selected slices,
+   - identify any pre-existing scope-expansion candidates.
+6. Publish startup output (mandatory):
+
    - authority hierarchy summary,
    - current milestone/slice status summary,
    - next 1–3 slices selected with rationale,
    - risk/conflict watchlist,
    - production-relevance check (which implementation milestones are better enabled by today’s planned seed work).
+   - scope-lock check summary (ethos/dependency coverage + expansion-risk findings).
 
 ## Execution rules (non-negotiable)
 - No substantive source content may be dropped unless explicitly marked deprecated/duplicate/obsolete/superseded in preservation records.
@@ -71,6 +113,7 @@ Operational rules:
 - Keep traceability current: **source -> normalized concept -> target seed section -> downstream implementation implication**.
 - Prefer additive clarification over destructive rewrites when source meaning is uncertain.
 - Update progress artifacts continuously during the session.
+- Enforce scope lock continuously: every touched artifact must map to locked ethos + dependency baseline coverage.
 
 ## Required artifacts to update during work
 - `seed-generating-docs/00_control/01_source_inventory.md`
@@ -80,6 +123,7 @@ Operational rules:
 - `seed-generating-docs/30_governance/33_decision_register.md` (if decisions made)
 - `seed-generating-docs/30_governance/34_legacy_language_register.md` (as terms are normalized)
 - `seed-generating-docs/30_governance/35_consistency_matrix.md`
+- `seed-generating-docs/30_governance/36_scope_lock_register.md` (create/update when scope-lock checks produce findings)
 - `dev/implementation/PROGRESS_BOARD.md`
 - `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
 
@@ -88,8 +132,8 @@ For each selected slice:
 1. Declare scope boundaries and expected updated files (including exact `/fresh/...` target paths for any new authored/generated docs).
 2. Execute changes while maintaining preservation/trace links.
 3. Record conflicts, open questions, and decisions as they occur (not only at end).
-4. Run applicable validation checks.
-5. Record completion state (`done` / `partial` / `blocked`) with concrete evidence.
+4. Run applicable validation checks, including explicit scope-lock gates.
+5. Record completion state (`done` / `partial` / `blocked`) with concrete evidence, including ethos/dependency coverage status.
 
 ## Session completion requirements
 1. Execute selected slices fully (or mark partial with blockers).
@@ -106,6 +150,7 @@ For each selected slice:
    - updated traceability/conflict status,
    - explicit next session starting point,
    - residual risks to seed quality or implementation usability.
+   - explicit scope-lock status (PASS/PARTIAL/FAIL) with cited blockers if not PASS.
 
 ## Quality gates for this program
 Treat the following as mandatory gates before claiming substantive progress:
@@ -114,6 +159,7 @@ Treat the following as mandatory gates before claiming substantive progress:
 - **Consistency gate:** touched cross-domain concepts updated in consistency matrix.
 - **Generation gate:** touched generation instructions remain executable by a fresh session.
 - **Implementation-relevance gate:** touched seed content identifies downstream implementation implications.
+- **Scope-lock gate:** touched content remains within locked ethos + dependency baseline, or blocked exceptions are recorded.
 
 ## Prohibited behavior
 - Do not skip startup sequence.
