@@ -13,3 +13,4 @@
 
 
 | SLR-2026-05-13-07 | 2026-05-13 | M1.6/M2.6 canonical coverage anchor expansion (SRC-012..SRC-014, CPL-011..CPL-013) | dependency_baseline_coverage | Added canonical source anchors for ethos/dependency/surface scope checks; no net-new dependency family or product domain introduced. | pass | Continue toward full-corpus M1.6/M2.6 completion and contradiction scan kickoff (M4 S4.1). | seed-generating-docs/00_control/01_source_inventory.md; seed-generating-docs/00_control/02_content_preservation_ledger.md |
+| SLR-2026-05-13-08 | 2026-05-13 | M4 S4.1 contradiction scan kickoff (`/fresh` contract interpretation conflict) | expansion_risk_scan | Conflict resolution updated process interpretation only; no net-new domain/principal/interface/dependency added. | pass | Keep logging any future scope-expansion candidates as blocked entries. | seed-generating-docs/00_control/04a_conflict_register.md; seed-generating-docs/30_governance/33_decision_register.md |
