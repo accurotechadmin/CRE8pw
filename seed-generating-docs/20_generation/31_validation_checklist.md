@@ -1,17 +1,17 @@
 # Validation and Completeness Checklist
 
-- [ ] Every source document listed in inventory.
-- [ ] Every source reviewed and status-classified.
-- [ ] Every major source section mapped in preservation ledger.
-- [ ] Canonical vocabulary applied consistently.
-- [ ] Legacy terms removed or justified in register.
-- [ ] Every conflict resolved or registered.
+- [x] Every source document listed in inventory.
+- [x] Every source reviewed and status-classified.
+- [x] Every major source section mapped in preservation ledger.
+- [x] Canonical vocabulary applied consistently.
+- [x] Legacy terms removed or justified in register.
+- [x] Every conflict resolved or registered.
 - [ ] Every final doc matches blueprint template.
 - [ ] Every final doc has clear purpose and audience.
 - [ ] No unexplained legacy language remains.
-- [ ] Any TBD item appears in open questions register.
-- [ ] Cross-domain alignment: product, architecture, data, API, UI, implementation, testing, security, operations.
-- [ ] Output is implementation-ready for production code guidance.
+- [x] Any TBD item appears in open questions register.
+- [x] Cross-domain alignment: product, architecture, data, API, UI, implementation, testing, security, operations.
+- [x] Output is implementation-ready for production code guidance.
 
 
 ## Slice scorecard template (mandatory per selected slice)
@@ -27,7 +27,11 @@ A slice may be marked `done` only when all gates are `pass`, or an explicit waiv
 
 ## Deterministic generation closure checks (M6/S6.4-S6.5)
 
-- [ ] Every generated document satisfies minimum section threshold: Purpose, Audience, Normative anchors, Source traceability, Conflict/decision status, Implementation implications.
-- [ ] Every generated document includes at least one trace-linked source reference for each applicable major concept.
-- [ ] Rerun with unchanged inputs produces stable heading/section ordering and traceability references.
-- [ ] Any rerun differences are explicitly classified (source_change, conflict_disposition_change, decision_change, bugfix) and logged.
+- [x] Every generated document satisfies minimum section threshold: Purpose, Audience, Normative anchors, Source traceability, Conflict/decision status, Implementation implications.
+- [x] Every generated document includes at least one trace-linked source reference for each applicable major concept.
+- [x] Rerun with unchanged inputs produces stable heading/section ordering and traceability references.
+- [x] Any rerun differences are explicitly classified (source_change, conflict_disposition_change, decision_change, bugfix) and logged.
+
+
+## Validation run log
+- 2026-05-15 (UTC): M7/S7.1 full checklist rerun completed as control-layer verification; no new generation drift detected in deterministic controls.
