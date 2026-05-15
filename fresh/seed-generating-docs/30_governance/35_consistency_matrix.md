@@ -20,3 +20,5 @@
 
 | Control-register schema integrity (inventory/ledger rows conform to declared schema) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Corrected malformed SRC-017/CPL-016 rows to preserve deterministic machine/auditor readability. |
 | Generation minimum thresholds + idempotency classification (M6/S6.4-S6.5) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Generation instructions and validation checklist now both encode threshold and rerun-drift classification rules. |
+| M7 S7.1 full checklist rerun (2026-05-15) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Full checklist + deterministic closure checks rerun; no new inconsistencies introduced. |
+
