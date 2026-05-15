@@ -21,9 +21,6 @@ Primary execution plan:
 Program-level alignment and production relevance cross-check:
 - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
 
-
-
-
 ## Foundational scope lock (must be enforced before and during all work)
 You MUST treat the following CRE8 product brief as foundational scope. Your mission is to normalize, preserve, and operationalize this scope — not to expand beyond it without explicit governance disposition.
 
@@ -80,40 +77,35 @@ Operational rules:
 - `seed-generating-docs/20_generation/31_validation_checklist.md`
 
 ## Required startup sequence (before implementation)
-1. Read onboarding and governance canon in order:
-   - `dev/CRE8_ONBOARDING_COMPREHENSIVE_READING_LIST.md`
-   - `docs/00_governance/SSOT_INDEX.md`
-   - `docs/00_governance/CHANGE_CONTROL_POLICY.md`
-   - `docs/80_traceability_decisions_and_program/TRACEABILITY_MATRIX.md`
-2. Read session continuity artifacts:
-   - `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
-   - `dev/implementation/LATEST_SESSION_HANDOFF.md`
-   - `dev/implementation/PROGRESS_BOARD.md`
-3. Read milestone execution plans:
-   - `dev/SEED_GENERATING_MILESTONES_AND_SLICES.md`
-   - `dev/SSOT_IMPLEMENTATION_MILESTONES_AND_SLICES.md`
+1. Read onboarding and governance canon in order.
+2. Read session continuity artifacts.
+3. Read milestone execution plans.
 4. Determine where prior session stopped and which next slices are eligible.
-5. Run scope-lock startup checks:
-   - confirm ethos-domain coverage expectations for selected slices,
-   - confirm dependency-baseline coverage expectations for selected slices,
-   - identify any pre-existing scope-expansion candidates.
-6. Publish startup output (mandatory):
+5. Run scope-lock startup checks.
+6. Publish startup output (mandatory) including authority, selected slices, risk watchlist, and scope-lock summary.
 
-   - authority hierarchy summary,
-   - current milestone/slice status summary,
-   - next 1–3 slices selected with rationale,
-   - risk/conflict watchlist,
-   - production-relevance check (which implementation milestones are better enabled by today’s planned seed work).
-   - scope-lock check summary (ethos/dependency coverage + expansion-risk findings).
+## Session execution contract (must be explicit in every response)
+For each work batch, the model must report all of the following headings:
+1. `Startup summary`
+2. `Slice plan (1–3 slices)`
+3. `Files to touch (with /fresh paths for new authored/generated docs)`
+4. `Progress log (as-you-go)`
+5. `Validation and gate results`
+6. `Continuity updates`
+7. `Next-session resume pointer`
 
-## Execution rules (non-negotiable)
-- No substantive source content may be dropped unless explicitly marked deprecated/duplicate/obsolete/superseded in preservation records.
-- Never silently resolve contradictions; record unresolved conflicts in `04a_conflict_register.md`.
-- Keep terminology normalized against `02_canonical_vocabulary.md`.
-- Keep traceability current: **source -> normalized concept -> target seed section -> downstream implementation implication**.
-- Prefer additive clarification over destructive rewrites when source meaning is uncertain.
-- Update progress artifacts continuously during the session.
-- Enforce scope lock continuously: every touched artifact must map to locked ethos + dependency baseline coverage.
+If any heading cannot be satisfied, the session is `partial` and blockers must be explicit.
+
+## Evidence and scoring model (hard requirement)
+Every selected slice must include a compact scorecard:
+- `preservation_gate`: pass|partial|fail
+- `conflict_gate`: pass|partial|fail
+- `consistency_gate`: pass|partial|fail
+- `generation_gate`: pass|partial|fail
+- `implementation_relevance_gate`: pass|partial|fail
+- `scope_lock_gate`: pass|partial|fail
+
+A slice cannot be marked `done` unless all required gates are `pass`, or an explicit waiver entry exists in governance artifacts.
 
 ## Required artifacts to update during work
 - `seed-generating-docs/00_control/01_source_inventory.md`
@@ -123,43 +115,15 @@ Operational rules:
 - `seed-generating-docs/30_governance/33_decision_register.md` (if decisions made)
 - `seed-generating-docs/30_governance/34_legacy_language_register.md` (as terms are normalized)
 - `seed-generating-docs/30_governance/35_consistency_matrix.md`
-- `seed-generating-docs/30_governance/36_scope_lock_register.md` (create/update when scope-lock checks produce findings)
+- `seed-generating-docs/30_governance/36_scope_lock_register.md`
 - `dev/implementation/PROGRESS_BOARD.md`
 - `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
 
-## Slice-level working protocol (required)
-For each selected slice:
-1. Declare scope boundaries and expected updated files (including exact `/fresh/...` target paths for any new authored/generated docs).
-2. Execute changes while maintaining preservation/trace links.
-3. Record conflicts, open questions, and decisions as they occur (not only at end).
-4. Run applicable validation checks, including explicit scope-lock gates.
-5. Record completion state (`done` / `partial` / `blocked`) with concrete evidence, including ethos/dependency coverage status.
-
-## Session completion requirements
-1. Execute selected slices fully (or mark partial with blockers).
-2. Update logs/boards/handoff with:
-   - completed slices,
-   - changed files (explicitly identify new `/fresh/...` artifacts),
-   - open blockers,
-   - next-slice recommendation,
-   - explicit implementation-readiness impact (which future production slices now have better guidance).
-3. Run validation against `seed-generating-docs/20_generation/31_validation_checklist.md` and report PASS/PARTIAL/FAIL with evidence.
-4. Commit changes with a slice-scoped commit message.
-5. Produce final response including:
-   - summary of completed slice outputs,
-   - updated traceability/conflict status,
-   - explicit next session starting point,
-   - residual risks to seed quality or implementation usability.
-   - explicit scope-lock status (PASS/PARTIAL/FAIL) with cited blockers if not PASS.
-
-## Quality gates for this program
-Treat the following as mandatory gates before claiming substantive progress:
-- **Preservation gate:** all touched source concepts mapped in preservation ledger.
-- **Conflict gate:** no unresolved contradiction omitted from conflict register.
-- **Consistency gate:** touched cross-domain concepts updated in consistency matrix.
-- **Generation gate:** touched generation instructions remain executable by a fresh session.
-- **Implementation-relevance gate:** touched seed content identifies downstream implementation implications.
-- **Scope-lock gate:** touched content remains within locked ethos + dependency baseline, or blocked exceptions are recorded.
+## Program anti-drift checks (run each session)
+- Verify `fresh/reports/session_handoffs/LATEST_SESSION_HANDOFF.md` points to an existing concrete handoff file.
+- Verify `/fresh/seed-generating-docs` mirrors any touched seed-generating governance files when export portability is claimed.
+- Verify milestone/slice labels in handoff notes match `dev/SEED_GENERATING_MILESTONES_AND_SLICES.md` exactly.
+- Verify no new placeholder-only rows were added to conflict/decision/consistency/scope-lock registers.
 
 ## Prohibited behavior
 - Do not skip startup sequence.

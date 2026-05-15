@@ -247,3 +247,36 @@ The seed-generating program MUST treat the CRE8 project spec/product brief as in
 - No placeholder-only completion claims.
 - Traceability and continuity artifacts updated.
 - Blockers explicitly logged if incomplete.
+
+
+## Current program progress snapshot (as of 2026-05-13 handoff)
+- **Substantially advanced:** M0 startup discipline, M1/M2 partial inventory+preservation expansion, M4 conflict logging kickoff, M6 generation hardening kickoff, M7 consistency synchronization kickoff.
+- **Not yet complete:** full M1.6 and M2.6 corpus-wide audits, full M4 contradiction sweep, M5 canonical seed authoring under `/fresh/seed-generating-docs/10_seeds/`, M8 dry-run generation loop, and M9 release-handoff closure for seed program.
+- **Evidence anchors:** `fresh/reports/session_handoffs/SESSION_HANDOFF_20260513-1905.md`, `fresh/seed-generating-docs/00_control/04a_conflict_register.md`, `fresh/seed-generating-docs/30_governance/35_consistency_matrix.md`, `fresh/seed-generating-docs/30_governance/36_scope_lock_register.md`.
+
+## Milestone-level acceptance policy
+A milestone can only be marked `done` when:
+1. All child slices are `done` or explicitly waived with recorded governance references.
+2. Required gate evidence is present in both continuity artifacts:
+   - `dev/implementation/PROGRESS_BOARD.md`
+   - `reports/session_handoffs/LATEST_SESSION_HANDOFF.md`
+3. `/fresh` export-path obligations are satisfied for any newly authored/generated docs.
+4. No unresolved blocker with `human_review_required=yes` remains untracked in conflict/open-question registers.
+
+## Slice evidence template (required in session notes)
+For every completed or partial slice, record:
+- `slice_id`:
+- `status` (`done|partial|blocked`):
+- `touched_files`:
+- `new_fresh_paths`:
+- `gate_scorecard` (`preservation/conflict/consistency/generation/implementation_relevance/scope_lock`):
+- `blockers_or_waivers`:
+- `next_dependency`:
+
+## Critical path to full `/fresh` document-set generation
+1. **Close M1.6 + M2.6** with complete ethos/dependency coverage mapping.
+2. **Complete M4** conflict scan across all domains, leaving no hidden contradictions.
+3. **Finish M5** by authoring all 10 seed docs under `/fresh/seed-generating-docs/10_seeds/`.
+4. **Finish M6 + M7** with deterministic generation instructions and full validation closure.
+5. **Execute M8 dry runs** until threshold passes.
+6. **Finalize M9 handoff** with deterministic resume queue and audit-ready logs.
