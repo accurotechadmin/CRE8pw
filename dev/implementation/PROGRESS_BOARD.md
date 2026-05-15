@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-15 01:35_
+_Last updated (UTC): 2026-05-15 13:48_
 
 ## Current status
 
@@ -42,3 +42,4 @@ _Last updated (UTC): 2026-05-15 01:35_
 - Seed program M7/S7.1 validation discipline hardened by adding mandatory per-slice 6-gate scorecard schema and done-threshold language; consistency/scope-lock artifacts synchronized for deterministic scoring replay.
 
 - Seed program M4/S4.1 contradiction-scan remediation corrected malformed control-register rows (SRC-017/CPL-016) and synchronized `/fresh` mirrors, improving deterministic parser/auditor replay fidelity.
+- Seed program M6/S6.4-S6.5 advanced by codifying minimum generated-document content thresholds and rerun idempotency classification checks, then mirroring generation controls under `/fresh` for export portability.
