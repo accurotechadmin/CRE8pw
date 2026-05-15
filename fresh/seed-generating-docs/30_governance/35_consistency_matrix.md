@@ -14,3 +14,6 @@
 
 | M1.6/M2.6 coverage audit anchors (ethos + dependencies + surfaces) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Added canonical source anchors SRC-012..SRC-014 and preservation rows CPL-011..CPL-013 to support full-corpus audit progression. |
 | `/fresh` output contract vs required in-place governance artifact updates | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Conflict CONF-002 resolved by DEC-002: net-new docs under `/fresh`, required continuity/governance artifacts updated in place. |
+| Generation determinism (M6 hardening) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | `30_llm_generation_instructions.md` now encodes rerun protocol, trace chain, and scope-lock checks for fresh-session reproducibility. |
+
+| Slice scorecard evidence model (6-gate requirement) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Validation checklist now encodes mandatory 6-gate scorecard and done criteria for deterministic session scoring. |
