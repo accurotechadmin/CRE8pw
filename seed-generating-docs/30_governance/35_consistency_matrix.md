@@ -17,3 +17,5 @@
 | Generation determinism (M6 hardening) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | `30_llm_generation_instructions.md` now encodes rerun protocol, trace chain, and scope-lock checks for fresh-session reproducibility. |
 
 | Slice scorecard evidence model (6-gate requirement) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Validation checklist now encodes mandatory 6-gate scorecard and done criteria for deterministic session scoring. |
+
+| Control-register schema integrity (inventory/ledger rows conform to declared schema) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Corrected malformed SRC-017/CPL-016 rows to preserve deterministic machine/auditor readability. |
