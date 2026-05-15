@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-13 20:15_
+_Last updated (UTC): 2026-05-15 00:30_
 
 ## Current status
 
@@ -38,3 +38,5 @@ _Last updated (UTC): 2026-05-13 20:15_
 - `/fresh` export alignment hardening applied by mirroring touched conflict/decision/consistency/scope-lock and continuity artifacts under `/fresh/seed-generating-docs` and `/fresh/reports/session_handoffs`, while preserving required in-place governance updates.
 
 - Seed program M6 hardening advanced with deterministic rerun/output contract controls (SRC-016, CPL-015, DEC-003), improving reproducibility and implementation-coupled guidance replay.
+
+- Seed program M7/S7.1 validation discipline hardened by adding mandatory per-slice 6-gate scorecard schema and done-threshold language; consistency/scope-lock artifacts synchronized for deterministic scoring replay.
