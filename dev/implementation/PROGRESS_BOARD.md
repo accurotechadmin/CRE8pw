@@ -1,6 +1,6 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-15 13:52_
+_Last updated (UTC): 2026-05-15 14:05_
 
 ## Current status
 
@@ -43,3 +43,5 @@ _Last updated (UTC): 2026-05-15 13:52_
 
 - Seed program M4/S4.1 contradiction-scan remediation corrected malformed control-register rows (SRC-017/CPL-016) and synchronized `/fresh` mirrors, improving deterministic parser/auditor replay fidelity.
 - Seed program M6/S6.4-S6.5 advanced by codifying minimum generated-document content thresholds and rerun idempotency classification checks, then mirroring generation controls under `/fresh` for export portability.
+
+- Seed program M4/S4.1 continuation executed as an anti-drift verification pass: startup continuity authority extended (SRC-020/CPL-020), consistency/scope-lock evidence synchronized, and latest handoff pointers refreshed in both in-place and `/fresh` continuity roots.
