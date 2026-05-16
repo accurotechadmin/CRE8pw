@@ -1,14 +1,14 @@
 # CRE8 production implementation — progress board
 
-_Last updated (UTC): 2026-05-15 14:05_
+_Last updated (UTC): 2026-05-16 13:59_
 
 ## Current status
 
 | Field | Value |
 |-------|--------|
-| **Last milestone/slice completed** | **M0:** S0.1-S0.3; **M1:** S1.1-S1.4; **M2:** S2.1-S2.4; **M3:** S3.1-S3.4; **M6:** S6.1-S6.3; **M6b:** S6b.1-S6b.3; **M7:** S7.1-S7.5; **M8:** S8.1-S8.5; **M9:** S9.1-S9.4; **M11:** S11.1-S11.6; **M12:** S12.1-S12.5; **M10:** S10.1-S10.5 |
+| **Last milestone/slice completed** | **M0:** S0.1-S0.3; **M1:** S1.1-S1.4; **M2:** S2.1-S2.4; **M3:** S3.1-S3.4; **M6:** S6.1-S6.4; **M6b:** S6b.1-S6b.4; **M7:** S7.1-S7.6; **M8:** S8.1-S8.5; **M9:** S9.1-S9.4; **M11:** S11.1-S11.6; **M12:** S12.1-S12.5; **M10:** S10.1-S10.5 |
 | **In progress** | None |
-| **Next recommended slices** | None pending within M0-M12 roadmap |
+| **Next recommended slices** | None pending within M0-M12 roadmap (sustainment/regression only) |
 | **Blockers** | No formal blocker. |
 
 ## Gate status snapshot
