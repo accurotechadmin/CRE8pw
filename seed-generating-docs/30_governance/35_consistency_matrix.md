@@ -22,3 +22,5 @@
 | Generation minimum thresholds + idempotency classification (M6/S6.4-S6.5) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Generation instructions and validation checklist now both encode threshold and rerun-drift classification rules. |
 | M7 S7.1 full checklist rerun (2026-05-15) | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | aligned | consistent | Full checklist + deterministic closure checks rerun; no new inconsistencies introduced. |
 
+
+| M4 contradiction sweep continuation + anti-drift checks (2026-05-15) | aligned | aligned | n/a | aligned | n/a | aligned | aligned | aligned | aligned | consistent | Verified handoff pointer integrity and maintained no-placeholder discipline while progressing contradiction-sweep continuity. |
